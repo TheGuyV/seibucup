@@ -129,23 +129,3 @@ footer { margin-top: auto; }
 .btn.soon { background: #444; color: #ddd; border-color: #888; box-shadow: 5px 5px 0 #000; cursor: default; }
 .btn.soon:hover { transform: none; }
 
-/* ---- live server status HUD */
-.srvwrap { padding: 22px 0 0; }
-.srv { display: flex; flex-wrap: wrap; gap: 0; background: var(--hud); border: 3px solid #fff; box-shadow: 6px 6px 0 #000; }
-.srv-item { flex: 1 1 140px; padding: 12px 16px; border-right: 2px solid #333; display: flex; flex-direction: column; gap: 6px; }
-.srv-item:last-of-type { border-right: 0; }
-.srv .lbl { font-family: "Press Start 2P", monospace; font-size: .55rem; color: #9aa; }
-.srv .lbl .ko { font-family: "Noto Sans KR", sans-serif; font-weight: 700; font-size: .85rem; color: #aab; }
-.srv .val { font-family: "Press Start 2P", monospace; font-size: 1.15rem; color: var(--hud-yellow); text-shadow: 2px 2px 0 #7a3a00; display: flex; align-items: baseline; gap: 6px; }
-.srv .val small { font-size: .55rem; color: #ccc; text-shadow: none; }
-.srv .val small .ko { font-family: "Noto Sans KR", sans-serif; font-size: .8rem; }
-.srv-state .val { text-shadow: none; }
-.srv-state .val .ko { font-family: "Black Han Sans", sans-serif; font-size: 1.3rem; letter-spacing: 1px; }
-.srv .dot { width: 12px; height: 12px; background: #888; border: 2px solid #fff; align-self: center; }
-.srv[data-state="online"] .srv-state .val { color: #55e07a; }
-.srv[data-state="online"] .dot { background: #55e07a; animation: blink 1.6s steps(2, start) infinite; }
-.srv[data-state="offline"] .srv-state .val { color: #ff4b4b; }
-.srv[data-state="offline"] .dot { background: #ff4b4b; }
-.srv-note { flex-basis: 100%; padding: 8px 16px 10px; color: #f0a0a0; font-size: .9rem; border-top: 2px solid #333; }
-.srv-note:empty { display: none; }
-@media (max-width: 720px) { .srv-item { flex-basis: 45%; border-bottom: 2px solid #333; } }
