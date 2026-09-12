@@ -1,5 +1,6 @@
 /* Seibu Cup Soccer Online - arcade pitch theme (no game assets: everything is CSS) */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700&display=swap');
+/* Neo둥근모 (NeoDunggeunmo) - SIL OFL 1.1, (c) Eunbin Jeong. Pixel font that covers Hangul and Latin, so one face for the whole site. */
+@import url('https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.601/neodgm/style.css');
 
 :root {
   --grass: #1f7a3c; --grass2: #1a6a33; --grass-dark: #0f3f21;
@@ -13,7 +14,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0; color: var(--fg); line-height: 1.75; font-size: 17px;
-  font-family: "Noto Sans KR", "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+  font-family: "NeoDunggeunmo", "Malgun Gothic", system-ui, sans-serif;
   background:
     repeating-linear-gradient(90deg, var(--grass) 0 120px, var(--grass2) 120px 240px);
 
@@ -23,19 +24,19 @@ body {
 .scoreboard { background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px); }
 a { color: var(--hud-yellow); text-decoration: none; } a:hover { text-decoration: underline; }
 .container { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
-.pixel { font-family: "Press Start 2P", monospace; letter-spacing: 0; }
+.pixel { font-family: "NeoDunggeunmo", monospace; letter-spacing: 0; }
 html[lang="ko"] .en { display: none !important; }
 html[lang="en"] .ko { display: none !important; }
 
 /* ---- HUD bar (like the in-game top line: yellow pixel text on black) */
 header.top { position: sticky; top: 0; z-index: 10; background: var(--hud); border-bottom: 3px solid var(--hud-yellow); box-shadow: 0 4px 0 #000; }
 header.top .container { display: flex; align-items: center; gap: 14px 18px; min-height: 62px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 12px; color: var(--hud-yellow); font-family: "Press Start 2P", monospace; font-size: .72rem; text-shadow: 2px 2px 0 #000; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: .72rem; text-shadow: 2px 2px 0 #000; }
 .brand .ball { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #111; background: radial-gradient(circle at 35% 35%, #fff 0 30%, #222 31% 38%, #fff 39% 60%, #222 61% 68%, #fff 69%); box-shadow: 0 0 0 2px #fff; }
 nav.menu { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; }
 nav.menu a { padding: 8px 12px; color: #fff; font-weight: 700; border-bottom: 3px solid transparent; }
 nav.menu a.active, nav.menu a:hover { color: var(--hud-yellow); border-bottom-color: var(--hud-yellow); text-decoration: none; }
-.langbtn { white-space: nowrap; border: 2px solid var(--hud-yellow); background: transparent; color: var(--hud-yellow); border-radius: 0; padding: 6px 10px; cursor: pointer; font: 700 .85rem "Noto Sans KR", sans-serif; }
+.langbtn { white-space: nowrap; border: 2px solid var(--hud-yellow); background: transparent; color: var(--hud-yellow); border-radius: 0; padding: 6px 10px; cursor: pointer; font: 700 .85rem "NeoDunggeunmo", sans-serif; }
 .langbtn:hover { background: var(--hud-yellow); color: #000; }
 
 /* ---- hero: the pitch with the halfway line and centre circle drawn on it */
@@ -43,10 +44,10 @@ nav.menu a.active, nav.menu a:hover { color: var(--hud-yellow); border-bottom-co
 .hero::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: var(--line); opacity: .55; transform: translateX(-50%); }
 .hero::after { content: ""; position: absolute; left: 50%; top: 50%; width: 260px; height: 260px; border: 4px solid var(--line); border-radius: 50%; opacity: .45; transform: translate(-50%, -50%); }
 .hero .container { position: relative; z-index: 1; }
-.hero h1 { margin: 0 0 14px; font-family: "Black Han Sans", "Press Start 2P", sans-serif; font-weight: 400; font-size: 3rem; line-height: 1.15; color: #fff; text-shadow: 4px 4px 0 #000, 0 0 18px rgba(0,0,0,.4); }
-html[lang="en"] .hero h1 { font-family: "Press Start 2P", monospace; font-size: 1.7rem; line-height: 1.5; }
+.hero h1 { margin: 0 0 14px; font-family: "NeoDunggeunmo", sans-serif; font-weight: 400; font-size: 3rem; line-height: 1.15; color: #fff; text-shadow: 4px 4px 0 #000, 0 0 18px rgba(0,0,0,.4); }
+html[lang="en"] .hero h1 { font-family: "NeoDunggeunmo", monospace; font-size: 1.7rem; line-height: 1.5; }
 .hero p.lead { font-size: 1.15rem; color: #fff; max-width: 640px; margin: 0 0 26px; text-shadow: 1px 1px 0 #000; background: rgba(0,0,0,.55); padding: 14px 16px; border-left: 4px solid var(--hud-yellow); text-shadow: none; }
-.badge { display: inline-block; padding: 6px 10px; font-family: "Press Start 2P", monospace; font-size: .6rem; background: var(--hud); color: var(--hud-yellow); border: 2px solid var(--hud-yellow); margin-bottom: 16px; }
+.badge { display: inline-block; padding: 6px 10px; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; background: var(--hud); color: var(--hud-yellow); border: 2px solid var(--hud-yellow); margin-bottom: 16px; }
 
 /* scoreboard */
 .scoreboard { display: inline-flex; align-items: center; gap: 18px; background: var(--hud); border: 3px solid #fff; box-shadow: 6px 6px 0 #000; padding: 14px 22px; margin: 0 0 26px; flex-wrap: wrap; }
@@ -64,28 +65,28 @@ html[lang="en"] .hero h1 { font-family: "Press Start 2P", monospace; font-size: 
 .flag.esp { background: linear-gradient(180deg, #aa151b 0 25%, #f1bf00 25% 75%, #aa151b 75%); }
 .flag.ned { background: linear-gradient(180deg, #ae1c28 0 33%, #fff 33% 66%, #21468b 66%); }
 .flag.fra { background: linear-gradient(90deg, #0055a4 0 33%, #fff 33% 66%, #ef4135 66%); }
-.scoreboard .abbr { font-family: "Press Start 2P", monospace; font-size: .7rem; color: #fff; }
-.scoreboard .digits { font-family: "Press Start 2P", monospace; font-size: 2rem; color: var(--hud-yellow); text-shadow: 3px 3px 0 #7a3a00; }
-.scoreboard .vs { font-family: "Press Start 2P", monospace; color: var(--hud-orange); font-size: 1rem; text-shadow: 2px 2px 0 #000; }
-.scoreboard .time { font-family: "Press Start 2P", monospace; font-size: .7rem; color: #fff; border-left: 2px solid #444; padding-left: 18px; }
+.scoreboard .abbr { font-family: "NeoDunggeunmo", monospace; font-size: .7rem; color: #fff; }
+.scoreboard .digits { font-family: "NeoDunggeunmo", monospace; font-size: 2rem; color: var(--hud-yellow); text-shadow: 3px 3px 0 #7a3a00; }
+.scoreboard .vs { font-family: "NeoDunggeunmo", monospace; color: var(--hud-orange); font-size: 1rem; text-shadow: 2px 2px 0 #000; }
+.scoreboard .time { font-family: "NeoDunggeunmo", monospace; font-size: .7rem; color: #fff; border-left: 2px solid #444; padding-left: 18px; }
 .scoreboard .time b { display: block; color: var(--hud-yellow); font-size: 1.3rem; margin-top: 4px; }
-.mark { display: inline-block; font-family: "Press Start 2P", monospace; font-size: .6rem; padding: 4px 6px; color: #fff; text-shadow: 1px 1px 0 #000; }
+.mark { display: inline-block; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; padding: 4px 6px; color: #fff; text-shadow: 1px 1px 0 #000; }
 .mark.p1 { background: var(--p1); } .mark.p2 { background: var(--p2); } .mark.p3 { background: var(--p3); color: #000; text-shadow: none; } .mark.p4 { background: var(--p4); color: #000; text-shadow: none; }
 
 /* buttons: "PUSH START" */
 .btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.btn { display: inline-block; padding: 14px 22px; font-family: "Press Start 2P", monospace; font-size: .7rem; border: 3px solid #fff; background: var(--hud); color: #fff; box-shadow: 5px 5px 0 #000; }
+.btn { display: inline-block; padding: 14px 22px; font-family: "NeoDunggeunmo", monospace; font-size: .7rem; border: 3px solid #fff; background: var(--hud); color: #fff; box-shadow: 5px 5px 0 #000; }
 .btn.primary { background: var(--hud-yellow); color: #000; border-color: #000; animation: blink 1.2s steps(2, start) infinite; }
 .btn:hover { text-decoration: none; transform: translate(2px, 2px); box-shadow: 3px 3px 0 #000; }
 @keyframes blink { 50% { opacity: .35; } }
 
 /* ---- sections */
 section { padding: 40px 0; }
-h2 { margin: 0 0 20px; font-family: "Black Han Sans", sans-serif; font-weight: 400; font-size: 2rem; color: #fff; text-shadow: 2px 2px 0 #000; letter-spacing: .5px; }
-html[lang="en"] h2 { font-family: "Press Start 2P", monospace; font-size: 1.1rem; line-height: 1.6; }
-h3 { margin: 24px 0 10px; color: var(--hud-yellow); font-family: "Press Start 2P", monospace; font-size: .75rem; line-height: 1.6; }
-h3 .ko, h4 .ko { font-family: "Noto Sans KR", sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; letter-spacing: 0; text-shadow: none; }
-h4 { margin: 0 0 8px; font-family: "Press Start 2P", monospace; font-size: .7rem; color: var(--hud-yellow); }
+h2 { margin: 0 0 20px; font-family: "NeoDunggeunmo", sans-serif; font-weight: 400; font-size: 2rem; color: #fff; text-shadow: 2px 2px 0 #000; letter-spacing: .5px; }
+html[lang="en"] h2 { font-family: "NeoDunggeunmo", monospace; font-size: 1.1rem; line-height: 1.6; }
+h3 { margin: 24px 0 10px; color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: .75rem; line-height: 1.6; }
+h3 .ko, h4 .ko { font-family: "NeoDunggeunmo", sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; letter-spacing: 0; text-shadow: none; }
+h4 { margin: 0 0 8px; font-family: "NeoDunggeunmo", monospace; font-size: .7rem; color: var(--hud-yellow); }
 .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .card { background: var(--panel); border: 3px solid var(--panel-line); box-shadow: 5px 5px 0 rgba(0,0,0,.6); padding: 20px; }
 .card h3 { margin-top: 0; }
@@ -93,7 +94,7 @@ h4 { margin: 0 0 8px; font-family: "Press Start 2P", monospace; font-size: .7rem
 .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; background: var(--panel); border: 3px solid var(--panel-line); box-shadow: 5px 5px 0 rgba(0,0,0,.6); }
 .steps li { position: relative; padding: 16px 18px 16px 74px; border-bottom: 2px dashed rgba(255,255,255,.18); }
 .steps li:last-child { border-bottom: 0; }
-.steps li::before { counter-increment: s; content: counter(s) "P"; position: absolute; left: 16px; top: 14px; padding: 8px 6px; font-family: "Press Start 2P", monospace; font-size: .65rem; color: #fff; background: var(--p1); text-shadow: 1px 1px 0 #000; }
+.steps li::before { counter-increment: s; content: counter(s) "P"; position: absolute; left: 16px; top: 14px; padding: 8px 6px; font-family: "NeoDunggeunmo", monospace; font-size: .65rem; color: #fff; background: var(--p1); text-shadow: 1px 1px 0 #000; }
 .steps li:nth-child(2)::before { background: var(--p2); }
 .steps li:nth-child(3)::before { background: var(--p3); color: #000; text-shadow: none; }
 .steps li:nth-child(4)::before { background: var(--p4); color: #000; text-shadow: none; }
@@ -103,7 +104,7 @@ table { width: 100%; border-collapse: collapse; margin: 12px 0; background: var(
 th, td { text-align: left; padding: 10px 12px; border-bottom: 2px dashed rgba(255,255,255,.18); vertical-align: top; }
 tr:last-child th, tr:last-child td { border-bottom: 0; }
 th { color: var(--hud-yellow); white-space: nowrap; }
-kbd { background: #fff; color: #000; border: 2px solid #000; box-shadow: 2px 2px 0 #000; padding: 1px 7px; font-family: "Press Start 2P", monospace; font-size: .6rem; }
+kbd { background: #fff; color: #000; border: 2px solid #000; box-shadow: 2px 2px 0 #000; padding: 1px 7px; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; }
 code { font-family: Consolas, monospace; background: rgba(0,0,0,.5); padding: 1px 6px; color: var(--hud-yellow); }
 footer { padding: 28px 0 60px; color: var(--muted); font-size: .9rem; background: var(--hud); border-top: 4px solid var(--line); margin-top: 30px; }
 footer .container { display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
@@ -115,11 +116,11 @@ footer .container { display: flex; gap: 16px; flex-wrap: wrap; justify-content: 
 .money { font-size: 1.05rem; padding-left: 20px; }
 .money li { margin: 6px 0; }
 .flags { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 22px; }
-.flags .chip { display: flex; align-items: center; gap: 6px; background: var(--hud); border: 2px solid #fff; box-shadow: 3px 3px 0 #000; padding: 4px 8px 4px 4px; font-family: "Press Start 2P", monospace; font-size: .55rem; color: #fff; }
+.flags .chip { display: flex; align-items: center; gap: 6px; background: var(--hud); border: 2px solid #fff; box-shadow: 3px 3px 0 #000; padding: 4px 8px 4px 4px; font-family: "NeoDunggeunmo", monospace; font-size: .55rem; color: #fff; }
 .flags .chip .flag { width: 26px; height: 18px; border: 1px solid #fff; box-shadow: none; }
 
 /* "Press Start 2P" has no Hangul: Korean text inside pixel elements uses the arcade display font instead */
-.brand .ko, .badge .ko, .btn .ko, .scoreboard .ko { font-family: "Black Han Sans", sans-serif; font-size: 1.5em; letter-spacing: 1px; line-height: 1.2; }
+.brand .ko, .badge .ko, .btn .ko, .scoreboard .ko { font-family: "NeoDunggeunmo", sans-serif; font-size: 1.5em; letter-spacing: 1px; line-height: 1.2; }
 .brand .ko { font-size: 1.35rem; }
 .btn .ko { display: inline-block; vertical-align: middle; }
 @media (max-width: 720px) { header.top { position: static; } }
@@ -129,3 +130,26 @@ footer { margin-top: auto; }
 .btn.soon { background: #444; color: #ddd; border-color: #888; box-shadow: 5px 5px 0 #000; cursor: default; }
 .btn.soon:hover { transform: none; }
 
+
+/* ---- NeoDunggeunmo sizing: the pixel face is a 16px grid, so sizes that used to be tuned for
+   Press Start 2P (tiny) and Black Han Sans (huge) are re-set here. Korean and Latin now share one font. */
+body { font-size: 20px; line-height: 1.6; }
+.brand { font-size: 1.25rem; } .brand .ko { font-size: 1.25rem; letter-spacing: 0; }
+nav.menu a { font-size: 1.05rem; }
+.langbtn { font: 1rem "NeoDunggeunmo", sans-serif; }
+.badge { font-size: .95rem; } .badge .ko { font-size: 1em; letter-spacing: 0; }
+.hero h1 { font-size: 3rem; line-height: 1.2; letter-spacing: 0; }
+html[lang="en"] .hero h1 { font-size: 2.8rem; line-height: 1.2; }
+.hero p.lead { font-size: 1.15rem; }
+.scoreboard .abbr { font-size: 1rem; } .scoreboard .digits { font-size: 2.4rem; } .scoreboard .vs { font-size: 1.3rem; }
+.scoreboard .time { font-size: 1rem; } .scoreboard .time b { font-size: 1.6rem; }
+.mark { font-size: .95rem; }
+.btn { font-size: 1.15rem; padding: 12px 22px; } .btn .ko { font-size: 1em; letter-spacing: 0; }
+h2 { font-size: 2.1rem; letter-spacing: 0; } html[lang="en"] h2 { font-size: 2.1rem; line-height: 1.3; }
+h3 { font-size: 1.3rem; line-height: 1.4; } h3 .ko, h4 .ko { font-size: 1em; }
+h4 { font-size: 1.1rem; }
+.steps li::before { font-size: 1rem; padding: 6px 6px; }
+kbd { font-size: .95rem; }
+.flags .chip { font-size: .9rem; }
+.scoreboard .ko { font-size: 1em; letter-spacing: 0; }
+footer { font-size: 1rem; }
