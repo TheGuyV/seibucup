@@ -153,3 +153,7 @@ kbd { font-size: .95rem; }
 .flags .chip { font-size: .9rem; }
 .scoreboard .ko { font-size: 1em; letter-spacing: 0; }
 footer { font-size: 1rem; }
+
+/* donate page message */
+.msg { max-width: 640px; margin: 0 0 28px; background: var(--panel); border: 3px solid var(--panel-line); box-shadow: 5px 5px 0 rgba(0,0,0,.6); padding: 18px 20px; }
+.msg p { margin: 0 0 12px; } .msg p:last-child { margin-bottom: 0; }
