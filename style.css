@@ -126,3 +126,5 @@ footer .container { display: flex; gap: 16px; flex-wrap: wrap; justify-content: 
 /* short pages: keep the footer at the bottom */
 body { min-height: 100vh; display: flex; flex-direction: column; }
 footer { margin-top: auto; }
+.btn.soon { background: #444; color: #ddd; border-color: #888; box-shadow: 5px 5px 0 #000; cursor: default; }
+.btn.soon:hover { transform: none; }
