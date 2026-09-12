@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>다운로드 - Seibu Cup Soccer Online</title>
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="ball"></span><span class="ko">세이부 컵 사커 온라인</span><span class="en">Seibu Cup Soccer Online</span></a>
+    <nav class="menu">
+      <a href="index.html"><span class="ko">소개</span><span class="en">Home</span></a>
+      <a href="download.html"><span class="ko">다운로드</span><span class="en">Download</span></a>
+      <a href="guide.html"><span class="ko">플레이 방법</span><span class="en">How to play</span></a>
+      <a href="donate.html"><span class="ko">후원</span><span class="en">Support</span></a>
+      <a href="license.html"><span class="ko">라이선스</span><span class="en">License</span></a>
+    </nav>
+    <button class="langbtn" id="langbtn" onclick="toggleLang()">English</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1><span class="ko">다운로드</span><span class="en">Download</span></h1>
+    <p class="lead"><span class="ko">필요한 것은 세 가지입니다: 넷플레이 런처, 공식 MAME, 그리고 본인 소유의 롬.</span><span class="en">You need three things: the netplay launcher, official MAME, and your own ROM.</span></p>
+    <div class="dl-hero">
+      <div class="card">
+        <h3><span class="ko">1. 넷플레이 런처</span><span class="en">1. Netplay launcher</span></h3>
+        <p><span class="ko">Windows 10/11 (64비트). 설치 없이 압축만 풀면 됩니다. .NET 런타임 내장.</span><span class="en">Windows 10/11 (64-bit). No installer - just unzip. .NET runtime included.</span></p>
+        <p style="margin-top:14px"><a class="btn primary" href="https://github.com/TheGuyV/seibucup/releases/latest"><span class="ko">최신 버전 받기 (GitHub Releases)</span><span class="en">Get the latest release (GitHub)</span></a></p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">2. 공식 MAME</span><span class="en">2. Official MAME</span></h3>
+        <p><span class="ko">세이부 컵 사커가 정식 지원되는 <strong>MAME 0.2XX 이상</strong>을 <a href="https://www.mamedev.org/release.html">mamedev.org</a>에서 받으세요. 64비트 Windows 버전.</span><span class="en">Get <strong>MAME 0.2XX or newer</strong> (the version that supports Seibu Cup Soccer) from <a href="https://www.mamedev.org/release.html">mamedev.org</a>, 64-bit Windows build.</span></p>
+        <p style="margin-top:14px"><a class="btn" href="https://www.mamedev.org/release.html">mamedev.org</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span class="ko">설치 순서</span><span class="en">Setup</span></h2>
+    <ol class="steps">
+      <li><span class="ko">런처 zip을 원하는 폴더에 풉니다. 폴더 이름에 한글이나 공백이 있어도 됩니다.</span><span class="en">Unzip the launcher anywhere. Non-ASCII or spaces in the path are fine.</span></li>
+      <li><span class="ko">런처를 처음 실행하면 MAME 폴더를 묻습니다. 공식 MAME를 풀어 둔 폴더(<code>mame.exe</code>가 있는 곳)를 지정하세요.</span><span class="en">On first run the launcher asks for your MAME folder - point it at the folder that contains <code>mame.exe</code>.</span></li>
+      <li><span class="ko">본인이 소유한 <code>cupsoc.zip</code>을 MAME의 <code>roms</code> 폴더에 넣습니다.</span><span class="en">Copy your own <code>cupsoc.zip</code> into MAME's <code>roms</code> folder.</span></li>
+      <li><span class="ko">(선택) MAME에서 게임을 한 번 실행해 <kbd>Tab</kbd> → Input (this machine) → P1 항목에 조이스틱이나 원하는 키를 설정합니다. 넷플레이는 이 P1 설정을 그대로 씁니다.</span><span class="en">(Optional) Run the game once in MAME, press <kbd>Tab</kbd> → Input (this machine) → set your joystick or keys for P1. Netplay uses your P1 settings.</span></li>
+    </ol>
+    <div class="note">
+      <strong><span class="ko">롬(ROM)에 대하여</span><span class="en">About ROMs</span></strong><br>
+      <span class="ko">이 사이트와 런처는 게임 롬을 포함하지도, 제공하지도, 링크하지도 않습니다. 세이부 컵 사커의 저작권은 세이부 카이하츠에 있으며, 합법적으로 소유한 사본만 사용하세요.</span>
+      <span class="en">This site and the launcher do not include, provide or link to game ROMs. Seibu Cup Soccer is © Seibu Kaihatsu; use only a copy you legally own.</span>
+    </div>
+    <h3><span class="ko">시스템 요구 사항</span><span class="en">Requirements</span></h3>
+    <table>
+      <tr><th><span class="ko">운영체제</span><span class="en">OS</span></th><td>Windows 10 / 11 (x64)</td></tr>
+      <tr><th><span class="ko">네트워크</span><span class="en">Network</span></th><td><span class="ko">포트포워딩 불필요. 게임 서버까지 핑 100 ms 이하 권장(방마다 제한이 있을 수 있음).</span><span class="en">No port forwarding needed. Ping to the game server under 100 ms recommended (rooms may enforce a limit).</span></td></tr>
+      <tr><th><span class="ko">조작</span><span class="en">Controls</span></th><td><span class="ko">키보드 또는 MAME가 인식하는 모든 조이스틱/패드</span><span class="en">Keyboard or any joystick/pad MAME recognises</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div><span class="ko">Seibu Cup Soccer © 1992 Seibu Kaihatsu. 팬 프로젝트, 공식 관계 없음.</span><span class="en">Seibu Cup Soccer © 1992 Seibu Kaihatsu. Fan project, not affiliated.</span></div>
+    <div><a href="license.html"><span class="ko">라이선스 · 크레딧</span><span class="en">License · Credits</span></a></div>
+  </div>
+</footer>
+</body>
+</html>

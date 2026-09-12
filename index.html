@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seibu Cup Soccer Online - 세이부 컵 사커 온라인 대전</title>
+<meta name="description" content="1992년 아케이드 축구 게임 세이부 컵 사커를 MAME로 친구와 온라인 대전. 무료, 비영리 팬 프로젝트.">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="ball"></span><span class="ko">세이부 컵 사커 온라인</span><span class="en">Seibu Cup Soccer Online</span></a>
+    <nav class="menu">
+      <a href="index.html"><span class="ko">소개</span><span class="en">Home</span></a>
+      <a href="download.html"><span class="ko">다운로드</span><span class="en">Download</span></a>
+      <a href="guide.html"><span class="ko">플레이 방법</span><span class="en">How to play</span></a>
+      <a href="donate.html"><span class="ko">후원</span><span class="en">Support</span></a>
+      <a href="license.html"><span class="ko">라이선스</span><span class="en">License</span></a>
+    </nav>
+    <button class="langbtn" id="langbtn" onclick="toggleLang()">English</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge"><span class="ko">무료 · 비영리 팬 프로젝트</span><span class="en">FREE - NON-PROFIT FAN PROJECT</span></span>
+    <div class="scoreboard">
+      <span class="mark p1">1P</span>
+      <div class="team"><span class="flag kor"></span><span class="abbr">KOR</span></div>
+      <span class="digits">00</span>
+      <span class="vs">VS</span>
+      <span class="digits">00</span>
+      <div class="team"><span class="flag bra"></span><span class="abbr">BRA</span></div>
+      <span class="mark p2">2P</span>
+      <div class="time">TIME<b>90</b></div>
+    </div>
+    <h1><span class="ko">세이부 컵 사커,<br>이제 친구와 온라인으로</span><span class="en">SEIBU CUP SOCCER<br>NOW ONLINE WITH FRIENDS</span></h1>
+    <p class="lead">
+      <span class="ko">1992년 세이부 카이하츠의 아케이드 축구 게임을 MAME로 그대로 즐기면서, 인터넷 너머의 친구와 1 vs 1 또는 2 vs 2로 대전합니다. 롤백 없이도 오락실처럼 정확한 락스텝 넷플레이.</span>
+      <span class="en">Play Seibu Kaihatsu's 1992 arcade football game in MAME, 1 vs 1 or 2 vs 2, against friends anywhere. Frame-accurate lockstep netplay - it plays exactly like the cabinet.</span>
+    </p>
+    <div class="flags"><span class="chip"><span class="flag eng"></span>ENG</span><span class="chip"><span class="flag ger"></span>GER</span><span class="chip"><span class="flag usa"></span>USA</span><span class="chip"><span class="flag jpn"></span>JPN</span><span class="chip"><span class="flag ita"></span>ITA</span><span class="chip"><span class="flag bra"></span>BRA</span><span class="chip"><span class="flag arg"></span>ARG</span><span class="chip"><span class="flag kor"></span>KOR</span><span class="chip"><span class="flag esp"></span>ESP</span><span class="chip"><span class="flag ned"></span>NED</span><span class="chip"><span class="flag fra"></span>FRA</span></div>
+    <div class="btns">
+      <a class="btn primary" href="download.html">▶ PUSH START</a>
+      <a class="btn" href="guide.html"><span class="ko">플레이 방법</span><span class="en">HOW TO PLAY</span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span class="ko">어떻게 동작하나요?</span><span class="en">How does it work?</span></h2>
+    <div class="grid">
+      <div class="card"><h3><span class="ko">정품 MAME 그대로</span><span class="en">Stock MAME</span></h3><p><span class="ko">공식 MAME에 작은 넷플레이 스크립트만 얹습니다. 에뮬레이션은 건드리지 않아 화질·속도·조작감이 평소와 같습니다.</span><span class="en">A small netplay script runs inside official MAME. Nothing about the emulation changes - same picture, speed and feel.</span></p></div>
+      <div class="card"><h3><span class="ko">락스텝 넷플레이</span><span class="en">Lockstep netplay</span></h3><p><span class="ko">양쪽 PC가 같은 프레임에 같은 입력을 적용합니다. 어긋나면 자동으로 다시 맞춥니다. 화면 우측 상단에 핑이 표시됩니다.</span><span class="en">Every PC applies the same inputs on the same frame; if they ever drift, they resync automatically. Your ping is shown on screen.</span></p></div>
+      <div class="card"><h3><span class="ko">방 만들고 들어가기</span><span class="en">Rooms</span></h3><p><span class="ko">런처에서 닉네임만 넣고 접속. 방 목록에서 고르거나 새 방을 만듭니다. 1 vs 1, 2 vs 2, 핑 제한, 비밀번호 방.</span><span class="en">Enter a nickname and connect. Pick a room or create one: 1 vs 1, 2 vs 2, ping limits, private rooms.</span></p></div>
+      <div class="card"><h3><span class="ko">2 vs 2 자동 팀 구성</span><span class="en">2 vs 2 made easy</span></h3><p><span class="ko">코인·스타트·팀 합류를 런처가 자동으로 처리합니다. 1P와 3P는 나라를 고르기만 하면 됩니다.</span><span class="en">Coins, starts and team joins are automatic; players 1 and 3 just pick their countries.</span></p></div>
+      <div class="card"><h3><span class="ko">내 조작 설정 그대로</span><span class="en">Your own controls</span></h3><p><span class="ko">MAME에 설정한 P1 키·조이스틱을 몇 번째 플레이어든 그대로 씁니다. 코인 5, 스타트 1 - 모두 똑같이.</span><span class="en">Your P1 keys or joystick work whichever seat you get. Coin 5, start 1 - the same for everyone.</span></p></div>
+      <div class="card"><h3><span class="ko">4개 언어 · 다크 모드</span><span class="en">4 languages · dark mode</span></h3><p><span class="ko">한국어 · English · 日本語 · 中文, 라이트/다크/시스템 테마.</span><span class="en">Korean · English · Japanese · Chinese, light / dark / system themes.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span class="ko">시작하기</span><span class="en">Getting started</span></h2>
+    <ol class="steps">
+      <li><span class="ko"><a href="download.html">다운로드</a> 페이지에서 런처를 받고, 공식 MAME를 설치합니다.</span><span class="en">Get the launcher from the <a href="download.html">Download</a> page and install official MAME.</span></li>
+      <li><span class="ko">본인이 소유한 <code>cupsoc.zip</code> 롬을 MAME의 <code>roms</code> 폴더에 넣습니다. (롬은 제공하지 않습니다.)</span><span class="en">Put your own <code>cupsoc.zip</code> ROM into MAME's <code>roms</code> folder. (We do not provide ROMs.)</span></li>
+      <li><span class="ko">런처를 열고 닉네임을 입력한 뒤 "접속". 방을 고르거나 만들고, 친구가 들어오면 "게임 시작".</span><span class="en">Open the launcher, enter a nickname, press Connect. Pick or create a room; when your friends are in, press Start game.</span></li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div><span class="ko">Seibu Cup Soccer © 1992 Seibu Kaihatsu. 이 사이트는 팬 프로젝트이며 세이부 카이하츠·MAME 팀과 무관합니다.</span><span class="en">Seibu Cup Soccer © 1992 Seibu Kaihatsu. This is a fan project, not affiliated with Seibu Kaihatsu or the MAME team.</span></div>
+    <div><a href="license.html"><span class="ko">라이선스 · 크레딧</span><span class="en">License · Credits</span></a></div>
+  </div>
+</footer>
+</body>
+</html>

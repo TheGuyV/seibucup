@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>플레이 방법 - Seibu Cup Soccer Online</title>
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="ball"></span><span class="ko">세이부 컵 사커 온라인</span><span class="en">Seibu Cup Soccer Online</span></a>
+    <nav class="menu">
+      <a href="index.html"><span class="ko">소개</span><span class="en">Home</span></a>
+      <a href="download.html"><span class="ko">다운로드</span><span class="en">Download</span></a>
+      <a href="guide.html"><span class="ko">플레이 방법</span><span class="en">How to play</span></a>
+      <a href="donate.html"><span class="ko">후원</span><span class="en">Support</span></a>
+      <a href="license.html"><span class="ko">라이선스</span><span class="en">License</span></a>
+    </nav>
+    <button class="langbtn" id="langbtn" onclick="toggleLang()">English</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1><span class="ko">플레이 방법</span><span class="en">How to play</span></h1>
+    <p class="lead"><span class="ko">접속부터 경기 시작까지 1분이면 됩니다.</span><span class="en">From connecting to kick-off in about a minute.</span></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2><span class="ko">방에 들어가기</span><span class="en">Joining a room</span></h2>
+    <ol class="steps">
+      <li><span class="ko">런처를 열고 <strong>닉네임</strong>을 입력한 뒤 <strong>접속</strong>을 누릅니다. 게임 서버는 자동으로 연결됩니다.</span><span class="en">Open the launcher, type a <strong>nickname</strong>, press <strong>Connect</strong>. The game server is chosen automatically.</span></li>
+      <li><span class="ko">방 목록에서 방을 골라 <strong>참가</strong>(더블클릭도 됨)하거나, <strong>방 만들기</strong>로 새 방을 엽니다. 방이 하나도 없으면 자동으로 하나 만들어 줍니다.</span><span class="en">Pick a room and press <strong>Join</strong> (or double-click), or press <strong>Create room</strong>. If there are no rooms yet, one is created for you.</span></li>
+      <li><span class="ko">방장(1P)이 <strong>게임 시작</strong>을 누르면 모두의 MAME가 자동으로 뜹니다. 화면 위에 "NETPLAY: …" 안내가 사라지면 동기화 완료입니다.</span><span class="en">When the host (1P) presses <strong>Start game</strong>, MAME opens for everybody. Once the "NETPLAY: …" line at the top disappears, you are in sync.</span></li>
+    </ol>
+
+    <h3><span class="ko">방 종류와 옵션 (방장이 정함)</span><span class="en">Room types and options (set by the host)</span></h3>
+    <table>
+      <tr><th>1 vs 1</th><td><span class="ko">2명. 방장이 혼자 CPU와 시작할 수도 있습니다.</span><span class="en">Two players. The host may also start alone against the CPU.</span></td></tr>
+      <tr><th>2 vs 2</th><td><span class="ko">4명이 다 들어와야 시작합니다. 팀은 <strong>1P+2P 대 3P+4P</strong>.</span><span class="en">Starts only with all four in. Teams are <strong>1P+2P vs 3P+4P</strong>.</span></td></tr>
+      <tr><th><span class="ko">핑 제한</span><span class="en">Ping limit</span></th><td><span class="ko">참가할 때 3초간 핑을 재고, <em>내 핑 + 방장 핑</em>이 제한(기본 100 ms)을 넘으면 들어갈 수 없습니다. 핑이 높으면 경기가 늦게 반응하기 때문입니다.</span><span class="en">Joining measures your ping for 3 seconds; if <em>your ping + the host's ping</em> exceeds the limit (default 100 ms) you cannot join - high latency makes the match feel sluggish.</span></td></tr>
+      <tr><th><span class="ko">비밀번호</span><span class="en">Password</span></th><td><span class="ko">1~4자. 비공개 방에 들어갈 때 물어봅니다. 비워 두면 공개방.</span><span class="en">1-4 characters, asked when joining a private room. Leave it blank for a public room.</span></td></tr>
+    </table>
+
+    <h2><span class="ko">2 vs 2에서 누가 뭘 하나요?</span><span class="en">Who does what in 2 vs 2?</span></h2>
+    <div class="team">
+      <div class="side a"><h4><span class="ko">팀 A (왼쪽)</span><span class="en">Team A (left)</span></h4><span class="ko"><strong>1P</strong>가 나라를 고릅니다. <strong>2P</strong>는 경기가 시작되면 자동으로 같은 팀에 합류합니다.</span><span class="en"><strong>1P</strong> picks the country. <strong>2P</strong> joins the team automatically once the match starts.</span></div>
+      <div class="side b"><h4><span class="ko">팀 B (오른쪽)</span><span class="en">Team B (right)</span></h4><span class="ko"><strong>3P</strong>가 나라를 고릅니다. <strong>4P</strong>는 자동으로 합류합니다.</span><span class="en"><strong>3P</strong> picks the country. <strong>4P</strong> joins automatically.</span></div>
+    </div>
+    <p style="color:var(--muted)"><span class="ko">코인과 스타트도 자동입니다. 게임 화면의 플레이어 번호는 기판 기준이라 2P는 자기 선수에 "3P" 표시가 보입니다 - 정상입니다.</span><span class="en">Coins and starts are automatic too. On-screen player numbers follow the arcade board, so seat 2P sees a "3P" marker on their player - that is normal.</span></p>
+
+    <h2><span class="ko">조작</span><span class="en">Controls</span></h2>
+    <table>
+      <tr><th><span class="ko">이동</span><span class="en">Move</span></th><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></td></tr>
+      <tr><th><span class="ko">슛</span><span class="en">Shoot</span></th><td><kbd>왼쪽 Ctrl</kbd></td></tr>
+      <tr><th><span class="ko">패스</span><span class="en">Pass</span></th><td><kbd>왼쪽 Alt</kbd></td></tr>
+      <tr><th><span class="ko">코인 / 스타트 (1 vs 1)</span><span class="en">Coin / Start (1 vs 1)</span></th><td><kbd>5</kbd> / <kbd>1</kbd> <span class="ko">- 몇 번째 플레이어든 똑같습니다</span><span class="en">- the same whichever seat you have</span></td></tr>
+    </table>
+    <p><span class="ko">MAME에서 P1 키나 조이스틱을 바꿔 두면 넷플레이에서도 그 설정을 씁니다(기본키도 함께 살아 있음).</span><span class="en">If you rebind P1 keys or a joystick in MAME, netplay uses those (the defaults stay active as well).</span></p>
+
+    <h2><span class="ko">문제가 생기면</span><span class="en">Troubleshooting</span></h2>
+    <table>
+      <tr><th><span class="ko">화면 위에 빨간 "NETPLAY ENDED: …"</span><span class="en">Red "NETPLAY ENDED: …" on screen</span></th><td><span class="ko">누가 나갔거나 연결이 끊긴 것입니다. <kbd>ESC</kbd>로 MAME를 닫으면 런처가 로비로 돌아옵니다.</span><span class="en">Somebody left or the connection dropped. Press <kbd>ESC</kbd> to close MAME; the launcher returns to the lobby.</span></td></tr>
+      <tr><th><span class="ko">경기가 자꾸 멈칫거림</span><span class="en">The match keeps stuttering</span></th><td><span class="ko">핑이 높은 것입니다. 상태줄의 핑을 확인하고, 방장이 "입력 지연"을 4~6으로 올리면 부드러워집니다.</span><span class="en">High latency. Check the ping in the status bar; the host can raise "Input delay" to 4-6 frames.</span></td></tr>
+      <tr><th><span class="ko">게임 중에는 Tab 메뉴·일시정지 금지</span><span class="en">No Tab menu or pause during a match</span></th><td><span class="ko">상대 화면이 멈춥니다. 설정은 경기 전에 해 두세요.</span><span class="en">It freezes the other players. Do your settings before the match.</span></td></tr>
+      <tr><th><span class="ko">도움 요청</span><span class="en">Asking for help</span></th><td><span class="ko">런처의 <strong>로그 복사</strong>를 눌러 내용을 붙여 넣어 주세요. 문제 원인이 거의 다 들어 있습니다.</span><span class="en">Press <strong>Copy log</strong> in the launcher and paste it - it usually contains the cause.</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div><span class="ko">Seibu Cup Soccer © 1992 Seibu Kaihatsu. 팬 프로젝트, 공식 관계 없음.</span><span class="en">Seibu Cup Soccer © 1992 Seibu Kaihatsu. Fan project, not affiliated.</span></div>
+    <div><a href="license.html"><span class="ko">라이선스 · 크레딧</span><span class="en">License · Credits</span></a></div>
+  </div>
+</footer>
+</body>
+</html>
