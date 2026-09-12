@@ -5,23 +5,22 @@
   --grass: #1f7a3c; --grass2: #1a6a33; --grass-dark: #0f3f21;
   --line: rgba(255,255,255,.85);
   --hud: #0b0d0b; --hud-yellow: #ffd23f; --hud-orange: #ff8c1a;
-  --fg: #f3f5ef; --muted: #b9c8bb; --panel: rgba(8, 24, 14, .82); --panel-line: rgba(255,255,255,.28);
+  --fg: #f6f8f2; --muted: #e2e9dd; --panel: rgba(6, 20, 12, .9); --panel-line: rgba(255,255,255,.28);
   --p1: #ff4b4b; --p2: #4b7bff; --p3: #ffd23f; --p4: #55e07a;
   --sky: #0d1b2a;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  margin: 0; color: var(--fg); line-height: 1.6;
+  margin: 0; color: var(--fg); line-height: 1.75; font-size: 17px;
   font-family: "Noto Sans KR", "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
   background:
     repeating-linear-gradient(90deg, var(--grass) 0 120px, var(--grass2) 120px 240px);
 
   position: relative;
 }
-/* faint CRT scanlines over everything */
-body::after { content: ""; pointer-events: none; position: fixed; inset: 0; z-index: 50;
-  background: repeating-linear-gradient(0deg, rgba(0,0,0,.14) 0 1px, transparent 1px 3px); }
+/* CRT scanlines removed: they broke up Hangul strokes (kept only inside the scoreboard) */
+.scoreboard { background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px); }
 a { color: var(--hud-yellow); text-decoration: none; } a:hover { text-decoration: underline; }
 .container { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
 .pixel { font-family: "Press Start 2P", monospace; letter-spacing: 0; }
@@ -46,7 +45,7 @@ nav.menu a.active, nav.menu a:hover { color: var(--hud-yellow); border-bottom-co
 .hero .container { position: relative; z-index: 1; }
 .hero h1 { margin: 0 0 14px; font-family: "Black Han Sans", "Press Start 2P", sans-serif; font-weight: 400; font-size: 3rem; line-height: 1.15; color: #fff; text-shadow: 4px 4px 0 #000, 0 0 18px rgba(0,0,0,.4); }
 html[lang="en"] .hero h1 { font-family: "Press Start 2P", monospace; font-size: 1.7rem; line-height: 1.5; }
-.hero p.lead { font-size: 1.15rem; color: #fff; max-width: 640px; margin: 0 0 26px; text-shadow: 1px 1px 0 #000; background: rgba(0,0,0,.35); padding: 12px 14px; border-left: 4px solid var(--hud-yellow); }
+.hero p.lead { font-size: 1.15rem; color: #fff; max-width: 640px; margin: 0 0 26px; text-shadow: 1px 1px 0 #000; background: rgba(0,0,0,.55); padding: 14px 16px; border-left: 4px solid var(--hud-yellow); text-shadow: none; }
 .badge { display: inline-block; padding: 6px 10px; font-family: "Press Start 2P", monospace; font-size: .6rem; background: var(--hud); color: var(--hud-yellow); border: 2px solid var(--hud-yellow); margin-bottom: 16px; }
 
 /* scoreboard */
@@ -82,9 +81,10 @@ html[lang="en"] .hero h1 { font-family: "Press Start 2P", monospace; font-size: 
 
 /* ---- sections */
 section { padding: 40px 0; }
-h2 { margin: 0 0 20px; font-family: "Black Han Sans", sans-serif; font-weight: 400; font-size: 2rem; color: #fff; text-shadow: 3px 3px 0 #000; }
+h2 { margin: 0 0 20px; font-family: "Black Han Sans", sans-serif; font-weight: 400; font-size: 2rem; color: #fff; text-shadow: 2px 2px 0 #000; letter-spacing: .5px; }
 html[lang="en"] h2 { font-family: "Press Start 2P", monospace; font-size: 1.1rem; line-height: 1.6; }
 h3 { margin: 24px 0 10px; color: var(--hud-yellow); font-family: "Press Start 2P", monospace; font-size: .75rem; line-height: 1.6; }
+h3 .ko, h4 .ko { font-family: "Noto Sans KR", sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; letter-spacing: 0; text-shadow: none; }
 h4 { margin: 0 0 8px; font-family: "Press Start 2P", monospace; font-size: .7rem; color: var(--hud-yellow); }
 .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .card { background: var(--panel); border: 3px solid var(--panel-line); box-shadow: 5px 5px 0 rgba(0,0,0,.6); padding: 20px; }
@@ -119,7 +119,7 @@ footer .container { display: flex; gap: 16px; flex-wrap: wrap; justify-content: 
 .flags .chip .flag { width: 26px; height: 18px; border: 1px solid #fff; box-shadow: none; }
 
 /* "Press Start 2P" has no Hangul: Korean text inside pixel elements uses the arcade display font instead */
-.brand .ko, .badge .ko, h3 .ko, h4 .ko, .btn .ko, .scoreboard .ko { font-family: "Black Han Sans", sans-serif; font-size: 1.5em; letter-spacing: 1px; line-height: 1.2; }
+.brand .ko, .badge .ko, .btn .ko, .scoreboard .ko { font-family: "Black Han Sans", sans-serif; font-size: 1.5em; letter-spacing: 1px; line-height: 1.2; }
 .brand .ko { font-size: 1.35rem; }
 .btn .ko { display: inline-block; vertical-align: middle; }
 @media (max-width: 720px) { header.top { position: static; } }
