@@ -14,8 +14,30 @@
     try { localStorage.setItem("lang", next); } catch (e) {}
     apply();
   };
+  // phones / tablets: say up front that the game itself runs on a Windows PC (this site is only the guide there)
+  function isMobile() {
+    var ua = navigator.userAgent || "";
+    if (/Android|iPhone|iPad|iPod|Mobile|Windows Phone/i.test(ua)) return true;
+    return (navigator.maxTouchPoints || 0) > 1 && Math.min(screen.width, screen.height) < 900;   // iPadOS in desktop mode
+  }
+  function pcNote() {
+    var hidden = false;
+    try { hidden = sessionStorage.getItem("pcnote") === "1"; } catch (e) {}
+    if (hidden || !isMobile()) return;
+    var d = document.createElement("div");
+    d.className = "pcnote";
+    d.innerHTML = '<span class="ko">이 게임은 <strong>Windows PC</strong>에서 작동합니다. 휴대폰·태블릿에서는 안내만 볼 수 있으니, 런처는 PC에서 내려받아 주세요.</span>' +
+                  '<span class="en">This game runs on a <strong>Windows PC</strong>. On a phone or tablet you can only read the guide - download the launcher on your PC.</span>' +
+                  '<button type="button" class="pcnote-x" aria-label="close">×</button>';
+    d.querySelector(".pcnote-x").onclick = function () {
+      d.parentNode.removeChild(d);
+      try { sessionStorage.setItem("pcnote", "1"); } catch (e) {}
+    };
+    document.body.insertBefore(d, document.body.firstChild);
+  }
   document.addEventListener("DOMContentLoaded", function () {
     apply();
+    pcNote();
     var here = location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("nav.menu a").forEach(function (a) {
       if (a.getAttribute("href") === here) a.classList.add("active");
