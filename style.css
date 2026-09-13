@@ -32,7 +32,7 @@ html[lang="en"] .ko { display: none !important; }
 header.top { position: sticky; top: 0; z-index: 10; background: var(--hud); border-bottom: 3px solid var(--hud-yellow); box-shadow: 0 4px 0 #000; }
 header.top .container { display: flex; align-items: center; gap: 14px 18px; min-height: 62px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: .72rem; text-shadow: 2px 2px 0 #000; }
-.brand .ball { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #111; background: radial-gradient(circle at 35% 35%, #fff 0 30%, #222 31% 38%, #fff 39% 60%, #222 61% 68%, #fff 69%); box-shadow: 0 0 0 2px #fff; }
+.brand .ball { width: 30px; height: 30px; flex: none; background: url("ball.png") center / contain no-repeat; }
 nav.menu { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; }
 nav.menu a { padding: 8px 12px; color: #fff; font-weight: 700; border-bottom: 3px solid transparent; }
 nav.menu a.active, nav.menu a:hover { color: var(--hud-yellow); border-bottom-color: var(--hud-yellow); text-decoration: none; }
