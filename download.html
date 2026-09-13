@@ -73,6 +73,29 @@
 
 <section>
   <div class="container">
+    <h2><span class="ko">MAME 직접 빌드 (COP3 패치)</span><span class="en">Build your own MAME (COP3 patch)</span></h2>
+    <p><span class="ko">공식 MAME는 아직 이 게임의 보호칩(SEI300 / COP3)을 제대로 흉내 내지 못해 경기가 진행되지 않습니다. 정식 지원 전까지는 아래 패치 키트로 <strong>각자 자기 PC에서</strong> 고쳐진 MAME를 만들어 쓰세요. 실행 파일은 제공하지 않고, 필요한 도구(컴파일러, MAME 소스)를 키트가 스스로 내려받아 빌드한 뒤 스스로 지웁니다. 더블클릭 한 번, 5~40분, 여유 공간 6 GB.</span><span class="en">Official MAME still cannot emulate this game's protection chip (SEI300 / COP3), so matches do not run. Until it is supported, use the kit below to build a fixed MAME <strong>on your own PC</strong>. No executable is distributed: the kit downloads the tools (compiler, MAME source) by itself, builds, and cleans up after itself. One double-click, 5-40 minutes, 6 GB of free space.</span></p>
+    <div class="dl-hero">
+      <div class="card">
+        <h3><span class="ko">패치 키트</span><span class="en">Patch kit</span></h3>
+        <p><span class="ko">압축을 풀어 <code>setup_mame.cmd</code>를 실행하면 끝입니다. 넷플레이 패키지 폴더 안에 풀면 <code>bin\mame.exe</code>가 바로 제자리에 놓입니다. Windows 10/11 64비트, 공백·한글이 없는 경로(예: <code>C:\seibucup</code>).</span><span class="en">Unzip and run <code>setup_mame.cmd</code>. Unzipped inside the netplay package folder, it puts <code>bin\mame.exe</code> straight in place. Windows 10/11 64-bit, a path without spaces or non-English characters (e.g. <code>C:\seibucup</code>).</span></p>
+        <p style="margin-top:14px"><a class="btn primary" href="SeibuCup_MAME_Patch.zip"><span class="ko">패치 키트 받기 (26 KB)</span><span class="en">Get the patch kit (26 KB)</span></a></p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">무엇이 들어 있나</span><span class="en">What is inside</span></h3>
+        <p><span class="ko">실행 스크립트, 패치 적용 스크립트(MAME 0.289의 <code>seibucop</code> 파일 4개를 고침), 라이선스 전문, 크레딧, 설명서. 고친 내용은 rmonic79 님이 실제 기판으로 검증한 MiSTer 코어의 COP3 분석을 MAME로 옮긴 것입니다.</span><span class="en">The run script, the patch script (fixes four <code>seibucop</code> files of MAME 0.289), the full license text, credits and a readme. The fixes port rmonic79's hardware-verified COP3 analysis from the MiSTer core to MAME.</span></p>
+      </div>
+    </div>
+    <div class="note">
+      <strong><span class="ko">라이선스, 꼭 읽어 주세요</span><span class="en">License - please read</span></strong><br>
+      <span class="ko">패치는 <strong>GNU GPL v3</strong>입니다(MiSTer 코어의 라이선스를 따릅니다). 이걸로 만든 <code>mame.exe</code>도 GPL 프로그램이라, <strong>다른 사람에게 줄 때는 소스도 함께</strong> 줘야 합니다. exe만 따로 퍼뜨리지 말고 이 키트를 주세요. 본인이 만들어 본인만 쓰는 데에는 아무 의무가 없습니다. 게임 롬(<code>cupsoc.zip</code>)은 이 키트와도, 빌드 결과물과도 함께 배포하면 안 됩니다. 롬은 각자 합법적으로 소유한 것만 쓰세요.</span>
+      <span class="en">The patch is <strong>GNU GPL v3</strong> (following the MiSTer core's license). The <code>mame.exe</code> you build is GPL software too: <strong>if you pass it on, you must provide the source with it</strong> - hand people this kit, never the bare exe. Building it for your own use carries no obligation. The game ROM (<code>cupsoc.zip</code>) must never be bundled with the kit or with what you build; use only a copy you legally own.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
     <h2><span class="ko">시작하기</span><span class="en">Getting started</span></h2>
     <ol class="steps">
       <li><span class="ko"><a href="download.html">다운로드</a> 페이지에서 런처를 받고, 공식 MAME를 설치합니다.</span><span class="en">Get the launcher from the <a href="download.html">Download</a> page and install official MAME.</span></li>
