@@ -173,6 +173,7 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 footer { margin-top: auto; }
 .btn.soon { background: #444; color: #ddd; border-color: #888; box-shadow: 5px 5px 0 #000; cursor: default; }
 .btn.soon:hover { transform: none; }
+p.small { font-size: .85rem; color: var(--muted); margin-top: 8px; }
 
 
 /* ---- NeoDunggeunmo sizing: the pixel face is a 16px grid, so sizes that used to be tuned for
