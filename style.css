@@ -54,6 +54,26 @@ html[lang="en"] .hero h1 { font-family: "NeoDunggeunmo", monospace; font-size: 1
 .badge { display: inline-block; padding: 6px 10px; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; background: var(--hud); color: var(--hud-yellow); border: 2px solid var(--hud-yellow); margin-bottom: 16px; }
 
 /* scoreboard */
+.scoreboard { position: relative; }
+.scoreboard .digits { min-width: 1.2em; text-align: center; }
+.scoreboard .digits.pop { animation: sb-pop .55s ease-out; }
+@keyframes sb-pop { 0% { transform: scale(1); } 35% { transform: scale(1.5); color: #fff; } 100% { transform: scale(1); } }
+.scoreboard .time b.low { color: #ff4a4a; text-shadow: 0 0 10px rgba(255,74,74,.8); animation: sb-blink 1s steps(2, start) infinite; }
+@keyframes sb-blink { to { visibility: hidden; } }
+.scoreboard .team.win .abbr { color: var(--hud-yellow); text-shadow: 0 0 8px rgba(255,210,63,.8); }
+.scoreboard .team.win .flag { box-shadow: 0 0 0 2px var(--hud-yellow), 2px 2px 0 #000; }
+.scoreboard .mark { white-space: nowrap; }
+.scoreboard .status { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; margin-top: 4px; padding-top: 10px; border-top: 2px solid #333; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; color: #bbb; }
+.scoreboard .status .net { color: var(--hud-yellow); letter-spacing: 1px; }
+.scoreboard .status .net::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #3cff6a; box-shadow: 0 0 6px #3cff6a; margin-right: 6px; vertical-align: middle; animation: sb-pulse 2s ease-in-out infinite; }
+@keyframes sb-pulse { 50% { opacity: .35; } }
+.scoreboard .status .pl.a { color: var(--p1); } .scoreboard .status .pl.b { color: var(--p2); }
+.scoreboard .status b { font-weight: 400; color: #fff; }
+.scoreboard .status b.ok { color: #7dff9a; } .scoreboard .status b.warn { color: var(--hud-yellow); } .scoreboard .status b.bad { color: #ff6a6a; }
+.scoreboard .flash { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.78); color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: 1.6rem; letter-spacing: 2px; text-shadow: 4px 4px 0 #000; pointer-events: none; z-index: 2; }
+.scoreboard .flash.zoom { animation: sb-zoom .45s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes sb-zoom { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .scoreboard .digits.pop, .scoreboard .time b.low, .scoreboard .status .net::before, .scoreboard .flash.zoom { animation: none; } }
 .scoreboard { display: inline-flex; align-items: center; gap: 18px; background: var(--hud); border: 3px solid #fff; box-shadow: 6px 6px 0 #000; padding: 14px 22px; margin: 0 0 26px; flex-wrap: wrap; }
 .scoreboard .team { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .scoreboard .flag { width: 44px; height: 30px; border: 2px solid #fff; box-shadow: 2px 2px 0 #000; }
@@ -147,6 +167,7 @@ html[lang="en"] .hero h1 { font-size: 2.8rem; line-height: 1.2; }
 .hero p.lead { font-size: 1.15rem; }
 .scoreboard .abbr { font-size: 1rem; } .scoreboard .digits { font-size: 2.4rem; } .scoreboard .vs { font-size: 1.3rem; }
 .scoreboard .time { font-size: 1rem; } .scoreboard .time b { font-size: 1.6rem; }
+.scoreboard .status { font-size: .95rem; } .scoreboard .flash { font-size: 2.4rem; }
 .mark { font-size: .95rem; }
 .btn { font-size: 1.15rem; padding: 12px 22px; } .btn .ko { font-size: 1em; letter-spacing: 0; }
 h2 { font-size: 2.1rem; letter-spacing: 0; } html[lang="en"] h2 { font-size: 2.1rem; line-height: 1.3; }

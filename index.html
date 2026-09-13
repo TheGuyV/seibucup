@@ -27,15 +27,17 @@
 <section class="hero">
   <div class="container">
     <span class="badge"><span class="ko">무료 · 비영리 팬 프로젝트</span><span class="en">FREE - NON-PROFIT FAN PROJECT</span></span>
-    <div class="scoreboard">
-      <span class="mark p1">1P</span>
-      <div class="team"><span class="flag kor"></span><span class="abbr">KOR</span></div>
-      <span class="digits">00</span>
+    <div class="scoreboard" id="board" aria-hidden="true">
+      <span class="mark p1" id="markA">1P</span>
+      <div class="team" id="teamA"><span class="flag kor" id="flagA"></span><span class="abbr" id="abbrA">KOR</span></div>
+      <span class="digits" id="scoreA">0</span>
       <span class="vs">VS</span>
-      <span class="digits">00</span>
-      <div class="team"><span class="flag bra"></span><span class="abbr">BRA</span></div>
-      <span class="mark p2">2P</span>
-      <div class="time">TIME<b>90</b></div>
+      <span class="digits" id="scoreB">0</span>
+      <div class="team" id="teamB"><span class="flag bra" id="flagB"></span><span class="abbr" id="abbrB">BRA</span></div>
+      <span class="mark p2" id="markB">2P</span>
+      <div class="time">TIME<b id="clock">2:30</b></div>
+      <div class="status" id="status"><span class="net">NETPLAY</span></div>
+      <div class="flash" id="flash" hidden>KICK OFF</div>
     </div>
     <h1><span class="ko">세이부 컵 사커,<br>이제 전 세계 어디에서든 온라인으로</span><span class="en">SEIBU CUP SOCCER<br>NOW ONLINE, ANYWHERE IN THE WORLD</span></h1>
     <p class="lead">
@@ -84,5 +86,77 @@
     <div><a href="license.html"><span class="ko">라이선스 · 크레딧</span><span class="en">License · Credits</span></a></div>
   </div>
 </footer>
+<script>
+// The scoreboard plays an endless string of imaginary matches: two of the game's teams, a running
+// clock (the last ten seconds go red like the cabinet), goals with a flash, full time, next match.
+// Under the board a tiny HUD line shows the players' pings the way the netplay HUD does.
+(function () {
+  var board = document.getElementById("board");
+  if (!board) return;
+  var $ = function (id) { return document.getElementById(id); };
+  var TEAMS = [["KOR", "kor"], ["BRA", "bra"], ["ENG", "eng"], ["GER", "ger"], ["USA", "usa"], ["JPN", "jpn"], ["ITA", "ita"], ["ARG", "arg"], ["ESP", "esp"], ["NED", "ned"], ["FRA", "fra"]];
+  var reduce = false;
+  try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  var LEN = 150, TICK = reduce ? 1000 : 250;       // 2:30 of match time, played 4x faster (1x with reduced motion)
+  var st = { t: LEN, a: 0, b: 0, mode: "1v1", teams: [], pings: [], phase: "kickoff", hold: 0 };
+  function pick() {
+    var i = Math.floor(Math.random() * TEAMS.length), j = i;
+    while (j === i) j = Math.floor(Math.random() * TEAMS.length);
+    return [TEAMS[i], TEAMS[j]];
+  }
+  function ping() { return 8 + Math.floor(Math.random() * Math.random() * 120); }
+  function mmss(t) { return Math.floor(t / 60) + ":" + ("0" + (t % 60)).slice(-2); }
+  function flash(text, ms) {
+    var f = $("flash"); f.textContent = text; f.hidden = false;
+    f.classList.remove("zoom"); void f.offsetWidth; if (!reduce) f.classList.add("zoom");
+    clearTimeout(flash.tm); flash.tm = setTimeout(function () { f.hidden = true; }, ms);
+  }
+  function pop(el) { if (reduce) return; el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop"); }
+  function render() {
+    $("scoreA").textContent = st.a; $("scoreB").textContent = st.b;
+    var c = $("clock"); c.textContent = mmss(st.t);
+    c.classList.toggle("low", st.t <= 10 && st.phase === "play");
+  }
+  function renderStatus() {
+    var n = st.mode === "2v2" ? 4 : 2, html = '<span class="net">NETPLAY</span>';
+    for (var i = 0; i < n; i++) {
+      var p = st.pings[i], cls = p < 60 ? "ok" : p < 150 ? "warn" : "bad";
+      html += '<span class="pl ' + (i < n / 2 ? "a" : "b") + '">' + (i + 1) + 'P <b class="' + cls + '">' + p + 'ms</b> ' + (i % 2 ? "\u25C9" : "\u2328") + '</span>';
+    }
+    $("status").innerHTML = html;
+  }
+  function newMatch() {
+    st.teams = pick(); st.a = st.b = 0; st.t = LEN; st.mode = Math.random() < 0.4 ? "2v2" : "1v1";
+    st.pings = [ping(), ping(), ping(), ping()];
+    $("flagA").className = "flag " + st.teams[0][1]; $("abbrA").textContent = st.teams[0][0];
+    $("flagB").className = "flag " + st.teams[1][1]; $("abbrB").textContent = st.teams[1][0];
+    $("markA").textContent = st.mode === "2v2" ? "1P 2P" : "1P"; $("markB").textContent = st.mode === "2v2" ? "3P 4P" : "2P";
+    $("teamA").classList.remove("win"); $("teamB").classList.remove("win");
+    render(); renderStatus();
+    st.phase = "kickoff"; st.hold = Math.round(1800 / TICK);
+    flash("KICK OFF", 1600);
+  }
+  function tick() {
+    if (document.hidden) return;
+    if (st.phase === "kickoff") { if (--st.hold <= 0) st.phase = "play"; return; }
+    if (st.phase === "fulltime") { if (--st.hold <= 0) newMatch(); return; }
+    st.t--;
+    if (st.t % 8 === 0) { for (var i = 0; i < 4; i++) st.pings[i] = Math.max(5, st.pings[i] + Math.floor(Math.random() * 21) - 10); renderStatus(); }
+    if (Math.random() < 1 / 110 && st.t > 2) {
+      var home = Math.random() < 0.5;
+      if (home) { st.a++; pop($("scoreA")); } else { st.b++; pop($("scoreB")); }
+      flash("GOAL!  " + (home ? st.teams[0][0] : st.teams[1][0]), 1400);
+    }
+    render();
+    if (st.t <= 0) {
+      st.phase = "fulltime"; st.hold = Math.round(3200 / TICK);
+      if (st.a !== st.b) $(st.a > st.b ? "teamA" : "teamB").classList.add("win");
+      flash(st.a === st.b ? "DRAW" : "FULL TIME", 3000);
+    }
+  }
+  newMatch();
+  setInterval(tick, TICK);
+})();
+</script>
 </body>
 </html>
