@@ -33,18 +33,25 @@
   <div class="container">
     <h2><span class="ko">방에 들어가기</span><span class="en">Joining a room</span></h2>
     <ol class="steps">
-      <li><span class="ko">런처를 열고 <strong>닉네임</strong>을 입력한 뒤 <strong>접속</strong>을 누릅니다. 게임 서버는 자동으로 연결됩니다.</span><span class="en">Open the launcher, type a <strong>nickname</strong>, press <strong>Connect</strong>. The game server is chosen automatically.</span></li>
-      <li><span class="ko">방 목록에서 방을 골라 <strong>참가</strong>(더블클릭도 됨)하거나, <strong>방 만들기</strong>로 새 방을 엽니다. 방이 하나도 없으면 자동으로 하나 만들어 줍니다.</span><span class="en">Pick a room and press <strong>Join</strong> (or double-click), or press <strong>Create room</strong>. If there are no rooms yet, one is created for you.</span></li>
-      <li><span class="ko">방장(1P)이 <strong>게임 시작</strong>을 누르면 모두의 MAME가 자동으로 뜹니다. 화면 위에 "NETPLAY: …" 안내가 사라지면 동기화 완료입니다.</span><span class="en">When the host (1P) presses <strong>Start game</strong>, MAME opens for everybody. Once the "NETPLAY: …" line at the top disappears, you are in sync.</span></li>
+      <li><span class="ko">런처를 열고 <strong>닉네임</strong>을 입력한 뒤 <strong>접속</strong>을 누릅니다. 게임 서버는 자동으로 연결됩니다. 같은 닉네임이 이미 있으면 뒤에 번호가 붙습니다.</span><span class="en">Open the launcher, type a <strong>nickname</strong>, press <strong>Connect</strong>. The game server is chosen automatically. If the nickname is already in use, a number is appended.</span></li>
+      <li><span class="ko">방 목록에서 방을 골라 <strong>참가</strong>(더블클릭도 됨)하거나, <strong>방 만들기</strong>로 새 방을 엽니다. 방이 하나도 없으면 직접 하나 만들고 기다리세요. 내가 들어간 방은 목록 맨 위에 표시되고, 인원이 꽉 찬 방은 인원 수가 빨간색으로 보입니다.</span><span class="en">Pick a room and press <strong>Join</strong> (or double-click), or press <strong>Create room</strong>. If there are no rooms yet, create one and wait. Your own room is pinned to the top of the list; a full room shows its player count in red.</span></li>
+      <li><span class="ko">방 안에서는 <strong>방 채팅</strong>으로 이야기할 수 있습니다. 방장(1P)이 <strong>게임 시작</strong>을 누르면 5초 카운트다운 뒤 모두의 MAME가 자동으로 뜹니다. 화면 위의 "NETPLAY: …" 안내가 사라지면 동기화 완료입니다.</span><span class="en">Inside the room you can talk in the <strong>room chat</strong>. When the host (1P) presses <strong>Start game</strong>, a 5-second countdown runs and MAME opens for everybody. Once the "NETPLAY: …" line at the top disappears, you are in sync.</span></li>
+      <li><span class="ko">경기가 끝나면 <strong>MAME 창을 직접 닫습니다</strong>(창의 X 버튼 또는 <kbd>Alt</kbd>+<kbd>F4</kbd>). 게임 중에는 <kbd>ESC</kbd>가 막혀 있어서 종료되지 않습니다. 창을 닫으면 런처가 로비로 돌아옵니다.</span><span class="en">When the match is over, <strong>close the MAME window yourself</strong> (the window's X button or <kbd>Alt</kbd>+<kbd>F4</kbd>). <kbd>ESC</kbd> is locked during play and does not quit. Closing the window brings the launcher back to the lobby.</span></li>
     </ol>
 
     <h3><span class="ko">방 종류와 옵션 (방장이 정함)</span><span class="en">Room types and options (set by the host)</span></h3>
     <table>
       <tr><th>1 vs 1</th><td><span class="ko">2명. 방장이 혼자 CPU와 시작할 수도 있습니다.</span><span class="en">Two players. The host may also start alone against the CPU.</span></td></tr>
       <tr><th>2 vs 2</th><td><span class="ko">4명이 다 들어와야 시작합니다. 팀은 <strong>1P+2P 대 3P+4P</strong>.</span><span class="en">Starts only with all four in. Teams are <strong>1P+2P vs 3P+4P</strong>.</span></td></tr>
+      <tr><th><span class="ko">경기 시간</span><span class="en">Match time</span></th><td><span class="ko">1:00부터 10:00까지 자유롭게 고릅니다(기본 2:30). 1 vs 1이든 2 vs 2든 똑같이 됩니다. 방 목록에도 표시됩니다.</span><span class="en">Anything from 1:00 to 10:00 (default 2:30), for 1 vs 1 and 2 vs 2 alike. It is shown in the room list.</span></td></tr>
+      <tr><th><span class="ko">입력 지연</span><span class="en">Input delay</span></th><td><span class="ko">프레임 단위. 핑이 높을수록 조금 올리면(4~6) 경기가 부드러워집니다.</span><span class="en">In frames. With higher pings, raising it a little (4-6) keeps the match smooth.</span></td></tr>
       <tr><th><span class="ko">핑 제한</span><span class="en">Ping limit</span></th><td><span class="ko">참가할 때 3초간 핑을 재고, <em>내 핑 + 방장 핑</em>이 제한(기본 100 ms)을 넘으면 들어갈 수 없습니다. 핑이 높으면 경기가 늦게 반응하기 때문입니다.</span><span class="en">Joining measures your ping for 3 seconds; if <em>your ping + the host's ping</em> exceeds the limit (default 100 ms) you cannot join - high latency makes the match feel sluggish.</span></td></tr>
       <tr><th><span class="ko">비밀번호</span><span class="en">Password</span></th><td><span class="ko">1~4자. 비공개 방에 들어갈 때 물어봅니다. 비워 두면 공개방.</span><span class="en">1-4 characters, asked when joining a private room. Leave it blank for a public room.</span></td></tr>
+      <tr><th><span class="ko">강퇴 · 자리 바꾸기</span><span class="en">Kick · Swap seats</span></th><td><span class="ko">방장은 참가자 목록에서 오른쪽 클릭으로 강퇴하거나 자리(1P~4P)를 바꿀 수 있습니다.</span><span class="en">The host right-clicks a player in the list to kick them or move them to another seat (1P-4P).</span></td></tr>
     </table>
+
+    <h3><span class="ko">관전</span><span class="en">Spectating</span></h3>
+    <p><span class="ko">자리가 다 찬 방에 들어가면 <strong>관전자</strong>가 됩니다(방마다 최대 4명). 조작은 전혀 되지 않고 경기만 봅니다. 관전자는 경기 중인 플레이어의 지연에 영향을 주지 않으며, 진행 중인 경기에도 들어갈 수 있습니다. 화면 위에 "관전" 표시가 보입니다.</span><span class="en">Joining a room whose seats are all taken makes you a <strong>spectator</strong> (up to 4 per room). You have no controls at all, you just watch. Spectators never slow the players down, and you can join a match that is already running. A "watching" tag appears at the top of the screen.</span></p>
 
     <h2><span class="ko">2 vs 2에서 누가 뭘 하나요?</span><span class="en">Who does what in 2 vs 2?</span></h2>
     <div class="team">
@@ -56,18 +63,26 @@
     <h2><span class="ko">조작</span><span class="en">Controls</span></h2>
     <table>
       <tr><th><span class="ko">이동</span><span class="en">Move</span></th><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></td></tr>
-      <tr><th><span class="ko">슛</span><span class="en">Shoot</span></th><td><kbd>왼쪽 Ctrl</kbd></td></tr>
-      <tr><th><span class="ko">패스</span><span class="en">Pass</span></th><td><kbd>왼쪽 Alt</kbd></td></tr>
+      <tr><th><span class="ko">슛</span><span class="en">Shoot</span></th><td><span class="ko"><kbd>왼쪽 Ctrl</kbd></span><span class="en"><kbd>Left Ctrl</kbd></span></td></tr>
+      <tr><th><span class="ko">패스</span><span class="en">Pass</span></th><td><span class="ko"><kbd>왼쪽 Alt</kbd></span><span class="en"><kbd>Left Alt</kbd></span></td></tr>
       <tr><th><span class="ko">코인 / 스타트 (1 vs 1)</span><span class="en">Coin / Start (1 vs 1)</span></th><td><kbd>5</kbd> / <kbd>1</kbd> <span class="ko">- 몇 번째 플레이어든 똑같습니다</span><span class="en">- the same whichever seat you have</span></td></tr>
+      <tr><th><span class="ko">종료</span><span class="en">Quit</span></th><td><span class="ko">MAME 창의 X 버튼 또는 <kbd>Alt</kbd>+<kbd>F4</kbd>. <kbd>ESC</kbd>는 게임 중 막혀 있습니다.</span><span class="en">The MAME window's X button or <kbd>Alt</kbd>+<kbd>F4</kbd>. <kbd>ESC</kbd> is locked during play.</span></td></tr>
     </table>
-    <p><span class="ko">MAME에서 P1 키나 조이스틱을 바꿔 두면 넷플레이에서도 그 설정을 씁니다(기본키도 함께 살아 있음).</span><span class="en">If you rebind P1 keys or a joystick in MAME, netplay uses those (the defaults stay active as well).</span></p>
+    <p><span class="ko">MAME에서 P1 키나 조이스틱을 바꿔 두면 넷플레이에서도 그 설정을 씁니다(기본키도 함께 살아 있음). 게임 중에는 <kbd>ESC</kbd>, <kbd>Tab</kbd> 메뉴, 일시정지, 저장/불러오기 같은 MAME 단축키가 모두 잠깁니다. 다른 사람의 화면이 멈추지 않게 하기 위해서입니다.</span><span class="en">If you rebind P1 keys or a joystick in MAME, netplay uses those (the defaults stay active as well). During play, MAME's own shortcuts - <kbd>ESC</kbd>, the <kbd>Tab</kbd> menu, pause, save/load states - are all locked so nobody can freeze the other players' screens.</span></p>
+
+    <h2><span class="ko">화면 위의 표시 (HUD)</span><span class="en">On-screen display (HUD)</span></h2>
+    <p><span class="ko">경기 중 화면 맨 위 반투명 띠에 모든 플레이어의 핑(ms)이 자기 색깔로 표시되고, 키보드(⌨)인지 조이스틱(◉)인지도 보입니다. 오른쪽에는 남은 경기 시간이 분:초와 작은 막대로 나옵니다. 관전자에게는 "관전" 표시가 붙습니다.</span><span class="en">During the match a translucent band at the very top shows every player's ping (ms) in their own colour, plus whether they use a keyboard (⌨) or a joystick (◉). On the right, the remaining match time is shown as m:ss with a small bar. Spectators see a "watching" tag.</span></p>
+
+    <h2><span class="ko">방명록</span><span class="en">Guestbook</span></h2>
+    <p><span class="ko">로비 오른쪽의 <strong>방명록</strong>에 한마디 남길 수 있습니다 - 상대 구함, 인사, 건의. 모두에게 보이고 남습니다(20초에 한 줄).</span><span class="en">In the lobby, the <strong>guestbook</strong> on the right takes a line from you - looking for opponents, hello, feedback. Everybody sees it and it stays (one line every 20 seconds).</span></p>
 
     <h2><span class="ko">문제가 생기면</span><span class="en">Troubleshooting</span></h2>
     <table>
-      <tr><th><span class="ko">화면 위에 빨간 "NETPLAY ENDED: …"</span><span class="en">Red "NETPLAY ENDED: …" on screen</span></th><td><span class="ko">누가 나갔거나 연결이 끊긴 것입니다. <kbd>ESC</kbd>로 MAME를 닫으면 런처가 로비로 돌아옵니다.</span><span class="en">Somebody left or the connection dropped. Press <kbd>ESC</kbd> to close MAME; the launcher returns to the lobby.</span></td></tr>
-      <tr><th><span class="ko">경기가 자꾸 멈칫거림</span><span class="en">The match keeps stuttering</span></th><td><span class="ko">핑이 높은 것입니다. 상태줄의 핑을 확인하고, 방장이 "입력 지연"을 4~6으로 올리면 부드러워집니다.</span><span class="en">High latency. Check the ping in the status bar; the host can raise "Input delay" to 4-6 frames.</span></td></tr>
-      <tr><th><span class="ko">게임 중에는 Tab 메뉴·일시정지 금지</span><span class="en">No Tab menu or pause during a match</span></th><td><span class="ko">상대 화면이 멈춥니다. 설정은 경기 전에 해 두세요.</span><span class="en">It freezes the other players. Do your settings before the match.</span></td></tr>
-      <tr><th><span class="ko">도움 요청</span><span class="en">Asking for help</span></th><td><span class="ko">런처의 <strong>로그 복사</strong>를 눌러 내용을 붙여 넣어 주세요. 문제 원인이 거의 다 들어 있습니다.</span><span class="en">Press <strong>Copy log</strong> in the launcher and paste it - it usually contains the cause.</span></td></tr>
+      <tr><th><span class="ko">화면 위에 빨간 "NETPLAY 종료: …"</span><span class="en">Red "NETPLAY ENDED: …" on screen</span></th><td><span class="ko">누가 나갔거나 연결이 끊긴 것입니다. MAME 창을 닫으면(X 버튼 또는 <kbd>Alt</kbd>+<kbd>F4</kbd>) 런처가 로비로 돌아옵니다.</span><span class="en">Somebody left or the connection dropped. Close the MAME window (X button or <kbd>Alt</kbd>+<kbd>F4</kbd>); the launcher returns to the lobby.</span></td></tr>
+      <tr><th><span class="ko">경기가 자꾸 멈칫거림</span><span class="en">The match keeps stuttering</span></th><td><span class="ko">핑이 높은 것입니다. 화면 위 HUD의 핑을 확인하고, 방장이 "입력 지연"을 4~6으로 올리면 부드러워집니다.</span><span class="en">High latency. Check the pings in the HUD at the top; the host can raise "Input delay" to 4-6 frames.</span></td></tr>
+      <tr><th><span class="ko">ESC를 눌러도 안 닫힘</span><span class="en">ESC does not quit</span></th><td><span class="ko">정상입니다. 게임 중에는 일부러 막아 두었습니다. 창의 X 버튼이나 <kbd>Alt</kbd>+<kbd>F4</kbd>로 닫으세요.</span><span class="en">That is by design; it is locked during play. Close with the window's X button or <kbd>Alt</kbd>+<kbd>F4</kbd>.</span></td></tr>
+      <tr><th><span class="ko">파란 "PC 보호" 창 (SmartScreen)</span><span class="en">Blue "protected your PC" box (SmartScreen)</span></th><td><span class="ko">런처는 코드 서명이 없어 처음 실행할 때 뜰 수 있습니다. "추가 정보" → "실행"을 누르세요.</span><span class="en">The launcher is not code-signed, so this may appear on first run. Click "More info" and then "Run anyway".</span></td></tr>
+      <tr><th><span class="ko">도움 요청</span><span class="en">Asking for help</span></th><td><span class="ko">런처의 <strong>로그 복사</strong>를 눌러 내용을 붙여 넣어 주세요. 문제 원인이 거의 다 들어 있습니다. 런처 아래쪽의 개발자 메일 링크로 보내면 됩니다.</span><span class="en">Press <strong>Copy log</strong> in the launcher and paste it - it usually contains the cause. Send it via the developer e-mail link at the bottom of the launcher.</span></td></tr>
     </table>
   </div>
 </section>
