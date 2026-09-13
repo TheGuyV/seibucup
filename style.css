@@ -79,17 +79,36 @@ html[lang="en"] .hero h1 { font-family: "NeoDunggeunmo", monospace; font-size: 1
 .scoreboard .team { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .scoreboard .flag { width: 44px; height: 30px; border: 2px solid #fff; box-shadow: 2px 2px 0 #000; }
 /* pixel "kit" flags: three horizontal stripes per team (no emoji: Windows has no colour flags) */
-.flag.kor { background: linear-gradient(180deg, #fff 0 60%, #cd2e3a 60% 80%, #0047a0 80%); }
-.flag.bra { background: linear-gradient(180deg, #009c3b 0 30%, #ffdf00 30% 70%, #002776 70%); }
-.flag.eng { background: linear-gradient(180deg, #fff 0 40%, #ce1124 40% 60%, #fff 60%); }
-.flag.ger { background: linear-gradient(180deg, #000 0 33%, #dd0000 33% 66%, #ffce00 66%); }
-.flag.usa { background: repeating-linear-gradient(180deg, #b22234 0 5px, #fff 5px 10px); }
-.flag.jpn { background: radial-gradient(circle, #bc002d 0 8px, #fff 9px); }
-.flag.ita { background: linear-gradient(90deg, #009246 0 33%, #fff 33% 66%, #ce2b37 66%); }
-.flag.arg { background: linear-gradient(180deg, #74acdf 0 33%, #fff 33% 66%, #74acdf 66%); }
+/* flags: drawn in CSS so they scale (44x30 on the scoreboard, 26x18 in the chips). Shapes use
+   percentages of the box, so the same rule works at both sizes. */
+.flag { position: relative; overflow: hidden; display: inline-block; }
+.flag::before, .flag::after { content: ""; position: absolute; }
+/* Korea: white, taegeuk (red over blue) in the middle, the four trigrams as small black bar groups */
+.flag.kor { background:
+  repeating-linear-gradient(180deg, #000 0 20%, transparent 20% 40%) 14% 18% / 16% 26% no-repeat,
+  repeating-linear-gradient(180deg, #000 0 20%, transparent 20% 40%) 86% 18% / 16% 26% no-repeat,
+  repeating-linear-gradient(180deg, #000 0 20%, transparent 20% 40%) 14% 82% / 16% 26% no-repeat,
+  repeating-linear-gradient(180deg, #000 0 20%, transparent 20% 40%) 86% 82% / 16% 26% no-repeat,
+  radial-gradient(ellipse 19% 28% at 50% 50%, transparent 98%, #fff 100%),
+  linear-gradient(180deg, #cd2e3a 0 50%, #0047a0 50%); }
+/* Brazil: green, yellow rhombus, blue disc */
+.flag.bra { background: #009c3b; }
+.flag.bra::before { inset: 12% 10%; background: #ffdf00; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.flag.bra::after { left: 34%; top: 27%; width: 32%; height: 46%; border-radius: 50%; background: #002776; }
+/* England: St George's cross */
+.flag.eng { background: linear-gradient(#ce1124, #ce1124) 50% 0 / 20% 100% no-repeat, linear-gradient(#ce1124, #ce1124) 0 50% / 100% 22% no-repeat, #fff; }
+.flag.ger { background: linear-gradient(180deg, #000 0 33.4%, #dd0000 33.4% 66.7%, #ffce00 66.7%); }
+/* USA: 13 stripes and the blue canton (stars are below pixel size here) */
+.flag.usa { background: repeating-linear-gradient(180deg, #b22234 0 7.7%, #fff 7.7% 15.4%); }
+.flag.usa::before { left: 0; top: 0; width: 40%; height: 54%; background: #3c3b6e; }
+/* Japan: red disc */
+.flag.jpn { background: radial-gradient(ellipse 19% 30% at 50% 50%, #bc002d 98%, #fff 100%); }
+.flag.ita { background: linear-gradient(90deg, #009246 0 33.4%, #fff 33.4% 66.7%, #ce2b37 66.7%); }
+/* Argentina: light blue - white - light blue with the sun */
+.flag.arg { background: radial-gradient(ellipse 9% 14% at 50% 50%, #f6b40e 98%, transparent 100%), linear-gradient(180deg, #74acdf 0 33.4%, #fff 33.4% 66.7%, #74acdf 66.7%); }
 .flag.esp { background: linear-gradient(180deg, #aa151b 0 25%, #f1bf00 25% 75%, #aa151b 75%); }
-.flag.ned { background: linear-gradient(180deg, #ae1c28 0 33%, #fff 33% 66%, #21468b 66%); }
-.flag.fra { background: linear-gradient(90deg, #0055a4 0 33%, #fff 33% 66%, #ef4135 66%); }
+.flag.ned { background: linear-gradient(180deg, #ae1c28 0 33.4%, #fff 33.4% 66.7%, #21468b 66.7%); }
+.flag.fra { background: linear-gradient(90deg, #0055a4 0 33.4%, #fff 33.4% 66.7%, #ef4135 66.7%); }
 .scoreboard .abbr { font-family: "NeoDunggeunmo", monospace; font-size: .7rem; color: #fff; }
 .scoreboard .digits { font-family: "NeoDunggeunmo", monospace; font-size: 2rem; color: var(--hud-yellow); text-shadow: 3px 3px 0 #7a3a00; }
 .scoreboard .vs { font-family: "NeoDunggeunmo", monospace; color: var(--hud-orange); font-size: 1rem; text-shadow: 2px 2px 0 #000; }
