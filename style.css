@@ -71,6 +71,7 @@ html[lang="en"] .hero h1 { font-family: "NeoDunggeunmo", monospace; font-size: 1
 .scoreboard .status b { font-weight: 400; color: #fff; }
 .scoreboard .status b.ok { color: #7dff9a; } .scoreboard .status b.warn { color: var(--hud-yellow); } .scoreboard .status b.bad { color: #ff6a6a; }
 .scoreboard .flash { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.78); color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: 1.6rem; letter-spacing: 2px; text-shadow: 4px 4px 0 #000; pointer-events: none; z-index: 2; }
+.scoreboard .flash[hidden] { display: none; }
 .scoreboard .flash.zoom { animation: sb-zoom .45s cubic-bezier(.2, 1.6, .4, 1); }
 @keyframes sb-zoom { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .scoreboard .digits.pop, .scoreboard .time b.low, .scoreboard .status .net::before, .scoreboard .flash.zoom { animation: none; } }
