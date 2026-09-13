@@ -31,7 +31,8 @@
       <div class="card">
         <h3><span class="ko">1. 넷플레이 런처</span><span class="en">1. Netplay launcher</span></h3>
         <p><span class="ko">Windows 10/11 (64비트). 설치 없이 압축만 풀면 됩니다. .NET 런타임 내장.</span><span class="en">Windows 10/11 (64-bit). No installer - just unzip. .NET runtime included.</span></p>
-        <p style="margin-top:14px"><span class="btn soon"><span class="ko">준비 중</span><span class="en">COMING SOON</span></span></p>
+        <p style="margin-top:14px"><a class="btn primary" href="https://github.com/TheGuyV/seibucup/releases/latest/download/SeibuCupSoccer_Netplay.zip"><span class="ko">▶ 최신 버전 받기 (zip)</span><span class="en">▶ DOWNLOAD LATEST (zip)</span></a></p>
+        <p class="small"><span class="ko">현재 버전 <span id="dlver">1.2.0</span> · <a href="https://github.com/TheGuyV/seibucup/releases">모든 버전과 SHA-256 체크섬</a></span><span class="en">Current version <span id="dlver2">1.2.0</span> · <a href="https://github.com/TheGuyV/seibucup/releases">all versions and SHA-256 checksums</a></span></p>
       </div>
       <div class="card">
         <h3><span class="ko">2. 공식 MAME</span><span class="en">2. Official MAME</span></h3>
@@ -103,5 +104,10 @@
     <div><a href="license.html"><span class="ko">라이선스 · 크레딧</span><span class="en">License · Credits</span></a></div>
   </div>
 </footer>
+<script>
+fetch("version.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (v) {
+  if (v && v.version) { var a = document.getElementById("dlver"), b = document.getElementById("dlver2"); if (a) a.textContent = v.version; if (b) b.textContent = v.version; }
+}).catch(function () {});
+</script>
 </body>
 </html>
