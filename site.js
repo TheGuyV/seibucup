@@ -35,9 +35,20 @@
     };
     document.body.insertBefore(d, document.body.firstChild);
   }
+  // the download page's version number comes from version.json, which every release rewrites,
+  // so it can never quietly fall behind the actual build
+  function showVersion() {
+    var els = document.querySelectorAll("#dlver, #dlver2");
+    if (!els.length || !window.fetch) return;
+    fetch("version.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (v) {
+      if (!v || !v.version) return;
+      for (var i = 0; i < els.length; i++) els[i].textContent = v.version;
+    }).catch(function () {});
+  }
   document.addEventListener("DOMContentLoaded", function () {
     apply();
     pcNote();
+    showVersion();
     var here = location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("nav.menu a").forEach(function (a) {
       if (a.getAttribute("href") === here) a.classList.add("active");
