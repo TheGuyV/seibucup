@@ -13,7 +13,7 @@
 .results td.score { font-family: "Segoe UI", sans-serif; font-weight: 800; font-size: 1.15em; text-align: center; }
 .results td.win { color: #ffd23c; }
 .results .muted { opacity: .65; }
-@media (max-width: 640px) { .results th:nth-child(4), .results td:nth-child(4) { display: none; } }
+@media (max-width: 640px) { .results th:nth-child(5), .results td:nth-child(5) { display: none; } }
 </style>
 </head>
 <body>
@@ -35,7 +35,7 @@
 <section class="hero">
   <div class="container">
     <h1><span class="ko">경기 기록</span><span class="en">Match results</span></h1>
-    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수를 보고합니다). 최근 300경기.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher reports the final score). Last 300 matches.</span></p>
+    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수와 녹화 파일을 보냅니다). ▶ 보기를 받아 런처의 <strong>리플레이</strong> 버튼으로 열면 경기를 그대로 다시 볼 수 있습니다(같은 MAME 빌드 필요). 최근 300경기.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher sends the final score and the recording). Download a ▶ file and open it with the launcher's <strong>Replays</strong> button to watch the match again (same MAME build needed). Last 300 matches.</span></p>
   </div>
 </section>
 
@@ -50,6 +50,7 @@
         <th><span class="ko">점수</span><span class="en">Score</span></th>
         <th><span class="ko">원정 (2P)</span><span class="en">Away (2P)</span></th>
         <th><span class="ko">방식</span><span class="en">Type</span></th>
+        <th><span class="ko">리플레이</span><span class="en">Replay</span></th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -75,7 +76,8 @@
       var w1 = r.score[0] > r.score[1], w2 = r.score[1] > r.score[0];
       tr.innerHTML = '<td class="muted">' + esc(r.when) + '</td><td' + (w1 ? ' class="win"' : "") + '>' + esc(side(r, 0, 1)) + '</td>' +
                      '<td class="score">' + r.score[0] + ' - ' + r.score[1] + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
-                     '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>';
+                     '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
+                     '<td>' + (r.replay ? '<a href="' + esc(r.replay) + '" download title="런처의 리플레이 버튼으로 재생">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
       rows.appendChild(tr);
     });
     document.getElementById("tbl").hidden = false;
