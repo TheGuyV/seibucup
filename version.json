@@ -1,19 +1,19 @@
 {
-  "version": "1.4.5",
+  "version": "1.4.6",
   "url": "https://seibucup.online/download.html",
   "notes": "",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.4.5/SeibuCupNetplay.exe",
-      "sha256": "ac896a2d2ff29df7bebc9172cefd65e75eb7c7fbc877b0ad8295e9a5717a9c2a",
-      "size": 50616040
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.4.6/SeibuCupNetplay.exe",
+      "sha256": "8c06485ed5e10a92adefd68134ad980f66ba277509d4ff35ffda4ab7657232ff",
+      "size": 50620903
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.4.5/netplay.lua",
-      "sha256": "7972cd502fc83edf3370c3e194a778c46dde85d22242d2230e4c9c40d96fc9dd",
-      "size": 54875
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.4.6/netplay.lua",
+      "sha256": "16664a6456de9b2346569f19e90acd61bcfe006b7880ad4a48c81f7c663dc3bb",
+      "size": 56085
     }
   ]
 }
