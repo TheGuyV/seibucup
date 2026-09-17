@@ -1,19 +1,19 @@
 {
-  "version": "1.5.0",
+  "version": "1.5.1",
   "url": "https://seibucup.online/download.html",
-  "notes": "",
+  "notes": "Quick match = a room + waiting game; BGM pick; results/replays upload while MAME is open; CONTINUE clock fix; long HUD names",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.0/SeibuCupNetplay.exe",
-      "sha256": "29812ae5047c93f6feca0c0aa22bfa758fb78f9b23c824edfdaa5d8ef3ddab41",
-      "size": 50625188
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.1/SeibuCupNetplay.exe",
+      "sha256": "995a2702f1d771e6b0ac96c03881343f56ead07049a7b476ce8e159cba206714",
+      "size": 50623626
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.0/netplay.lua",
-      "sha256": "f017cf28b9086d49b3c15bfb3568d9bdef5e5da8494476b00f252f4740404f03",
-      "size": 65931
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.1/netplay.lua",
+      "sha256": "93f62cb5b7a2f039f9ba20b2a714f3b67d01c6facc3a1ea51b5ec1620df07f15",
+      "size": 66478
     }
   ]
 }
