@@ -67,7 +67,7 @@
 <script>
 (function () {
   function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function side(r, a, b) { var n = r.type === "2v2" ? [r.nicks[a], r.nicks[b]].filter(Boolean).join(" + ") : r.nicks[a]; return n || "CPU"; }
+  function side(r, a, b) { var n = r.type === "2v2" ? [r.nicks[a], r.nicks[b]].filter(Boolean).join(" + ") : r.nicks[a === 0 ? 0 : 1]; return n || "CPU"; }   // 1 vs 1: seats 1 and 2; 2 vs 2: 1+2 against 3+4
   fetch("results.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : []; }).then(function (list) {
     if (!list || !list.length) { document.getElementById("empty").hidden = false; return; }
     var rows = document.getElementById("rows");
