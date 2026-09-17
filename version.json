@@ -1,19 +1,19 @@
 {
-  "version": "1.5.2",
+  "version": "1.5.3",
   "url": "https://seibucup.online/download.html",
-  "notes": "Replays button was clipped off the room-list button row",
+  "notes": "Replay list showed CPU for the away player; waiting game takes keys without focus; countdown beeps in the last 10 units; CONTINUE clock; long HUD names",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.2/SeibuCupNetplay.exe",
-      "sha256": "209ea57ed55e9742f58a2d8ef91bbe2268347fb54b0d5eb625f5ae56e4c5947c",
-      "size": 50623630
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.3/SeibuCupNetplay.exe",
+      "sha256": "5ceeca3fdec087d42e2d58716c5cbbfd0edd8294e3878c81622148183ba67f09",
+      "size": 50623645
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.2/netplay.lua",
-      "sha256": "93f62cb5b7a2f039f9ba20b2a714f3b67d01c6facc3a1ea51b5ec1620df07f15",
-      "size": 66478
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.3/netplay.lua",
+      "sha256": "d699b8fb6c4f5400c23280de9191ea126363de575dab7493f580ac2a5dc61a71",
+      "size": 66939
     }
   ]
 }
