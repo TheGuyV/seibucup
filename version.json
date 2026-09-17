@@ -1,19 +1,19 @@
 {
-  "version": "1.5.3",
+  "version": "1.5.4",
   "url": "https://seibucup.online/download.html",
-  "notes": "Replay list showed CPU for the away player; waiting game takes keys without focus; countdown beeps in the last 10 units; CONTINUE clock; long HUD names",
+  "notes": "MAME build id is determined at the first connection (no match needed)",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.3/SeibuCupNetplay.exe",
-      "sha256": "5ceeca3fdec087d42e2d58716c5cbbfd0edd8294e3878c81622148183ba67f09",
-      "size": 50623645
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.4/SeibuCupNetplay.exe",
+      "sha256": "1ef3b0930655516db6facc35f93cc623bbe46769e3037a2956255620810cd331",
+      "size": 50624182
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.3/netplay.lua",
-      "sha256": "d699b8fb6c4f5400c23280de9191ea126363de575dab7493f580ac2a5dc61a71",
-      "size": 66939
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.4/netplay.lua",
+      "sha256": "18066a49065883c987a494265181a73435ff34a0d97702137b7560d2ee168f34",
+      "size": 67406
     }
   ]
 }
