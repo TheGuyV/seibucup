@@ -96,9 +96,12 @@
     var rows = document.getElementById("rows");
     list.forEach(function (r) {
       var tr = document.createElement("tr");
-      var w1 = r.score[0] > r.score[1], w2 = r.score[1] > r.score[0];
+      // "unverified": recorded before v1.5.8 read the right score bytes, and with no replay to recompute it from
+      var bad = !!r.unverified;
+      var w1 = !bad && r.score[0] > r.score[1], w2 = !bad && r.score[1] > r.score[0];
+      var sc = bad ? '<span class="muted" title="점수 기록 오류 (v1.5.8 이전) - 리플레이가 없어 복구할 수 없습니다 / score not recoverable">—</span>' : (r.score[0] + ' - ' + r.score[1]);
       tr.innerHTML = '<td class="muted">' + esc(r.when) + '</td><td' + (w1 ? ' class="win"' : "") + '>' + esc(side(r, 0, 1)) + '</td>' +
-                     '<td class="score">' + r.score[0] + ' - ' + r.score[1] + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
+                     '<td class="score">' + sc + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
                      '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
                      '<td>' + (r.replay ? '<a href="' + esc(r.replay) + '" download title="런처의 리플레이 버튼으로 재생">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
       rows.appendChild(tr);
