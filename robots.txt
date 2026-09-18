@@ -1,0 +1,5 @@
+# Everything here is public: search engines and other crawlers are welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://seibucup.online/sitemap.xml
