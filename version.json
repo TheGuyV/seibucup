@@ -1,19 +1,19 @@
 {
-  "version": "1.5.7",
+  "version": "1.5.8",
   "url": "https://seibucup.online/download.html",
-  "notes": "MAME build check at start (build 015 only, offers to build it), blinking quick-match button when somebody waits, input delay default 2",
+  "notes": "Match scores were read from the wrong memory (results were wrong) - fixed; controls no longer end up as NONE after watching a replay (repaired automatically)",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.7/SeibuCupNetplay.exe",
-      "sha256": "c9f818e45197835dd488aeca5e74e8963da2f6fc43ce9524fc2d32ca01097866",
-      "size": 50629614
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.8/SeibuCupNetplay.exe",
+      "sha256": "d0ac20b431356fb551a2b222ede04b7b09e424468e4f164b850e492b847f6b5d",
+      "size": 50630411
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.7/netplay.lua",
-      "sha256": "235b1db7718c6e23e78418f1e41307425323dac58331160870bc304caa037096",
-      "size": 68159
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.8/netplay.lua",
+      "sha256": "8ac1128509fced0669b185d2c5dc68fd93548da6985e0ac936b3ea16c9da8dac",
+      "size": 67943
     }
   ]
 }
