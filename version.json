@@ -1,17 +1,17 @@
 {
-  "version": "1.5.8",
+  "version": "1.5.9",
   "url": "https://seibucup.online/download.html",
-  "notes": "Match scores were read from the wrong memory (results were wrong) - fixed; controls no longer end up as NONE after watching a replay (repaired automatically)",
+  "notes": "The start countdown is said in the room chat instead of covering the players/chat panel",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.8/SeibuCupNetplay.exe",
-      "sha256": "d0ac20b431356fb551a2b222ede04b7b09e424468e4f164b850e492b847f6b5d",
-      "size": 50630411
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.9/SeibuCupNetplay.exe",
+      "sha256": "d9dd65e42c4432e52957eb70b67ff2e8b25a96b988cfa87ebdccf7f948909660",
+      "size": 50630082
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.8/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.9/netplay.lua",
       "sha256": "8ac1128509fced0669b185d2c5dc68fd93548da6985e0ac936b3ea16c9da8dac",
       "size": 67943
     }
