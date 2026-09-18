@@ -1,17 +1,17 @@
 {
-  "version": "1.5.6",
+  "version": "1.5.7",
   "url": "https://seibucup.online/download.html",
-  "notes": "Launch failures now say what failed (type, code, details in launcher_errors.log)",
+  "notes": "MAME build check at start (build 015 only, offers to build it), blinking quick-match button when somebody waits, input delay default 2",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.6/SeibuCupNetplay.exe",
-      "sha256": "26e7f4c1451e16bea965d48758882c11e985e00f6b1ba48f7ad1814780317173",
-      "size": 50625584
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.7/SeibuCupNetplay.exe",
+      "sha256": "c9f818e45197835dd488aeca5e74e8963da2f6fc43ce9524fc2d32ca01097866",
+      "size": 50629614
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.6/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.7/netplay.lua",
       "sha256": "235b1db7718c6e23e78418f1e41307425323dac58331160870bc304caa037096",
       "size": 68159
     }
