@@ -40,46 +40,26 @@
       <div class="card">
         <h3><span class="ko">2. 공식 MAME</span><span class="en">2. Official MAME</span></h3>
         <p><span class="ko">세이부 컵 사커의 공식 MAME 지원은 <strong>지원 예정</strong>입니다. 지원되는 버전이 나오면 mamedev.org의 64비트 Windows 버전을 그대로 쓸 수 있게 됩니다. 그때까지는 1번 패키지에 들어 있는 패치 키트로 만들어 주세요.</span><span class="en">Official MAME support for Seibu Cup Soccer is <strong>coming soon</strong>. Once a supporting version is out, the 64-bit Windows build from mamedev.org will simply work. Until then, build it with the patch kit inside package 1.</span></p>
-        <p style="margin-top:14px"><a class="btn" href="#build" onclick="return mameNotice();"><span class="ko">공식 MAME</span><span class="en">Official MAME</span></a></p>
+        <p style="margin-top:14px"><a class="btn" href="#" onclick="return mameNotice();"><span class="ko">공식 MAME</span><span class="en">Official MAME</span></a></p>
         <script>
-          // not supported yet: say so and point at the kit below - no trip to mamedev.org
+          // not supported yet: say so and point at the kit in the package - no trip to mamedev.org
           function mameNotice() {
             var ko = document.documentElement.getAttribute("lang") !== "en";
-            alert(ko ? "아직 정식지원 전입니다. 아래에서 패치 키트로 MAME.EXE를 만들어주세요."
-                     : "Official MAME does not support this game yet. Please build MAME.EXE with the patch kit below.");
-            var t = document.getElementById("build"); if (t && t.scrollIntoView) t.scrollIntoView({ behavior: "smooth", block: "start" });
+            alert(ko ? "아직 정식지원 전입니다. 1번 패키지에 들어 있는 패치 키트(build_mame.cmd)로 MAME.EXE를 만들어주세요."
+                     : "Official MAME does not support this game yet. Please build MAME.EXE with the patch kit inside package 1 (build_mame.cmd).");
             return false;
           }
         </script>
       </div>
     </div>
-  </div>
-</section>
-
-
-<section>
-  <div class="container">
-    <h2 id="build"><span class="ko">MAME 직접 빌드 (COP3 패치) - 정식 MAME 지원 전까지 제공합니다</span><span class="en">Build your own MAME (COP3 patch) - offered until official MAME support arrives</span></h2>
-    <p><span class="ko">공식 MAME는 아직 이 게임의 보호칩(SEI300 / COP3)을 제대로 흉내 내지 못해 경기가 진행되지 않습니다. 정식 지원 전까지는 아래 패치 키트로 <strong>각자 자기 PC에서</strong> 고쳐진 MAME를 만들어 쓰세요. 실행 파일은 제공하지 않고, 필요한 도구(컴파일러, MAME 소스)를 키트가 스스로 내려받아 빌드한 뒤 스스로 지웁니다. 더블클릭 한 번, 5~40분, 여유 공간 6 GB.</span><span class="en">Official MAME still cannot emulate this game's protection chip (SEI300 / COP3), so matches do not run. Until it is supported, use the kit below to build a fixed MAME <strong>on your own PC</strong>. No executable is distributed: the kit downloads the tools (compiler, MAME source) by itself, builds, and cleans up after itself. One double-click, 5-40 minutes, 6 GB of free space.</span></p>
-    <div class="dl-hero">
-      <div class="card">
-        <h3><span class="ko">패치 키트</span><span class="en">Patch kit</span></h3>
-        <p><span class="ko"><strong>위 1번 런처 패키지에 이미 들어 있습니다</strong>(<code>build_mame.cmd</code> 실행). 이미 런처를 쓰고 있어서 키트만 필요할 때 받으세요. 압축을 풀어 <code>setup_mame.cmd</code>를 실행하면 끝입니다. 넷플레이 패키지 폴더 안에 풀면 <code>bin\mame.exe</code>가 바로 제자리에 놓이고, 다른 곳에 풀었으면 끝날 때 패키지 폴더를 물어봐서 복사해 줍니다. Windows 10/11 64비트, 공백·한글이 없는 경로(예: <code>C:\seibucup</code>). <strong>관리자 권한은 필요 없습니다</strong>(시스템에 아무것도 설치하지 않음). 단, Program Files 같은 보호된 폴더에는 두지 마세요. 파란 "PC 보호" 경고가 뜨면 <strong>추가 정보 → 실행</strong>.</span><span class="en"><strong>Already included in the launcher package above</strong> (run <code>build_mame.cmd</code>); get it separately only if you already have the launcher. Unzip and run <code>setup_mame.cmd</code>. Unzipped inside the netplay package folder, it puts <code>bin\mame.exe</code> straight in place; unzipped elsewhere, it asks for the package folder at the end and copies it there. Windows 10/11 64-bit, a path without spaces or non-English characters (e.g. <code>C:\seibucup</code>). <strong>No administrator rights needed</strong> (nothing is installed system-wide); just keep it out of protected folders such as Program Files. If the blue "protected your PC" box appears: <strong>More info → Run anyway</strong>.</span></p>
-        <p style="margin-top:14px"><a class="btn primary" href="SeibuCup_MAME_Patch.zip"><span class="ko">패치 키트 받기 (26 KB)</span><span class="en">Get the patch kit (26 KB)</span></a></p>
-      </div>
-      <div class="card">
-        <h3><span class="ko">무엇이 들어 있나</span><span class="en">What is inside</span></h3>
-        <p><span class="ko">실행 스크립트, 패치 적용 스크립트(MAME 0.289의 <code>seibucop</code> 파일 4개를 고침), 라이선스 전문, 크레딧, 설명서. 고친 내용은 rmonic79 님이 실제 기판으로 검증한 MiSTer 코어의 COP3 분석을 MAME로 옮긴 것입니다.</span><span class="en">The run script, the patch script (fixes four <code>seibucop</code> files of MAME 0.289), the full license text, credits and a readme. The fixes port rmonic79's hardware-verified COP3 analysis from the MiSTer core to MAME.</span></p>
-      </div>
-    </div>
     <div class="note">
-      <strong><span class="ko">라이선스, 꼭 읽어 주세요</span><span class="en">License - please read</span></strong><br>
+      <strong><span class="ko">MAME 패치 키트와 라이선스</span><span class="en">The MAME patch kit and its license</span></strong><br>
+      <span class="ko">공식 MAME는 아직 이 게임의 보호칩(SEI300 / COP3)을 제대로 흉내 내지 못해 경기가 진행되지 않습니다. 그래서 패키지의 <code>build_mame.cmd</code>가 <strong>각자 자기 PC에서</strong> 고쳐진 MAME를 만듭니다(실행 파일은 제공하지 않습니다). 고친 내용은 rmonic79 님이 실제 기판으로 검증한 MiSTer 코어의 COP3 분석을 MAME 0.289로 옮긴 것입니다. </span><span class="en">Official MAME still cannot emulate this game's protection chip (SEI300 / COP3), so matches do not run. The package's <code>build_mame.cmd</code> therefore builds a fixed MAME <strong>on your own PC</strong> (no executable is distributed). The fixes port rmonic79's hardware-verified COP3 analysis from the MiSTer core to MAME 0.289. </span><br>
       <span class="ko">패치는 <strong>GNU GPL v3</strong>입니다(MiSTer 코어의 라이선스를 따릅니다). 이걸로 만든 <code>mame.exe</code>도 GPL 프로그램이라, <strong>다른 사람에게 줄 때는 소스도 함께</strong> 줘야 합니다. exe만 따로 퍼뜨리지 말고 이 키트를 주세요. 본인이 만들어 본인만 쓰는 데에는 아무 의무가 없습니다. 게임 롬(<code>cupsoc.zip</code>)은 이 키트와도, 빌드 결과물과도 함께 배포하면 안 됩니다. 롬은 각자 합법적으로 소유한 것만 쓰세요.</span>
       <span class="en">The patch is <strong>GNU GPL v3</strong> (following the MiSTer core's license). The <code>mame.exe</code> you build is GPL software too: <strong>if you pass it on, you must provide the source with it</strong> - hand people this kit, never the bare exe. Building it for your own use carries no obligation. The game ROM (<code>cupsoc.zip</code>) must never be bundled with the kit or with what you build; use only a copy you legally own.</span>
     </div>
   </div>
 </section>
-
 <section>
   <div class="container">
     <h2><span class="ko">시작하기</span><span class="en">Getting started</span></h2>
