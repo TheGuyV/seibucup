@@ -38,7 +38,7 @@ header.top .container { display: flex; align-items: center; gap: 14px 18px; min-
 .brand { display: flex; align-items: center; gap: 12px; color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: .72rem; text-shadow: 2px 2px 0 #000; }
 .brand .ball { width: 30px; height: 30px; flex: none; background: url("ball.png") center / contain no-repeat; }
 nav.menu { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; }
-nav.menu a { padding: 8px 12px; color: #fff; font-weight: 700; border-bottom: 3px solid transparent; }
+nav.menu a { padding: 8px 9px; color: #fff; font-weight: 700; border-bottom: 3px solid transparent; }
 nav.menu a.active, nav.menu a:hover { color: var(--hud-yellow); border-bottom-color: var(--hud-yellow); text-decoration: none; }
 nav.menu a.ext { color: #03c75a; }
 nav.menu a.ext:hover { color: #fff; background: #03c75a; border-bottom-color: #03c75a; border-radius: 4px 4px 0 0; }
