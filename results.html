@@ -79,6 +79,8 @@
       <tbody id="rows"></tbody>
     </table>
     </div>
+    <div id="more" class="muted" style="text-align:center;padding:18px 0" hidden><span class="ko">불러오는 중…</span><span class="en">Loading…</span></div>
+    <div id="count" class="muted" style="text-align:center;padding:10px 0;font-size:.85em" hidden></div>
   </div>
 </section>
 
@@ -94,8 +96,10 @@
   function side(r, a, b) { var n = r.type === "2v2" ? [r.nicks[a], r.nicks[b]].filter(Boolean).join(" + ") : r.nicks[a === 0 ? 0 : 1]; return n || "CPU"; }   // 1 vs 1: seats 1 and 2; 2 vs 2: 1+2 against 3+4
   fetch("results.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : []; }).then(function (list) {
     if (!list || !list.length) { document.getElementById("empty").hidden = false; return; }
-    var rows = document.getElementById("rows");
-    list.forEach(function (r) {
+    var rows = document.getElementById("rows"), more = document.getElementById("more"), count = document.getElementById("count");
+    // scroll paging: 30 rows at a time, the next page when the bottom comes into view
+    var PAGE = 30, shown = 0;
+    function row(r) {
       var tr = document.createElement("tr");
       // "unverified": recorded before v1.5.8 read the right score bytes, and with no replay to recompute it from
       var bad = !!r.unverified;
@@ -106,8 +110,28 @@
                      '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
                      '<td>' + (r.replay ? '<a href="' + esc(r.replay) + '" download title="런처의 리플레이 버튼으로 재생">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
       rows.appendChild(tr);
-    });
+    }
+    function page() {
+      var end = Math.min(list.length, shown + PAGE);
+      for (; shown < end; shown++) row(list[shown]);
+      var done = shown >= list.length;
+      more.hidden = done;
+      count.hidden = !done;
+      count.innerHTML = '<span class="ko">전체 ' + list.length + '경기</span><span class="en">' + list.length + ' matches</span>';
+      return done;
+    }
     document.getElementById("tbl").hidden = false;
+    if (page()) return;
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; }) && page()) io.disconnect();
+      }, { rootMargin: "400px 0px" });
+      io.observe(more);
+    } else {
+      window.addEventListener("scroll", function onScroll() {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 400 && page()) window.removeEventListener("scroll", onScroll);
+      });
+    }
   }).catch(function () { document.getElementById("empty").hidden = false; });
 })();
 </script>
