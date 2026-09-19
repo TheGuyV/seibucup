@@ -36,6 +36,11 @@
 .results td.score { font-family: "Segoe UI", sans-serif; font-weight: 800; font-size: 1.15em; text-align: center; }
 .results td.win { color: #ffd23c; }
 .results .muted { opacity: .65; }
+.filter { display: flex; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.filter label { font-weight: 700; }
+.filter select { padding: 7px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,.25);
+                 background: rgba(0,0,0,.35); color: inherit; font: inherit; max-width: 260px; }
+.filter .hint { opacity: .6; font-size: .85em; }
 @media (max-width: 640px) { .results th:nth-child(5), .results td:nth-child(5) { display: none; } }
 </style>
 </head>
@@ -66,6 +71,11 @@
 <section>
   <div class="container">
     <div id="empty" class="note" hidden><span class="ko">아직 기록된 경기가 없습니다.</span><span class="en">No matches recorded yet.</span></div>
+    <div id="filter" class="filter" hidden>
+      <label for="player"><span class="ko">플레이어</span><span class="en">Player</span></label>
+      <select id="player"><option value="">전체</option></select>
+      <span class="hint"><span class="ko">선택한 선수가 뛴 경기만 보여 줍니다.</span><span class="en">Shows only the matches that player took part in.</span></span>
+    </div>
     <div style="overflow-x:auto">
     <table class="results" id="tbl" hidden>
       <thead><tr>
@@ -97,6 +107,21 @@
   fetch("results.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : []; }).then(function (list) {
     if (!list || !list.length) { document.getElementById("empty").hidden = false; return; }
     var rows = document.getElementById("rows"), more = document.getElementById("more"), count = document.getElementById("count");
+    var tbl = document.getElementById("tbl"), empty = document.getElementById("empty");
+    var sel = document.getElementById("player"), all = list, view = list;
+
+    // every nick that ever played, 가나다 first and abc after, straight from the records
+    var seen = {};
+    all.forEach(function (r) { (r.nicks || []).forEach(function (n) { if (n) seen[n] = 1; }); });
+    Object.keys(seen).sort(function (a, b) { return a.localeCompare(b, "ko"); }).forEach(function (n) {
+      var o = document.createElement("option"); o.value = n; o.textContent = n; sel.appendChild(o);
+    });
+    document.getElementById("filter").hidden = false;
+    // an <option> cannot hold the .ko/.en spans the rest of the page uses, so follow the switch by hand
+    function allLabel() { sel.options[0].textContent = document.documentElement.getAttribute("lang") === "en" ? "All" : "전체"; }
+    allLabel();
+    if (window.MutationObserver) new MutationObserver(allLabel).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
     // scroll paging: 30 rows at a time, the next page when the bottom comes into view
     var PAGE = 30, shown = 0;
     function row(r) {
@@ -112,24 +137,34 @@
       rows.appendChild(tr);
     }
     function page() {
-      var end = Math.min(list.length, shown + PAGE);
-      for (; shown < end; shown++) row(list[shown]);
-      var done = shown >= list.length;
+      var end = Math.min(view.length, shown + PAGE);
+      for (; shown < end; shown++) row(view[shown]);
+      var done = shown >= view.length;
       more.hidden = done;
       count.hidden = !done;
-      count.innerHTML = '<span class="ko">전체 ' + list.length + '경기</span><span class="en">' + list.length + ' matches</span>';
+      count.innerHTML = '<span class="ko">' + view.length + '경기</span><span class="en">' + view.length + ' matches</span>';
       return done;
     }
-    document.getElementById("tbl").hidden = false;
-    if (page()) return;
+    function render() {
+      rows.innerHTML = ""; shown = 0;
+      tbl.hidden = !view.length;
+      empty.hidden = !!view.length;
+      page();
+    }
+    sel.addEventListener("change", function () {
+      var who = sel.value;
+      view = who ? all.filter(function (r) { return (r.nicks || []).indexOf(who) >= 0; }) : all;
+      render();
+    });
+    render();
+    // the observer stays connected, so a new filter keeps paging
     if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (es) {
-        if (es.some(function (e) { return e.isIntersecting; }) && page()) io.disconnect();
-      }, { rootMargin: "400px 0px" });
-      io.observe(more);
+      new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) page();
+      }, { rootMargin: "400px 0px" }).observe(more);
     } else {
-      window.addEventListener("scroll", function onScroll() {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 400 && page()) window.removeEventListener("scroll", onScroll);
+      window.addEventListener("scroll", function () {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 400) page();
       });
     }
   }).catch(function () { document.getElementById("empty").hidden = false; });

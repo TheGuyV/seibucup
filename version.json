@@ -1,19 +1,19 @@
 {
-  "version": "1.5.12",
+  "version": "1.5.13",
   "url": "https://seibucup.online/download.html",
-  "notes": "Direct host has a Start game button again; the match clock stops during goals like the original board (netplay 10 - update both sides)",
+  "notes": "The host picks the pitch (Pitch box); a match now starts when everyone presses Ready, not when the host starts it; tidier launcher - menu bar, fewer buttons, shorter room list (netplay 11 - update both sides)",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.12/SeibuCupNetplay.exe",
-      "sha256": "0f2a8d714e12623bd43431198b5bb43d2b2f2032fe78a2afd0ae667bf31a3f2d",
-      "size": 50631304
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.13/SeibuCupNetplay.exe",
+      "sha256": "d45fa8829c4c43643a323fe22da7b2884cc6e1f75c47d6c2bbe9e6e3b0838ec8",
+      "size": 50561233
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.12/netplay.lua",
-      "sha256": "ac9daa5eaa3a303a57387e69e6e190681038b97afb15bccadaabcce2d6612c50",
-      "size": 68866
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.13/netplay.lua",
+      "sha256": "921d04751e57f395a39f426c0eeff1b9f529dfbb272c13d1d63ce11ea80ee5d5",
+      "size": 69942
     }
   ]
 }
