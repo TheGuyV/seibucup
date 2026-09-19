@@ -1,17 +1,17 @@
 {
-  "version": "1.5.10",
+  "version": "1.5.11",
   "url": "https://seibucup.online/download.html",
-  "notes": "Input delay default 3 again; the minimize balloon shows once; red room-chat advice to raise the input delay when lag is detected",
+  "notes": "BGM is each player's own setting (BGM(personal)), default Stage 1/5",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.10/SeibuCupNetplay.exe",
-      "sha256": "028ad31dd54bcc9c64437633139f52e35475a8b04fde500e8ff140473ce0cce1",
-      "size": 50631187
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.11/SeibuCupNetplay.exe",
+      "sha256": "8714337f2b5357a49f6f0f272dd554f9a52f25f273dbf5e6a51154df3e170930",
+      "size": 50631251
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.10/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.11/netplay.lua",
       "sha256": "42ffba88d7aaa0266e1186858319cc74601528ab7955881c09792b751281f9f3",
       "size": 68273
     }
