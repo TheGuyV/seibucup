@@ -1,19 +1,19 @@
 {
-  "version": "1.5.9",
+  "version": "1.5.10",
   "url": "https://seibucup.online/download.html",
-  "notes": "The start countdown is said in the room chat instead of covering the players/chat panel",
+  "notes": "Input delay default 3 again; the minimize balloon shows once; red room-chat advice to raise the input delay when lag is detected",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.9/SeibuCupNetplay.exe",
-      "sha256": "d9dd65e42c4432e52957eb70b67ff2e8b25a96b988cfa87ebdccf7f948909660",
-      "size": 50630082
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.10/SeibuCupNetplay.exe",
+      "sha256": "028ad31dd54bcc9c64437633139f52e35475a8b04fde500e8ff140473ce0cce1",
+      "size": 50631187
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.9/netplay.lua",
-      "sha256": "8ac1128509fced0669b185d2c5dc68fd93548da6985e0ac936b3ea16c9da8dac",
-      "size": 67943
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.10/netplay.lua",
+      "sha256": "42ffba88d7aaa0266e1186858319cc74601528ab7955881c09792b751281f9f3",
+      "size": 68273
     }
   ]
 }
