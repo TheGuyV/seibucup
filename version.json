@@ -1,17 +1,17 @@
 {
-  "version": "1.5.13",
+  "version": "1.5.14",
   "url": "https://seibucup.online/download.html",
-  "notes": "The host picks the pitch (Pitch box); a match now starts when everyone presses Ready, not when the host starts it; tidier launcher - menu bar, fewer buttons, shorter room list (netplay 11 - update both sides)",
+  "notes": "Fixes: Ready needs somebody else in the room - pressing it alone started a match, which left everyone else able only to spectate; 2P gets the Ready button back after a match",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.13/SeibuCupNetplay.exe",
-      "sha256": "d45fa8829c4c43643a323fe22da7b2884cc6e1f75c47d6c2bbe9e6e3b0838ec8",
-      "size": 50561233
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.14/SeibuCupNetplay.exe",
+      "sha256": "1333fb715a7b25c808d48bb7a3d75082cd365aeddb9f3e69b1d34b4202798aba",
+      "size": 50561258
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.13/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.14/netplay.lua",
       "sha256": "921d04751e57f395a39f426c0eeff1b9f529dfbb272c13d1d63ce11ea80ee5d5",
       "size": 69942
     }
