@@ -1,17 +1,17 @@
 {
-  "version": "1.5.14",
+  "version": "1.5.15",
   "url": "https://seibucup.online/download.html",
-  "notes": "Fixes: Ready needs somebody else in the room - pressing it alone started a match, which left everyone else able only to spectate; 2P gets the Ready button back after a match",
+  "notes": "Fix: after an update the launcher sometimes applied it and then never restarted, with nothing in the window to say so - the relaunch is now retried and, if it still fails, the launcher stays open and tells you; every update is written to netplay/logs/update.log",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.14/SeibuCupNetplay.exe",
-      "sha256": "1333fb715a7b25c808d48bb7a3d75082cd365aeddb9f3e69b1d34b4202798aba",
-      "size": 50561258
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.15/SeibuCupNetplay.exe",
+      "sha256": "90e70426e312a41190ff07befe1c1c8d6cbf5640b1a8414028965aadebf59471",
+      "size": 50561891
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.14/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.15/netplay.lua",
       "sha256": "921d04751e57f395a39f426c0eeff1b9f529dfbb272c13d1d63ce11ea80ee5d5",
       "size": 69942
     }
