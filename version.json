@@ -1,19 +1,19 @@
 {
-  "version": "1.5.11",
+  "version": "1.5.12",
   "url": "https://seibucup.online/download.html",
-  "notes": "BGM is each player's own setting (BGM(personal)), default Stage 1/5",
+  "notes": "Direct host has a Start game button again; the match clock stops during goals like the original board (netplay 10 - update both sides)",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.11/SeibuCupNetplay.exe",
-      "sha256": "8714337f2b5357a49f6f0f272dd554f9a52f25f273dbf5e6a51154df3e170930",
-      "size": 50631251
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.12/SeibuCupNetplay.exe",
+      "sha256": "0f2a8d714e12623bd43431198b5bb43d2b2f2032fe78a2afd0ae667bf31a3f2d",
+      "size": 50631304
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.11/netplay.lua",
-      "sha256": "42ffba88d7aaa0266e1186858319cc74601528ab7955881c09792b751281f9f3",
-      "size": 68273
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.12/netplay.lua",
+      "sha256": "ac9daa5eaa3a303a57387e69e6e190681038b97afb15bccadaabcce2d6612c50",
+      "size": 68866
     }
   ]
 }
