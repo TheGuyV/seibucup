@@ -20,8 +20,9 @@ body {
 
   position: relative;
 }
-/* CRT scanlines removed: they broke up Hangul strokes (kept only inside the scoreboard) */
-.scoreboard { background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px); }
+/* CRT scanlines removed: they broke up Hangul strokes (kept only over the scoreboard footage) */
+.scoreboard .scan { position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,.20) 0 1px, transparent 1px 3px); }
 a { color: var(--hud-yellow); text-decoration: none; } a:hover { text-decoration: underline; }
 .container { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
 .pixel { font-family: "NeoDunggeunmo", monospace; letter-spacing: 0; }
@@ -65,19 +66,31 @@ html[lang="en"] .hero h1 { font-family: "NeoDunggeunmo", monospace; font-size: 1
 .scoreboard .team.win .abbr { color: var(--hud-yellow); text-shadow: 0 0 8px rgba(255,210,63,.8); }
 .scoreboard .team.win .flag { box-shadow: 0 0 0 2px var(--hud-yellow), 2px 2px 0 #000; }
 .scoreboard .mark { white-space: nowrap; }
-.scoreboard .status { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; margin-top: 4px; padding-top: 10px; border-top: 2px solid #333; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; color: #bbb; }
+.scoreboard .status { position: absolute; inset: auto 0 0 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: center; padding: 8px 14px; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; color: #cfd8c9;
+  background: linear-gradient(0deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.6) 62%, rgba(0,0,0,0) 100%); }
 .scoreboard .status .net { color: var(--hud-yellow); letter-spacing: 1px; }
 .scoreboard .status .net::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #3cff6a; box-shadow: 0 0 6px #3cff6a; margin-right: 6px; vertical-align: middle; animation: sb-pulse 2s ease-in-out infinite; }
 @keyframes sb-pulse { 50% { opacity: .35; } }
 .scoreboard .status .pl.a { color: var(--p1); } .scoreboard .status .pl.b { color: var(--p2); }
 .scoreboard .status b { font-weight: 400; color: #fff; }
 .scoreboard .status b.ok { color: #7dff9a; } .scoreboard .status b.warn { color: var(--hud-yellow); } .scoreboard .status b.bad { color: #ff6a6a; }
-.scoreboard .flash { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.78); color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: 1.6rem; letter-spacing: 2px; text-shadow: 4px 4px 0 #000; pointer-events: none; z-index: 2; }
+.scoreboard .flash { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.78); color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: 1.6rem; letter-spacing: 2px; text-shadow: 4px 4px 0 #000; pointer-events: none; z-index: 3; }
 .scoreboard .flash[hidden] { display: none; }
 .scoreboard .flash.zoom { animation: sb-zoom .45s cubic-bezier(.2, 1.6, .4, 1); }
 @keyframes sb-zoom { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .scoreboard .digits.pop, .scoreboard .time b.low, .scoreboard .status .net::before, .scoreboard .flash.zoom { animation: none; } }
-.scoreboard { display: inline-flex; align-items: center; gap: 18px; background: var(--hud); border: 3px solid #fff; box-shadow: 6px 6px 0 #000; padding: 14px 22px; margin: 0 0 26px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { .scoreboard .digits.pop, .scoreboard .time b.low, .scoreboard .status .net::before, .scoreboard .flash.zoom { animation: none; }
+  /* a still frame instead of the loop for anyone who asked for less movement */
+  .scoreboard .film { background-image: url("clip_poster.png"); } }
+/* the board is a strip of real play with the HUD riding on it: the footage sits in its own
+   layer so the bar and the status line can float over the top and bottom edges */
+.scoreboard { display: block; position: relative; overflow: hidden; background: var(--hud);
+  border: 3px solid #fff; box-shadow: 6px 6px 0 #000; padding: 0; margin: 0 0 26px; max-width: 100%; }
+.scoreboard .film { height: clamp(150px, 26vw, 216px); background-image: url("clip_match.webp");
+  background-size: cover; background-position: 50% 42%; image-rendering: pixelated; }
+.scoreboard .bar { position: absolute; inset: 0 0 auto 0; z-index: 2; display: flex; align-items: center;
+  gap: 14px; flex-wrap: wrap; padding: 9px 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.76) 62%, rgba(0,0,0,0) 100%); }
+.scoreboard .grow { flex: 1 1 auto; }
 .scoreboard .team { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .scoreboard .flag { width: 44px; height: 30px; border: 2px solid #fff; box-shadow: 2px 2px 0 #000; }
 /* pixel "kit" flags: three horizontal stripes per team (no emoji: Windows has no colour flags) */
@@ -114,7 +127,7 @@ html[lang="en"] .hero h1 { font-family: "NeoDunggeunmo", monospace; font-size: 1
 .scoreboard .abbr { font-family: "NeoDunggeunmo", monospace; font-size: .7rem; color: #fff; }
 .scoreboard .digits { font-family: "NeoDunggeunmo", monospace; font-size: 2rem; color: var(--hud-yellow); text-shadow: 3px 3px 0 #7a3a00; }
 .scoreboard .vs { font-family: "NeoDunggeunmo", monospace; color: var(--hud-orange); font-size: 1rem; text-shadow: 2px 2px 0 #000; }
-.scoreboard .time { font-family: "NeoDunggeunmo", monospace; font-size: .7rem; color: #fff; border-left: 2px solid #444; padding-left: 18px; }
+.scoreboard .time { font-family: "NeoDunggeunmo", monospace; font-size: .7rem; color: #fff; text-align: right; }
 .scoreboard .time b { display: block; color: var(--hud-yellow); font-size: 1.3rem; margin-top: 4px; }
 .mark { display: inline-block; font-family: "NeoDunggeunmo", monospace; font-size: .6rem; padding: 4px 6px; color: #fff; text-shadow: 1px 1px 0 #000; }
 .mark.p1 { background: var(--p1); } .mark.p2 { background: var(--p2); } .mark.p3 { background: var(--p3); color: #000; text-shadow: none; } .mark.p4 { background: var(--p4); color: #000; text-shadow: none; }
