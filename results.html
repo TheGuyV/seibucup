@@ -152,7 +152,7 @@
       var ago = whenAgo(r.when);
       var agoCell = ago.ko ? '<span class="ko">' + esc(ago.ko) + '</span><span class="en">' + esc(ago.en) + '</span>' : esc(ago.text);
       // no version on a record means the original: that is every match played before the choice existed
-      var sel = r.edition === "cupsocs";
+      var sel = r.edition === "cupsocs2" || r.edition === "cupsocs";
       tr.innerHTML = '<td class="muted" title="' + esc(ago.title) + '">' + agoCell + '</td><td' + (w1 ? ' class="win"' : "") + '>' + esc(side(r, 0, 1)) + '</td>' +
                      '<td class="score">' + sc + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
                      '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
