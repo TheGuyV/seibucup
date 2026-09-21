@@ -1,19 +1,19 @@
 {
-  "version": "1.5.18",
+  "version": "1.5.19",
   "url": "https://seibucup.online/download.html",
-  "notes": "Dirt pitch (round 4): player shadows are now brown as on the arcade board, not the grass green",
+  "notes": "Pick which edition of the game a room plays: the original or :Selection:. Both are already in the ROM set, and a room keeps everyone on the same one",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.18/SeibuCupNetplay.exe",
-      "sha256": "62eaae0fdff26422fb02f889340dc3fac3762c3b72a9db3970afb14f5405d052",
-      "size": 50562902
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.19/SeibuCupNetplay.exe",
+      "sha256": "050c72f6b8ab48f4db6dce85e939be8a6b2a938021ae15c1e77b338b89699cc4",
+      "size": 50563448
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.18/netplay.lua",
-      "sha256": "35c620d611d472e95563840df730213d83eb4a3cc3dcfb2bb3f4380a66219d31",
-      "size": 70313
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.19/netplay.lua",
+      "sha256": "63e9863beb02b7dc6b7a71d5d3afca28549cbc4cfbaa7284bccde88f64c7f4e7",
+      "size": 80074
     }
   ]
 }
