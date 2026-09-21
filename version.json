@@ -1,19 +1,19 @@
 {
-  "version": "1.5.17",
+  "version": "1.5.18",
   "url": "https://seibucup.online/download.html",
-  "notes": "Updates are now picked up right after a release (the launcher reads the release's own manifest instead of the website's cached copy), and the launcher says why it did not offer one",
+  "notes": "Dirt pitch (round 4): player shadows are now brown as on the arcade board, not the grass green",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.17/SeibuCupNetplay.exe",
-      "sha256": "38b2e64a55f544daa00f4c278a30e4e3e04f23fef4220390abeab7732cc7c2db",
-      "size": 50562900
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.18/SeibuCupNetplay.exe",
+      "sha256": "62eaae0fdff26422fb02f889340dc3fac3762c3b72a9db3970afb14f5405d052",
+      "size": 50562902
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.17/netplay.lua",
-      "sha256": "921d04751e57f395a39f426c0eeff1b9f529dfbb272c13d1d63ce11ea80ee5d5",
-      "size": 69942
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.18/netplay.lua",
+      "sha256": "35c620d611d472e95563840df730213d83eb4a3cc3dcfb2bb3f4380a66219d31",
+      "size": 70313
     }
   ]
 }
