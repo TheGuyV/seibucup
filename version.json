@@ -1,17 +1,17 @@
 {
-  "version": "1.5.15",
+  "version": "1.5.16",
   "url": "https://seibucup.online/download.html",
-  "notes": "Fix: after an update the launcher sometimes applied it and then never restarted, with nothing in the window to say so - the relaunch is now retried and, if it still fails, the launcher stays open and tells you; every update is written to netplay/logs/update.log",
+  "notes": "Language now has its own menu, labelled in English so it can be found from any language you cannot read; its four entries stay in their own scripts",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.15/SeibuCupNetplay.exe",
-      "sha256": "90e70426e312a41190ff07befe1c1c8d6cbf5640b1a8414028965aadebf59471",
-      "size": 50561891
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.16/SeibuCupNetplay.exe",
+      "sha256": "edc521eb7158fec418a0c92ef81a18ffcb1c9136569f2759b198d8fcef709877",
+      "size": 50561900
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.15/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.16/netplay.lua",
       "sha256": "921d04751e57f395a39f426c0eeff1b9f529dfbb272c13d1d63ce11ea80ee5d5",
       "size": 69942
     }
