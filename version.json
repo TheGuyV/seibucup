@@ -1,17 +1,17 @@
 {
-  "version": "1.5.16",
+  "version": "1.5.17",
   "url": "https://seibucup.online/download.html",
-  "notes": "Language now has its own menu, labelled in English so it can be found from any language you cannot read; its four entries stay in their own scripts",
+  "notes": "Updates are now picked up right after a release (the launcher reads the release's own manifest instead of the website's cached copy), and the launcher says why it did not offer one",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.16/SeibuCupNetplay.exe",
-      "sha256": "edc521eb7158fec418a0c92ef81a18ffcb1c9136569f2759b198d8fcef709877",
-      "size": 50561900
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.17/SeibuCupNetplay.exe",
+      "sha256": "38b2e64a55f544daa00f4c278a30e4e3e04f23fef4220390abeab7732cc7c2db",
+      "size": 50562900
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.16/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.17/netplay.lua",
       "sha256": "921d04751e57f395a39f426c0eeff1b9f529dfbb272c13d1d63ce11ea80ee5d5",
       "size": 69942
     }
