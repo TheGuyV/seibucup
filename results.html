@@ -156,7 +156,7 @@
       tr.innerHTML = '<td class="muted" title="' + esc(ago.title) + '">' + agoCell + '</td><td' + (w1 ? ' class="win"' : "") + '>' + esc(side(r, 0, 1)) + '</td>' +
                      '<td class="score">' + sc + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
                      '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
-                     '<td class="muted">' + (sel ? ':Selection:' : '<span class="ko">기본</span><span class="en">Original</span>') + '</td>' +
+                     '<td class="muted">' + (sel ? '<span class="ko">셀렉션</span><span class="en">Selection</span>' : '<span class="ko">기본</span><span class="en">Original</span>') + '</td>' +
                      '<td>' + (r.replay ? '<a href="' + esc(r.replay) + '" download title="런처의 리플레이 버튼으로 재생">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
       rows.appendChild(tr);
     }

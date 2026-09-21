@@ -1,17 +1,17 @@
 {
-  "version": "1.5.20",
+  "version": "1.5.21",
   "url": "https://seibucup.online/download.html",
-  "notes": "Pick the game version a room plays: :Selection: (with Korea in the team list, now the default) or the original. The build check accepts either version's signature - v1.5.19 wrongly warned about MAME when :Selection: was picked. Match records show how long ago they were and which version they used",
+  "notes": "Room list: a version column, reordered to room / state / version / type / host / players / ping. Clicking a room shows its version, match length, ping limit and whether it is locked. The versions are named 기본 and 셀렉션 everywhere",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.20/SeibuCupNetplay.exe",
-      "sha256": "77e757b5ac523687dee772b5286806d8634cf2ad4e90f183d689951c87e8eced",
-      "size": 50564004
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.21/SeibuCupNetplay.exe",
+      "sha256": "8bd7156227d1f70cddd8df60050eea4ec557ffba8156679d4a65631d1dde0369",
+      "size": 50564343
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.20/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.21/netplay.lua",
       "sha256": "b83fe5012a86919edf87306388c282db1c9b6fd142c109063c3871e37c193b9a",
       "size": 80300
     }
