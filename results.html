@@ -64,7 +64,7 @@
 <section class="hero">
   <div class="container">
     <h1><span class="ko">경기 기록</span><span class="en">Match results</span></h1>
-    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수와 녹화 파일을 보냅니다). ▶ 보기를 받아 런처의 <strong>리플레이</strong> 버튼으로 열면 경기를 그대로 다시 볼 수 있습니다(같은 MAME 빌드 필요). 최근 300경기. 경기 시각은 지금으로부터 얼마나 지났는지로 보여 줍니다.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher sends the final score and the recording). Download a ▶ file and open it with the launcher's <strong>Replays</strong> button to watch the match again (same MAME build needed). Last 300 matches.</span></p>
+    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수와 녹화 파일을 보냅니다). ▶ 보기를 누르면 리플레이 주소가 복사되고, 런처에서 <strong>게임 메뉴 - 리플레이</strong>를 누르면 경기가 그대로 다시 재생됩니다(같은 MAME 빌드 필요). 비밀방 경기는 올라오지 않습니다. 최근 300경기. 경기 시각은 지금으로부터 얼마나 지났는지로 보여 줍니다.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher sends the final score and the recording). ▶ watch copies the replay's link; <strong>Game - Replays</strong> in the launcher then plays the match again (same MAME build needed). Matches in password rooms are not posted. Last 300 matches.</span></p>
   </div>
 </section>
 
@@ -110,6 +110,45 @@
     var rows = document.getElementById("rows"), more = document.getElementById("more"), count = document.getElementById("count");
     var tbl = document.getElementById("tbl"), empty = document.getElementById("empty");
     var sel = document.getElementById("player"), all = list, view = list;
+
+    // ▶ copies the replay's address instead of downloading the file: the launcher's
+    // Game - Replays finds it on the clipboard and plays it after one question
+    var toast = document.createElement("div"), toastTimer = 0;
+    toast.className = "copytoast"; toast.hidden = true; toast.setAttribute("role", "status");
+    document.body.appendChild(toast);
+    toast.addEventListener("click", function () { toast.hidden = true; });
+    function copied(ok) {
+      toast.innerHTML = ok
+        ? '<strong><span class="ko">리플레이 주소를 복사했습니다</span><span class="en">Replay link copied</span></strong>' +
+          '<span class="ko">런처에서 <b>게임 메뉴 - 리플레이</b>를 클릭하시면 바로 게임이 재생됩니다.</span>' +
+          '<span class="en">In the launcher, click <b>Game - Replays</b> and the match plays straight away.</span>'
+        : '<strong><span class="ko">주소를 복사하지 못했습니다</span><span class="en">Could not copy the link</span></strong>' +
+          '<span class="ko">▶ 보기를 오른쪽 클릭해서 링크 주소를 복사해 주세요.</span>' +
+          '<span class="en">Right-click ▶ watch and copy the link address.</span>';
+      toast.hidden = false;
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.hidden = true; }, 7000);
+    }
+    // the Clipboard API first; where a browser refuses it (permissions, embedded views) the old
+    // select-and-copy still works more often than not
+    function legacyCopy(t) {
+      var ta = document.createElement("textarea"), done = false;
+      ta.value = t; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { done = document.execCommand("copy"); } catch (e) { done = false; }
+      document.body.removeChild(ta);
+      return done;
+    }
+    function copyText(t) {
+      if (navigator.clipboard && window.isSecureContext)
+        return navigator.clipboard.writeText(t).catch(function () { if (!legacyCopy(t)) throw new Error("copy refused"); });
+      return legacyCopy(t) ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+    }
+    rows.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a.rpl");
+      if (!a) return;
+      e.preventDefault();
+      copyText(new URL(a.getAttribute("href"), location.href).href).then(function () { copied(true); }, function () { copied(false); });
+    });
 
     // every nick that ever played, 가나다 first and abc after, straight from the records
     var seen = {};
@@ -157,7 +196,7 @@
                      '<td class="score">' + sc + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
                      '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
                      '<td class="muted">' + (sel ? '<span class="ko">셀렉션</span><span class="en">Selection</span>' : '<span class="ko">기본</span><span class="en">Original</span>') + '</td>' +
-                     '<td>' + (r.replay ? '<a href="' + esc(r.replay) + '" download title="런처의 리플레이 버튼으로 재생">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
+                     '<td>' + (r.replay ? '<a class="rpl" href="' + esc(r.replay) + '" title="누르면 리플레이 주소가 복사됩니다 / copies the replay link">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
       rows.appendChild(tr);
     }
     function page() {

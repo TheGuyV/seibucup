@@ -1,19 +1,19 @@
 {
-  "version": "1.5.25",
+  "version": "1.5.26",
   "url": "https://seibucup.online/download.html",
-  "notes": "Joining a room on a version your ROMs do not have is refused instead of closing the game. Controls now carry into Selection matches (MAME keeps a config per game). Selection ROMs work either as cupsocs2.zip or inside a merged cupsoc.zip",
+  "notes": "Series play: pick FT2, FT3 or FT5 when you make a room and the first side to that many wins takes the series; a level match in a series is settled by the board's own penalty shoot-out. A 2v2 now comes back to the room after every match, like a 1v1. On the results page the replay link copies its address, and Game - Replays in the launcher plays it straight away. The game window opens where it last was, and the keys that pause a match are locked while playing.",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.25/SeibuCupNetplay.exe",
-      "sha256": "dd36dae37174f963929ccb5a61f1caf8dc3615f0f3aecbb308e4e4421f58b98d",
-      "size": 50566368
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.26/SeibuCupNetplay.exe",
+      "sha256": "943021f982ad8bb63359fcd7b697764ebc1e8b45364aa26cb058a0064d129ae1",
+      "size": 50570302
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.25/netplay.lua",
-      "sha256": "b83fe5012a86919edf87306388c282db1c9b6fd142c109063c3871e37c193b9a",
-      "size": 80300
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.26/netplay.lua",
+      "sha256": "de836a59e184b011aae250caf4f8320d4c121d6946fdc2cb0ac6006323da3cc5",
+      "size": 85113
     }
   ]
 }

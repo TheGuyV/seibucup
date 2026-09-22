@@ -218,3 +218,11 @@ footer { font-size: 1rem; }
 /* donate page message */
 .msg { max-width: 640px; margin: 0 0 28px; background: var(--panel); border: 3px solid var(--panel-line); box-shadow: 5px 5px 0 rgba(0,0,0,.6); padding: 18px 20px; }
 .msg p { margin: 0 0 12px; } .msg p:last-child { margin-bottom: 0; }
+
+/* results: "replay link copied" note, bottom centre */
+.copytoast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+  width: max-content; max-width: min(92vw, 520px); display: grid; gap: 4px; padding: 12px 16px; z-index: 50;
+  background: var(--hud); color: var(--fg); border: 1px solid var(--panel-line); border-radius: 6px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.5); font-size: 14px; line-height: 1.5; cursor: pointer; }
+.copytoast strong { color: var(--hud-yellow); }
+.copytoast b { color: var(--fg); }
