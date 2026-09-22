@@ -1,17 +1,17 @@
 {
-  "version": "1.5.24",
+  "version": "1.5.25",
   "url": "https://seibucup.online/download.html",
-  "notes": "The game version is chosen before connecting and stays fixed for the session; Reset hands the choice back. It is shown in blue so it is easy to spot, because it decides who you can play with",
+  "notes": "Joining a room on a version your ROMs do not have is refused instead of closing the game. Controls now carry into Selection matches (MAME keeps a config per game). Selection ROMs work either as cupsocs2.zip or inside a merged cupsoc.zip",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.24/SeibuCupNetplay.exe",
-      "sha256": "732dbf3ec55ac948e48f21424a0446bf8fda93022b6a8fb28b230c50d6f67caa",
-      "size": 50565857
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.25/SeibuCupNetplay.exe",
+      "sha256": "dd36dae37174f963929ccb5a61f1caf8dc3615f0f3aecbb308e4e4421f58b98d",
+      "size": 50566368
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.24/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.25/netplay.lua",
       "sha256": "b83fe5012a86919edf87306388c282db1c9b6fd142c109063c3871e37c193b9a",
       "size": 80300
     }
