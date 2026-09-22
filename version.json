@@ -1,17 +1,17 @@
 {
-  "version": "1.5.22",
+  "version": "1.5.23",
   "url": "https://seibucup.online/download.html",
-  "notes": "Urgent: the default game version is the original again. :Selection: needs its own program ROMs, which only a merged cupsoc.zip carries - picking it with an ordinary ROM set made MAME quit the moment a match started",
+  "notes": "A game version whose ROMs you do not have can no longer be picked: the launcher checks and says so instead of letting the match drop. Room list gains a version column and a new order; clicking a room shows its version, length, ping limit and lock",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.22/SeibuCupNetplay.exe",
-      "sha256": "6ad4481838103be1e25dc2598ed3f20923b20a82cab393eb4a77e60f47f31969",
-      "size": 50564329
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.23/SeibuCupNetplay.exe",
+      "sha256": "ff8c0befed3eb44c9a25622630e42aecd17903292c26da2a4b4eec5c41237479",
+      "size": 50565392
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.22/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.23/netplay.lua",
       "sha256": "b83fe5012a86919edf87306388c282db1c9b6fd142c109063c3871e37c193b9a",
       "size": 80300
     }
