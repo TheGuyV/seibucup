@@ -1,19 +1,19 @@
 {
-  "version": "1.5.30",
+  "version": "1.5.31",
   "url": "https://seibucup.online/download.html",
-  "notes": "New room type PvE: 1 to 4 players on one team against the CPU - the host picks the country, the others join after kick-off, a lost or drawn match continues by itself, and if somebody leaves the CPU takes over their player. The room type is now picked with three buttons (Match type). The launcher opens on Selection (recommended) every time; picking the original asks once. The status bar shows who is online and how many rooms there are, the log can be closed again, the + Create room tile comes first, and spectators start watching at once. Dark mode is tidier and no longer fails to start, and the room chat stays open during a match. Round music: one random tune per match. After a penalty shoot-out the game closes at once, and the shoot-out starts at 0-0. Everybody needs this version to play together.",
+  "notes": "PvE: the host can now start alone, and somebody who joins a PvE room while its match is running takes a free seat and joins 1P's team at once (everybody's game pauses for a second or two as they come in). A PvE room that is running shows it can be joined. Fixed: a fresh install could not join a PvE room before its first match; a player leaving a PvE match was sometimes not taken out of the game; a spectator joining a running match could see a slightly different game. Everybody needs this version to play PvE together.",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.30/SeibuCupNetplay.exe",
-      "sha256": "199f877c81dc27e62501dfb13c06e6b9e741b1161b41dfa447893efbb5b05496",
-      "size": 50587436
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.31/SeibuCupNetplay.exe",
+      "sha256": "6dbbe6a1bfd478f4105a87d1858e4850aa1f466492d913223fb90e29824492a6",
+      "size": 50587820
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.30/netplay.lua",
-      "sha256": "5ebd85874b68b7dacc1e9a8653bb8f51a992f665fe6093e189d0f4510233c09d",
-      "size": 91745
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.31/netplay.lua",
+      "sha256": "704958445633776a8b5b28d6bf75cdf2ca09a1d60be6ae3e530e231d8c5642bd",
+      "size": 94092
     }
   ]
 }
