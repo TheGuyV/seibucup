@@ -35,6 +35,11 @@
 .results th, .results td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,.12); text-align: left; white-space: nowrap; }
 .results td.score { font-family: "Segoe UI", sans-serif; font-weight: 800; font-size: 1.15em; text-align: center; }
 .results td.win { color: #ffd23c; }
+.results td.score .pk { font-weight: 600; font-size: .8em; opacity: .8; margin-left: .3em; }
+.results tr.series td { border-top: 2px solid rgba(255,210,60,.45); background: rgba(255,210,60,.07); font-weight: 700; }
+.results tr.sub td { background: rgba(255,255,255,.03); font-size: .92em; }
+.results tr.sub td:first-child { padding-left: 24px; }
+.results .ftb { font-size: .68em; font-weight: 800; padding: 1px 6px; border-radius: 4px; background: rgba(255,210,60,.22); color: #ffd23c; margin-right: .45em; vertical-align: middle; }
 .results .muted { opacity: .65; }
 .filter { display: flex; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 .filter label { font-weight: 700; }
@@ -64,7 +69,7 @@
 <section class="hero">
   <div class="container">
     <h1><span class="ko">경기 기록</span><span class="en">Match results</span></h1>
-    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수와 녹화 파일을 보냅니다). ▶ 보기를 누르면 리플레이 주소가 복사되고, 런처에서 <strong>게임 메뉴 - 리플레이</strong>를 누르면 경기가 그대로 다시 재생됩니다(같은 MAME 빌드 필요). 비밀방 경기와, 모든 참가자가 같은 IP(같은 공유기)인 경기는 올라오지 않습니다. FT 시리즈에서 승부차기로 결정된 경기도 정규 시간 점수로 남습니다. 최근 300경기. 경기 시각은 지금으로부터 얼마나 지났는지로 보여 줍니다.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher sends the final score and the recording). ▶ watch copies the replay's link; <strong>Game - Replays</strong> in the launcher then plays the match again (same MAME build needed). Matches in password rooms, or with every player on one IP address (one home network), are not posted. A series match decided on penalties shows the score at full time. Last 300 matches.</span></p>
+    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수와 녹화 파일을 보냅니다). ▶ 보기를 누르면 리플레이 주소가 복사되고, 런처에서 <strong>게임 메뉴 - 리플레이</strong>를 누르면 경기가 그대로 다시 재생됩니다(같은 MAME 빌드 필요). 비밀방 경기와, 모든 참가자가 같은 IP(같은 공유기)인 경기는 올라오지 않습니다. 승부차기로 결정된 경기는 1 - 1 (5-4)처럼 승부차기 점수가 함께 나오고, FT 시리즈의 경기들은 시리즈 점수 아래에 한데 묶여 보입니다. 최근 300경기. 경기 시각은 지금으로부터 얼마나 지났는지로 보여 줍니다.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher sends the final score and the recording). ▶ watch copies the replay's link; <strong>Game - Replays</strong> in the launcher then plays the match again (same MAME build needed). Matches in password rooms, or with every player on one IP address (one home network), are not posted. A match decided on penalties shows the shoot-out too, like 1 - 1 (5-4), and the matches of an FT series come together under the series score. Last 300 matches.</span></p>
   </div>
 </section>
 
@@ -181,17 +186,67 @@
       return { ko: ko, en: en, title: s };
     }
 
-    var PAGE = 30, shown = 0;
-    function row(r) {
+    var PAGE = 30, shown = 0, items = [];
+    function minutesAgo(s) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/.exec(s || "");
+      return m ? Math.floor((Date.now() - new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]).getTime()) / 60000) : 1e9;
+    }
+    // which side won: 0 (seats 1/1+2), 1, or -1 for a level match nobody won (score first, then the shoot-out)
+    function winner(r) {
+      if (r.unverified) return -1;
+      if (r.score[0] !== r.score[1]) return r.score[0] > r.score[1] ? 0 : 1;
+      if (r.pk && r.pk.length === 2 && r.pk[0] !== r.pk[1]) return r.pk[0] > r.pk[1] ? 0 : 1;
+      return -1;
+    }
+    // the matches of one FT series ("series" in the record) come together, where the newest of them is
+    function group(list) {
+      var out = [], at = {};
+      list.forEach(function (r) {
+        if (r.series && r.ft > 1) {
+          var g = at[r.series];
+          if (!g) { g = at[r.series] = { ft: r.ft, matches: [] }; out.push(g); }
+          g.matches.push(r);
+        } else out.push(r);
+      });
+      return out;
+    }
+    function seriesRow(g) {
+      var ms = g.matches.slice().reverse();                 // oldest first: game 1, 2, ...
+      var a = side(ms[0], 0, 1), b = side(ms[0], 2, 3), wa = 0, wb = 0;
+      ms.forEach(function (r) {
+        var w = winner(r); if (w < 0) return;
+        var name = w === 0 ? side(r, 0, 1) : side(r, 2, 3);
+        if (name === a) wa++; else if (name === b) wb++;
+      });
+      var done = wa >= g.ft || wb >= g.ft, last = ms[ms.length - 1], ago = whenAgo(last.when);
+      var live = minutesAgo(last.when) < 120;
+      var agoCell = ago.ko ? '<span class="ko">' + esc(ago.ko) + '</span><span class="en">' + esc(ago.en) + '</span>' : esc(ago.text);
+      var state = done ? "" : live ? ' · <span class="ko">진행 중</span><span class="en">in progress</span>' : ' · <span class="ko">미완료</span><span class="en">unfinished</span>';
       var tr = document.createElement("tr");
+      tr.className = "series";
+      tr.innerHTML = '<td class="muted" title="' + esc(ago.title) + '">' + agoCell + '</td>' +
+                     '<td' + (done && wa > wb ? ' class="win"' : "") + '>' + esc(a) + '</td>' +
+                     '<td class="score"><span class="ftb">FT' + g.ft + '</span>' + wa + ' : ' + wb + '</td>' +
+                     '<td' + (done && wb > wa ? ' class="win"' : "") + '>' + esc(b) + '</td>' +
+                     '<td colspan="3" class="muted"><span class="ko">시리즈 · ' + ms.length + '경기</span><span class="en">series · ' + ms.length + (ms.length === 1 ? ' game' : ' games') + '</span>' + state + '</td>';
+      rows.appendChild(tr);
+      ms.forEach(function (r, i) { row(r, i + 1); });
+    }
+    function row(r, game) {
+      var tr = document.createElement("tr");
+      if (game) tr.className = "sub";
       // "unverified": recorded before v1.5.8 read the right score bytes, and with no replay to recompute it from
       var bad = !!r.unverified;
-      var w1 = !bad && r.score[0] > r.score[1], w2 = !bad && r.score[1] > r.score[0];
-      var sc = bad ? '<span class="muted" title="점수 기록 오류 (v1.5.8 이전) - 리플레이가 없어 복구할 수 없습니다 / score not recoverable">—</span>' : (r.score[0] + ' - ' + r.score[1]);
+      // a level match decided on penalties carries the shoot-out ("pk", seat order like the score): it names the winner
+      var pk = !bad && r.pk && r.pk.length === 2 && r.score[0] === r.score[1] ? r.pk : null;
+      var w1 = !bad && (r.score[0] > r.score[1] || (pk && pk[0] > pk[1])), w2 = !bad && (r.score[1] > r.score[0] || (pk && pk[1] > pk[0]));
+      var sc = bad ? '<span class="muted" title="점수 기록 오류 (v1.5.8 이전) - 리플레이가 없어 복구할 수 없습니다 / score not recoverable">—</span>'
+                   : (r.score[0] + ' - ' + r.score[1] + (pk ? '<span class="pk" title="승부차기 / penalties">(' + pk[0] + '-' + pk[1] + ')</span>' : ''));
       var ago = whenAgo(r.when);
       var agoCell = ago.ko ? '<span class="ko">' + esc(ago.ko) + '</span><span class="en">' + esc(ago.en) + '</span>' : esc(ago.text);
       // no version on a record means the original: that is every match played before the choice existed
       var sel = r.edition === "cupsocs2" || r.edition === "cupsocs";
+      if (game) agoCell = '<span class="ko">' + game + '경기</span><span class="en">Game ' + game + '</span>';     // in a series: its number
       tr.innerHTML = '<td class="muted" title="' + esc(ago.title) + '">' + agoCell + '</td><td' + (w1 ? ' class="win"' : "") + '>' + esc(side(r, 0, 1)) + '</td>' +
                      '<td class="score">' + sc + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
                      '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
@@ -200,16 +255,16 @@
       rows.appendChild(tr);
     }
     function page() {
-      var end = Math.min(view.length, shown + PAGE);
-      for (; shown < end; shown++) row(view[shown]);
-      var done = shown >= view.length;
+      var end = Math.min(items.length, shown + PAGE);
+      for (; shown < end; shown++) { var it = items[shown]; if (it.matches) seriesRow(it); else row(it); }
+      var done = shown >= items.length;
       more.hidden = done;
       count.hidden = !done;
       count.innerHTML = '<span class="ko">' + view.length + '경기</span><span class="en">' + view.length + ' matches</span>';
       return done;
     }
     function render() {
-      rows.innerHTML = ""; shown = 0;
+      rows.innerHTML = ""; shown = 0; items = group(view);
       tbl.hidden = !view.length;
       empty.hidden = !!view.length;
       page();

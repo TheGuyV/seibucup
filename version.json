@@ -1,17 +1,17 @@
 {
-  "version": "1.5.28",
+  "version": "1.5.29",
   "url": "https://seibucup.online/download.html",
-  "notes": "Fixes a Selection host announcing the original's build (Selection players were refused from its room). Rooms on another game version or launcher version are refused before joining, with what to do. Watching a running match no longer measures ping. Messages that used to vanish now stay in the status bar: server unreachable or lost, who left, why a match stopped. Server refusals, 2v2 waiting, spectator hints, lag advice and ROM advice are clearer; a replay whose version is missing from the ROM set is explained instead of closing silently; password rooms no longer send their recording.",
+  "notes": "Rooms show as tiles, three to a row (Settings switches back to the table), and every room has a detailed tooltip. The input delay is picked from the players' pings when a match starts (Advanced > Auto) and goes up by 1 after a laggy match. Once an FT series is decided the room stops; to play on, open a new room. Your room's header is tidier, the room chat uses the public chat's font size, MAME no longer opens a console window, and a room that disappears no longer leaves its preview behind.",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.28/SeibuCupNetplay.exe",
-      "sha256": "09b9aae2a2204976ee493c588c73394cc467ea5c0ac6c8240c9c1a7bcf167e3f",
-      "size": 50576673
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.29/SeibuCupNetplay.exe",
+      "sha256": "37a48c8f30b6ce49f31dc5a5155a258981190f9d0f4dd1a7c67ad722214f3d7f",
+      "size": 50583582
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.28/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.29/netplay.lua",
       "sha256": "b18e2347c776f1a9b1ce0cbe0afd3793d855f40fec3ee908c282074c4fa67fc4",
       "size": 85344
     }
