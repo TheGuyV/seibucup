@@ -45,6 +45,11 @@
       for (var i = 0; i < els.length; i++) els[i].textContent = v.version;
     }).catch(function () {});
   }
+  // sw.js: the site is always fetched afresh, never from the browser's cache (see there). The
+  // worker script itself is checked against the server on every visit too (updateViaCache).
+  if ("serviceWorker" in navigator) {
+    try { navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(function () {}); } catch (e) {}
+  }
   document.addEventListener("DOMContentLoaded", function () {
     apply();
     pcNote();
