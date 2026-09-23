@@ -39,7 +39,7 @@
 .results tr.series td { border-top: 2px solid rgba(255,210,60,.45); background: rgba(255,210,60,.07); font-weight: 700; }
 .results tr.sub td { background: rgba(255,255,255,.03); font-size: .92em; }
 .results tr.sub td:first-child { padding-left: 24px; }
-.results .ftb { font-size: .68em; font-weight: 800; padding: 1px 6px; border-radius: 4px; background: rgba(255,210,60,.22); color: #ffd23c; margin-right: .45em; vertical-align: middle; }
+.results .ftb { font-size: .68em; font-weight: 800; padding: 1px 6px; border-radius: 4px; background: rgba(255,210,60,.22); color: #ffd23c; margin: 0 .45em; vertical-align: middle; }
 .results .muted { opacity: .65; }
 .filter { display: flex; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 .filter label { font-weight: 700; }
@@ -226,7 +226,7 @@
       tr.className = "series";
       tr.innerHTML = '<td class="muted" title="' + esc(ago.title) + '">' + agoCell + '</td>' +
                      '<td' + (done && wa > wb ? ' class="win"' : "") + '>' + esc(a) + '</td>' +
-                     '<td class="score"><span class="ftb">FT' + g.ft + '</span>' + wa + ' : ' + wb + '</td>' +
+                     '<td class="score">' + wa + '<span class="ftb">FT' + g.ft + '</span>' + wb + '</td>' +
                      '<td' + (done && wb > wa ? ' class="win"' : "") + '>' + esc(b) + '</td>' +
                      '<td colspan="3" class="muted"><span class="ko">시리즈 · ' + ms.length + '경기</span><span class="en">series · ' + ms.length + (ms.length === 1 ? ' game' : ' games') + '</span>' + state + '</td>';
       rows.appendChild(tr);
