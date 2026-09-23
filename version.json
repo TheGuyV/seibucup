@@ -1,19 +1,19 @@
 {
-  "version": "1.5.26",
+  "version": "1.5.27",
   "url": "https://seibucup.online/download.html",
-  "notes": "Series play: pick FT2, FT3 or FT5 when you make a room and the first side to that many wins takes the series; a level match in a series is settled by the board's own penalty shoot-out. A 2v2 now comes back to the room after every match, like a 1v1. On the results page the replay link copies its address, and Game - Replays in the launcher plays it straight away. The game window opens where it last was, and the keys that pause a match are locked while playing.",
+  "notes": "Quick match is now 'Quick match (single)': it never joins a series (FT) room and a room it opens stays a single match. In a series that is not over, the standing is posted in the room chat and 준비 is pressed for you once your game has closed, so the next match starts by itself. A match decided on penalties closes after 3 seconds instead of 5, and a shoot-out stopped by the 8-minute limit no longer decides a series.",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.26/SeibuCupNetplay.exe",
-      "sha256": "943021f982ad8bb63359fcd7b697764ebc1e8b45364aa26cb058a0064d129ae1",
-      "size": 50570302
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.27/SeibuCupNetplay.exe",
+      "sha256": "8fd5e08252763f89a338e194db1405f27fb3b22e0067811c37f9045a9dfa7089",
+      "size": 50571059
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.26/netplay.lua",
-      "sha256": "de836a59e184b011aae250caf4f8320d4c121d6946fdc2cb0ac6006323da3cc5",
-      "size": 85113
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.27/netplay.lua",
+      "sha256": "d124f84fa68ae480489b382f536a4babc683cac162a4356b554d13bb527706fe",
+      "size": 85255
     }
   ]
 }
