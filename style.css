@@ -224,5 +224,7 @@ footer { font-size: 1rem; }
   width: max-content; max-width: min(92vw, 520px); display: grid; gap: 4px; padding: 12px 16px; z-index: 50;
   background: var(--hud); color: var(--fg); border: 1px solid var(--panel-line); border-radius: 6px;
   box-shadow: 0 8px 28px rgba(0,0,0,.5); font-size: 14px; line-height: 1.5; cursor: pointer; }
+/* display:grid above would otherwise override the hidden attribute and leave an empty box */
+.copytoast[hidden] { display: none; }
 .copytoast strong { color: var(--hud-yellow); }
 .copytoast b { color: var(--fg); }
