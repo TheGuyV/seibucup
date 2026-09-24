@@ -77,8 +77,6 @@ jobs:
                 `- 마지막 신호: ${kst(st.t)} (KST)`,
                 `- 확인 시각: ${kst(now)} (KST)`,
                 `- 마지막 상태: 접속 ${st.users ?? '-'}명 · 방 ${st.rooms ?? '-'}개 · 경기 중 ${st.playing ?? '-'}`,
-                '',
-                '릴레이 PC(바탕화면 세이부서버)에서 SeibuRelay.exe가 떠 있는지 확인해 주세요. 복구되면 이 이슈는 저절로 닫힙니다.',
                 `<!-- last:${st.t} -->`,
               ].join('\n');
               const made = await github.rest.issues.create({ ...repo, title: `🔴 ${tag}중계 서버 꺼짐 (마지막 신호 ${kst(st.t)})`, body, labels: [LABEL] });
