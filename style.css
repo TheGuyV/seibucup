@@ -38,6 +38,12 @@ header.top { position: sticky; top: 0; z-index: 10; background: var(--hud); bord
 header.top .container { display: flex; align-items: center; gap: 14px 18px; min-height: 62px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--hud-yellow); font-family: "NeoDunggeunmo", monospace; font-size: .72rem; text-shadow: 2px 2px 0 #000; }
 .brand .ball { width: 30px; height: 30px; flex: none; background: url("ball.png") center / contain no-repeat; }
+/* the relay's status beside the logo (site.js): a scoreboard lamp, green when up, red when down */
+.srv { display: inline-flex; align-items: center; gap: 7px; padding: 4px 9px; border: 1px solid var(--panel-line); background: #000; color: #e2e9dd; font-size: .78rem; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.srv i { width: 8px; height: 8px; border-radius: 50%; background: #777; flex: none; }
+.srv.up i { background: var(--p4); box-shadow: 0 0 6px var(--p4); }
+.srv.down { color: #ffb3b3; border-color: rgba(255, 75, 75, .6); }
+.srv.down i { background: var(--p1); box-shadow: 0 0 6px var(--p1); }
 nav.menu { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; }
 nav.menu a { padding: 8px 9px; color: #fff; font-weight: 700; border-bottom: 3px solid transparent; }
 nav.menu a.active, nav.menu a:hover { color: var(--hud-yellow); border-bottom-color: var(--hud-yellow); text-decoration: none; }

@@ -45,6 +45,57 @@
       for (var i = 0; i < els.length; i++) els[i].textContent = v.version;
     }).catch(function () {});
   }
+  // The relay's status beside the logo: "● 서버 정상 · 접속 N명 · 방 M개" (2026-09-24). The relay keeps a secret
+  // GitHub gist's status.json up to date (when the counts change, and every 5 minutes anyway); a status older
+  // than 12 minutes means the relay has gone quiet. No port on the relay PC is involved. Read through the API
+  // (fresh to the minute; 60 calls an hour per visitor), shared between pages for a minute.
+  var STATUS_GIST = "71310b8cdc6416102908f77204291333";   // the gist the live relay made (its status_gist.txt)
+  var STALE_S = 12 * 60;
+  function statusPill() {
+    var brand = document.querySelector("header.top .brand");
+    if (!STATUS_GIST || !brand || !window.fetch) return null;
+    var el = document.createElement("span");
+    el.className = "srv"; el.hidden = true; el.setAttribute("role", "status");
+    brand.parentNode.insertBefore(el, brand.nextSibling);
+    return el;
+  }
+  function renderStatus(el, d) {
+    if (!el) return;
+    if (!d) { el.hidden = true; return; }
+    var age = Date.now() / 1000 - (d.t || 0), state, ko, en;
+    if (d.up === false) { state = "down"; ko = "서버 꺼짐"; en = "Server down"; }
+    else if (age > STALE_S) { state = "down"; ko = "서버 응답 없음"; en = "Server not responding"; }
+    else {
+      state = "up";
+      ko = "서버 정상 · 접속 " + (d.users || 0) + "명 · 방 " + (d.rooms || 0) + "개" + (d.playing ? " · 경기 중 " + d.playing : "");
+      en = "Server up · " + (d.users || 0) + " online · " + (d.rooms || 0) + " room" + (d.rooms === 1 ? "" : "s") + (d.playing ? " · " + d.playing + " playing" : "");
+    }
+    var at = new Date((d.t || 0) * 1000), hm = ("0" + at.getHours()).slice(-2) + ":" + ("0" + at.getMinutes()).slice(-2);
+    el.className = "srv " + state;
+    el.title = (document.documentElement.getAttribute("lang") === "ko" ? "마지막 확인 " : "Last heard ") + hm;
+    el.innerHTML = '<i></i><span class="ko">' + ko + '</span><span class="en">' + en + '</span>';
+    el.hidden = false;
+  }
+  window.seibuStatus = renderStatus;    // (for checking the look by hand)
+  function loadStatus(el) {
+    var cached = null;
+    try { cached = JSON.parse(sessionStorage.getItem("srv") || "null"); } catch (e) {}
+    if (cached && Date.now() - cached.at < 60000) { renderStatus(el, cached.d); return; }
+    fetch("https://api.github.com/gists/" + STATUS_GIST).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function (g) {
+      var d = JSON.parse(g.files["status.json"].content);
+      try { sessionStorage.setItem("srv", JSON.stringify({ at: Date.now(), d: d })); } catch (e) {}
+      renderStatus(el, d);
+    }).catch(function () { if (!cached) renderStatus(el, null); });   // (rate-limited or offline: keep what we had)
+  }
+  function startStatus() {
+    var el = statusPill();
+    if (!el) return;
+    loadStatus(el);
+    setInterval(function () { if (!document.hidden) loadStatus(el); }, 90000);
+  }
   // sw.js: the site is always fetched afresh, never from the browser's cache (see there). The
   // worker script itself is checked against the server on every visit too (updateViaCache).
   if ("serviceWorker" in navigator) {
@@ -54,6 +105,7 @@
     apply();
     pcNote();
     showVersion();
+    startStatus();
     var here = location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("nav.menu a").forEach(function (a) {
       if (a.getAttribute("href") === here) a.classList.add("active");
