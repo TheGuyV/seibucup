@@ -1,19 +1,19 @@
 {
-  "version": "1.5.34",
+  "version": "1.5.35",
   "url": "https://seibucup.online/download.html",
-  "notes": "2:2 - 2P·4P가 킥오프 전에 동시에 합류 (팀 선택을 슛으로 바로 확정), PvE - 참가자가 킥오프 직후 1~2초 안에 1P 팀으로 합류",
+  "notes": "4인 경기 상단 바: 시간 게이지를 절반으로 줄여 시계 옆에 붙임 (4P 이름을 가리지 않음), 리플레이/관전 표시와도 겹치지 않음",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.34/SeibuCupNetplay.exe",
-      "sha256": "9a29f4565599e668a1dc1d2ff7e7055f316985502612bf2b3eb34fdecc8d8586",
-      "size": 50588347
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.35/SeibuCupNetplay.exe",
+      "sha256": "6a500f2cb60a518b9824b71963a947f077d9298c0d20c153a18ce0831276fceb",
+      "size": 50588344
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.34/netplay.lua",
-      "sha256": "4875dca2e525552e30d5592caffbae7cead0d95a18475169ceef98b5139092f9",
-      "size": 97646
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.35/netplay.lua",
+      "sha256": "726211264e93b5f892fe0bf81a9a2a3694e720439d47bd28a2370976bec082af",
+      "size": 97870
     }
   ]
 }
