@@ -1,0 +1,96 @@
+# Relay down alert (2026-09-24): every 5 minutes, read the status the relay keeps in its gist (see site.js /
+# the relay's StatusGist). No signal for 10 minutes -> an issue labelled "server-down" that mentions the owner, so
+# GitHub e-mails him; the relay back -> a comment with how long it was gone, and the issue is closed (another
+# e-mail). One issue per outage, never one per check. GitHub may run a schedule some minutes late.
+# Test by hand: Actions -> Server watch -> Run workflow, simulate = down / up.
+name: Server watch
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      simulate:
+        description: "test only: pretend the relay is down or back up (empty = the real status)"
+        required: false
+        default: ""
+        type: choice
+        options: ["", "down", "up"]
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: server-watch
+  cancel-in-progress: false
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/github-script@v7
+        env:
+          GIST: "71310b8cdc6416102908f77204291333"
+          OWNER_LOGIN: "TheGuyV"
+          SIMULATE: ${{ github.event.inputs.simulate }}
+        with:
+          script: |
+            const LABEL = 'server-down', LIMIT = 600;           // 10 minutes without a signal = down
+            const gist = process.env.GIST, who = process.env.OWNER_LOGIN, sim = process.env.SIMULATE || '';
+            const kst = s => new Date(s * 1000).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', hour12: false });
+            const now = Date.now() / 1000;
+
+            // the API first (fresh to the minute); the raw file when this runner's IP is out of API calls - it can
+            // be up to 5 minutes old, so it is given 5 more minutes before it counts as down
+            async function read() {
+              try {
+                const r = await fetch(`https://api.github.com/gists/${gist}`, { headers: { 'User-Agent': 'seibu-watch' } });
+                if (r.ok) { const g = await r.json(); return { s: JSON.parse(g.files['status.json'].content), slack: 0 }; }
+                core.info(`api: HTTP ${r.status}`);
+              } catch (e) { core.info(`api: ${e}`); }
+              try {
+                const r = await fetch(`https://gist.githubusercontent.com/${who}/${gist}/raw/status.json?t=${Date.now()}`);
+                if (r.ok) return { s: await r.json(), slack: 300 };
+                core.info(`raw: HTTP ${r.status}`);
+              } catch (e) { core.info(`raw: ${e}`); }
+              return null;
+            }
+
+            let st, down;
+            if (sim) { down = sim === 'down'; st = { t: Math.floor(now - (down ? 900 : 0)), since: Math.floor(now) }; }
+            else {
+              const got = await read();
+              if (!got) { core.info('status unreadable - nothing decided'); return; }
+              st = got.s; down = now - st.t > LIMIT + got.slack;
+            }
+            core.info(`status ${JSON.stringify(st)} -> ${down ? 'DOWN' : 'up'}${sim ? ' (simulated)' : ''}`);
+
+            const repo = { owner: context.repo.owner, repo: context.repo.repo };
+            const open = (await github.rest.issues.listForRepo({ ...repo, state: 'open', labels: LABEL, per_page: 5 })).data;
+            const issue = open[0];
+            const tag = sim ? '[테스트] ' : '';
+            if (down && !issue) {
+              try { await github.rest.issues.getLabel({ ...repo, name: LABEL }); }
+              catch { await github.rest.issues.createLabel({ ...repo, name: LABEL, color: 'd73a4a', description: '중계 서버 꺼짐 알림 (Server watch)' }); }
+              const why = st.up === false ? '릴레이가 정상 종료되었습니다' : '릴레이 신호가 끊겼습니다';
+              const body = [
+                `@${who} ${tag}중계 서버가 **10분 넘게 응답이 없습니다** (${why}).`,
+                '',
+                `- 마지막 신호: ${kst(st.t)} (KST)`,
+                `- 확인 시각: ${kst(now)} (KST)`,
+                `- 마지막 상태: 접속 ${st.users ?? '-'}명 · 방 ${st.rooms ?? '-'}개 · 경기 중 ${st.playing ?? '-'}`,
+                '',
+                '릴레이 PC(바탕화면 세이부서버)에서 SeibuRelay.exe가 떠 있는지 확인해 주세요. 복구되면 이 이슈는 저절로 닫힙니다.',
+                `<!-- last:${st.t} -->`,
+              ].join('\n');
+              const made = await github.rest.issues.create({ ...repo, title: `🔴 ${tag}중계 서버 꺼짐 (마지막 신호 ${kst(st.t)})`, body, labels: [LABEL] });
+              core.notice(`down: issue #${made.data.number} opened`);
+            } else if (!down && issue) {
+              const m = /<!-- last:(\d+) -->/.exec(issue.body || '');
+              const last = m ? Number(m[1]) : null, back = st.since || st.t;
+              const mins = last && back > last ? Math.round((back - last) / 60) : null;
+              await github.rest.issues.createComment({ ...repo, issue_number: issue.number,
+                body: `@${who} 🟢 ${tag}중계 서버가 **복구되었습니다** (${kst(back)} KST 시작${mins !== null ? `, 약 ${mins}분 중단` : ''}). 지금 접속 ${st.users ?? '-'}명 · 방 ${st.rooms ?? '-'}개.` });
+              await github.rest.issues.update({ ...repo, issue_number: issue.number, state: 'closed', state_reason: 'completed' });
+              core.notice(`up again: issue #${issue.number} closed`);
+            } else {
+              core.info(down ? `still down - already reported in #${issue.number}` : 'up - nothing to do');
+            }
