@@ -1,19 +1,19 @@
 {
-  "version": "1.5.36",
+  "version": "1.5.37",
   "url": "https://seibucup.online/download.html",
-  "notes": "런처: 창을 줄여도 빠른 대결 등 방 목록 버튼이 잘리지 않음, 버튼 크기를 글자에 맞게 줄임, 좁은 창에서 오른쪽 내 방/채팅 영역이 잘리던 문제 수정",
+  "notes": "2:2 - 방 자리 = 게임 번호 (팀1 1P+3P, 팀2 2P+4P), 상단 바 이름 일치, FT 판마다 좌우 교대 / 막판에 경기 시간이 멈추던 문제 수정 (프로토콜 15: 모두 업데이트 필요)",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.36/SeibuCupNetplay.exe",
-      "sha256": "640e0b422784df33270d4a6120f659e7ca4779ea2dba021b73e69e03ef3a51c4",
-      "size": 50588788
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.37/SeibuCupNetplay.exe",
+      "sha256": "0ed625f380b34229db88770e0310b3754fd386053500e2fcf7297f4ba5153d1b",
+      "size": 50588949
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.36/netplay.lua",
-      "sha256": "726211264e93b5f892fe0bf81a9a2a3694e720439d47bd28a2370976bec082af",
-      "size": 97870
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.37/netplay.lua",
+      "sha256": "2d10f114de38139ccb30ff761c62c66e02b535adb3dfc0541b059e6ef99d71f9",
+      "size": 99929
     }
   ]
 }
