@@ -1,19 +1,19 @@
 {
-  "version": "1.5.33",
+  "version": "1.5.34",
   "url": "https://seibucup.online/download.html",
-  "notes": "프리플레이: 코인 없이 시작(2:2 자동 팀 배정이 더 빠르고 안정적), FT 시리즈가 시작 직후 끊긴 경기로 끝나지 않고 대기로 복귀, PvE 참가자가 킥오프 때 한꺼번에 합류 (프로토콜 14)",
+  "notes": "2:2 - 2P·4P가 킥오프 전에 동시에 합류 (팀 선택을 슛으로 바로 확정), PvE - 참가자가 킥오프 직후 1~2초 안에 1P 팀으로 합류",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.33/SeibuCupNetplay.exe",
-      "sha256": "c4d549b070c830ca8261c54cc2b7daa53798a70f1bda17ce70ca46ed047945c9",
-      "size": 50588341
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.34/SeibuCupNetplay.exe",
+      "sha256": "9a29f4565599e668a1dc1d2ff7e7055f316985502612bf2b3eb34fdecc8d8586",
+      "size": 50588347
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.33/netplay.lua",
-      "sha256": "7a0634ebe4ab6fd365d078c8484989035ca935c7e78c2e98604ddaedde0072af",
-      "size": 95612
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v1.5.34/netplay.lua",
+      "sha256": "4875dca2e525552e30d5592caffbae7cead0d95a18475169ceef98b5139092f9",
+      "size": 97646
     }
   ]
 }
