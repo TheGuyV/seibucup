@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 16:33","room":64,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,7],"ft":5,"series":"64-260926162103-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260926_163350_인파이터_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:29","room":64,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[0,9],"ft":5,"series":"64-260926162103-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260926_162938_인파이터_vs_드래곤타이거_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:25","room":64,"type":"1v1","time":150,"players":2,"score":[0,8],"teams":[0,5],"ft":5,"series":"64-260926162103-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260926_162533_인파이터_vs_드래곤타이거_0-8_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:21","room":64,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,10],"ft":5,"series":"64-260926162103-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260926_162101_인파이터_vs_드래곤타이거_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-19 20:30","room":97,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[4,7],"nicks":["판순이","404page","",""],"replay":"replays/20260919_203043_판순이_vs_404page_0-0_p1.scr"},
 {"when":"2026-09-19 20:28","room":96,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,10],"nicks":["브라질최고","샤마","",""],"replay":"replays/20260919_202813_브라질최고_vs_샤마_2-0_p1.scr"},
 {"when":"2026-09-19 20:24","room":95,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[8,5],"nicks":["404page","샤마","",""],"replay":"replays/20260919_202440_404page_vs_샤마_0-0_p1.scr"},
-{"when":"2026-09-19 20:21","room":94,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"nicks":["샤마","브라질최고","",""],"replay":"replays/20260919_202104_샤마_vs_브라질최고_0-2_p1.scr"},
-{"when":"2026-09-19 20:17","room":92,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"nicks":["샤마","404page","",""],"replay":"replays/20260920_004117_샤마_vs_404page_1-2_p1.scr"}
+{"when":"2026-09-19 20:21","room":94,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"nicks":["샤마","브라질최고","",""],"replay":"replays/20260919_202104_샤마_vs_브라질최고_0-2_p1.scr"}
 ]
