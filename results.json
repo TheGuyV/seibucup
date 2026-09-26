@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 19:17","room":118,"type":"1v1","time":600,"players":2,"score":[6,7],"teams":[3,4],"nicks":["ccdsystem","판순이","",""],"replay":"replays/20260926_191723_ccdsystem_vs_판순이_6-7_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 18:23","room":116,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,3],"pk":[2,3],"ft":3,"series":"116-260926181554-6","nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_182346_인파이터_vs_아즈텍_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 18:19","room":116,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[0,5],"ft":3,"series":"116-260926181554-6","nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_181921_인파이터_vs_아즈텍_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 18:15","room":116,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,7],"pk":[5,3],"ft":3,"series":"116-260926181554-6","nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_181553_인파이터_vs_아즈텍_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-20 23:38","room":11,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"nicks":["시기","김주성의분노","",""],"replay":"replays/20260920_233841_시기_vs_김주성의분노_0-1_p1.scr"},
 {"when":"2026-09-20 23:35","room":11,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["시기","김주성의분노","",""],"replay":"replays/20260920_233521_시기_vs_김주성의분노_0-1_p1.scr"},
 {"when":"2026-09-20 18:48","room":80,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[4,3],"nicks":["다오","시기","",""],"replay":"replays/20260920_184617_다오_vs_시기_1-1_p1.scr"},
-{"when":"2026-09-20 18:43","room":80,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,5],"nicks":["다오","시기","",""],"replay":"replays/20260920_184155_다오_vs_시기_0-0_p1.scr"},
-{"when":"2026-09-20 18:39","room":80,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,5],"nicks":["다오","시기","",""],"replay":"replays/20260920_183757_다오_vs_시기_2-2_p1.scr"}
+{"when":"2026-09-20 18:43","room":80,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,5],"nicks":["다오","시기","",""],"replay":"replays/20260920_184155_다오_vs_시기_0-0_p1.scr"}
 ]
