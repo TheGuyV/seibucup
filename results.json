@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 22:11","room":156,"type":"2v2","time":150,"players":4,"score":[1,1],"teams":[8,7],"pk":[4,2],"ft":2,"series":"156-260926220115-12","nicks":["seibucup_online","주물러","드래곤타이거","레온"],"replay":"replays/20260926_221141_seibucup_online_vs_드래곤타이거_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:08","room":159,"type":"1v1","time":240,"players":2,"score":[1,1],"teams":[7,3],"pk":[3,4],"ft":2,"series":"159-260926220843-13","nicks":["조이스틱추천좀","판순이","",""],"replay":"replays/20260926_220843_조이스틱추천좀_vs_판순이_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:06","room":156,"type":"2v2","time":150,"players":4,"score":[2,2],"teams":[8,7],"pk":[3,2],"ft":2,"series":"156-260926220115-12","nicks":["seibucup_online","주물러","드래곤타이거","레온"],"replay":"replays/20260926_220641_seibucup_online_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:01","room":156,"type":"2v2","time":150,"players":4,"score":[2,3],"teams":[8,7],"ft":2,"series":"156-260926220115-12","nicks":["seibucup_online","주물러","드래곤타이거","레온"],"replay":"replays/20260926_220118_seibucup_online_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-21 21:03","room":45,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,7],"nicks":["Janet","404page","",""],"replay":"replays/20260921_210305_Janet_vs_404page_2-0_p1.scr"},
 {"when":"2026-09-21 21:00","room":45,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,7],"nicks":["Janet","404page","",""],"replay":"replays/20260921_205929_Janet_vs_404page_2-1_p1.scr"},
 {"when":"2026-09-21 20:55","room":43,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,3],"nicks":["404page","달리는버미","",""],"replay":"replays/20260921_205550_404page_vs_달리는버미_1-1_p1.scr"},
-{"when":"2026-09-21 20:52","room":43,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,7],"nicks":["404page","달리는버미","",""],"replay":"replays/20260921_205212_404page_vs_달리는버미_1-1_p1.scr"},
-{"when":"2026-09-21 20:48","room":43,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"nicks":["404page","달리는버미","",""],"replay":"replays/20260921_204831_404page_vs_달리는버미_3-2_p1.scr"}
+{"when":"2026-09-21 20:52","room":43,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,7],"nicks":["404page","달리는버미","",""],"replay":"replays/20260921_205212_404page_vs_달리는버미_1-1_p1.scr"}
 ]
