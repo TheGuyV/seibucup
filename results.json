@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 20:57","room":146,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[4,0],"nicks":["판순이","seibucup_online","",""],"replay":"replays/20260926_205734_판순이_vs_seibucup_online_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 20:55","room":147,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[7,10],"ft":2,"series":"147-260926205520-8","nicks":["레온","드버그","",""],"replay":"replays/20260926_205520_레온_vs_드버그_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 20:53","room":146,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,7],"nicks":["판순이","seibucup_online","",""],"replay":"replays/20260926_205336_판순이_vs_seibucup_online_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 20:18","room":138,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,8],"ft":2,"series":"138-260926201433-7","nicks":["404page","조이스틱추천좀","",""],"replay":"replays/20260926_201848_404page_vs_조이스틱추천좀_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-21 00:04","room":11,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,9],"nicks":["시기","김주성의분노","",""],"replay":"replays/20260921_000458_시기_vs_김주성의분노_0-1_p1.scr"},
 {"when":"2026-09-21 00:01","room":11,"type":"1v1","time":150,"players":2,"score":[2,5],"teams":[10,5],"nicks":["시기","김주성의분노","",""],"replay":"replays/20260921_000124_시기_vs_김주성의분노_2-5_p1.scr"},
 {"when":"2026-09-20 23:56","room":11,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[7,4],"nicks":["시기","김주성의분노","",""],"replay":"replays/20260920_235656_시기_vs_김주성의분노_0-0_p1.scr"},
-{"when":"2026-09-20 23:54","room":13,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[10,8],"nicks":["asdfzxcv","주물러","",""],"replay":"replays/20260920_235430_asdfzxcv_vs_주물러_1-3_p1.scr"},
-{"when":"2026-09-20 23:53","room":11,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,0],"nicks":["시기","김주성의분노","",""],"replay":"replays/20260920_235331_시기_vs_김주성의분노_2-2_p1.scr"}
+{"when":"2026-09-20 23:54","room":13,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[10,8],"nicks":["asdfzxcv","주물러","",""],"replay":"replays/20260920_235430_asdfzxcv_vs_주물러_1-3_p1.scr"}
 ]
