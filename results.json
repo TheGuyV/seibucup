@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 12:32","room":21,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,7],"nicks":["레트로성지","seibucup_online","",""],"replay":"replays/20260926_123240_레트로성지_vs_seibucup_online_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 11:27","room":17,"type":"1v1","time":210,"players":2,"score":[4,4],"teams":[4,9],"pk":[1,3],"ft":3,"series":"17-260926110800-1","nicks":["드래곤타이거","레온","",""],"replay":"replays/20260926_112738_드래곤타이거_vs_레온_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 11:21","room":17,"type":"1v1","time":210,"players":2,"score":[3,3],"teams":[5,7],"pk":[5,4],"ft":3,"series":"17-260926110800-1","nicks":["드래곤타이거","레온","",""],"replay":"replays/20260926_112101_드래곤타이거_vs_레온_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 11:13","room":17,"type":"1v1","time":210,"players":2,"score":[4,5],"teams":[10,3],"ft":3,"series":"17-260926110800-1","nicks":["드래곤타이거","레온","",""],"replay":"replays/20260926_111350_드래곤타이거_vs_레온_4-5_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-18 22:45","room":56,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,8],"nicks":["seibucup온라인","흑곰12","",""],"replay":"replays/20260918_224530_seibucup온라인_vs_흑곰12_2-0_p1.scr"},
 {"when":"2026-09-18 00:14","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,8],"nicks":["브라질만해요","주물러","",""],"replay":"replays/20260918_001433_브라질만해요_vs_주물러_0-6_p1.scr"},
 {"when":"2026-09-18 00:11","room":10,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,8],"nicks":["브라질만해요","주물러","",""],"replay":"replays/20260918_001119_브라질만해요_vs_주물러_3-2_p1.scr"},
-{"when":"2026-09-18 00:07","room":10,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,8],"nicks":["브라질만해요","주물러","",""],"replay":"replays/20260918_000755_브라질만해요_vs_주물러_2-4_p1.scr"},
-{"when":"2026-09-17 22:39","room":13,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,0],"nicks":["seibucup온라인","인파이터","",""],"replay":"replays/20260917_224006_seibucup온라인_vs_인파이터_0-5_p1.scr"}
+{"when":"2026-09-18 00:07","room":10,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,8],"nicks":["브라질만해요","주물러","",""],"replay":"replays/20260918_000755_브라질만해요_vs_주물러_2-4_p1.scr"}
 ]
