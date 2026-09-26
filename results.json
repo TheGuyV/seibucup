@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 18:00","room":110,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,9],"nicks":["korea","인파이터","",""],"replay":"replays/20260926_180011_korea_vs_인파이터_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 18:00","room":107,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[9,10],"ft":2,"series":"107-260926175551-5","nicks":["레온","아즈텍","",""],"replay":"replays/20260926_180010_레온_vs_아즈텍_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 17:55","room":107,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"107-260926175551-5","nicks":["레온","아즈텍","",""],"replay":"replays/20260926_175550_레온_vs_아즈텍_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 17:53","room":91,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,0],"pk":[0,3],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_175348_레트로성지_vs_인파이터_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-20 14:28","room":74,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,9],"nicks":["석이아빠","404page","",""],"replay":"replays/20260920_142824_석이아빠_vs_404page_0-2_p1.scr"},
 {"when":"2026-09-20 14:24","room":73,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,7],"nicks":["석이아빠","404page","",""],"replay":"replays/20260920_142412_석이아빠_vs_404page_0-0_p1.scr"},
 {"when":"2026-09-20 14:19","room":71,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,7],"nicks":["세뷰","404page","",""],"replay":"replays/20260920_141957_세뷰_vs_404page_0-1_p1.scr"},
-{"when":"2026-09-20 14:13","room":63,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,5],"nicks":["404page","Underdog","",""],"replay":"replays/20260920_141309_404page_vs_Underdog_0-2_p1.scr"},
-{"when":"2026-09-20 14:09","room":63,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[8,5],"nicks":["404page","Underdog","",""],"replay":"replays/20260920_140913_404page_vs_Underdog_0-0_p1.scr"}
+{"when":"2026-09-20 14:13","room":63,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,5],"nicks":["404page","Underdog","",""],"replay":"replays/20260920_141309_404page_vs_Underdog_0-2_p1.scr"}
 ]
