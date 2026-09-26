@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 17:45","room":91,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,0],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_174515_레트로성지_vs_인파이터_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 17:41","room":91,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,0],"pk":[5,4],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_174144_레트로성지_vs_인파이터_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 17:40","room":98,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"nicks":["123","아트싸커","",""],"replay":"replays/20260926_174041_123_vs_아트싸커_0-1_p1.scr"},
 {"when":"2026-09-26 17:02","room":84,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,9],"nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_170224_인파이터_vs_아즈텍_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-20 13:58","room":55,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,7],"nicks":["세뷰","404page","",""],"replay":"replays/20260920_135827_세뷰_vs_404page_0-1_p1.scr"},
 {"when":"2026-09-19 23:18","room":2,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,7],"nicks":["스콜라라","브라질최고","",""],"replay":"replays/20260919_231846_스콜라라_vs_브라질최고_0-1_p1.scr"},
 {"when":"2026-09-19 20:52","room":105,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,4],"nicks":["404page","샤마","",""],"replay":"replays/20260919_205238_404page_vs_샤마_2-0_p1.scr"},
-{"when":"2026-09-19 20:47","room":104,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,7],"nicks":["샤마","브라질최고","",""],"replay":"replays/20260919_204754_샤마_vs_브라질최고_1-1_p1.scr"},
-{"when":"2026-09-19 20:43","room":97,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,3],"nicks":["판순이","브라질최고","",""],"replay":"replays/20260919_204307_판순이_vs_브라질최고_1-2_p1.scr"}
+{"when":"2026-09-19 20:47","room":104,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,7],"nicks":["샤마","브라질최고","",""],"replay":"replays/20260919_204754_샤마_vs_브라질최고_1-1_p1.scr"}
 ]
