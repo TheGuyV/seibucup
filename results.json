@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 16:49","room":72,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[0,8],"ft":5,"series":"72-260926164534-3","nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_164912_인파이터_vs_아즈텍_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:45","room":72,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,9],"ft":5,"series":"72-260926164534-3","nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_164533_인파이터_vs_아즈텍_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:38","room":64,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,8],"ft":5,"series":"64-260926162103-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260926_163800_인파이터_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:38","room":65,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["duli0212","아즈텍","",""],"replay":"replays/20260926_163759_duli0212_vs_아즈텍_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-19 20:39","room":99,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,4],"nicks":["404page","샤마","",""],"replay":"replays/20260919_203905_404page_vs_샤마_0-2_p1.scr"},
 {"when":"2026-09-19 20:35","room":99,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,5],"nicks":["404page","샤마","",""],"replay":"replays/20260919_203521_404page_vs_샤마_0-1_p1.scr"},
 {"when":"2026-09-19 20:35","room":97,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,7],"nicks":["판순이","브라질최고","",""],"replay":"replays/20260919_203518_판순이_vs_브라질최고_1-2_p1.scr"},
-{"when":"2026-09-19 20:31","room":96,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,5],"nicks":["브라질최고","샤마","",""],"replay":"replays/20260919_203128_브라질최고_vs_샤마_1-1_p1.scr"},
-{"when":"2026-09-19 20:30","room":97,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[4,7],"nicks":["판순이","404page","",""],"replay":"replays/20260919_203043_판순이_vs_404page_0-0_p1.scr"}
+{"when":"2026-09-19 20:31","room":96,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,5],"nicks":["브라질최고","샤마","",""],"replay":"replays/20260919_203128_브라질최고_vs_샤마_1-1_p1.scr"}
 ]
