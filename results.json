@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-27 01:33","room":180,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,10],"nicks":["OPENTV","모찌떡","",""],"replay":"replays/20260927_013401_OPENTV_vs_모찌떡_3-2_p1.scr"},
 {"when":"2026-09-26 22:40","room":163,"type":"1v1","time":300,"players":2,"score":[2,2],"teams":[4,3],"pk":[2,3],"ft":2,"series":"163-260926222422-15","nicks":["조이스틱추천좀","판순이","",""],"replay":"replays/20260926_224016_조이스틱추천좀_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:38","room":161,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,5],"nicks":["123","김주성","",""],"replay":"replays/20260926_223846_123_vs_김주성_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:34","room":162,"type":"2v2","time":210,"players":4,"score":[4,5],"teams":[10,9],"ft":3,"series":"162-260926222322-14","nicks":["드래곤타이거","주물러","레온","seibucup_online"],"replay":"replays/20260926_223440_드래곤타이거_vs_레온_4-5_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-22 00:21","room":24,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,9],"nicks":["시기","Janet","",""],"replay":"replays/20260922_002126_시기_vs_Janet_2-3_p1.scr"},
 {"when":"2026-09-22 00:08","room":21,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,8],"nicks":["지지","주물러","",""],"replay":"replays/20260922_000818_지지_vs_주물러_2-2_p1.scr"},
 {"when":"2026-09-21 23:43","room":18,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"nicks":["로또영","지지","",""],"replay":"replays/20260921_234311_로또영_vs_지지_0-1_p1.scr"},
-{"when":"2026-09-21 23:39","room":18,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,8],"nicks":["로또영","지지","",""],"replay":"replays/20260921_233936_로또영_vs_지지_2-3_p1.scr"},
-{"when":"2026-09-21 23:35","room":18,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"nicks":["로또영","지지","",""],"replay":"replays/20260921_233520_로또영_vs_지지_0-2_p1.scr"}
+{"when":"2026-09-21 23:39","room":18,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,8],"nicks":["로또영","지지","",""],"replay":"replays/20260921_233936_로또영_vs_지지_2-3_p1.scr"}
 ]
