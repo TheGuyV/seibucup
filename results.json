@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 21:15","room":146,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["판순이","123","",""],"replay":"replays/20260926_211459_판순이_vs_123_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 21:06","room":146,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[8,3],"nicks":["판순이","슈똘","",""],"replay":"replays/20260926_210642_판순이_vs_슈똘_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 21:01","room":146,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,8],"nicks":["판순이","seibucup_online","",""],"replay":"replays/20260926_210142_판순이_vs_seibucup_online_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 20:58","room":147,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"ft":2,"series":"147-260926205520-8","nicks":["레온","드버그","",""],"replay":"replays/20260926_205845_레온_vs_드버그_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-21 01:33","room":21,"type":"1v1","time":210,"players":2,"score":[0,3],"teams":[3,9],"nicks":["김주성의분노","Janet","",""],"replay":"replays/20260921_013346_김주성의분노_vs_Janet_0-3_p1.scr"},
 {"when":"2026-09-21 01:29","room":21,"type":"1v1","time":210,"players":2,"score":[2,2],"teams":[5,9],"nicks":["김주성의분노","Janet","",""],"replay":"replays/20260921_012904_김주성의분노_vs_Janet_2-2_p1.scr"},
 {"when":"2026-09-21 01:24","room":21,"type":"1v1","time":210,"players":2,"score":[2,4],"teams":[8,10],"nicks":["김주성의분노","Janet","",""],"replay":"replays/20260921_012411_김주성의분노_vs_Janet_2-4_p1.scr"},
-{"when":"2026-09-21 01:18","room":21,"type":"1v1","time":210,"players":2,"score":[1,1],"teams":[7,5],"nicks":["김주성의분노","Janet","",""],"replay":"replays/20260921_011847_김주성의분노_vs_Janet_1-1_p1.scr"},
-{"when":"2026-09-21 00:04","room":11,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,9],"nicks":["시기","김주성의분노","",""],"replay":"replays/20260921_000458_시기_vs_김주성의분노_0-1_p1.scr"}
+{"when":"2026-09-21 01:18","room":21,"type":"1v1","time":210,"players":2,"score":[1,1],"teams":[7,5],"nicks":["김주성의분노","Janet","",""],"replay":"replays/20260921_011847_김주성의분노_vs_Janet_1-1_p1.scr"}
 ]
