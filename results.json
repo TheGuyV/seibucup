@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 15:10","room":51,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20260926_151010_princewi_vs_드래곤타이거_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 13:01","room":23,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[10,5],"nicks":["레트로성지","드래곤타이거","",""],"replay":"replays/20260926_130100_레트로성지_vs_드래곤타이거_1-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 12:56","room":23,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[3,9],"nicks":["레트로성지","드래곤타이거","",""],"replay":"replays/20260926_125642_레트로성지_vs_드래곤타이거_0-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 12:32","room":21,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,7],"nicks":["레트로성지","seibucup_online","",""],"replay":"replays/20260926_123240_레트로성지_vs_seibucup_online_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-18 22:54","room":56,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,0],"nicks":["seibucup온라인","흑곰12","",""],"replay":"replays/20260918_225505_seibucup온라인_vs_흑곰12_1-0_p1.scr"},
 {"when":"2026-09-18 22:51","room":56,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,4],"nicks":["seibucup온라인","흑곰12","",""],"replay":"replays/20260918_225154_seibucup온라인_vs_흑곰12_0-0_p1.scr"},
 {"when":"2026-09-18 22:48","room":56,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["seibucup온라인","흑곰12","",""],"replay":"replays/20260918_224839_seibucup온라인_vs_흑곰12_2-1_p1.scr"},
-{"when":"2026-09-18 22:45","room":56,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,8],"nicks":["seibucup온라인","흑곰12","",""],"replay":"replays/20260918_224530_seibucup온라인_vs_흑곰12_2-0_p1.scr"},
-{"when":"2026-09-18 00:14","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,8],"nicks":["브라질만해요","주물러","",""],"replay":"replays/20260918_001433_브라질만해요_vs_주물러_0-6_p1.scr"}
+{"when":"2026-09-18 22:45","room":56,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,8],"nicks":["seibucup온라인","흑곰12","",""],"replay":"replays/20260918_224530_seibucup온라인_vs_흑곰12_2-0_p1.scr"}
 ]
