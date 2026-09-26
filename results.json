@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-26 22:34","room":162,"type":"2v2","time":210,"players":4,"score":[4,5],"teams":[10,9],"ft":3,"series":"162-260926222322-14","nicks":["드래곤타이거","주물러","레온","seibucup_online"],"replay":"replays/20260926_223440_드래곤타이거_vs_레온_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:34","room":161,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"nicks":["123","김주성","",""],"replay":"replays/20260926_223433_123_vs_김주성_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:32","room":163,"type":"1v1","time":300,"players":2,"score":[2,2],"teams":[7,3],"pk":[2,3],"ft":2,"series":"163-260926222422-15","nicks":["조이스틱추천좀","판순이","",""],"replay":"replays/20260926_223218_조이스틱추천좀_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:28","room":162,"type":"2v2","time":210,"players":4,"score":[1,3],"teams":[4,5],"ft":3,"series":"162-260926222322-14","nicks":["드래곤타이거","주물러","레온","seibucup_online"],"replay":"replays/20260926_222833_드래곤타이거_vs_레온_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-21 23:39","room":18,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,8],"nicks":["로또영","지지","",""],"replay":"replays/20260921_233936_로또영_vs_지지_2-3_p1.scr"},
 {"when":"2026-09-21 23:35","room":18,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"nicks":["로또영","지지","",""],"replay":"replays/20260921_233520_로또영_vs_지지_0-2_p1.scr"},
 {"when":"2026-09-21 21:22","room":49,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[8,7],"nicks":["지지","404page","",""],"replay":"replays/20260921_212240_지지_vs_404page_2-2_p1.scr"},
-{"when":"2026-09-21 21:18","room":49,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"nicks":["지지","404page","",""],"replay":"replays/20260921_211854_지지_vs_404page_1-0_p1.scr"},
-{"when":"2026-09-21 21:15","room":47,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[8,7],"nicks":["지지","404page","",""],"replay":"replays/20260921_211502_지지_vs_404page_3-1_p1.scr"}
+{"when":"2026-09-21 21:18","room":49,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"nicks":["지지","404page","",""],"replay":"replays/20260921_211854_지지_vs_404page_1-0_p1.scr"}
 ]
