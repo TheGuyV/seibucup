@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-27 11:07","room":202,"type":"1v1","time":210,"players":2,"score":[2,1],"teams":[9,3],"ft":3,"series":"202-260927105621-17","nicks":["드래곤타이거","조이스틱추천좀","",""],"replay":"replays/20260927_110702_드래곤타이거_vs_조이스틱추천좀_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 11:02","room":202,"type":"1v1","time":210,"players":2,"score":[7,2],"teams":[5,4],"ft":3,"series":"202-260927105621-17","nicks":["드래곤타이거","조이스틱추천좀","",""],"replay":"replays/20260927_110211_드래곤타이거_vs_조이스틱추천좀_7-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 10:56","room":202,"type":"1v1","time":210,"players":2,"score":[2,1],"teams":[7,8],"ft":3,"series":"202-260927105621-17","nicks":["드래곤타이거","조이스틱추천좀","",""],"replay":"replays/20260927_105620_드래곤타이거_vs_조이스틱추천좀_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 02:29","room":186,"type":"1v1","time":210,"players":2,"score":[2,2],"teams":[0,10],"pk":[4,5],"ft":3,"series":"186-260927021027-16","nicks":["드래곤타이거","플로레알","",""],"replay":"replays/20260927_022943_드래곤타이거_vs_플로레알_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-22 22:11","room":50,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,8],"nicks":["404page","seibucuponline","",""],"replay":"replays/20260922_221146_404page_vs_seibucuponline_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-22 22:03","room":47,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[5,3],"nicks":["눈사람13","라르크용","",""],"replay":"replays/20260922_220304_눈사람13_vs_라르크용_0-3_p1.scr"},
 {"when":"2026-09-22 21:38","room":33,"type":"1v1","time":210,"players":2,"score":[3,1],"teams":[7,8],"nicks":["seibucup_test","404page","",""],"replay":"replays/20260922_213832_seibucup_test_vs_404page_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-22 00:54","room":28,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[5,10],"nicks":["드래곤타이거","지지","",""],"replay":"replays/20260922_005419_드래곤타이거_vs_지지_3-2_p1.scr"},
-{"when":"2026-09-22 00:49","room":28,"type":"1v1","time":210,"players":2,"score":[2,2],"teams":[7,8],"nicks":["드래곤타이거","지지","",""],"replay":"replays/20260922_004907_드래곤타이거_vs_지지_2-2_p1.scr"}
+{"when":"2026-09-22 00:54","room":28,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[5,10],"nicks":["드래곤타이거","지지","",""],"replay":"replays/20260922_005419_드래곤타이거_vs_지지_3-2_p1.scr"}
 ]
