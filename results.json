@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-27 21:51","room":2,"type":"1v1","time":240,"players":2,"score":[2,3],"teams":[5,3],"ft":2,"series":"2-260927214613-2","nicks":["조이스틱추천좀","판순이","",""],"replay":"replays/20260927_215148_조이스틱추천좀_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 21:46","room":2,"type":"1v1","time":240,"players":2,"score":[2,2],"teams":[10,3],"pk":[4,2],"ft":2,"series":"2-260927214613-2","nicks":["조이스틱추천좀","판순이","",""],"replay":"replays/20260927_214612_조이스틱추천좀_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 21:38","room":1,"type":"1v1","time":240,"players":2,"score":[0,2],"teams":[8,3],"ft":2,"series":"1-260927213304-1","nicks":["조이스틱추천좀","판순이","",""],"replay":"replays/20260927_213830_조이스틱추천좀_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 21:33","room":1,"type":"1v1","time":240,"players":2,"score":[2,3],"teams":[10,3],"ft":2,"series":"1-260927213304-1","nicks":["조이스틱추천좀","판순이","",""],"replay":"replays/20260927_213303_조이스틱추천좀_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-23 18:00","room":9,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[3,4],"nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20260923_180017_테일러장군_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-23 17:55","room":9,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[8,7],"nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20260923_175549_테일러장군_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-23 17:51","room":9,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20260923_175149_테일러장군_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-23 17:47","room":9,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,4],"nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20260923_174753_테일러장군_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-23 17:43","room":9,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,10],"nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20260923_174322_테일러장군_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-23 17:47","room":9,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,4],"nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20260923_174753_테일러장군_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"}
 ]
