@@ -725,7 +725,15 @@
   var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, sound: true };
   try { Object.assign(nset, JSON.parse(store.get('web_net') || '{}')); } catch (e) {}
   function saveSet() { store.set('web_net', JSON.stringify(nset)); }
-  var nickIn = $('nick'); nickIn.value = store.get('web_nick') || '';
+  // 닉네임: PC 런처와 같은 규칙 - 문자(한글·영문 등)와 숫자, _ 와 - 만, 16자까지 (런처 Sanitize 와 같다)
+  function cleanNick(v) { return String(v || '').trim().split('').filter(function (c) { return /^[\p{L}\p{Nd}_-]$/u.test(c); }).join('').slice(0, 16); }
+  var nickIn = $('nick'); nickIn.value = cleanNick(store.get('web_nick'));
+  nickIn.addEventListener('input', function (e) {
+    if (e.isComposing) return;                         // 한글 조합 중에는 건드리지 않는다 (compositionend 에서 다시 본다)
+    var v = cleanNick(nickIn.value);
+    if (v !== nickIn.value.trim()) { nickIn.value = v; netSay(T('닉네임에는 한글·영문·숫자와 _ - 만 쓸 수 있습니다 (16자까지).', 'Nicknames take letters, digits, _ and - only (up to 16).')); }
+  });
+  nickIn.addEventListener('compositionend', function () { var v = cleanNick(nickIn.value); if (v !== nickIn.value) nickIn.value = v; });
   function mmss(s) { return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
   function opt(sel, items, cur) {
     sel.innerHTML = items.map(function (it) { return '<option value="' + esc(it[0]) + '">' + esc(it[1]) + '</option>'; }).join('');
@@ -1242,7 +1250,7 @@
 
   // ---- 버튼
   function connect() {
-    var nick = nickIn.value.trim().replace(/[\s|;,]/g, '').slice(0, 16);
+    var nick = cleanNick(nickIn.value); nickIn.value = nick;
     if (!nick) { nickIn.focus(); netSay(T('닉네임을 입력하세요.', 'Enter a nickname.')); return; }
     store.set('web_nick', nick);
     var ws; try { ws = new WebSocket(relayWsUrl()); } catch (e) { netSay(T('접속하지 못했습니다: ', 'Could not connect: ') + e); return; }
