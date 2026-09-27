@@ -9,7 +9,7 @@
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
 
-local VERSION = 17     -- 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
+local VERSION = 18     -- 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
                        --     (two ROM patches every peer must have: the host says so in F, replays in "sel")
                        -- 15: 2v2 seats are the board's players (1P+3P vs 2P+4P) and an FT series swaps 2v2 sides too;
                        --     a stretched match clock is run by the board itself (its tick reload byte, see install_clock_gate)
@@ -687,7 +687,7 @@ local function broadcast(data)
   for _, p in pairs(peers) do send_to(p, data) end
 end
 
-local MSG_LEN = { F = 4, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2 }   -- F: gen, pitch, penalties (12), versus select (16); J: gen, frame, random tune (16); V: gen, spectators (17)
+local MSG_LEN = { F = 5, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2 }   -- F: gen, pitch, penalties (12), versus select (16), GOD (18); J: gen, frame, random tune (16); V: gen, spectators (17)
 local function next_message(p)
   local b = p.rx
   if #b < 1 then return nil end
@@ -872,8 +872,8 @@ local function rec_save(complete)
   local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".scr"
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
-  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or 0, SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0)
+  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"god":%d}',
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or 0, SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and 1 or 0)
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
     -- a stray lock (antivirus, a leftover handle): try once more with a unique suffix
@@ -1087,6 +1087,33 @@ function scnp_sel_apply(on)
 end
 -- the host decides at once: a versus of two or more (the others follow its F, replays their "sel")
 if is_host and not is_replay and cfg.teams ~= "pve" and cfg.players >= 2 then scnp_sel_apply(true) end
+
+-- GOD (the final boss team, grey kit) for 1P in a PvE room whose host ticked "GOD" (SCNP_GOD=1; user, 2026-09-27).
+-- The select screen turns the chosen box into a team through an 8-byte table of team id + 1 (cupsoc reads the one at
+-- $7F36, cupsocs2 the one at $7F5E; GOD's id 11 -> $0C). While 1P's Pass is held - as the board sees it, which is
+-- the same input on every screen - every read of those tables answers GOD, so holding Pass while confirming picks
+-- it. The host says so in F, replays carry "god":1.
+SCNP_GOD = { on = false, ED = { cupsoc = { 0x7F2E, 0x7F45 }, cupsocs2 = { 0x7F5E, 0x7F8D } } }
+function scnp_god_apply(on)
+  local G = SCNP_GOD
+  on = on and true or false
+  if on == G.on then return end
+  if G.tap then G.tap:remove(); G.tap = nil end
+  G.on = false
+  if not on then log("GOD: off"); return end
+  local r = G.ED[SCNP_GAME]
+  local port = manager.machine.ioport.ports[":PLAYERS12"]
+  local pass = port and port.fields["P1 Pass"]
+  if not r or not pass then log("GOD: not available for %s", tostring(SCNP_GAME)); return end
+  local m, dv = pass.mask, pass.defvalue & pass.mask
+  G.tap = mem:install_read_tap(r[1], r[2], "scnp_god", function(offset, data, mask)
+    if (port:read() & m) ~= dv then return 0x0C0C end
+    return data
+  end)
+  G.on = true
+  log("GOD: 1P holds Pass while confirming a country to play as GOD")
+end
+if is_host and not is_replay and cfg.teams == "pve" and env("SCNP_GOD", "") == "1" then scnp_god_apply(true) end
 
 -- The host's full-time line: the launcher picks it up and reports it to the relay while MAME is
 -- still open (score and team bytes: see SCORE_LEFT / SCORE_RIGHT / TEAM_LEFT / TEAM_RIGHT).
@@ -1726,14 +1753,14 @@ local function handle_host_message(p, t, g, payload)
     local pm = (ml or 0) + (mh or 0) * 256
     if pm > 0 and MAME_MINOR > 0 and pm ~= MAME_MINOR then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and 1 or 0))
       if p.slot >= 5 then log("spectator %d has MAME %s (we run %s) - ignored", p.slot, mame_str(pm), mame_str(MAME_MINOR)); return end
       lose("MAME version differs: player %d has %s, you have %s - everybody needs the same MAME build", p.slot, mame_str(pm), mame_str(MAME_MINOR))
       return
     end
     if p.slot >= 5 then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and 1 or 0))
       if not p.ready then log("spectator %d joined", p.slot) end
       p.ready = true
 
@@ -1750,7 +1777,7 @@ local function handle_host_message(p, t, g, payload)
       P.dropped[p.slot] = nil; P.gone[p.slot] = nil; P.mark[p.slot] = nil; P.tries[p.slot] = nil
       P.late[p.slot] = nil; P.live[p.slot] = nil; allow[p.slot] = 0; inputs[p.slot] = {}; peer_sums[p.slot] = {}
       if p.slot > nplayers then nplayers = p.slot end
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and 1 or 0))
       p.ready = true
       -- he comes in through a resync: everybody loads the same state, so he is in step by construction.
       -- Until it starts he is not waited for - the host would stall on him and never reach the resync
@@ -1758,12 +1785,12 @@ local function handle_host_message(p, t, g, payload)
       log("PvE: %dP joins the running match (resync)", p.slot); status("PvE: %dP is joining the match", p.slot)
       return
     end
-    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0)); return end
+    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and 1 or 0)); return end
 
     if want and want >= 2 and want <= nplayers and want ~= p.slot and not peers[want] then
       peers[p.slot] = nil; peers[want] = p; p.slot = want
     end
-    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0))
+    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and 1 or 0))
     p.ready = true
     log("player %d joined (%d/%d)", p.slot, p.slot, nplayers)
     status("player %d joined (%d of %d)", p.slot, p.slot, nplayers)
@@ -1822,10 +1849,11 @@ end
 local function handle_client_message(t, g, payload)
   if t == "F" then
     -- the host's pitch (field), right after its handshake: every screen must draw the same one
-    local st, pk, sel = payload:byte(1, 3)
+    local st, pk, sel, god = payload:byte(1, 4)
     if st and st <= 7 and st ~= scnp_stage then scnp_stage = st; scnp_install_stage_tap() end
     if pk then SCNP_PK.on = (pk == 1) end          -- the host decides whether a level match goes to penalties
     if sel then scnp_sel_apply(sel == 1) end        -- and whether the country select is the versus one (protocol 16)
+    if god then scnp_god_apply(god == 1) end        -- and whether 1P may pick GOD (PvE, protocol 18)
     return
   end
   if t == "H" then
@@ -2073,6 +2101,7 @@ local function step()
       scnp_stage = tonumber(r.meta:match('"stage":(%d+)') or "0") or 0; scnp_install_stage_tap()
       SCNP_PK.on = r.meta:match('"pk":1') ~= nil
       scnp_sel_apply(r.meta:match('"sel":1') ~= nil)     -- recorded with the versus country select (protocol 16)
+      scnp_god_apply(r.meta:match('"god":1') ~= nil)     -- recorded in a PvE room that let 1P pick GOD (protocol 18)
       install_clock_gate()
       log("replay: %s - %d frames, %d segment(s)", path, #r.inputs, #r.segments)
       rp_pos = 0; rp_seg = 2

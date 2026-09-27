@@ -71,6 +71,13 @@ async function putAll(store, list) {
   });
 }
 const bytes = async url => { const r = await fetch(url); if (!r.ok) throw new Error(url + ' ' + r.status); return new Uint8Array(await r.arrayBuffer()); };
+// 리플레이 창의 [내 녹화]·[온라인]에서 고른 녹화: 로비 페이지가 이 브라우저에 보관해 둔 것 (IndexedDB seibucup-replays)
+const localReplay = name => new Promise((ok, bad) => {
+  const r = indexedDB.open('seibucup-replays', 1);
+  r.onupgradeneeded = () => { if (!r.result.objectStoreNames.contains('reps')) r.result.createObjectStore('reps', { keyPath: 'name' }); };
+  r.onerror = () => bad(r.error);
+  r.onsuccess = () => { const g = r.result.transaction('reps').objectStore('reps').get(name); g.onsuccess = () => g.result ? ok(g.result.bytes) : bad(new Error('no replay ' + name)); g.onerror = () => bad(g.error); };
+});
 // HUD 글꼴: 사이트와 같은 Neo둥근모 (SIL OFL 1.1) - 한글이 들어 있다. 못 받으면 MAME 기본 글꼴(영문만)
 const FONT = 'https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.601/neodgm/neodgm.ttf';
 
@@ -159,7 +166,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
     if (Q.get('fps')) env.WEB_FPS = '1';   // ?fps=1: 속도 표시 (MAME 의 F11 과 같다), 모든 모드
     let args = [game];
     if (mode === 'replay') {
-      files.push(['/web/netplay.lua', await bytes('netplay.lua')], ['/replay.scr', await bytes('../' + encodeURI(Q.get('replay') || ''))]);
+      files.push(['/web/netplay.lua', await bytes('netplay.lua')], ['/replay.scr', Q.get('replaylocal') ? await localReplay(Q.get('replaylocal')) : await bytes('../' + encodeURI(Q.get('replay') || ''))]);
       Object.assign(env, { WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'replay', SCNP_REPLAY: '/replay.scr', SCNP_GAME: game });
       if (Q.get('names')) env.SCNP_NAMES = Q.get('names');
     } else if (mode === 'tutorial') {
@@ -192,6 +199,11 @@ if (Q.get('postlog') && Q.get('fakepad')) {
       files.push(['/web/practice.lua', await bytes('practice.lua')]);
       env.WEB_TARGET = '/web/practice.lua';
     }
+    if (mode === 'solo' && Q.get('god')) {                  // 혼자놀기 "패스로 GOD 선택": the plain game with god.lua
+      files.push(['/web/god.lua', await bytes('god.lua')]);
+      env.WEB_TARGET = '/web/god.lua';
+    }
+    if (mode === 'match' && Q.get('god')) env.SCNP_GOD = '1';   // PvE 방장이 GOD 선택을 켰다 (다른 사람에게는 F 로 알린다)
     args.push('-rompath', '/roms', '-autoboot_script', '/web/boot.lua', '-window', '-video', 'accel', '-resolution', '960x720',
               '-skip_gameinfo', '-nomouse', '-background_input', '-pause_brightness', '1.0', '-inipath', '/ini', '-cfg_directory', '/cfg', '-nvram_directory', '/nvram',
               '-state_directory', mode === 'tutorial' ? '/scenes' : '/state');

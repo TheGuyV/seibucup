@@ -162,6 +162,36 @@
   .seg button.on { background: var(--n-blue); border-color: var(--n-blue); color: #fff; font-weight: 700; }
   .seg button:disabled { color: #666; cursor: default; }
   .nrow { position: relative; }
+  /* 리플레이 창 (user, 2026-09-27): PC 런처의 리플레이 창과 같은 두 탭 */
+  .rmodal { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.6); padding: 16px; }
+  .rmodal[hidden] { display: none; }
+  .rbox { background: var(--n-bg); color: var(--n-fg); border: 1px solid var(--n-line); box-shadow: 4px 4px 0 rgba(0,0,0,.5); width: min(960px, 100%); max-height: calc(100vh - 32px); display: flex; flex-direction: column; }
+  .rhead { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--n-line); }
+  .rhead b { flex: 1; }
+  .rhead button { font: inherit; background: transparent; color: var(--n-fg); border: 1px solid var(--n-line); cursor: pointer; padding: 2px 10px; }
+  .rtabs { display: flex; gap: 4px; padding: 8px 12px 0; }
+  .rtabs button { font: inherit; background: var(--n-ctl); color: var(--n-mute); border: 1px solid var(--n-line); border-bottom: 0; padding: 6px 14px; cursor: pointer; }
+  .rtabs button.on { background: var(--n-panel); color: var(--n-fg); }
+  .rpane { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px 12px; border-top: 1px solid var(--n-line); min-height: 0; flex: 1; }
+  .rpane[hidden] { display: none; }
+  .rpane .hint { color: var(--n-mute); font-size: 12px; line-height: 1.5; }
+  .rfilters { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 13px; }
+  .rfilters input[type=text], .rfilters select { font: inherit; background: var(--n-ctl); color: var(--n-fg); border: 1px solid var(--n-line); padding: 4px 6px; }
+  .net .rfilters input[type=text] { width: 200px; max-width: 100%; flex: 0 1 200px; }
+  .net .rfilters select { width: auto; flex: 0 0 auto; }
+  .net .rfilters label { display: inline-flex; align-items: center; gap: 4px; width: auto; }
+  .rlist { overflow: auto; flex: 1; min-height: 160px; max-height: 52vh; border: 1px solid var(--n-line); background: var(--n-panel); }
+  .rlist table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .rlist th { position: sticky; top: 0; background: var(--n-ctl); color: var(--n-mute); font-weight: 400; text-align: left; padding: 5px 8px; white-space: nowrap; }
+  .rlist td { padding: 4px 8px; border-top: 1px solid #2a2a2a; white-space: nowrap; }
+  .rlist tr[data-i] { cursor: pointer; }
+  .rlist tr.sel td { background: var(--n-blue); color: #fff; }
+  .rlist tr.dim td { color: var(--n-mute); }
+  .rlist .empty { color: var(--n-mute); padding: 14px 8px; white-space: normal; }
+  .rbtns { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .rbtns .grow { flex: 1; }
+  .rbtns .stat { color: var(--n-mute); font-size: 12px; }
+  #netReplay { color: #5ec8ff; }
   .pvemenu { position: absolute; right: 0; top: 30px; z-index: 5; display: grid; background: #2b2b2b; border: 1px solid #666; box-shadow: 3px 3px 0 rgba(0,0,0,.5); min-width: 120px; }
   .pvemenu[hidden] { display: none; }
   .pvemenu button { font: inherit; text-align: left; padding: 6px 12px; background: transparent; color: var(--n-fg); border: 0; cursor: pointer; }
@@ -219,7 +249,7 @@
   .chatlog .sys { color: var(--n-mute); }
   .chatin { display: flex; gap: 6px; margin-top: 8px; }
   .net-notice { background: #2f2a12; color: var(--n-yellow); font-weight: 700; padding: 6px 16px; border-top: 1px solid #4a4220; }
-  .net-notice b { margin-right: 10px; }
+  .net-notice { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .net-status { display: flex; gap: 0; align-items: center; flex-wrap: wrap; background: #262626; border-top: 1px solid #333; padding: 5px 16px; font-size: 12.5px; color: #cfcfcf; }
   .net-status > span:not(.grow):not(:first-child) { padding: 0 10px; border-left: 1px solid #444; }
   #netConn::before { content: "● "; color: var(--n-green); }
@@ -321,12 +351,12 @@
           <div class="nrow"><label for="netEd" class="accent"><span class="ko">게임 버전</span><span class="en">Version</span></label>
             <select id="netEd"><option value="cupsocs2"></option><option value="cupsoc"></option></select></div>
           <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
-          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield"><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button></div></div>
+          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
         </div>
         <div class="net-col">
           <div class="nrow"><span class="nlab"><span class="ko">대전타입</span><span class="en">Match type</span></span>
             <div class="seg" id="netType"><button type="button" data-type="1v1">1 vs 1</button><button type="button" data-type="2v2">2 vs 2</button><button type="button" data-type="pve" id="btnPve">PvE 4P</button></div>
-            <div class="pvemenu" id="pveMenu" hidden><button type="button" data-cap="2">2 Player</button><button type="button" data-cap="3">3 Player</button><button type="button" data-cap="4">4 Player</button></div></div>
+            <div class="pvemenu" id="pveMenu" hidden><button type="button" data-cap="2">2 Player</button><button type="button" data-cap="3">3 Player</button><button type="button" data-cap="4">4 Player</button><button type="button" id="pveGod" style="border-top:1px solid #555"><span class="ko">GOD 선택 (1P가 패스를 누른 채 결정)</span><span class="en">Pick GOD (1P holds Pass)</span></button></div></div>
           <div class="nrow"><label for="netPing"><span class="ko">핑 제한</span><span class="en">Ping limit</span></label><select id="netPing"></select></div>
           <div class="nrow"><label for="netFt"><span class="ko">승부</span><span class="en">Series</span></label><select id="netFt"></select></div>
           <div class="nrow"><label for="netTime"><span class="ko">경기 시간</span><span class="en">Match time</span></label><select id="netTime"></select></div>
@@ -355,6 +385,23 @@
           <div class="ctabs" role="tablist"><button type="button" class="on" data-tab="pub"><span class="ko">공개채팅</span><span class="en">Public chat</span></button><button type="button" data-tab="room"><span class="ko">방 채팅</span><span class="en">Room chat</span></button></div>
           <div class="chatlog" id="chatPub" aria-live="polite"></div><div class="chatlog" id="chatRoom" aria-live="polite" hidden></div>
           <form id="chatform" class="chatin"><input id="chatin" maxlength="200" aria-label="chat" disabled><button class="nbtn" type="submit" id="btnSay" disabled><span class="ko">보내기</span><span class="en">Send</span></button></form>
+        </div>
+      </div>
+      <div class="rmodal" id="repModal" hidden role="dialog" aria-modal="true" aria-labelledby="repTitle">
+        <div class="rbox">
+          <div class="rhead"><b id="repTitle"><span class="ko">리플레이 - 녹화된 경기</span><span class="en">Replays - recorded matches</span></b><button type="button" id="repClose" aria-label="close">✕</button></div>
+          <div class="rtabs"><button type="button" data-rt="mine" class="on" id="repTabMine"></button><button type="button" data-rt="online" id="repTabOnline"></button></div>
+          <div class="rpane" id="repMine">
+            <div class="hint"><span class="ko">웹에서 한 온라인 경기는 끝나면 이 브라우저에 자동으로 녹화됩니다(최근 100경기, 보통 50~100 KB). 리플레이는 녹화한 것과 같은 게임 빌드에서만 똑같이 재생됩니다. PC 런처의 녹화 파일(.scr)도 <b>파일 열기</b>로 재생할 수 있습니다.</span><span class="en">Every online match you play here is recorded in this browser automatically (the last 100, usually 50-100 KB each). A replay plays exactly only on the build it was recorded with. <b>Open file</b> also plays the PC launcher's recordings (.scr).</span></div>
+            <div class="rlist"><table><thead><tr><th><span class="ko">날짜</span><span class="en">Date</span></th><th><span class="ko">대진</span><span class="en">Match</span></th><th><span class="ko">점수</span><span class="en">Score</span></th><th><span class="ko">길이</span><span class="en">Length</span></th><th><span class="ko">비고</span><span class="en">Note</span></th></tr></thead><tbody id="repMineRows"></tbody></table></div>
+            <div class="rbtns"><button type="button" class="nbtn primary" id="repPlay" disabled><span class="ko">재생</span><span class="en">Play</span></button><button type="button" class="nbtn" id="repSave" disabled><span class="ko">파일로 저장</span><span class="en">Save file</span></button><button type="button" class="nbtn" id="repDel" disabled><span class="ko">삭제</span><span class="en">Delete</span></button><span class="grow"></span><button type="button" class="nbtn" id="repOpen"><span class="ko">파일 열기...</span><span class="en">Open file...</span></button><input type="file" id="repFile" accept=".scr" hidden></div>
+          </div>
+          <div class="rpane" id="repOnline" hidden>
+            <div class="hint"><span class="ko">사이트에 올라간 공개 경기입니다(비밀방 경기는 없습니다). 고른 경기를 받아서 바로 재생합니다.</span><span class="en">Public matches on the site (private rooms are not there). Play downloads the match and plays it.</span></div>
+            <div class="rfilters"><input type="text" id="repQ" placeholder=""><label><input type="checkbox" id="repMineOnly"> <span class="ko">내 경기만</span><span class="en">My matches only</span></label><select id="repEd"></select><select id="repTy"></select><span class="stat" id="repFresh"></span></div>
+            <div class="rlist"><table><thead><tr><th><span class="ko">날짜</span><span class="en">Date</span></th><th><span class="ko">대진</span><span class="en">Match</span></th><th><span class="ko">점수</span><span class="en">Score</span></th><th><span class="ko">승부</span><span class="en">Series</span></th><th><span class="ko">버전</span><span class="en">Version</span></th><th><span class="ko">길이</span><span class="en">Length</span></th><th><span class="ko">상태</span><span class="en">State</span></th></tr></thead><tbody id="repOnRows"></tbody></table></div>
+            <div class="rbtns"><button type="button" class="nbtn primary" id="repOnPlay" disabled><span class="ko">받아서 재생</span><span class="en">Get and play</span></button><button type="button" class="nbtn" id="repCopy" disabled><span class="ko">링크 복사</span><span class="en">Copy link</span></button><span class="grow"></span><a class="nbtn" href="results.html" target="_blank" rel="noopener"><span class="ko">사이트에서 보기</span><span class="en">On the site</span></a></div>
+          </div>
         </div>
       </div>
       <div class="net-notice" id="netNotice" hidden></div>
@@ -530,7 +577,9 @@
     if (running) { stop(true).then(function () { start(mode, extra); }); return; }
     var q = new URLSearchParams({ mode: mode, game: (extra && extra.game) || ed, lang: ko() ? 'ko' : 'en' });
     if (extra && extra.replay) q.set('replay', extra.replay);
+    if (extra && extra.replaylocal) q.set('replaylocal', extra.replaylocal);   // 이 브라우저에 보관한 녹화 (IndexedDB seibucup-replays)
     if (extra && extra.names) q.set('names', extra.names);
+    if (extra && extra.god) q.set('god', '1');   // 혼자놀기 GOD (god.lua) / PvE 방장의 GOD 선택 (SCNP_GOD)
     // 이 브라우저에서 패드를 한 번이라도 봤으면 게임 화면이 MAME 를 켜기 전에 패드 버튼을 받는다 (MAME 는 켜질 때 있던 패드만 쓴다)
     try { if (Array.prototype.some.call(navigator.getGamepads(), Boolean)) store.set('web_haspad', '1'); } catch (e) {}
     if (store.get('web_haspad') === '1') q.set('pads', '1');
@@ -695,8 +744,12 @@
     if (d.type === 'log') logline(d.text);
     else if (d.type === 'saved') { if (savedWait) savedWait(d.text); }
     else if (d.type === 'result') onResult(d.text);
-    else if (d.type === 'replayfile') { res.known = true; res.replay = d.text || null; if (res.list.length && res.sent === 0 && net.room && net.room.slot === 1) reportResults(); }
-    else if (d.type === 'replaybytes') { if (res.onBytes) { var cb = res.onBytes; res.onBytes = null; cb(d.name, d.bytes); } }
+    else if (d.type === 'replayfile') {
+      res.known = true; res.replay = d.text || null; if (res.list.length && res.sent === 0 && net.room && net.room.slot === 1) reportResults();
+      // 내 녹화: 끝난 경기의 녹화를 이 브라우저에 보관한다 (방장이 서버에 올리는 것과 따로)
+      if (d.text && running && running.mode === 'match') try { running.frame.contentWindow.postMessage({ get: 'replay', name: d.text }, location.origin); } catch (e) {}
+    }
+    else if (d.type === 'replaybytes') { if (d.bytes && d.name) keepReplay(d.name, d.bytes, false); if (res.onBytes) { var cb = res.onBytes; res.onBytes = null; cb(d.name, d.bytes); } }
     else if (d.type === 'pk') net.pkEnded = true;
     else if (d.type === 'pad') { logline('gamepad ' + d.text); if (/^connected/.test(d.text)) store.set('web_haspad', '1'); drawPads(); }
     else if (d.type === 'running') { veil(''); focusGame(); say('<b>' + esc(running.label) + '</b> · ' + T('게임 중 — 화면을 누르면 키가 들어갑니다', 'playing — click the screen for keys')); }
@@ -720,10 +773,10 @@
   // 게임 서버 입구: 실사이트(GitHub Pages)에서는 이 PC 의 게임 서버(play.seibucup.online), 시험 주소에서는 같은 주소의 /ws
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 17;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 18;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
-  var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, sound: true };
+  var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true };
   try { Object.assign(nset, JSON.parse(store.get('web_net') || '{}')); } catch (e) {}
   function saveSet() { store.set('web_net', JSON.stringify(nset)); }
   // 닉네임: PC 런처와 같은 규칙 - 문자(한글·영문 등)와 숫자, _ 와 - 만, 16자까지 (런처 Sanitize 와 같다)
@@ -744,7 +797,7 @@
     var stageNames = [T('잔디 (기본)', 'Grass (default)'), T('흙 잔디', 'Worn grass'), T('흙', 'Dirt'), T('인조잔디', 'Artificial turf'), T('무작위', 'Random')];
     opt($('netEd'), [['cupsocs2', T('셀렉션 (추천)', 'Selection (recommended)')], ['cupsoc', T('기본', 'Original')]], ed); drawEdition();
     opt($('netPing'), PING_LIMITS.map(function (v) { return [v, v === 0 ? T('제한 없음', 'No limit') : T(v + ' ms 이하', 'up to ' + v + ' ms')]; }), nset.ping);
-    opt($('netFt'), FTS.map(function (v) { return [v, v === 1 ? T('단판', 'Single match') : T('FT' + v + ' (' + v + '선승)', 'FT' + v + ' (first to ' + v + ')')]; }), nset.ft);
+    opt($('netFt'), FTS.map(function (v) { return [v, v === 1 ? T('승부차기 없는 단판', 'Single match, no shoot-out') : T('FT' + v + ' (' + v + '선승)', 'FT' + v + ' (first to ' + v + ')')]; }), nset.ft);
     opt($('netTime'), TIMES.map(function (v) { return [v, mmss(v) + (v === 150 ? T('  (기본)', '  (default)') : '')]; }), nset.time);
     opt($('netStage'), STAGES.map(function (v, i) { return [v, stageNames[i]]; }), nset.stage);
     opt($('netBgm'), BGMS.map(function (v, i) { return [v, i === 0 ? T('무작위', 'Random') : 'Stage ' + BGM_ROUNDS[i - 1][0] + ' / ' + BGM_ROUNDS[i - 1][1]]; }), nset.bgm);
@@ -758,7 +811,8 @@
   // 대전타입: 1 vs 1 / 2 vs 2 (1P+3P 대 2P+4P, 4명이 차야 시작) / PvE (1~4명이 한 팀으로 CPU 와, 인원은 메뉴에서)
   function drawType() {
     document.querySelectorAll('#netType button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-type') === nset.type); });
-    $('btnPve').textContent = 'PvE ' + nset.pveCap + 'P';
+    $('btnPve').textContent = 'PvE ' + nset.pveCap + 'P' + (nset.pveGod ? ' GOD' : '');
+    $('pveGod').classList.toggle('on', !!nset.pveGod);
     document.querySelectorAll('#pveMenu button').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-cap') === nset.pveCap); });
   }
   document.querySelectorAll('#netType button').forEach(function (b) {
@@ -767,8 +821,14 @@
       if (nset.type === 'pve') $('pveMenu').hidden = !$('pveMenu').hidden; else $('pveMenu').hidden = true;
     };
   });
-  document.querySelectorAll('#pveMenu button').forEach(function (b) { b.onclick = function () { nset.pveCap = +b.getAttribute('data-cap'); saveSet(); drawType(); $('pveMenu').hidden = true; }; });
+  document.querySelectorAll('#pveMenu button[data-cap]').forEach(function (b) { b.onclick = function () { nset.pveCap = +b.getAttribute('data-cap'); saveSet(); drawType(); $('pveMenu').hidden = true; }; });
+  // GOD 선택 (user, 2026-09-27): in a PvE room this player hosts, 1P may pick GOD by holding Pass while confirming
+  $('pveGod').onclick = function () {
+    nset.pveGod = !nset.pveGod; saveSet(); drawType(); $('pveMenu').hidden = true;
+    if (nset.pveGod) netSay(T('앞으로 여는 PvE 방에서 1P가 GOD를 고를 수 있습니다: 국가를 결정할 때 패스를 누른 채 누르세요.', 'PvE rooms you open let 1P pick GOD: hold Pass while confirming the country.'));
+  };
   document.addEventListener('click', function (e) { if (!e.target.closest('#pveMenu') && !e.target.closest('#btnPve')) $('pveMenu').hidden = true; });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#aloneMenu') && !e.target.closest('#netAlone')) $('aloneMenu').hidden = true; });
   $('netPing').onchange = function () { nset.ping = +this.value; saveSet(); };
   $('netFt').onchange = function () { nset.ft = +this.value; saveSet(); var r = net.room; if (r && r.slot === 1 && r.state === 'waiting') send('FT ' + nset.ft); };
   $('netTime').onchange = function () { nset.time = +this.value; saveSet(); var r = net.room; if (r && r.slot === 1 && r.state === 'waiting') send('TIME ' + nset.time); };
@@ -877,18 +937,33 @@
       var my = net.rtt >= 0 && ping >= 0 ? net.rtt + ping : -1, far = lim > 0 && my > lim;
       return '<button type="button" class="' + cls + '" data-id="' + esc(id) + '">' +
         '<span class="t1"><span>#' + esc(id) + (f[8] === '1' ? ' 🔒' : '') + '</span><span class="pill ' + (f[3] === 'playing' ? 'play' : 'wait') + '">' + esc(stateName(f[3])) + '</span></span>' +
-        '<span class="t2">' + esc(f[1]) + '</span>' +
+        '<span class="t2">' + kindIcon(f[16]) + esc(f[1]) + '</span>' +
         '<span class="t3"><span>' + esc(type + ' · ' + mmss(secs) + (ft > 1 ? ' · FT' + ft : '')) + '</span><span class="pill ed' + (edn === 'cupsocs2' ? ' sel2' : '') + '">' + esc(edn === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + '</span></span>' +
         '<span class="t4"><span>' + dots + ' ' + n + '/' + cap + '</span><span class="png' + (far ? ' far' : '') + '">' + (ping >= 0 ? ping : '-') + ' / ' + (lim > 0 ? lim + ' ms' : '-') + '</span></span></button>';
     }).join('');
     $('tiles').innerHTML = html;
   }
-  function seatRows(names, builds, ready, cap, mySlot, specs, type) {
+  // 접속 종류 아이콘 (user, 2026-09-27): 💻 PC 런처·PC 브라우저, 📶 휴대폰·태블릿 와이파이, 📱 모바일 데이터 또는 알 수 없는 휴대폰, 🌐 웹(아직 모름)
+  var KIND = { pc: ['💻', 'PC 런처', 'PC launcher'], wd: ['💻', '웹 (PC 브라우저)', 'web (PC browser)'], ww: ['📶', '웹 (휴대폰, 와이파이)', 'web (phone, Wi-Fi)'],
+               wc: ['📱', '웹 (휴대폰, 모바일 데이터)', 'web (phone, mobile data)'], wm: ['📱', '웹 (휴대폰)', 'web (phone)'], w: ['🌐', '웹', 'web'] };
+  function kindIcon(k) { var d = KIND[k]; return d ? '<span class="kind" title="' + esc(T(d[1], d[2])) + '">' + d[0] + '</span> ' : ''; }
+  function kindText(k) { var d = KIND[k]; return d ? d[0] + ' ' : ''; }
+  // 이 브라우저의 연결: 안드로이드 크롬만 와이파이/모바일 데이터를 알려 준다 (아이폰·PC 브라우저는 알려 주지 않는다)
+  function myKind() {
+    var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    var mobile = (window.matchMedia && matchMedia('(pointer: coarse)').matches) || /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
+    var t = c && c.type;
+    if (t === 'wifi') return mobile ? 'ww' : 'wd';
+    if (t === 'cellular') return 'wc';
+    if (t === 'ethernet') return 'wd';
+    return mobile ? 'wm' : 'wd';
+  }
+  function seatRows(names, builds, ready, cap, mySlot, specs, type, kinds) {
     var rows = '', teams = type === '2v2';
     for (var i = 0; i < Math.max(2, Math.min(4, cap || 2)); i++) {
       var nm = names[i] || '';
       rows += '<tr class="' + (i + 1 === mySlot ? 'me' : '') + '"><td>' + (i + 1) + 'P</td>' +
-        (nm ? '<td>' + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i === 0 ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + '</td>'
+        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i === 0 ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + '</td>'
             : '<td class="empty">' + T('(비어 있음)', '(empty)') + '</td><td></td><td></td>') + '</tr>';
     }
     (specs || []).forEach(function (s, k) { if (s) rows += '<tr><td>' + T('관전', 'watch') + '</td><td>' + esc(s) + '</td><td></td><td>' + T('관전자', 'spectator') + '</td></tr>'; });
@@ -898,7 +973,7 @@
     var r = net.room, w = net.who;
     if (r) {
       $('roomTitle').textContent = T('내 방', 'My room') + ' · ' + T('방 ', 'room ') + r.id + ' ' + r.type.replace('v', ' vs ') + ' (' + stateName(r.state) + ') · ' + (r.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+r.time) + (r.ft > 1 ? ' · FT' + r.ft + ' ' + r.wa + ':' + r.wb : '');
-      $('seatrows').innerHTML = seatRows(r.names, r.builds, r.ready, r.type === '2v2' ? 4 : r.cap, r.slot, r.specs, r.type);
+      $('seatrows').innerHTML = seatRows(r.names, r.builds, r.ready, r.type === '2v2' ? 4 : r.cap, r.slot, r.specs, r.type, r.kinds);
     } else if (w) {
       var n = w.names.filter(Boolean).length;
       $('roomTitle').textContent = T('선택한 방', 'Selected room') + ' · ' + T('방 ', 'room ') + w.id + ' ' + w.type.replace('v', ' vs ') + ' (' + stateName(w.state) + ', ' + n + '/' + w.cap + ') · ' + (w.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+w.time);
@@ -977,10 +1052,17 @@
     $('netCounts').textContent = on ? T('접속자 ' + net.online + '명 · 방 ' + net.rooms.length + '개', net.online + ' online · ' + net.rooms.length + ' rooms') : '';
     $('netCounts').hidden = !on;
   }
+  // 공지: 한 줄에 8초마다 번갈아 (PC 런처와 같다), 말머리 "[공지] " (user, 2026-09-27). 줄 앞에 적힌 ']' 는 뺀다
+  var noticeIdx = 0, noticeTimer = null;
+  function noticeLines() { return (net.notice || []).map(function (t) { return t.replace(/^\s*\]\s*/, '').trim(); }).filter(Boolean); }
   function drawNotice() {
-    var box = $('netNotice'), lines = net.notice.filter(function (t) { return t.trim(); });
+    var box = $('netNotice'), lines = noticeLines();
     box.hidden = !lines.length;
-    box.innerHTML = lines.map(function (t) { return '<div><b>' + esc(T('공지', 'Notice')) + '</b>' + esc(t) + '</div>'; }).join('');
+    if (!lines.length) { box.textContent = ''; return; }
+    box.textContent = T('[공지] ', '[Notice] ') + lines[noticeIdx % lines.length];
+    box.title = lines.join('\n');
+    if (lines.length > 1 && !noticeTimer) noticeTimer = setInterval(function () { noticeIdx++; drawNotice(); }, 8000);
+    if (lines.length <= 1 && noticeTimer) { clearInterval(noticeTimer); noticeTimer = null; }
   }
 
   // ---- 프로토콜
@@ -989,7 +1071,7 @@
     var sp = l.indexOf(' '), cmd = sp < 0 ? l : l.slice(0, sp), arg = sp < 0 ? '' : l.slice(sp + 1);
     if (cmd === 'WELCOME') {
       net.nick = arg.split(' ').slice(1).join(' ');
-      send('BUILD ' + WEB_BUILD + ' ' + WEB_PROTO); send('NOTES');
+      send('BUILD ' + WEB_BUILD + ' ' + WEB_PROTO); send('NOTES'); send('CONN ' + myKind());
       sys('pub', T('로비에 있는 모두와 이야기해 보세요 - 상대 구함, 인사, 건의.', 'Talk with everybody in the lobby - find a match, say hello.'));
       sys('pub', T(net.nick + ' 님, 환영합니다! 이 채팅은 접속한 모두에게 보입니다 - 인사해 보세요.', 'Welcome, ' + net.nick + '! Everybody online sees this chat.'));
       netSay(T('접속됨. 방을 골라 참가하거나 새로 만드세요.', 'Connected. Pick a room to join, or create one.'));
@@ -1015,13 +1097,13 @@
       drawSeats();
     }
     else if (cmd === 'ONLINE') { net.online = +arg || 0; drawStatus(); }
-    else if (cmd === 'JOINED') { var a = arg.split(' '); net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(a[0] + ' 님이 들어왔습니다', a[0] + ' joined')); }
+    else if (cmd === 'JOINED') { var a = arg.split(' '); net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(kindText(a[2]) + a[0] + ' 님이 들어왔습니다', kindText(a[2]) + a[0] + ' joined')); }
     else if (cmd === 'NOTE') {
       var p = arg.split(' '), d = new Date(+p[0] || Date.now());
       var when = (d.toDateString() === new Date().toDateString()) ? hhmm(d) : ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) + ' ' + hhmm(d);
       chat('pub', when, p[1], p.slice(2).join(' '));
     }
-    else if (cmd === 'NOTICE') { net.notice = arg.split('\t'); drawNotice(); }
+    else if (cmd === 'NOTICE') { net.notice = arg.split('\t'); noticeIdx = 0; drawNotice(); }
     else if (cmd === 'MOTD') sys('pub', arg);
     else if (cmd === 'PONG') {
       if (net.pingAt) { net.rtt = Math.round(performance.now() - net.pingAt); net.pingAt = 0; drawStatus(); drawTiles(); }
@@ -1090,13 +1172,14 @@
     else if (cmd === 'ERROR') { sys(net.room ? 'room' : 'pub', 'ERROR ' + arg); netSay('ERROR ' + arg); }
   }
   // ROOMINFO 뒤의 칸 (0부터): 0 id, 1 state, 2 내 자리, 3 닉1,닉2,닉3,닉4, 4 type, 5 maxping, 6 잠금, 7 관전, 8 time, 9 builds,
-  // 10 준비 1,0,.., 11 version, 12 ft, 13 wa, 14 wb, 15 quick, 16 over, 17 capacity
+  // 10 준비 1,0,.., 11 version, 12 ft, 13 wa, 14 wb, 15 quick, 16 over, 17 capacity, 18 접속 종류 pc,ww,,
   function onRoomInfo(f) {
     var names = (f[3] || ',,,').split(','); while (names.length < 4) names.push('');
     var was = net.room;
     net.room = { id: f[0], state: f[1], slot: +f[2], names: names, type: f[4] || '1v1', specs: f[7] && f[7] !== '-' ? f[7].split(',') : [],
                  time: f[8] || '150', builds: (f[9] || ',,,').split(','), ready: (f[10] || '0,0,0,0').split(',').map(function (x) { return x === '1'; }),
-                 edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2) };
+                 edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2),
+                 kinds: (f[18] || ',,,').split(',') };
     var r = net.room;
     if (!was) chime('me');
     else if (r.id === was.id) {
@@ -1246,10 +1329,15 @@
                      nspec: f[6] || '0', swap: f[8] === '1' ? '1' : '0', names: r.names.map(encodeURIComponent).join(','),
                      stage: String(stage), bgm: nset.bgm === 'random' ? 'shuffle' : nset.bgm,
                      series: r.ft > 1 ? r.ft + ',' + r.wa + ',' + r.wb : '', pk: r.ft > 1 ? '1' : '',
+                     god: (f[4] === 'pve' && f[1] === '1' && nset.pveGod) ? '1' : '',
                      label: T('온라인 경기 · 방 ', 'Online match · room ') + (r.id || '?') });
   }
 
   // ---- 버튼
+  try {
+    var nc = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (nc && nc.addEventListener) nc.addEventListener('change', function () { if (net.ws && net.ws.readyState === 1) send('CONN ' + myKind()); });
+  } catch (e) {}
   function connect() {
     var nick = cleanNick(nickIn.value); nickIn.value = nick;
     if (!nick) { nickIn.focus(); netSay(T('닉네임을 입력하세요.', 'Enter a nickname.')); return; }
@@ -1309,9 +1397,194 @@
   }
   $('btnSolo').onclick = waitingGame;
   // 혼자놀기: 고른 버전의 원래 오락실 게임 그대로 (넷플레이 없음)
-  $('netAlone').onclick = function () { start('solo', { label: T('혼자놀기', 'Play solo') }); };
+  $('netAlone').onclick = function () { $('aloneMenu').hidden = !$('aloneMenu').hidden; };
+  document.querySelectorAll('#aloneMenu button').forEach(function (b) {
+    b.onclick = function () {
+      $('aloneMenu').hidden = true;
+      var god = b.getAttribute('data-god') === '1';
+      start('solo', { label: god ? T('혼자놀기 · GOD', 'Play solo · GOD') : T('혼자놀기', 'Play solo'), god: god });
+    };
+  });
   $('netTut').onclick = function () { start('tutorial'); };
   $('netPractice').onclick = function () { start('practice'); };
+  // ---- 리플레이 (user, 2026-09-27): PC 런처의 리플레이 창과 같은 두 탭 - [내 녹화] 이 브라우저에 모은 녹화, [온라인] 사이트의 공개 경기
+  //   녹화는 IndexedDB 'seibucup-replays' (롬·설정 DB 와 따로 - 게임 화면도 같은 DB 에서 읽어 재생한다)
+  var REP = { db: null, mine: [], online: null, selMine: -1, selOn: -1, tab: 'mine', MAX: 100 };
+  function repdb() {
+    if (REP.db) return REP.db;
+    REP.db = new Promise(function (ok, bad) {
+      var r = indexedDB.open('seibucup-replays', 1);
+      r.onupgradeneeded = function () { if (!r.result.objectStoreNames.contains('reps')) r.result.createObjectStore('reps', { keyPath: 'name' }); };
+      r.onsuccess = function () { ok(r.result); }; r.onerror = function () { REP.db = null; bad(r.error); };
+    });
+    return REP.db;
+  }
+  function repTx(mode, fn) {
+    return repdb().then(function (db) {
+      return new Promise(function (ok, bad) {
+        var t = db.transaction('reps', mode), res = fn(t.objectStore('reps'));
+        t.oncomplete = function () { ok(res && res.result); }; t.onerror = function () { bad(t.error); };
+      });
+    });
+  }
+  // .scr = "SCNPRPL2\n" + 경기 정보 JSON 한 줄 + 녹화
+  function repMeta(bytes) {
+    try {
+      var head = new TextDecoder().decode(bytes.subarray(0, Math.min(bytes.length, 4096)));
+      var i = head.indexOf('\n'), j = head.indexOf('\n', i + 1);
+      if (head.slice(0, i).indexOf('SCNPRPL') !== 0 || j < 0) return null;
+      return JSON.parse(head.slice(i + 1, j));
+    } catch (e) { return null; }
+  }
+  // 녹화 하나를 보관한다 (같은 이름은 덮어쓴다), online = 사이트에서 받은 것. 내 녹화는 최근 100개만 남긴다
+  function keepReplay(name, bytes, online) {
+    if (!name || !bytes || !bytes.length || bytes.length > 4 * 1024 * 1024) return Promise.resolve(null);
+    var meta = repMeta(bytes); if (!meta) return Promise.resolve(null);
+    var rec = { name: name, bytes: bytes, meta: meta, saved: Date.now(), online: !!online };
+    return repTx('readwrite', function (st) { st.put(rec); })
+      .then(function () { if (typeof tlog === 'function') tlog('replay kept ' + name + (online ? ' (online)' : '')); return repTx('readonly', function (st) { return st.getAll(); }); })
+      .then(function (all) {
+        var mine = all.filter(function (x) { return !x.online; }).sort(function (a, b) { return b.saved - a.saved; });
+        var gone = mine.slice(REP.MAX).concat(all.filter(function (x) { return x.online; }).sort(function (a, b) { return b.saved - a.saved; }).slice(30));
+        if (!gone.length) return rec;
+        return repTx('readwrite', function (st) { gone.forEach(function (x) { st.delete(x.name); }); }).then(function () { return rec; });
+      }).catch(function () { return null; });
+  }
+  function repNames(meta) { return String(meta.names || '').split(',').map(function (n) { try { return decodeURIComponent(n); } catch (e) { return n; } }); }
+  function repMatch(meta) {
+    var n = repNames(meta); while (n.length < 4) n.push('');
+    if (meta.type === '2v2') return n.filter(function (x, i) { return x && i % 2 === 0; }).join('·') + ' vs ' + n.filter(function (x, i) { return x && i % 2 === 1; }).join('·');
+    return (n[0] || '?') + ' vs ' + (n[1] || (meta.type === 'pve' ? 'CPU' : '?'));
+  }
+  function repOpen(tab) {
+    $('repModal').hidden = false; repTab(tab || REP.tab); repLoadMine();
+    if (!REP.online) repLoadOnline();
+  }
+  function repClose() { $('repModal').hidden = true; }
+  function repTab(t) {
+    REP.tab = t;
+    $('repMine').hidden = t !== 'mine'; $('repOnline').hidden = t !== 'online';
+    document.querySelectorAll('.rtabs button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-rt') === t); });
+  }
+  function repLabels() {
+    $('repTabMine').textContent = T('내 녹화', 'My recordings') + ' (' + REP.mine.length + ')';
+    $('repTabOnline').textContent = T('온라인', 'Online') + ' (' + (REP.online ? REP.online.length : '…') + ')';
+  }
+  function repLoadMine() {
+    return repTx('readonly', function (st) { return st.getAll(); }).then(function (all) {
+      REP.mine = (all || []).filter(function (x) { return !x.online; }).sort(function (a, b) { return b.saved - a.saved; });
+      REP.selMine = -1; drawRepMine(); repLabels(); if (REP.online) drawRepOnline();
+    }).catch(function () { REP.mine = []; drawRepMine(); repLabels(); });
+  }
+  function drawRepMine() {
+    var rows = REP.mine.map(function (x, i) {
+      var m = x.meta || {}, sc = m.score || [0, 0];
+      var note = (m.complete === false ? T('중단됨', 'unfinished') : '') + (m.build && m.build !== WEB_BUILD ? (m.complete === false ? ', ' : '') + T('다른 빌드', 'other build') : '');
+      return '<tr data-i="' + i + '" class="' + (i === REP.selMine ? 'sel' : '') + '"><td>' + esc(String(m.date || '').slice(5)) + '</td><td>' + esc(repMatch(m)) + '</td><td>' + sc[0] + ' - ' + sc[1] +
+             '</td><td>' + mmss(Math.round((m.frames || 0) / 60)) + '</td><td>' + esc(note) + '</td></tr>';
+    }).join('');
+    $('repMineRows').innerHTML = rows || '<tr><td colspan="5" class="empty">' + esc(T('아직 녹화된 경기가 없습니다 - 먼저 한 판 하세요.', 'No recordings yet - play a match first.')) + '</td></tr>';
+    var on = REP.selMine >= 0; $('repPlay').disabled = !on; $('repSave').disabled = !on; $('repDel').disabled = !on;
+  }
+  function repPlayRec(x) {
+    var m = x.meta || {};
+    if (m.build && m.build !== WEB_BUILD && !confirm(T('이 경기는 다른 빌드에서 녹화되어, 실제 경기와 다르게 보일 수 있습니다. 그래도 재생할까요?', 'This match was recorded on another build, so what you see may differ from what was played. Play it anyway?'))) return;
+    repClose();
+    start('replay', { replaylocal: x.name, game: m.game === 'cupsoc' ? 'cupsoc' : 'cupsocs2', names: repNames(m).map(encodeURIComponent).join(','),
+                      label: T('리플레이', 'Replay') + ' · ' + repMatch(m) });
+  }
+  function repSaveFile(x) {
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([x.bytes], { type: 'application/octet-stream' }));
+    a.download = x.name; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  // ---- [온라인]: 사이트의 results.json (리플레이가 있는 경기만)
+  function repLoadOnline() {
+    $('repFresh').textContent = T('목록을 불러오는 중...', 'Loading the list...');
+    fetch('results.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (all) {
+      REP.online = (all || []).filter(function (x) { return x && typeof x.replay === 'string' && /\.scr$/i.test(x.replay); }).map(function (x) {
+        var n = (x.nicks || []).slice(); while (n.length < 4) n.push('');
+        var match = x.type === '2v2' ? [n[0], n[1]].filter(Boolean).join('·') + ' vs ' + [n[2], n[3]].filter(Boolean).join('·') : n[0] + ' vs ' + n[1];
+        var ft = +x.ft || 1, res = ft > 1 ? 'FT' + ft : T('단판', 'single');
+        if (x.pk && x.pk.length >= 2) res += ' · PK ' + x.pk[0] + '-' + x.pk[1];
+        return { when: String(x.when || ''), match: match, score: (x.score || [0, 0])[0] + ' - ' + (x.score || [0, 0])[1], res: res, ft: ft > 1, teams: x.type === '2v2',
+                 ed: x.edition === 'cupsocs2' ? 'cupsocs2' : 'cupsoc', len: x.time ? mmss(+x.time) : '', path: x.replay, name: x.replay.split('/').pop(), nicks: n };
+      }).sort(function (a, b) { return a.when < b.when ? 1 : a.when > b.when ? -1 : 0; });
+      $('repFresh').textContent = T(hhmm(new Date()) + ' 기준 ' + REP.online.length + '경기', REP.online.length + ' matches as of ' + hhmm(new Date()));
+      REP.selOn = -1; drawRepOnline(); repLabels();
+    }).catch(function (e) { $('repFresh').textContent = T('목록을 받지 못했습니다: ', 'Could not get the list: ') + e.message; REP.online = []; repLabels(); });
+  }
+  function repFiltered() {
+    var q = $('repQ').value.trim().toLowerCase(), me = cleanNick(nickIn.value).toLowerCase(), mineOnly = $('repMineOnly').checked;
+    var ed = $('repEd').value, ty = $('repTy').value;
+    return (REP.online || []).filter(function (r) {
+      if (q && !r.nicks.some(function (n) { return n.toLowerCase().indexOf(q) >= 0; })) return false;
+      if (mineOnly && !(me && r.nicks.some(function (n) { return n.toLowerCase() === me; }))) return false;
+      if (ed !== 'all' && r.ed !== ed) return false;
+      if (ty === '1v1' && r.teams) return false;
+      if (ty === '2v2' && !r.teams) return false;
+      if (ty === 'ft' && !r.ft) return false;
+      return true;
+    });
+  }
+  function drawRepOnline() {
+    var list = repFiltered(), got = {}, mineKeys = {};
+    REP.mine.forEach(function (x) { mineKeys[x.name.replace(/_p\d+\.scr$/i, '')] = 1; });
+    REP.onlineGot = REP.onlineGot || {};
+    $('repOnRows').innerHTML = list.map(function (r, i) {
+      var state = mineKeys[r.name.replace(/_p\d+\.scr$/i, '')] ? T('내 녹화에 있음', 'in my recordings') : REP.onlineGot[r.name] ? T('받음', 'downloaded') : T('받기 필요', 'to download');
+      return '<tr data-i="' + i + '" class="' + (i === REP.selOn ? 'sel' : '') + '"><td>' + esc(r.when.slice(5)) + '</td><td>' + esc(r.match) + '</td><td>' + esc(r.score) + '</td><td>' + esc(r.res) +
+             '</td><td>' + esc(r.ed === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + '</td><td>' + esc(r.len) + '</td><td>' + esc(state) + '</td></tr>';
+    }).join('') || '<tr><td colspan="7" class="empty">' + esc(REP.online ? T('조건에 맞는 경기가 없습니다.', 'No match fits.') : T('목록을 불러오는 중...', 'Loading the list...')) + '</td></tr>';
+    REP.shown = list;
+    var on = REP.selOn >= 0 && REP.selOn < list.length; $('repOnPlay').disabled = !on; $('repCopy').disabled = !on;
+  }
+  function repPlayOnline(r) {
+    $('repOnPlay').disabled = true; $('repFresh').textContent = T(r.name + ' 받는 중...', 'Downloading ' + r.name + '...');
+    fetch(r.path.split('/').map(encodeURIComponent).join('/')).then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.arrayBuffer(); }).then(function (buf) {
+      return keepReplay(r.name, new Uint8Array(buf), true);
+    }).then(function (rec) {
+      $('repOnPlay').disabled = false;
+      if (!rec) { $('repFresh').textContent = T(r.name + ' 을(를) 받지 못했습니다.', 'Could not get ' + r.name + '.'); return; }
+      REP.onlineGot[r.name] = 1; drawRepOnline(); repPlayRec(rec);
+    }).catch(function (e) { $('repOnPlay').disabled = false; $('repFresh').textContent = T(r.name + ' 을(를) 받지 못했습니다 (', 'Could not get ' + r.name + ' (') + e.message + ')'; });
+  }
+  (function () {
+    [['all', '버전: 전체', 'Version: all'], ['cupsocs2', '셀렉션', 'Selection'], ['cupsoc', '기본', 'Original']].forEach(function (o) { var e = document.createElement('option'); e.value = o[0]; e.textContent = T(o[1], o[2]); $('repEd').appendChild(e); });
+    [['all', '방식: 전체', 'Type: all'], ['1v1', '1 vs 1', '1 vs 1'], ['2v2', '2 vs 2', '2 vs 2'], ['ft', 'FT만', 'FT only']].forEach(function (o) { var e = document.createElement('option'); e.value = o[0]; e.textContent = T(o[1], o[2]); $('repTy').appendChild(e); });
+    $('repQ').placeholder = T('닉네임으로 찾기', 'Find a nickname');
+    $('netReplay').onclick = function () { repOpen(); };
+    $('repClose').onclick = repClose;
+    $('repModal').addEventListener('click', function (e) { if (e.target === $('repModal')) repClose(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('repModal').hidden) repClose(); });
+    document.querySelectorAll('.rtabs button').forEach(function (b) { b.onclick = function () { repTab(b.getAttribute('data-rt')); }; });
+    $('repMineRows').addEventListener('click', function (e) { var tr = e.target.closest('tr[data-i]'); if (!tr) return; REP.selMine = +tr.getAttribute('data-i'); drawRepMine(); });
+    $('repMineRows').addEventListener('dblclick', function (e) { var tr = e.target.closest('tr[data-i]'); if (tr) repPlayRec(REP.mine[+tr.getAttribute('data-i')]); });
+    $('repOnRows').addEventListener('click', function (e) { var tr = e.target.closest('tr[data-i]'); if (!tr) return; REP.selOn = +tr.getAttribute('data-i'); drawRepOnline(); });
+    $('repOnRows').addEventListener('dblclick', function (e) { var tr = e.target.closest('tr[data-i]'); if (tr) repPlayOnline(REP.shown[+tr.getAttribute('data-i')]); });
+    $('repPlay').onclick = function () { var x = REP.mine[REP.selMine]; if (x) repPlayRec(x); };
+    $('repSave').onclick = function () { var x = REP.mine[REP.selMine]; if (x) repSaveFile(x); };
+    $('repDel').onclick = function () {
+      var x = REP.mine[REP.selMine]; if (!x || !confirm(T(x.name + ' 을(를) 지울까요?', 'Delete ' + x.name + '?'))) return;
+      repTx('readwrite', function (st) { st.delete(x.name); }).then(repLoadMine);
+    };
+    $('repOpen').onclick = function () { $('repFile').value = ''; $('repFile').click(); };
+    $('repFile').onchange = function () {
+      var f = $('repFile').files[0]; if (!f) return;
+      f.arrayBuffer().then(function (buf) { return keepReplay(f.name, new Uint8Array(buf), false); }).then(function (rec) {
+        if (!rec) { alert(T('리플레이 파일(.scr)이 아닙니다.', 'Not a replay file (.scr).')); return; }
+        repLoadMine().then(function () { repPlayRec(rec); });
+      });
+    };
+    $('repOnPlay').onclick = function () { var r = (REP.shown || [])[REP.selOn]; if (r) repPlayOnline(r); };
+    $('repCopy').onclick = function () {
+      var r = (REP.shown || [])[REP.selOn]; if (!r) return;
+      var url = 'https://seibucup.online/' + r.path.split('/').map(encodeURIComponent).join('/');
+      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { $('repFresh').textContent = T('링크를 복사했습니다.', 'Link copied.'); }, function () { prompt(T('링크', 'Link'), url); });
+    };
+    ['repQ', 'repMineOnly', 'repEd', 'repTy'].forEach(function (id) { $(id).addEventListener(id === 'repQ' ? 'input' : 'change', function () { REP.selOn = -1; drawRepOnline(); }); });
+    repLabels();
+  })();
+
   $('btnQuick').onclick = function () { if (needRom()) return; net.quick = true; send('QUICK ' + nset.time + ' ' + nset.ping + ' ' + ed); };
   $('btnRefresh').onclick = function () { send('LIST'); if (net.sel) send('WHO ' + net.sel); };
   $('btnJoin').onclick = function () { if (net.sel) joinRoom(net.sel); };
