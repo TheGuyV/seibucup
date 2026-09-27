@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-27 13:35","room":18,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,7],"nicks":["seibucup_online","조이스틱추천좀","",""],"replay":"replays/20260927_133510_seibucup_online_vs_조이스틱추천좀_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 13:31","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[8,9],"nicks":["seibucup_online","조이스틱추천좀","",""],"replay":"replays/20260927_133107_seibucup_online_vs_조이스틱추천좀_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 13:26","room":18,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,10],"nicks":["seibucup_online","조이스틱추천좀","",""],"replay":"replays/20260927_132654_seibucup_online_vs_조이스틱추천좀_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 13:14","room":15,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"nicks":["폰테스트","Korea1","",""],"replay":"replays/20260927_131412_폰테스트_vs_Korea1_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-22 23:13","room":62,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,9],"nicks":["seibucuponline","드래곤타이거","",""],"replay":"replays/20260922_231307_seibucuponline_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-22 22:49","room":54,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,3],"nicks":["Janet","드래곤타이거","",""],"replay":"replays/20260922_224857_Janet_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-22 22:45","room":54,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,5],"nicks":["Janet","드래곤타이거","",""],"replay":"replays/20260922_224446_Janet_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-22 22:41","room":54,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,9],"nicks":["Janet","드래곤타이거","",""],"replay":"replays/20260922_224055_Janet_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-22 22:33","room":54,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,8],"nicks":["Janet","seibucuponline","",""],"replay":"replays/20260922_223238_Janet_vs_seibucuponline_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-22 22:41","room":54,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,9],"nicks":["Janet","드래곤타이거","",""],"replay":"replays/20260922_224055_Janet_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"}
 ]
