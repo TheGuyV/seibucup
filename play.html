@@ -538,6 +538,7 @@
     if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); }
     hideInterlude();
     var f = document.createElement('iframe');
+    if (new URLSearchParams(location.search).get('fps')) q.set('fps', '1');   // ?fps=1: MAME 의 속도 표시 (느린 기기 점검용)
     f.src = 'play/game.html?' + q.toString(); f.title = 'Seibu Cup Soccer'; f.allow = 'autoplay; fullscreen; gamepad';
     $('screen').appendChild(f);
     running = { mode: mode, frame: f, label: (extra && extra.label) || T(LABEL[mode][0], LABEL[mode][1]), watching: mode === 'match' && extra && +extra.slot >= 5 };

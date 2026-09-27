@@ -27,6 +27,11 @@ for tag, port in pairs(manager.machine.ioport.ports) do
   end
 end
 
+-- ?fps=1 (WEB_FPS): MAME 의 속도 표시(F11 과 같은 것)를 켠다 - 느린 기기에서 몇 프레임이 나오는지 보려고
+if os.getenv("WEB_FPS") then
+  WEB_FPSSUB = emu.register_frame_done(function() pcall(function() manager.ui.show_fps = true end) end)
+end
+
 -- 시험용: WEB_PADLOG 가 있으면 MAME 가 보는 조이스틱 장치를 2초마다 적는다
 if os.getenv("WEB_PADLOG") then
   local n = 0

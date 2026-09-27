@@ -2241,6 +2241,24 @@ local function step()
       stats.stall_total_ms = stats.stall_total_ms + ms
       if ms >= 20 then stats.long_stalls = stats.long_stalls + 1 end
     end
+    -- the browser's main loop starts its clock afresh after every such pause, so each wait was time lost for good
+    -- and on a phone the waits added up to a match 40% slow for both sides (2026-09-27). Keep the game on the wall
+    -- clock instead: behind it by more than a frame and a half, run unthrottled (a frame per main-loop call) until
+    -- it has caught up; more than half a second behind, start the clock over rather than race
+    if not is_spec and not SCNP_PVE.catchup then
+      if phase ~= "play" or reloading then W.base = nil
+      else
+        local t = now_ms()
+        if not W.base then W.base, W.bf = t, frame end
+        local lag = ((t - W.base) & 0xffffffff) * 0.06 - (frame - W.bf)
+        if lag > 30 then W.base, W.bf, lag = t, frame, 0 end
+        local want = lag < 1.5
+        if want ~= spec_throttled then
+          spec_throttled = want; if not want then stats.catchups = (stats.catchups or 0) + 1 end
+          pcall(function() machine.video.throttled = want end)
+        end
+      end
+    end
   end
   if is_host then spec_join_step() end
 
@@ -2485,8 +2503,8 @@ postload_sub = emu.add_machine_post_load_notifier(on_post_load)
 stop_sub     = emu.add_machine_stop_notifier(function()
   rec_save(false)                       -- an unfinished match is still worth keeping
   restore_fields()
-  log("stopped at frame %d: stalls %d, max stall %.1f ms, desyncs %d, resyncs %d, long stalls %d, stall ms %d",
-      frame, stats.stalls, stats.max_stall_ms, stats.desync, stats.resyncs, stats.long_stalls, math.floor(stats.stall_total_ms))
+  log("stopped at frame %d: stalls %d, max stall %.1f ms, desyncs %d, resyncs %d, long stalls %d, stall ms %d, catch-ups %d",
+      frame, stats.stalls, stats.max_stall_ms, stats.desync, stats.resyncs, stats.long_stalls, math.floor(stats.stall_total_ms), stats.catchups or 0)
   if logf then logf:close() end
 end)
 

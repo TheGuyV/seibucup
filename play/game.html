@@ -156,6 +156,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
     try { font = await bytes(FONT); files.push(['/fonts/neodgm.ttf', font]); } catch (e) { out('HUD font not loaded: ' + e); }
     const env = { SCNP_LANG: lang, TUT_LANG: lang, TUT_LOG: '/tut.log', SCNP_LOG: '/np.log', SCNP_WEB: '1' };   // SCNP_WEB: 브라우저판 (입력 대기 방식, HUD 기호)
     if (Q.get('postlog') && Q.get('fakepad')) env.WEB_PADLOG = '1';
+    if (Q.get('fps')) env.WEB_FPS = '1';   // ?fps=1: 속도 표시 (MAME 의 F11 과 같다), 모든 모드
     let args = [game];
     if (mode === 'replay') {
       files.push(['/web/netplay.lua', await bytes('netplay.lua')], ['/replay.scr', await bytes('../' + encodeURI(Q.get('replay') || ''))]);
@@ -195,6 +196,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
               '-skip_gameinfo', '-nomouse', '-background_input', '-pause_brightness', '1.0', '-inipath', '/ini', '-cfg_directory', '/cfg', '-nvram_directory', '/nvram',
               '-state_directory', mode === 'tutorial' ? '/scenes' : '/state');
     if (font) args.push('-uifont', '/fonts/neodgm.ttf');
+    if (Q.get('postlog') && Q.get('xargs') && location.hostname === '127.0.0.1') args.push.apply(args, Q.get('xargs').split(' '));   // 시험 전용: MAME 옵션 덧붙이기
     tell('stage', { text: 'mame' });
     window.Module = {
       canvas: document.getElementById('canvas'),
