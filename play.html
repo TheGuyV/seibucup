@@ -583,7 +583,7 @@
     // 이 브라우저에서 패드를 한 번이라도 봤으면 게임 화면이 MAME 를 켜기 전에 패드 버튼을 받는다 (MAME 는 켜질 때 있던 패드만 쓴다)
     try { if (Array.prototype.some.call(navigator.getGamepads(), Boolean)) store.set('web_haspad', '1'); } catch (e) {}
     if (store.get('web_haspad') === '1') q.set('pads', '1');
-    if (mode === 'match') ['token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
+    if (mode === 'match') ['token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'dyn'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
     if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); }
     hideInterlude();
     var f = document.createElement('iframe');
@@ -773,7 +773,7 @@
   // 게임 서버 입구: 실사이트(GitHub Pages)에서는 이 PC 의 게임 서버(play.seibucup.online), 시험 주소에서는 같은 주소의 /ws
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 18;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 19;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true };
@@ -1311,10 +1311,29 @@
     $('stageTitle').textContent = 'FT' + ft + ' · ' + (il.won ? T('시리즈 끝', 'series over') : T('다음 경기 준비', 'next match'));
     var c = $('ilClose'); if (c) c.onclick = function () { hideInterlude(); $('stage').hidden = true; };
   }
-  function leftRoom(keepBoard) { if (!keepBoard) hideInterlude(); resetResults(); net.ftAutoReady = false; net.ftAnnounce = false; net.room = null; net.quick = false; net.soloWaiting = false; net.startSent = false; net.autoStarted = false; setTab('pub'); drawNet(); }
+  function leftRoom(keepBoard) { stopCount(); if (!keepBoard) hideInterlude(); resetResults(); net.ftAutoReady = false; net.ftAnnounce = false; net.room = null; net.quick = false; net.soloWaiting = false; net.startSent = false; net.autoStarted = false; setTab('pub'); drawNet(); }
   // START <token> <slot> <players> <delay> <type> <time> <관전 수> <bgm> <swap> <version>
+  // 5초 카운트다운 (PC 런처와 같다, user 2026-09-27): 방 채팅·상태 줄에 "5초 후 게임 시작..." 을 세고 게임을 켠다.
+  // 이미 진행 중인 경기에 관전·중간 합류로 들어갈 때는 바로 켠다. 방을 나가거나 끊기면 취소
+  var countTimer = null;
+  function stopCount() { if (countTimer) { clearInterval(countTimer); countTimer = null; } }
   function onStart(f) {
     if (f.length < 4) return;
+    stopCount();
+    if (!roms.length) { sys('room', T('롬이 없어 경기에 들어갈 수 없어 방에서 나왔습니다.', 'No ROM - left the room.')); send('LEAVE'); leftRoom(); return; }
+    if (!(net.room && net.room.state === 'waiting')) { onStartNow(f); return; }
+    var left = 5;
+    var say1 = function () {
+      var line = left > 0 ? T(left + '초 후 게임 시작...', 'Game starts in ' + left + '...') : T('시작!', 'GO!');
+      sys('room', line); netSay(line);
+    };
+    setTab('room'); say1();
+    countTimer = setInterval(function () {
+      left--; say1();
+      if (left <= 0) { stopCount(); onStartNow(f); }
+    }, 1000);
+  }
+  function onStartNow(f) {
     net.matchEnded = false;
     // 시험: ?autostop=<초> (127.0.0.1, postlog) - 경기가 시작되고 그만큼 뒤에 그만하기를 누른 것처럼
     if (typeof TESTLOG !== 'undefined' && TESTLOG && TESTQ.get('autostop')) setTimeout(function () { tlog('autostop'); stop(); }, +TESTQ.get('autostop') * 1000);
@@ -1330,6 +1349,7 @@
                      stage: String(stage), bgm: nset.bgm === 'random' ? 'shuffle' : nset.bgm,
                      series: r.ft > 1 ? r.ft + ',' + r.wa + ',' + r.wb : '', pk: r.ft > 1 ? '1' : '',
                      god: (f[4] === 'pve' && f[1] === '1' && nset.pveGod) ? '1' : '',
+                     dyn: nset.autoDelay === false ? '0' : '',   // 입력 지연을 직접 정했으면 경기 중 자동 조절도 끈다 (프로토콜 19)
                      label: T('온라인 경기 · 방 ', 'Online match · room ') + (r.id || '?') });
   }
 

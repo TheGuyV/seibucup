@@ -206,7 +206,8 @@ if (Q.get('postlog') && Q.get('fakepad')) {
       files.push(['/web/god.lua', await bytes('god.lua')]);
       env.WEB_TARGET = '/web/god.lua';
     }
-    if (mode === 'match' && Q.get('god')) env.SCNP_GOD = '1';   // PvE 방장이 GOD 선택을 켰다 (다른 사람에게는 F 로 알린다)
+    if (mode === 'match' && Q.get('god')) env.SCNP_GOD = '1';
+    if (mode === 'match' && Q.get('dyn') === '0') env.SCNP_DYNDELAY = '0';   // 입력 지연 자동 조절 끔 (직접 정한 지연)   // PvE 방장이 GOD 선택을 켰다 (다른 사람에게는 F 로 알린다)
     args.push('-rompath', '/roms', '-autoboot_script', '/web/boot.lua', '-window', '-video', 'accel', '-resolution', '960x720',
               '-skip_gameinfo', '-nomouse', '-background_input', '-pause_brightness', '1.0', '-inipath', '/ini', '-cfg_directory', '/cfg', '-nvram_directory', '/nvram',
               '-state_directory', mode === 'tutorial' ? '/scenes' : '/state');

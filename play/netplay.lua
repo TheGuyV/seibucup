@@ -9,7 +9,7 @@
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
 
-local VERSION = 18     -- 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
+local VERSION = 19     -- 19: the input delay follows the connection during a match (the host sends L, the others report their waits in W); 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
                        --     (two ROM patches every peer must have: the host says so in F, replays in "sel")
                        -- 15: 2v2 seats are the board's players (1P+3P vs 2P+4P) and an FT series swaps 2v2 sides too;
                        --     a stretched match clock is run by the board itself (its tick reload byte, see install_clock_gate)
@@ -687,7 +687,7 @@ local function broadcast(data)
   for _, p in pairs(peers) do send_to(p, data) end
 end
 
-local MSG_LEN = { F = 5, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2 }   -- F: gen, pitch, penalties (12), versus select (16), GOD (18); J: gen, frame, random tune (16); V: gen, spectators (17)
+local MSG_LEN = { L = 2, W = 3, F = 5, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2 }   -- F: gen, pitch, penalties (12), versus select (16), GOD (18); J: gen, frame, random tune (16); V: gen, spectators (17); L: gen, delay; W: gen, ms waited (19)
 local function next_message(p)
   local b = p.rx
   if #b < 1 then return nil end
@@ -1372,6 +1372,7 @@ local function prefill()
     if is_host then for s = 1, 4 do inputs[s][f] = 0 end end
   end
   last_broadcast = cfg.delay
+  SCNP_DD.hi = {}; SCNP_DD.last = {}; SCNP_DD.pw = {}
 end
 
 local CREDITS_ADDR = SCNP_G.credits
@@ -1639,6 +1640,59 @@ local function autojoin_step()
   end
 end
 
+-- The input delay follows the connection during a match (protocol 19, user 2026-09-27). The host decides for everybody:
+-- every 3 s it looks at the longest wait - its own, and what each player reports (W) - and goes up a frame when somebody
+-- waited over 150 ms, down a frame after 30 calm seconds when every ping fits the smaller delay (never below 2, never
+-- above 8; a drop that had to be undone within a minute is not tried again for 5 minutes). It says so in L and every
+-- screen uses the new value from its next frame. Nobody has to switch at the same frame: an input carries the frame it
+-- is for, so a frame skipped when the delay went up is filled on the host with that player's previous input, and an
+-- input for a frame already sent out (when it went down) is dropped - the host's frames are what every screen plays.
+-- Off (SCNP_DYNDELAY=0) when the host set the delay by hand, and in replays.
+SCNP_DD = { on = env("SCNP_DYNDELAY", "1") ~= "0", hi = {}, last = {}, pw = {}, at = 0, prev = nil, calm = 0, changed = 0,
+            lowered = -100000, floor = 0, floor_until = 0, min = 2, max = 8, cw = nil }
+function scnp_dd_set(nd, why)
+  local D = SCNP_DD
+  local od = cfg.delay
+  if nd == od then return end
+  cfg.delay = nd; D.changed = frame; D.calm = 0
+  if nd < od then D.lowered = frame
+  elseif frame - D.lowered < 3600 then D.floor = nd; D.floor_until = frame + 18000 end
+  broadcast("L" .. string.char(gen, nd))
+  log("input delay %d -> %d frames at frame %d (%s)", od, nd, frame, why)
+end
+function scnp_dd_host()
+  local D = SCNP_DD
+  if not D.on or is_replay or phase ~= "play" then return end
+  if frame - D.at < 180 then return end
+  D.at = frame
+  local mine = D.prev and (stats.stall_total_ms - D.prev) or 0
+  D.prev = stats.stall_total_ms
+  local worst, who = mine, 1
+  for s = 2, 4 do local w = D.pw[s]; if w and w > worst then worst, who = w, s end; D.pw[s] = nil end
+  local d = cfg.delay
+  if worst > 150 then
+    D.calm = 0
+    if d < D.max and frame - D.changed >= 180 then scnp_dd_set(d + 1, string.format("%dP waited %d ms in 3 s", who, math.floor(worst))) end
+  elseif worst < 20 then
+    D.calm = D.calm + 180
+    local ping = 0
+    for s = 2, nplayers do if rtt[s] and rtt[s] > ping then ping = rtt[s] end end
+    local lowest = (frame < D.floor_until) and math.max(D.min, D.floor) or D.min
+    if D.calm >= 1800 and frame - D.changed >= 1800 and d > lowest and ping < (d - 1) * 16.7 - 8 then
+      scnp_dd_set(d - 1, string.format("30 s without waiting, ping %d ms", ping))
+    end
+  else
+    D.calm = 0
+  end
+end
+function scnp_dd_report()
+  local D = SCNP_DD
+  if is_host or is_spec or is_replay or phase ~= "play" or frame % 180 ~= 0 then return end
+  local w = D.cw and (stats.stall_total_ms - D.cw) or 0
+  D.cw = stats.stall_total_ms
+  send_to(host_peer, "W" .. string.char(gen) .. string.pack("<I2", math.min(65535, math.max(0, math.floor(w)))))
+end
+
 local function try_broadcast()
   local guard = 0
   while guard < 64 do
@@ -1647,10 +1701,13 @@ local function try_broadcast()
     local a = auto[X]
     for s = 1, nplayers do
       local m = inputs[s][X]
+      -- the delay went up: nobody sent this frame; that player's inputs are already past it
+      if m == nil and (SCNP_DD.hi[s] or 0) > X then m = SCNP_DD.last[s] or 0 end
       if m == nil then
         local lv = SCNP_PVE.late[s] and SCNP_PVE.live[s]
         if SCNP_PVE.dropped[s] or (SCNP_PVE.joining and SCNP_PVE.joining[s]) or (SCNP_PVE.late[s] and (not lv or X < lv)) then m = 0 else return end
       end
+      SCNP_DD.last[s] = m
       masks[s] = (m & allow[s]) | (a and a[s] or 0)
       if SCNP_PVE.mark[s] then masks[s] = 0xff end       -- cleared below, once this frame really goes out
     end
@@ -1839,7 +1896,11 @@ local function handle_host_message(p, t, g, payload)
       log("PvE: %dP is in step from frame %d", p.slot, last_broadcast + 1)
       if f <= last_broadcast then return end
     end
+    if f <= last_broadcast then return end            -- the delay went down: this frame has gone out already
     inputs[p.slot][f] = m
+    if f > (SCNP_DD.hi[p.slot] or 0) then SCNP_DD.hi[p.slot] = f end
+  elseif t == "W" then
+    SCNP_DD.pw[p.slot] = string.unpack("<I2", payload)
   elseif t == "C" then
     local f, s = string.unpack("<I4I4", payload)
     peer_sums[p.slot][f] = s
@@ -1906,6 +1967,9 @@ local function handle_client_message(t, g, payload)
     return
   elseif t == "G" then
     if phase == "ready" then start_load() else log("ignoring G in phase %s", phase) end
+  elseif t == "L" then
+    local d = payload:byte(1)
+    if d and d >= 1 and d <= 12 and d ~= cfg.delay then log("input delay %d -> %d frames at frame %d (the host)", cfg.delay, d, frame); cfg.delay = d end
   elseif t == "A" then
     if phase == "sync" then spec_saw_play = true end
     local f, m1, m2, m3, m4 = string.unpack("<I4BBBB", payload)
@@ -2340,7 +2404,7 @@ local function step()
     rp_pos = rp_pos + 1
     agg[nxt] = rp.inputs[rp_pos]
   elseif is_host then
-    inputs[1][target] = mask
+    if target > last_broadcast then inputs[1][target] = mask; if target > (SCNP_DD.hi[1] or 0) then SCNP_DD.hi[1] = target end end
   elseif not is_spec then
     send_to(host_peer, "I" .. string.char(gen) .. u32le(target) .. string.char(mask))
   end
@@ -2388,7 +2452,7 @@ local function step()
   if is_replay and frame % 60 == 0 and cfg.log then log("replay frame %d sum %08x", frame, ram_checksum()) end
 
   if not is_replay then pump() end
-  if is_host then autojoin_step(); try_broadcast() end
+  if is_host then autojoin_step(); try_broadcast(); scnp_dd_host() else scnp_dd_report() end
   if agg[nxt] == nil then
     local t0 = os.clock()
     local deadline = os.time() + wait_timeout_s
