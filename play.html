@@ -1381,6 +1381,9 @@
 
   // 경기 중에 페이지를 닫거나 새로고침하면 상대의 경기도 끝난다: 먼저 묻는다
   window.addEventListener('beforeunload', function (e) { if (running && running.mode === 'match') { e.preventDefault(); e.returnValue = ''; } });
+  // 다른 페이지로 가면 브라우저가 이 페이지를 얼려 보관할 수 있다(뒤로 가기용). 그때 접속선만 열린 채 핑이 멈춰 서버가 90초 뒤에야
+  // 끊었으므로, 떠나는 순간 로비 접속을 닫는다. 얼렸던 페이지로 돌아오면 '접속 안 됨' 상태에서 다시 접속하면 된다
+  window.addEventListener('pagehide', function () { if (net.ws) { try { net.ws.close(); } catch (e) {} } });
 
   loadRoms(); drawPads();
 })();
