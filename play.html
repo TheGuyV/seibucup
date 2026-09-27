@@ -593,7 +593,7 @@
     running = { mode: mode, frame: f, label: (extra && extra.label) || T(LABEL[mode][0], LABEL[mode][1]), watching: mode === 'match' && extra && +extra.slot >= 5 };
     $('stageTitle').textContent = running.label + (mode === 'match' && extra.slot ? ' · ' + (+extra.slot >= 5 ? T('관전', 'watching') : extra.slot + 'P') : '');
     $('stage').hidden = false; $('runlog').textContent = ''; vpadForce = false; drawVpad();
-    $('keyTab').hidden = mode === 'match';   // 경기 중에는 Tab·ESC·기능키가 잠긴다
+    $('keyTab').hidden = mode === 'match' || mode === 'replay';   // 경기·리플레이 중에는 Tab·ESC·기능키가 잠긴다
     veil(T('게임을 불러오는 중… (처음에는 약 34 MB)', 'Loading the game… (about 34 MB the first time)'));
     say('<b>' + esc(running.label) + '</b> · ' + T('불러오는 중', 'loading'));
     if (typeof drawButtons === 'function') drawButtons();

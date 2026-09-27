@@ -169,6 +169,9 @@ if (Q.get('postlog') && Q.get('fakepad')) {
       files.push(['/web/netplay.lua', await bytes('netplay.lua')], ['/replay.scr', Q.get('replaylocal') ? await localReplay(Q.get('replaylocal')) : await bytes('../' + encodeURI(Q.get('replay') || ''))]);
       Object.assign(env, { WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'replay', SCNP_REPLAY: '/replay.scr', SCNP_GAME: game });
       if (Q.get('names')) env.SCNP_NAMES = Q.get('names');
+      // 재생 중에도 대전처럼 UI 키(Tab 메뉴·F3 리셋·상태 저장/불러오기·ESC·P …)를 끈다: 누르면 재생이 꼬였다 (user, 2026-09-27)
+      env.WEB_LOCKUI = '1';
+      addEventListener('keydown', e => { if (/^F\d{1,2}$/.test(e.key) || e.key === 'Tab') e.preventDefault(); }, true);
     } else if (mode === 'tutorial') {
       args = ['cupsocs2'];                                   // 레슨 장면은 셀렉션 판으로 저장되어 있다
       files.push(['/web/tutorial.lua', await bytes('tutorial/tutorial.lua')]);
