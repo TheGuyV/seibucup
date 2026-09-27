@@ -13,6 +13,9 @@ self.addEventListener("fetch", function (e) {
   if (req.method !== "GET") return;
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  // the browser game's engine (play/seibucup.wasm, 34 MB, and its seibucup.js) keeps the browser's own cache:
+  // fetched afresh it would cost every visitor 34 MB per game. The two change together, at a release.
+  if (/\/play\/seibucup\.(wasm|js)$/.test(url.pathname)) return;
   // a page load must get any redirect back as a redirect, so the browser follows it itself
   var nav = req.mode === "navigate";
   e.respondWith(fetch(url.href, { cache: "no-store", credentials: "same-origin", redirect: nav ? "manual" : "follow" }));

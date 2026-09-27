@@ -28,6 +28,12 @@
 <meta name="theme-color" content="#186830">
 <!-- seo:end -->
 <link rel="icon" href="favicon.ico">
+<link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="세이부 컵">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
 <link rel="stylesheet" href="style.css">
 <script src="site.js"></script>
 <style>
@@ -69,11 +75,12 @@
   <div class="container">
     <a class="brand" href="index.html"><span class="ball"></span><span class="ko">세이부 컵 사커 온라인</span><span class="en">Seibu Cup Soccer Online</span></a>
     <nav class="menu">
+      <a class="play" href="play.html"><span class="ko">▶ 바로 플레이</span><span class="en">▶ Play now</span></a>
       <a href="index.html"><span class="ko">소개</span><span class="en">Home</span></a>
       <a href="download.html"><span class="ko">다운로드</span><span class="en">Download</span></a>
       <a href="guide.html"><span class="ko">플레이 방법</span><span class="en">How to play</span></a>
       <a href="results.html"><span class="ko">경기 기록</span><span class="en">Results</span></a>
-      <a href="donate.html"><span class="ko">후원</span><span class="en">Support</span></a>
+      <a href="donate.html"><span class="ko">응원</span><span class="en">Support</span></a>
       <a href="license.html"><span class="ko">라이선스</span><span class="en">License</span></a>
       <a class="ext" href="https://cafe.naver.com/seibucup" target="_blank" rel="noopener"><span class="ko">네이버카페 ↗</span><span class="en">Naver Cafe ↗</span></a>
     </nav>
@@ -241,7 +248,7 @@
       tr.className = "series";
       tr.innerHTML = '<td class="muted" title="' + esc(ago.title) + '">' + agoCell + '</td>' +
                      '<td' + (done && wa > wb ? ' class="win"' : "") + '>' + esc(a) + '</td>' +
-                     '<td class="score">' + wa + '<span class="ftb">FT' + g.ft + '</span>' + wb + '</td>' +
+                     '<td class="score">' + (Number(wa) || 0) + '<span class="ftb">FT' + (Number(g.ft) || 0) + '</span>' + (Number(wb) || 0) + '</td>' +
                      '<td' + (done && wb > wa ? ' class="win"' : "") + '>' + esc(b) + '</td>' +
                      '<td colspan="3" class="muted"><span class="ko">시리즈 · ' + ms.length + '경기</span><span class="en">series · ' + ms.length + (ms.length === 1 ? ' game' : ' games') + '</span>' + state + '</td>';
       rows.appendChild(tr);
@@ -253,6 +260,10 @@
       // "unverified": recorded before v1.5.8 read the right score bytes, and with no replay to recompute it from
       var bad = !!r.unverified;
       // a level match decided on penalties carries the shoot-out ("pk", seat order like the score): it names the winner
+      // the numbers are forced to numbers and the replay link must be a replay file: a record is data from a host (hardening 2026-09-27)
+      r.score = [Number(r.score && r.score[0]) || 0, Number(r.score && r.score[1]) || 0]; r.time = Number(r.time) || 0;
+      if (r.pk) r.pk = [Number(r.pk[0]) || 0, Number(r.pk[1]) || 0];
+      if (r.replay && !/^(replays\/[^"'<>\s]+\.scr|https:\/\/[a-z0-9.-]+\/[^"'<>\s]*)$/i.test(String(r.replay))) r.replay = null;
       var pk = !bad && r.pk && r.pk.length === 2 && r.score[0] === r.score[1] ? r.pk : null;
       var w1 = !bad && (r.score[0] > r.score[1] || (pk && pk[0] > pk[1])), w2 = !bad && (r.score[1] > r.score[0] || (pk && pk[1] > pk[0]));
       var sc = bad ? '<span class="muted" title="점수 기록 오류 (v1.5.8 이전) - 리플레이가 없어 복구할 수 없습니다 / score not recoverable">—</span>'

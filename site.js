@@ -21,6 +21,7 @@
     return (navigator.maxTouchPoints || 0) > 1 && Math.min(screen.width, screen.height) < 900;   // iPadOS in desktop mode
   }
   function pcNote() {
+    return;   // 시험 서버: 웹판(바로 플레이)이 휴대폰에서도 되므로 'PC 에서만' 안내는 띄우지 않는다 (user 2026-09-27)
     var hidden = false;
     try { hidden = sessionStorage.getItem("pcnote") === "1"; } catch (e) {}
     if (hidden || !isMobile()) return;

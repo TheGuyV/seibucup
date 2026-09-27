@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Seibu Cup Soccer - game</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #canvas { display: block; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; outline: none; background: #000; }
+  #padwait { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 20px; background: rgba(0,0,0,.85); color: #fff; font: 16px 'Malgun Gothic', sans-serif; line-height: 1.7; }
+  #padwait[hidden] { display: none; }
+</style>
+</head>
+<body>
+<canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
+<div id="padwait" hidden></div>
+<script>
+// 웹 런처(play.html)가 iframe 으로 여는 게임 화면. 주소의 값으로 무엇을 할지 정한다:
+//   mode = solo | tutorial | practice | replay,  game = cupsocs2 | cupsoc,  lang = ko | en
+//   replay = 사이트 기준 리플레이 경로,  names = 쉼표로 이은 닉네임(퍼센트 인코딩)
+// 롬과 MAME 설정(cfg: Tab 메뉴의 키·조이스틱 설정)은 이 브라우저의 IndexedDB 에 있다 (서버로는 가지 않는다).
+const Q = new URLSearchParams(location.search);
+const mode = Q.get('mode') || 'solo', game = Q.get('game') || 'cupsocs2', lang = Q.get('lang') === 'en' ? 'en' : 'ko';
+let tell = (type, data) => { try { parent.postMessage(Object.assign({ from: 'scgame', type }, data || {}), location.origin); } catch (e) {} };
+// 로컬 시험용: postlog=1 이면 로그를 시험 서버(POST /log)로, testroms=1 이면 롬을 시험 서버에서 받는다 (실제 서버에는 없는 길)
+if (Q.get('postlog')) {
+  const t0 = tell; tell = (type, data) => { t0(type, data); fetch('/log', { method: 'POST', body: (Q.get('slot') ? 's' + Q.get('slot') + ' ' : '') + type + ' ' + ((data && data.text) || '') }).catch(() => {}); };
+  addEventListener('error', e => tell('jserr', { text: String(e.message || e.error) }));
+  addEventListener('unhandledrejection', e => tell('jserr', { text: 'rejection ' + String(e.reason && (e.reason.stack || e.reason)) }));
+  const ce = console.error.bind(console); console.error = (...a) => { tell('jserr', { text: a.map(String).join(' ') }); ce(...a); };
+  const seen = {};   // 튜토리얼은 로그를 파일에만 쓰므로, 늘어난 줄을 3초마다 함께 보낸다
+  setInterval(() => {   // 메인 루프가 도는지, 기계가 섰는지
+    try { tell('tick', { text: 'timing ' + (typeof MainLoop !== 'undefined' ? MainLoop.timingMode + '/' + MainLoop.timingValue : '?') + ' loop ' + (typeof MainLoop !== 'undefined' ? MainLoop.currentFrameNumber : '?') + ' machine ' + (Module['__ZN15running_machine30emscripten_get_running_machineEv'] ? Module['__ZN15running_machine30emscripten_get_running_machineEv']() : '?') }); } catch (e) { tell('tick', { text: 'tick err ' + e }); }
+  }, 3000);
+  setInterval(() => { try { const t = new TextDecoder().decode(FS.readFile('/tut.log')); if (t.length > (seen.t || 0)) { tell('tut', { text: t.slice(seen.t || 0).trim() }); seen.t = t.length; } } catch (e) {} }, 3000);
+}
+let romTrouble = false;
+function out(s) {
+  tell('log', { text: s });
+  if (/Required files are missing|required files are missing|NOT FOUND \((?!NO GOOD DUMP)/.test(s)) romTrouble = true;
+  if (/can not be run|cannot be run|Fatal error/i.test(s)) tell('error', { text: s, rom: romTrouble });
+  if (/replay finished/.test(s)) tell('replayDone');
+  // 온라인 경기의 결과와 녹화: 방장 런처가 릴레이에 보고한다 (PC 런처가 세션 로그에서 읽는 것과 같은 줄)
+  var m = /RESULT (\{.*\})\s*$/.exec(s); if (m) tell('result', { text: m[1] });
+  m = /\] REPLAY (\S+)\s*$/.exec(s); if (m) tell('replayfile', { text: m[1] });
+  if (/replay: nothing saved/.test(s)) tell('replayfile', { text: '' });
+  if (/\] penalties: \d+-\d+/.test(s)) tell('pk');
+}
+
+// ---- IndexedDB: roms (롬 zip), cfg (MAME 설정 파일)
+function idb() {
+  return new Promise((ok, bad) => {
+    const r = indexedDB.open('seibucup-web', 2);
+    r.onupgradeneeded = () => { for (const n of ['roms', 'cfg']) if (!r.result.objectStoreNames.contains(n)) r.result.createObjectStore(n); };
+    r.onsuccess = () => ok(r.result); r.onerror = () => bad(r.error);
+  });
+}
+async function all(store) {
+  const db = await idb();
+  return new Promise((ok, bad) => {
+    const got = [], c = db.transaction(store, 'readonly').objectStore(store).openCursor();
+    c.onsuccess = () => { const k = c.result; if (!k) { ok(got); return; } got.push([k.key, new Uint8Array(k.value)]); k.continue(); };
+    c.onerror = () => bad(c.error);
+  });
+}
+async function putAll(store, list) {
+  const db = await idb();
+  return new Promise((ok, bad) => {
+    const t = db.transaction(store, 'readwrite'), s = t.objectStore(store);
+    for (const [k, v] of list) s.put(v.slice().buffer, k);
+    t.oncomplete = ok; t.onerror = () => bad(t.error);
+  });
+}
+const bytes = async url => { const r = await fetch(url); if (!r.ok) throw new Error(url + ' ' + r.status); return new Uint8Array(await r.arrayBuffer()); };
+// HUD 글꼴: 사이트와 같은 Neo둥근모 (SIL OFL 1.1) - 한글이 들어 있다. 못 받으면 MAME 기본 글꼴(영문만)
+const FONT = 'https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.601/neodgm/neodgm.ttf';
+
+// ---- 설정 저장: 그만하기 전에 MAME 를 정상 종료시켜 cfg 를 쓰게 하고, 바뀐 파일을 IndexedDB 에 담는다
+let cfgAtStart = {};
+function cfgNow() {
+  const o = {};
+  try { for (const n of FS.readdir('/cfg')) if (n.endsWith('.cfg')) o[n] = FS.readFile('/cfg/' + n); } catch (e) {}
+  return o;
+}
+const same = (a, b) => !!a && !!b && a.length === b.length && a.every((x, i) => x === b[i]);
+let quitting = false;
+async function saveAndQuit() {
+  if (quitting) return; quitting = true;
+  try { Module['__ZN15running_machine15emscripten_exitEv'](); } catch (e) {}
+  const t0 = Date.now(); let got = {};
+  while (Date.now() - t0 < 3000) {                      // MAME 가 종료하며 cfg 를 새로 쓴다
+    await new Promise(r => setTimeout(r, 150));
+    got = cfgNow();
+    if (Object.keys(got).some(n => !same(got[n], cfgAtStart[n]))) { await new Promise(r => setTimeout(r, 300)); got = cfgNow(); break; }
+  }
+  // 리플레이는 netplay 가 키를 잠시 바꿔 끼우므로 저장하지 않는다
+  const changed = (mode === 'replay' || mode === 'match') ? [] : Object.entries(got).filter(([n, d]) => !same(d, cfgAtStart[n]));
+  if (changed.length) { try { await putAll('cfg', changed); } catch (e) {} }
+  tell('saved', { text: changed.map(c => c[0]).join(',') });
+}
+
+// ---- 게임패드: 브라우저는 버튼을 한 번 눌러야 게임패드를 알려 주고, MAME 는 켜질 때 있던 조이스틱만 쓴다.
+// 그래서 런처가 패드를 보고 있으면(pads=1) MAME 를 켜기 전에 이 화면에서 패드 버튼을 한 번 받는다 (키보드면 아무 키로 넘어간다)
+// 바로 플레이 페이지(부모 창, 같은 사이트)에서 이미 버튼을 눌러 보인 패드는 이 게임 화면도 그대로 쓴다: 브라우저는 창마다
+// 버튼을 한 번 눌러야 패드를 알려 주므로, 이 화면이 아직 못 봤으면 부모 창의 것을 읽는다 (그러면 아래 '버튼을 누르세요'도 건너뛴다)
+(function () {
+  if (!navigator.getGamepads) return;
+  const own = navigator.getGamepads.bind(navigator);
+  navigator.getGamepads = function () {
+    const mine = own();
+    if (Array.prototype.some.call(mine, Boolean)) return mine;
+    try { if (parent !== window) { const p = parent.navigator.getGamepads(); if (Array.prototype.some.call(p, Boolean)) return p; } } catch (e) {}
+    return mine;
+  };
+})();
+const havePad = () => { try { return Array.prototype.some.call(navigator.getGamepads(), Boolean); } catch (e) { return false; } };
+// 저장된 키 설정(혼자 하기에서 Tab 으로 정한 것)에 조이스틱이 들어 있으면, 런처가 패드를 봤든 못 봤든 기다린다:
+// 대전은 릴레이 신호로 저절로 켜져서 런처가 패드를 못 본 채일 수 있고, 그러면 2P 의 시작 버튼 같은 조이스틱 키가 모두 빠진다
+let cfgHasJoy = false;
+function padReady() {
+  if (mode === 'replay' || (mode === 'match' && +Q.get('slot') >= 5)) return Promise.resolve();   // 보기만 할 때(관전·리플레이)는 키가 필요 없다
+  if ((Q.get('pads') !== '1' && !cfgHasJoy) || havePad()) return Promise.resolve();
+  return new Promise(ok => {
+    const box = document.getElementById('padwait');
+    const match = mode === 'match';
+    box.innerHTML = lang === 'en' ? 'Press any button on your joystick' + (match ? ' - the match is waiting for you' : '') + '<br><small>(playing with the keyboard? press any key)</small>'
+                                  : '조이스틱 버튼을 한 번 누르세요' + (match ? ' - 경기가 기다리고 있습니다' : '') + '<br><small>(키보드로 하려면 아무 키나 누르세요)</small>';
+    box.hidden = false; tell('stage', { text: 'pad' });
+    let done = false;
+    const go = () => { if (done) return; done = true; box.hidden = true; clearInterval(t); removeEventListener('keydown', go); ok(); };
+    const t = setInterval(() => { if (havePad()) go(); }, 100);
+    addEventListener('gamepadconnected', go); addEventListener('keydown', go);
+  });
+}
+// ---- 게임패드: 브라우저는 버튼을 한 번 눌러야 게임패드를 알려 준다
+addEventListener('gamepadconnected', e => tell('pad', { text: 'connected: ' + e.gamepad.id + ' (mapping ' + (e.gamepad.mapping || 'none') + ')' }));
+addEventListener('gamepaddisconnected', e => tell('pad', { text: 'disconnected: ' + e.gamepad.id }));
+
+// 시험용 (postlog 와 함께만): fakepad=1 이면 가짜 게임패드를 만들어 5초 뒤 연결된 것처럼 알린다
+if (Q.get('postlog') && Q.get('fakepad')) {
+  const pad = { id: 'Fake Pad (STANDARD GAMEPAD Vendor: 045e Product: 028e)', index: 0, connected: true, mapping: 'standard', axes: [0, 0, 0, 0],
+                buttons: Array.from({ length: 17 }, () => ({ pressed: false, touched: false, value: 0 })), timestamp: 0 };
+  let shown = Q.get('fakepad') === 'early';
+  navigator.getGamepads = () => { pad.timestamp = performance.now(); return shown ? [pad, null, null, null] : [null, null, null, null]; };
+  setTimeout(() => { shown = true; const e = new Event('gamepadconnected'); e.gamepad = pad; dispatchEvent(e); }, 5000);
+}
+(async () => {
+  try {
+    let roms = await all('roms');
+    if (!roms.length && Q.get('testroms')) roms = [['cupsoc.zip', await bytes('/__testroms/cupsoc.zip')]];
+    if (!roms.length) { tell('error', { text: 'no rom', rom: true }); return; }
+    const cfgs = await all('cfg').catch(() => []);
+    cfgHasJoy = cfgs.some(([n, d]) => /JOYCODE_/.test(new TextDecoder().decode(d)));
+    tell('stage', { text: 'files' });
+    const files = [['/web/boot.lua', await bytes('boot.lua')], ['/ini/ui.ini', new TextEncoder().encode('font_rows 38\n')]];
+    let font = null;
+    try { font = await bytes(FONT); files.push(['/fonts/neodgm.ttf', font]); } catch (e) { out('HUD font not loaded: ' + e); }
+    const env = { SCNP_LANG: lang, TUT_LANG: lang, TUT_LOG: '/tut.log', SCNP_LOG: '/np.log', SCNP_WEB: '1' };   // SCNP_WEB: 브라우저판 (입력 대기 방식, HUD 기호)
+    if (Q.get('postlog') && Q.get('fakepad')) env.WEB_PADLOG = '1';
+    let args = [game];
+    if (mode === 'replay') {
+      files.push(['/web/netplay.lua', await bytes('netplay.lua')], ['/replay.scr', await bytes('../' + encodeURI(Q.get('replay') || ''))]);
+      Object.assign(env, { WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'replay', SCNP_REPLAY: '/replay.scr', SCNP_GAME: game });
+      if (Q.get('names')) env.SCNP_NAMES = Q.get('names');
+    } else if (mode === 'tutorial') {
+      args = ['cupsocs2'];                                   // 레슨 장면은 셀렉션 판으로 저장되어 있다
+      files.push(['/web/tutorial.lua', await bytes('tutorial/tutorial.lua')]);
+      for (const n of ['defend', 'header', 'keeper', 'kickoff', 'overhead', 'shot'])
+        files.push(['/scenes/cupsocs2/' + n + '.sta', await bytes('tutorial/scenes/cupsocs2/' + n + '.sta')]);
+      env.WEB_TARGET = '/web/tutorial.lua';
+    } else if (mode === 'match') {
+      // 온라인 경기: 로비(play.html)가 릴레이의 START 를 받아 넘겨준 값 그대로 netplay.lua 를 relay 모드로 돌린다.
+      // 게임 연결은 MAME 의 소켓(socket.주소:포트) -> Emscripten 이 같은 사이트의 /ws (wss) 로 바꿔 준다.
+      // (시험용: postlog 와 함께 nplua=파일 이면 그 netplay 를 쓴다 - 자동 입력 봇이 든 것)
+      files.push(['/web/netplay.lua', await bytes(Q.get('postlog') && Q.get('nplua') ? Q.get('nplua') : 'netplay.lua')]);
+      Object.assign(env, {
+        WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'relay', SCNP_GAME: game, SCNP_ADDR: 'relay', SCNP_PORT: '47260',
+        SCNP_TOKEN: Q.get('token') || '', SCNP_SLOT: Q.get('slot') || '1', SCNP_PLAYERS: Q.get('players') || '2',
+        SCNP_DELAY: Q.get('delay') || '3', SCNP_TEAMS: Q.get('type') || '1v1', SCNP_TIME: Q.get('time') || '150',
+        SCNP_SPECTATORS: Q.get('nspec') || '0', SCNP_NAMES: Q.get('names') || '', SCNP_SWAP: Q.get('swap') === '1' ? '1' : '0',
+        SCNP_BGM: Q.get('bgm') || 'shuffle', SCNP_STAGE: Q.get('stage') || '0', SCNP_KEYSET: 'own', SCNP_REPLAY_DIR: '/replays', SCNP_WEB: '1',
+      });
+      if (+Q.get('slot') >= 5) env.SCNP_SPECTATE = '1';
+      if (Q.get('postlog') && Q.get('hsretry')) env.SCNP_HS_RETRY_MS = Q.get('hsretry');   // 시험 전용: 관전자 재요청 간격
+      if (Q.get('series')) env.SCNP_SERIES = Q.get('series');   // FT 목표와 양쪽 승수 (HUD)
+      if (Q.get('pk')) env.SCNP_PK = '1';                       // 시리즈는 무승부면 승부차기
+      env.WEB_LOCKUI = '1';                                   // PC 런처처럼 ESC·P·Tab·F3·상태 저장 같은 UI 키를 끈다 (boot.lua)
+      // 브라우저 쪽 기능키도 막는다: F5 새로고침 등 (Ctrl+W 처럼 브라우저가 먼저 가져가는 조합은 막을 수 없다)
+      addEventListener('keydown', e => { if (/^F\d{1,2}$/.test(e.key) || e.key === 'Tab') e.preventDefault(); }, true);
+    } else if (mode === 'practice') {
+      args = ['cupsocs2'];
+      files.push(['/web/practice.lua', await bytes('practice.lua')]);
+      env.WEB_TARGET = '/web/practice.lua';
+    }
+    args.push('-rompath', '/roms', '-autoboot_script', '/web/boot.lua', '-window', '-video', 'accel', '-resolution', '960x720',
+              '-skip_gameinfo', '-nomouse', '-background_input', '-pause_brightness', '1.0', '-inipath', '/ini', '-cfg_directory', '/cfg', '-nvram_directory', '/nvram',
+              '-state_directory', mode === 'tutorial' ? '/scenes' : '/state');
+    if (font) args.push('-uifont', '/fonts/neodgm.ttf');
+    tell('stage', { text: 'mame' });
+    window.Module = {
+      canvas: document.getElementById('canvas'),
+      arguments: args,
+      // MAME 가 여는 소켓은 모두 이 사이트의 /ws 로 (https 페이지면 wss). 릴레이의 웹소켓 입구가 받는다
+      websocket: { url: /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'     // 실사이트: 이 PC 의 게임 서버
+                         : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws', subprotocol: 'binary' },
+      print: out, printErr: out,
+      preRun: [() => {
+        for (const d of ['/roms', '/web', '/ini', '/cfg', '/nvram', '/state', '/scenes', '/scenes/cupsocs2', '/fonts', '/replays']) try { FS.mkdir(d); } catch (e) {}
+        for (const [n, d] of roms) FS.writeFile('/roms/' + n, d);
+        for (const [n, d] of cfgs) FS.writeFile('/cfg/' + n, d);
+        for (const [p, d] of files) FS.writeFile(p, d);
+        cfgAtStart = cfgNow();
+        Object.assign(ENV, env);
+      }],
+      onRuntimeInitialized: () => { tell('running', { text: cfgs.length ? 'cfg ' + cfgs.map(c => c[0]).join(',') : '' }); document.getElementById('canvas').focus(); },
+      onExit: () => tell('ended'),
+      onAbort: what => tell('error', { text: String(what), rom: romTrouble }),
+    };
+    await padReady();
+    const s = document.createElement('script'); s.src = 'seibucup.js'; document.body.appendChild(s);
+  } catch (e) { tell('error', { text: String(e) }); }
+})();
+// 누르는 곳이 어디든 게임 화면이 키를 받게
+addEventListener('mousedown', () => document.getElementById('canvas').focus());
+// 터치 컨트롤러(부모 창 play.html)가 누르는 키: 키보드와 똑같은 이벤트를 만들어 보낸다 (SDL 은 keyCode 와 code 를 읽는다).
+// 슛·패스는 기본 키 두 벌(Ctrl/Alt 와 Z/X)을 같이 눌러, 키를 어느 쪽으로 쓰든 먹게 한다
+const VKEYS = {
+  up: [['ArrowUp', 'ArrowUp', 38]], down: [['ArrowDown', 'ArrowDown', 40]], left: [['ArrowLeft', 'ArrowLeft', 37]], right: [['ArrowRight', 'ArrowRight', 39]],
+  shoot: [['z', 'KeyZ', 90], ['Control', 'ControlLeft', 17]], pass: [['x', 'KeyX', 88], ['Alt', 'AltLeft', 18]],
+  coin: [['5', 'Digit5', 53]], start: [['1', 'Digit1', 49]]
+};
+window.__vkey = function (name, down) {
+  const target = document.getElementById('canvas');
+  // SDL 은 창이 포커스를 잃으면 키를 버린다: 터치로 바깥 페이지가 포커스를 가져가도 누르기 전에 되찾는다
+  if (down && !document.hasFocus()) { try { window.focus(); target.focus(); } catch (e) {} }
+  (VKEYS[name] || []).forEach(k => {
+    const ev = new KeyboardEvent(down ? 'keydown' : 'keyup', { key: k[0], code: k[1], bubbles: true, cancelable: true });
+    Object.defineProperty(ev, 'keyCode', { get: () => k[2] }); Object.defineProperty(ev, 'which', { get: () => k[2] });
+    target.dispatchEvent(ev);
+  });
+};
+addEventListener('message', e => {
+  if (e.origin !== location.origin) return;
+  if (e.data === 'focus') document.getElementById('canvas').focus();
+  else if (e.data === 'quit') saveAndQuit();
+  else if (e.data && e.data.get === 'replay') {   // 런처가 녹화 파일을 달라고 한다 (릴레이로 올리기)
+    let bytes = null; try { bytes = FS.readFile('/replays/' + e.data.name); } catch (x) {}
+    parent.postMessage({ from: 'scgame', type: 'replaybytes', name: e.data.name, bytes: bytes }, location.origin);
+  }
+});
+</script>
+</body>
+</html>
