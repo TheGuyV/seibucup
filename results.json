@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-28 21:58","room":14,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,9],"nicks":["식칼","드래곤타이거","",""],"replay":"replays/20260928_215844_식칼_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 21:47","room":13,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,9],"nicks":["식칼","드래곤타이거","",""],"replay":"replays/20260928_214754_식칼_vs_드래곤타이거_2-0_p1.scr"},
 {"when":"2026-09-28 18:20","room":4,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[0,3],"nicks":["duli02122","세이부","",""],"replay":"replays/20260928_182002_duli02122_vs_세이부_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 15:54","room":58,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,8],"ft":3,"series":"58-260928155457-9","nicks":["로또영","축구신동마라도나","",""],"replay":"replays/20260928_155458_로또영_vs_축구신동마라도나_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-24 01:21","room":9,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[0,8],"ft":3,"series":"9-260924011404-2","nicks":["Janet","MrKei","",""],"replay":"replays/20260924_012111_Janet_vs_MrKei_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 01:17","room":9,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"9-260924011404-2","nicks":["Janet","MrKei","",""],"replay":"replays/20260924_011700_Janet_vs_MrKei_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 01:14","room":9,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,7],"ft":3,"series":"9-260924011404-2","nicks":["Janet","MrKei","",""],"replay":"replays/20260924_011328_Janet_vs_MrKei_5-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 01:09","room":8,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[10,5],"ft":3,"series":"8-260924010115-1","nicks":["Janet","MrKei","",""],"replay":"replays/20260924_010841_Janet_vs_MrKei_5-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 01:05","room":8,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,9],"ft":3,"series":"8-260924010115-1","nicks":["Janet","MrKei","",""],"replay":"replays/20260924_010442_Janet_vs_MrKei_4-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-24 01:09","room":8,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[10,5],"ft":3,"series":"8-260924010115-1","nicks":["Janet","MrKei","",""],"replay":"replays/20260924_010841_Janet_vs_MrKei_5-0_p1.scr","edition":"cupsocs2"}
 ]
