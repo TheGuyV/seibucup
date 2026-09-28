@@ -14,10 +14,16 @@
 -- The select screen turns the chosen box into a team through an 8-byte table of team id + 1 (cupsoc reads the one at
 -- $7F36, cupsocs2 the one at $7F5E; GOD's id is 11 -> $0C): while a Pass button is held every read of those tables
 -- answers GOD. The same trick as netplay.lua's PvE option (SCNP_GOD), there only for 1P.
+-- GOD has no place in the tournament's draw (it is the final boss): with the player's team byte at 11 the draw kept
+-- giving teams already played (Italy again and again) and a won round came back (user report 2026-09-28). So the
+-- draw and the tournament screens - the draw's start and the map / intro code at $50000-$5FFFF - read the country
+-- the player pointed at when confirming; everything else, the match itself, sees GOD.
 local machine = manager.machine
 local game = machine.system.name
 local mem = machine.devices[":maincpu"].spaces["program"]
-local ED = { cupsoc = { 0x7F2E, 0x7F45, 0x109b3b }, cupsocs2 = { 0x7F5E, 0x7F8D, 0x109c73 } }   -- table range, select block
+-- table range, select block, the select's read of the confirmed box, the draw's read of the player's team, team bytes
+local ED = { cupsoc = { 0x7F2E, 0x7F45, 0x109b3b, 0x7f66, 0x7cf4, 0x109d6e, 0x109db6 },
+             cupsocs2 = { 0x7F5E, 0x7F8D, 0x109c73, 0x7fbe, 0x7d16, 0x109efe, 0x109f46 } }
 local e = ED[game]
 local ko = (os.getenv("SCNP_LANG") or "ko") ~= "en"
 
@@ -37,8 +43,33 @@ if not e or #passes == 0 then
   print("god.lua: GOD is not available for " .. tostring(game))
   return
 end
+local cpu = machine.devices[":maincpu"]
+local side, pending = {}, nil          -- side[team byte] = the country under GOD there
 god_tap = mem:install_read_tap(e[1], e[2], "god", function(offset, data, mask)
-  if pass_held() then return 0x0C0C end
+  if pass_held() then
+    if cpu.state["CURPC"].value == e[4] then
+      local v = (mask == 0x00ff) and (data & 0xff) or (data >> 8)
+      if v >= 1 and v <= 11 then pending = v - 1 end
+    end
+    return 0x0C0C
+  end
+  return data
+end)
+-- the select stores GOD in a side's team byte: that side's draws use the country; any other team there ends it
+god_wtap = mem:install_write_tap(e[6], e[7] + 1, "god_w", function(offset, data, mask)
+  for _, a in ipairs({ e[6], e[7] }) do
+    if a == offset and mask & 0xff00 ~= 0 then
+      local v = data >> 8
+      if v == 11 and pending then side[a] = pending; pending = nil elseif v ~= 11 then side[a] = nil end
+    end
+  end
+end)
+god_rtap = mem:install_read_tap(e[6], e[7] + 1, "god_r", function(offset, data, mask)
+  if not next(side) then return data end
+  local pc = cpu.state["CURPC"].value
+  if pc ~= e[5] and (pc < 0x50000 or pc >= 0x60000) then return data end
+  local c = side[offset]
+  if c and mask & 0xff00 ~= 0 and (data >> 8) == 11 then data = (data & 0x00ff) | (c << 8) end
   return data
 end)
 print("god.lua: hold Pass while confirming a country to play as GOD")

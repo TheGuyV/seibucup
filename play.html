@@ -776,7 +776,7 @@
   // 게임 서버 입구: 실사이트(GitHub Pages)에서는 이 PC 의 게임 서버(play.seibucup.online), 시험 주소에서는 같은 주소의 /ws
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 19;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 20;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true };
@@ -1408,7 +1408,13 @@
     if (pve && !full && !confirm(T('게임을 하시겠습니까?\n(취소 = 참관합니다)', 'Do you want to play?\n(Cancel = watch)'))) watch = true;
     else if (watch && !confirm(playing ? T('현재 게임 중이므로 관전만 가능합니다. 관전 하시겠습니까?', 'This match is already running, so you can only watch it. Watch?')
                                   : T('자리가 모두 찼으므로 관전만 가능합니다. 관전 하시겠습니까?', 'Every seat is taken, so you can only watch. Watch?'))) return;
-    if (f[8] === '1') { pw = (prompt(T('이 방의 비밀번호', 'Room password')) || '').trim(); if (!pw) return; }
+    // 비밀방도 비밀번호 없이 관전할 수 있다 (user 2026-09-28): 관전으로 들어가는 사람에게는 묻지 않고,
+    // 비밀번호 칸을 비워 두고 확인하면 관전으로 들어간다 (취소 = 안 들어감)
+    if (f[8] === '1' && !watch) {
+      var got = prompt(T('이 방의 비밀번호 (1~4자리)\n비워 두고 확인을 누르면 관전만 합니다.', 'Room password (1-4 characters)\nLeave it empty and press OK to just watch.'));
+      if (got === null) return;
+      pw = got.trim() || '-'; if (pw === '-') watch = true;
+    }
     send('JOIN ' + id + ' ' + Math.max(0, net.rtt) + ' ' + pw + (watch ? ' watch' : ''));
   }
   $('btnCreate').onclick = createRoom;
