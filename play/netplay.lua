@@ -9,7 +9,7 @@
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
 
-local VERSION = 20     -- 20: GOD's tournament draws run on the country 1P pointed at (F god 2, replays "god":2); 19: the input delay follows the connection during a match (the host sends L, the others report their waits in W); 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
+local VERSION = 21     -- 21: a level series match can go to golden goal instead of penalties (F pk 2, replays "pk":2); 20: GOD's tournament draws run on the country 1P pointed at (F god 2, replays "god":2); 19: the input delay follows the connection during a match (the host sends L, the others report their waits in W); 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
                        --     (two ROM patches every peer must have: the host says so in F, replays in "sel")
                        -- 15: 2v2 seats are the board's players (1P+3P vs 2P+4P) and an FT series swaps 2v2 sides too;
                        --     a stretched match clock is run by the board itself (its tick reload byte, see install_clock_gate)
@@ -469,10 +469,15 @@ local function install_clock_gate()
       -- starts over from its first tick (or the old schedule would pin the new clock at 1)
       if clock_start then log("clock reset by the game (%d -> %d): new match", cur, data) end
       clock_start = nil; result_written = false
+      SCNP_PK.gg_n = 0; SCNP_PK.gg_end = false
       if target < base then return math.max(10, math.floor(data * target / base + 0.5)) end
       return nil
     elseif clock_ours then
       return nil
+    end
+    if data == 0 and cur == 1 then
+      local more = scnp_gg_extend()
+      if more then hud_tick_frame = frame; return more end
     end
     if data == cur - 1 then
       -- the game is running its clock: the HUD counts on only while these keep coming (see match_clock_text)
@@ -873,7 +878,7 @@ local function rec_save(complete)
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
   local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"god":%d}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or 0, SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0)
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0)
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
     -- a stray lock (antivirus, a leftover handle): try once more with a unique suffix
@@ -927,6 +932,9 @@ local function pct_decode(s) return (s:gsub("%%(%x%x)", function(h) return strin
 -- One table and global functions: the main chunk is at Lua's 200-local limit.
 SCNP_PK = {
   on = env("SCNP_PK", "0") == "1",
+  -- golden goal instead (SCNP_PK=2, user 2026-09-28): a level match at full time gets 30 s more, again and again,
+  -- and the first goal ends it. gg_n: extensions so far; gg_end: the goal that ended it; gg_note: the notice's end
+  gg = env("SCNP_PK", "0") == "2", gg_n = 0, gg_end = false, gg_note = 0, gg_text = nil,
   -- per edition: the match block (A0), the ROM words with their original and patched values, and
   -- the four human controller blocks ($1e apart).
   --   cupsoc   the shoot-out is for one side of humans: the rotation is pinned to P1 and P2 is given
@@ -1024,6 +1032,34 @@ function scnp_pk_finish()
   local rg = manager.machine.memory.regions[":maincpu"]
   if rg then rg:write_u16(E.br, E.br_old); if E.rot then rg:write_u16(E.rot, E.rot_old) end end
   log("penalties: %d-%d", P.a, P.b)
+end
+
+-- Golden goal. The clock gate asks this when the board's own tick would take the clock to 0: level in a series
+-- match between humans - 30 s more (in clock units), and the notice at the top for 3 s.
+function scnp_gg_extend()
+  local P = SCNP_PK
+  if not P.gg or P.gg_end or SCNP_PVE.on or nplayers ~= (is_teams and 4 or 2) then return nil end
+  if mem:read_u8(SCORE_LEFT) ~= mem:read_u8(SCORE_RIGHT) then return nil end
+  local units = math.max(1, math.floor(30 / clock_spu + 0.5))
+  P.gg_n = P.gg_n + 1
+  P.gg_note = frame + 180; P.gg_text = "GOLDEN GOAL - 30 more seconds, the first goal wins"
+  if clock_run then clock_u0 = clock_u0 + units end      -- the paced clock's schedule moves with it
+  log("golden goal: level at %d-%d - 30 s more (%d units, extension %d)", mem:read_u8(SCORE_LEFT), mem:read_u8(SCORE_RIGHT), units, P.gg_n)
+  return units
+end
+
+-- Every lockstep frame: a goal in extra time ends the match. The board changes the score at the restart after
+-- the celebration; the clock goes to 1 with the tick counter (clock + 3) at 1, so the board's own tick takes it to
+-- 0 at once and the board ends the match (TIME UP only comes from its own tick).
+function scnp_gg_step()
+  local P = SCNP_PK
+  if P.gg_n == 0 or P.gg_end then return end
+  if mem:read_u8(SCORE_LEFT) == mem:read_u8(SCORE_RIGHT) then return end
+  P.gg_end = true
+  P.gg_note = frame + 180; P.gg_text = "GOLDEN GOAL!"
+  clock_ours = true; mem:write_u16(CLOCK_ADDR, 1); clock_ours = false
+  mem:write_u8(CLOCK_ADDR + 3, 1)
+  log("golden goal: %d-%d at frame %d - the match ends", mem:read_u8(SCORE_LEFT), mem:read_u8(SCORE_RIGHT), frame)
 end
 
 -- in seat order, like the score: with the sides swapped seat 1 is the 2P side
@@ -1334,6 +1370,12 @@ local function draw_hud()
                  or "PvE: 1P picks the country - you join 1P's team automatically after kick-off"
     screen:draw_text(4, HUD_H + 3, scnp_tr(hint), 0xffffe080, 0xc0000000)
   end
+  if SCNP_PK.gg_text and frame < SCNP_PK.gg_note then
+    local t = scnp_tr(SCNP_PK.gg_text)
+    local tw = text_w(t)
+    box(w / 2 - tw / 2 - 6, HUD_H + 14, w / 2 + tw / 2 + 6, HUD_H + 16 + HUD_TH + 4, 0xd0000000)
+    screen:draw_text("center", HUD_H + 16, t, 0xffffd24a, 0)
+  end
   -- the input delay this match runs with: faint, in the bottom-left corner (user 2026-09-27)
   if not is_replay then screen:draw_text(2, (screen.height or 240) - 9, "delay " .. tostring(cfg.delay), 0x80ffffff, 0) end
 end
@@ -1343,6 +1385,8 @@ local overlay, overlay_color, overlay_hint = nil, C_INFO, nil
 
 local TR = {
   ["NETPLAY: starting..."] = { ko = "NETPLAY: 시작하는 중...", ja = "NETPLAY: 開始しています...", zh = "NETPLAY: 正在启动..." },
+  ["GOLDEN GOAL - 30 more seconds, the first goal wins"] = { ko = "골든골! 30초 연장 - 먼저 골을 넣으면 승리", ja = "ゴールデンゴール！30秒延長 - 先に決めた方の勝ち", zh = "金球！加时30秒 - 先进球者获胜" },
+  ["GOLDEN GOAL!"] = { ko = "골든골!", ja = "ゴールデンゴール！", zh = "金球！" },
   ["NETPLAY: connecting..."] = { ko = "NETPLAY: 접속하는 중...", ja = "NETPLAY: 接続しています...", zh = "NETPLAY: 正在连接..." },
   ["NETPLAY: hosting on port %d, waiting for %d more player(s)..."] = { ko = "NETPLAY: 포트 %d 에서 대기 중, %d명 더 기다립니다...", ja = "NETPLAY: ポート %d で待機中、あと %d 人待っています...", zh = "NETPLAY: 在端口 %d 等待，还差 %d 名玩家..." },
   ["NETPLAY: connecting to %s:%d ... (attempt %d of 40)"] = { ko = "NETPLAY: %s:%d 에 접속 중... (%d/40회 시도)", ja = "NETPLAY: %s:%d に接続中... (%d/40 回目)", zh = "NETPLAY: 正在连接 %s:%d ... (第 %d/40 次)" },
@@ -1848,14 +1892,14 @@ local function handle_host_message(p, t, g, payload)
     local pm = (ml or 0) + (mh or 0) * 256
     if pm > 0 and MAME_MINOR > 0 and pm ~= MAME_MINOR then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
       if p.slot >= 5 then log("spectator %d has MAME %s (we run %s) - ignored", p.slot, mame_str(pm), mame_str(MAME_MINOR)); return end
       lose("MAME version differs: player %d has %s, you have %s - everybody needs the same MAME build", p.slot, mame_str(pm), mame_str(MAME_MINOR))
       return
     end
     if p.slot >= 5 then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
       if not p.ready then log("spectator %d joined", p.slot) end
       p.ready = true
 
@@ -1872,7 +1916,7 @@ local function handle_host_message(p, t, g, payload)
       P.dropped[p.slot] = nil; P.gone[p.slot] = nil; P.mark[p.slot] = nil; P.tries[p.slot] = nil
       P.late[p.slot] = nil; P.live[p.slot] = nil; allow[p.slot] = 0; inputs[p.slot] = {}; peer_sums[p.slot] = {}
       if p.slot > nplayers then nplayers = p.slot end
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
       p.ready = true
       -- he comes in through a resync: everybody loads the same state, so he is in step by construction.
       -- Until it starts he is not waited for - the host would stall on him and never reach the resync
@@ -1880,12 +1924,12 @@ local function handle_host_message(p, t, g, payload)
       log("PvE: %dP joins the running match (resync)", p.slot); status("PvE: %dP is joining the match", p.slot)
       return
     end
-    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0)); return end
+    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0)); return end
 
     if want and want >= 2 and want <= nplayers and want ~= p.slot and not peers[want] then
       peers[p.slot] = nil; peers[want] = p; p.slot = want
     end
-    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or 0, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
+    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0))
     p.ready = true
     log("player %d joined (%d/%d)", p.slot, p.slot, nplayers)
     status("player %d joined (%d of %d)", p.slot, p.slot, nplayers)
@@ -1950,7 +1994,7 @@ local function handle_client_message(t, g, payload)
     -- the host's pitch (field), right after its handshake: every screen must draw the same one
     local st, pk, sel, god = payload:byte(1, 4)
     if st and st <= 7 and st ~= scnp_stage then scnp_stage = st; scnp_install_stage_tap() end
-    if pk then SCNP_PK.on = (pk == 1) end          -- the host decides whether a level match goes to penalties
+    if pk then SCNP_PK.on = (pk == 1); SCNP_PK.gg = (pk == 2) end          -- the host decides whether a level match goes to penalties
     if sel then scnp_sel_apply(sel == 1) end        -- and whether the country select is the versus one (protocol 16)
     if god then scnp_god_apply(god >= 1, god >= 2) end        -- and whether 1P may pick GOD (PvE, protocol 18)
     return
@@ -2202,6 +2246,7 @@ local function step()
       cfg.time = r.meta:match('"time":(%d+)') or cfg.time
       scnp_stage = tonumber(r.meta:match('"stage":(%d+)') or "0") or 0; scnp_install_stage_tap()
       SCNP_PK.on = r.meta:match('"pk":1') ~= nil
+      SCNP_PK.gg = r.meta:match('"pk":2') ~= nil
       scnp_sel_apply(r.meta:match('"sel":1') ~= nil)     -- recorded with the versus country select (protocol 16)
       scnp_god_apply(r.meta:match('"god":[12]') ~= nil, r.meta:match('"god":2') ~= nil)     -- recorded in a PvE room that let 1P pick GOD (protocol 18)
       install_clock_gate()
@@ -2397,6 +2442,7 @@ local function step()
   scnp_stage_palette()
   -- a shoot-out runs on its own schedule: the routine may set the clock, which the gate below
   -- would take for a new match; when it ends, the result and the replay go out from here
+  scnp_gg_step()
   if SCNP_PK.state == "run" and scnp_pk_step() then
     scnp_pk_finish()
     if is_host and nplayers >= 2 and not result_written then scnp_write_result() end
