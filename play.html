@@ -154,11 +154,14 @@
   .nrow > label, .nlab { color: var(--n-fg); }
   .nrow .accent { color: var(--n-blue2); font-weight: 700; }
   .nfield { display: flex; gap: 6px; min-width: 0; }
+  /* 혼자놀기·튜토리얼·연습 게임·리플레이: 좁은 화면(폰)에서는 줄을 넘겨 상자 밖으로 삐져나가지 않게 (user 2026-09-28) */
+  .nfield.soloBtns { flex-wrap: wrap; row-gap: 6px; }
+  @media (max-width: 520px) { .nfield.soloBtns { grid-column: 1 / -1; } .nrow:has(> .soloBtns) > span:first-child { display: none; } }
   .net input:not([type=checkbox]), .net select { font: inherit; color: var(--n-fg); background: var(--n-ctl); border: 1px solid var(--n-line); height: 28px; padding: 0 8px; min-width: 0; width: 100%; border-radius: 0; }
   .net select:focus, .net input:focus { outline: 2px solid var(--n-blue); outline-offset: -1px; }
   .net input:disabled { color: var(--n-mute); }
   .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-  .seg button { font: inherit; height: 28px; background: var(--n-ctl); color: var(--n-fg); border: 1px solid var(--n-line); cursor: pointer; }
+  .seg button { font: inherit; min-height: 28px; padding: 2px 4px; line-height: 1.15; background: var(--n-ctl); color: var(--n-fg); border: 1px solid var(--n-line); cursor: pointer; }
   .seg button.on { background: var(--n-blue); border-color: var(--n-blue); color: #fff; font-weight: 700; }
   .seg button:disabled { color: #666; cursor: default; }
   .nrow { position: relative; }
@@ -351,7 +354,7 @@
           <div class="nrow"><label for="netEd" class="accent"><span class="ko">게임 버전</span><span class="en">Version</span></label>
             <select id="netEd"><option value="cupsocs2"></option><option value="cupsoc"></option></select></div>
           <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
-          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
+          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
         </div>
         <div class="net-col">
           <div class="nrow"><span class="nlab"><span class="ko">대전타입</span><span class="en">Match type</span></span>
