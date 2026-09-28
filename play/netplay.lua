@@ -877,8 +877,8 @@ local function rec_save(complete)
   local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".scr"
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
-  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"god":%d}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0)
+  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d}',
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0)
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
     -- a stray lock (antivirus, a leftover handle): try once more with a unique suffix
@@ -1723,8 +1723,8 @@ local function autojoin_step()
 end
 
 -- The input delay follows the connection during a match (protocol 19, user 2026-09-27). The host decides for everybody:
--- every 3 s it looks at the longest wait - its own, and what each player reports (W) - and goes up a frame when somebody
--- waited over 150 ms, down a frame after 30 calm seconds when every ping fits the smaller delay (never below 2, never
+-- every 5 s it looks at the longest wait - its own, and what each player reports (W) - and goes up a frame when somebody
+-- waited over 150 ms, down a frame after 5 calm seconds (under 60 ms) when every ping fits the smaller delay (never below 2, never
 -- above 8; a drop that had to be undone within a minute is not tried again for 5 minutes). It says so in L and every
 -- screen uses the new value from its next frame. Nobody has to switch at the same frame: an input carries the frame it
 -- is for, so a frame skipped when the delay went up is filled on the host with that player's previous input, and an
@@ -1741,11 +1741,16 @@ function scnp_dd_set(nd, why)
   elseif frame - D.lowered < 3600 then D.floor = nd; D.floor_until = frame + 18000 end
   broadcast("L" .. string.char(gen, nd))
   log("input delay %d -> %d frames at frame %d (%s)", od, nd, frame, why)
+  -- kept for the replay's header ("dd"), so the server's copy shows how the delay moved (user 2026-09-29)
+  D.hist = D.hist or {}
+  if #D.hist < 60 then D.hist[#D.hist + 1] = string.format("%d>%d@%d", od, nd, frame) end
 end
 function scnp_dd_host()
+  -- every 5 s alike (user 2026-09-29: "균일적으로 그냥 5초마다"): somebody waited over 150 ms in those 5 s -> a frame
+  -- up; under 60 ms (calm) -> a frame down, when every ping fits the smaller delay and no recent undone drop holds it
   local D = SCNP_DD
   if not D.on or is_replay or phase ~= "play" then return end
-  if frame - D.at < 180 then return end
+  if frame - D.at < 300 then return end
   D.at = frame
   local mine = D.prev and (stats.stall_total_ms - D.prev) or 0
   D.prev = stats.stall_total_ms
@@ -1754,14 +1759,14 @@ function scnp_dd_host()
   local d = cfg.delay
   if worst > 150 then
     D.calm = 0
-    if d < D.max and frame - D.changed >= 180 then scnp_dd_set(d + 1, string.format("%dP waited %d ms in 3 s", who, math.floor(worst))) end
-  elseif worst < 20 then
-    D.calm = D.calm + 180
+    if d < D.max and frame - D.changed >= 300 then scnp_dd_set(d + 1, string.format("%dP waited %d ms in 5 s", who, math.floor(worst))) end
+  elseif worst < 60 then
+    D.calm = D.calm + 300
     local ping = 0
     for s = 2, nplayers do if rtt[s] and rtt[s] > ping then ping = rtt[s] end end
     local lowest = (frame < D.floor_until) and math.max(D.min, D.floor) or D.min
-    if D.calm >= 1800 and frame - D.changed >= 1800 and d > lowest and ping < (d - 1) * 16.7 - 8 then
-      scnp_dd_set(d - 1, string.format("30 s without waiting, ping %d ms", ping))
+    if frame - D.changed >= 300 and d > lowest and ping < (d - 1) * 16.7 - 8 then
+      scnp_dd_set(d - 1, string.format("5 s calm, ping %d ms", ping))
     end
   else
     D.calm = 0
@@ -1769,7 +1774,7 @@ function scnp_dd_host()
 end
 function scnp_dd_report()
   local D = SCNP_DD
-  if is_host or is_spec or is_replay or phase ~= "play" or frame % 180 ~= 0 then return end
+  if is_host or is_spec or is_replay or phase ~= "play" or frame % 300 ~= 0 then return end   -- the host decides every 5 s
   local w = D.cw and (stats.stall_total_ms - D.cw) or 0
   D.cw = stats.stall_total_ms
   send_to(host_peer, "W" .. string.char(gen) .. string.pack("<I2", math.min(65535, math.max(0, math.floor(w)))))
@@ -2051,7 +2056,12 @@ local function handle_client_message(t, g, payload)
     if phase == "ready" then start_load() else log("ignoring G in phase %s", phase) end
   elseif t == "L" then
     local d = payload:byte(1)
-    if d and d >= 1 and d <= 12 and d ~= cfg.delay then log("input delay %d -> %d frames at frame %d (the host)", cfg.delay, d, frame); cfg.delay = d end
+    if d and d >= 1 and d <= 12 and d ~= cfg.delay then
+      log("input delay %d -> %d frames at frame %d (the host)", cfg.delay, d, frame)
+      SCNP_DD.hist = SCNP_DD.hist or {}
+      if #SCNP_DD.hist < 60 then SCNP_DD.hist[#SCNP_DD.hist + 1] = string.format("%d>%d@%d", cfg.delay, d, frame) end
+      cfg.delay = d
+    end
   elseif t == "A" then
     if phase == "sync" then spec_saw_play = true end
     local f, m1, m2, m3, m4 = string.unpack("<I4BBBB", payload)
