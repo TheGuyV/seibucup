@@ -848,6 +848,24 @@ local agg = {}
 -- replay recording (every peer) / playback (SCNP_MODE=replay)
 rec_inputs, rec_segments, rec_written = {}, {}, false
 rp, rp_phase, rp_pos, rp_seg, rp_meta = nil, "boot", 0, 1, nil
+-- Each seat's stick / keyboard (hud_dev) in the recording too, so a replay's HUD shows them like the match did
+-- (user 2026-09-29): "<input index>:<four digits>" whenever they change, in the header as "devs". Older
+-- recordings have none and show the dot as before.
+SCNP_DEVR = { last = "", hist = {}, play = nil, pi = 1 }
+function scnp_devr_rec()
+  local R = SCNP_DEVR
+  local d = string.format("%d%d%d%d", hud_dev[1] or 0, hud_dev[2] or 0, hud_dev[3] or 0, hud_dev[4] or 0)
+  if d ~= R.last then R.last = d; R.hist[#R.hist + 1] = #rec_inputs .. ":" .. d end
+end
+function scnp_devr_play()
+  local R = SCNP_DEVR
+  while R.play and R.play[R.pi] and R.play[R.pi].at <= rp_pos do
+    local d = R.play[R.pi].d
+    for k = 1, 4 do hud_dev[k] = tonumber(d:sub(k, k)) or 0 end
+    log("replay: stick/keyboard %s from input %d", d, R.play[R.pi].at)
+    R.pi = R.pi + 1
+  end
+end
 -- in SEAT order (seat 1's goals first), whichever side of the pitch the seat plays on
 -- The two team records sit at 0x109d6e (the side on the LEFT of the pitch, the game's 1P) and
 -- 0x109db6 (RIGHT, the game's 2P): byte 0 = team id, byte 1 = goals. Found by dumping work RAM
@@ -877,8 +895,8 @@ local function rec_save(complete)
   local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".scr"
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
-  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0)
+  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d},"devs":"%s"}',
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0, table.concat(SCNP_DEVR.hist, ";"))
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
     -- a stray lock (antivirus, a leftover handle): try once more with a unique suffix
@@ -2259,6 +2277,8 @@ local function step()
       SCNP_PK.gg = r.meta:match('"pk":2') ~= nil
       scnp_sel_apply(r.meta:match('"sel":1') ~= nil)     -- recorded with the versus country select (protocol 16)
       scnp_god_apply(r.meta:match('"god":[12]') ~= nil, r.meta:match('"god":2') ~= nil)     -- recorded in a PvE room that let 1P pick GOD (protocol 18)
+      SCNP_DEVR.play = {}; SCNP_DEVR.pi = 1              -- each seat's stick / keyboard over the match (2.0.8 on)
+      for at, d in (r.meta:match('"devs":"([^"]*)"') or ""):gmatch("(%d+):(%d%d%d%d)") do SCNP_DEVR.play[#SCNP_DEVR.play + 1] = { at = tonumber(at), d = d } end
       install_clock_gate()
       log("replay: %s - %d frames, %d segment(s)", path, #r.inputs, #r.segments)
       rp_pos = 0; rp_seg = 2
@@ -2496,7 +2516,7 @@ local function step()
       return
     end
     rp_pos = rp_pos + 1
-    agg[nxt] = rp.inputs[rp_pos]
+    agg[nxt] = rp.inputs[rp_pos]; scnp_devr_play()
   elseif is_host then
     if target > last_broadcast then inputs[1][target] = mask; if target > (SCNP_DD.hi[1] or 0) then SCNP_DD.hi[1] = target end end
   elseif not is_spec then
@@ -2581,7 +2601,7 @@ local function step()
   if SCNP_PVE.on then for s = 2, 4 do if a[s] == 0xff then scnp_pve_drop(s) end end end
   for s = 1, 4 do apply_input(s, (SCNP_PVE.on and s >= 2 and a[s] == 0xff) and 0 or a[s]) end
   agg[nxt] = nil
-  if not is_replay and not is_spec then rec_inputs[#rec_inputs + 1] = { a[1], a[2], a[3], a[4] } end
+  if not is_replay and not is_spec then rec_inputs[#rec_inputs + 1] = { a[1], a[2], a[3], a[4] }; scnp_devr_rec() end
 
   if is_host and not is_replay then check_sums() end
 
