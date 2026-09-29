@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-29 22:49","room":47,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,10],"ft":2,"series":"47-260929224919-7","nicks":["1P","Janet","",""],"replay":"replays/20260929_224910_1P_vs_Janet_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 22:48","room":45,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[7,10],"ft":2,"series":"45-260929224408-6","nicks":["레온","404page","seibucup_online","MrKei"],"replay":"replays/20260929_224850_레온_vs_seibucup_online_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 22:44","room":45,"type":"2v2","time":150,"players":4,"score":[1,2],"teams":[5,3],"ft":2,"series":"45-260929224408-6","nicks":["레온","404page","seibucup_online","MrKei"],"replay":"replays/20260929_224411_레온_vs_seibucup_online_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 22:30","room":44,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[7,4],"nicks":["404page","MrKei","",""],"replay":"replays/20260929_223038_404page_vs_MrKei_4-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-24 21:08","room":16,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[10,7],"pk":[4,2],"ft":3,"series":"16-260924210355-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260924_210722_Janet_vs_seibucup_online_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 21:03","room":16,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[10,5],"pk":[3,4],"ft":3,"series":"16-260924210355-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260924_210316_Janet_vs_seibucup_online_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 20:38","room":10,"type":"1v1","time":300,"players":2,"score":[1,2],"teams":[9,8],"nicks":["유리","MrKei","",""],"replay":"replays/20260924_203808_유리_vs_MrKei_1-2_p1.scr"},
-{"when":"2026-09-24 19:24","room":16,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,4],"ft":2,"series":"16-260924192131-1","nicks":["seibucup_online","404page","",""],"replay":"replays/20260924_192454_seibucup_online_vs_404page_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 19:21","room":16,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,10],"pk":[4,5],"ft":2,"series":"16-260924192131-1","nicks":["seibucup_online","404page","",""],"replay":"replays/20260924_192134_seibucup_online_vs_404page_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-24 19:24","room":16,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,4],"ft":2,"series":"16-260924192131-1","nicks":["seibucup_online","404page","",""],"replay":"replays/20260924_192454_seibucup_online_vs_404page_0-1_p1.scr","edition":"cupsocs2"}
 ]
