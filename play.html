@@ -364,8 +364,9 @@
         </div>
         <div class="net-col">
           <div class="nrow"><span class="nlab"><span class="ko">대전타입</span><span class="en">Match type</span></span>
-            <div class="seg" id="netType"><button type="button" data-type="1v1">1 vs 1</button><button type="button" data-type="2v2">2 vs 2</button><button type="button" data-type="pve" id="btnPve">PvE 4P</button></div>
-            <div class="pvemenu" id="pveMenu" hidden><button type="button" data-cap="2">2 Player</button><button type="button" data-cap="3">3 Player</button><button type="button" data-cap="4">4 Player</button><button type="button" id="pveGod" style="border-top:1px solid #555"><span class="ko">GOD 선택 (1P가 패스를 누른 채 결정)</span><span class="en">Pick GOD (1P holds Pass)</span></button></div></div>
+            <div class="seg" id="netType"><button type="button" data-type="1v1">1 vs 1</button><button type="button" data-type="2v2" id="btn2v2">2 vs 2</button><button type="button" data-type="pve" id="btnPve">PvE 4P</button></div>
+            <div class="pvemenu" id="pveMenu" hidden><button type="button" data-cap="2">2 Player</button><button type="button" data-cap="3">3 Player</button><button type="button" data-cap="4">4 Player</button><button type="button" id="pveGod" style="border-top:1px solid #555"><span class="ko">GOD 선택 (1P가 패스를 누른 채 결정)</span><span class="en">Pick GOD (1P holds Pass)</span></button></div>
+            <div class="pvemenu" id="teamMenu" hidden><button type="button" data-teams="pick"><span class="ko">팀지정 (1P+3P 대 2P+4P)</span><span class="en">Teams as seated (1P+3P vs 2P+4P)</span></button><button type="button" data-teams="random"><span class="ko">랜덤지정 (시작 직전에 섞기)</span><span class="en">Random teams (drawn at the start)</span></button></div></div>
           <div class="nrow"><label for="netPing"><span class="ko">핑 제한</span><span class="en">Ping limit</span></label><select id="netPing"></select></div>
           <div class="nrow"><label for="netFt"><span class="ko">승부</span><span class="en">Series</span></label><div class="nfield ftpair"><select id="netFt"></select><select id="netTie"></select></div></div>
           <div class="nrow"><label for="netTime"><span class="ko">경기 시간</span><span class="en">Match time</span></label><select id="netTime"></select></div>
@@ -810,7 +811,7 @@
   var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 21;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
-  var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true, tie: 'pk' };
+  var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true, tie: 'pk', teams: 'pick' };
   try { Object.assign(nset, JSON.parse(store.get('web_net') || '{}')); } catch (e) {}
   function saveSet() { store.set('web_net', JSON.stringify(nset)); }
   // 닉네임: PC 런처와 같은 규칙 - 문자(한글·영문 등)와 숫자, _ 와 - 만, 16자까지 (런처 Sanitize 와 같다)
@@ -847,6 +848,9 @@
   function drawType() {
     document.querySelectorAll('#netType button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-type') === nset.type); });
     $('btnPve').textContent = 'PvE ' + nset.pveCap + 'P' + (nset.pveGod ? ' GOD' : '');
+    var tcur = (typeof net !== 'undefined' && net && net.room && net.room.type === '2v2') ? net.room.teams : nset.teams;
+    $('btn2v2').textContent = '2 vs 2' + (tcur === 'random' ? ' · ' + T('랜덤', 'random') : '');
+    document.querySelectorAll('#teamMenu button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-teams') === tcur); });
     $('pveGod').classList.toggle('on', !!nset.pveGod);
     document.querySelectorAll('#pveMenu button').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-cap') === nset.pveCap); });
   }
@@ -854,6 +858,7 @@
     b.onclick = function () {
       nset.type = b.getAttribute('data-type'); saveSet(); drawType(); drawButtons();
       if (nset.type === 'pve') $('pveMenu').hidden = !$('pveMenu').hidden; else $('pveMenu').hidden = true;
+      if (nset.type === '2v2') $('teamMenu').hidden = !$('teamMenu').hidden; else $('teamMenu').hidden = true;
     };
   });
   document.querySelectorAll('#pveMenu button[data-cap]').forEach(function (b) { b.onclick = function () { nset.pveCap = +b.getAttribute('data-cap'); saveSet(); drawType(); $('pveMenu').hidden = true; }; });
@@ -863,6 +868,21 @@
     if (nset.pveGod) netSay(T('앞으로 여는 PvE 방에서 1P가 GOD를 고를 수 있습니다: 국가를 결정할 때 패스를 누른 채 누르세요.', 'PvE rooms you open let 1P pick GOD: hold Pass while confirming the country.'));
   };
   document.addEventListener('click', function (e) { if (!e.target.closest('#pveMenu') && !e.target.closest('#btnPve')) $('pveMenu').hidden = true; });
+  // 2 vs 2 팀지정 / 랜덤지정 (user 2026-09-29): the relay shuffles seats 2-4 just before the start (an FT series only before
+  // its first match). In a room only its host changes it, and not in the middle of a series
+  document.querySelectorAll('#teamMenu button[data-teams]').forEach(function (b) {
+    b.onclick = function () {
+      var v = b.getAttribute('data-teams') === 'random' ? 'random' : 'pick', r = net.room;
+      $('teamMenu').hidden = true;
+      if (r && r.type === '2v2' && (r.slot !== 1 || r.state !== 'waiting' || r.wa + r.wb > 0)) {
+        netSay(r.slot !== 1 ? T('팀 방식은 방장이 정합니다.', 'The host picks how the teams are made.') : T('시리즈 도중에는 바꿀 수 없습니다.', 'Not in the middle of a series.'));
+        return;
+      }
+      nset.teams = v; saveSet(); drawType();
+      if (r && r.type === '2v2' && r.slot === 1) send('TEAMS ' + v);
+    };
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#teamMenu') && !e.target.closest('#btn2v2')) $('teamMenu').hidden = true; });
   document.addEventListener('click', function (e) { if (!e.target.closest('#aloneMenu') && !e.target.closest('#netAlone')) $('aloneMenu').hidden = true; });
   $('netPing').onchange = function () { nset.ping = +this.value; saveSet(); };
   // FT <n> <pk|gg>: 방장의 승부와 동점 처리 (릴레이 2026-09-28 이후가 필요하다: 예전 릴레이는 "3 gg" 를 단판으로 읽는다)
@@ -961,7 +981,7 @@
 
   // ---- 그리기
   function stateName(st) { return { waiting: T('대기중', 'waiting'), playing: T('경기중', 'playing') }[st] || st; }
-  function drawNet() { drawTiles(); drawSeats(); drawButtons(); drawStatus(); }
+  function drawNet() { drawTiles(); drawSeats(); drawButtons(); drawStatus(); drawType(); }   // drawType: the 2 vs 2 button follows the room's teams
   function drawTiles() {
     var on = !!net.ws;
     $('roomsTitle').textContent = T('방 목록 (' + net.rooms.length + ')', 'Rooms (' + net.rooms.length + ')');
@@ -976,7 +996,7 @@
       return '<button type="button" class="' + cls + '" data-id="' + esc(id) + '">' +
         '<span class="t1"><span>#' + esc(id) + (f[8] === '1' ? ' 🔒' : '') + '</span><span class="pill ' + (f[3] === 'playing' ? 'play' : 'wait') + '">' + esc(stateName(f[3])) + '</span></span>' +
         '<span class="t2">' + kindIcon(f[16]) + esc(f[1]) + '</span>' +
-        '<span class="t3"><span>' + esc(type + ' · ' + mmss(secs) + (ft > 1 ? ' · FT' + ft + (f[17] === 'gg' ? ' · ' + T('골든골', 'golden goal') : '') : '')) + '</span><span class="pill ed' + (edn === 'cupsocs2' ? ' sel2' : '') + '">' + esc(edn === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + '</span></span>' +
+        '<span class="t3"><span>' + esc(type + ' · ' + mmss(secs) + (ft > 1 ? ' · FT' + ft + (f[17] === 'gg' ? ' · ' + T('골든골', 'golden goal') : '') : '') + (f[18] === 'random' ? ' · ' + T('랜덤 팀', 'random teams') : '')) + '</span><span class="pill ed' + (edn === 'cupsocs2' ? ' sel2' : '') + '">' + esc(edn === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + '</span></span>' +
         '<span class="t4"><span>' + dots + ' ' + n + '/' + cap + '</span><span class="png' + (far ? ' far' : '') + '">' + (ping >= 0 ? ping : '-') + ' / ' + (lim > 0 ? lim + ' ms' : '-') + '</span></span></button>';
     }).join('');
     $('tiles').innerHTML = html;
@@ -1221,11 +1241,11 @@
     net.room = { id: f[0], state: f[1], slot: +f[2], names: names, type: f[4] || '1v1', specs: f[7] && f[7] !== '-' ? f[7].split(',') : [],
                  time: f[8] || '150', builds: (f[9] || ',,,').split(','), ready: (f[10] || '0,0,0,0').split(',').map(function (x) { return x === '1'; }),
                  edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2),
-                 kinds: (f[18] || ',,,').split(','), tie: f[19] === 'gg' ? 'gg' : 'pk' };
+                 kinds: (f[18] || ',,,').split(','), tie: f[19] === 'gg' ? 'gg' : 'pk', teams: f[20] === 'random' ? 'random' : 'pick' };
     var r = net.room;
     if (!was) chime('me');
     else if (r.id === was.id) {
-      var arrived = names.filter(function (nm, i) { return nm && nm !== was.names[i] && i + 1 !== r.slot; });
+      var arrived = names.filter(function (nm, i) { return nm && was.names.indexOf(nm) < 0 && i + 1 !== r.slot; });
       if (arrived.length) { chime('join'); flashTitle(T(arrived[0] + ' 님이 방에 들어왔습니다', arrived[0] + ' joined your room')); }
     }
     if (!was) {
@@ -1233,6 +1253,8 @@
       sys('room', T('방 ' + r.id + '에 들어왔습니다 (' + (r.slot > 4 ? '관전' : r.slot + 'P') + '). 모두 준비를 누르면 시작합니다.', 'You are in room ' + r.id + ' (' + (r.slot > 4 ? 'watching' : r.slot + 'P') + '). The match starts when everybody is ready.'));
       // 방장은 PC 런처처럼 자기 경기 시간과 승부를 방에 건다
       if (r.slot === 1 && !r.quick) { send('TIME ' + nset.time); if ((nset.ft !== r.ft || (nset.tie === 'gg' ? 'gg' : 'pk') !== r.tie) && r.type !== 'pve') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
+      if (r.slot === 1 && r.type === '2v2' && (nset.teams === 'random' ? 'random' : 'pick') !== r.teams) send('TEAMS ' + (nset.teams === 'random' ? 'random' : 'pick'));
+      $('teamMenu').hidden = true;
       $('pveMenu').hidden = true;
     }
     if (net.ftAnnounce && r.state === 'waiting') {

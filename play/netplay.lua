@@ -1777,7 +1777,17 @@ function scnp_dd_host()
   local d = cfg.delay
   if worst > 150 then
     D.calm = 0
-    if d < D.max and frame - D.changed >= 300 then scnp_dd_set(d + 1, string.format("%dP waited %d ms in 5 s", who, math.floor(worst))) end
+    -- a frame up only while the delay is within 2 of what the pings need (the relay's own start formula, a browser's frame
+    -- counted in): waits beyond that are a machine that cannot keep 60 frames a second (a phone's browser) - more delay does
+    -- not help it, and it climbed to 8 with every web match (user 2026-09-29: "웹버전유저랑은 무조건 딜레이가 8이야")
+    local ping = 0
+    for s = 2, nplayers do if rtt[s] and rtt[s] > ping then ping = rtt[s] end end
+    local cap = math.min(D.max, math.max(3, math.ceil((ping / 2 + 10 + 16.7) / 16.7)) + 2)
+    if d < cap and frame - D.changed >= 300 then scnp_dd_set(d + 1, string.format("%dP waited %d ms in 5 s", who, math.floor(worst)))
+    elseif d >= cap and not D.capped then
+      D.capped = true
+      log("input delay: held at %d - %dP waited %d ms in 5 s but the pings (%d ms) need less: a machine running slow, not the line", d, who, math.floor(worst), ping)
+    end
   elseif worst < 60 then
     D.calm = D.calm + 300
     local ping = 0
