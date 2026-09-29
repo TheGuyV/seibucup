@@ -62,8 +62,9 @@
   .stage .ttl b { font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   /* 게임 창 제목 줄 끝에 사이트 주소 (user 2026-09-27) */
   .stage .ttl b::after { content: " - seibucup.online"; opacity: .75; }
-  /* 전체 화면(과 제목 줄이 숨는 휴대폰 가로)에서는 게임 화면 아래 가운데에 주소를 옅게 (왼쪽 아래는 입력지연 표시) */
-  .screen .wm { display: none; position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px; z-index: 6; pointer-events: none;
+  /* 전체 화면(과 제목 줄이 숨는 휴대폰 가로)에서는 주소를 옅게 - 게임 화면 오른쪽 위, HUD 시계 바로 밑 (user 2026-09-29).
+     게임 화면은 이 칸 안에서 4:3 으로 가운데라, 그 자리(--wm-r, --wm-t)는 아래 스크립트가 칸 크기에서 계산한다 */
+  .screen .wm { display: none; position: absolute; right: var(--wm-r, 10px); top: var(--wm-t, 10px); z-index: 6; pointer-events: none;
                 font: 400 13px "Galmuri11", sans-serif; color: rgba(255,255,255,.6); text-shadow: 1px 1px 0 #000; letter-spacing: .5px; }
   .screen:fullscreen .wm { display: block; }
   .stage:fullscreen .wm { display: block; }
@@ -644,6 +645,19 @@
     if (running && running.mode === 'match' && !running.watching && !confirm(T('경기를 그만두면 상대의 경기도 끝나고 방에서 나가게 됩니다. 그만할까요?', 'Stopping ends the match for the other side too, and you leave the room. Stop?'))) return;
     stop();
   };
+  // 워터마크 자리: 칸(W x H) 안의 4:3 게임 화면에서 오른쪽 끝 조금 안, HUD 줄(높이의 약 4.5%) 바로 밑
+  (function () {
+    var sc = $('screen');
+    function placeWm() {
+      var W = sc.clientWidth, H = sc.clientHeight; if (!W || !H) return;
+      var gw = Math.min(W, H * 4 / 3), gh = gw * 3 / 4;
+      sc.style.setProperty('--wm-r', Math.round((W - gw) / 2 + gw * 0.012) + 'px');
+      sc.style.setProperty('--wm-t', Math.round((H - gh) / 2 + gh * 0.045 + 3) + 'px');
+    }
+    if (window.ResizeObserver) new ResizeObserver(placeWm).observe(sc);
+    document.addEventListener('fullscreenchange', placeWm); window.addEventListener('resize', placeWm);
+    placeWm();
+  })();
   new MutationObserver(function () { document.body.classList.toggle('game-open', !$('stage').hidden); }).observe($('stage'), { attributes: true, attributeFilter: ['hidden'] });
   // ---- 터치 컨트롤러: 터치 화면이면 저절로 켠다 (보기만 하는 리플레이·관전은 빼고). 컨트롤러 버튼으로 끄고 켤 수 있다
   var TOUCH = (window.matchMedia && matchMedia('(pointer: coarse)').matches) || (navigator.maxTouchPoints || 0) > 0;
@@ -1681,7 +1695,7 @@
   (function () { var ap = TESTQ.get('autoplay');
     if (!ap || location.hostname !== '127.0.0.1') return;
     fetch('/__testroms/cupsoc.zip').then(function (r) { return r.arrayBuffer(); })
-      .then(function (b) { return tx('readwrite', function (st) { st.put(b, 'cupsoc.zip'); }); }).then(loadRoms).then(function () { start(ap); });
+      .then(function (b) { return tx('readwrite', function (st) { st.put(b, 'cupsoc.zip'); }); }).then(loadRoms).then(function () { start(ap, TESTQ.get('rep') ? { replay: TESTQ.get('rep'), game: 'cupsocs2' } : undefined); });   // &rep=replays/x.scr: 리플레이
   })();
   (function () { var an = TESTQ.get('autonet');
     if (!an || location.hostname !== '127.0.0.1') return;
