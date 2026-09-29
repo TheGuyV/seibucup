@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-29 15:09","room":9,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,3],"nicks":["살라스","배철수","",""],"replay":"replays/20260929_150912_살라스_vs_배철수_0-1_p1.scr"},
 {"when":"2026-09-29 15:04","room":9,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,5],"nicks":["살라스","배철수","",""],"replay":"replays/20260929_150430_살라스_vs_배철수_0-1_p1.scr"},
 {"when":"2026-09-29 15:02","room":7,"type":"1v1","time":210,"players":2,"score":[2,2],"teams":[8,7],"pk":[4,2],"ft":3,"series":"7-260929143932-1","nicks":["1","세이부","",""],"replay":"replays/20260929_150253_1_vs_세이부_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 14:56","room":7,"type":"1v1","time":210,"players":2,"score":[6,4],"teams":[8,4],"ft":3,"series":"7-260929143932-1","nicks":["1","세이부","",""],"replay":"replays/20260929_145631_1_vs_세이부_6-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-24 04:20","room":46,"type":"2v2","time":210,"players":4,"score":[2,2],"teams":[10,5],"nicks":["Janet","플로레알","드래곤타이거","테일러장군"],"replay":"replays/20260924_041951_Janet_vs_플로레알_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 04:08","room":39,"type":"2v2","time":210,"players":4,"score":[2,4],"teams":[5,10],"nicks":["드래곤타이거","플로레알","Janet","테일러장군"],"replay":"replays/20260924_040812_드래곤타이거_vs_플로레알_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 04:01","room":39,"type":"2v2","time":210,"players":4,"score":[2,3],"teams":[9,5],"nicks":["드래곤타이거","플로레알","Janet","테일러장군"],"replay":"replays/20260924_040138_드래곤타이거_vs_플로레알_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 03:55","room":37,"type":"2v2","time":210,"players":4,"score":[4,0],"teams":[10,3],"nicks":["테일러장군","플로레알","Janet","드래곤타이거"],"replay":"replays/20260924_035520_테일러장군_vs_플로레알_4-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 03:49","room":37,"type":"2v2","time":210,"players":4,"score":[2,1],"teams":[10,9],"nicks":["테일러장군","플로레알","Janet","드래곤타이거"],"replay":"replays/20260924_034934_테일러장군_vs_플로레알_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-24 03:55","room":37,"type":"2v2","time":210,"players":4,"score":[4,0],"teams":[10,3],"nicks":["테일러장군","플로레알","Janet","드래곤타이거"],"replay":"replays/20260924_035520_테일러장군_vs_플로레알_4-0_p1.scr","edition":"cupsocs2"}
 ]
