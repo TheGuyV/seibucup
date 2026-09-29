@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-29 19:43","room":26,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260929_194344_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 19:43","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,8],"ft":3,"series":"25-260929193903-4","nicks":["Janet","세이부","",""],"replay":"replays/20260929_194212_Janet_vs_세이부_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 19:39","room":26,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,5],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260929_193957_바트_vs_키아누리브스_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 19:39","room":25,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[10,7],"ft":3,"series":"25-260929193903-4","nicks":["Janet","세이부","",""],"replay":"replays/20260929_193814_Janet_vs_세이부_4-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-24 16:17","room":18,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,8],"pk":[1,3],"ft":5,"series":"18-260924161755-3","nicks":["인파이터","MrKei","",""],"replay":"replays/20260924_161753_인파이터_vs_MrKei_1-1_p1.scr"},
 {"when":"2026-09-24 16:13","room":17,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"nicks":["인파이터","MrKei","",""],"replay":"replays/20260924_161301_인파이터_vs_MrKei_2-1_p1.scr"},
 {"when":"2026-09-24 16:08","room":17,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"nicks":["인파이터","MrKei","",""],"replay":"replays/20260924_160852_인파이터_vs_MrKei_1-0_p1.scr"},
-{"when":"2026-09-24 16:04","room":16,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[7,0],"nicks":["sky","MrKei2","",""],"replay":"replays/20260924_160434_sky_vs_MrKei2_1-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 15:59","room":16,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,8],"nicks":["sky","MrKei2","",""],"replay":"replays/20260924_155939_sky_vs_MrKei2_0-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-24 16:04","room":16,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[7,0],"nicks":["sky","MrKei2","",""],"replay":"replays/20260924_160434_sky_vs_MrKei2_1-4_p1.scr","edition":"cupsocs2"}
 ]
