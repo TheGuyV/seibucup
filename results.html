@@ -68,6 +68,31 @@
   .results th { white-space: normal; }
   .results tr.sub td:nth-child(2) { padding-left: 10px; }
 }
+/* ▶ 보기: 이 브라우저에 롬이 있으면(바로 플레이에서 넣은 것) 바로 플레이의 게임 창과 같은 모달로 재생 - 보기만 하므로 조작 안내·컨트롤러 없음 (user 2026-09-29) */
+.stage { position: fixed; z-index: 60; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(96vw, calc((100vh - 120px) * 4 / 3)); width: min(96vw, calc((100dvh - 120px) * 4 / 3));
+         background: #000; border: 3px solid var(--hud-yellow); box-shadow: 6px 6px 0 #000, 0 0 0 100vmax rgba(0, 0, 0, .78); }
+.stage[hidden] { display: none; }
+.stage .ttl { display: flex; align-items: center; gap: 10px; padding: 5px 10px; background: var(--hud-yellow); color: #000; font-size: .9rem; }
+.stage .ttl b { font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stage .ttl b::after { content: " - seibucup.online"; opacity: .75; }
+.stage .screen { position: relative; width: 100%; aspect-ratio: 4 / 3; margin: 0 auto; background: #000; }
+.stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.stage .veil { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; align-content: center; gap: 14px; text-align: center; padding: 20px; color: #fff; background: rgba(0,0,0,.85); font-size: 1rem; }
+.stage .veil[hidden] { display: none; }
+.stage .veil.err { color: #ffb3b3; }
+.stage .veil.busy::before { content: ""; justify-self: center; width: 42px; height: 42px; border: 5px solid rgba(255,255,255,.25); border-top-color: var(--hud-yellow); border-radius: 50%; animation: vspin .8s linear infinite; }
+@keyframes vspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .stage .veil.busy::before { animation-duration: 2.4s; } }
+.stage .bar { display: flex; gap: 8px 14px; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 8px 12px; background: var(--hud); border-top: 2px solid var(--hud-yellow); }
+.stage .bar .wonly { font-size: .82rem; opacity: .7; }
+.stage .bar .btns { display: flex; gap: 8px; margin-left: auto; }
+.stage .sb { font: inherit; font-size: .88rem; padding: 6px 14px; border: 2px solid #000; background: #2a302b; color: #fff; cursor: pointer; box-shadow: 3px 3px 0 #000; }
+.stage .sb.go { background: var(--hud-yellow); color: #000; }
+.stage .sb:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.stage:fullscreen { width: 100vw; height: 100vh; left: 0; top: 0; transform: none; border: 0; display: flex; flex-direction: column; justify-content: center; }
+.stage:fullscreen .ttl, .stage:fullscreen .bar { display: none; }
+.stage:fullscreen .screen { width: min(100vw, calc(100vh * 4 / 3)); }
+body.game-open { overflow: hidden; }
 </style>
 </head>
 <body>
@@ -91,7 +116,7 @@
 <section class="hero">
   <div class="container">
     <h1><span class="ko">경기 기록</span><span class="en">Match results</span></h1>
-    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수와 녹화 파일을 보냅니다). ▶ 보기를 누르면 리플레이 주소가 복사되고, 런처에서 <strong>게임 메뉴 - 리플레이</strong>를 누르면 경기가 그대로 다시 재생됩니다(같은 MAME 빌드 필요). 비밀방 경기와, 모든 참가자가 같은 IP(같은 공유기)인 경기는 올라오지 않습니다. 승부차기로 결정된 경기는 1 - 1 (5-4)처럼 승부차기 점수가 함께 나오고, FT 시리즈의 경기들은 시리즈 점수 아래에 한데 묶여 보입니다. 최근 300경기. 경기 시각은 지금으로부터 얼마나 지났는지로 보여 줍니다.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher sends the final score and the recording). ▶ watch copies the replay's link; <strong>Game - Replays</strong> in the launcher then plays the match again (same MAME build needed). Matches in password rooms, or with every player on one IP address (one home network), are not posted. A match decided on penalties shows the shoot-out too, like 1 - 1 (5-4), and the matches of an FT series come together under the series score. Last 300 matches.</span></p>
+    <p class="lead"><span class="ko">서버에서 끝까지 치른 경기가 자동으로 올라옵니다(방장 쪽 런처가 종료 시각의 점수와 녹화 파일을 보냅니다). ▶ 보기를 누르면 이 브라우저에 롬이 있을 때(<a href="play.html">바로 플레이</a>에서 넣은 롬) 이 페이지에서 바로 재생됩니다. 롬이 없으면 리플레이 주소가 복사되고, 런처에서 <strong>게임 메뉴 - 리플레이</strong>를 누르면 경기가 그대로 다시 재생됩니다(같은 MAME 빌드 필요). 비밀방 경기와, 모든 참가자가 같은 IP(같은 공유기)인 경기는 올라오지 않습니다. 승부차기로 결정된 경기는 1 - 1 (5-4)처럼 승부차기 점수가 함께 나오고, FT 시리즈의 경기들은 시리즈 점수 아래에 한데 묶여 보입니다. 최근 300경기. 경기 시각은 지금으로부터 얼마나 지났는지로 보여 줍니다.</span><span class="en">Every match played to full time on the relay is posted here automatically (the host's launcher sends the final score and the recording). ▶ watch plays the match right on this page when this browser has your ROM (put in on <a href="play.html">Play now</a>); without one it copies the replay's link, and <strong>Game - Replays</strong> in the launcher then plays the match again (same MAME build needed). Matches in password rooms, or with every player on one IP address (one home network), are not posted. A match decided on penalties shows the shoot-out too, like 1 - 1 (5-4), and the matches of an FT series come together under the series score. Last 300 matches.</span></p>
   </div>
 </section>
 
@@ -122,6 +147,18 @@
   </div>
 </section>
 
+<div class="stage" id="stage" hidden role="dialog" aria-modal="true" aria-labelledby="stageTitle">
+  <div class="ttl"><b id="stageTitle">Replay</b></div>
+  <div class="screen" id="screen"><div class="veil" id="veil" hidden></div></div>
+  <div class="bar">
+    <span class="wonly"><span class="ko">보기만 하는 리플레이입니다</span><span class="en">Replay - watch only</span></span>
+    <div class="btns">
+      <button class="sb" id="btnFull" type="button"><span class="ko">전체 화면</span><span class="en">Full screen</span></button>
+      <button class="sb go" id="btnClose" type="button"><span class="ko">닫기</span><span class="en">Close</span></button>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="container">
     <div><span class="ko">Seibu Cup Soccer © 1992 Seibu Kaihatsu. 팬 프로젝트, 공식 관계 없음.</span><span class="en">Seibu Cup Soccer © 1992 Seibu Kaihatsu. Fan project, not affiliated.</span></div>
@@ -144,14 +181,20 @@
     toast.className = "copytoast"; toast.hidden = true; toast.setAttribute("role", "status");
     document.body.appendChild(toast);
     toast.addEventListener("click", function () { toast.hidden = true; });
-    function copied(ok) {
-      toast.innerHTML = ok
+    function copied(ok, roms, ed) {
+      // why it did not play here: no ROM in this browser, or not the one this match's version needs
+      var why = !roms || !roms.any
+        ? '<span class="ko"><a href="play.html">바로 플레이</a>에서 롬을 넣어 두면 여기서 바로 볼 수 있습니다.</span><span class="en">Put your ROM in on <a href="play.html">Play now</a> to watch right here.</span>'
+        : ed === "cupsocs2" && !roms.cupsocs2
+        ? '<span class="ko">셀렉션 경기는 <a href="play.html">바로 플레이</a>에 cupsocs2.zip 도 넣으면 여기서 바로 볼 수 있습니다.</span><span class="en">Add cupsocs2.zip on <a href="play.html">Play now</a> to watch Selection matches here.</span>'
+        : "";
+      toast.innerHTML = (ok
         ? '<strong><span class="ko">리플레이 주소를 복사했습니다</span><span class="en">Replay link copied</span></strong>' +
           '<span class="ko">런처에서 <b>게임 메뉴 - 리플레이</b>를 클릭하시면 바로 게임이 재생됩니다.</span>' +
           '<span class="en">In the launcher, click <b>Game - Replays</b> and the match plays straight away.</span>'
         : '<strong><span class="ko">주소를 복사하지 못했습니다</span><span class="en">Could not copy the link</span></strong>' +
           '<span class="ko">▶ 보기를 오른쪽 클릭해서 링크 주소를 복사해 주세요.</span>' +
-          '<span class="en">Right-click ▶ watch and copy the link address.</span>';
+          '<span class="en">Right-click ▶ watch and copy the link address.</span>') + why;
       toast.hidden = false;
       clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.hidden = true; }, 7000);
     }
@@ -170,12 +213,101 @@
         return navigator.clipboard.writeText(t).catch(function () { if (!legacyCopy(t)) throw new Error("copy refused"); });
       return legacyCopy(t) ? Promise.resolve() : Promise.reject(new Error("copy refused"));
     }
+    // ▶ with a ROM in this browser (put in on 바로 플레이; IndexedDB seibucup-web, the same one its game screen reads): the
+    // match plays right here in a modal like 바로 플레이's game window, watch only - no key guide, no controller (user 2026-09-29).
+    // Without one, or for a version that ROM cannot run, the link is copied as before, with a word on how to watch here.
+    function isKo() { return document.documentElement.getAttribute("lang") !== "en"; }
+    function T(k, e) { return isKo() ? k : e; }
+    function zipNames(buf) {
+      try {
+        var v = new DataView(buf), n = buf.byteLength, e = -1;
+        for (var p = n - 22; p >= Math.max(0, n - 65557); p--) if (v.getUint32(p, true) === 0x06054b50) { e = p; break; }
+        if (e < 0) return null;
+        var cnt = v.getUint16(e + 10, true), off = v.getUint32(e + 16, true), out = [], dec = new TextDecoder();
+        for (var k = 0; k < cnt && off + 46 <= n; k++) {
+          if (v.getUint32(off, true) !== 0x02014b50) break;
+          var nl = v.getUint16(off + 28, true), xl = v.getUint16(off + 30, true), cl = v.getUint16(off + 32, true);
+          out.push(dec.decode(new Uint8Array(buf, off + 46, nl)).toLowerCase().split("/").pop());
+          off += 46 + nl + xl + cl;
+        }
+        return out;
+      } catch (err) { return null; }
+    }
+    // what the ROMs in this browser can run: the original needs scc_01.bin, Selection seibu1.10n, both obj.8c (in cupsoc.zip)
+    var romOk = null;
+    function romCheck() {
+      if (romOk) return Promise.resolve(romOk);
+      return new Promise(function (ok) {
+        var r;
+        try { r = indexedDB.open("seibucup-web", 2); } catch (e) { ok({}); return; }
+        r.onupgradeneeded = function () { ["roms", "cfg"].forEach(function (n) { if (!r.result.objectStoreNames.contains(n)) r.result.createObjectStore(n); }); };
+        r.onerror = function () { ok({}); };
+        r.onsuccess = function () {
+          var has = {}, c;
+          try { c = r.result.transaction("roms", "readonly").objectStore("roms").openCursor(); } catch (e) { ok({}); return; }
+          c.onsuccess = function () {
+            var k = c.result;
+            if (!k) { ok({ cupsoc: !!(has["scc_01.bin"] && has["obj.8c"]), cupsocs2: !!(has["seibu1.10n"] && has["obj.8c"]), any: Object.keys(has).length > 0 }); return; }
+            var files = zipNames(k.value);
+            (files || []).forEach(function (f) { has[f] = 1; });
+            if (!files && k.key === "cupsoc.zip") has["scc_01.bin"] = has["obj.8c"] = 1;
+            if (!files && k.key === "cupsocs2.zip") has["seibu1.10n"] = 1;
+            k.continue();
+          };
+          c.onerror = function () { ok({}); };
+        };
+      }).then(function (x) { romOk = x; return x; });
+    }
+    var stage = document.getElementById("stage"), screen = document.getElementById("screen"), veilEl = document.getElementById("veil"), frame = null;
+    function veil(text, err, busy) { veilEl.hidden = !text; veilEl.className = "veil" + (err ? " err" : "") + (busy ? " busy" : ""); veilEl.textContent = text || ""; }
+    function closeReplay() {
+      if (frame) { try { frame.contentWindow.postMessage("quit", location.origin); } catch (e) {} frame.remove(); frame = null; }
+      if (document.fullscreenElement) try { document.exitFullscreen(); } catch (e) {}
+      stage.hidden = true; document.body.classList.remove("game-open"); veil("");
+    }
+    function playReplay(path, ed, nicks, label) {
+      closeReplay();
+      var q = new URLSearchParams({ mode: "replay", game: ed, lang: isKo() ? "ko" : "en", replay: path });
+      if (nicks.length) q.set("names", nicks.map(encodeURIComponent).join(","));
+      frame = document.createElement("iframe");
+      frame.src = "play/game.html?" + q.toString(); frame.title = "Seibu Cup Soccer"; frame.allow = "autoplay; fullscreen";
+      screen.appendChild(frame);
+      document.getElementById("stageTitle").textContent = T("리플레이", "Replay") + " · " + label;
+      stage.hidden = false; document.body.classList.add("game-open");
+      veil(T("게임을 불러오는 중… (처음에는 약 34 MB)", "Loading the game… (about 34 MB the first time)"), false, true);
+      document.getElementById("btnClose").focus();
+    }
+    addEventListener("message", function (e) {
+      if (e.origin !== location.origin || !frame || e.source !== frame.contentWindow || !e.data || e.data.from !== "scgame") return;
+      var d = e.data;
+      if (d.type === "running") veil("");
+      else if (d.type === "replayDone") veil(T("리플레이가 끝났습니다.", "The replay has finished."));
+      else if (d.type === "error") veil(d.rom ? T("이 브라우저의 롬으로는 이 경기를 재생할 수 없습니다. 기본은 cupsoc.zip, 셀렉션은 cupsocs2.zip 도 필요합니다.",
+                                                   "The ROM in this browser cannot play this match. The original needs cupsoc.zip; Selection also needs cupsocs2.zip.")
+                                          : T("리플레이를 재생하지 못했습니다: ", "Could not play the replay: ") + (d.text || ""), true);
+    });
+    document.getElementById("btnClose").addEventListener("click", closeReplay);
+    document.getElementById("btnFull").addEventListener("click", function () { try { stage.requestFullscreen(); } catch (e) {} });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !stage.hidden && !document.fullscreenElement) closeReplay(); });
     rows.addEventListener("click", function (e) {
       var a = e.target.closest && e.target.closest("a.rpl");
       if (!a) return;
       e.preventDefault();
-      copyText(new URL(a.getAttribute("href"), location.href).href).then(function () { copied(true); }, function () { copied(false); });
+      var path = a.getAttribute("href"), ed = a.getAttribute("data-ed");
+      // decided in the click itself (the check ran at page load): copying needs the click's user activation
+      function go(ok) {
+        if (/^replays\/[^\/]+\.scr$/i.test(path) && (ed === "cupsoc" || ed === "cupsocs2") && ok[ed]) {
+          var nicks = []; try { nicks = JSON.parse(a.getAttribute("data-nicks") || "[]"); } catch (x) {}
+          playReplay(path, ed, nicks, a.getAttribute("data-label") || "");
+          return;
+        }
+        copyText(new URL(path, location.href).href).then(function () { copied(true, ok, ed); }, function () { copied(false, ok, ed); });
+      }
+      if (romOk) go(romOk); else romCheck().then(go);
     });
+    romCheck();
+    // a ROM put in on 바로 플레이 in another tab counts when this one is looked at again
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) { romOk = null; romCheck(); } });
 
     // every nick that ever played, 가나다 first and abc after, straight from the records
     var seen = {};
@@ -277,7 +409,9 @@
                      '<td class="score">' + sc + '</td><td' + (w2 ? ' class="win"' : "") + '>' + esc(side(r, 2, 3).replace(/^$/, "")) + '</td>' +
                      '<td class="muted">' + (r.type === "2v2" ? "2 vs 2" : "1 vs 1") + " · " + Math.floor(r.time / 60) + ":" + ("0" + (r.time % 60)).slice(-2) + '</td>' +
                      '<td class="muted">' + (sel ? '<span class="ko">셀렉션</span><span class="en">Selection</span>' : '<span class="ko">기본</span><span class="en">Original</span>') + '</td>' +
-                     '<td>' + (r.replay ? '<a class="rpl" href="' + esc(r.replay) + '" title="누르면 리플레이 주소가 복사됩니다 / copies the replay link">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
+                     '<td>' + (r.replay ? '<a class="rpl" href="' + esc(r.replay) + '" data-ed="' + (r.edition === "cupsocs2" ? "cupsocs2" : r.edition === "cupsocs" ? "cupsocs" : "cupsoc") + '"' +
+                                          ' data-nicks="' + esc(JSON.stringify((r.nicks || []).map(String))) + '" data-label="' + esc(side(r, 0, 1) + " " + (bad ? "-" : r.score[0] + " - " + r.score[1]) + " " + side(r, 2, 3)) + '"' +
+                                          ' title="롬이 있으면 바로 재생, 없으면 리플레이 주소 복사 / plays here with a ROM, else copies the link">▶ <span class="ko">보기</span><span class="en">watch</span></a>' : '<span class="muted">-</span>') + '</td>';
       rows.appendChild(tr);
     }
     function page() {
