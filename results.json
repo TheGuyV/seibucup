@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-29 23:03","room":51,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":2,"series":"51-260929225914-8","nicks":["레온","seibucup_online","",""],"replay":"replays/20260929_230304_레온_vs_seibucup_online_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 22:59","room":49,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"nicks":["404page","1P","",""],"replay":"replays/20260929_225920_404page_vs_1P_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 22:59","room":51,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,8],"ft":2,"series":"51-260929225914-8","nicks":["레온","seibucup_online","",""],"replay":"replays/20260929_225917_레온_vs_seibucup_online_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 22:52","room":47,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"ft":2,"series":"47-260929224919-7","nicks":["1P","Janet","",""],"replay":"replays/20260929_225243_1P_vs_Janet_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-24 21:26","room":24,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,3],"nicks":["404page","드래곤타이거","",""],"replay":"replays/20260924_212607_404page_vs_드래곤타이거_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 21:22","room":24,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,9],"nicks":["404page","드래곤타이거","",""],"replay":"replays/20260924_212213_404page_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-24 21:17","room":24,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,8],"nicks":["404page","드래곤타이거","",""],"replay":"replays/20260924_211754_404page_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 21:16","room":16,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,0],"pk":[5,4],"ft":3,"series":"16-260924210355-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260924_211538_Janet_vs_seibucup_online_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-24 21:11","room":16,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":3,"series":"16-260924210355-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260924_211102_Janet_vs_seibucup_online_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-24 21:16","room":16,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,0],"pk":[5,4],"ft":3,"series":"16-260924210355-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260924_211538_Janet_vs_seibucup_online_2-2_p1.scr","edition":"cupsocs2"}
 ]
