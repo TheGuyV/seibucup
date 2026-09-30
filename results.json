@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-30 22:30","room":39,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,9],"ft":2,"series":"39-260930222154-5","nicks":["seibucup_online","레온","",""],"replay":"replays/20260930_223043_seibucup_online_vs_레온_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:25","room":39,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":2,"series":"39-260930222154-5","nicks":["seibucup_online","레온","",""],"replay":"replays/20260930_222606_seibucup_online_vs_레온_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:21","room":39,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,5],"ft":2,"series":"39-260930222154-5","nicks":["seibucup_online","레온","",""],"replay":"replays/20260930_222202_seibucup_online_vs_레온_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:16","room":36,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,9],"ft":2,"series":"36-260930220631-4","nicks":["seibucup_online","뚱이K","",""],"replay":"replays/20260930_221615_seibucup_online_vs_뚱이K_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-25 19:09","room":11,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,7],"pk":[3,2],"ft":3,"series":"11-260925185824-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260925_190830_Janet_vs_seibucup_online_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 19:03","room":11,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"pk":[3,2],"ft":3,"series":"11-260925185824-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260925_190317_Janet_vs_seibucup_online_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 18:58","room":11,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[10,0],"ft":3,"series":"11-260925185824-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260925_185745_Janet_vs_seibucup_online_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 17:11","room":47,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,5],"pk":[2,3],"ft":5,"series":"47-260925170211-4","nicks":["인파이터","princewi","",""],"replay":"replays/20260925_171154_인파이터_vs_princewi_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 17:06","room":47,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,9],"ft":5,"series":"47-260925170211-4","nicks":["인파이터","princewi","",""],"replay":"replays/20260925_170619_인파이터_vs_princewi_3-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-25 17:11","room":47,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,5],"pk":[2,3],"ft":5,"series":"47-260925170211-4","nicks":["인파이터","princewi","",""],"replay":"replays/20260925_171154_인파이터_vs_princewi_3-3_p1.scr","edition":"cupsocs2"}
 ]
