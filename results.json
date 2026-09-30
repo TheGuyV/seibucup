@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-30 21:58","room":34,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,4],"ft":3,"series":"34-260930215048-3","nicks":["Janet2","뚱이K2","",""],"replay":"replays/20260930_215752_Janet2_vs_뚱이K2_5-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 21:54","room":34,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,8],"ft":3,"series":"34-260930215048-3","nicks":["Janet2","뚱이K2","",""],"replay":"replays/20260930_215351_Janet2_vs_뚱이K2_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 21:50","room":34,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,10],"ft":3,"series":"34-260930215048-3","nicks":["Janet2","뚱이K2","",""],"replay":"replays/20260930_214957_Janet2_vs_뚱이K2_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 20:17","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_201724_바트_vs_키아누리브스_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-25 17:02","room":47,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,5],"ft":5,"series":"47-260925170211-4","nicks":["인파이터","princewi","",""],"replay":"replays/20260925_170209_인파이터_vs_princewi_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 16:57","room":41,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,0],"nicks":["princewi","_","",""],"replay":"replays/20260925_165716_princewi_vs___2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 16:53","room":43,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,0],"nicks":["MrKei","인파이터","",""],"replay":"replays/20260925_165318_MrKei_vs_인파이터_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 16:52","room":41,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,7],"nicks":["princewi","_","",""],"replay":"replays/20260925_165233_princewi_vs___1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 15:53","room":25,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[0,8],"nicks":["duli0212","MrKei","",""],"replay":"replays/20260925_155335_duli0212_vs_MrKei_0-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-25 16:52","room":41,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,7],"nicks":["princewi","_","",""],"replay":"replays/20260925_165233_princewi_vs___1-1_p1.scr","edition":"cupsocs2"}
 ]
