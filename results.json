@@ -1,4 +1,5 @@
 [
+{"when":"2026-09-30 22:48","room":45,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,3],"ft":3,"series":"45-260930224355-7","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20260930_224818_뚱이K_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:43","room":45,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"ft":3,"series":"45-260930224355-7","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20260930_224355_뚱이K_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:42","room":42,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"pk":[5,4],"ft":2,"series":"42-260930223756-6","nicks":["1P","seibucup_online","",""],"replay":"replays/20260930_224242_1P_vs_seibucup_online_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:37","room":42,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,10],"ft":2,"series":"42-260930223756-6","nicks":["1P","seibucup_online","",""],"replay":"replays/20260930_223744_1P_vs_seibucup_online_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-25 21:06","room":21,"type":"1v1","time":150,"players":2,"score":[1,6],"teams":[7,8],"ft":5,"series":"21-260925205253-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260925_210638_인파이터_vs_드래곤타이거_1-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 21:02","room":21,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,10],"pk":[4,2],"ft":5,"series":"21-260925205253-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260925_210212_인파이터_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 20:57","room":21,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[0,5],"ft":5,"series":"21-260925205253-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260925_205700_인파이터_vs_드래곤타이거_0-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 20:52","room":21,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[0,9],"ft":5,"series":"21-260925205253-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260925_205252_인파이터_vs_드래곤타이거_0-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 19:09","room":11,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,7],"pk":[3,2],"ft":3,"series":"11-260925185824-1","nicks":["Janet","seibucup_online","",""],"replay":"replays/20260925_190830_Janet_vs_seibucup_online_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-25 20:52","room":21,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[0,9],"ft":5,"series":"21-260925205253-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260925_205252_인파이터_vs_드래곤타이거_0-3_p1.scr","edition":"cupsocs2"}
 ]
