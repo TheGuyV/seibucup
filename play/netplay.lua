@@ -895,7 +895,7 @@ local function rec_save(complete)
   local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".scr"
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
-  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d},"devs":"%s"}',
+  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"devs":"%s"}',
     SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0, table.concat(SCNP_DEVR.hist, ";"))
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then

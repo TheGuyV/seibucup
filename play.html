@@ -1523,7 +1523,9 @@
       var head = new TextDecoder().decode(bytes.subarray(0, Math.min(bytes.length, 4096)));
       var i = head.indexOf('\n'), j = head.indexOf('\n', i + 1);
       if (head.slice(0, i).indexOf('SCNPRPL') !== 0 || j < 0) return null;
-      return JSON.parse(head.slice(i + 1, j));
+      var line = head.slice(i + 1, j);
+      try { return JSON.parse(line); }
+      catch (e1) { return JSON.parse(line.replace('},"devs":', ',"devs":')); }   // 2.0.8-2.0.9 wrote a stray } before "devs" (fixed 2026-09-30)
     } catch (e) { return null; }
   }
   // 녹화 하나를 보관한다 (같은 이름은 덮어쓴다), online = 사이트에서 받은 것. 내 녹화는 최근 100개만 남긴다
