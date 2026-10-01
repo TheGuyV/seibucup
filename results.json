@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-01 21:59","room":118,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,10],"ft":2,"series":"118-261001215628-18","nicks":["404page","테일러장군","",""],"replay":"replays/20261001_215954_404page_vs_테일러장군_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:59","room":119,"type":"1v1","time":180,"players":2,"score":[2,2],"teams":[9,10],"pk":[3,1],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_215938_플로레알_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:56","room":118,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"ft":2,"series":"118-261001215628-18","nicks":["404page","테일러장군","",""],"replay":"replays/20261001_215627_404page_vs_테일러장군_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:43","room":115,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[5,9],"ft":2,"series":"115-261001213903-17","nicks":["핑크팬더","레온","",""],"replay":"replays/20261001_214312_핑크팬더_vs_레온_0-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-26 16:49","room":72,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[0,8],"ft":5,"series":"72-260926164534-3","nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_164912_인파이터_vs_아즈텍_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:45","room":72,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,9],"ft":5,"series":"72-260926164534-3","nicks":["인파이터","아즈텍","",""],"replay":"replays/20260926_164533_인파이터_vs_아즈텍_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 16:38","room":64,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,8],"ft":5,"series":"64-260926162103-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260926_163800_인파이터_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 16:38","room":65,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["duli0212","아즈텍","",""],"replay":"replays/20260926_163759_duli0212_vs_아즈텍_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 16:33","room":64,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,7],"ft":5,"series":"64-260926162103-2","nicks":["인파이터","드래곤타이거","",""],"replay":"replays/20260926_163350_인파이터_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-26 16:38","room":65,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["duli0212","아즈텍","",""],"replay":"replays/20260926_163759_duli0212_vs_아즈텍_0-1_p1.scr","edition":"cupsocs2"}
 ]
