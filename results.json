@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-01 13:19","room":69,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,8],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_131933_축구황제_vs_축구신동마라도나_1-0_p1.scr"},
 {"when":"2026-10-01 13:15","room":69,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_131553_축구황제_vs_축구신동마라도나_0-1_p1.scr"},
 {"when":"2026-10-01 13:06","room":66,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,8],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_130628_축구황제_vs_축구신동마라도나_1-2_p1.scr"},
 {"when":"2026-10-01 13:02","room":66,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_130229_축구황제_vs_축구신동마라도나_0-1_p1.scr"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-26 02:44","room":49,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,9],"ft":5,"series":"49-260926024430-5","nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20260926_024447_테일러장군_vs_드래곤타이거_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 23:24","room":44,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[3,9],"nicks":["샤마2","드래곤타이거","",""],"replay":"replays/20260925_232450_샤마2_vs_드래곤타이거_1-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 23:20","room":44,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["샤마2","드래곤타이거","",""],"replay":"replays/20260925_232009_샤마2_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 23:16","room":44,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[8,9],"nicks":["샤마2","드래곤타이거","",""],"replay":"replays/20260925_231558_샤마2_vs_드래곤타이거_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 23:10","room":43,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,0],"nicks":["샤마2","Minako","",""],"replay":"replays/20260925_231042_샤마2_vs_Minako_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-25 23:16","room":44,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[8,9],"nicks":["샤마2","드래곤타이거","",""],"replay":"replays/20260925_231558_샤마2_vs_드래곤타이거_0-2_p1.scr","edition":"cupsocs2"}
 ]
