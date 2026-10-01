@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-01 13:15","room":69,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_131553_축구황제_vs_축구신동마라도나_0-1_p1.scr"},
 {"when":"2026-10-01 13:06","room":66,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,8],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_130628_축구황제_vs_축구신동마라도나_1-2_p1.scr"},
 {"when":"2026-10-01 13:02","room":66,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_130229_축구황제_vs_축구신동마라도나_0-1_p1.scr"},
 {"when":"2026-09-30 23:57","room":47,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,8],"nicks":["1","드래곤타이거","",""],"replay":"replays/20260930_235730_1_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-25 23:24","room":44,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[3,9],"nicks":["샤마2","드래곤타이거","",""],"replay":"replays/20260925_232450_샤마2_vs_드래곤타이거_1-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 23:20","room":44,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["샤마2","드래곤타이거","",""],"replay":"replays/20260925_232009_샤마2_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-25 23:16","room":44,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[8,9],"nicks":["샤마2","드래곤타이거","",""],"replay":"replays/20260925_231558_샤마2_vs_드래곤타이거_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 23:10","room":43,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,0],"nicks":["샤마2","Minako","",""],"replay":"replays/20260925_231042_샤마2_vs_Minako_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-25 22:57","room":37,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,3],"ft":3,"series":"37-260925224419-4","nicks":["Janet","판순이","",""],"replay":"replays/20260925_225714_Janet_vs_판순이_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-25 23:10","room":43,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,0],"nicks":["샤마2","Minako","",""],"replay":"replays/20260925_231042_샤마2_vs_Minako_2-3_p1.scr","edition":"cupsocs2"}
 ]
