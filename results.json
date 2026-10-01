@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-01 18:17","room":91,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,3],"ft":2,"series":"91-261001181712-13","nicks":["Janet","싸커맨2","",""],"replay":"replays/20261001_181622_Janet_vs_싸커맨2_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 16:52","room":84,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"ft":2,"series":"84-261001164849-12","nicks":["1P","ㅇㅇ","",""],"replay":"replays/20261001_165234_1P_vs_ㅇㅇ_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 16:48","room":84,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,0],"ft":2,"series":"84-261001164849-12","nicks":["1P","ㅇㅇ","",""],"replay":"replays/20261001_164837_1P_vs_ㅇㅇ_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 15:18","room":80,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[5,8],"ft":2,"series":"80-261001151859-11","nicks":["ㅇㅇ","싸커맨","",""],"replay":"replays/20261001_151858_ㅇㅇ_vs_싸커맨_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-26 11:08","room":17,"type":"1v1","time":210,"players":2,"score":[1,2],"teams":[9,7],"ft":3,"series":"17-260926110800-1","nicks":["드래곤타이거","레온","",""],"replay":"replays/20260926_110759_드래곤타이거_vs_레온_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 04:53","room":53,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,8],"pk":[6,5],"ft":2,"series":"53-260926044253-6","nicks":["레온","seibucup_online","",""],"replay":"replays/20260926_045315_레온_vs_seibucup_online_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 04:46","room":53,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,0],"ft":2,"series":"53-260926044253-6","nicks":["레온","seibucup_online","",""],"replay":"replays/20260926_044653_레온_vs_seibucup_online_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 04:42","room":53,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"ft":2,"series":"53-260926044253-6","nicks":["레온","seibucup_online","",""],"replay":"replays/20260926_044301_레온_vs_seibucup_online_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 04:38","room":53,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,8],"nicks":["레온","seibucup_online","",""],"replay":"replays/20260926_043821_레온_vs_seibucup_online_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-26 04:42","room":53,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"ft":2,"series":"53-260926044253-6","nicks":["레온","seibucup_online","",""],"replay":"replays/20260926_044301_레온_vs_seibucup_online_0-1_p1.scr","edition":"cupsocs2"}
 ]
