@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-01 22:23","room":126,"type":"1v1","time":180,"players":2,"score":[4,1],"teams":[5,9],"ft":3,"series":"126-261001222347-21","nicks":["테일러장군","404page","",""],"replay":"replays/20261001_222348_테일러장군_vs_404page_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 22:23","room":119,"type":"1v1","time":180,"players":2,"score":[3,3],"teams":[10,9],"pk":[2,4],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_222320_플로레알_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 22:21","room":124,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,10],"nicks":["로또영","석이아빠","",""],"replay":"replays/20261001_222110_로또영_vs_석이아빠_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 22:17","room":119,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[9,0],"pk":[8,7],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_221722_플로레알_vs_드래곤타이거_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-26 17:55","room":107,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"107-260926175551-5","nicks":["레온","아즈텍","",""],"replay":"replays/20260926_175550_레온_vs_아즈텍_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 17:53","room":91,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,0],"pk":[0,3],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_175348_레트로성지_vs_인파이터_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 17:48","room":91,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,0],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_174852_레트로성지_vs_인파이터_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 17:45","room":91,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,0],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_174515_레트로성지_vs_인파이터_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 17:41","room":91,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,0],"pk":[5,4],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_174144_레트로성지_vs_인파이터_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-26 17:45","room":91,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,0],"ft":3,"series":"91-260926174144-4","nicks":["레트로성지","인파이터","",""],"replay":"replays/20260926_174515_레트로성지_vs_인파이터_0-2_p1.scr","edition":"cupsocs2"}
 ]
