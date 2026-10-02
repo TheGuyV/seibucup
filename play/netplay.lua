@@ -1223,6 +1223,19 @@ function scnp_write_result()
   log('RESULT {"score":[%d,%d],"teams":[%d,%d],"time":%d,"frames":%d,"players":%d,"type":"%s","names":"%s"%s}',
       rs1, rs2, rt1, rt2, clock_secs, frame - (clock_start or frame), nplayers, tostring(cfg.teams or "1v1"), names, pks)
 end
+-- The host's live score for the lobby (user 2026-10-02): "LIVE <seat 1's side> <other side> <seconds left> <input delay>"
+-- when the score or the delay changes and every 10 s; the launcher / web page hands it to the relay. The delay is the
+-- dynamic delay's value now (user 2026-10-03: the room list shows it). A log line only - nothing in the match.
+SCNP_LIVE = { key = nil, at = -100000 }
+function scnp_live_step()
+  if not is_host or is_replay or is_spec or not clock_start then return end
+  local cur = mem:read_u16(CLOCK_ADDR)
+  local a, b = rec_score()
+  local key = a .. ":" .. b .. ":" .. cfg.delay
+  if key == SCNP_LIVE.key and frame - SCNP_LIVE.at < 600 then return end
+  SCNP_LIVE.key = key; SCNP_LIVE.at = frame
+  log("LIVE %d %d %d %d", a, b, cur > 0 and math.floor(cur * clock_spu + 0.5) or 0, cfg.delay)
+end
 hud_names = {}
 do
   local i = 1
@@ -1756,7 +1769,7 @@ function scnp_dd_set(nd, why)
   if nd == od then return end
   cfg.delay = nd; D.changed = frame; D.calm = 0
   if nd < od then D.lowered = frame
-  elseif frame - D.lowered < 3600 then D.floor = nd; D.floor_until = frame + 18000 end
+  elseif frame - D.lowered < 3600 then D.floor = nd; D.floor_until = frame + 7200 end   -- 2 min (was 5, 2026-10-02)
   broadcast("L" .. string.char(gen, nd))
   log("input delay %d -> %d frames at frame %d (%s)", od, nd, frame, why)
   -- kept for the replay's header ("dd"), so the server's copy shows how the delay moved (user 2026-09-29)
@@ -1775,7 +1788,15 @@ function scnp_dd_host()
   local worst, who = mine, 1
   for s = 2, 4 do local w = D.pw[s]; if w and w > worst then worst, who = w, s end; D.pw[s] = nil end
   local d = cfg.delay
-  if worst > 150 then
+  -- one bad 5 s alone does not raise it any more (2026-10-02: a fifth of the raises were undone within 15 s - a single
+  -- hiccup): two in a row, or one wait of 400 ms or more
+  local bad = worst > 150
+  local raise = bad and (D.badprev or worst >= 400)
+  D.badprev = bad
+  if bad and not raise then
+    D.calm = 0
+    log("input delay: %dP waited %d ms in 5 s - held at %d unless it happens again", who, math.floor(worst), d)
+  elseif raise then
     D.calm = 0
     -- a frame up only while the delay is within 2 of what the pings need (the relay's own start formula, a browser's frame
     -- counted in): waits beyond that are a machine that cannot keep 60 frames a second (a phone's browser) - more delay does
@@ -2480,6 +2501,7 @@ local function step()
 
   frame = frame + 1
   scnp_stage_palette()
+  scnp_live_step()
   -- a shoot-out runs on its own schedule: the routine may set the clock, which the gate below
   -- would take for a new match; when it ends, the result and the replay go out from here
   scnp_gg_step()
