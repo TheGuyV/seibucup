@@ -884,7 +884,7 @@
     return v;
   })();
   var SKILL_SYM = { u: '▲', e: '≈', d: '▼', '?': '?' };
-  function skillWord(c) { return c === 'u' ? T('나보다 잘함', 'better than you') : c === 'e' ? T('비슷함', 'about the same') : c === 'd' ? T('나보다 아직 서툼', 'not yet as good') : c === '?' ? T('아직 모름', 'not known yet') : ''; }
+  function skillWord(c) { return c === 'u' ? T('나보다 잘함', 'better than you') : c === 'e' ? T('비슷함', 'about the same') : c === 'd' ? T('나보다 아직 서툼', 'not yet as good') : c === '?' ? T('기록 적음 (새 기기일 수 있음)', 'few matches yet (maybe a new device)') : ''; }
   function skillOf(rid, seat) { var v = (net.skill || {})[rid] || ''; return v.charAt(seat); }
   function skillBadge(rid, seat) { var c = skillOf(rid, seat); return SKILL_SYM[c] ? '<span class="skb sk-' + (c === '?' ? 'q' : c) + '" title="' + esc(skillWord(c)) + '">' + SKILL_SYM[c] + '</span>' : ''; }
   // 방 제목 (user 2026-10-02): 한 줄 20자, 비우면 방장 닉네임이 보인다. 릴레이가 한 번 더 거르고 욕설이 있으면 거절한다
