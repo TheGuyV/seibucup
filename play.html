@@ -358,7 +358,7 @@
           <div class="nrow"><label for="nick"><span class="ko">닉네임</span><span class="en">Nickname</span></label>
             <div class="nfield"><input id="nick" maxlength="16" autocomplete="nickname"><button class="nbtn primary" id="btnConn" type="button"></button></div></div>
           <div class="nrow"><label for="netEd" class="accent"><span class="ko">게임 버전</span><span class="en">Version</span></label>
-            <select id="netEd"><option value="cupsocs2"></option><option value="cupsoc"></option></select></div>
+            <select id="netEd"><option value="cupsocs2"></option></select></div>
           <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
           <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
         </div>
@@ -505,21 +505,21 @@
   }
   function drawRoms() {
     romCheck();
-    var any = romOk.orig || romOk.sel;
-    $('needRom').className = 'need ' + (!any ? 'bad' : romOk.sel ? 'ok' : 'warn');
+    var any = romOk.sel;                     // 셀렉션만 한다: cupsocs2.zip 과 (공용 그래픽이 든) cupsoc.zip 둘 다
+    $('needRom').className = 'need ' + (any ? 'ok' : 'bad');
     var chips = roms.map(function (r) { return '<span class="romchip">' + esc(r.name) + ' · ' + (r.size / 1048576).toFixed(1) + ' MB</span>'; }).join('');
     var msg;
-    if (!roms.length) msg = T('롬이 없습니다 — <b>셀렉션 (추천)</b>: <b>cupsoc.zip</b> 과 <b>cupsocs2.zip</b> 을 함께 넣으세요. 기본 버전만 하려면 cupsoc.zip 하나면 됩니다.', 'No ROM yet — <b>Selection (recommended)</b>: add <b>cupsoc.zip</b> and <b>cupsocs2.zip</b> together. For the original only, cupsoc.zip alone is enough.');
-    else if (!any) msg = chips + T('<b>cupsoc.zip</b> 도 필요합니다 (셀렉션도 그래픽은 그 안에 있습니다).', '<b>cupsoc.zip</b> is needed too (Selection takes its graphics from it).');
-    else msg = chips + (romOk.sel ? '' : '<span class="romchip miss">' + T('cupsocs2.zip 없음 — 추천 버전인 셀렉션을 하려면 넣으세요', 'no cupsocs2.zip — add it for Selection (recommended)') + '</span>') +
-               ' <span class="hint">' + T('이 브라우저 안에만 저장', 'kept in this browser only') + '</span>';
+    if (!roms.length) msg = T('롬이 없습니다 — <b>cupsoc.zip</b> 과 <b>cupsocs2.zip</b> 을 함께 넣으세요 (셀렉션도 그래픽은 cupsoc.zip 안에 있습니다).', 'No ROM yet — add <b>cupsoc.zip</b> and <b>cupsocs2.zip</b> together (Selection takes its graphics from cupsoc.zip).');
+    else if (!any) msg = chips + (romOk.orig ? T('<b>cupsocs2.zip</b> 도 필요합니다 (대전은 셀렉션 버전으로 합니다).', '<b>cupsocs2.zip</b> is needed too (matches play the Selection version).')
+                                            : T('<b>cupsoc.zip</b> 도 필요합니다 (셀렉션도 그래픽은 그 안에 있습니다).', '<b>cupsoc.zip</b> is needed too (Selection takes its graphics from it).'));
+    else msg = chips + ' <span class="hint">' + T('이 브라우저 안에만 저장', 'kept in this browser only') + '</span>';
     $('romMsg').innerHTML = msg;
     $('romAdd').textContent = roms.length ? T('롬 추가', 'Add ROM') : T('롬 넣기', 'Add ROM');
     $('romAdd').className = 'lb small' + (any ? '' : ' go');
     $('btnClear').hidden = !roms.length;
     // 롬이 없으면 아래 로비는 잠근다 (inert: 누르거나 탭으로 갈 수 없다)
     $('net').inert = !any; $('netLock').hidden = any; $('needPad').hidden = !any;
-    $('netLockWhy').innerHTML = roms.length && !any ? T('cupsoc.zip 이 아직 없습니다.', 'cupsoc.zip is still missing.') : '';
+    $('netLockWhy').innerHTML = roms.length && !any ? (romOk.orig ? T('cupsocs2.zip 이 아직 없습니다.', 'cupsocs2.zip is still missing.') : T('cupsoc.zip 이 아직 없습니다.', 'cupsoc.zip is still missing.')) : '';
     drawEdition();
     if (typeof drawButtons === 'function' && typeof net !== 'undefined') drawButtons();
     if (!running) idle();
@@ -555,23 +555,19 @@
     tx('readwrite', function (s) { s.clear(); }, 'cfg').then(function () { say(T('키 설정을 기본값으로 되돌렸습니다.', 'Controls reset to the defaults.')); });
   };
 
-  // ---- 버전: 온라인 대전 칸의 '게임 버전' 하나로 고른다. 넣은 롬이 되는 것만 고를 수 있다
-  var ed = store.get('web_edition') === 'cupsoc' ? 'cupsoc' : 'cupsocs2';
+  // ---- 버전: 셀렉션 하나 (2026-10-01: 기본판은 더 이상 고르지 않는다 - 옛 기록과 리플레이는 그대로 알아본다)
+  var ed = 'cupsocs2';
   function drawEdition() {
-    var sel = $('netEd'); if (!sel || sel.options.length < 2) return;
-    sel.options[0].disabled = !romOk.sel; sel.options[1].disabled = !romOk.orig;
-    sel.options[0].textContent = romOk.sel || !(romOk.orig) ? T('셀렉션 (추천)', 'Selection (recommended)') : T('셀렉션 (cupsocs2.zip 필요)', 'Selection (needs cupsocs2.zip)');
-    // 고른 것이 안 되면 되는 쪽으로 (묻지 않는다: 롬이 그것뿐이다)
-    if (ed === 'cupsocs2' && !romOk.sel && romOk.orig) ed = 'cupsoc';
-    else if (ed === 'cupsoc' && !romOk.orig && romOk.sel) ed = 'cupsocs2';
+    var sel = $('netEd'); if (!sel || !sel.options.length) return;
+    sel.options[0].textContent = romOk.sel ? T('셀렉션', 'Selection') : T('셀렉션 (cupsocs2.zip 필요)', 'Selection (needs cupsocs2.zip)');
     sel.value = ed;
   }
 
   // ---- 상태 줄
   var running = null;
   function say(s) { $('status').innerHTML = s; }
-  function idle() { say(romOk.orig || romOk.sel ? '<b>' + T('준비됨', 'Ready') + '</b> · ' + (ed === 'cupsoc' ? T('기본', 'Original') : T('셀렉션', 'Selection'))
-                                      : T('먼저 맨 위 <b>내 롬</b> 줄에서 cupsoc.zip 과 cupsocs2.zip (셀렉션, 추천) 을 넣으세요.', 'First add cupsoc.zip and cupsocs2.zip (Selection, recommended) in the <b>My ROM</b> row at the top.')); }
+  function idle() { say(romOk.sel ? '<b>' + T('준비됨', 'Ready') + '</b> · ' + T('셀렉션', 'Selection')
+                                      : T('먼저 맨 위 <b>내 롬</b> 줄에서 cupsoc.zip 과 cupsocs2.zip 을 넣으세요.', 'First add cupsoc.zip and cupsocs2.zip in the <b>My ROM</b> row at the top.')); }
   function logline(s) { var p = $('runlog'); p.textContent += s + '\n'; if (p.textContent.length > 60000) p.textContent = p.textContent.slice(-40000); p.scrollTop = p.scrollHeight; }
 
   // ---- 게임 실행 (iframe)
@@ -813,6 +809,7 @@
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true, tie: 'pk', teams: 'pick' };
   try { Object.assign(nset, JSON.parse(store.get('web_net') || '{}')); } catch (e) {}
+  if (!(nset.delay >= 2 && nset.delay <= 8)) nset.delay = 3;      // 입력 지연은 2~8 프레임만 (예전에 고른 1 은 기본값으로)
   function saveSet() { store.set('web_net', JSON.stringify(nset)); }
   // 닉네임: PC 런처와 같은 규칙 - 문자(한글·영문 등)와 숫자, _ 와 - 만, 16자까지 (런처 Sanitize 와 같다)
   function cleanNick(v) { return String(v || '').trim().split('').filter(function (c) { return /^[\p{L}\p{Nd}_-]$/u.test(c); }).join('').slice(0, 16); }
@@ -830,15 +827,15 @@
   }
   function netLabels() {
     var stageNames = [T('잔디 (기본)', 'Grass (default)'), T('흙 잔디', 'Worn grass'), T('흙', 'Dirt'), T('인조잔디', 'Artificial turf'), T('무작위', 'Random')];
-    opt($('netEd'), [['cupsocs2', T('셀렉션 (추천)', 'Selection (recommended)')], ['cupsoc', T('기본', 'Original')]], ed); drawEdition();
+    opt($('netEd'), [['cupsocs2', T('셀렉션', 'Selection')]], ed); drawEdition();
     opt($('netPing'), PING_LIMITS.map(function (v) { return [v, v === 0 ? T('제한 없음', 'No limit') : T(v + ' ms 이하', 'up to ' + v + ' ms')]; }), nset.ping);
     opt($('netFt'), FTS.map(function (v) { return [v, v === 1 ? T('승부차기 없는 단판', 'Single match, no shoot-out') : T('FT' + v + ' (' + v + '선승)', 'FT' + v + ' (first to ' + v + ')')]; }), nset.ft);
     opt($('netTie'), [['pk', T('동점 시 승부차기', 'Level: penalties')], ['gg', T('동점 시 골든골', 'Level: golden goal')]], nset.tie === 'gg' ? 'gg' : 'pk');
     opt($('netTime'), TIMES.map(function (v) { return [v, mmss(v) + (v === 150 ? T('  (기본)', '  (default)') : '')]; }), nset.time);
     opt($('netStage'), STAGES.map(function (v, i) { return [v, stageNames[i]]; }), nset.stage);
     opt($('netBgm'), BGMS.map(function (v, i) { return [v, i === 0 ? T('무작위', 'Random') : 'Stage ' + BGM_ROUNDS[i - 1][0] + ' / ' + BGM_ROUNDS[i - 1][1]]; }), nset.bgm);
-    $('netSwap').checked = !!nset.swap; $('netSound').checked = nset.sound !== false;
-    opt($('netDelay'), [1, 2, 3, 4, 5, 6, 7, 8].map(function (v) { return [v, v + T('프레임', ' frames') + (v === 3 ? T(' (기본)', ' (default)') : '')]; }), nset.delay);
+    $('netSwap').checked = true; $('netSound').checked = nset.sound !== false;
+    opt($('netDelay'), [2, 3, 4, 5, 6, 7, 8].map(function (v) { return [v, v + T('프레임', ' frames') + (v === 3 ? T(' (기본)', ' (default)') : '')]; }), nset.delay);
     $('netAutoDelay').checked = !!nset.autoDelay; $('netDelay').disabled = !!nset.autoDelay;
     drawType();
     $('chatin').placeholder = net.tab === 'room' ? T('방 채팅', 'Room chat') : T('공개 채팅', 'Public chat');
@@ -892,16 +889,11 @@
   $('netTime').onchange = function () { nset.time = +this.value; saveSet(); var r = net.room; if (r && r.slot === 1 && r.state === 'waiting') send('TIME ' + nset.time); };
   $('netStage').onchange = function () { nset.stage = +this.value; saveSet(); };
   $('netBgm').onchange = function () { nset.bgm = this.value; saveSet(); };
-  $('netSwap').onchange = function () { nset.swap = this.checked; saveSet(); };
+  $('netSwap').onclick = function (e) { e.preventDefault(); };    // 연속 경기는 항상 좌우를 바꾼다 (2026-10-01): 표시만 한다
   $('netDelay').onchange = function () { nset.delay = +this.value; saveSet(); };
   $('netAutoDelay').onchange = function () { nset.autoDelay = this.checked; $('netDelay').disabled = this.checked; saveSet(); };
   // START 의 첫 값: 자동이면 릴레이가 두 사람의 핑으로 정하고(웹이 있는 방은 +1), 아니면 고른 프레임 (방장의 것이 쓰인다)
   function delayArg() { return nset.autoDelay ? 'auto' : String(nset.delay); }
-  // 기본(원판)을 고르면 PC 런처처럼 한 번 묻는다
-  $('netEd').onchange = function () {
-    if (this.value === 'cupsoc' && ed !== 'cupsoc' && !confirm(T('원활한 대전을 위해 [셀렉션] 버전을 추천합니다. 그래도 선택하시겠습니까?', 'For smooth matches the [Selection] version is recommended. Pick the original anyway?'))) { this.value = ed; return; }
-    ed = this.value; store.set('web_edition', ed); idle(); drawButtons();
-  };
 
   // 알림 소리: PC 런처가 그 자리에서 합성하는 음과 같다 {주파수 Hz (0 = 쉼), 길이 ms, 크기}
   var CHIMES = {
@@ -1271,7 +1263,7 @@
     for (var i = 0; i < 4; i++) if (names[i]) { n++; if (!r.ready[i]) all = false; }
     if (typeof TESTQ !== 'undefined' && TESTQ.get('autoroom') && r.state === 'waiting' && !r.over && n >= 2 && r.slot <= 4 && !r.ready[r.slot - 1] && !net.testReadySent && !net.ftAnnounce && !running) { net.testReadySent = true; tlog('ready'); send('READY 1'); setTimeout(function () { net.testReadySent = false; }, 3000); }
     if (r.state !== 'waiting' || !all) net.startSent = false;
-    var bgm = nset.bgm, flags = nset.swap ? 's' : '-';
+    var bgm = nset.bgm, flags = 's';                                 // 좌우 교대: 항상
     // 빠른 대결 방: 누가 들어오면 바로 (PC 런처의 대기중 게임 뒤 자동 시작과 같다)
     // 빠른 대결·대기중 게임의 자동 시작은 방마다 한 번 (PC 의 _autoStartSent): 경기가 끝난 뒤 같은 두 사람으로 또 시작하지 않는다
     // (user 2026-09-27 "단판인데 게임이 끝나도 계속 자동으로 이어서"). 상대가 나가 혼자가 되면 다음 손님을 위해 다시 켠다
