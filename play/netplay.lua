@@ -1912,6 +1912,7 @@ local function on_post_load()
   if spec_base then
 
     frame = spec_base
+    if SCNP_SPEC_HIST then for f, a in pairs(SCNP_SPEC_HIST) do if f > spec_base and not agg[f] then agg[f] = a end end end
     for f in pairs(agg) do if f <= spec_base then agg[f] = nil end end
     log("resumed at frame %d, %d aggregate frame(s) buffered", frame, (function() local n = 0 for _ in pairs(agg) do n = n + 1 end return n end)())
     spec_base = nil
@@ -2019,7 +2020,17 @@ local function handle_host_message(p, t, g, payload)
 
       local f, sum = string.unpack("<I4I4", payload)
       local mine = sum_hist[f]
-      if mine and mine ~= sum and not p.drift_logged then p.drift_logged = true; log("spectator %d drifted from us at frame %d (host %08x, spectator %08x)", p.slot, f, mine, sum) end
+      if f <= (p.resync_base or -1) then mine = nil end            -- from before the last hand-off: says nothing now
+      if mine and mine ~= sum then
+        -- drifted (user 2026-10-03: a web spectator saw other goals than the match): hand him the running game again,
+        -- like a newcomer - at most every 10 s and 6 times a match, so one that can never agree does not cost forever
+        p.resyncs = p.resyncs or 0
+        if phase == "play" and not p.join_at and p.handed == gen and p.resyncs < 6 and frame - (p.resync_at or -100000) >= 600 then
+          p.resyncs = p.resyncs + 1; p.resync_at = frame; p.force = true; p.agree_logged = nil
+          p.join_at = frame + cfg.delay + 3
+          log("spectator %d drifted from us at frame %d (host %08x, spectator %08x) - sending it the game again (%d)", p.slot, f, mine, sum, p.resyncs)
+        elseif not p.drift_logged then p.drift_logged = true; log("spectator %d drifted from us at frame %d (host %08x, spectator %08x)", p.slot, f, mine, sum) end
+      end
       if mine and mine == sum and not p.agree_logged then p.agree_logged = true; log("spectator %d in step with us (checksum agrees at frame %d)", p.slot, f) end
     end
     return
@@ -2075,9 +2086,10 @@ local function handle_client_message(t, g, payload)
     end
     phase = "sync"; phase_since = os.time()
   elseif t == "J" then
-    if is_spec and phase == "play" then SCNP_SPEC_SKIP = true; log("a second hand-off while watching - ignored"); return end
+    if is_spec and phase == "play" and ((payload:byte(5) or 0) & 0x80) == 0 then SCNP_SPEC_SKIP = true; log("a second hand-off while watching - ignored"); return end
+    if is_spec and phase == "play" then log("we drifted from the match - the host sends it again"); status("back in step with the match") end
     spec_base = string.unpack("<I4", payload)
-    local r = payload:byte(5)
+    local r = payload:byte(5); if r then r = r & 0x7f end
     bgm_rand = (r and r ~= 0) and r or nil          -- the match's random tune, if it has one yet (else worked out here, at the same frame)
     if not is_spec then SCNP_PVE.catchup = true end                  -- a PvE newcomer: run until caught up
     set_overlay(C_INFO, "NETPLAY: spectator mode - joining the match in progress...")
@@ -2245,13 +2257,17 @@ end
 
 local SPEC_STATE = "np_specjoin"
 local SPEC_SAVE_LAG = tonumber(os.getenv("SCNP_SPEC_LAG") or "1")
+SCNP_SPEC_POKE = tonumber(os.getenv("SCNP_SPEC_POKE") or "")          -- test only: a spectator drifts on purpose there
 local spec_join = nil
 local function spec_join_step()
   if spec_join then
     local data, info = read_state_file(spec_join.name)
     if data then
       local p = spec_join.p
-      send_to(p, "J" .. string.char(gen) .. u32le(spec_join.at) .. string.char(bgm_rand or 0))   -- + the match's random tune (16)
+      -- + the match's random tune (16); its top bit set when it puts a drifted spectator back in step (2026-10-03 - the
+      -- tunes are all under 0x80, and J keeps its length, so older peers read it as before)
+      send_to(p, "J" .. string.char(gen) .. u32le(spec_join.at) .. string.char((bgm_rand or 0) | (p.force and 0x80 or 0)))
+      p.force = nil; p.resync_base = spec_join.at
       send_to(p, "S" .. string.char(gen) .. u32le(#data) .. data)
       log("spectator %d: sent state of frame %d (%d bytes)", p.slot, spec_join.at, #data)
       p.join_at = nil; p.handed = gen
@@ -2634,6 +2650,9 @@ local function step()
   for s = 1, 4 do apply_input(s, (SCNP_PVE.on and s >= 2 and a[s] == 0xff) and 0 or a[s]) end
   agg[nxt] = nil
   if not is_replay and not is_spec then rec_inputs[#rec_inputs + 1] = { a[1], a[2], a[3], a[4] }; scnp_devr_rec() end
+  -- a spectator keeps its last 3 s of inputs: a resync hands it a state from a frame it may already have run past
+  if is_spec then SCNP_SPEC_HIST = SCNP_SPEC_HIST or {}; SCNP_SPEC_HIST[nxt] = a; SCNP_SPEC_HIST[nxt - 180] = nil end
+  if is_spec and SCNP_SPEC_POKE and nxt == SCNP_SPEC_POKE then mem:write_u32(0x113820, mem:read_u32(0x113820) ~ 0x00350000); log("test: drifted on purpose at frame %d", nxt) end
 
   if is_host and not is_replay then check_sums() end
 

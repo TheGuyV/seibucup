@@ -824,6 +824,9 @@
     if (d.type === 'log') {
       logline(d.text);
       var lm = /\] LIVE (\d+) (\d+) (\d+)(?: (\d+))?\s*$/.exec(d.text);     // 4번째: 지금 입력 지연 (2026-10-03)
+      // 관전자가 어긋나서 다시 맞춘 일: 릴레이 로그에 남긴다 (2026-10-03, 웹 관전이 어긋나는 때를 보려고)
+      var dm = /\] (spectator \d+ drifted from us.*)$/.exec(d.text);
+      if (dm && net.room && net.room.slot === 1) send('DIAG ' + dm[1].slice(0, 190));
       if (lm && net.room && net.room.slot === 1 && (lm[0] !== net.liveSent || Date.now() - (net.liveAt || 0) >= 10000)) { net.liveSent = lm[0]; net.liveAt = Date.now(); send('LIVE ' + lm[1] + ' ' + lm[2] + ' ' + lm[3] + (lm[4] ? ' ' + lm[4] : '')); }
     }
     else if (d.type === 'saved') { if (savedWait) savedWait(d.text); }
@@ -1863,6 +1866,13 @@
       setTimeout(function () {
         if (TESTQ.get('autoquick')) { if (TESTQ.get('autotime')) nset.time = +TESTQ.get('autotime'); tlog('press quick'); $('btnQuick').click(); return; }
         if (TESTQ.get('autoroom') === 'create') { nset.ft = +(TESTQ.get('autoft') || 1); nset.time = +(TESTQ.get('autotime') || 150); nset.type = '1v1'; createRoom(); tlog('create ft ' + nset.ft); return; }
+        if (TESTQ.get('autoroom') === 'watch') {      // 시험: host 의 경기 중인 방을 관전 (127.0.0.1 만)
+          var tw = setInterval(function () {
+            var f = net.rooms.filter(function (x) { return x[1] === TESTQ.get('host') && x[3] === 'playing'; })[0];
+            if (f && !net.room) { clearInterval(tw); tlog('watch ' + f[0]); send('JOIN ' + f[0] + ' 5 - watch'); }
+          }, 500);
+          return;
+        }
         if (TESTQ.get('autoroom') === 'join') {
           var tj = setInterval(function () {
             var f = net.rooms.filter(function (x) { return x[1] === TESTQ.get('host') && x[3] === 'waiting'; })[0];
