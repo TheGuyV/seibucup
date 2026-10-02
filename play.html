@@ -277,6 +277,12 @@
   .av .ok { position: absolute; right: -3px; bottom: -3px; width: 12px; height: 12px; border-radius: 50%; background: var(--n-green); color: #0d1f10; font-size: 8px; line-height: 12px; text-align: center; box-shadow: 0 0 0 1px var(--n-panel); }
   .rav .mid { margin: 0 5px; font-size: 11px; color: var(--n-mute); }
   .rav .mid.sc { font-size: 16px; font-weight: 700; color: var(--n-fg); font-variant-numeric: tabular-nums; }
+  /* 실력 비교 (2026-10-03): 아바타 오른쪽 위 - ▲ 나보다 잘함, ≈ 비슷함, ▼ 아직 서툼, ? 아직 모름 (나에게만 보인다) */
+  .av .skb { position: absolute; top: -7px; right: -8px; min-width: 16px; height: 16px; padding: 0 1px; border-radius: 8px; font-size: 10px; line-height: 16px; text-align: center; font-weight: 700; box-shadow: 0 0 0 1.5px var(--n-panel); }
+  .skb.sk-u { background: #791f1f; color: #f7c1c1; } .skb.sk-e { background: #27500a; color: #c0dd97; } .skb.sk-d { background: #0c447c; color: #b5d4f4; } .skb.sk-q { background: #444; color: #bbb; }
+  .skw { font-size: 11px; padding: 1px 6px; border-radius: 5px; margin-left: 4px; white-space: nowrap; }
+  .skw.sk-u { background: #791f1f; color: #f7c1c1; } .skw.sk-e { background: #27500a; color: #c0dd97; } .skw.sk-d { background: #0c447c; color: #b5d4f4; } .skw.sk-q { background: #333; color: #aaa; }
+  .chm { font-size: 10px; } .chm.sk-u { color: #f09595; } .chm.sk-e { color: #97c459; } .chm.sk-d { color: #85b7eb; }      /* 채팅의 실력 표시: 작고 연하게 */
   .rbar { height: 3px; background: #3c3c3c; } .rbar i { display: block; height: 100%; background: var(--n-orange); }
   .rpg { grid-area: pg; display: flex; flex-direction: column; gap: 3px; font-size: 11px; color: var(--n-mute); white-space: nowrap; overflow: hidden; }
   .rpg.far { color: var(--n-orange); }
@@ -867,6 +873,20 @@
   try { Object.assign(nset, JSON.parse(store.get('web_net') || '{}')); } catch (e) {}
   if (!(nset.delay >= 2 && nset.delay <= 8)) nset.delay = 3;      // 입력 지연은 2~8 프레임만 (예전에 고른 1 은 기본값으로)
   function saveSet() { store.set('web_net', JSON.stringify(nset)); }
+  // 실력 비교 (2026-10-03): 이 브라우저가 스스로 만든 무작위 기기 ID - 서버는 이것으로 실력을 쌓고, 사람마다 상대와 비교한 결과만 보낸다
+  var devId = (function () {
+    var v = ''; try { v = store.get('web_devid') || ''; } catch (e) {}
+    if (!/^[0-9a-f]{32}$/.test(v)) {
+      var b = new Uint8Array(16); crypto.getRandomValues(b);
+      v = Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      try { store.set('web_devid', v); } catch (e) {}
+    }
+    return v;
+  })();
+  var SKILL_SYM = { u: '▲', e: '≈', d: '▼', '?': '?' };
+  function skillWord(c) { return c === 'u' ? T('나보다 잘함', 'better than you') : c === 'e' ? T('비슷함', 'about the same') : c === 'd' ? T('나보다 아직 서툼', 'not yet as good') : c === '?' ? T('아직 모름', 'not known yet') : ''; }
+  function skillOf(rid, seat) { var v = (net.skill || {})[rid] || ''; return v.charAt(seat); }
+  function skillBadge(rid, seat) { var c = skillOf(rid, seat); return SKILL_SYM[c] ? '<span class="skb sk-' + (c === '?' ? 'q' : c) + '" title="' + esc(skillWord(c)) + '">' + SKILL_SYM[c] + '</span>' : ''; }
   // 방 제목 (user 2026-10-02): 한 줄 20자, 비우면 방장 닉네임이 보인다. 릴레이가 한 번 더 거르고 욕설이 있으면 거절한다
   function cleanTitle(v) { return Array.from(String(v || '').replace(/[\u0000-\u001f\u007f|;<>]/g, '').replace(/\s+/g, ' ').trim()).slice(0, 20).join(''); }
   function unescTitle(v) { try { return v ? cleanTitle(decodeURIComponent(v)) : ''; } catch (e) { return ''; } }
@@ -1004,7 +1024,7 @@
   function hhmm(d) { return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
   // 방 채팅은 PC 런처처럼 "1P 닉네임:" 을 자리 색으로 (1P 빨강, 2P 파랑, 3P 주황, 4P 초록, 관전은 회색), 내가 쓴 말은 굵게
   var SEAT_COLORS = [null, 'rgb(220,60,60)', 'rgb(60,110,230)', 'rgb(200,140,0)', 'rgb(40,160,80)'];
-  function chat(tab, when, who, text, sys, slot) {
+  function chat(tab, when, who, text, sys, slot, mark) {
     var box = $(tab === 'room' ? 'chatRoom' : 'chatPub'), d = document.createElement('div');
     var tm = document.createElement('span'); tm.className = 'tm'; tm.textContent = when; d.appendChild(tm);
     if (sys) { var s2 = document.createElement('span'); s2.className = 'sys'; s2.textContent = text; d.appendChild(s2); }
@@ -1014,6 +1034,7 @@
         nk.textContent = (slot >= 1 && slot <= 4 ? slot + 'P ' : '') + who + ': ';
         nk.style.color = slot >= 1 && slot <= 4 ? SEAT_COLORS[slot] : 'var(--n-mute)';
       } else nk.textContent = who + ': ';
+      if (mark && SKILL_SYM[mark] && mark !== '?') { var mk = document.createElement('span'); mk.className = 'chm sk-' + mark; mk.textContent = SKILL_SYM[mark] + ' '; mk.title = skillWord(mark); d.appendChild(mk); }
       d.appendChild(nk);
       var tx = document.createElement('span'); tx.textContent = text;
       if (slot != null && net.room && slot === net.room.slot) tx.style.fontWeight = '700';
@@ -1101,7 +1122,8 @@
       var av = function (k, side) {
         var nick = ri.seats[k];
         if (!nick) return '<span class="av e">+</span>';
-        return '<span class="av ' + (side ? 'r' : 'l') + '" title="' + esc(nick) + '">' + esc(Array.from(nick).slice(0, 2).join('')) + (ri.ready[k] === '1' ? '<span class="ok">✓</span>' : '') + '</span>';
+        var sw = skillWord(skillOf(id, k));
+        return '<span class="av ' + (side ? 'r' : 'l') + '" title="' + esc(nick + (sw ? ' - ' + sw : '')) + '">' + esc(Array.from(nick).slice(0, 2).join('')) + (ri.ready[k] === '1' ? '<span class="ok">✓</span>' : '') + skillBadge(id, k) + '</span>';
       };
       var Ls = ri.pve ? [0, 1, 2, 3].slice(0, Math.max(1, Math.min(4, ri.cap))) : type === '1v1' ? [0] : [0, 2], Rs = ri.pve ? [] : type === '1v1' ? [1] : [1, 3];
       var seats = '<span class="rseats"><span class="rav">' + Ls.map(function (k) { return av(k, 0); }).join('') +
@@ -1139,12 +1161,12 @@
     if (t === 'ethernet') return 'wd';
     return mobile ? 'wm' : 'wd';
   }
-  function seatRows(names, builds, ready, cap, mySlot, specs, type, kinds) {
+  function seatRows(names, builds, ready, cap, mySlot, specs, type, kinds, rid) {
     var rows = '', teams = type === '2v2';
     for (var i = 0; i < Math.max(2, Math.min(4, cap || 2)); i++) {
       var nm = names[i] || '';
       rows += '<tr class="' + (i + 1 === mySlot ? 'me' : '') + '"><td>' + (i + 1) + 'P</td>' +
-        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i === 0 ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + '</td>'
+        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i === 0 ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + (function () { var c = skillOf(rid, i); return SKILL_SYM[c] ? '<span class="skw sk-' + (c === '?' ? 'q' : c) + '">' + SKILL_SYM[c] + ' ' + esc(skillWord(c)) + '</span>' : ''; })() + '</td>'
             : '<td class="empty">' + T('(비어 있음)', '(empty)') + '</td><td></td><td></td>') + '</tr>';
     }
     (specs || []).forEach(function (s, k) { if (s) rows += '<tr><td>' + T('관전', 'watch') + '</td><td>' + esc(s) + '</td><td></td><td>' + T('관전자', 'spectator') + '</td></tr>'; });
@@ -1154,11 +1176,11 @@
     var r = net.room, w = net.who;
     if (r) {
       $('roomTitle').textContent = T('내 방', 'My room') + ' · ' + T('방 ', 'room ') + r.id + (r.title ? ' 「' + r.title + '」' : '') + ' ' + r.type.replace('v', ' vs ') + ' (' + stateName(r.state) + ') · ' + (r.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+r.time) + (r.ft > 1 ? ' · FT' + r.ft + ' ' + r.wa + ':' + r.wb : '');
-      $('seatrows').innerHTML = seatRows(r.names, r.builds, r.ready, r.type === '2v2' ? 4 : r.cap, r.slot, r.specs, r.type, r.kinds);
+      $('seatrows').innerHTML = seatRows(r.names, r.builds, r.ready, r.type === '2v2' ? 4 : r.cap, r.slot, r.specs, r.type, r.kinds, r.id);
     } else if (w) {
       var n = w.names.filter(Boolean).length;
       $('roomTitle').textContent = T('선택한 방', 'Selected room') + ' · ' + T('방 ', 'room ') + w.id + ' ' + w.type.replace('v', ' vs ') + ' (' + stateName(w.state) + ', ' + n + '/' + w.cap + ') · ' + (w.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+w.time);
-      $('seatrows').innerHTML = seatRows(w.names, w.builds, [], w.type === '2v2' ? 4 : w.cap, 0, w.specs, w.type);
+      $('seatrows').innerHTML = seatRows(w.names, w.builds, [], w.type === '2v2' ? 4 : w.cap, 0, w.specs, w.type, undefined, w.id);
     } else {
       $('roomTitle').textContent = T('내 방', 'My room');
       $('seatrows').innerHTML = '';
@@ -1256,7 +1278,7 @@
     var sp = l.indexOf(' '), cmd = sp < 0 ? l : l.slice(0, sp), arg = sp < 0 ? '' : l.slice(sp + 1);
     if (cmd === 'WELCOME') {
       net.nick = arg.split(' ').slice(1).join(' ');
-      send('BUILD ' + WEB_BUILD + ' ' + WEB_PROTO); send('NOTES'); send('CONN ' + myKind());
+      send('BUILD ' + WEB_BUILD + ' ' + WEB_PROTO); send('NOTES'); send('DEV ' + devId); send('CONN ' + myKind());
       sys('pub', T('로비에 있는 모두와 이야기해 보세요 - 상대 구함, 인사, 건의.', 'Talk with everybody in the lobby - find a match, say hello.'));
       sys('pub', T(net.nick + ' 님, 환영합니다! 이 채팅은 접속한 모두에게 보입니다 - 인사해 보세요.', 'Welcome, ' + net.nick + '! Everybody online sees this chat.'));
       netSay(T('접속됨. 방을 골라 참가하거나 새로 만드세요.', 'Connected. Pick a room to join, or create one.'));
@@ -1273,6 +1295,11 @@
       if (net.sel && !net.rooms.some(function (f) { return f[0] === net.sel; })) { net.sel = null; net.who = null; }
       drawNet();
     } else if (cmd === 'ROOMINFO') onRoomInfo(arg.split(' '));
+    else if (cmd === 'SKILL') {          // SKILL 방:자리1..4;... - 각 자리 사람이 나와 비교해 u e d ? (m 나, - 빈자리)
+      net.skill = {};
+      arg.split(';').forEach(function (p) { var c = p.indexOf(':'); if (c > 0) net.skill[p.slice(0, c)] = p.slice(c + 1); });
+      drawTiles(); drawSeats();
+    }
     else if (cmd === 'ROOMWHO') {
       // ROOMWHO <id> <state> <type> <nicks,,,> <specs> <builds,,,> <version> <time> <maxping> <locked> <capacity>
       var w = arg.split(' ');
@@ -1283,13 +1310,16 @@
       drawSeats();
     }
     else if (cmd === 'ONLINE') { net.online = +arg || 0; drawStatus(); }
-    else if (cmd === 'JOINED') { var a = arg.split(' '); net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(kindText(a[2]) + a[0] + ' 님이 들어왔습니다', kindText(a[2]) + a[0] + ' joined')); }
+    else if (cmd === 'JOINED') { var a = arg.split(' '), jm = SKILL_SYM[a[3]] && a[3] !== '?' ? SKILL_SYM[a[3]] + ' ' : ''; net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(jm + kindText(a[2]) + a[0] + ' 님이 들어왔습니다', jm + kindText(a[2]) + a[0] + ' joined')); }
     // 나간 사람 (릴레이 2026-10-02): 남은 인원과 함께
     else if (cmd === 'PARTED') { var q = arg.split(' '); net.online = +q[1] || net.online; drawStatus(); if (q[0] !== net.nick) sys('pub', T(kindText(q[2]) + q[0] + ' 님이 나갔습니다', kindText(q[2]) + q[0] + ' left')); }
-    else if (cmd === 'NOTE') {
+    else if (cmd === 'NOTE' || cmd === 'NOTEM') {
+      // NOTEM <표시> ... : 글쓴이가 나와 비교해 u e d (- 모름) - 새 글에만 온다 (2026-10-03)
+      var nm = '';
+      if (cmd === 'NOTEM') { nm = arg.charAt(0); arg = arg.slice(2); }
       var p = arg.split(' '), d = new Date(+p[0] || Date.now());
       var when = (d.toDateString() === new Date().toDateString()) ? hhmm(d) : ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) + ' ' + hhmm(d);
-      chat('pub', when, p[1], p.slice(2).join(' '));
+      chat('pub', when, p[1], p.slice(2).join(' '), false, undefined, nm);
     }
     else if (cmd === 'NOTICE') { net.notice = arg.split('\t'); noticeIdx = 0; drawNotice(); }
     else if (cmd === 'MOTD') sys('pub', arg);

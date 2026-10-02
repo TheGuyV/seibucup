@@ -102,12 +102,14 @@
   if ("serviceWorker" in navigator) {
     try { navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(function () {}); } catch (e) {}
   }
-  // 방문 통계 (user 2026-10-03): 페이지 이름, 들어온 주소(? 앞까지), 화면 너비, 사이트 언어만 우리 게임 서버로 보낸다.
+  // 방문 통계 (user 2026-10-03): 페이지 이름, 들어온 사이트(도메인), 화면 너비, 사이트 언어만 우리 게임 서버로 보낸다.
   // 쿠키도 외부 통계 업체도 없고, 브라우저에서 '추적 안 함'을 켜면 보내지 않는다. 기록은 운영 로그처럼 30일 뒤 지운다
   function hit() {
     try {
       if (!/(^|\.)seibucup\.online$/.test(location.hostname) || navigator.doNotTrack === "1" || navigator.globalPrivacyControl) return;
-      var ref = document.referrer ? document.referrer.split(/[?#]/)[0].slice(0, 200) : "";
+      // 들어온 곳: 다른 사이트면 도메인만 (주소 경로에 개인정보가 섞일 수 있어서, 2026-10-03), 이 사이트 안이면 페이지까지
+      var ref = "";
+      if (document.referrer) { try { var ru = new URL(document.referrer); ref = ru.host === location.host ? ru.origin + ru.pathname : ru.origin; } catch (e) {} }
       var u = "https://play.seibucup.online/hit?p=" + encodeURIComponent(location.pathname) + "&r=" + encodeURIComponent(ref) +
               "&w=" + (screen.width || 0) + "&l=" + (document.documentElement.getAttribute("lang") || "");
       if (navigator.sendBeacon) navigator.sendBeacon(u);
