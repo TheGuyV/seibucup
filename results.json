@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 00:44","room":183,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"ft":3,"series":"183-261003004056-39","nicks":["뚱이K","아트싸커","",""],"replay":"replays/20261003_004453_뚱이K_vs_아트싸커_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:40","room":183,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"ft":3,"series":"183-261003004056-39","nicks":["뚱이K","아트싸커","",""],"replay":"replays/20261003_004056_뚱이K_vs_아트싸커_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:35","room":179,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[4,7],"ft":3,"series":"179-261003002429-38","nicks":["로또영","404page","",""],"replay":"replays/20261003_003534_로또영_vs_404page_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:31","room":179,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"179-261003002429-38","nicks":["로또영","404page","",""],"replay":"replays/20261003_003156_로또영_vs_404page_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-27 14:53","room":27,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"nicks":["123","라마스10","",""],"replay":"replays/20260927_145316_123_vs_라마스10_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 14:18","room":26,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,7],"nicks":["123","폰테스트","",""],"replay":"replays/20260927_141802_123_vs_폰테스트_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 14:03","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[8,10],"nicks":["seibucup_online","조이스틱추천좀","",""],"replay":"replays/20260927_140356_seibucup_online_vs_조이스틱추천좀_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 13:59","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,3],"nicks":["seibucup_online","조이스틱추천좀","",""],"replay":"replays/20260927_135934_seibucup_online_vs_조이스틱추천좀_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 13:55","room":18,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[3,5],"nicks":["seibucup_online","조이스틱추천좀","",""],"replay":"replays/20260927_135527_seibucup_online_vs_조이스틱추천좀_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-27 13:59","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,3],"nicks":["seibucup_online","조이스틱추천좀","",""],"replay":"replays/20260927_135934_seibucup_online_vs_조이스틱추천좀_2-2_p1.scr","edition":"cupsocs2"}
 ]
