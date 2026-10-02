@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-02 14:38","room":148,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":3,"series":"148-261002143818-28","nicks":["로또영","1P","",""],"replay":"replays/20261002_143823_로또영_vs_1P_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 14:28","room":147,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"ft":3,"series":"147-261002141630-27","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261002_142839_로또영_vs_내일은축구왕_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 14:25","room":147,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"147-261002141630-27","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261002_142511_로또영_vs_내일은축구왕_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 14:20","room":147,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"147-261002141630-27","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261002_142055_로또영_vs_내일은축구왕_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-26 22:06","room":156,"type":"2v2","time":150,"players":4,"score":[2,2],"teams":[8,7],"pk":[3,2],"ft":2,"series":"156-260926220115-12","nicks":["seibucup_online","주물러","드래곤타이거","레온"],"replay":"replays/20260926_220641_seibucup_online_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 22:01","room":156,"type":"2v2","time":150,"players":4,"score":[2,3],"teams":[8,7],"ft":2,"series":"156-260926220115-12","nicks":["seibucup_online","주물러","드래곤타이거","레온"],"replay":"replays/20260926_220118_seibucup_online_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-26 21:55","room":154,"type":"1v1","time":180,"players":2,"score":[5,3],"teams":[7,0],"ft":2,"series":"154-260926214626-11","nicks":["레온","인파이터","",""],"replay":"replays/20260926_215534_레온_vs_인파이터_5-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 21:50","room":151,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[9,5],"ft":2,"series":"151-260926214619-10","nicks":["123","드래곤타이거","",""],"replay":"replays/20260926_215028_123_vs_드래곤타이거_0-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-26 21:50","room":154,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[3,0],"ft":2,"series":"154-260926214626-11","nicks":["레온","인파이터","",""],"replay":"replays/20260926_215020_레온_vs_인파이터_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-26 21:50","room":151,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[9,5],"ft":2,"series":"151-260926214619-10","nicks":["123","드래곤타이거","",""],"replay":"replays/20260926_215028_123_vs_드래곤타이거_0-4_p1.scr","edition":"cupsocs2"}
 ]
