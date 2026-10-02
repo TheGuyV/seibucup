@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 00:56","room":184,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":3,"series":"184-261003005250-40","nicks":["로또영","아트싸커","",""],"replay":"replays/20261003_005654_로또영_vs_아트싸커_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:52","room":184,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":3,"series":"184-261003005250-40","nicks":["로또영","아트싸커","",""],"replay":"replays/20261003_005256_로또영_vs_아트싸커_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:49","room":183,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,5],"ft":3,"series":"183-261003004056-39","nicks":["뚱이K","아트싸커","",""],"replay":"replays/20261003_004900_뚱이K_vs_아트싸커_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:44","room":183,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"ft":3,"series":"183-261003004056-39","nicks":["뚱이K","아트싸커","",""],"replay":"replays/20261003_004453_뚱이K_vs_아트싸커_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-27 19:07","room":38,"type":"1v1","time":240,"players":2,"score":[5,5],"teams":[8,9],"pk":[4,2],"ft":2,"series":"38-260927190734-4","nicks":["조이스틱추천좀","라마스10","",""],"replay":"replays/20260927_190733_조이스틱추천좀_vs_라마스10_5-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 18:56","room":37,"type":"1v1","time":240,"players":2,"score":[1,0],"teams":[9,0],"nicks":["조이스틱추천좀","버블드래곤","",""],"replay":"replays/20260927_185618_조이스틱추천좀_vs_버블드래곤_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 14:56","room":27,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,10],"nicks":["123","라마스10","",""],"replay":"replays/20260927_145654_123_vs_라마스10_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 14:53","room":27,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"nicks":["123","라마스10","",""],"replay":"replays/20260927_145316_123_vs_라마스10_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 14:18","room":26,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,7],"nicks":["123","폰테스트","",""],"replay":"replays/20260927_141802_123_vs_폰테스트_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-27 14:53","room":27,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"nicks":["123","라마스10","",""],"replay":"replays/20260927_145316_123_vs_라마스10_3-4_p1.scr","edition":"cupsocs2"}
 ]
