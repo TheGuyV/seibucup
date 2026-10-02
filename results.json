@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 01:10","room":187,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"nicks":["koko","tss","",""],"replay":"replays/20261003_011015_koko_vs_tss_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 01:08","room":186,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"186-261003010453-41","nicks":["Janet","로또영","",""],"replay":"replays/20261003_010756_Janet_vs_로또영_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 01:04","room":186,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,5],"ft":3,"series":"186-261003010453-41","nicks":["Janet","로또영","",""],"replay":"replays/20261003_010358_Janet_vs_로또영_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 01:00","room":184,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"184-261003005250-40","nicks":["로또영","아트싸커","",""],"replay":"replays/20261003_010045_로또영_vs_아트싸커_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-27 19:35","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"nicks":["1P","한겜합시다","",""],"replay":"replays/20260927_193522_1P_vs_한겜합시다_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 19:31","room":39,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"nicks":["1P","한겜합시다","",""],"replay":"replays/20260927_193152_1P_vs_한겜합시다_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 19:28","room":39,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"nicks":["1P","한겜합시다","",""],"replay":"replays/20260927_192813_1P_vs_한겜합시다_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 19:15","room":39,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,10],"nicks":["1P","라마스10","",""],"replay":"replays/20260927_191524_1P_vs_라마스10_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 19:07","room":38,"type":"1v1","time":240,"players":2,"score":[5,5],"teams":[8,9],"pk":[4,2],"ft":2,"series":"38-260927190734-4","nicks":["조이스틱추천좀","라마스10","",""],"replay":"replays/20260927_190733_조이스틱추천좀_vs_라마스10_5-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-27 19:15","room":39,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,10],"nicks":["1P","라마스10","",""],"replay":"replays/20260927_191524_1P_vs_라마스10_2-2_p1.scr","edition":"cupsocs2"}
 ]
