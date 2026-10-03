@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 13:35","room":10,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20261003_133551_princewi_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 13:31","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20261003_133116_princewi_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 13:26","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,10],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20261003_132647_princewi_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 12:54","room":8,"type":"1v1","time":210,"players":2,"score":[4,4],"teams":[7,8],"nicks":["ㅇㅇ","내일은축구왕","",""],"replay":"replays/20261003_125416_ㅇㅇ_vs_내일은축구왕_4-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-27 19:59","room":53,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,4],"nicks":["seibucup_online","1P","",""],"replay":"replays/20260927_195937_seibucup_online_vs_1P_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 19:53","room":43,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[4,5],"pk":[2,4],"ft":2,"series":"43-260927194754-5","nicks":["판순이","1P","",""],"replay":"replays/20260927_195330_판순이_vs_1P_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 19:47","room":43,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,5],"pk":[2,4],"ft":2,"series":"43-260927194754-5","nicks":["판순이","1P","",""],"replay":"replays/20260927_194751_판순이_vs_1P_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 19:42","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["1P","한겜합시다","",""],"replay":"replays/20260927_194239_1P_vs_한겜합시다_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 19:39","room":39,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,8],"nicks":["1P","한겜합시다","",""],"replay":"replays/20260927_193902_1P_vs_한겜합시다_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-27 19:42","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["1P","한겜합시다","",""],"replay":"replays/20260927_194239_1P_vs_한겜합시다_0-1_p1.scr","edition":"cupsocs2"}
 ]
