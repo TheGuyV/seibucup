@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 15:21","room":14,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"14-261003152150-1","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261003_152148_로또영_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 13:43","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,9],"nicks":["princewi","샤마2","",""],"replay":"replays/20261003_134344_princewi_vs_샤마2_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 13:40","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"nicks":["princewi","샤마2","",""],"replay":"replays/20261003_134002_princewi_vs_샤마2_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 13:35","room":10,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20261003_133551_princewi_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-27 20:20","room":54,"type":"1v1","time":240,"players":2,"score":[1,4],"teams":[9,3],"ft":2,"series":"54-260927201430-6","nicks":["조이스틱추천좀","Janet","",""],"replay":"replays/20260927_202007_조이스틱추천좀_vs_Janet_1-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 20:14","room":54,"type":"1v1","time":240,"players":2,"score":[3,4],"teams":[7,10],"ft":2,"series":"54-260927201430-6","nicks":["조이스틱추천좀","Janet","",""],"replay":"replays/20260927_201429_조이스틱추천좀_vs_Janet_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 20:03","room":53,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["seibucup_online","1P","",""],"replay":"replays/20260927_200324_seibucup_online_vs_1P_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 19:59","room":53,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,4],"nicks":["seibucup_online","1P","",""],"replay":"replays/20260927_195937_seibucup_online_vs_1P_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 19:53","room":43,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[4,5],"pk":[2,4],"ft":2,"series":"43-260927194754-5","nicks":["판순이","1P","",""],"replay":"replays/20260927_195330_판순이_vs_1P_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-27 19:59","room":53,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,4],"nicks":["seibucup_online","1P","",""],"replay":"replays/20260927_195937_seibucup_online_vs_1P_1-0_p1.scr","edition":"cupsocs2"}
 ]
