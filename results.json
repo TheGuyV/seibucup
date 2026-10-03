@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 15:51","room":16,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,9],"ft":3,"series":"16-261003153401-2","nicks":["Janet","내일은축구왕","",""],"replay":"replays/20261003_155128_Janet_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 15:50","room":17,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[5,0],"ft":3,"series":"17-261003153620-3","nicks":["로또영","라마스10","",""],"replay":"replays/20261003_155003_로또영_vs_라마스10_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 15:47","room":16,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"ft":3,"series":"16-261003153401-2","nicks":["Janet","내일은축구왕","",""],"replay":"replays/20261003_154715_Janet_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 15:45","room":17,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":3,"series":"17-261003153620-3","nicks":["로또영","라마스10","",""],"replay":"replays/20261003_154522_로또영_vs_라마스10_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-27 22:17","room":4,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"nicks":["판순이","조이스틱추천좀","",""],"replay":"replays/20260927_221747_판순이_vs_조이스틱추천좀_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 22:13","room":4,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,7],"nicks":["판순이","조이스틱추천좀","",""],"replay":"replays/20260927_221358_판순이_vs_조이스틱추천좀_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 22:09","room":4,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[8,3],"nicks":["판순이","조이스틱추천좀","",""],"replay":"replays/20260927_220953_판순이_vs_조이스틱추천좀_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 22:05","room":4,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,4],"nicks":["판순이","조이스틱추천좀","",""],"replay":"replays/20260927_220548_판순이_vs_조이스틱추천좀_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 22:01","room":4,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"nicks":["판순이","조이스틱추천좀","",""],"replay":"replays/20260927_220126_판순이_vs_조이스틱추천좀_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-27 22:05","room":4,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,4],"nicks":["판순이","조이스틱추천좀","",""],"replay":"replays/20260927_220548_판순이_vs_조이스틱추천좀_3-3_p1.scr","edition":"cupsocs2"}
 ]
