@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 23:08","room":7,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"nicks":["왕초보","판순이","",""],"replay":"replays/20261003_230823_왕초보_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:06","room":4,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[3,7],"pk":[3,1],"ft":3,"series":"4-261003230128-3","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261003_230635_플로레알_vs_드래곤타이거_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:01","room":4,"type":"1v1","time":180,"players":2,"score":[3,5],"teams":[4,0],"ft":3,"series":"4-261003230128-3","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261003_230128_플로레알_vs_드래곤타이거_3-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 22:50","room":3,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,3],"ft":2,"series":"3-261003224628-2","nicks":["1P","판순이","",""],"replay":"replays/20261003_225016_1P_vs_판순이_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-27 23:30","room":15,"type":"1v1","time":210,"players":2,"score":[2,2],"teams":[7,8],"pk":[4,1],"ft":3,"series":"15-260927231829-3","nicks":["라마스10","한겜합시다","",""],"replay":"replays/20260927_233025_라마스10_vs_한겜합시다_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 23:26","room":18,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,9],"nicks":["seibucup_online","로또영","",""],"replay":"replays/20260927_232651_seibucup_online_vs_로또영_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-27 23:24","room":15,"type":"1v1","time":210,"players":2,"score":[6,3],"teams":[9,7],"ft":3,"series":"15-260927231829-3","nicks":["라마스10","한겜합시다","",""],"replay":"replays/20260927_232413_라마스10_vs_한겜합시다_6-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 23:22","room":18,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[7,5],"nicks":["seibucup_online","로또영","",""],"replay":"replays/20260927_232220_seibucup_online_vs_로또영_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 23:18","room":15,"type":"1v1","time":210,"players":2,"score":[4,2],"teams":[5,7],"ft":3,"series":"15-260927231829-3","nicks":["라마스10","한겜합시다","",""],"replay":"replays/20260927_231826_라마스10_vs_한겜합시다_4-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-27 23:22","room":18,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[7,5],"nicks":["seibucup_online","로또영","",""],"replay":"replays/20260927_232220_seibucup_online_vs_로또영_3-0_p1.scr","edition":"cupsocs2"}
 ]
