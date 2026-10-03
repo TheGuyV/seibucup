@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-03 23:29","room":13,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[7,10],"ft":2,"series":"13-261003232505-4","nicks":["레온","Janet","",""],"replay":"replays/20261003_232948_레온_vs_Janet_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:25","room":13,"type":"1v1","time":180,"players":2,"score":[4,3],"teams":[9,10],"ft":2,"series":"13-261003232505-4","nicks":["레온","Janet","",""],"replay":"replays/20261003_232507_레온_vs_Janet_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:21","room":4,"type":"1v1","time":180,"players":2,"score":[3,1],"teams":[9,10],"ft":3,"series":"4-261003230128-3","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261003_232117_플로레알_vs_드래곤타이거_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:18","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["왕초보","천자인","",""],"replay":"replays/20261003_231803_왕초보_vs_천자인_2-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-28 00:43","room":27,"type":"1v1","time":180,"players":2,"score":[4,4],"teams":[8,5],"pk":[3,4],"ft":3,"series":"27-260928003054-4","nicks":["한겜합시다","로또영","",""],"replay":"replays/20260928_004337_한겜합시다_vs_로또영_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 00:37","room":27,"type":"1v1","time":180,"players":2,"score":[3,3],"teams":[8,3],"pk":[4,3],"ft":3,"series":"27-260928003054-4","nicks":["한겜합시다","로또영","",""],"replay":"replays/20260928_003712_한겜합시다_vs_로또영_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 00:30","room":27,"type":"1v1","time":180,"players":2,"score":[2,2],"teams":[10,5],"pk":[5,4],"ft":3,"series":"27-260928003054-4","nicks":["한겜합시다","로또영","",""],"replay":"replays/20260928_003054_한겜합시다_vs_로또영_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 00:21","room":24,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["로또영","1P","",""],"replay":"replays/20260928_002142_로또영_vs_1P_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-27 23:34","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,5],"nicks":["seibucup_online","로또영","",""],"replay":"replays/20260927_233438_seibucup_online_vs_로또영_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-28 00:21","room":24,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["로또영","1P","",""],"replay":"replays/20260928_002142_로또영_vs_1P_1-1_p1.scr","edition":"cupsocs2"}
 ]
