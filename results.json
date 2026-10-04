@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-04 14:48","room":3,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,10],"ft":2,"series":"3-261004144819-1","nicks":["멸치","샤마2","",""],"replay":"replays/20261004_144819_멸치_vs_샤마2_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-04 01:42","room":16,"type":"1v1","time":210,"players":2,"score":[4,3],"teams":[9,0],"ft":3,"series":"16-261004014248-5","nicks":["5","축구황제","",""],"replay":"replays/20261004_014248_5_vs_축구황제_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:34","room":13,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[7,10],"ft":2,"series":"13-261003232505-4","nicks":["레온","Janet","",""],"replay":"replays/20261003_233445_레온_vs_Janet_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:29","room":13,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[7,10],"ft":2,"series":"13-261003232505-4","nicks":["레온","Janet","",""],"replay":"replays/20261003_232948_레온_vs_Janet_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-28 11:16","room":38,"type":"1v1","time":210,"players":2,"score":[4,5],"teams":[3,9],"ft":2,"series":"38-260928111627-6","nicks":["세이부","라마스10","",""],"replay":"replays/20260928_111624_세이부_vs_라마스10_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 10:24","room":36,"type":"1v1","time":210,"players":2,"score":[6,6],"teams":[9,3],"pk":[5,4],"ft":3,"series":"36-260928101616-5","nicks":["라마스10","아트싸커","",""],"replay":"replays/20260928_102401_라마스10_vs_아트싸커_6-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 10:16","room":36,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[10,5],"ft":3,"series":"36-260928101616-5","nicks":["라마스10","아트싸커","",""],"replay":"replays/20260928_101614_라마스10_vs_아트싸커_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 00:43","room":27,"type":"1v1","time":180,"players":2,"score":[4,4],"teams":[8,5],"pk":[3,4],"ft":3,"series":"27-260928003054-4","nicks":["한겜합시다","로또영","",""],"replay":"replays/20260928_004337_한겜합시다_vs_로또영_4-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 00:37","room":27,"type":"1v1","time":180,"players":2,"score":[3,3],"teams":[8,3],"pk":[4,3],"ft":3,"series":"27-260928003054-4","nicks":["한겜합시다","로또영","",""],"replay":"replays/20260928_003712_한겜합시다_vs_로또영_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-28 00:43","room":27,"type":"1v1","time":180,"players":2,"score":[4,4],"teams":[8,5],"pk":[3,4],"ft":3,"series":"27-260928003054-4","nicks":["한겜합시다","로또영","",""],"replay":"replays/20260928_004337_한겜합시다_vs_로또영_4-4_p1.scr","edition":"cupsocs2"}
 ]
