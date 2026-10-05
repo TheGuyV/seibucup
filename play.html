@@ -1388,7 +1388,47 @@
     }
     else if (cmd === 'ERROR' && /^not in a room/.test(arg) && !net.room) { /* 이미 방 밖: 조용히 */ }
     else if (cmd === 'ERROR' && arg.indexOf('title not allowed') === 0) { netSay(T('그 방 제목은 쓸 수 없어서 닉네임으로 표시됩니다.', "That room title can't be used - the room shows your nickname instead.")); }
-    else if (cmd === 'ERROR') { sys(net.room ? 'room' : 'pub', 'ERROR ' + arg); netSay('ERROR ' + arg); }
+    else if (cmd === 'ERROR') {
+      var etxt = relayErrText(arg);
+      sys(net.room ? 'room' : 'pub', etxt); netSay(etxt);
+      if (!net.room) net.quick = false;                                    // 빠른 대결이 방을 못 만들었다
+      if (/already in a room/.test(arg) && !net.room) send('LEAVE');      // 서버만 아직 방에 있다고 안다: 정리 (PC 런처와 같다)
+    }
+  }
+  // 릴레이의 거절 (ERROR <영어 원문>) 을 알아보기 쉬운 말로 (2026-10-05: 웹에서는 원문 그대로 나왔다). 문구는 PC 런처와 맞춘다
+  function relayErrText(arg) {
+    var a = arg.split(' '), n = function (i) { return +(a[i] || 0); };
+    var M = [
+      [/^already in a room/, '이미 방에 들어가 있습니다. 방을 나간 뒤 다시 시도하세요.', 'You are already in a room. Leave it first, then try again.'],
+      [/^server full/, '지금 서버에 열린 방이 너무 많아 새 방을 만들 수 없습니다. 있는 방에 참가하거나 잠시 후 다시 시도하세요.', 'The server has too many rooms open right now. Join an existing room or try again in a moment.'],
+      [/^too many rooms from your address/, '같은 인터넷 주소에서 이미 방이 3개 열려 있어 더 만들 수 없습니다. 열려 있는 방을 닫은 뒤 다시 만드세요.', 'Three rooms are already open from your internet address. Close one of them, then make a new one.'],
+      [/^no such room/, '그 방은 방금 없어졌습니다. 방 목록을 새로 불러왔습니다.', 'That room has just closed. The room list has been refreshed.'],
+      [/^room is full/, '그 방은 자리와 관전석(4명)이 모두 찼습니다. 다른 방을 골라 주세요.', 'Every seat and all four spectator places in that room are taken. Pick another room.'],
+      [/^wrong password/, '비밀번호가 틀렸습니다.', 'Wrong password.'],
+      [/^ping unknown/, '핑을 측정하지 못했습니다. 잠시 후 다시 시도하세요.', 'Your ping could not be measured. Try again in a moment.'],
+      [/^series over/, '이 방의 FT 시리즈가 끝나서 더 이상 경기를 할 수 없습니다. 더 하려면 방을 나가 새 방을 만드세요.', 'The FT series in this room is over. To play on, leave and open a new room.'],
+      [/^series in progress/, 'FT 시리즈가 진행 중이라 지금은 바꿀 수 없습니다.', 'An FT series is in progress, so this cannot be changed now.'],
+      [/^already started/, '경기가 이미 시작되었습니다.', 'The match has already started.'],
+      [/^a 2v2 room needs/, '2 vs 2 는 4명이 다 들어와야 시작할 수 있습니다.', 'A 2 vs 2 room can start only when all four players are in.'],
+      [/^only the host/, '방장(1P)만 할 수 있습니다.', 'Only the host (1P) can do that.'],
+      [/^teams are for 2v2/, '팀 나누기는 2 vs 2 방에서만 됩니다.', 'Teams are for 2 vs 2 rooms only.'],
+      [/^cannot swap/, '지금은 자리를 바꿀 수 없습니다 (대기 중인 방에서, 둘 중 한 자리에 사람이 있어야 합니다).', 'Seats cannot be swapped right now (only in a waiting room, and one of the two seats must be taken).'],
+      [/^nobody in that seat/, '그 자리에는 이제 아무도 없습니다.', 'Nobody is in that seat any more.'],
+      [/^chat too fast/, '채팅을 너무 빨리 보내고 있습니다. 몇 초 뒤에 다시 보내 주세요.', 'You are sending chat too fast - wait a few seconds and send it again.'],
+      [/^note too fast/, '방명록은 5초에 한 줄씩만 쓸 수 있습니다.', 'Please wait 5 seconds between guestbook lines.'],
+      [/^not in a room/, '방에 들어가 있지 않습니다.', 'You are not in a room.']
+    ];
+    for (var i = 0; i < M.length; i++) if (M[i][0].test(arg)) return T(M[i][1], M[i][2]);
+    if (/^ping too high/.test(arg))           // ping too high <내> <방장> <제한>
+      return T('핑 초과: 내 ' + n(3) + ' ms + 방장 ' + n(4) + ' ms = ' + (n(3) + n(4)) + ' ms > 제한 ' + n(5) + ' ms. 이 방에는 들어갈 수 없습니다.',
+               'Ping too high for this room: you ' + n(3) + ' ms + host ' + n(4) + ' ms = ' + (n(3) + n(4)) + ' ms > limit ' + n(5) + ' ms.');
+    if (/^protocol mismatch/.test(arg))       // protocol mismatch <방장> <나>
+      return n(2) > n(3) ? T('방장의 게임 버전이 더 새것이라 함께 할 수 없습니다. 이 페이지를 새로고침(Ctrl+F5)한 뒤 다시 들어가 보세요.', "The host runs a newer version. Reload this page (Ctrl+F5) and try again.")
+                         : T('방장의 PC 런처가 옛 버전이라 함께 할 수 없습니다. 방장이 런처를 업데이트해야 합니다.', "The host's PC launcher is out of date, so you cannot play together until it is updated.");
+    if (/^build mismatch/.test(arg))
+      return T('방장의 게임 프로그램이 이 웹판과 달라 함께 할 수 없습니다. 방장이 런처를 업데이트하거나, 이 페이지를 새로고침(Ctrl+F5)해 보세요.', "The host's game program differs from this web version. The host should update the launcher, or reload this page (Ctrl+F5).");
+    if (/^(bad |unknown command)/.test(arg)) return T('요청이 올바르지 않아 처리되지 않았습니다. 페이지를 새로고침한 뒤 다시 해 보세요.', 'That request was not understood. Reload the page and try again.');
+    return T('서버가 요청을 처리하지 못했습니다: ', 'The server refused the request: ') + arg;
   }
   // ROOMINFO 뒤의 칸 (0부터): 0 id, 1 state, 2 내 자리, 3 닉1,닉2,닉3,닉4, 4 type, 5 maxping, 6 잠금, 7 관전, 8 time, 9 builds,
   // 10 준비 1,0,.., 11 version, 12 ft, 13 wa, 14 wb, 15 quick, 16 over, 17 capacity, 18 접속 종류 pc,ww,,
