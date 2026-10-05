@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 15:30","room":41,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"ft":3,"series":"41-261005152659-10","nicks":["로또영","축구황제","",""],"replay":"replays/20261005_153037_로또영_vs_축구황제_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 15:26","room":41,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"41-261005152659-10","nicks":["로또영","축구황제","",""],"replay":"replays/20261005_152700_로또영_vs_축구황제_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 15:22","room":39,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,9],"ft":3,"series":"39-261005151517-9","nicks":["로또영","ㅇㅇ","",""],"replay":"replays/20261005_152257_로또영_vs_ㅇㅇ_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 15:19","room":39,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"ft":3,"series":"39-261005151517-9","nicks":["로또영","ㅇㅇ","",""],"replay":"replays/20261005_151913_로또영_vs_ㅇㅇ_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-29 14:39","room":7,"type":"1v1","time":210,"players":2,"score":[3,3],"teams":[8,9],"pk":[2,3],"ft":3,"series":"7-260929143932-1","nicks":["1","세이부","",""],"replay":"replays/20260929_143931_1_vs_세이부_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 01:25","room":22,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[10,5],"ft":3,"series":"22-260929010643-3","nicks":["드래곤타이거","seibucup_online","",""],"replay":"replays/20260929_012508_드래곤타이거_vs_seibucup_online_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 01:19","room":22,"type":"1v1","time":210,"players":2,"score":[4,3],"teams":[7,8],"ft":3,"series":"22-260929010643-3","nicks":["드래곤타이거","seibucup_online","",""],"replay":"replays/20260929_011906_드래곤타이거_vs_seibucup_online_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 01:12","room":22,"type":"1v1","time":210,"players":2,"score":[4,5],"teams":[0,3],"ft":3,"series":"22-260929010643-3","nicks":["드래곤타이거","seibucup_online","",""],"replay":"replays/20260929_011247_드래곤타이거_vs_seibucup_online_4-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 01:06","room":22,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[5,8],"ft":3,"series":"22-260929010643-3","nicks":["드래곤타이거","seibucup_online","",""],"replay":"replays/20260929_010641_드래곤타이거_vs_seibucup_online_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-29 01:12","room":22,"type":"1v1","time":210,"players":2,"score":[4,5],"teams":[0,3],"ft":3,"series":"22-260929010643-3","nicks":["드래곤타이거","seibucup_online","",""],"replay":"replays/20260929_011247_드래곤타이거_vs_seibucup_online_4-5_p1.scr","edition":"cupsocs2"}
 ]
