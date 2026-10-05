@@ -32,6 +32,18 @@ if os.getenv("WEB_FPS") then
   WEB_FPSSUB = emu.register_frame_done(function() pcall(function() manager.ui.show_fps = true end) end)
 end
 
+-- 시험용: WEB_FPSLOG 가 있으면 300프레임마다 프레임 수를 적는다 (진짜 시간 대비 게임 속도 측정, web_pace_test.py)
+if os.getenv("WEB_FPSLOG") then
+  local nf = 0
+  WEB_FPSLOGSUB = emu.register_frame_done(function() nf = nf + 1; if nf % 300 == 0 then print("WEB frames " .. nf) end end)
+end
+
+-- 시험용: WEB_BURN=ms 이면 매 프레임 그만큼 계산을 더 한다 (느린 폰 흉내, web_speed_test.py)
+if os.getenv("WEB_BURN") then
+  local ms = tonumber(os.getenv("WEB_BURN")) or 0
+  WEB_BURNSUB = emu.register_frame_done(function() local t = os.clock() + ms / 1000; while os.clock() < t do end end)
+end
+
 -- 시험용: WEB_PADLOG 가 있으면 MAME 가 보는 조이스틱 장치를 2초마다 적는다
 if os.getenv("WEB_PADLOG") then
   local n = 0

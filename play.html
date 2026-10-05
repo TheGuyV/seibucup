@@ -645,7 +645,7 @@
     try { if (Array.prototype.some.call(navigator.getGamepads(), Boolean)) store.set('web_haspad', '1'); } catch (e) {}
     if (store.get('web_haspad') === '1') q.set('pads', '1');
     if (mode === 'match') ['token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'dyn'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
-    if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); }
+    if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); ['xargs', 'nobeat', 'burn'].forEach(function (k) { if (TESTQ.get(k)) q.set(k, TESTQ.get(k)); }); }
     hideInterlude();
     var f = document.createElement('iframe');
     if (new URLSearchParams(location.search).get('fps')) q.set('fps', '1');   // ?fps=1: MAME 의 속도 표시 (느린 기기 점검용)

@@ -31,8 +31,40 @@ if (Q.get('postlog')) {
   setInterval(() => {   // 메인 루프가 도는지, 기계가 섰는지
     try { tell('tick', { text: 'timing ' + (typeof MainLoop !== 'undefined' ? MainLoop.timingMode + '/' + MainLoop.timingValue : '?') + ' loop ' + (typeof MainLoop !== 'undefined' ? MainLoop.currentFrameNumber : '?') + ' machine ' + (Module['__ZN15running_machine30emscripten_get_running_machineEv'] ? Module['__ZN15running_machine30emscripten_get_running_machineEv']() : '?') }); } catch (e) { tell('tick', { text: 'tick err ' + e }); }
   }, 3000);
+  // 시험 전용: 메인 루프 한 번(=게임 1프레임)에 걸리는 시간과 그 사이 쉬는 시간 (web_speed_test.py)
+  if (location.hostname === '127.0.0.1') {
+    const W = { n: 0, busy: 0, max: 0, last: 0, gap: 0 };
+    const iv = setInterval(() => {
+      if (typeof MainLoop === 'undefined' || !MainLoop.runIter || MainLoop.runIter.__timed) return;
+      const orig = MainLoop.runIter.bind(MainLoop);
+      MainLoop.runIter = function (f) { const t0 = performance.now(); if (W.last) W.gap += t0 - W.last; orig(f); const t1 = performance.now(); W.last = t1; const d = t1 - t0; W.n++; W.busy += d; if (d > W.max) W.max = d; };
+      MainLoop.runIter.__timed = true; clearInterval(iv);
+    }, 100);
+    setInterval(() => { if (W.n) tell('perf', { text: 'beat ' + BEAT.on + ' loops ' + W.n + ' busy ' + (W.busy / W.n).toFixed(2) + ' ms max ' + W.max.toFixed(1) + ' gap ' + (W.gap / W.n).toFixed(2) + ' ms' }); W.n = W.busy = W.max = W.gap = 0; }, 3000);
+  }
   setInterval(() => { try { const t = new TextDecoder().decode(FS.readFile('/tut.log')); if (t.length > (seen.t || 0)) { tell('tut', { text: t.slice(seen.t || 0).trim() }); seen.t = t.length; } } catch (e) {} }, 3000);
 }
+// ---- 메인 루프 박자 (2026-10-05, "아이폰13미니에서 느리다"): Emscripten 은 게임 1프레임을 돌린 뒤 setTimeout 으로 다음 차례를
+// 잡는데, 브라우저는 연달은 setTimeout 을 최소 4ms 로 늦춘다. 이 PC 에서 1프레임 계산 5.3ms + 쉬는 4.7ms 라 여유의 절반이 버려졌고,
+// 계산이 느린 폰에서는 16.7ms 안에 못 들어 게임이 느려진다. 그래서 초당 60번의 박자를 직접 세어, 시간이 남으면 그만큼만 기다리고
+// 늦었으면 쉬지 않고(MessageChannel, 4ms 제한 없음) 바로 다음 프레임을 돌린다. 크게 밀리면(숨긴 탭 등) 몰아서 돌리지 않는다
+const BEAT = { on: false };
+(function () {
+  const FRAME = 1000 / 60, ch = new MessageChannel();
+  let next = 0;
+  ch.port1.onmessage = () => MainLoop.runner();
+  function beat() {
+    const now = performance.now();
+    next = Math.max(next + FRAME, now - 2 * FRAME);
+    const wait = next - now;
+    if (wait > 1) setTimeout(MainLoop.runner, wait); else ch.port2.postMessage(0);
+  }
+  const off = Q.get('nobeat') && location.hostname === '127.0.0.1';    // 시험 전용: 예전 박자와 비교
+  setInterval(() => {
+    if (off || typeof MainLoop === 'undefined' || !MainLoop.func || !MainLoop.scheduler) return;
+    if (MainLoop.timingMode === 0 && MainLoop.scheduler !== beat) { next = performance.now(); MainLoop.scheduler = beat; BEAT.on = true; }
+  }, 250);
+})();
 let romTrouble = false;
 function out(s) {
   tell('log', { text: s });
@@ -163,6 +195,8 @@ if (Q.get('postlog') && Q.get('fakepad')) {
     try { font = await bytes(FONT); files.push(['/fonts/neodgm.ttf', font]); } catch (e) { out('HUD font not loaded: ' + e); }
     const env = { SCNP_LANG: lang, TUT_LANG: lang, TUT_LOG: '/tut.log', SCNP_LOG: '/np.log', SCNP_WEB: '1' };   // SCNP_WEB: 브라우저판 (입력 대기 방식, HUD 기호)
     if (Q.get('postlog') && Q.get('fakepad')) env.WEB_PADLOG = '1';
+    if (Q.get('postlog') && location.hostname === '127.0.0.1') env.WEB_FPSLOG = '1';   // 시험 전용: 게임 속도 측정
+    if (Q.get('postlog') && Q.get('burn') && location.hostname === '127.0.0.1') env.WEB_BURN = Q.get('burn');   // 시험 전용: 느린 폰 흉내
     if (Q.get('fps')) env.WEB_FPS = '1';   // ?fps=1: 속도 표시 (MAME 의 F11 과 같다), 모든 모드
     let args = [game];
     if (mode === 'replay') {
