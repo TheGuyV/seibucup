@@ -1303,6 +1303,7 @@ local function match_clock_text()
   return string.format("%d:%02d", r // 60, r % 60), (clock_secs > 0) and math.max(0, math.min(1, rem / clock_secs)) or 0
 end
 
+SCNP_POSS = { a = 0, b = 0, last = 0 }      -- ball possession frames, 1P's side / 2P's side (draw_hud counts them)
 local function draw_hud()
   if not cfg.hud or not screen or phase ~= "play" then return end
   local w = screen.width or 320
@@ -1406,6 +1407,53 @@ local function draw_hud()
     local tw = text_w(t)
     box(w / 2 - tw / 2 - 6, HUD_H + 14, w / 2 + tw / 2 + 6, HUD_H + 16 + HUD_TH + 4, 0xd0000000)
     screen:draw_text("center", HUD_H + 16, t, 0xffffd24a, 0)
+  end
+  -- the board's "CREDIT:07" at the bottom centre means nothing online (free play keeps it topped up): a band over it,
+  -- with the FT series score in a series and the site's address otherwise (user 2026-10-06). Drawn on the screen
+  -- only - the game itself is untouched, so it changes nothing in the lockstep or a replay
+  if SCNP_G.credits and mem:read_u8(SCNP_G.credits) > 0 then       -- (not over the black screen before the board shows)
+    local h = screen.height or 224
+    local x0, x1, y0, y1 = w * 340 / 960, w * 552 / 960, h * 664 / 720, h * 703 / 720
+    box(x0, y0, x1, y1, 0xff60706a)
+    box(x0 + 0.5, y0 + 0.5, x1 - 0.5, y1 - 0.5, 0xff0c1610)
+    local ty = (y0 + y1) / 2 - HUD_TH / 2
+    -- the real width of a string in the UI font (text_w is a rough guess for the top bar's spacing)
+    local function sw(t) local v; pcall(function() v = manager.ui:get_string_width(t) * w end); return v or text_w(t) end
+    -- ball possession, live (user 2026-10-06): the frames the ball's last toucher (0x1138ae) was a man of each side
+    -- while the match clock ticks. The 22 men sit 0xdc apart from 0x111e54, the board's 1P side first (cupsocs2).
+    -- Read only, so every screen of the match counts the same; the left number is the HUD's left side (1P)
+    if SCNP_GAME == "cupsocs2" then
+      local df = frame - SCNP_POSS.last; SCNP_POSS.last = frame
+      if df > 0 and df < 30 and (frame - hud_tick_frame) <= clock_fpu + 6 then
+        local o = mem:read_u32(0x1138ae) & 0xffffff
+        if o >= 0x111e54 and (o - 0x111e54) % 0xdc == 0 then
+          local i = (o - 0x111e54) // 0xdc
+          if i < 11 then SCNP_POSS.a = SCNP_POSS.a + df elseif i < 22 then SCNP_POSS.b = SCNP_POSS.b + df end
+        end
+      end
+    end
+    local pt = SCNP_POSS.a + SCNP_POSS.b
+    if pt >= 120 then
+      local pa = math.floor(SCNP_POSS.a * 100 / pt + 0.5)
+      local lab, a, b = "BALL", string.format("%d%%", pa), string.format("%d%%", 100 - pa)
+      local gap = 5 * FS
+      local tx = (x0 + x1) / 2 - (sw(lab) + gap + sw(a) + sw(" : ") + sw(b)) / 2
+      screen:draw_text(tx, ty, lab, 0xff9fd8a8, 0); tx = tx + sw(lab) + gap
+      screen:draw_text(tx, ty, a, pa >= 50 and 0xffffd23f or 0xffffffff, 0); tx = tx + sw(a)
+      screen:draw_text(tx, ty, " : ", 0xffb0b0b0, 0); tx = tx + sw(" : ")
+      screen:draw_text(tx, ty, b, pa <= 50 and 0xffffd23f or 0xffffffff, 0)
+    elseif scnp_series then
+      local l, r = scnp_series[2], scnp_series[3]
+      if scnp_swap then l, r = r, l end
+      local ft, sc = "FT" .. scnp_series[1], string.format("%d : %d", l, r)
+      local gap = 6 * FS
+      local tx = (x0 + x1) / 2 - (sw(ft) + gap + sw(sc)) / 2
+      screen:draw_text(tx, ty, ft, 0xffffd23f, 0)
+      screen:draw_text(tx + sw(ft) + gap, ty, sc, 0xffffffff, 0)
+    else
+      local t = "seibucup.online"
+      screen:draw_text((x0 + x1) / 2 - sw(t) / 2, ty, t, 0xffe1e6e1, 0)
+    end
   end
   -- the input delay this match runs with: faint, in the bottom-left corner (user 2026-09-27)
   if not is_replay then screen:draw_text(2, (screen.height or 240) - 9, "delay " .. tostring(cfg.delay), 0x80ffffff, 0) end
