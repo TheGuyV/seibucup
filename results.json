@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 13:27","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,8],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_132810_청라대장_vs_5_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 13:23","room":25,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"pk":[4,3],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_132355_청라대장_vs_5_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 13:18","room":25,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,4],"pk":[4,1],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_131901_청라대장_vs_5_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 12:28","room":23,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[9,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261005_122812_바트_vs_키아누리브스_5-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-28 22:33","room":1,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,10],"nicks":["로또영","레온","",""],"replay":"replays/20260928_223324_로또영_vs_레온_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 22:06","room":14,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"nicks":["식칼","드래곤타이거","",""],"replay":"replays/20260928_220637_식칼_vs_드래곤타이거_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 22:02","room":14,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,10],"nicks":["식칼","드래곤타이거","",""],"replay":"replays/20260928_220243_식칼_vs_드래곤타이거_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 21:58","room":14,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,9],"nicks":["식칼","드래곤타이거","",""],"replay":"replays/20260928_215844_식칼_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 21:47","room":13,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,9],"nicks":["식칼","드래곤타이거","",""],"replay":"replays/20260928_214754_식칼_vs_드래곤타이거_2-0_p1.scr"}
+{"when":"2026-09-28 21:58","room":14,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,9],"nicks":["식칼","드래곤타이거","",""],"replay":"replays/20260928_215844_식칼_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"}
 ]
