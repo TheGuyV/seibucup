@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 14:04","room":31,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,3],"ft":3,"series":"31-261005140016-6","nicks":["로또영","핑크팬더","",""],"replay":"replays/20261005_140443_로또영_vs_핑크팬더_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 14:00","room":31,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":3,"series":"31-261005140016-6","nicks":["로또영","핑크팬더","",""],"replay":"replays/20261005_140017_로또영_vs_핑크팬더_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 13:44","room":30,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[3,9],"ft":3,"series":"30-261005133623-5","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261005_134457_로또영_vs_내일은축구왕_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 13:40","room":30,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"30-261005133623-5","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261005_134014_로또영_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-28 23:05","room":2,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_230546_로또영_vs_라마스10_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 23:02","room":2,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,0],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_230204_로또영_vs_라마스10_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 22:57","room":2,"type":"1v1","time":150,"players":2,"score":[3,7],"teams":[8,7],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_225748_로또영_vs_라마스10_3-7_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 22:52","room":2,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[9,5],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_225245_로또영_vs_라마스10_2-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 22:48","room":2,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[5,9],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_224832_로또영_vs_라마스10_1-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-28 22:52","room":2,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[9,5],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_225245_로또영_vs_라마스10_2-4_p1.scr","edition":"cupsocs2"}
 ]
