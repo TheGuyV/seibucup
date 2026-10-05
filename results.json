@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 12:19","room":23,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261005_121916_바트_vs_키아누리브스_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 12:15","room":23,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261005_121527_바트_vs_키아누리브스_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 12:11","room":23,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261005_121142_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 12:07","room":23,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261005_120738_바트_vs_키아누리브스_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-28 18:20","room":4,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[0,3],"nicks":["duli02122","세이부","",""],"replay":"replays/20260928_182002_duli02122_vs_세이부_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 15:54","room":58,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,8],"ft":3,"series":"58-260928155457-9","nicks":["로또영","축구신동마라도나","",""],"replay":"replays/20260928_155458_로또영_vs_축구신동마라도나_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 14:15","room":47,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[10,5],"ft":3,"series":"47-260928135900-8","nicks":["드래곤타이거","세이부","",""],"replay":"replays/20260928_141519_드래곤타이거_vs_세이부_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 14:10","room":47,"type":"1v1","time":210,"players":2,"score":[4,3],"teams":[8,7],"ft":3,"series":"47-260928135900-8","nicks":["드래곤타이거","세이부","",""],"replay":"replays/20260928_141014_드래곤타이거_vs_세이부_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 14:04","room":47,"type":"1v1","time":210,"players":2,"score":[1,1],"teams":[9,4],"pk":[4,2],"ft":3,"series":"47-260928135900-8","nicks":["드래곤타이거","세이부","",""],"replay":"replays/20260928_140439_드래곤타이거_vs_세이부_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-28 14:10","room":47,"type":"1v1","time":210,"players":2,"score":[4,3],"teams":[8,7],"ft":3,"series":"47-260928135900-8","nicks":["드래곤타이거","세이부","",""],"replay":"replays/20260928_141014_드래곤타이거_vs_세이부_4-3_p1.scr","edition":"cupsocs2"}
 ]
