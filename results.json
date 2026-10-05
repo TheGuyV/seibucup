@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 15:08","room":38,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"ft":2,"series":"38-261005150845-8","nicks":["핑크팬더","1P","",""],"replay":"replays/20261005_150847_핑크팬더_vs_1P_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 15:04","room":36,"type":"1v1","time":210,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"36-261005145459-7","nicks":["삼손김주성","1P","",""],"replay":"replays/20261005_150431_삼손김주성_vs_1P_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 14:59","room":36,"type":"1v1","time":210,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"36-261005145459-7","nicks":["삼손김주성","1P","",""],"replay":"replays/20261005_145950_삼손김주성_vs_1P_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 14:54","room":36,"type":"1v1","time":210,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"36-261005145459-7","nicks":["삼손김주성","1P","",""],"replay":"replays/20261005_145458_삼손김주성_vs_1P_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-29 00:10","room":12,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"ft":2,"series":"12-260929001037-2","nicks":["1P","seibucup_online","",""],"replay":"replays/20260929_001031_1P_vs_seibucup_online_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 23:24","room":5,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,10],"ft":2,"series":"5-260928232024-1","nicks":["1P","라마스10","",""],"replay":"replays/20260928_232449_1P_vs_라마스10_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 23:20","room":5,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":2,"series":"5-260928232024-1","nicks":["1P","라마스10","",""],"replay":"replays/20260928_232018_1P_vs_라마스10_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 23:09","room":2,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,4],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_230941_로또영_vs_라마스10_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 23:05","room":2,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_230546_로또영_vs_라마스10_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-28 23:09","room":2,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,4],"nicks":["로또영","라마스10","",""],"replay":"replays/20260928_230941_로또영_vs_라마스10_1-3_p1.scr","edition":"cupsocs2"}
 ]
