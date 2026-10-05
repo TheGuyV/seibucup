@@ -221,6 +221,11 @@
   @media (prefers-reduced-motion: reduce) { .nbtn.qready { animation: none; background: #e11414; color: #fff; } }
   .net-mid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 14px; padding: 8px 16px 12px; }
   .net-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-height: 34px; margin-bottom: 6px; }
+  /* 방 제목: 방 만들기 버튼 바로 위, 오른쪽 끝 맞춤 (좁은 화면은 한 줄 가득) */
+  .ntitle { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-bottom: 4px; }
+  .ntitle label { color: var(--n-fg); white-space: nowrap; }
+  .net .ntitle input { width: 260px; max-width: 100%; flex: 0 1 260px; }
+  @media (max-width: 520px) { .net .ntitle input { flex: 1 1 auto; } }
   .net-bar b { font-size: 15px; }
   .grow { flex: 1 1 auto; }
   .tiles { background: var(--n-panel); border: 1px solid #333; min-height: 300px; max-height: 420px; overflow: auto; padding: 10px; display: flex; flex-direction: column; gap: 6px; }
@@ -412,7 +417,6 @@
             <div class="nfield"><input id="nick" maxlength="16" autocomplete="nickname"><button class="nbtn primary" id="btnConn" type="button"></button></div></div>
           <div class="nrow"><label for="netEd" class="accent"><span class="ko">게임 버전</span><span class="en">Version</span></label>
             <select id="netEd"><option value="cupsocs2"></option></select></div>
-          <div class="nrow"><label for="netRoomTitle"><span class="ko">방 제목</span><span class="en">Room title</span></label><input type="text" id="netRoomTitle" maxlength="20" autocomplete="off"></div>
           <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
           <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
         </div>
@@ -433,6 +437,8 @@
       </div>
       <div class="net-mid">
         <div class="net-rooms">
+          <!-- 방 제목은 접속한 뒤 방을 만들 때 정하므로 방 만들기 버튼 바로 위에 (user 2026-10-05) -->
+          <div class="ntitle"><label for="netRoomTitle"><span class="ko">방 제목</span><span class="en">Room title</span></label><input type="text" id="netRoomTitle" maxlength="20" autocomplete="off"></div>
           <div class="net-bar"><b id="roomsTitle"></b><span class="grow"></span>
             <button class="nbtn bold" id="btnQuick" type="button" disabled><span class="ko">빠른 대결(단판)</span><span class="en">Quick match (single)</span></button>
             <button class="nbtn" id="btnJoin" type="button" hidden></button>
@@ -1208,7 +1214,7 @@
     $('btnConn').className = 'nbtn' + (on ? ' cut' : ' primary');                   // 끊기는 빨간 테두리로 눈에 띄게
     $('btnConn').disabled = inMatch;                                              // 경기 중에는 끊지 않는다 (그만하기로)
     nickIn.disabled = on;
-    $('btnQuick').disabled = $('btnCreate').disabled = !on || !!r || inMatch;
+    $('btnQuick').disabled = $('btnCreate').disabled = $('netRoomTitle').disabled = !on || !!r || inMatch;
     $('btnRefresh').disabled = !on;
     var sel = !r && net.sel && net.rooms.filter(function (f) { return f[0] === net.sel; })[0];
     $('btnJoin').hidden = !sel; $('btnJoin').disabled = inMatch;
