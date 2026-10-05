@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 10:52","room":18,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"18-261005104427-3","nicks":["로또영","즐축","",""],"replay":"replays/20261005_105251_로또영_vs_즐축_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 10:48","room":18,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"18-261005104427-3","nicks":["로또영","즐축","",""],"replay":"replays/20261005_104824_로또영_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 10:44","room":18,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"18-261005104427-3","nicks":["로또영","즐축","",""],"replay":"replays/20261005_104429_로또영_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-04 20:05","room":7,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"7-261004200137-2","nicks":["레온","내일은축구왕","",""],"replay":"replays/20261004_200603_레온_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-28 13:59","room":47,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[0,3],"ft":3,"series":"47-260928135900-8","nicks":["드래곤타이거","세이부","",""],"replay":"replays/20260928_135859_드래곤타이거_vs_세이부_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 13:51","room":45,"type":"1v1","time":240,"players":2,"score":[3,4],"teams":[10,9],"ft":2,"series":"45-260928134459-7","nicks":["세이부","드래곤타이거","",""],"replay":"replays/20260928_135114_세이부_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-28 13:44","room":45,"type":"1v1","time":240,"players":2,"score":[2,3],"teams":[8,7],"ft":2,"series":"45-260928134459-7","nicks":["세이부","드래곤타이거","",""],"replay":"replays/20260928_134456_세이부_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 13:38","room":44,"type":"1v1","time":210,"players":2,"score":[4,4],"teams":[8,7],"nicks":["그리운90년대","드래곤타이거","",""],"replay":"replays/20260928_133824_그리운90년대_vs_드래곤타이거_4-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-28 13:32","room":44,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[8,5],"nicks":["그리운90년대","드래곤타이거","",""],"replay":"replays/20260928_133235_그리운90년대_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-28 13:38","room":44,"type":"1v1","time":210,"players":2,"score":[4,4],"teams":[8,7],"nicks":["그리운90년대","드래곤타이거","",""],"replay":"replays/20260928_133824_그리운90년대_vs_드래곤타이거_4-4_p1.scr","edition":"cupsocs2"}
 ]
