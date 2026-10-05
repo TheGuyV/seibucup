@@ -658,6 +658,8 @@
     f.src = 'play/game.html?' + q.toString(); f.title = 'Seibu Cup Soccer'; f.allow = 'autoplay; fullscreen; gamepad';
     $('screen').appendChild(f);
     running = { mode: mode, frame: f, label: (extra && extra.label) || T(LABEL[mode][0], LABEL[mode][1]), watching: mode === 'match' && extra && +extra.slot >= 5 };
+    if (mode === 'solo') playBegin(typeof net !== 'undefined' && net.soloWaiting ? 'wait' : (extra && extra.god ? 'god' : 'solo'), q.get('game'));
+    else if (mode === 'tutorial' || mode === 'practice') playBegin(mode, 'cupsocs2');
     $('stageTitle').textContent = running.label + (mode === 'match' && extra.slot ? ' · ' + (+extra.slot >= 5 ? T('관전', 'watching') : extra.slot + 'P') : '');
     $('stage').hidden = false; $('runlog').textContent = ''; vpadForce = false; drawVpad();
     $('keyTab').hidden = mode === 'match' || mode === 'replay';   // 경기·리플레이 중에는 Tab·ESC·기능키가 잠긴다
@@ -665,6 +667,25 @@
     say('<b>' + esc(running.label) + '</b> · ' + T('불러오는 중', 'loading'));
     if (typeof drawButtons === 'function') drawButtons();
   }
+  // 혼자 하는 게임(혼자놀기·GOD·대기중 게임·튜토리얼·연습)은 하는 동안 서버와 연결을 하나 열어 둔다 (user 2026-10-06):
+  // 서버가 그 길이를 재서 플레이 기록(웹)과 릴레이 화면의 'single game' 인원에 넣는다. 탭을 닫거나 인터넷이 끊겨도
+  // 연결이 끊기는 것으로 끝이 잡힌다. 중간의 프록시가 조용한 연결을 끊지 않게 30초마다 '.' 하나
+  var playConn = null;
+  function playBegin(mode, edition) {
+    playEnd();
+    try {
+      var nick = cleanNick(store.get('web_nick') || '');
+      var ws = new WebSocket(relayWsUrl()), t = null;
+      ws.binaryType = 'arraybuffer';
+      ws.onopen = function () {
+        ws.send(new TextEncoder().encode('PLAYING ' + mode + ' ' + (edition === 'cupsoc' ? 'cupsoc' : 'cupsocs2') + (nick ? ' ' + nick : '') + '\n'));
+        t = setInterval(function () { try { ws.send(new TextEncoder().encode('.')); } catch (e) {} }, 30000);
+      };
+      ws.onclose = function () { clearInterval(t); };
+      playConn = { stop: function () { clearInterval(t); try { ws.close(); } catch (e) {} } };
+    } catch (e) {}
+  }
+  function playEnd() { if (playConn) { playConn.stop(); playConn = null; } }
   // 그만하기: 게임에 'quit' 을 보내 MAME 가 정상 종료하며 설정(cfg)을 쓰고 저장하게 한 뒤(최대 4초) 화면을 닫는다
   var savedWait = null;
   function stop(quiet) {
@@ -676,7 +697,7 @@
     return new Promise(function (ok) {
       var t = setTimeout(fin, 4000);
       savedWait = function (names) { clearTimeout(t); if (names) logline('saved: ' + names); fin(); };
-      function fin() { savedWait = null; vrelease(); r.frame.remove(); if (running === r) running = null; veil(''); stopBusy(false); drawVpad(); done(); ok(); }
+      function fin() { savedWait = null; vrelease(); r.frame.remove(); if (running === r) running = null; playEnd(); veil(''); stopBusy(false); drawVpad(); done(); ok(); }
       try { r.frame.contentWindow.postMessage('quit', location.origin); } catch (e) { fin(); }
     });
     function done() {
