@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 21:13","room":59,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_211342_bk49_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:11","room":60,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,3],"ft":2,"series":"60-261005210617-13","nicks":["즐축","내일은축구왕","",""],"replay":"replays/20261005_211128_즐축_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:09","room":59,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,4],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_210950_bk49_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:06","room":60,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,10],"ft":2,"series":"60-261005210617-13","nicks":["즐축","내일은축구왕","",""],"replay":"replays/20261005_210616_즐축_vs_내일은축구왕_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-29 18:42","room":14,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"nicks":["레트로성지","1P","",""],"replay":"replays/20260929_184209_레트로성지_vs_1P_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 18:38","room":14,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"nicks":["레트로성지","1P","",""],"replay":"replays/20260929_183831_레트로성지_vs_1P_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 18:32","room":12,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,8],"ft":2,"series":"12-260929182816-2","nicks":["1P","세이부","",""],"replay":"replays/20260929_183203_1P_vs_세이부_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 18:28","room":12,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"ft":2,"series":"12-260929182816-2","nicks":["1P","세이부","",""],"replay":"replays/20260929_182808_1P_vs_세이부_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 16:11","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,8],"nicks":["실화인가","세이부","",""],"replay":"replays/20260929_161134_실화인가_vs_세이부_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-29 18:28","room":12,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"ft":2,"series":"12-260929182816-2","nicks":["1P","세이부","",""],"replay":"replays/20260929_182808_1P_vs_세이부_1-0_p1.scr","edition":"cupsocs2"}
 ]
