@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-05 21:33","room":66,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[9,8],"ft":2,"series":"66-261005212305-15","nicks":["내일은축구왕","즐축","",""],"replay":"replays/20261005_213305_내일은축구왕_vs_즐축_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:29","room":59,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_212944_bk49_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:27","room":66,"type":"1v1","time":180,"players":2,"score":[2,4],"teams":[4,7],"ft":2,"series":"66-261005212305-15","nicks":["내일은축구왕","즐축","",""],"replay":"replays/20261005_212754_내일은축구왕_vs_즐축_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:25","room":59,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_212528_bk49_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-29 19:47","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,3],"ft":3,"series":"25-260929193903-4","nicks":["Janet","세이부","",""],"replay":"replays/20260929_194619_Janet_vs_세이부_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 19:43","room":26,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260929_194344_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 19:43","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,8],"ft":3,"series":"25-260929193903-4","nicks":["Janet","세이부","",""],"replay":"replays/20260929_194212_Janet_vs_세이부_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 19:39","room":26,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,5],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260929_193957_바트_vs_키아누리브스_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 19:39","room":25,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[10,7],"ft":3,"series":"25-260929193903-4","nicks":["Janet","세이부","",""],"replay":"replays/20260929_193814_Janet_vs_세이부_4-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-29 19:39","room":26,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,5],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260929_193957_바트_vs_키아누리브스_1-0_p1.scr","edition":"cupsocs2"}
 ]
