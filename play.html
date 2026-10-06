@@ -86,12 +86,13 @@
   .vstick { --vs: 1; position: relative; flex: 0 0 auto; width: calc(min(150px, 38vw) * var(--vs)); height: calc(min(150px, 38vw) * var(--vs)); border-radius: 50%; background: #1c1f1c; border: 3px solid #3d443d; touch-action: none; }
   .vstick::before { content: ""; position: absolute; inset: 28%; border-radius: 50%; border: 2px dashed #3d443d; }
   .vstick .knob { position: absolute; left: 50%; top: 50%; width: calc(64px * var(--vs)); height: calc(64px * var(--vs)); margin: calc(-32px * var(--vs)) 0 0 calc(-32px * var(--vs)); border-radius: 50%; background: var(--hud-yellow); border: 3px solid #000; box-shadow: 0 4px 0 #000; pointer-events: none; }
-  .vbtns { display: grid; grid-template-columns: repeat(2, auto); grid-template-areas: "coin start" "shoot pass"; gap: 12px 10px; align-items: end; justify-items: center; }
+  /* 버튼 크기 3단계 (user 2026-10-06): --vb 0.8 작게 / 1 보통(원래) / 1.2 크게. 세로 화면에서는 이동 원 옆에 들어가는 만큼까지만 커진다 */
+  .vbtns { --vb: 1; display: grid; grid-template-columns: repeat(2, auto); grid-template-areas: "coin start" "shoot pass"; gap: 12px 10px; align-items: end; justify-items: center; }
   .vb { font: 400 1rem "Galmuri11", sans-serif; color: #fff; border: 3px solid #000; box-shadow: 0 4px 0 #000; touch-action: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-  .vb.big { width: min(84px, 21vw); height: min(84px, 21vw); border-radius: 50%; font-size: 1.15rem; }
+  .vb.big { width: min(84px * var(--vb), 21vw * var(--vb), 29vw - 22px); height: min(84px * var(--vb), 21vw * var(--vb), 29vw - 22px); border-radius: 50%; font-size: calc(1.15rem * var(--vb)); }
   .vb.small { padding: 5px 12px; background: #2b2e2b; font-size: .85rem; border-radius: 14px; }
   .vb[data-k="shoot"] { grid-area: shoot; background: #d23b3b; }
-  .vb[data-k="pass"] { grid-area: pass; background: #2f6fd0; margin-bottom: 26px; }
+  .vb[data-k="pass"] { grid-area: pass; background: #2f6fd0; margin-bottom: calc(26px * var(--vb)); }
   .vb[data-k="coin"] { grid-area: coin; } .vb[data-k="start"] { grid-area: start; }
   .vb.on { transform: translateY(3px); box-shadow: 0 1px 0 #000; filter: brightness(1.25); }
   .stage.touch .keys { display: none; }
@@ -103,7 +104,7 @@
   .stage.touch.land .screen { flex: 1 1 0; aspect-ratio: auto; min-height: 0; width: 100%; }
   .stage.touch.land .vpad { position: absolute; left: 0; right: 0; bottom: 44px; z-index: 5; background: transparent; border: 0; pointer-events: none; padding: 0 14px 10px; }
   .stage.touch.land .vpad > * { pointer-events: auto; opacity: .78; }
-  .stage.touch.land .vb.big { width: min(72px, 20vh); height: min(72px, 20vh); font-size: 1rem; }
+  .stage.touch.land .vb.big { width: min(72px * var(--vb), 20vh * var(--vb)); height: min(72px * var(--vb), 20vh * var(--vb)); font-size: calc(1rem * var(--vb)); }
   .stage.touch.land .vstick { width: calc(min(150px, 42vh) * var(--vs)); height: calc(min(150px, 42vh) * var(--vs)); }
   /* 전체 화면: 세로는 위에 게임(4:3), 아래를 컨트롤러가 채우고 / 가로는 위의 .land 배치 그대로 */
   .stage.touch:fullscreen { width: 100vw; height: 100vh; left: 0; top: 0; transform: none; border: 0; display: flex; flex-direction: column; background: #000; }
@@ -400,6 +401,7 @@
         <div class="row">
           <button class="lb small" id="btnPad" type="button" hidden><span class="ko">컨트롤러</span><span class="en">Controller</span></button>
           <button class="lb small" id="btnStick" type="button" hidden title=""></button>
+          <button class="lb small" id="btnVb" type="button" hidden title=""></button>
           <button class="lb small" id="btnFull" type="button"><span class="ko">전체 화면</span><span class="en">Full screen</span></button>
           <button class="lb small go" id="btnStop" type="button"><span class="ko">그만하기</span><span class="en">Stop</span></button>
         </div>
@@ -761,6 +763,16 @@
     $('btnStick').title = T('누를 때마다 이동 원이 한 단계씩 작아집니다 (5 = 원래 크기, 1 = 가장 작게)', 'Each press makes the move circle a step smaller (5 = full size, 1 = smallest)');
   }
   $('btnStick').onclick = function () { var lv = stickLevel() - 1; if (lv < 1) lv = 5; store.set('web_vstick', String(lv)); drawStick(); };
+  // 슛·패스 버튼 크기 3단계 (user 2026-10-06): 누를 때마다 작게 -> 보통 -> 크게 -> 작게. 보통이 원래 크기, 이 브라우저에 저장
+  var VB = [0.8, 1.0, 1.2], VBN = [['작게', 'Small'], ['보통', 'Normal'], ['크게', 'Large']];
+  function vbLevel() { var v = +store.get('web_vbtn'); return v >= 1 && v <= 3 ? v : 2; }
+  function drawVb() {
+    var lv = vbLevel();
+    document.querySelector('.vbtns').style.setProperty('--vb', String(VB[lv - 1]));
+    $('btnVb').innerHTML = '<span class="ko">버튼 ' + VBN[lv - 1][0] + '</span><span class="en">Buttons ' + VBN[lv - 1][1] + '</span>';
+    $('btnVb').title = T('누를 때마다 슛·패스 버튼 크기가 바뀝니다 (작게 → 보통 → 크게)', 'Each press changes the size of the Shoot/Pass buttons (small → normal → large)');
+  }
+  $('btnVb').onclick = function () { var lv = vbLevel() + 1; if (lv > 3) lv = 1; store.set('web_vbtn', String(lv)); drawVb(); };
   function drawVpad() {
     var r = running, watch = !r || r.mode === 'replay' || (r.mode === 'match' && r.watching);
     var on = !!r && !watch && padWanted() && (vpadForce || !padSeen());
@@ -770,6 +782,7 @@
     $('btnPad').hidden = !r || watch || !(TOUCH || store.get('web_vpad') === '1');
     $('btnPad').classList.toggle('go', on);
     $('btnStick').hidden = !on; drawStick();
+    $('btnVb').hidden = !on; drawVb();
     if (!on) vrelease();
   }
   // 가로/세로: 창 모양으로 정한다 (휴대폰을 돌리거나 전체 화면에 들어가고 나올 때 다시)
