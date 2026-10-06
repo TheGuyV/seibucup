@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-06 23:00","room":24,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"24-261006225614-8","nicks":["404page","판순이","",""],"replay":"replays/20261006_230015_404page_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:59","room":23,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,0],"nicks":["cow","뚱이K","",""],"replay":"replays/20261006_225956_cow_vs_뚱이K_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:59","room":25,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"25-261006225906-9","nicks":["레온","즐축","",""],"replay":"replays/20261006_225909_레온_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:56","room":24,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[5,3],"ft":2,"series":"24-261006225614-8","nicks":["404page","판순이","",""],"replay":"replays/20261006_225613_404page_vs_판순이_0-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-30 20:09","room":18,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,3],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_200933_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 20:05","room":18,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,7],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_200542_바트_vs_키아누리브스_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 20:02","room":18,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,7],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_200227_바트_vs_키아누리브스_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 19:58","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_195848_바트_vs_키아누리브스_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 19:57","room":17,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"17-260930195411-2","nicks":["1P","로또영","",""],"replay":"replays/20260930_195740_1P_vs_로또영_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-30 19:58","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_195848_바트_vs_키아누리브스_1-0_p1.scr","edition":"cupsocs2"}
 ]
