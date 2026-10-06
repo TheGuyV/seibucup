@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-06 22:56","room":24,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[5,3],"ft":2,"series":"24-261006225614-8","nicks":["404page","판순이","",""],"replay":"replays/20261006_225613_404page_vs_판순이_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:55","room":23,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,0],"nicks":["cow","뚱이K","",""],"replay":"replays/20261006_225531_cow_vs_뚱이K_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:53","room":21,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[8,5],"ft":2,"series":"21-261006224949-7","nicks":["내일은축구왕","로또영","",""],"replay":"replays/20261006_225353_내일은축구왕_vs_로또영_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:51","room":19,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,7],"ft":2,"series":"19-261006224751-6","nicks":["즐축","드래곤타이거","",""],"replay":"replays/20261006_225153_즐축_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-30 19:58","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_195848_바트_vs_키아누리브스_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 19:57","room":17,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"17-260930195411-2","nicks":["1P","로또영","",""],"replay":"replays/20260930_195740_1P_vs_로또영_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 19:54","room":17,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"17-260930195411-2","nicks":["1P","로또영","",""],"replay":"replays/20260930_195400_1P_vs_로또영_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 01:10","room":1,"type":"1v1","time":210,"players":2,"score":[3,3],"teams":[8,7],"pk":[1,4],"ft":3,"series":"1-260930005126-1","nicks":["호나우도","드래곤타이거","",""],"replay":"replays/20260930_011016_호나우도_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 01:03","room":1,"type":"1v1","time":210,"players":2,"score":[5,5],"teams":[7,8],"pk":[5,3],"ft":3,"series":"1-260930005126-1","nicks":["호나우도","드래곤타이거","",""],"replay":"replays/20260930_010352_호나우도_vs_드래곤타이거_5-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-30 01:10","room":1,"type":"1v1","time":210,"players":2,"score":[3,3],"teams":[8,7],"pk":[1,4],"ft":3,"series":"1-260930005126-1","nicks":["호나우도","드래곤타이거","",""],"replay":"replays/20260930_011016_호나우도_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"}
 ]
