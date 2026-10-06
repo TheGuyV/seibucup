@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-07 00:28","room":39,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_002834_로또영_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 00:23","room":39,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_002332_로또영_vs_김정은패스_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 00:19","room":39,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_001925_로또영_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 00:15","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_001522_로또영_vs_김정은패스_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-30 22:58","room":46,"type":"1v1","time":150,"players":2,"score":[1,6],"teams":[8,7],"ft":3,"series":"46-260930225802-8","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20260930_225801_뚱이K_vs_드래곤타이거_1-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:52","room":45,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,10],"ft":3,"series":"45-260930224355-7","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20260930_225213_뚱이K_vs_드래곤타이거_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 22:48","room":45,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,3],"ft":3,"series":"45-260930224355-7","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20260930_224818_뚱이K_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 22:43","room":45,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"ft":3,"series":"45-260930224355-7","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20260930_224355_뚱이K_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 22:42","room":42,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"pk":[5,4],"ft":2,"series":"42-260930223756-6","nicks":["1P","seibucup_online","",""],"replay":"replays/20260930_224242_1P_vs_seibucup_online_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-30 22:43","room":45,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"ft":3,"series":"45-260930224355-7","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20260930_224355_뚱이K_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"}
 ]
