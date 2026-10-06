@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-06 23:14","room":26,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"26-261006230505-10","nicks":["로또영","404page","",""],"replay":"replays/20261006_231429_로또영_vs_404page_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 23:12","room":25,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[10,5],"ft":2,"series":"25-261006225906-9","nicks":["레온","즐축","",""],"replay":"replays/20261006_231255_레온_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 23:09","room":26,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"26-261006230505-10","nicks":["로또영","404page","",""],"replay":"replays/20261006_230956_로또영_vs_404page_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 23:05","room":26,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"26-261006230505-10","nicks":["로또영","404page","",""],"replay":"replays/20261006_230506_로또영_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-30 22:06","room":36,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,10],"ft":2,"series":"36-260930220631-4","nicks":["seibucup_online","뚱이K","",""],"replay":"replays/20260930_220639_seibucup_online_vs_뚱이K_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 21:58","room":34,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,4],"ft":3,"series":"34-260930215048-3","nicks":["Janet2","뚱이K2","",""],"replay":"replays/20260930_215752_Janet2_vs_뚱이K2_5-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 21:54","room":34,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,8],"ft":3,"series":"34-260930215048-3","nicks":["Janet2","뚱이K2","",""],"replay":"replays/20260930_215351_Janet2_vs_뚱이K2_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 21:50","room":34,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,10],"ft":3,"series":"34-260930215048-3","nicks":["Janet2","뚱이K2","",""],"replay":"replays/20260930_214957_Janet2_vs_뚱이K2_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 20:17","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20260930_201724_바트_vs_키아누리브스_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-30 21:50","room":34,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,10],"ft":3,"series":"34-260930215048-3","nicks":["Janet2","뚱이K2","",""],"replay":"replays/20260930_214957_Janet2_vs_뚱이K2_3-1_p1.scr","edition":"cupsocs2"}
 ]
