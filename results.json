@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-06 22:07","room":12,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,8],"ft":2,"series":"12-261006220723-2","nicks":["404page","즐축","",""],"replay":"replays/20261006_220723_404page_vs_즐축_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 18:56","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_185625_바트_vs_키아누리브스_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 18:52","room":10,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,10],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_185231_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 18:48","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[8,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_184837_바트_vs_키아누리브스_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-09-29 23:23","room":54,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,4],"nicks":["seibucup_online","404page","",""],"replay":"replays/20260929_232334_seibucup_online_vs_404page_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 23:19","room":54,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,9],"nicks":["seibucup_online","404page","",""],"replay":"replays/20260929_232001_seibucup_online_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-29 23:06","room":49,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,5],"nicks":["404page","1P","",""],"replay":"replays/20260929_230630_404page_vs_1P_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 23:03","room":49,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["404page","1P","",""],"replay":"replays/20260929_230306_404page_vs_1P_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-29 23:03","room":51,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":2,"series":"51-260929225914-8","nicks":["레온","seibucup_online","",""],"replay":"replays/20260929_230304_레온_vs_seibucup_online_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-29 23:03","room":49,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["404page","1P","",""],"replay":"replays/20260929_230306_404page_vs_1P_2-1_p1.scr","edition":"cupsocs2"}
 ]
