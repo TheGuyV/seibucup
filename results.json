@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-07 22:22","room":112,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"112-261007222216-30","nicks":["로또영","즐축","",""],"replay":"replays/20261007_222216_로또영_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 22:00","room":107,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":3,"series":"107-261007215338-29","nicks":["우기부기","로또영","",""],"replay":"replays/20261007_220049_우기부기_vs_로또영_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 21:57","room":107,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,5],"ft":3,"series":"107-261007215338-29","nicks":["우기부기","로또영","",""],"replay":"replays/20261007_215727_우기부기_vs_로또영_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 21:53","room":107,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[9,5],"ft":3,"series":"107-261007215338-29","nicks":["우기부기","로또영","",""],"replay":"replays/20261007_215337_우기부기_vs_로또영_1-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 21:03","room":105,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"nicks":["축구황제","내일은축구왕","",""],"replay":"replays/20261001_210334_축구황제_vs_내일은축구왕_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 20:59","room":105,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,8],"nicks":["축구황제","내일은축구왕","",""],"replay":"replays/20261001_205935_축구황제_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 20:55","room":105,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,3],"nicks":["축구황제","내일은축구왕","",""],"replay":"replays/20261001_205551_축구황제_vs_내일은축구왕_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 20:52","room":105,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"nicks":["축구황제","내일은축구왕","",""],"replay":"replays/20261001_205226_축구황제_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 20:33","room":100,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[10,9],"ft":3,"series":"100-261001202248-15","nicks":["Janet","드래곤타이거","",""],"replay":"replays/20261001_203300_Janet_vs_드래곤타이거_3-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 20:52","room":105,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"nicks":["축구황제","내일은축구왕","",""],"replay":"replays/20261001_205226_축구황제_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"}
 ]
