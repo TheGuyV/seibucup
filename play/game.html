@@ -226,6 +226,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
       });
       if (+Q.get('slot') >= 5) env.SCNP_SPECTATE = '1';
       if (Q.get('postlog') && Q.get('hsretry')) env.SCNP_HS_RETRY_MS = Q.get('hsretry');   // 시험 전용: 관전자 재요청 간격
+      if (/^(orange|yellow|pink|blue)$/.test(Q.get('ball') || '')) env.SCNP_BALL = Q.get('ball');   // 방장의 공 색 (릴레이가 회원 확인 후 START 에 실어 보냄, 2026-10-08)
       if (Q.get('series')) env.SCNP_SERIES = Q.get('series');   // FT 목표와 양쪽 승수 (HUD)
       if (Q.get('pk')) env.SCNP_PK = Q.get('pk') === '2' ? '2' : '1';   // 시리즈는 무승부면 승부차기(1) 또는 골든골(2)
       env.WEB_LOCKUI = '1';                                   // PC 런처처럼 ESC·P·Tab·F3·상태 저장 같은 UI 키를 끈다 (boot.lua)

@@ -427,7 +427,8 @@ end
 -- they go back, so the menus keep theirs. This screen only: nothing in the game reads the palette, and the others
 -- see their own pick.
 SCNP_PAL.BALLS = { orange = { 31, 15, 2 }, yellow = { 31, 28, 4 }, pink = { 31, 11, 22 }, blue = { 6, 14, 31 } }
-SCNP_PAL.BALL = SCNP_PAL.BALLS[env("SCNP_BALL", "white")]
+SCNP_PAL.BALLNAME = env("SCNP_BALL", "white")
+SCNP_PAL.BALL = SCNP_PAL.BALLS[SCNP_PAL.BALLNAME]
 function scnp_ball_palette()
   local P, base = SCNP_PAL, SCNP_PAL.SPR
   local on = P.BALL and mem:read_u16(CLOCK_ADDR) > 0
@@ -931,8 +932,8 @@ local function rec_save(complete)
   local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".scr"
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
-  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"devs":"%s"}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0, table.concat(SCNP_DEVR.hist, ";"))
+  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"ball":"%s","devs":"%s"}',
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0, SCNP_PAL.BALL and SCNP_PAL.BALLNAME or "white", table.concat(SCNP_DEVR.hist, ";"))
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
     -- a stray lock (antivirus, a leftover handle): try once more with a unique suffix
@@ -2407,6 +2408,7 @@ local function step()
       SCNP_PK.on = r.meta:match('"pk":1') ~= nil
       SCNP_PK.gg = r.meta:match('"pk":2') ~= nil
       scnp_sel_apply(r.meta:match('"sel":1') ~= nil)     -- recorded with the versus country select (protocol 16)
+      do local b = r.meta:match('"ball":"(%a+)"'); if b then SCNP_PAL.BALLNAME = b; SCNP_PAL.BALL = SCNP_PAL.BALLS[b] end end   -- the match's own ball (2026-10-08)
       scnp_god_apply(r.meta:match('"god":[12]') ~= nil, r.meta:match('"god":2') ~= nil)     -- recorded in a PvE room that let 1P pick GOD (protocol 18)
       SCNP_DEVR.play = {}; SCNP_DEVR.pi = 1              -- each seat's stick / keyboard over the match (2.0.8 on)
       for at, d in (r.meta:match('"devs":"([^"]*)"') or ""):gmatch("(%d+):(%d%d%d%d)") do SCNP_DEVR.play[#SCNP_DEVR.play + 1] = { at = tonumber(at), d = d } end
