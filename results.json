@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-07 20:19","room":92,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[3,9],"nicks":["전설아","우기부기","",""],"replay":"replays/20261007_201921_전설아_vs_우기부기_5-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 19:46","room":88,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,9],"ft":2,"series":"88-261007194304-22","nicks":["Janet","레트로성지","",""],"replay":"replays/20261007_194632_Janet_vs_레트로성지_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 19:43","room":88,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,10],"ft":2,"series":"88-261007194304-22","nicks":["Janet","레트로성지","",""],"replay":"replays/20261007_194300_Janet_vs_레트로성지_5-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 19:38","room":87,"type":"1v1","time":210,"players":2,"score":[1,0],"teams":[8,5],"ft":3,"series":"87-261007192844-21","nicks":["7","레트로성지","",""],"replay":"replays/20261007_193845_7_vs_레트로성지_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 15:00","room":73,"type":"1v1","time":240,"players":2,"score":[3,2],"teams":[3,9],"ft":2,"series":"73-261001145317-10","nicks":["싸커맨","ㅇㅇ","",""],"replay":"replays/20261001_150017_싸커맨_vs_ㅇㅇ_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 14:53","room":73,"type":"1v1","time":240,"players":2,"score":[4,2],"teams":[9,4],"ft":2,"series":"73-261001145317-10","nicks":["싸커맨","ㅇㅇ","",""],"replay":"replays/20261001_145316_싸커맨_vs_ㅇㅇ_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 14:40","room":70,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"pk":[4,5],"ft":2,"series":"70-261001143031-9","nicks":["1P","축구신동마라도나","",""],"replay":"replays/20261001_144014_1P_vs_축구신동마라도나_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 14:35","room":70,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,8],"pk":[5,4],"ft":2,"series":"70-261001143031-9","nicks":["1P","축구신동마라도나","",""],"replay":"replays/20261001_143533_1P_vs_축구신동마라도나_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 14:30","room":70,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":2,"series":"70-261001143031-9","nicks":["1P","축구신동마라도나","",""],"replay":"replays/20261001_143019_1P_vs_축구신동마라도나_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 14:35","room":70,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,8],"pk":[5,4],"ft":2,"series":"70-261001143031-9","nicks":["1P","축구신동마라도나","",""],"replay":"replays/20261001_143533_1P_vs_축구신동마라도나_1-1_p1.scr","edition":"cupsocs2"}
 ]
