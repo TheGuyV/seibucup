@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-07 22:48","room":115,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,8],"ft":3,"series":"115-261007224117-31","nicks":["판순이","롤롤","",""],"replay":"replays/20261007_224839_판순이_vs_롤롤_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 22:45","room":115,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,7],"ft":3,"series":"115-261007224117-31","nicks":["판순이","롤롤","",""],"replay":"replays/20261007_224503_판순이_vs_롤롤_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 22:41","room":115,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,7],"ft":3,"series":"115-261007224117-31","nicks":["판순이","롤롤","",""],"replay":"replays/20261007_224113_판순이_vs_롤롤_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 22:33","room":112,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"112-261007222216-30","nicks":["로또영","즐축","",""],"replay":"replays/20261007_223310_로또영_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 21:35","room":113,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,8],"nicks":["404page","seibucup_online","",""],"replay":"replays/20261001_213557_404page_vs_seibucup_online_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:32","room":113,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[4,7],"nicks":["404page","seibucup_online","",""],"replay":"replays/20261001_213226_404page_vs_seibucup_online_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:31","room":107,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,3],"pk":[4,5],"ft":2,"series":"107-261001212236-16","nicks":["1P","축구황제","",""],"replay":"replays/20261001_213117_1P_vs_축구황제_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 21:26","room":107,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[5,9],"ft":2,"series":"107-261001212236-16","nicks":["1P","축구황제","",""],"replay":"replays/20261001_212604_1P_vs_축구황제_0-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 21:22","room":107,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,10],"pk":[4,2],"ft":2,"series":"107-261001212236-16","nicks":["1P","축구황제","",""],"replay":"replays/20261001_212223_1P_vs_축구황제_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 21:26","room":107,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[5,9],"ft":2,"series":"107-261001212236-16","nicks":["1P","축구황제","",""],"replay":"replays/20261001_212604_1P_vs_축구황제_0-3_p1.scr","edition":"cupsocs2"}
 ]
