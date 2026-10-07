@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-07 20:52","room":100,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"100-261007205244-26","nicks":["로또영","boreum","",""],"replay":"replays/20261007_205245_로또영_vs_boreum_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 20:52","room":101,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"101-261007204834-25","nicks":["Janet","내일은축구왕","",""],"replay":"replays/20261007_205214_Janet_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 20:48","room":101,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"101-261007204834-25","nicks":["Janet","내일은축구왕","",""],"replay":"replays/20261007_204830_Janet_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 20:38","room":97,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":3,"series":"97-261007203841-24","nicks":["로또영","전설아","",""],"replay":"replays/20261007_203842_로또영_vs_전설아_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 18:37","room":97,"type":"1v1","time":180,"players":2,"score":[1,3],"teams":[3,5],"ft":2,"series":"97-261001183710-14","nicks":["ㅇㅇ","1P","",""],"replay":"replays/20261001_183710_ㅇㅇ_vs_1P_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 18:21","room":91,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[10,3],"ft":2,"series":"91-261001181712-13","nicks":["Janet","싸커맨2","",""],"replay":"replays/20261001_182029_Janet_vs_싸커맨2_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 18:17","room":91,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,3],"ft":2,"series":"91-261001181712-13","nicks":["Janet","싸커맨2","",""],"replay":"replays/20261001_181622_Janet_vs_싸커맨2_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 16:52","room":84,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"ft":2,"series":"84-261001164849-12","nicks":["1P","ㅇㅇ","",""],"replay":"replays/20261001_165234_1P_vs_ㅇㅇ_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 16:48","room":84,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,0],"ft":2,"series":"84-261001164849-12","nicks":["1P","ㅇㅇ","",""],"replay":"replays/20261001_164837_1P_vs_ㅇㅇ_4-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 16:52","room":84,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"ft":2,"series":"84-261001164849-12","nicks":["1P","ㅇㅇ","",""],"replay":"replays/20261001_165234_1P_vs_ㅇㅇ_3-0_p1.scr","edition":"cupsocs2"}
 ]
