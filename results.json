@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 00:59","room":10,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,8],"ft":2,"series":"10-261008005943-2","nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_005943_김정은패스_vs_즐축_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 00:51","room":6,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,8],"ft":2,"series":"6-261008004657-1","nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_005109_김정은패스_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 00:46","room":6,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"6-261008004657-1","nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_004659_김정은패스_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 00:38","room":3,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,8],"nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_003833_김정은패스_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 21:56","room":118,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"ft":2,"series":"118-261001215628-18","nicks":["404page","테일러장군","",""],"replay":"replays/20261001_215627_404page_vs_테일러장군_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:43","room":115,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[5,9],"ft":2,"series":"115-261001213903-17","nicks":["핑크팬더","레온","",""],"replay":"replays/20261001_214312_핑크팬더_vs_레온_0-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:40","room":113,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,3],"nicks":["404page","seibucup_online","",""],"replay":"replays/20261001_214038_404page_vs_seibucup_online_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 21:39","room":115,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[3,7],"ft":2,"series":"115-261001213903-17","nicks":["핑크팬더","레온","",""],"replay":"replays/20261001_213904_핑크팬더_vs_레온_0-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 21:35","room":113,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,8],"nicks":["404page","seibucup_online","",""],"replay":"replays/20261001_213557_404page_vs_seibucup_online_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 21:39","room":115,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[3,7],"ft":2,"series":"115-261001213903-17","nicks":["핑크팬더","레온","",""],"replay":"replays/20261001_213904_핑크팬더_vs_레온_0-4_p1.scr","edition":"cupsocs2"}
 ]
