@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-07 19:43","room":88,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,10],"ft":2,"series":"88-261007194304-22","nicks":["Janet","레트로성지","",""],"replay":"replays/20261007_194300_Janet_vs_레트로성지_5-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 19:38","room":87,"type":"1v1","time":210,"players":2,"score":[1,0],"teams":[8,5],"ft":3,"series":"87-261007192844-21","nicks":["7","레트로성지","",""],"replay":"replays/20261007_193845_7_vs_레트로성지_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 19:34","room":87,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[5,10],"ft":3,"series":"87-261007192844-21","nicks":["7","레트로성지","",""],"replay":"replays/20261007_193407_7_vs_레트로성지_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 19:28","room":87,"type":"1v1","time":210,"players":2,"score":[3,0],"teams":[5,3],"ft":3,"series":"87-261007192844-21","nicks":["7","레트로성지","",""],"replay":"replays/20261007_192843_7_vs_레트로성지_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 14:40","room":70,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"pk":[4,5],"ft":2,"series":"70-261001143031-9","nicks":["1P","축구신동마라도나","",""],"replay":"replays/20261001_144014_1P_vs_축구신동마라도나_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 14:35","room":70,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,8],"pk":[5,4],"ft":2,"series":"70-261001143031-9","nicks":["1P","축구신동마라도나","",""],"replay":"replays/20261001_143533_1P_vs_축구신동마라도나_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 14:30","room":70,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":2,"series":"70-261001143031-9","nicks":["1P","축구신동마라도나","",""],"replay":"replays/20261001_143019_1P_vs_축구신동마라도나_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 13:23","room":69,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_132341_축구황제_vs_축구신동마라도나_0-1_p1.scr"},
-{"when":"2026-10-01 13:19","room":69,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,8],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_131933_축구황제_vs_축구신동마라도나_1-0_p1.scr"}
+{"when":"2026-10-01 13:23","room":69,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_132341_축구황제_vs_축구신동마라도나_0-1_p1.scr"}
 ]
