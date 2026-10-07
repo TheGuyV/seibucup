@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-07 13:14","room":62,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"62-261007131455-16","nicks":["로또영","ㅇㅇ","",""],"replay":"replays/20261007_131456_로또영_vs_ㅇㅇ_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 01:28","room":48,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[9,7],"nicks":["전설아","김정은패스","",""],"replay":"replays/20261007_012812_전설아_vs_김정은패스_0-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 01:23","room":47,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[10,7],"nicks":["롤롤","김정은패스","",""],"replay":"replays/20261007_012342_롤롤_vs_김정은패스_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 01:15","room":44,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,7],"nicks":["전설아","김정은패스","",""],"replay":"replays/20261007_011557_전설아_vs_김정은패스_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 13:02","room":66,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"nicks":["축구황제","축구신동마라도나","",""],"replay":"replays/20261001_130229_축구황제_vs_축구신동마라도나_0-1_p1.scr"},
 {"when":"2026-09-30 23:57","room":47,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,8],"nicks":["1","드래곤타이거","",""],"replay":"replays/20260930_235730_1_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-09-30 23:52","room":47,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[3,7],"nicks":["1","드래곤타이거","",""],"replay":"replays/20260930_235243_1_vs_드래곤타이거_1-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 23:47","room":47,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,4],"nicks":["1","드래곤타이거","",""],"replay":"replays/20260930_234820_1_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-09-30 23:44","room":47,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,3],"nicks":["1","드래곤타이거","",""],"replay":"replays/20260930_234443_1_vs_드래곤타이거_1-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-09-30 23:47","room":47,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,4],"nicks":["1","드래곤타이거","",""],"replay":"replays/20260930_234820_1_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"}
 ]
