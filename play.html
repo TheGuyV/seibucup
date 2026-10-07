@@ -61,7 +61,9 @@
   .stage .ttl { display: flex; align-items: center; gap: 10px; padding: 5px 10px; background: var(--hud-yellow); color: #000; font-size: .9rem; }
   .stage .ttl b { font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   /* 게임 창 제목 줄 끝에 사이트 주소 (user 2026-09-27) */
-  .stage .ttl b::after { content: " - seibucup.online"; opacity: .75; }
+  .stage .ttl b::after { content: " - seibucup.online (주변에 많이 알려주세요!)"; opacity: .75; }
+  /* ...and the ask to pass the site on, right of it (user 2026-10-08) */
+  html[lang="en"] .stage .ttl b::after { content: " - seibucup.online (please tell your friends!)"; }
   /* 전체 화면(과 제목 줄이 숨는 휴대폰 가로)에서는 주소를 옅게 - 게임 화면 오른쪽 위, HUD 시계 바로 밑 (user 2026-09-29).
      게임 화면은 이 칸 안에서 4:3 으로 가운데라, 그 자리(--wm-r, --wm-t)는 아래 스크립트가 칸 크기에서 계산한다 */
   .screen .wm { display: none; position: absolute; right: var(--wm-r, 10px); top: var(--wm-t, 10px); z-index: 6; pointer-events: none;

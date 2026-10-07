@@ -416,6 +416,42 @@ function scnp_install_stage_tap()
   if scnp_stage > 0 then log("stage: pitch of round %d", scnp_stage + 1) end
 end
 function scnp_stage_palette()
+  scnp_stage_palette_pitch()
+  scnp_ball_palette()
+end
+-- The ball's colour (user 2026-10-07, launcher 카페전용 > 공 색상, for the nicknames the relay unlocks it for): the
+-- launcher says which in SCNP_BALL. The ball is drawn with sprite palette line 0, colours 0-4 (greys, dark to white;
+-- found by painting each colour of a frame magenta - the same line's 5-13 are the goal posts and net, 14 the
+-- players' shadows, and stay). During a match (the board's clock above 0) each grey becomes the colour at the grey's
+-- brightness, from the game's own greys (kept in BSAVE whenever the game or the pitch code wrote them); out of a match
+-- they go back, so the menus keep theirs. This screen only: nothing in the game reads the palette, and the others
+-- see their own pick.
+SCNP_PAL.BALLS = { orange = { 31, 15, 2 }, yellow = { 31, 28, 4 }, pink = { 31, 11, 22 }, blue = { 6, 14, 31 } }
+SCNP_PAL.BALL = SCNP_PAL.BALLS[env("SCNP_BALL", "white")]
+function scnp_ball_palette()
+  local P, base = SCNP_PAL, SCNP_PAL.SPR
+  local on = P.BALL and mem:read_u16(CLOCK_ADDR) > 0
+  if not on then
+    if P.BSAVE then
+      for i = 0, 4 do if mem:read_u16(base + 2 * i) == P.BOUT[i] then mem:write_u16(base + 2 * i, P.BSAVE[i]) end end
+      P.BSAVE, P.BOUT = nil, nil
+    end
+    return
+  end
+  local mine = P.BOUT ~= nil
+  if mine then for i = 0, 4 do if mem:read_u16(base + 2 * i) ~= P.BOUT[i] then mine = false end end end
+  if not mine then
+    P.BSAVE, P.BOUT = {}, {}
+    for i = 0, 4 do
+      local g = mem:read_u16(base + 2 * i)
+      P.BSAVE[i] = g
+      local lum = math.max(g & 31, (g >> 5) & 31, (g >> 10) & 31) / 31
+      P.BOUT[i] = (math.floor(P.BALL[3] * lum + 0.5) << 10) | (math.floor(P.BALL[2] * lum + 0.5) << 5) | math.floor(P.BALL[1] * lum + 0.5)
+    end
+  end
+  for i = 0, 4 do mem:write_u16(base + 2 * i, P.BOUT[i]) end
+end
+function scnp_stage_palette_pitch()
   if scnp_stage == 0 then return end          -- round 1's own colours, nothing to do
   local set = SCNP_PAL.P[scnp_stage]
   if not set then return end
