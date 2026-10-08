@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 20:11","room":34,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,8],"ft":3,"series":"34-261008201119-7","nicks":["로또영","왕초보","",""],"replay":"replays/20261008_201121_로또영_vs_왕초보_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:05","room":32,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,3],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_200526_로또영_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:00","room":32,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,3],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_200055_로또영_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 19:56","room":32,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,4],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_195635_로또영_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 23:05","room":133,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"ft":3,"series":"133-261001225839-24","nicks":["로또영","주물러","",""],"replay":"replays/20261001_230531_로또영_vs_주물러_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 23:01","room":133,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"133-261001225839-24","nicks":["로또영","주물러","",""],"replay":"replays/20261001_230157_로또영_vs_주물러_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 22:58","room":133,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,8],"ft":3,"series":"133-261001225839-24","nicks":["로또영","주물러","",""],"replay":"replays/20261001_225843_로또영_vs_주물러_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 22:57","room":127,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"nicks":["청라대장","판순이","",""],"replay":"replays/20261001_225743_청라대장_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 22:54","room":129,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,8],"pk":[4,3],"ft":3,"series":"129-261001224513-23","nicks":["로또영","주물러","",""],"replay":"replays/20261001_225428_로또영_vs_주물러_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 22:57","room":127,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"nicks":["청라대장","판순이","",""],"replay":"replays/20261001_225743_청라대장_vs_판순이_1-2_p1.scr","edition":"cupsocs2"}
 ]
