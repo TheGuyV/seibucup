@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 22:07","room":46,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[0,8],"ft":2,"series":"46-261008220311-8","nicks":["드래곤타이거","아즈텍","",""],"replay":"replays/20261008_220709_드래곤타이거_vs_아즈텍_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 22:03","room":47,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,10],"ft":2,"series":"47-261008220349-9","nicks":["롤롤","tatoas","",""],"replay":"replays/20261008_220337_롤롤_vs_tatoas_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 22:03","room":46,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,9],"ft":2,"series":"46-261008220311-8","nicks":["드래곤타이거","아즈텍","",""],"replay":"replays/20261008_220311_드래곤타이거_vs_아즈텍_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 21:37","room":41,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[10,5],"nicks":["드버거","로또영","",""],"replay":"replays/20261008_213735_드버거_vs_로또영_0-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-02 14:42","room":148,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"148-261002143818-28","nicks":["로또영","1P","",""],"replay":"replays/20261002_144221_로또영_vs_1P_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 14:38","room":148,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":3,"series":"148-261002143818-28","nicks":["로또영","1P","",""],"replay":"replays/20261002_143823_로또영_vs_1P_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 14:28","room":147,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"ft":3,"series":"147-261002141630-27","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261002_142839_로또영_vs_내일은축구왕_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-02 14:25","room":147,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"147-261002141630-27","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261002_142511_로또영_vs_내일은축구왕_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-02 14:20","room":147,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"147-261002141630-27","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261002_142055_로또영_vs_내일은축구왕_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-02 14:25","room":147,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"147-261002141630-27","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261002_142511_로또영_vs_내일은축구왕_3-4_p1.scr","edition":"cupsocs2"}
 ]
