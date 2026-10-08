@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 21:05","room":39,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["존경","히든","",""],"replay":"replays/20261008_210518_존경_vs_히든_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 21:01","room":39,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["존경","히든","",""],"replay":"replays/20261008_210126_존경_vs_히든_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:56","room":37,"type":"1v1","time":90,"players":2,"score":[0,1],"teams":[3,5],"nicks":["당연","히든","",""],"replay":"replays/20261008_205656_당연_vs_히든_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:54","room":37,"type":"1v1","time":90,"players":2,"score":[1,1],"teams":[4,3],"nicks":["당연","히든","",""],"replay":"replays/20261008_205429_당연_vs_히든_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 23:46","room":140,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[8,4],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_234640_로또영_vs_테일러장군_1-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 23:42","room":140,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[5,10],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_234211_로또영_vs_테일러장군_0-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 23:38","room":140,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_233812_로또영_vs_테일러장군_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 23:33","room":140,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_233343_로또영_vs_테일러장군_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 23:29","room":140,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,10],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_232917_로또영_vs_테일러장군_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 23:33","room":140,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_233343_로또영_vs_테일러장군_2-3_p1.scr","edition":"cupsocs2"}
 ]
