@@ -949,7 +949,7 @@
     sel.value = String(cur);
   }
   function netLabels() {
-    var stageNames = [T('잔디 (기본)', 'Grass (default)'), T('흙 잔디', 'Worn grass'), T('흙', 'Dirt'), T('인조잔디', 'Artificial turf'), T('무작위', 'Random')];
+    var stageNames = [T('한낮 (기본)', 'Midday (default)'), T('노을', 'Sunset'), T('석양 (흙)', 'Dusk (dirt)'), T('황혼 (인조잔디)', 'Twilight (artificial turf)'), T('무작위', 'Random')];   // 각 라운드 경기장의 하늘 시간대 (2026-10-09)
     opt($('netEd'), [['cupsocs2', T('셀렉션', 'Selection')]], ed); drawEdition();
     $('netRoomTitle').placeholder = T('비우면 닉네임으로 표시 (20자)', 'Blank = your nickname (20 max)');
     opt($('netPing'), PING_LIMITS.map(function (v) { return [v, v === 0 ? T('제한 없음', 'No limit') : T(v + ' ms 이하', 'up to ' + v + ' ms')]; }), nset.ping);
