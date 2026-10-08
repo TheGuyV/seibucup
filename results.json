@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 20:56","room":37,"type":"1v1","time":90,"players":2,"score":[0,1],"teams":[3,5],"nicks":["당연","히든","",""],"replay":"replays/20261008_205656_당연_vs_히든_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:54","room":37,"type":"1v1","time":90,"players":2,"score":[1,1],"teams":[4,3],"nicks":["당연","히든","",""],"replay":"replays/20261008_205429_당연_vs_히든_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:52","room":37,"type":"1v1","time":90,"players":2,"score":[0,1],"teams":[0,3],"nicks":["당연","히든","",""],"replay":"replays/20261008_205201_당연_vs_히든_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:49","room":37,"type":"1v1","time":90,"players":2,"score":[1,2],"teams":[8,5],"nicks":["당연","히든","",""],"replay":"replays/20261008_204929_당연_vs_히든_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 23:38","room":140,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_233812_로또영_vs_테일러장군_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 23:33","room":140,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_233343_로또영_vs_테일러장군_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 23:29","room":140,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,10],"nicks":["로또영","테일러장군","",""],"replay":"replays/20261001_232917_로또영_vs_테일러장군_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 23:09","room":133,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,4],"ft":3,"series":"133-261001225839-24","nicks":["로또영","주물러","",""],"replay":"replays/20261001_230905_로또영_vs_주물러_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 23:05","room":133,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"ft":3,"series":"133-261001225839-24","nicks":["로또영","주물러","",""],"replay":"replays/20261001_230531_로또영_vs_주물러_3-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 23:09","room":133,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,4],"ft":3,"series":"133-261001225839-24","nicks":["로또영","주물러","",""],"replay":"replays/20261001_230905_로또영_vs_주물러_1-0_p1.scr","edition":"cupsocs2"}
 ]
