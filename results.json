@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 00:10","room":88,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"88-261009000530-17","nicks":["Janet","404page","",""],"replay":"replays/20261009_001000_Janet_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:06","room":84,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[9,5],"ft":3,"series":"84-261009000654-18","nicks":["아무나들어오세요","테일러장군","",""],"replay":"replays/20261009_000653_아무나들어오세요_vs_테일러장군_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:06","room":78,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_000634_히든_vs_존경_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:05","room":88,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[10,7],"ft":2,"series":"88-261009000530-17","nicks":["Janet","404page","",""],"replay":"replays/20261009_000523_Janet_vs_404page_4-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-02 23:54","room":175,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,8],"ft":3,"series":"175-261002235023-35","nicks":["로또영","12","",""],"replay":"replays/20261002_235435_로또영_vs_12_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 23:50","room":175,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"ft":3,"series":"175-261002235023-35","nicks":["로또영","12","",""],"replay":"replays/20261002_235028_로또영_vs_12_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 23:45","room":175,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"175-261002234535-34","nicks":["로또영","12","",""],"replay":"replays/20261002_234540_로또영_vs_12_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-02 23:38","room":173,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":3,"series":"173-261002232725-33","nicks":["Janet","12","",""],"replay":"replays/20261002_233711_Janet_vs_12_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-02 23:34","room":173,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":3,"series":"173-261002232725-33","nicks":["Janet","12","",""],"replay":"replays/20261002_233314_Janet_vs_12_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-02 23:38","room":173,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":3,"series":"173-261002232725-33","nicks":["Janet","12","",""],"replay":"replays/20261002_233711_Janet_vs_12_3-2_p1.scr","edition":"cupsocs2"}
 ]
