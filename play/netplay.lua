@@ -1179,6 +1179,34 @@ end
 -- the host decides at once: a versus of two or more (the others follow its F, replays their "sel")
 if is_host and not is_replay and cfg.teams ~= "pve" and cfg.players >= 2 then scnp_sel_apply(true) end
 
+-- The board's "CREDIT:09" at the bottom centre (user 2026-10-08: gone, cleanly). A status routine writes it into the
+-- text layer (RAM 0x102000, row 29) every 4 frames: 5 label tiles from $55c8 ($05c8 before a game), then two digits
+-- from $5de (or $5e7 twice above 99). Nine words per program make every one of those writes tile 0 (blank), so the
+-- old text is wiped too: the label's tile goes to 0 and its +1 step becomes a NOP, the digits' "addi #$5de,D2" become
+-- "moveq #0,D2 / nop". Display only - the text RAM is not in ram_checksum and the game never reads it, so peers or
+-- spectators with an older script stay in step (they just still see it). Every peer, spectator, replay and the web
+-- run it; solo play (no script) keeps the board's own. { address, board's word, ours }
+SCNP_NOCREDIT = {
+  cupsocs2 = { { 0x00ab9c, 0x55c8, 0x0000 }, { 0x00aba4, 0x5257, 0x4e71 }, { 0x00aa30, 0x05c8, 0x0000 }, { 0x00aa38, 0x5257, 0x4e71 },
+               { 0x00abe8, 0x05e7, 0x0000 }, { 0x00abfe, 0x0642, 0x7400 }, { 0x00ac00, 0x05de, 0x4e71 }, { 0x00ac0c, 0x0642, 0x7400 },
+               { 0x00ac0e, 0x05de, 0x4e71 } },
+  cupsoc   = { { 0x00a5fc, 0x55c8, 0x0000 }, { 0x00a604, 0x5257, 0x4e71 }, { 0x00a490, 0x05c8, 0x0000 }, { 0x00a498, 0x5257, 0x4e71 },
+               { 0x00a648, 0x05e7, 0x0000 }, { 0x00a65e, 0x0642, 0x7400 }, { 0x00a660, 0x05de, 0x4e71 }, { 0x00a66c, 0x0642, 0x7400 },
+               { 0x00a66e, 0x05de, 0x4e71 } },
+}
+SCNP_NOCREDIT.cupsocs = SCNP_NOCREDIT.cupsocs2      -- not checked on that set: the guard below leaves it alone if it differs
+function scnp_nocredit_apply()
+  local P, rg = SCNP_NOCREDIT[SCNP_GAME], manager.machine.memory.regions[":maincpu"]
+  if not P or not rg then return end
+  for _, p in ipairs(P) do
+    local v = rg:read_u16(p[1])
+    if v ~= p[2] and v ~= p[3] then log("credit text: the program is not the one the patch was made for (%06x) - left as it is", p[1]); return end
+  end
+  for _, p in ipairs(P) do rg:write_u16(p[1], p[3]) end
+  log("credit text: hidden")
+end
+scnp_nocredit_apply()
+
 -- GOD (the final boss team, grey kit) for 1P in a PvE room whose host ticked "GOD" (SCNP_GOD=1; user, 2026-09-27).
 -- The select screen turns the chosen box into a team through an 8-byte table of team id + 1 (cupsoc reads the one at
 -- $7F36, cupsocs2 the one at $7F5E; GOD's id 11 -> $0C). While 1P's Pass is held - as the board sees it, which is
@@ -1305,6 +1333,51 @@ local function hud_col(ms)
   return 0xffff9c9c
 end
 local function box(x0, y0, x1, y1, c) screen:draw_box(x0, y0, x1, y1, c, c) end
+
+-- A 3x5 dot font for the small line at the bottom centre (user 2026-10-08: smaller than the UI font, which has no
+-- size of its own). Rows top to bottom, bit 4 = left column; w = columns. Unknown characters are skipped.
+SCNP_PF = {
+  ["0"] = { 7, 5, 5, 5, 7 }, ["1"] = { 2, 6, 2, 2, 7 }, ["2"] = { 7, 1, 7, 4, 7 }, ["3"] = { 7, 1, 7, 1, 7 },
+  ["4"] = { 5, 5, 7, 1, 1 }, ["5"] = { 7, 4, 7, 1, 7 }, ["6"] = { 7, 4, 7, 5, 7 }, ["7"] = { 7, 1, 1, 2, 2 },
+  ["8"] = { 7, 5, 7, 5, 7 }, ["9"] = { 7, 5, 7, 1, 7 },
+  A = { 2, 5, 7, 5, 5 }, B = { 6, 5, 6, 5, 6 }, C = { 3, 4, 4, 4, 3 }, E = { 7, 4, 6, 4, 7 }, F = { 7, 4, 6, 4, 4 },
+  I = { 7, 2, 2, 2, 7 }, L = { 4, 4, 4, 4, 7 }, N = { 6, 5, 5, 5, 5 }, O = { 7, 5, 5, 5, 7 }, P = { 6, 5, 6, 4, 4 },
+  S = { 3, 4, 2, 1, 6 }, T = { 7, 2, 2, 2, 2 }, U = { 5, 5, 5, 5, 7 },
+  ["%"] = { 5, 1, 2, 4, 5 }, [":"] = { 2, 0, 0, 0, 2, w = 1 }, ["."] = { 0, 0, 0, 0, 2, w = 1 }, [" "] = { 0, 0, 0, 0, 0, w = 2 },
+}
+-- width of a string in dots (1 dot between characters)
+function scnp_pf_w(t)
+  local n = 0
+  for ch in t:upper():gmatch(".") do local g = SCNP_PF[ch]; if g then n = n + (g.w or 3) + 1 end end
+  return math.max(0, n - 1)
+end
+-- draws runs = { {text, colour}, ... } with its top-left at x, y; u = native pixels per dot. A dark rim first, so
+-- it reads on grass and on the white lines alike
+function scnp_pf_draw(x, y, u, runs)
+  for pass = 1, 2 do
+    local cx = x
+    for _, r in ipairs(runs) do
+      for ch in r[1]:upper():gmatch(".") do
+        local g = SCNP_PF[ch]
+        if g then
+          local gw = g.w or 3
+          for row = 1, 5 do
+            local bits = g[row]
+            for col = 0, gw - 1 do
+              local on = (gw == 1) and ((bits & 2) ~= 0) or ((bits >> (gw - 1 - col)) & 1) ~= 0
+              if on then
+                local px, py = cx + col * u, y + (row - 1) * u
+                if pass == 1 then box(px - u * 0.5, py - u * 0.5, px + u * 1.5, py + u * 1.5, 0xff101410)
+                else box(px, py, px + u, py + u, r[2]) end
+              end
+            end
+          end
+          cx = cx + (gw + 1) * u
+        end
+      end
+    end
+  end
+end
 
 local function icon_stick(x, y, c)
   box(x + 1, y + 6, x + 7, y + 7, c)
@@ -1445,17 +1518,18 @@ local function draw_hud()
     box(w / 2 - tw / 2 - 6, HUD_H + 14, w / 2 + tw / 2 + 6, HUD_H + 16 + HUD_TH + 4, 0xd0000000)
     screen:draw_text("center", HUD_H + 16, t, 0xffffd24a, 0)
   end
-  -- the board's "CREDIT:07" at the bottom centre means nothing online (free play keeps it topped up): a band over it,
-  -- with the FT series score in a series and the site's address otherwise (user 2026-10-06). Drawn on the screen
-  -- only - the game itself is untouched, so it changes nothing in the lockstep or a replay
+  -- where the board's "CREDIT:07" was (the ROM patch above blanks it): a small line in the 3x5 dot font, no box
+  -- (user 2026-10-06 band, 2026-10-08 "2번" + smaller) - the FT series score in a series, ball possession, the site's
+  -- address otherwise. Drawn on the screen only - it changes nothing in the lockstep or a replay
   if SCNP_G.credits and mem:read_u8(SCNP_G.credits) > 0 then       -- (not over the black screen before the board shows)
     local h = screen.height or 224
     local x0, x1, y0, y1 = w * 340 / 960, w * 552 / 960, h * 664 / 720, h * 703 / 720
-    box(x0, y0, x1, y1, 0xff60706a)
-    box(x0 + 0.5, y0 + 0.5, x1 - 0.5, y1 - 0.5, 0xff0c1610)
-    local ty = (y0 + y1) / 2 - HUD_TH / 2
-    -- the real width of a string in the UI font (text_w is a rough guess for the top bar's spacing)
-    local function sw(t) local v; pcall(function() v = manager.ui:get_string_width(t) * w end); return v or text_w(t) end
+    local u = h / 240                                                  -- one dot = one board pixel
+    local ty = (y0 + y1) / 2 - 2.5 * u
+    local function line(runs)
+      local t = ""; for _, r in ipairs(runs) do t = t .. r[1] end
+      scnp_pf_draw((x0 + x1) / 2 - scnp_pf_w(t) * u / 2, ty, u, runs)
+    end
     -- ball possession, live (user 2026-10-06): the frames the ball's last toucher (0x1138ae) was a man of each side
     -- while the match clock ticks. The 22 men sit 0xdc apart from 0x111e54, the board's 1P side first (cupsocs2).
     -- Read only, so every screen of the match counts the same; the left number is the HUD's left side (1P)
@@ -1472,24 +1546,14 @@ local function draw_hud()
     local pt = SCNP_POSS.a + SCNP_POSS.b
     if pt >= 120 then
       local pa = math.floor(SCNP_POSS.a * 100 / pt + 0.5)
-      local lab, a, b = "BALL", string.format("%d%%", pa), string.format("%d%%", 100 - pa)
-      local gap = 5 * FS
-      local tx = (x0 + x1) / 2 - (sw(lab) + gap + sw(a) + sw(" : ") + sw(b)) / 2
-      screen:draw_text(tx, ty, lab, 0xff9fd8a8, 0); tx = tx + sw(lab) + gap
-      screen:draw_text(tx, ty, a, pa >= 50 and 0xffffd23f or 0xffffffff, 0); tx = tx + sw(a)
-      screen:draw_text(tx, ty, " : ", 0xffb0b0b0, 0); tx = tx + sw(" : ")
-      screen:draw_text(tx, ty, b, pa <= 50 and 0xffffd23f or 0xffffffff, 0)
+      line({ { "BALL  ", 0xff9fd8a8 }, { string.format("%d%%", pa), pa >= 50 and 0xffffd23f or 0xffffffff },
+             { " : ", 0xffb0b0b0 }, { string.format("%d%%", 100 - pa), pa <= 50 and 0xffffd23f or 0xffffffff } })
     elseif scnp_series then
       local l, r = scnp_series[2], scnp_series[3]
       if scnp_swap then l, r = r, l end
-      local ft, sc = "FT" .. scnp_series[1], string.format("%d : %d", l, r)
-      local gap = 6 * FS
-      local tx = (x0 + x1) / 2 - (sw(ft) + gap + sw(sc)) / 2
-      screen:draw_text(tx, ty, ft, 0xffffd23f, 0)
-      screen:draw_text(tx + sw(ft) + gap, ty, sc, 0xffffffff, 0)
+      line({ { "FT" .. scnp_series[1] .. "  ", 0xffffd23f }, { string.format("%d : %d", l, r), 0xffffffff } })
     else
-      local t = "seibucup.online"
-      screen:draw_text((x0 + x1) / 2 - sw(t) / 2, ty, t, 0xffe1e6e1, 0)
+      line({ { "seibucup.online", 0xffe1e6e1 } })
     end
   end
   -- the input delay this match runs with: faint, in the bottom-left corner (user 2026-09-27)
