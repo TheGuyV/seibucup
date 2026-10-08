@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 16:54","room":20,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,9],"ft":2,"series":"20-261008165402-2","nicks":["Janet","롤롤","",""],"replay":"replays/20261008_165357_Janet_vs_롤롤_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 16:38","room":19,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,10],"nicks":["왕초보","호세뽕","",""],"replay":"replays/20261008_163822_왕초보_vs_호세뽕_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 14:23","room":17,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,3],"nicks":["기수","윤각수2","",""],"replay":"replays/20261008_142353_기수_vs_윤각수2_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 14:15","room":15,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,10],"nicks":["기수","윤각수","",""],"replay":"replays/20261008_141516_기수_vs_윤각수_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 22:21","room":124,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,10],"nicks":["로또영","석이아빠","",""],"replay":"replays/20261001_222110_로또영_vs_석이아빠_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 22:17","room":119,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[9,0],"pk":[8,7],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_221722_플로레알_vs_드래곤타이거_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 22:12","room":120,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[9,3],"ft":2,"series":"120-261001220815-20","nicks":["테일러장군","404page","",""],"replay":"replays/20261001_221240_테일러장군_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 22:10","room":119,"type":"1v1","time":180,"players":2,"score":[4,4],"teams":[7,8],"pk":[4,5],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_221046_플로레알_vs_드래곤타이거_4-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 22:08","room":120,"type":"1v1","time":180,"players":2,"score":[5,2],"teams":[5,7],"ft":2,"series":"120-261001220815-20","nicks":["테일러장군","404page","",""],"replay":"replays/20261001_220815_테일러장군_vs_404page_5-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 22:10","room":119,"type":"1v1","time":180,"players":2,"score":[4,4],"teams":[7,8],"pk":[4,5],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_221046_플로레알_vs_드래곤타이거_4-4_p1.scr","edition":"cupsocs2"}
 ]
