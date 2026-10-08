@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 13:16","room":5,"type":"1v1","time":210,"players":2,"score":[6,2],"teams":[7,8],"ft":3,"series":"5-261008130352-1","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_131645_아무나들어오세요_vs_로또영_6-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 13:11","room":5,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[8,5],"ft":3,"series":"5-261008130352-1","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_131105_아무나들어오세요_vs_로또영_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 13:03","room":5,"type":"1v1","time":210,"players":2,"score":[4,3],"teams":[3,5],"ft":3,"series":"5-261008130352-1","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_130352_아무나들어오세요_vs_로또영_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 00:59","room":10,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,8],"ft":2,"series":"10-261008005943-2","nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_005943_김정은패스_vs_즐축_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-01 22:04","room":119,"type":"1v1","time":180,"players":2,"score":[1,3],"teams":[4,5],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_220400_플로레알_vs_드래곤타이거_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:59","room":118,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,10],"ft":2,"series":"118-261001215628-18","nicks":["404page","테일러장군","",""],"replay":"replays/20261001_215954_404page_vs_테일러장군_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-01 21:59","room":119,"type":"1v1","time":180,"players":2,"score":[2,2],"teams":[9,10],"pk":[3,1],"ft":3,"series":"119-261001215939-19","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261001_215938_플로레알_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 21:56","room":118,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"ft":2,"series":"118-261001215628-18","nicks":["404page","테일러장군","",""],"replay":"replays/20261001_215627_404page_vs_테일러장군_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-01 21:43","room":115,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[5,9],"ft":2,"series":"115-261001213903-17","nicks":["핑크팬더","레온","",""],"replay":"replays/20261001_214312_핑크팬더_vs_레온_0-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-01 21:56","room":118,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"ft":2,"series":"118-261001215628-18","nicks":["404page","테일러장군","",""],"replay":"replays/20261001_215627_404page_vs_테일러장군_0-1_p1.scr","edition":"cupsocs2"}
 ]
