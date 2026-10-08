@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-08 23:58","room":78,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261008_235808_히든_vs_존경_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:54","room":78,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261008_235452_히든_vs_존경_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:54","room":72,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,8],"ft":2,"series":"72-261008235034-16","nicks":["Janet","즐축","",""],"replay":"replays/20261008_235425_Janet_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:50","room":72,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,8],"ft":2,"series":"72-261008235034-16","nicks":["Janet","즐축","",""],"replay":"replays/20261008_235026_Janet_vs_즐축_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-02 23:13","room":170,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":3,"series":"170-261002230454-32","nicks":["Janet","축구황제","",""],"replay":"replays/20261002_231209_Janet_vs_축구황제_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 23:12","room":168,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["둘리","1P","",""],"replay":"replays/20261002_231208_둘리_vs_1P_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-02 23:09","room":170,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,3],"ft":3,"series":"170-261002230454-32","nicks":["Janet","축구황제","",""],"replay":"replays/20261002_230807_Janet_vs_축구황제_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-02 23:08","room":168,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["둘리","1P","",""],"replay":"replays/20261002_230839_둘리_vs_1P_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-02 23:04","room":168,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"nicks":["둘리","1P","",""],"replay":"replays/20261002_230457_둘리_vs_1P_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-02 23:08","room":168,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["둘리","1P","",""],"replay":"replays/20261002_230839_둘리_vs_1P_1-1_p1.scr","edition":"cupsocs2"}
 ]
