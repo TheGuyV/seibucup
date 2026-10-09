@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 22:36","room":276,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"nicks":["왕초보","라울","",""],"replay":"replays/20261009_223648_왕초보_vs_라울_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:35","room":274,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,9],"ft":2,"series":"274-261009223529-67","nicks":["전설의1군","드래곤타이거","",""],"replay":"replays/20261009_223529_전설의1군_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:35","room":272,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"272-261009223044-66","nicks":["소","판순이","",""],"replay":"replays/20261009_223453_소_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:35","room":265,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[4,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_223500_히든_vs_존경_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-06 23:12","room":25,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[10,5],"ft":2,"series":"25-261006225906-9","nicks":["레온","즐축","",""],"replay":"replays/20261006_231255_레온_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 23:09","room":26,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"26-261006230505-10","nicks":["로또영","404page","",""],"replay":"replays/20261006_230956_로또영_vs_404page_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 23:05","room":26,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"26-261006230505-10","nicks":["로또영","404page","",""],"replay":"replays/20261006_230506_로또영_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-06 23:04","room":25,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[9,7],"ft":2,"series":"25-261006225906-9","nicks":["레온","즐축","",""],"replay":"replays/20261006_230456_레온_vs_즐축_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-06 23:03","room":23,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,10],"nicks":["cow","뚱이K","",""],"replay":"replays/20261006_230319_cow_vs_뚱이K_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-06 23:04","room":25,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[9,7],"ft":2,"series":"25-261006225906-9","nicks":["레온","즐축","",""],"replay":"replays/20261006_230456_레온_vs_즐축_3-4_p1.scr","edition":"cupsocs2"}
 ]
