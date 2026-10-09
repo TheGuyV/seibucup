@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 20:11","room":228,"type":"1v1","time":180,"players":2,"score":[1,3],"teams":[5,10],"ft":3,"series":"228-261009201106-47","nicks":["NooB","라울","",""],"replay":"replays/20261009_201105_NooB_vs_라울_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:57","room":210,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"210-261009175353-46","nicks":["404page","Todoroki","",""],"replay":"replays/20261009_175754_404page_vs_Todoroki_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:57","room":212,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"nicks":["SexKing","전설의1군","",""],"replay":"replays/20261009_175717_SexKing_vs_전설의1군_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:54","room":209,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[3,0],"nicks":["princewi","늅늅2","",""],"replay":"replays/20261009_175448_princewi_vs_늅늅2_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-05 21:23","room":66,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,8],"ft":2,"series":"66-261005212305-15","nicks":["내일은축구왕","즐축","",""],"replay":"replays/20261005_212303_내일은축구왕_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:21","room":59,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,4],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_212149_bk49_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:21","room":62,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"62-261005212108-14","nicks":["404page","로또영","",""],"replay":"replays/20261005_212109_404page_vs_로또영_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 21:17","room":59,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_211737_bk49_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 21:15","room":60,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,9],"ft":2,"series":"60-261005210617-13","nicks":["즐축","내일은축구왕","",""],"replay":"replays/20261005_211531_즐축_vs_내일은축구왕_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-05 21:17","room":59,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_211737_bk49_vs_판순이_2-2_p1.scr","edition":"cupsocs2"}
 ]
