@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 10:57","room":120,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,7],"nicks":["들쥐","즐축","",""],"replay":"replays/20261009_105758_들쥐_vs_즐축_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 10:51","room":119,"type":"1v1","time":210,"players":2,"score":[3,1],"teams":[7,8],"ft":3,"series":"119-261009103913-24","nicks":["삼손김주성","들쥐","",""],"replay":"replays/20261009_105145_삼손김주성_vs_들쥐_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 10:46","room":119,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[7,9],"ft":3,"series":"119-261009103913-24","nicks":["삼손김주성","들쥐","",""],"replay":"replays/20261009_104622_삼손김주성_vs_들쥐_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 10:39","room":119,"type":"1v1","time":210,"players":2,"score":[4,0],"teams":[5,9],"ft":3,"series":"119-261009103913-24","nicks":["삼손김주성","들쥐","",""],"replay":"replays/20261009_103914_삼손김주성_vs_들쥐_4-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-03 00:44","room":183,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"ft":3,"series":"183-261003004056-39","nicks":["뚱이K","아트싸커","",""],"replay":"replays/20261003_004453_뚱이K_vs_아트싸커_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:40","room":183,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"ft":3,"series":"183-261003004056-39","nicks":["뚱이K","아트싸커","",""],"replay":"replays/20261003_004056_뚱이K_vs_아트싸커_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 00:35","room":179,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[4,7],"ft":3,"series":"179-261003002429-38","nicks":["로또영","404page","",""],"replay":"replays/20261003_003534_로또영_vs_404page_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 00:31","room":179,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"179-261003002429-38","nicks":["로또영","404page","",""],"replay":"replays/20261003_003156_로또영_vs_404page_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 00:28","room":179,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"179-261003002429-38","nicks":["로또영","404page","",""],"replay":"replays/20261003_002812_로또영_vs_404page_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-03 00:31","room":179,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"179-261003002429-38","nicks":["로또영","404page","",""],"replay":"replays/20261003_003156_로또영_vs_404page_1-2_p1.scr","edition":"cupsocs2"}
 ]
