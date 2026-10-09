@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 21:54","room":254,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"254-261009215028-57","nicks":["Janet","404page","",""],"replay":"replays/20261009_215354_Janet_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:50","room":252,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,9],"ft":3,"series":"252-261009215028-58","nicks":["NooB","드래곤타이거","",""],"replay":"replays/20261009_215027_NooB_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:50","room":254,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,7],"ft":2,"series":"254-261009215028-57","nicks":["Janet","404page","",""],"replay":"replays/20261009_215020_Janet_vs_404page_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:48","room":253,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,10],"ft":2,"series":"253-261009214851-56","nicks":["소","전설의1군","",""],"replay":"replays/20261009_214838_소_vs_전설의1군_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-06 22:07","room":12,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,8],"ft":2,"series":"12-261006220723-2","nicks":["404page","즐축","",""],"replay":"replays/20261006_220723_404page_vs_즐축_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 18:56","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_185625_바트_vs_키아누리브스_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 18:52","room":10,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,10],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_185231_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-06 18:48","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[8,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_184837_바트_vs_키아누리브스_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-06 18:45","room":10,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_184505_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-06 18:48","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[8,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261006_184837_바트_vs_키아누리브스_0-0_p1.scr","edition":"cupsocs2"}
 ]
