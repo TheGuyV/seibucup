@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 00:49","room":319,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"319-261010004905-82","nicks":["로또영","상봉다이아","",""],"replay":"replays/20261010_004907_로또영_vs_상봉다이아_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:44","room":318,"type":"1v1","time":300,"players":2,"score":[2,4],"teams":[0,5],"nicks":["상봉다이아","크리스","",""],"replay":"replays/20261010_004449_상봉다이아_vs_크리스_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:36","room":318,"type":"1v1","time":300,"players":2,"score":[2,5],"teams":[3,8],"nicks":["상봉다이아","크리스","",""],"replay":"replays/20261010_003641_상봉다이아_vs_크리스_2-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:29","room":317,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,8],"nicks":["lucid","즐축","",""],"replay":"replays/20261010_002934_lucid_vs_즐축_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 16:57","room":20,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"20-261008165402-2","nicks":["Janet","롤롤","",""],"replay":"replays/20261008_165747_Janet_vs_롤롤_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 16:54","room":20,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,9],"ft":2,"series":"20-261008165402-2","nicks":["Janet","롤롤","",""],"replay":"replays/20261008_165357_Janet_vs_롤롤_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 16:38","room":19,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,10],"nicks":["왕초보","호세뽕","",""],"replay":"replays/20261008_163822_왕초보_vs_호세뽕_4-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 14:23","room":17,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,3],"nicks":["기수","윤각수2","",""],"replay":"replays/20261008_142353_기수_vs_윤각수2_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 14:15","room":15,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,10],"nicks":["기수","윤각수","",""],"replay":"replays/20261008_141516_기수_vs_윤각수_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 14:23","room":17,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,3],"nicks":["기수","윤각수2","",""],"replay":"replays/20261008_142353_기수_vs_윤각수2_1-2_p1.scr","edition":"cupsocs2"}
 ]
