@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 00:36","room":318,"type":"1v1","time":300,"players":2,"score":[2,5],"teams":[3,8],"nicks":["상봉다이아","크리스","",""],"replay":"replays/20261010_003641_상봉다이아_vs_크리스_2-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:29","room":317,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,8],"nicks":["lucid","즐축","",""],"replay":"replays/20261010_002934_lucid_vs_즐축_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:28","room":318,"type":"1v1","time":60,"players":2,"score":[0,0],"teams":[7,8],"nicks":["상봉다이아","크리스","",""],"replay":"replays/20261010_002807_상봉다이아_vs_크리스_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:26","room":318,"type":"1v1","time":60,"players":2,"score":[0,0],"teams":[3,8],"nicks":["상봉다이아","크리스","",""],"replay":"replays/20261010_002618_상봉다이아_vs_크리스_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 16:38","room":19,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,10],"nicks":["왕초보","호세뽕","",""],"replay":"replays/20261008_163822_왕초보_vs_호세뽕_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 14:23","room":17,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,3],"nicks":["기수","윤각수2","",""],"replay":"replays/20261008_142353_기수_vs_윤각수2_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 14:15","room":15,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,10],"nicks":["기수","윤각수","",""],"replay":"replays/20261008_141516_기수_vs_윤각수_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 14:00","room":14,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"nicks":["기수","윤각수","",""],"replay":"replays/20261008_140040_기수_vs_윤각수_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 13:16","room":5,"type":"1v1","time":210,"players":2,"score":[6,2],"teams":[7,8],"ft":3,"series":"5-261008130352-1","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_131645_아무나들어오세요_vs_로또영_6-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 14:00","room":14,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"nicks":["기수","윤각수","",""],"replay":"replays/20261008_140040_기수_vs_윤각수_1-0_p1.scr","edition":"cupsocs2"}
 ]
