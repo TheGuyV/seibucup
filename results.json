@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 20:55","room":237,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205539_히든_vs_존경_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:52","room":234,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"234-261009205221-50","nicks":["Janet","NooB","",""],"replay":"replays/20261009_205213_Janet_vs_NooB_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:51","room":237,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205134_히든_vs_존경_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:48","room":237,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_204827_히든_vs_존경_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-05 21:44","room":68,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,8],"ft":2,"series":"68-261005214438-17","nicks":["즐축","내일은축구왕","",""],"replay":"replays/20261005_214438_즐축_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:42","room":67,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"67-261005213510-16","nicks":["로또영","판순이","",""],"replay":"replays/20261005_214243_로또영_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:39","room":67,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[5,3],"ft":3,"series":"67-261005213510-16","nicks":["로또영","판순이","",""],"replay":"replays/20261005_213910_로또영_vs_판순이_1-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 21:35","room":67,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":3,"series":"67-261005213510-16","nicks":["로또영","판순이","",""],"replay":"replays/20261005_213512_로또영_vs_판순이_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 21:33","room":66,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[9,8],"ft":2,"series":"66-261005212305-15","nicks":["내일은축구왕","즐축","",""],"replay":"replays/20261005_213305_내일은축구왕_vs_즐축_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-05 21:35","room":67,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":3,"series":"67-261005213510-16","nicks":["로또영","판순이","",""],"replay":"replays/20261005_213512_로또영_vs_판순이_2-1_p1.scr","edition":"cupsocs2"}
 ]
