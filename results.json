@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 15:12","room":142,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_151204_로또영_vs_이재경짱_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:08","room":147,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,9],"nicks":["라울","KingDani","",""],"replay":"replays/20261009_150819_라울_vs_KingDani_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:08","room":142,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_150806_로또영_vs_이재경짱_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:07","room":145,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["lonely","드래곤타이거","",""],"replay":"replays/20261009_150648_lonely_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-03 15:51","room":16,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,9],"ft":3,"series":"16-261003153401-2","nicks":["Janet","내일은축구왕","",""],"replay":"replays/20261003_155128_Janet_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 15:50","room":17,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[5,0],"ft":3,"series":"17-261003153620-3","nicks":["로또영","라마스10","",""],"replay":"replays/20261003_155003_로또영_vs_라마스10_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 15:47","room":16,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"ft":3,"series":"16-261003153401-2","nicks":["Janet","내일은축구왕","",""],"replay":"replays/20261003_154715_Janet_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 15:45","room":17,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":3,"series":"17-261003153620-3","nicks":["로또영","라마스10","",""],"replay":"replays/20261003_154522_로또영_vs_라마스10_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 15:43","room":16,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"ft":3,"series":"16-261003153401-2","nicks":["Janet","내일은축구왕","",""],"replay":"replays/20261003_154332_Janet_vs_내일은축구왕_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-03 15:45","room":17,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":3,"series":"17-261003153620-3","nicks":["로또영","라마스10","",""],"replay":"replays/20261003_154522_로또영_vs_라마스10_2-3_p1.scr","edition":"cupsocs2"}
 ]
