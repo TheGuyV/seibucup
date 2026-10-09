@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 16:01","room":174,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_160118_율무아빠_vs_KingDani_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:57","room":174,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,9],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_155729_율무아빠_vs_KingDani_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:53","room":174,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,4],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_155343_율무아빠_vs_KingDani_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:50","room":174,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,4],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_155002_율무아빠_vs_KingDani_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-03 23:18","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["왕초보","천자인","",""],"replay":"replays/20261003_231803_왕초보_vs_천자인_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:16","room":4,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,10],"ft":3,"series":"4-261003230128-3","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261003_231646_플로레알_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 23:12","room":4,"type":"1v1","time":180,"players":2,"score":[2,2],"teams":[10,5],"pk":[5,3],"ft":3,"series":"4-261003230128-3","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261003_231217_플로레알_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 23:08","room":7,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"nicks":["왕초보","판순이","",""],"replay":"replays/20261003_230823_왕초보_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 23:06","room":4,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[3,7],"pk":[3,1],"ft":3,"series":"4-261003230128-3","nicks":["플로레알","드래곤타이거","",""],"replay":"replays/20261003_230635_플로레알_vs_드래곤타이거_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-03 23:08","room":7,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"nicks":["왕초보","판순이","",""],"replay":"replays/20261003_230823_왕초보_vs_판순이_0-2_p1.scr","edition":"cupsocs2"}
 ]
