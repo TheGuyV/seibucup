@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 15:23","room":153,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[9,0],"nicks":["이재경짱","TEST","",""],"replay":"replays/20261009_152407_이재경짱_vs_TEST_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:21","room":149,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[9,5],"nicks":["KingDani","lonely","",""],"replay":"replays/20261009_152116_KingDani_vs_lonely_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:18","room":150,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"ft":3,"series":"150-261009151410-35","nicks":["싸커킴","TEST","",""],"replay":"replays/20261009_151824_싸커킴_vs_TEST_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:17","room":149,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,10],"nicks":["KingDani","lonely","",""],"replay":"replays/20261009_151727_KingDani_vs_lonely_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-03 20:28","room":38,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[3,8],"nicks":["둘리","석이아빠","",""],"replay":"replays/20261003_202812_둘리_vs_석이아빠_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 19:37","room":31,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"31-261003193137-7","nicks":["404page","32","",""],"replay":"replays/20261003_193721_404page_vs_32_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 19:31","room":31,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,8],"ft":2,"series":"31-261003193137-7","nicks":["404page","32","",""],"replay":"replays/20261003_193137_404page_vs_32_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 16:22","room":19,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,10],"ft":3,"series":"19-261003161516-4","nicks":["로또영","Janet","",""],"replay":"replays/20261003_162227_로또영_vs_Janet_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 16:18","room":19,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"ft":3,"series":"19-261003161516-4","nicks":["로또영","Janet","",""],"replay":"replays/20261003_161856_로또영_vs_Janet_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-03 16:22","room":19,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,10],"ft":3,"series":"19-261003161516-4","nicks":["로또영","Janet","",""],"replay":"replays/20261003_162227_로또영_vs_Janet_0-2_p1.scr","edition":"cupsocs2"}
 ]
