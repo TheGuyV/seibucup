@@ -806,6 +806,13 @@ end
 -- ---------------------------------------------------------------- replay files
 -- Layout: "SCNPRPL2\n" <json meta> "\n" u32 nseg { u32 at, u32 len, state } u32 nframes { 4 bytes per frame }
 local function pct_decode_path(p) return (p:gsub("%%(%x%x)", function(h) return string.char(tonumber(h, 16)) end)) end
+-- Hardening (2026-10-09). Text from outside goes into the replay header (one JSON line) and the RESULT line: names lose
+-- every control character (a newline would break the line) besides \ and ", and the room type is one the relay knows.
+-- A replay file is checked before it is believed: at most 8 MB, 1-64 state segments, each inside the file, and no more
+-- input frames than the bytes left. One global table (the main chunk is at the 200-local limit); nothing here touches the match.
+SCNP_SAFE = { TYPES = { ["1v1"] = true, ["2v2"] = true, pve = true, free = true }, MAX_REPLAY = 8 * 1024 * 1024, MAX_SEG = 64 }
+function SCNP_SAFE.names(s) return (s:gsub("[\x00-\x1f\x7f\\\"]", "")) end
+function SCNP_SAFE.type(t) t = tostring(t or "1v1"); return SCNP_SAFE.TYPES[t] and t or "1v1" end
 local function split_path(p)
   local dir, name = p:match("^(.*)[/\\]([^/\\]+)$")
   if not dir then return ".", p end
@@ -833,19 +840,27 @@ local function replay_read(path)
   local f = emu.file(dir, OPEN_READ)
   local err = f:open(name)
   if err then return nil, tostring(err) end
-  local data = f:read(f:size()); f:close()
+  local size = f:size()
+  if size > SCNP_SAFE.MAX_REPLAY then f:close(); return nil, string.format("replay file too big (%d bytes)", size) end
+  local data = f:read(size) or ""; f:close()
   if data:sub(1, 9) ~= "SCNPRPL2\n" then return nil, "not a replay file" end
   local nlpos = data:find("\n", 10, true)
   if not nlpos then return nil, "bad header" end
   local meta = data:sub(10, nlpos - 1)
   local pos = nlpos + 1
+  if pos + 3 > #data then return nil, "replay file cut short (no segment count)" end
   local nseg = string.unpack("<I4", data, pos); pos = pos + 4
+  if nseg < 1 or nseg > SCNP_SAFE.MAX_SEG then return nil, string.format("bad replay file (%d state segments)", nseg) end
   local segments = {}
   for i = 1, nseg do
+    if pos + 7 > #data then return nil, string.format("replay file cut short (segment %d)", i) end
     local at, len = string.unpack("<I4I4", data, pos); pos = pos + 8
+    if len > #data - pos + 1 then return nil, string.format("bad replay file (segment %d: %d bytes, %d left)", i, len, #data - pos + 1) end
     segments[i] = { at = at, state = data:sub(pos, pos + len - 1) }; pos = pos + len
   end
+  if pos + 3 > #data then return nil, "replay file cut short (no frame count)" end
   local nfr = string.unpack("<I4", data, pos); pos = pos + 4
+  if nfr > (#data - pos + 1) // 4 then return nil, string.format("bad replay file (%d frames, %d bytes left)", nfr, #data - pos + 1) end
   local inputs = {}
   for i = 1, nfr do
     local b1, b2, b3, b4 = data:byte(pos, pos + 3); pos = pos + 4
@@ -922,7 +937,7 @@ local function rec_save(complete)
   end
   rec_written = true
   local dir = pct_decode_path(cfg.replay_dir)
-  local names = pct_decode_path(env("SCNP_NAMES", "")):gsub('[\\"]', "")
+  local names = SCNP_SAFE.names(pct_decode_path(env("SCNP_NAMES", "")))
   local a, b = names:match("^([^,]*),([^,]*)")
   local function fn(x) x = (x or ""):gsub('[\\/:*?"<>|%s]', ""); return x ~= "" and x or "player" end
   local s1, s2 = rec_score()
@@ -933,7 +948,7 @@ local function rec_save(complete)
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
   local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"ball":"%s","devs":"%s"}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, tostring(cfg.teams or "1v1"), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0, SCNP_PAL.BALL and SCNP_PAL.BALLNAME or "white", table.concat(SCNP_DEVR.hist, ";"))
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, SCNP_SAFE.type(cfg.teams), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, SCNP_SEL.on and 1 or 0, table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0, SCNP_PAL.BALL and SCNP_PAL.BALLNAME or "white", table.concat(SCNP_DEVR.hist, ";"))
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
     -- a stray lock (antivirus, a leftover handle): try once more with a unique suffix
@@ -1281,12 +1296,12 @@ function scnp_write_result()
   local rs1, rs2 = rec_score()
   local rt1, rt2 = mem:read_u8(TEAM_LEFT), mem:read_u8(TEAM_RIGHT)
   if scnp_swap then rt1, rt2 = rt2, rt1 end
-  local names = pct_decode(env("SCNP_NAMES", "")):gsub('[\\"]', "")
+  local names = SCNP_SAFE.names(pct_decode(env("SCNP_NAMES", "")))
   local pks = ""
   -- a shoot-out cut off by the cap is left out: level at full time and no "pk" counts for nobody
   if SCNP_PK.state == "done" and not SCNP_PK.cut then local p1, p2 = scnp_pk_seats(); pks = string.format(',"pk":[%d,%d]', p1, p2) end
   log('RESULT {"score":[%d,%d],"teams":[%d,%d],"time":%d,"frames":%d,"players":%d,"type":"%s","names":"%s"%s}',
-      rs1, rs2, rt1, rt2, clock_secs, frame - (clock_start or frame), nplayers, tostring(cfg.teams or "1v1"), names, pks)
+      rs1, rs2, rt1, rt2, clock_secs, frame - (clock_start or frame), nplayers, SCNP_SAFE.type(cfg.teams), names, pks)
 end
 -- The host's live score for the lobby (user 2026-10-02): "LIVE <seat 1's side> <other side> <seconds left> <input delay>"
 -- when the score or the delay changes and every 10 s; the launcher / web page hands it to the relay. The delay is the

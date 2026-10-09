@@ -68,8 +68,10 @@
     else if (age > STALE_S) { state = "down"; ko = "서버 응답 없음"; en = "Server not responding"; }
     else {
       state = "up";
-      ko = "서버 정상 · 접속 " + (d.users || 0) + "명 · 방 " + (d.rooms || 0) + "개" + (d.playing ? " · 경기 중 " + d.playing : "");
-      en = "Server up · " + (d.users || 0) + " online · " + (d.rooms || 0) + " room" + (d.rooms === 1 ? "" : "s") + (d.playing ? " · " + d.playing + " playing" : "");
+      // the gist is data: numbers are forced to numbers before they go into innerHTML (hardening 2026-10-09)
+      var users = Number(d.users) || 0, rooms = Number(d.rooms) || 0, playing = Number(d.playing) || 0;
+      ko = "서버 정상 · 접속 " + users + "명 · 방 " + rooms + "개" + (playing ? " · 경기 중 " + playing : "");
+      en = "Server up · " + users + " online · " + rooms + " room" + (rooms === 1 ? "" : "s") + (playing ? " · " + playing + " playing" : "");
     }
     var at = new Date((d.t || 0) * 1000), hm = ("0" + at.getHours()).slice(-2) + ":" + ("0" + at.getMinutes()).slice(-2);
     el.className = "srv " + state;

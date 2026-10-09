@@ -221,6 +221,9 @@
   .seg button.on:disabled, .nbtn.primary:disabled { color: #fff; background: #2a5fb0; border-color: #2a5fb0; }
   .nbtn.qready { border: 2px solid #c80000; font-weight: 700; animation: qblink .84s steps(1) infinite; }
   @keyframes qblink { 0% { background: #e11414; color: #fff; } 50% { background: #fff; color: #e11414; } }
+  /* 준비: 방의 자리가 모두 차고 내가 아직 안 눌렀으면 깜빡인다 (2026-10-09, "방에 전원이 참여했을때 레디 버튼을 깜빡임으로 강조") */
+  .nbtn.rblink { border: 2px solid #149632; animation: rblink .84s steps(1) infinite; }
+  @keyframes rblink { 0% { background: #149632; color: #fff; } 50% { background: #fff; color: #149632; } }
   @media (prefers-reduced-motion: reduce) { .nbtn.qready { animation: none; background: #e11414; color: #fff; } }
   .net-mid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 14px; padding: 8px 16px 12px; }
   .net-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-height: 34px; margin-bottom: 6px; }
@@ -289,6 +292,7 @@
   .av .skb { position: absolute; top: -7px; right: -8px; min-width: 16px; height: 16px; padding: 0 1px; border-radius: 8px; font-size: 10px; line-height: 16px; text-align: center; font-weight: 700; box-shadow: 0 0 0 1.5px var(--n-panel); }
   .skb.sk-u { background: #791f1f; color: #f7c1c1; } .skb.sk-e { background: #27500a; color: #c0dd97; } .skb.sk-d { background: #0c447c; color: #b5d4f4; } .skb.sk-q { background: #444; color: #bbb; }
   .skw { font-size: 11px; padding: 1px 6px; border-radius: 5px; margin-left: 4px; white-space: nowrap; }
+  .skw.sk-vs { background: #3a3a46; color: #e0e0ea; }
   .skw.sk-u { background: #791f1f; color: #f7c1c1; } .skw.sk-e { background: #27500a; color: #c0dd97; } .skw.sk-d { background: #0c447c; color: #b5d4f4; } .skw.sk-q { background: #333; color: #aaa; }
   .chm { font-size: 10px; } .chm.sk-u { color: #f09595; } .chm.sk-e { color: #97c459; } .chm.sk-d { color: #85b7eb; }      /* 채팅의 실력 표시: 작고 연하게 */
   .rbar { height: 3px; background: #3c3c3c; } .rbar i { display: block; height: 100%; background: var(--n-orange); }
@@ -304,6 +308,7 @@
   .seats { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
   .seats th { text-align: left; font-weight: 400; color: var(--n-mute); padding: 4px 8px; border-bottom: 1px solid #333; position: sticky; top: 0; background: var(--n-panel); }
   .seats td { padding: 3px 8px; }
+  .seats td:nth-child(2) { white-space: nowrap; }     /* 닉네임은 한 줄: 역할 칸에 실력·맞대결 표시가 붙어도 (2026-10-09) */
   .seats tr.me td { color: var(--n-yellow); }
   .seats td.empty { color: #666; }
   .seats .rd { color: var(--n-green); }
@@ -595,8 +600,8 @@
     if (!files.length) return;
     Promise.all(files.map(function (f) { return f.arrayBuffer().then(function (b) { return [f.name.toLowerCase(), b]; }); }))
       .then(function (all) { return tx('readwrite', function (s) { all.forEach(function (x) { s.put(x[1], x[0]); }); }); })
-      .then(loadRoms).then(function () { say(T('롬을 넣었습니다: ', 'ROM added: ') + files.map(function (f) { return f.name; }).join(', ')); })
-      .catch(function (e) { say(T('롬을 저장하지 못했습니다 (브라우저 저장 공간을 확인하세요): ', 'Could not store the ROM (check the browser storage): ') + e); });
+      .then(loadRoms).then(function () { say(T('롬을 넣었습니다: ', 'ROM added: ') + esc(files.map(function (f) { return f.name; }).join(', '))); })
+      .catch(function (e) { say(T('롬을 저장하지 못했습니다 (브라우저 저장 공간을 확인하세요): ', 'Could not store the ROM (check the browser storage): ') + esc(e)); });
   };
   $('btnClear').onclick = function () {
     if (!confirm(T('이 브라우저에 넣어 둔 롬을 지울까요?', 'Remove the ROM stored in this browser?'))) return;
@@ -705,6 +710,7 @@
       try { r.frame.contentWindow.postMessage('quit', location.origin); } catch (e) { fin(); }
     });
     function done() {
+      ftTrace('closed ' + (r ? r.mode : '-') + ' end=' + (net.matchEnded ? 1 : 0));
       // 대기중 게임이 끝났다: 방에 알린다 (경기가 시작돼서 닫힌 것이면 릴레이가 이미 지웠다)
       if (r && r.mode === 'match') {
         if (!net.matchEnded && net.room) {
@@ -877,7 +883,7 @@
       if (dm && net.room && net.room.slot === 1) send('DIAG ' + dm[1].slice(0, 190));
       if (lm && net.room && net.room.slot === 1 && (lm[0] !== net.liveSent || Date.now() - (net.liveAt || 0) >= 10000)) { net.liveSent = lm[0]; net.liveAt = Date.now(); send('LIVE ' + lm[1] + ' ' + lm[2] + ' ' + lm[3] + (lm[4] ? ' ' + lm[4] : '')); }
     }
-    else if (d.type === 'saved') { if (savedWait) savedWait(d.text); }
+    else if (d.type === 'saved') { ftTrace('saved'); if (savedWait) savedWait(d.text); }
     else if (d.type === 'result') onResult(d.text);
     else if (d.type === 'replayfile') {
       res.known = true; res.replay = d.text || null; if (res.list.length && res.sent === 0 && net.room && net.room.slot === 1) reportResults();
@@ -889,9 +895,9 @@
     else if (d.type === 'pad') { logline('gamepad ' + d.text); if (/^connected/.test(d.text)) store.set('web_haspad', '1'); drawPads(); }
     else if (d.type === 'running') { veil(''); focusGame(); say('<b>' + esc(running.label) + '</b> · ' + T('게임 중 — 화면을 누르면 키가 들어갑니다', 'playing — click the screen for keys')); }
     else if (d.type === 'replayDone') say('<b>' + esc(running.label) + '</b> · ' + T('리플레이가 끝났습니다', 'replay finished'));
-    else if (d.type === 'ended') { if (!savedWait) stop().then(function () { say(T('게임이 끝났습니다.', 'The game ended.')); }); }   // 그만하기 중이면 저장이 끝날 때까지 기다린다
+    else if (d.type === 'ended') { ftTrace('ended'); if (!savedWait) stop().then(function () { say(T('게임이 끝났습니다.', 'The game ended.')); }); }   // 그만하기 중이면 저장이 끝날 때까지 기다린다
     else if (d.type === 'error') {
-      logline('ERROR ' + d.text);
+      logline('ERROR ' + d.text); ftTrace('error');
       veil(d.rom ? T('이 롬으로는 이 버전을 실행할 수 없습니다. 원판은 cupsoc.zip, 셀렉션은 cupsocs2.zip 도 필요합니다 (또는 병합 cupsoc.zip).',
                      'This ROM cannot run this version. The original needs cupsoc.zip; Selection also needs cupsocs2.zip (or a merged cupsoc.zip).')
                  : T('게임을 시작하지 못했습니다. 아래 실행 기록을 확인하세요.', 'The game could not start. See the run log below.'), true);
@@ -928,6 +934,12 @@
   var SKILL_SYM = { u: '▲', e: '≈', d: '▼', '?': '?' };
   function skillWord(c) { return c === 'u' ? T('나보다 잘함', 'better than you') : c === 'e' ? T('비슷함', 'about the same') : c === 'd' ? T('나보다 아직 서툼', 'not yet as good') : c === '?' ? T('기록 적음 (새 기기일 수 있음)', 'few matches yet (maybe a new device)') : ''; }
   function skillOf(rid, seat) { var v = (net.skill || {})[rid] || ''; return v.charAt(seat); }
+  // 맞대결 전적 (릴레이 VS, user 2026-10-09 "맞대결 전적 표시 넣어줘"): 그 자리 사람과 나의 승-패-무, 만난 적 없으면 ''
+  function vsWord(rid, seat) {
+    var v = (net.vs || {})[rid + '.' + (seat + 1)]; if (!v) return '';
+    return v[2] > 0 ? T('나와 ' + v[0] + '승 ' + v[1] + '패 ' + v[2] + '무', 'you ' + v[0] + 'W ' + v[1] + 'L ' + v[2] + 'D')
+                    : T('나와 ' + v[0] + '승 ' + v[1] + '패', 'you ' + v[0] + 'W ' + v[1] + 'L');
+  }
   function skillBadge(rid, seat) { var c = skillOf(rid, seat); return SKILL_SYM[c] ? '<span class="skb sk-' + (c === '?' ? 'q' : c) + '" title="' + esc(skillWord(c)) + '">' + SKILL_SYM[c] + '</span>' : ''; }
   // 방 제목 (user 2026-10-02): 한 줄 20자, 비우면 방장 닉네임이 보인다. 릴레이가 한 번 더 거르고 욕설이 있으면 거절한다
   function cleanTitle(v) { return Array.from(String(v || '').replace(/[\u0000-\u001f\u007f|;<>]/g, '').replace(/\s+/g, ' ').trim()).slice(0, 20).join(''); }
@@ -1164,7 +1176,7 @@
       var av = function (k, side) {
         var nick = ri.seats[k];
         if (!nick) return '<span class="av e">+</span>';
-        var sw = skillWord(skillOf(id, k));
+        var sw = [skillWord(skillOf(id, k)), vsWord(id, k)].filter(Boolean).join(' · ');
         return '<span class="av ' + (side ? 'r' : 'l') + '" title="' + esc(nick + (sw ? ' - ' + sw : '')) + '">' + esc(Array.from(nick).slice(0, 2).join('')) + (ri.ready[k] === '1' ? '<span class="ok">✓</span>' : '') + skillBadge(id, k) + '</span>';
       };
       var Ls = ri.pve ? [0, 1, 2, 3].slice(0, Math.max(1, Math.min(4, ri.cap))) : type === '1v1' ? [0] : [0, 2], Rs = ri.pve ? [] : type === '1v1' ? [1] : [1, 3];
@@ -1191,7 +1203,7 @@
   // 접속 종류 아이콘 (user, 2026-09-27): 💻 PC 런처·PC 브라우저, 📶 휴대폰·태블릿 와이파이, 📱 모바일 데이터 또는 알 수 없는 휴대폰, 🌐 웹(아직 모름)
   var KIND = { pc: ['💻', 'PC 런처', 'PC launcher'], wd: ['💻', '웹 (PC 브라우저)', 'web (PC browser)'], ww: ['📶', '웹 (휴대폰, 와이파이)', 'web (phone, Wi-Fi)'],
                wc: ['📱', '웹 (휴대폰, 모바일 데이터)', 'web (phone, mobile data)'], wm: ['📱', '웹 (휴대폰)', 'web (phone)'], w: ['🌐', '웹', 'web'] };
-  function kindIcon(k) { var d = KIND[k]; return d ? '<span class="kind" title="' + esc(T(d[1], d[2])) + '">' + d[0] + '</span> ' : ''; }
+  function kindIcon(k) { var d = Object.prototype.hasOwnProperty.call(KIND, k) && KIND[k]; return d ?'<span class="kind" title="' + esc(T(d[1], d[2])) + '">' + d[0] + '</span> ' : ''; }
   function kindText(k) { var d = KIND[k]; return d ? d[0] + ' ' : ''; }
   // 이 브라우저의 연결: 안드로이드 크롬만 와이파이/모바일 데이터를 알려 준다 (아이폰·PC 브라우저는 알려 주지 않는다)
   function myKind() {
@@ -1208,7 +1220,7 @@
     for (var i = 0; i < Math.max(2, Math.min(4, cap || 2)); i++) {
       var nm = names[i] || '';
       rows += '<tr class="' + (i + 1 === mySlot ? 'me' : '') + '"><td>' + (i + 1) + 'P</td>' +
-        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i === 0 ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + (function () { var c = skillOf(rid, i); return SKILL_SYM[c] ? '<span class="skw sk-' + (c === '?' ? 'q' : c) + '">' + SKILL_SYM[c] + ' ' + esc(skillWord(c)) + '</span>' : ''; })() + '</td>'
+        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i === 0 ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + (function () { var c = skillOf(rid, i); return SKILL_SYM[c] ? '<span class="skw sk-' + (c === '?' ? 'q' : c) + '">' + SKILL_SYM[c] + ' ' + esc(skillWord(c)) + '</span>' : ''; })() + (vsWord(rid, i) ? '<span class="skw sk-vs">' + esc(vsWord(rid, i)) + '</span>' : '') + '</td>'
             : '<td class="empty">' + T('(비어 있음)', '(empty)') + '</td><td></td><td></td>') + '</tr>';
     }
     (specs || []).forEach(function (s, k) { if (s) rows += '<tr><td>' + T('관전', 'watch') + '</td><td>' + esc(s) + '</td><td></td><td>' + T('관전자', 'spectator') + '</td></tr>'; });
@@ -1261,6 +1273,7 @@
     $('btnReady').disabled = !!alone || inMatch || !!(r && r.over);
     $('btnReady').title = alone ? T('상대가 들어오면 준비할 수 있습니다', 'You can get ready once somebody joins') : '';
     if (r && r.slot <= 4) $('btnReady').textContent = r.ready[r.slot - 1] ? T('준비 취소', 'Cancel ready') : T('준비', 'Ready');
+    $('btnReady').classList.toggle('rblink', !!(r && r.slot <= 4 && !playing && !$('btnReady').disabled && r.state === 'waiting' && count >= (r.cap || 2) && !r.ready[r.slot - 1]));
     // 방 나가기: 경기 중에는 못 한다 (그만하기 = 경기를 끝내고 나감)
     $('btnLeave').hidden = !r; $('btnLeave').disabled = playing || inMatch;
     $('btnLeave').title = playing || inMatch ? T('경기 중에는 나갈 수 없습니다 - 게임 화면의 그만하기를 쓰세요', 'Not during a match - use Stop on the game screen') : '';
@@ -1342,6 +1355,11 @@
       arg.split(';').forEach(function (p) { var c = p.indexOf(':'); if (c > 0) net.skill[p.slice(0, c)] = p.slice(c + 1); });
       drawTiles(); drawSeats();
     }
+    else if (cmd === 'VS') {             // VS 방.자리=승-패-무 ... - 내가 만나 본 자리 사람과의 전적 (릴레이 2026-10-09)
+      var vs = {};
+      arg.split(' ').forEach(function (p) { var m = /^(\d+)\.([1-4])=(\d+)-(\d+)-(\d+)$/.exec(p); if (m) vs[m[1] + '.' + m[2]] = [+m[3], +m[4], +m[5]]; });
+      if (JSON.stringify(vs) !== JSON.stringify(net.vs || {})) { net.vs = vs; drawTiles(); drawSeats(); }
+    }
     else if (cmd === 'ROOMWHO') {
       // ROOMWHO <id> <state> <type> <nicks,,,> <specs> <builds,,,> <version> <time> <maxping> <locked> <capacity>
       var w = arg.split(' ');
@@ -1384,6 +1402,7 @@
         if (running && running.mode === 'match') stop(true);
       } else {
         net.ftAnnounce = true;
+        if (net.room && net.room.ft > 1 && !net.room.over && net.room.slot >= 1 && net.room.slot <= 4) ftGuardStart();
         if (running && running.mode === 'match') {
           var wait = net.pkEnded ? 0 : 3;                                // 승부차기는 그 결과를 이미 보여 줬다: 바로 닫는다 (보통은 3초, user 2026-09-28: 5초였다)
           if (wait) sys('room', T('경기 종료 - 결과가 기록되었습니다. ' + wait + '초 뒤 게임을 닫고 방으로 돌아갑니다.', 'Full time - the result is recorded. The game closes in ' + wait + ' seconds; you stay in the room.'));
@@ -1482,6 +1501,8 @@
                  edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2),
                  kinds: (f[18] || ',,,').split(','), tie: f[19] === 'gg' ? 'gg' : 'pk', teams: f[20] === 'random' ? 'random' : 'pick', title: unescTitle(f[21]) };
     var r = net.room;
+    if (net.ftTraceOn && (!was || was.state !== r.state || was.ready[r.slot - 1] !== r.ready[r.slot - 1])) ftTrace('room ' + r.state + (r.ready[r.slot - 1] ? ' R' : ''));
+    if (net.ftTraceOn && !net.ftWaitAt && r.state === 'waiting') net.ftWaitAt = Date.now();   // FT 안전장치: 경기 뒤 대기로 돌아온 방 정보
     if (!was) chime('me');
     else if (r.id === was.id) {
       var arrived = names.filter(function (nm, i) { return nm && was.names.indexOf(nm) < 0 && i + 1 !== r.slot; });
@@ -1497,7 +1518,7 @@
       $('pveMenu').hidden = true;
     }
     if (net.ftAnnounce && r.state === 'waiting') {
-      net.ftAnnounce = false;
+      net.ftAnnounce = false; ftTrace('announce');
       if (net.seriesEnded) net.seriesEnded = false;                     // SERIES said it all
       else if (r.ft > 1 && r.slot >= 1 && r.slot <= 4 && !r.over) {
         sys('room', T('FT' + r.ft + ' 진행 중 - ' + sideName(0) + ' ' + r.wa + ' : ' + r.wb + ' ' + sideName(1) + '. 게임 창이 닫히면 준비가 자동으로 눌리고, 모두 준비되면 다음 경기가 바로 시작됩니다.',
@@ -1527,9 +1548,40 @@
     return (side === 0 ? [nm[0], nm[2]] : [nm[1], nm[3]]).filter(Boolean).join('+');
   }
   function autoReadyIfClosed() {
+    ftTrace('auto ' + (!net.ftAutoReady ? 'off' : (running && running.mode === 'match') ? 'wait' : 'go'));
     if (!net.ftAutoReady || (running && running.mode === 'match')) return;
     net.ftAutoReady = false;
     var r = net.room; if (r && r.slot >= 1 && r.slot <= 4 && !r.ready[r.slot - 1]) send('READY 1');
+  }
+  // FT 연속 경기 안전장치 (user 2026-10-09 "안전장치도 넣어줘"): 소 님의 FT2 방 셋에서 1경기 뒤 웹의 자동 준비가 눌리지 않아
+  // 2경기가 시작되지 않았다 (테스트로는 재현되지 않음). 경기가 끝나고 방이 대기로 돌아온 뒤 8초가 지나도 내 자리가 준비가 아니면,
+  // 남은 게임 창을 닫고 준비를 대신 누른다 - 경기마다 한 번, 내 준비가 한 번이라도 눌렸으면(사람이 취소했어도) 하지 않는다.
+  // 그때 본 것(메시지 순서)을 서버 로그에 한 줄 남긴다 (DIAG ftready)
+  var ftg = null;
+  function ftTrace(t) {
+    if (!net.ftTraceOn) return;
+    net.ftTrace.push(((Date.now() - net.ftTraceAt) / 1000).toFixed(1) + 's ' + t); if (net.ftTrace.length > 24) net.ftTrace.shift();
+  }
+  function ftGuardStart() {
+    clearInterval(ftg); net.ftTraceOn = true; net.ftTraceAt = Date.now(); net.ftTrace = []; net.ftWaitAt = 0; ftTrace('matchend run=' + (running ? running.mode : '-'));
+    var t0 = Date.now();
+    ftg = setInterval(function () {
+      var r = net.room, end = function () { clearInterval(ftg); ftg = null; net.ftTraceOn = false; };
+      if (!r || r.slot < 1 || r.slot > 4 || r.ft <= 1 || r.over || Date.now() - t0 > 90000) return end();
+      // 경기 중의 방 정보는 경기 전 것 그대로다 (START 뒤 ROOMINFO 가 오지 않으면 '대기, 준비됨'): 경기가 끝나고
+      // 릴레이가 방을 대기로 돌린 ROOMINFO 가 실제로 온 뒤부터 센다 (onRoomInfo 가 net.ftWaitAt 을 찍는다)
+      if (!net.ftWaitAt) return;                                         // 아직 게임을 닫는 중
+      if (r.state !== 'waiting') return end();                           // 다음 경기가 이미 시작됐다
+      if (r.ready[r.slot - 1]) return end();                             // 눌렸다 (자동이든 사람이든)
+      if (Date.now() - net.ftWaitAt < 8000) return;
+      end();
+      var why = 'ftready missed: run=' + (running ? running.mode : '-') + ' auto=' + (net.ftAutoReady ? 1 : 0) + ' ann=' + (net.ftAnnounce ? 1 : 0) + ' closing=' + (savedWait ? 1 : 0) + ' | ' + net.ftTrace.join(', ');
+      logline(why); send('DIAG ' + why.slice(0, 190));
+      sys('room', T('다음 경기 준비가 자동으로 눌리지 않아 대신 눌렀습니다.', 'Ready for the next match was not pressed by itself - pressed it for you.'));
+      var press = function () { var q = net.room; if (q && q.state === 'waiting' && !q.over && q.slot >= 1 && q.slot <= 4 && !q.ready[q.slot - 1]) send('READY 1'); };
+      if (running && running.mode === 'match') { if (savedWait) { savedWait(''); press(); } else stop(true).then(press); }
+      else press();
+    }, 1000);
   }
   // 방장의 결과 보고 (PC 런처의 WatchResult/ReportResult): netplay 가 RESULT 줄을 쓰면 녹화(REPLAY 줄)를 조금 기다렸다가
   // 공개 방이면 녹화를 RPL 로 올리고, RESULT 를 보낸다. 게임이 열려 있는 동안 보낸다 (닫히면 릴레이가 방을 정리한다)
@@ -1811,10 +1863,11 @@
   }
   function drawRepMine() {
     var rows = REP.mine.map(function (x, i) {
-      var m = x.meta || {}, sc = m.score || [0, 0];
+      // the replay header is data from a file (kept in IndexedDB): numbers are forced to numbers, text is escaped (hardening 2026-10-09)
+      var m = x.meta || {}, sc = Array.isArray(m.score) ? m.score : [0, 0], frames = Math.max(0, Number(m.frames) || 0);
       var note = (m.complete === false ? T('중단됨', 'unfinished') : '') + (m.build && m.build !== WEB_BUILD ? (m.complete === false ? ', ' : '') + T('다른 빌드', 'other build') : '');
-      return '<tr data-i="' + i + '" class="' + (i === REP.selMine ? 'sel' : '') + '"><td>' + esc(String(m.date || '').slice(5)) + '</td><td>' + esc(repMatch(m)) + '</td><td>' + sc[0] + ' - ' + sc[1] +
-             '</td><td>' + mmss(Math.round((m.frames || 0) / 60)) + '</td><td>' + esc(note) + '</td></tr>';
+      return '<tr data-i="' + i + '" class="' + (i === REP.selMine ? 'sel' : '') + '"><td>' + esc(String(m.date || '').slice(5)) + '</td><td>' + esc(repMatch(m)) + '</td><td>' + (Number(sc[0]) || 0) + ' - ' + (Number(sc[1]) || 0) +
+             '</td><td>' + esc(mmss(Math.round(frames / 60))) + '</td><td>' + esc(note) + '</td></tr>';
     }).join('');
     $('repMineRows').innerHTML = rows || '<tr><td colspan="5" class="empty">' + esc(T('아직 녹화된 경기가 없습니다 - 먼저 한 판 하세요.', 'No recordings yet - play a match first.')) + '</td></tr>';
     var on = REP.selMine >= 0; $('repPlay').disabled = !on; $('repSave').disabled = !on; $('repDel').disabled = !on;
