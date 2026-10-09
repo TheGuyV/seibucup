@@ -70,7 +70,7 @@
       "size": 4620
     },
     {
-      "path": "mame/filters.zip",
+      "path": "netplay/filters.zip",
       "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.24/filters.zip",
       "sha256": "2c082d138d9fa8f42f3181a6a5048fb3b1409f0493eea3c88a6e9174ebdd1f49",
       "size": 520270
