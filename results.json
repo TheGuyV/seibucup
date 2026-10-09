@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 16:25","room":186,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,0],"nicks":["KingDani","전설의1군","",""],"replay":"replays/20261009_162511_KingDani_vs_전설의1군_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:21","room":184,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[9,5],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_162133_율무아빠_vs_NooB_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:17","room":184,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_161731_율무아빠_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:13","room":184,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_161330_율무아빠_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-04 17:56","room":2,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,10],"ft":2,"series":"2-261004175603-1","nicks":["멸치","샤마2","",""],"replay":"replays/20261004_175604_멸치_vs_샤마2_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-04 14:48","room":3,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,10],"ft":2,"series":"3-261004144819-1","nicks":["멸치","샤마2","",""],"replay":"replays/20261004_144819_멸치_vs_샤마2_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-04 01:42","room":16,"type":"1v1","time":210,"players":2,"score":[4,3],"teams":[9,0],"ft":3,"series":"16-261004014248-5","nicks":["5","축구황제","",""],"replay":"replays/20261004_014248_5_vs_축구황제_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 23:34","room":13,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[7,10],"ft":2,"series":"13-261003232505-4","nicks":["레온","Janet","",""],"replay":"replays/20261003_233445_레온_vs_Janet_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 23:29","room":13,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[7,10],"ft":2,"series":"13-261003232505-4","nicks":["레온","Janet","",""],"replay":"replays/20261003_232948_레온_vs_Janet_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-03 23:34","room":13,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[7,10],"ft":2,"series":"13-261003232505-4","nicks":["레온","Janet","",""],"replay":"replays/20261003_233445_레온_vs_Janet_3-4_p1.scr","edition":"cupsocs2"}
 ]
