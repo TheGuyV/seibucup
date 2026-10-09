@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 15:39","room":164,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"nicks":["hyewon","KingDani","",""],"replay":"replays/20261009_153957_hyewon_vs_KingDani_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:39","room":162,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["이재경짱","율무아빠","",""],"replay":"replays/20261009_153916_이재경짱_vs_율무아빠_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:34","room":161,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,5],"ft":2,"series":"161-261009152604-36","nicks":["KingDani","오버데쓰","",""],"replay":"replays/20261009_153452_KingDani_vs_오버데쓰_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:27","room":153,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["이재경짱","TEST","",""],"replay":"replays/20261009_152800_이재경짱_vs_TEST_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-03 22:46","room":3,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,3],"ft":2,"series":"3-261003224628-2","nicks":["1P","판순이","",""],"replay":"replays/20261003_224627_1P_vs_판순이_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 22:33","room":2,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,3],"ft":2,"series":"2-261003222923-1","nicks":["1P","판순이","",""],"replay":"replays/20261003_223300_1P_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 22:29","room":2,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,3],"ft":2,"series":"2-261003222923-1","nicks":["1P","판순이","",""],"replay":"replays/20261003_222922_1P_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 20:59","room":40,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"40-261003205526-8","nicks":["404page","MrKei","",""],"replay":"replays/20261003_205935_404page_vs_MrKei_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 20:55","room":40,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,5],"ft":2,"series":"40-261003205526-8","nicks":["404page","MrKei","",""],"replay":"replays/20261003_205525_404page_vs_MrKei_3-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-03 20:59","room":40,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"40-261003205526-8","nicks":["404page","MrKei","",""],"replay":"replays/20261003_205935_404page_vs_MrKei_3-2_p1.scr","edition":"cupsocs2"}
 ]
