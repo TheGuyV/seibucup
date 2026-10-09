@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 14:38","room":134,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,4],"ft":3,"series":"134-261009142738-31","nicks":["드래곤타이거","404page","",""],"replay":"replays/20261009_143853_드래곤타이거_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 14:36","room":135,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"ft":3,"series":"135-261009143128-32","nicks":["로또영","KingDani","",""],"replay":"replays/20261009_143659_로또영_vs_KingDani_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 14:32","room":134,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,7],"ft":3,"series":"134-261009142738-31","nicks":["드래곤타이거","404page","",""],"replay":"replays/20261009_143222_드래곤타이거_vs_404page_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 14:31","room":135,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"135-261009143128-32","nicks":["로또영","KingDani","",""],"replay":"replays/20261009_143130_로또영_vs_KingDani_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-03 15:21","room":14,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"14-261003152150-1","nicks":["로또영","내일은축구왕","",""],"replay":"replays/20261003_152148_로또영_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 13:43","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,9],"nicks":["princewi","샤마2","",""],"replay":"replays/20261003_134344_princewi_vs_샤마2_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-03 13:40","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"nicks":["princewi","샤마2","",""],"replay":"replays/20261003_134002_princewi_vs_샤마2_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 13:35","room":10,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20261003_133551_princewi_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-03 13:31","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20261003_133116_princewi_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-03 13:35","room":10,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"nicks":["princewi","드래곤타이거","",""],"replay":"replays/20261003_133551_princewi_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"}
 ]
