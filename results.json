@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 23:40","room":308,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"308-261009234004-79","nicks":["로또영","전설의1군","",""],"replay":"replays/20261009_234007_로또영_vs_전설의1군_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:38","room":307,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"307-261009233851-78","nicks":["Janet","익산킹존슨","",""],"replay":"replays/20261009_233843_Janet_vs_익산킹존슨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:35","room":306,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[9,10],"nicks":["Shaq","전설의1군","",""],"replay":"replays/20261009_233544_Shaq_vs_전설의1군_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:34","room":303,"type":"1v1","time":150,"players":2,"score":[7,0],"teams":[10,7],"ft":2,"series":"303-261009233437-77","nicks":["Janet","dvdp","",""],"replay":"replays/20261009_233428_Janet_vs_dvdp_7-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-07 21:15","room":103,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"103-261007211125-27","nicks":["로또영","가이로이드","",""],"replay":"replays/20261007_211525_로또영_vs_가이로이드_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 21:11","room":103,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,0],"ft":3,"series":"103-261007211125-27","nicks":["로또영","가이로이드","",""],"replay":"replays/20261007_211126_로또영_vs_가이로이드_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 21:00","room":100,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"ft":3,"series":"100-261007205244-26","nicks":["로또영","boreum","",""],"replay":"replays/20261007_210015_로또영_vs_boreum_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 20:56","room":100,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,3],"ft":3,"series":"100-261007205244-26","nicks":["로또영","boreum","",""],"replay":"replays/20261007_205621_로또영_vs_boreum_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 20:52","room":100,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"100-261007205244-26","nicks":["로또영","boreum","",""],"replay":"replays/20261007_205245_로또영_vs_boreum_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-07 20:56","room":100,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,3],"ft":3,"series":"100-261007205244-26","nicks":["로또영","boreum","",""],"replay":"replays/20261007_205621_로또영_vs_boreum_2-0_p1.scr","edition":"cupsocs2"}
 ]
