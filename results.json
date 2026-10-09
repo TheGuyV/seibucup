@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 22:49","room":283,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"nicks":["로또영","슬블","",""],"replay":"replays/20261009_224925_로또영_vs_슬블_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:47","room":282,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":2,"series":"282-261009224753-69","nicks":["소","코바오락실","",""],"replay":"replays/20261009_224740_소_vs_코바오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:42","room":277,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"277-261009223811-68","nicks":["Janet","777","",""],"replay":"replays/20261009_224157_Janet_vs_777_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:40","room":274,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[10,5],"ft":2,"series":"274-261009223529-67","nicks":["전설의1군","드래곤타이거","",""],"replay":"replays/20261009_224010_전설의1군_vs_드래곤타이거_0-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-07 00:12","room":39,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_001207_로또영_vs_김정은패스_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 00:10","room":37,"type":"1v1","time":150,"players":2,"score":[6,1],"teams":[10,7],"ft":2,"series":"37-261007000552-13","nicks":["Janet","cow","",""],"replay":"replays/20261007_001014_Janet_vs_cow_6-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 00:05","room":37,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,7],"ft":2,"series":"37-261007000552-13","nicks":["Janet","cow","",""],"replay":"replays/20261007_000548_Janet_vs_cow_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 00:01","room":35,"type":"1v1","time":270,"players":2,"score":[6,6],"teams":[8,7],"pk":[4,2],"ft":2,"series":"35-261007000147-12","nicks":["김정은패스","404page","",""],"replay":"replays/20261007_000147_김정은패스_vs_404page_6-6_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-06 23:21","room":27,"type":"1v1","time":180,"players":2,"score":[0,1],"teams":[5,8],"ft":2,"series":"27-261006231726-11","nicks":["뚱이K","cow","",""],"replay":"replays/20261006_232127_뚱이K_vs_cow_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-07 00:01","room":35,"type":"1v1","time":270,"players":2,"score":[6,6],"teams":[8,7],"pk":[4,2],"ft":2,"series":"35-261007000147-12","nicks":["김정은패스","404page","",""],"replay":"replays/20261007_000147_김정은패스_vs_404page_6-6_p1.scr","edition":"cupsocs2"}
 ]
