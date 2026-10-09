@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 23:56","room":310,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["Shaq","로또영","",""],"replay":"replays/20261009_235628_Shaq_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:52","room":310,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["Shaq","로또영","",""],"replay":"replays/20261009_235204_Shaq_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:48","room":308,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"ft":3,"series":"308-261009234004-79","nicks":["로또영","전설의1군","",""],"replay":"replays/20261009_234808_로또영_vs_전설의1군_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:47","room":305,"type":"2v2","time":210,"players":4,"score":[4,3],"teams":[7,8],"ft":2,"series":"305-261009234053-80","nicks":["판순이","드래곤타이거","즐축","주물러"],"replay":"replays/20261009_234737_판순이_vs_즐축_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-07 22:33","room":112,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"112-261007222216-30","nicks":["로또영","즐축","",""],"replay":"replays/20261007_223310_로또영_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 22:29","room":112,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"112-261007222216-30","nicks":["로또영","즐축","",""],"replay":"replays/20261007_222920_로또영_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 22:25","room":112,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"ft":3,"series":"112-261007222216-30","nicks":["로또영","즐축","",""],"replay":"replays/20261007_222542_로또영_vs_즐축_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 22:22","room":112,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"112-261007222216-30","nicks":["로또영","즐축","",""],"replay":"replays/20261007_222216_로또영_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 22:00","room":107,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":3,"series":"107-261007215338-29","nicks":["우기부기","로또영","",""],"replay":"replays/20261007_220049_우기부기_vs_로또영_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-07 22:22","room":112,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"112-261007222216-30","nicks":["로또영","즐축","",""],"replay":"replays/20261007_222216_로또영_vs_즐축_0-1_p1.scr","edition":"cupsocs2"}
 ]
