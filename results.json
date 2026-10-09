@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 16:52","room":184,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,10],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_165241_율무아빠_vs_NooB_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:51","room":192,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,0],"ft":2,"series":"192-261009164621-39","nicks":["404page","전설의1군","",""],"replay":"replays/20261009_165059_404page_vs_전설의1군_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:50","room":193,"type":"1v1","time":300,"players":2,"score":[4,3],"teams":[9,10],"ft":3,"series":"193-261009165034-40","nicks":["이재경짱","바트","",""],"replay":"replays/20261009_165044_이재경짱_vs_바트_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:48","room":184,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,7],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_164828_율무아빠_vs_NooB_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-05 13:32","room":25,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,8],"pk":[3,1],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_133322_청라대장_vs_5_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 13:27","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,8],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_132810_청라대장_vs_5_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 13:23","room":25,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"pk":[4,3],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_132355_청라대장_vs_5_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 13:18","room":25,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,4],"pk":[4,1],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_131901_청라대장_vs_5_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 12:28","room":23,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[9,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261005_122812_바트_vs_키아누리브스_5-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-05 13:18","room":25,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,4],"pk":[4,1],"ft":5,"series":"25-261005131832-4","nicks":["청라대장","5","",""],"replay":"replays/20261005_131901_청라대장_vs_5_2-2_p1.scr","edition":"cupsocs2"}
 ]
