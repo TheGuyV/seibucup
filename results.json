@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 22:53","room":283,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"283-261009225342-72","nicks":["로또영","슬블","",""],"replay":"replays/20261009_225345_로또영_vs_슬블_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:53","room":285,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"285-261009225333-71","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261009_225333_드래곤타이거_vs_판순이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:53","room":284,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"284-261009225332-70","nicks":["전설의1군","NooB","",""],"replay":"replays/20261009_225332_전설의1군_vs_NooB_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:51","room":282,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"282-261009224753-69","nicks":["소","코바오락실","",""],"replay":"replays/20261009_225131_소_vs_코바오락실_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-07 00:28","room":39,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_002834_로또영_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 00:23","room":39,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_002332_로또영_vs_김정은패스_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 00:19","room":39,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_001925_로또영_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 00:15","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_001522_로또영_vs_김정은패스_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 00:12","room":39,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_001207_로또영_vs_김정은패스_2-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-07 00:15","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,7],"ft":3,"series":"39-261007001206-14","nicks":["로또영","김정은패스","",""],"replay":"replays/20261007_001522_로또영_vs_김정은패스_0-1_p1.scr","edition":"cupsocs2"}
 ]
