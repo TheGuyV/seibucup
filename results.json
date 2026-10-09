@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 21:40","room":251,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,10],"ft":2,"series":"251-261009214041-55","nicks":["소","전설의1군","",""],"replay":"replays/20261009_214028_소_vs_전설의1군_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:38","room":249,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"249-261009213515-53","nicks":["404page","NooB","",""],"replay":"replays/20261009_213844_404page_vs_NooB_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:35","room":250,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,10],"ft":2,"series":"250-261009213533-54","nicks":["소","전설의1군","",""],"replay":"replays/20261009_213520_소_vs_전설의1군_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:35","room":249,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"249-261009213515-53","nicks":["404page","NooB","",""],"replay":"replays/20261009_213514_404page_vs_NooB_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-06 13:37","room":5,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"5-261006132957-1","nicks":["로또영","삼손김주성","",""],"replay":"replays/20261006_133711_로또영_vs_삼손김주성_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 13:33","room":5,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"ft":3,"series":"5-261006132957-1","nicks":["로또영","삼손김주성","",""],"replay":"replays/20261006_133332_로또영_vs_삼손김주성_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 13:29","room":5,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[9,5],"ft":3,"series":"5-261006132957-1","nicks":["로또영","삼손김주성","",""],"replay":"replays/20261006_132957_로또영_vs_삼손김주성_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 22:58","room":75,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[9,0],"ft":2,"series":"75-261005224848-20","nicks":["내일은축구왕","라마스10","",""],"replay":"replays/20261005_225856_내일은축구왕_vs_라마스10_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 22:53","room":75,"type":"1v1","time":180,"players":2,"score":[3,5],"teams":[8,7],"ft":2,"series":"75-261005224848-20","nicks":["내일은축구왕","라마스10","",""],"replay":"replays/20261005_225351_내일은축구왕_vs_라마스10_3-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-05 22:58","room":75,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[9,0],"ft":2,"series":"75-261005224848-20","nicks":["내일은축구왕","라마스10","",""],"replay":"replays/20261005_225856_내일은축구왕_vs_라마스10_2-3_p1.scr","edition":"cupsocs2"}
 ]
