@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 22:11","room":262,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,10],"ft":2,"series":"262-261009221135-64","nicks":["소","드래곤타이거","",""],"replay":"replays/20261009_221123_소_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:09","room":261,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"ft":2,"series":"261-261009220924-63","nicks":["판순이","NooB","",""],"replay":"replays/20261009_220923_판순이_vs_NooB_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:07","room":259,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":2,"series":"259-261009220338-61","nicks":["Janet","전설의1군","",""],"replay":"replays/20261009_220736_Janet_vs_전설의1군_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:05","room":260,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,9],"ft":2,"series":"260-261009220546-62","nicks":["소","드래곤타이거","",""],"replay":"replays/20261009_220533_소_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-06 22:37","room":13,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,0],"nicks":["princewi","내일은축구왕","",""],"replay":"replays/20261006_223743_princewi_vs_내일은축구왕_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:35","room":16,"type":"1v1","time":180,"players":2,"score":[3,6],"teams":[10,5],"ft":2,"series":"16-261006222953-3","nicks":["뚱이K","드래곤타이거","",""],"replay":"replays/20261006_223512_뚱이K_vs_드래곤타이거_3-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-06 22:33","room":17,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,8],"ft":2,"series":"17-261006223009-4","nicks":["404page","cow","",""],"replay":"replays/20261006_223358_404page_vs_cow_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-06 22:33","room":13,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"nicks":["princewi","내일은축구왕","",""],"replay":"replays/20261006_223358_princewi_vs_내일은축구왕_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-06 22:30","room":17,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"ft":2,"series":"17-261006223009-4","nicks":["404page","cow","",""],"replay":"replays/20261006_223008_404page_vs_cow_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-06 22:33","room":13,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"nicks":["princewi","내일은축구왕","",""],"replay":"replays/20261006_223358_princewi_vs_내일은축구왕_2-3_p1.scr","edition":"cupsocs2"}
 ]
