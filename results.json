@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 16:35","room":187,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"ft":2,"series":"187-261009163547-38","nicks":["소","KingDani","",""],"replay":"replays/20261009_163544_소_vs_KingDani_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:32","room":182,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[7,0],"nicks":["noa","성내동펠레4","",""],"replay":"replays/20261009_163259_noa_vs_성내동펠레4_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:32","room":184,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,4],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_163244_율무아빠_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:30","room":186,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["KingDani","전설의1군","",""],"replay":"replays/20261009_163050_KingDani_vs_전설의1군_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-05 10:52","room":18,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"18-261005104427-3","nicks":["로또영","즐축","",""],"replay":"replays/20261005_105251_로또영_vs_즐축_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 10:48","room":18,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"18-261005104427-3","nicks":["로또영","즐축","",""],"replay":"replays/20261005_104824_로또영_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 10:44","room":18,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"18-261005104427-3","nicks":["로또영","즐축","",""],"replay":"replays/20261005_104429_로또영_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-04 20:05","room":7,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"7-261004200137-2","nicks":["레온","내일은축구왕","",""],"replay":"replays/20261004_200603_레온_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-04 20:01","room":7,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[9,10],"ft":2,"series":"7-261004200137-2","nicks":["레온","내일은축구왕","",""],"replay":"replays/20261004_200141_레온_vs_내일은축구왕_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-04 20:05","room":7,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"7-261004200137-2","nicks":["레온","내일은축구왕","",""],"replay":"replays/20261004_200603_레온_vs_내일은축구왕_2-1_p1.scr","edition":"cupsocs2"}
 ]
