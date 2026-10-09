@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 17:43","room":205,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["호세뽕","늅늅2","",""],"replay":"replays/20261009_174337_호세뽕_vs_늅늅2_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:41","room":206,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"ft":3,"series":"206-261009174150-45","nicks":["판순이","율무아빠","",""],"replay":"replays/20261009_174148_판순이_vs_율무아빠_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:37","room":204,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,0],"ft":2,"series":"204-261009173107-43","nicks":["소","NooB","",""],"replay":"replays/20261009_173755_소_vs_NooB_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:36","room":199,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[3,9],"nicks":["율무아빠","이재경짱","",""],"replay":"replays/20261009_173606_율무아빠_vs_이재경짱_4-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-05 21:09","room":59,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,4],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_210950_bk49_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:06","room":60,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,10],"ft":2,"series":"60-261005210617-13","nicks":["즐축","내일은축구왕","",""],"replay":"replays/20261005_210616_즐축_vs_내일은축구왕_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-05 21:05","room":59,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_210503_bk49_vs_판순이_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 21:01","room":59,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_210110_bk49_vs_판순이_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-05 19:08","room":53,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,4],"ft":2,"series":"53-261005190450-12","nicks":["즐축","princewi","",""],"replay":"replays/20261005_190842_즐축_vs_princewi_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-05 21:01","room":59,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,3],"nicks":["bk49","판순이","",""],"replay":"replays/20261005_210110_bk49_vs_판순이_1-3_p1.scr","edition":"cupsocs2"}
 ]
