@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-09 23:23","room":294,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,3],"ft":2,"series":"294-261009232355-75","nicks":["코바오락실","판순이","",""],"replay":"replays/20261009_232354_코바오락실_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:22","room":292,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":3,"series":"292-261009231724-74","nicks":["드래곤타이거","익산킹존슨","",""],"replay":"replays/20261009_232219_드래곤타이거_vs_익산킹존슨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:21","room":293,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[9,5],"nicks":["Shaq","남서울오락실","",""],"replay":"replays/20261009_232140_Shaq_vs_남서울오락실_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:20","room":291,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,5],"nicks":["kilimanjaro","로또영","",""],"replay":"replays/20261009_232001_kilimanjaro_vs_로또영_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-07 20:31","room":95,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[9,7],"ft":2,"series":"95-261007203157-23","nicks":["내일은축구왕","즐축","",""],"replay":"replays/20261007_203154_내일은축구왕_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 20:19","room":92,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[3,9],"nicks":["전설아","우기부기","",""],"replay":"replays/20261007_201921_전설아_vs_우기부기_5-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-07 19:46","room":88,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,9],"ft":2,"series":"88-261007194304-22","nicks":["Janet","레트로성지","",""],"replay":"replays/20261007_194632_Janet_vs_레트로성지_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 19:43","room":88,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,10],"ft":2,"series":"88-261007194304-22","nicks":["Janet","레트로성지","",""],"replay":"replays/20261007_194300_Janet_vs_레트로성지_5-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 19:38","room":87,"type":"1v1","time":210,"players":2,"score":[1,0],"teams":[8,5],"ft":3,"series":"87-261007192844-21","nicks":["7","레트로성지","",""],"replay":"replays/20261007_193845_7_vs_레트로성지_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-07 19:43","room":88,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,10],"ft":2,"series":"88-261007194304-22","nicks":["Janet","레트로성지","",""],"replay":"replays/20261007_194300_Janet_vs_레트로성지_5-0_p1.scr","edition":"cupsocs2"}
 ]
