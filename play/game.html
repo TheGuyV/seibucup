@@ -40,7 +40,7 @@ if (Q.get('postlog')) {
       MainLoop.runIter = function (f) { const t0 = performance.now(); if (W.last) W.gap += t0 - W.last; orig(f); const t1 = performance.now(); W.last = t1; const d = t1 - t0; W.n++; W.busy += d; if (d > W.max) W.max = d; };
       MainLoop.runIter.__timed = true; clearInterval(iv);
     }, 100);
-    setInterval(() => { if (W.n) tell('perf', { text: 'beat ' + BEAT.on + ' loops ' + W.n + ' busy ' + (W.busy / W.n).toFixed(2) + ' ms max ' + W.max.toFixed(1) + ' gap ' + (W.gap / W.n).toFixed(2) + ' ms' }); W.n = W.busy = W.max = W.gap = 0; }, 3000);
+    setInterval(() => { if (W.n) tell('perf', { text: 'beat ' + BEAT.on + ' kick ' + !!BEAT.kick + ' kicks ' + (BEAT.kicks || 0) + ' loops ' + W.n + ' busy ' + (W.busy / W.n).toFixed(2) + ' ms max ' + W.max.toFixed(1) + ' gap ' + (W.gap / W.n).toFixed(2) + ' ms' }); W.n = W.busy = W.max = W.gap = 0; }, 3000);
   }
   setInterval(() => { try { const t = new TextDecoder().decode(FS.readFile('/tut.log')); if (t.length > (seen.t || 0)) { tell('tut', { text: t.slice(seen.t || 0).trim() }); seen.t = t.length; } } catch (e) {} }, 3000);
 }
@@ -63,6 +63,20 @@ const BEAT = { on: false };
   setInterval(() => {
     if (off || typeof MainLoop === 'undefined' || !MainLoop.func || !MainLoop.scheduler) return;
     if (MainLoop.timingMode === 0 && MainLoop.scheduler !== beat) { next = performance.now(); MainLoop.scheduler = beat; BEAT.on = true; }
+  }, 250);
+  // ---- 받은 즉시 처리 (2026-10-09, "웹쪽 성능 개선" 2번): 박자는 초당 60번뿐이라, 그 사이에 온 상대 입력은 다음 박자(최대 16.7ms)까지
+  // 기다렸다. 그동안 웹 손님은 입력 대기에서 늦게 풀려 자기 입력도 늦게 보내고, 웹 방장은 모은 입력을 늦게 돌려줬다. 웹소켓에 데이터가
+  // 오면 바로 메인 루프를 한 번 더 돌린다: 프레임 때가 아니면 MAME 가 스스로 건너뛰고(속도는 그대로) 스크립트만 돌아 소켓을 읽고 넘겨준다.
+  // 여러 개가 한꺼번에 와도 한 번만. 시험 전용 ?nokick=1 로 끌 수 있다
+  const kch = new MessageChannel();
+  let kicked = false;
+  BEAT.kicks = 0;
+  kch.port1.onmessage = () => { kicked = false; if (BEAT.on && MainLoop.func && !ABORT) { BEAT.kicks++; MainLoop.runIter(MainLoop.func); } };
+  const nokick = Q.get('nokick') && location.hostname === '127.0.0.1';
+  const hook = setInterval(() => {
+    if (nokick || mode !== 'match' || !Module.websocket || typeof Module.websocket.on !== 'function') return;
+    Module.websocket.on('message', () => { if (!kicked && BEAT.on) { kicked = true; kch.port2.postMessage(0); } });
+    BEAT.kick = true; clearInterval(hook);
   }, 250);
 })();
 let romTrouble = false;

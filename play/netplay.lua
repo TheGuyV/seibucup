@@ -962,7 +962,7 @@ local write_fail = 0
 -- stalls: frames that had to wait for the other side's input at all (over the internet that is nearly
 -- every frame). long_stalls: waits of a frame or more (>= 20 ms) - those are the hitches a player feels,
 -- the launcher reads them to say when the input delay should go up.
-local stats = { stalls = 0, max_stall_ms = 0, desync = 0, resyncs = 0, long_stalls = 0, stall_total_ms = 0 }
+local stats = { stalls = 0, max_stall_ms = 0, desync = 0, resyncs = 0, long_stalls = 0, stall_total_ms = 0, late_ms = 0 }
 local connect_tries = 0
 local hs_wait = 0
 
@@ -1910,6 +1910,34 @@ end
 -- is for, so a frame skipped when the delay went up is filled on the host with that player's previous input, and an
 -- input for a frame already sent out (when it went down) is dropped - the host's frames are what every screen plays.
 -- Off (SCNP_DYNDELAY=0) when the host set the delay by hand, and in replays.
+-- 2.0.23 (2026-10-09): "waited" is the part of each wait beyond a frame (late_ms below), the undone-drop floor holds only the
+-- step dropped from, and the first 15 s decide nothing (a browser warms up there, hitching ~0.2 s for ~6 s)
+-- (2.0.23) the waits of the last 5 s, logged as "DDW" every 300 frames with the wall-clock frame rate and the pings; and the
+-- measure the auto delay goes by: only the part of a wait beyond a frame (stats.late_ms). A side running a hair ahead of the
+-- other waits a few ms on nearly every frame and still makes 60 frames a second - measured 2026-10-09 (web_lag_test.py): a
+-- web host waited ~240 times in 5 s, 1.5 s in all, at a steady 60 fps, which the old sum read as lag and took to 8
+SCNP_DDW = { n = 0, ms = 0, max = 0, b17 = 0, t = nil, f = nil }
+function scnp_ddw_add(ms)
+  local W = SCNP_DDW
+  if ms > 17 then stats.late_ms = stats.late_ms + (ms - 17) end
+  W.n = W.n + 1; W.ms = W.ms + ms
+  if ms > W.max then W.max = ms end
+  if ms >= 17 then W.b17 = W.b17 + 1 end
+end
+function scnp_ddw_log()
+  local W = SCNP_DDW
+  if is_replay or phase ~= "play" or frame % 300 ~= 0 then return end
+  local t = now_ms()
+  if W.t and W.f and frame > W.f then
+    local ping = {}
+    for s = 1, 4 do if rtt[s] then ping[#ping + 1] = string.format("%d:%d", s, rtt[s]) end end
+    log("DDW frame %d %s delay %d fps %.1f waits %d total %d max %d over17 %d pings %s", frame, is_host and "host" or "guest",
+        cfg.delay, (frame - W.f) * 1000 / math.max(1, (t - W.t) & 0xffffffff), W.n, math.floor(W.ms), math.floor(W.max), W.b17,
+        table.concat(ping, ","))
+  end
+  W.t, W.f = t, frame
+  W.n, W.ms, W.max, W.b17 = 0, 0, 0, 0
+end
 SCNP_DD = { on = env("SCNP_DYNDELAY", "1") ~= "0", hi = {}, last = {}, pw = {}, at = 0, prev = nil, calm = 0, changed = 0,
             lowered = -100000, floor = 0, floor_until = 0, min = 2, max = 8, cw = nil }
 function scnp_dd_set(nd, why)
@@ -1917,8 +1945,11 @@ function scnp_dd_set(nd, why)
   local od = cfg.delay
   if nd == od then return end
   cfg.delay = nd; D.changed = frame; D.calm = 0
-  if nd < od then D.lowered = frame
-  elseif frame - D.lowered < 3600 then D.floor = nd; D.floor_until = frame + 7200 end   -- 2 min (was 5, 2026-10-02)
+  -- a drop undone within a minute is not tried again for 2 minutes: the floor is the step it dropped from - only the first
+  -- rise after it, back to that step (2.0.23; before, every rise in that minute raised the floor with it)
+  if nd < od then D.lowered = frame; D.lowfrom = od
+  elseif D.lowfrom and nd == D.lowfrom and frame - D.lowered < 3600 then D.floor = nd; D.floor_until = frame + 7200; D.lowfrom = nil   -- 2 min (was 5, 2026-10-02)
+  else D.lowfrom = nil end
   broadcast("L" .. string.char(gen, nd))
   log("input delay %d -> %d frames at frame %d (%s)", od, nd, frame, why)
   -- kept for the replay's header ("dd"), so the server's copy shows how the delay moved (user 2026-09-29)
@@ -1932,8 +1963,14 @@ function scnp_dd_host()
   if not D.on or is_replay or phase ~= "play" then return end
   if frame - D.at < 300 then return end
   D.at = frame
-  local mine = D.prev and (stats.stall_total_ms - D.prev) or 0
-  D.prev = stats.stall_total_ms
+  -- the first 15 s (the country select) decide nothing (2.0.23)
+  if frame < 900 then
+    D.prev = stats.late_ms
+    for s = 2, 4 do D.pw[s] = nil end
+    return
+  end
+  local mine = D.prev and (stats.late_ms - D.prev) or 0
+  D.prev = stats.late_ms
   local worst, who = mine, 1
   for s = 2, 4 do local w = D.pw[s]; if w and w > worst then worst, who = w, s end; D.pw[s] = nil end
   local d = cfg.delay
@@ -1944,7 +1981,7 @@ function scnp_dd_host()
   D.badprev = bad
   if bad and not raise then
     D.calm = 0
-    log("input delay: %dP waited %d ms in 5 s - held at %d unless it happens again", who, math.floor(worst), d)
+    log("input delay: %dP lost %d ms in 5 s - held at %d unless it happens again", who, math.floor(worst), d)
   elseif raise then
     D.calm = 0
     -- a frame up only while the delay is within 2 of what the pings need (the relay's own start formula, a browser's frame
@@ -1953,10 +1990,10 @@ function scnp_dd_host()
     local ping = 0
     for s = 2, nplayers do if rtt[s] and rtt[s] > ping then ping = rtt[s] end end
     local cap = math.min(D.max, math.max(3, math.ceil((ping / 2 + 10 + 16.7) / 16.7)) + 2)
-    if d < cap and frame - D.changed >= 300 then scnp_dd_set(d + 1, string.format("%dP waited %d ms in 5 s", who, math.floor(worst)))
+    if d < cap and frame - D.changed >= 300 then scnp_dd_set(d + 1, string.format("%dP lost %d ms in 5 s", who, math.floor(worst)))
     elseif d >= cap and not D.capped then
       D.capped = true
-      log("input delay: held at %d - %dP waited %d ms in 5 s but the pings (%d ms) need less: a machine running slow, not the line", d, who, math.floor(worst), ping)
+      log("input delay: held at %d - %dP lost %d ms in 5 s but the pings (%d ms) need less: a machine running slow, not the line", d, who, math.floor(worst), ping)
     end
   elseif worst < 60 then
     D.calm = D.calm + 300
@@ -1973,8 +2010,8 @@ end
 function scnp_dd_report()
   local D = SCNP_DD
   if is_host or is_spec or is_replay or phase ~= "play" or frame % 300 ~= 0 then return end   -- the host decides every 5 s
-  local w = D.cw and (stats.stall_total_ms - D.cw) or 0
-  D.cw = stats.stall_total_ms
+  local w = D.cw and (stats.late_ms - D.cw) or 0      -- the part of the waits beyond a frame (2.0.23)
+  D.cw = stats.late_ms
   send_to(host_peer, "W" .. string.char(gen) .. string.pack("<I2", math.min(65535, math.max(0, math.floor(w)))))
 end
 
@@ -2643,6 +2680,7 @@ local function step()
       if ms > stats.max_stall_ms then stats.max_stall_ms = ms end
       stats.stall_total_ms = stats.stall_total_ms + ms
       if ms >= 20 then stats.long_stalls = stats.long_stalls + 1 end
+      scnp_ddw_add(ms)
     end
     -- the browser's main loop starts its clock afresh after every such pause, so each wait was time lost for good
     -- and on a phone the waits added up to a match 40% slow for both sides (2026-09-27). Keep the game on the wall
@@ -2765,6 +2803,7 @@ local function step()
 
   if not is_replay then pump() end
   if is_host then autojoin_step(); try_broadcast(); scnp_dd_host() else scnp_dd_report() end
+  scnp_ddw_log()
   if agg[nxt] == nil then
     local t0 = os.clock()
     local deadline = os.time() + wait_timeout_s
@@ -2788,6 +2827,7 @@ local function step()
     if ms > stats.max_stall_ms then stats.max_stall_ms = ms end
     stats.stall_total_ms = stats.stall_total_ms + ms
     if ms >= 20 then stats.long_stalls = stats.long_stalls + 1 end
+    scnp_ddw_add(ms)
   end
 
   local a = agg[nxt]
