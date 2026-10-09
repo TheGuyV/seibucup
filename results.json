@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 00:13","room":312,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"312-261010000518-81","nicks":["로또영","NooB","",""],"replay":"replays/20261010_001356_로또영_vs_NooB_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:12","room":313,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[3,4],"nicks":["Shaq","판순이","",""],"replay":"replays/20261010_001255_Shaq_vs_판순이_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:10","room":312,"type":"1v1","time":150,"players":2,"score":[5,3],"teams":[5,10],"ft":3,"series":"312-261010000518-81","nicks":["로또영","NooB","",""],"replay":"replays/20261010_001013_로또영_vs_NooB_5-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:08","room":313,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,3],"nicks":["Shaq","판순이","",""],"replay":"replays/20261010_000817_Shaq_vs_판순이_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 00:51","room":6,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,8],"ft":2,"series":"6-261008004657-1","nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_005109_김정은패스_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 00:46","room":6,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"6-261008004657-1","nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_004659_김정은패스_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 00:38","room":3,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,8],"nicks":["김정은패스","즐축","",""],"replay":"replays/20261008_003833_김정은패스_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 22:48","room":115,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,8],"ft":3,"series":"115-261007224117-31","nicks":["판순이","롤롤","",""],"replay":"replays/20261007_224839_판순이_vs_롤롤_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-07 22:45","room":115,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,7],"ft":3,"series":"115-261007224117-31","nicks":["판순이","롤롤","",""],"replay":"replays/20261007_224503_판순이_vs_롤롤_2-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-07 22:48","room":115,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,8],"ft":3,"series":"115-261007224117-31","nicks":["판순이","롤롤","",""],"replay":"replays/20261007_224839_판순이_vs_롤롤_1-0_p1.scr","edition":"cupsocs2"}
 ]
