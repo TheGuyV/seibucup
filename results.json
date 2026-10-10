@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 15:40","room":80,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[9,5],"ft":3,"series":"80-261010154011-16","nicks":["드래곤타이거","로또영","",""],"replay":"replays/20261010_154011_드래곤타이거_vs_로또영_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 15:34","room":76,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,3],"ft":3,"series":"76-261010153451-15","nicks":["드래곤타이거","test","",""],"replay":"replays/20261010_153451_드래곤타이거_vs_test_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 15:28","room":65,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"nicks":["로또영","test","",""],"replay":"replays/20261010_152809_로또영_vs_test_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 15:04","room":58,"type":"1v1","time":210,"players":2,"score":[3,1],"teams":[5,0],"ft":3,"series":"58-261010145427-14","nicks":["삼손김주성","NooB","",""],"replay":"replays/20261010_150452_삼손김주성_vs_NooB_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 00:36","room":100,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[5,10],"ft":3,"series":"100-261009003044-21","nicks":["삼손김주성","뚱이K","",""],"replay":"replays/20261009_003641_삼손김주성_vs_뚱이K_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:30","room":100,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[5,0],"ft":3,"series":"100-261009003044-21","nicks":["삼손김주성","뚱이K","",""],"replay":"replays/20261009_003044_삼손김주성_vs_뚱이K_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:23","room":84,"type":"1v1","time":210,"players":2,"score":[3,5],"teams":[10,5],"ft":3,"series":"84-261009000654-18","nicks":["아무나들어오세요","테일러장군","",""],"replay":"replays/20261009_002325_아무나들어오세요_vs_테일러장군_3-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 00:21","room":96,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"96-261009001754-20","nicks":["404page","즐축","",""],"replay":"replays/20261009_002151_404page_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 00:17","room":96,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,8],"ft":2,"series":"96-261009001754-20","nicks":["404page","즐축","",""],"replay":"replays/20261009_001753_404page_vs_즐축_3-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 00:21","room":96,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"96-261009001754-20","nicks":["404page","즐축","",""],"replay":"replays/20261009_002151_404page_vs_즐축_3-2_p1.scr","edition":"cupsocs2"}
 ]
