@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-11 00:45","room":141,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,7],"nicks":["슛돌이","즐축","",""],"replay":"replays/20261011_004552_슛돌이_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 00:42","room":143,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,7],"nicks":["루키","Todoroki","",""],"replay":"replays/20261011_004249_루키_vs_Todoroki_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 00:38","room":142,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["루키","전설의1군","",""],"replay":"replays/20261011_003804_루키_vs_전설의1군_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 00:37","room":141,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,0],"nicks":["슛돌이","Kaiji08","",""],"replay":"replays/20261011_003735_슛돌이_vs_Kaiji08_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 23:06","room":285,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,3],"ft":3,"series":"285-261009225333-71","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261009_230643_드래곤타이거_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:06","room":283,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"283-261009225342-72","nicks":["로또영","슬블","",""],"replay":"replays/20261009_230642_로또영_vs_슬블_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:05","room":284,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":2,"series":"284-261009225332-70","nicks":["전설의1군","NooB","",""],"replay":"replays/20261009_230528_전설의1군_vs_NooB_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:03","room":283,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,0],"ft":3,"series":"283-261009225342-72","nicks":["로또영","슬블","",""],"replay":"replays/20261009_230304_로또영_vs_슬블_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:03","room":285,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,3],"ft":3,"series":"285-261009225333-71","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261009_230301_드래곤타이거_vs_판순이_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 23:03","room":283,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,0],"ft":3,"series":"283-261009225342-72","nicks":["로또영","슬블","",""],"replay":"replays/20261009_230304_로또영_vs_슬블_4-3_p1.scr","edition":"cupsocs2"}
 ]
