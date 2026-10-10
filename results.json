@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 10:43","room":8,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"ft":3,"series":"8-261010104300-1","nicks":["로또영","슈퍼노멀","",""],"replay":"replays/20261010_104300_로또영_vs_슈퍼노멀_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 10:39","room":7,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,10],"nicks":["guyloide","전설의1군","",""],"replay":"replays/20261010_103925_guyloide_vs_전설의1군_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:53","room":325,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["beginner","로또영","",""],"replay":"replays/20261010_005325_beginner_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 00:49","room":319,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"319-261010004905-82","nicks":["로또영","상봉다이아","",""],"replay":"replays/20261010_004907_로또영_vs_상봉다이아_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 18:21","room":25,"type":"1v1","time":210,"players":2,"score":[1,3],"teams":[9,5],"ft":3,"series":"25-261008182123-3","nicks":["아무나들어오세요","Janet","",""],"replay":"replays/20261008_182123_아무나들어오세요_vs_Janet_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 17:07","room":23,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[9,8],"nicks":["호세뽕","롤롤","",""],"replay":"replays/20261008_170738_호세뽕_vs_롤롤_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 17:02","room":23,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,7],"nicks":["호세뽕","롤롤","",""],"replay":"replays/20261008_170220_호세뽕_vs_롤롤_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 16:57","room":20,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"20-261008165402-2","nicks":["Janet","롤롤","",""],"replay":"replays/20261008_165747_Janet_vs_롤롤_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 16:54","room":20,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,9],"ft":2,"series":"20-261008165402-2","nicks":["Janet","롤롤","",""],"replay":"replays/20261008_165357_Janet_vs_롤롤_4-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 16:57","room":20,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"20-261008165402-2","nicks":["Janet","롤롤","",""],"replay":"replays/20261008_165747_Janet_vs_롤롤_2-1_p1.scr","edition":"cupsocs2"}
 ]
