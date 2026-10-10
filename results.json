@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 17:00","room":105,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,10],"nicks":["Airwalkv","NooB","",""],"replay":"replays/20261010_170001_Airwalkv_vs_NooB_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 16:56","room":101,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"ft":3,"series":"101-261010165252-23","nicks":["싸커킴","상봉거지오락실","",""],"replay":"replays/20261010_165639_싸커킴_vs_상봉거지오락실_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 16:56","room":105,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"nicks":["Airwalkv","KingDani","",""],"replay":"replays/20261010_165636_Airwalkv_vs_KingDani_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 16:52","room":101,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[5,3],"ft":3,"series":"101-261010165252-23","nicks":["싸커킴","상봉거지오락실","",""],"replay":"replays/20261010_165252_싸커킴_vs_상봉거지오락실_2-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 15:08","room":142,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_150806_로또영_vs_이재경짱_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:07","room":145,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["lonely","드래곤타이거","",""],"replay":"replays/20261009_150648_lonely_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:02","room":142,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_150241_로또영_vs_이재경짱_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 14:58","room":144,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,9],"ft":2,"series":"144-261009145438-33","nicks":["드래곤타이거","TEST","",""],"replay":"replays/20261009_145855_드래곤타이거_vs_TEST_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 14:58","room":142,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_145811_로또영_vs_이재경짱_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 14:58","room":144,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,9],"ft":2,"series":"144-261009145438-33","nicks":["드래곤타이거","TEST","",""],"replay":"replays/20261009_145855_드래곤타이거_vs_TEST_2-1_p1.scr","edition":"cupsocs2"}
 ]
