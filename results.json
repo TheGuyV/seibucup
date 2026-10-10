@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 12:55","room":21,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,0],"nicks":["율무아빠","형돈이","",""],"replay":"replays/20261010_125500_율무아빠_vs_형돈이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 11:58","room":20,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,0],"ft":2,"series":"20-261010114908-5","nicks":["전설의1군","드래곤타이거","",""],"replay":"replays/20261010_115854_전설의1군_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 11:53","room":20,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"20-261010114908-5","nicks":["전설의1군","드래곤타이거","",""],"replay":"replays/20261010_115350_전설의1군_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 11:49","room":20,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,9],"ft":2,"series":"20-261010114908-5","nicks":["전설의1군","드래곤타이거","",""],"replay":"replays/20261010_114908_전설의1군_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 20:00","room":32,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,3],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_200055_로또영_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 19:56","room":32,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,4],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_195635_로또영_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 19:51","room":28,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"28-261008194016-5","nicks":["로또영","익산킹존슨","",""],"replay":"replays/20261008_195141_로또영_vs_익산킹존슨_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 19:47","room":28,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,0],"ft":3,"series":"28-261008194016-5","nicks":["로또영","익산킹존슨","",""],"replay":"replays/20261008_194741_로또영_vs_익산킹존슨_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 19:43","room":28,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,10],"ft":3,"series":"28-261008194016-5","nicks":["로또영","익산킹존슨","",""],"replay":"replays/20261008_194338_로또영_vs_익산킹존슨_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 19:47","room":28,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,0],"ft":3,"series":"28-261008194016-5","nicks":["로또영","익산킹존슨","",""],"replay":"replays/20261008_194741_로또영_vs_익산킹존슨_2-3_p1.scr","edition":"cupsocs2"}
 ]
