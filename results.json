@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 14:36","room":43,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,9],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_143626_율무아빠_vs_드래곤타이거_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:34","room":49,"type":"1v1","time":210,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"49-261010143434-13","nicks":["삼손김주성","404page","",""],"replay":"replays/20261010_143434_삼손김주성_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:32","room":43,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_143245_율무아빠_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:31","room":46,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"46-261010143102-12","nicks":["로또영","byrlove","",""],"replay":"replays/20261010_143102_로또영_vs_byrlove_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 00:06","room":78,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_000634_히든_vs_존경_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:05","room":88,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[10,7],"ft":2,"series":"88-261009000530-17","nicks":["Janet","404page","",""],"replay":"replays/20261009_000523_Janet_vs_404page_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:02","room":78,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_000238_히든_vs_존경_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:59","room":79,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"79-261008234823-15","nicks":["로또영","붕어","",""],"replay":"replays/20261008_235910_로또영_vs_붕어_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:58","room":78,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261008_235808_히든_vs_존경_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 23:59","room":79,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"79-261008234823-15","nicks":["로또영","붕어","",""],"replay":"replays/20261008_235910_로또영_vs_붕어_3-2_p1.scr","edition":"cupsocs2"}
 ]
