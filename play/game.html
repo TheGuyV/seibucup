@@ -13,7 +13,42 @@
 <body>
 <canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
 <div id="padwait" hidden></div>
+<button id="sndOn" type="button" hidden style="position:fixed;left:50%;top:10px;transform:translateX(-50%);z-index:9;font:700 14px sans-serif;white-space:nowrap;padding:7px 12px;border:2px solid #ffd23f;background:rgba(0,0,0,.78);color:#ffd23f;border-radius:6px"></button>
 <script>
+// 소리 켜기 (user 2026-10-10 "모바일로 웹플레이시에 사운드 이슈"): 브라우저는 사람이 이 화면을 직접 누르기 전에는 소리를 막는다.
+// MAME(SDL/Emscripten)가 스스로 켜는 길은 손이 닿는 순간(touchstart) 한 번뿐인데, iPhone 은 손을 뗄 때(touchend)만 허락해서
+// 그 한 번이 실패하면 끝까지 소리가 없었다. 이 화면이 만드는 AudioContext 를 모두 기억해 두고, 손을 뗄 때·클릭·키마다(부모 창의
+// 터치 패드를 누를 때도 - play.html 이 __audUnlock 을 부른다) 켜질 때까지 다시 깨운다. 그래도 멈춰 있으면 "소리 켜기" 버튼.
+// iOS 17 이상은 무음 스위치를 켜 둬도 게임 소리가 나게 audioSession 을 playback 으로
+const AUD = { ctxs: [] };
+(function () {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (AC) {
+    const Tracked = function (...a) { const c = new AC(...a); AUD.ctxs.push(c); try { c.addEventListener('statechange', audState); } catch (e) {} setTimeout(audState, 400); return c; };
+    Tracked.prototype = AC.prototype;
+    window.AudioContext = Tracked; if (window.webkitAudioContext) window.webkitAudioContext = Tracked;
+  }
+  try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
+})();
+// iOS 16 이하는 audioSession 이 없어 무음 스위치가 켜져 있으면 게임 소리도 꺼진다: 소리를 깨울 때 무음 <audio> 를 함께 반복 재생하면
+// 그 페이지가 "미디어 재생" 으로 바뀌어 스위치와 상관없이 나온다 (iPhone 에서만)
+const AUD_SILENT = "data:audio/wav;base64,UklGRvQHAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YdAHAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA==";
+function audUnlock() {
+  if (!AUD.el && /iP(hone|ad|od)/.test(navigator.userAgent) && !navigator.audioSession) {
+    try { const a = new Audio(AUD_SILENT); a.loop = true; a.setAttribute('playsinline', ''); a.volume = 0.01; const pr = a.play(); AUD.el = a; if (pr && pr.catch) pr.catch(() => { AUD.el = null; }); } catch (e) {}
+  }
+  AUD.ctxs.forEach(c => { if (c.state !== 'running' && c.state !== 'closed') { try { c.resume().then(audState, () => {}); } catch (e) {} } });
+}
+window.__audUnlock = audUnlock; window.__AUD = AUD;          // (__AUD: for the tests)
+function audState() {
+  const b = document.getElementById('sndOn'); if (!b) return;
+  const stuck = AUD.ctxs.some(c => c.state === 'suspended' || c.state === 'interrupted');
+  b.textContent = (Q.get('lang') === 'en') ? '🔇 Tap for sound' : '🔇 눌러서 소리 켜기';
+  b.hidden = !stuck;
+}
+['touchend', 'pointerup', 'click', 'keydown', 'mousedown'].forEach(t => addEventListener(t, audUnlock, true));
+document.addEventListener('visibilitychange', () => { if (!document.hidden) audUnlock(); });
+document.getElementById('sndOn').addEventListener('click', e => { e.preventDefault(); audUnlock(); setTimeout(audState, 300); try { document.getElementById('canvas').focus(); } catch (x) {} });
 // 웹 런처(play.html)가 iframe 으로 여는 게임 화면. 주소의 값으로 무엇을 할지 정한다:
 //   mode = solo | tutorial | practice | replay,  game = cupsocs2 | cupsoc,  lang = ko | en
 //   replay = 사이트 기준 리플레이 경로,  names = 쉼표로 이은 닉네임(퍼센트 인코딩)

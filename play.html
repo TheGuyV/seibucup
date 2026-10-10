@@ -1828,6 +1828,11 @@
   });
   $('netTut').onclick = function () { start('tutorial'); };
   $('netPractice').onclick = function () { start('practice'); };
+  // 게임 화면의 소리 (2026-10-10): 사람이 누르는 바로 그 순간에만 브라우저가 소리를 허락한다. 터치 패드나 이 페이지 어디를 눌러도
+  // 그 순간 게임 화면(iframe)의 소리를 같이 깨운다 (game.html 의 __audUnlock)
+  ['touchend', 'click', 'keydown', 'pointerup'].forEach(function (t) {
+    document.addEventListener(t, function () { try { if (running && running.frame && running.frame.contentWindow.__audUnlock) running.frame.contentWindow.__audUnlock(); } catch (e) {} }, true);
+  });
   // ---- 리플레이 (user, 2026-09-27): PC 런처의 리플레이 창과 같은 두 탭 - [내 녹화] 이 브라우저에 모은 녹화, [온라인] 사이트의 공개 경기
   //   녹화는 IndexedDB 'seibucup-replays' (롬·설정 DB 와 따로 - 게임 화면도 같은 DB 에서 읽어 재생한다)
   var REP = { db: null, mine: [], online: null, selMine: -1, selOn: -1, tab: 'mine', MAX: 100 };
