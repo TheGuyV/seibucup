@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 22:39","room":86,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,5],"nicks":["라울","남서울오락실","",""],"replay":"replays/20261010_223922_라울_vs_남서울오락실_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:37","room":83,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,7],"ft":2,"series":"83-261010223357-15","nicks":["소","상봉거지오락실","",""],"replay":"replays/20261010_223745_소_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:33","room":83,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"ft":2,"series":"83-261010223357-15","nicks":["소","상봉거지오락실","",""],"replay":"replays/20261010_223357_소_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:33","room":78,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,4],"nicks":["mizunoasahi","라울","",""],"replay":"replays/20261010_223308_mizunoasahi_vs_라울_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 21:44","room":251,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"ft":2,"series":"251-261009214041-55","nicks":["소","전설의1군","",""],"replay":"replays/20261009_214431_소_vs_전설의1군_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:43","room":249,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"249-261009213515-53","nicks":["404page","NooB","",""],"replay":"replays/20261009_214259_404page_vs_NooB_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:40","room":251,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,10],"ft":2,"series":"251-261009214041-55","nicks":["소","전설의1군","",""],"replay":"replays/20261009_214028_소_vs_전설의1군_4-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 21:38","room":249,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"249-261009213515-53","nicks":["404page","NooB","",""],"replay":"replays/20261009_213844_404page_vs_NooB_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 21:35","room":250,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,10],"ft":2,"series":"250-261009213533-54","nicks":["소","전설의1군","",""],"replay":"replays/20261009_213520_소_vs_전설의1군_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 21:38","room":249,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"249-261009213515-53","nicks":["404page","NooB","",""],"replay":"replays/20261009_213844_404page_vs_NooB_0-1_p1.scr","edition":"cupsocs2"}
 ]
