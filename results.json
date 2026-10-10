@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 14:10","room":43,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_141001_율무아빠_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:08","room":42,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"42-261010140816-11","nicks":["로또영","1111","",""],"replay":"replays/20261010_140816_로또영_vs_1111_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:06","room":43,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,9],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_140606_율무아빠_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:05","room":36,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"nicks":["byrlove","1P","",""],"replay":"replays/20261010_140539_byrlove_vs_1P_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 23:32","room":60,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[8,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_233202_아무나들어오세요_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:26","room":60,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[10,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_232640_아무나들어오세요_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:21","room":60,"type":"1v1","time":210,"players":2,"score":[3,4],"teams":[7,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_232100_아무나들어오세요_vs_로또영_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:14","room":59,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[9,8],"ft":2,"series":"59-261008225905-12","nicks":["뚱이K","롤롤","",""],"replay":"replays/20261008_231444_뚱이K_vs_롤롤_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:13","room":60,"type":"1v1","time":210,"players":2,"score":[5,4],"teams":[0,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_231311_아무나들어오세요_vs_로또영_5-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 23:14","room":59,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[9,8],"ft":2,"series":"59-261008225905-12","nicks":["뚱이K","롤롤","",""],"replay":"replays/20261008_231444_뚱이K_vs_롤롤_2-3_p1.scr","edition":"cupsocs2"}
 ]
