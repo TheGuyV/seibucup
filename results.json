@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 22:15","room":72,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,0],"ft":2,"series":"72-261010221535-12","nicks":["전설의1군","소","",""],"replay":"replays/20261010_221535_전설의1군_vs_소_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:10","room":65,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[8,7],"ft":2,"series":"65-261010220332-11","nicks":["즐축","404page","라울","상봉거지오락실"],"replay":"replays/20261010_221046_즐축_vs_라울_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:10","room":69,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,4],"nicks":["Airwalkv","판순이","",""],"replay":"replays/20261010_221032_Airwalkv_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:07","room":65,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[7,8],"ft":2,"series":"65-261010220332-11","nicks":["즐축","404page","라울","상봉거지오락실"],"replay":"replays/20261010_220700_즐축_vs_라울_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 20:56","room":234,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"234-261009205221-50","nicks":["Janet","NooB","",""],"replay":"replays/20261009_205620_Janet_vs_NooB_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:55","room":237,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205539_히든_vs_존경_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:52","room":234,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"234-261009205221-50","nicks":["Janet","NooB","",""],"replay":"replays/20261009_205213_Janet_vs_NooB_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 20:51","room":237,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205134_히든_vs_존경_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 20:48","room":237,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_204827_히든_vs_존경_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 20:51","room":237,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205134_히든_vs_존경_0-0_p1.scr","edition":"cupsocs2"}
 ]
