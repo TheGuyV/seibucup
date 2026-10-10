@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 22:22","room":74,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"nicks":["루키","상봉거지오락실","",""],"replay":"replays/20261010_222224_루키_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:19","room":72,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,3],"ft":2,"series":"72-261010221535-12","nicks":["전설의1군","소","",""],"replay":"replays/20261010_221924_전설의1군_vs_소_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:18","room":74,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"nicks":["루키","상봉거지오락실","",""],"replay":"replays/20261010_221830_루키_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:15","room":72,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,0],"ft":2,"series":"72-261010221535-12","nicks":["전설의1군","소","",""],"replay":"replays/20261010_221535_전설의1군_vs_소_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 21:03","room":237,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,9],"nicks":["히든","존경","",""],"replay":"replays/20261009_210348_히든_vs_존경_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 21:00","room":243,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,10],"nicks":["샤마2","초보1","",""],"replay":"replays/20261009_210010_샤마2_vs_초보1_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:59","room":237,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205912_히든_vs_존경_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 20:56","room":234,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"234-261009205221-50","nicks":["Janet","NooB","",""],"replay":"replays/20261009_205620_Janet_vs_NooB_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 20:55","room":237,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205539_히든_vs_존경_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 20:56","room":234,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"234-261009205221-50","nicks":["Janet","NooB","",""],"replay":"replays/20261009_205620_Janet_vs_NooB_3-2_p1.scr","edition":"cupsocs2"}
 ]
