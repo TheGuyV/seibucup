@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 17:08","room":111,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,5],"nicks":["KingDani","NooB","",""],"replay":"replays/20261010_170837_KingDani_vs_NooB_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:05","room":106,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,5],"nicks":["princewi","상봉거지오락실","",""],"replay":"replays/20261010_170504_princewi_vs_상봉거지오락실_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:01","room":106,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"nicks":["princewi","상봉거지오락실","",""],"replay":"replays/20261010_170109_princewi_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:00","room":105,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,10],"nicks":["Airwalkv","NooB","",""],"replay":"replays/20261010_170001_Airwalkv_vs_NooB_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 15:13","room":149,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"nicks":["KingDani","lonely","",""],"replay":"replays/20261009_151312_KingDani_vs_lonely_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:12","room":142,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_151204_로또영_vs_이재경짱_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:08","room":147,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,9],"nicks":["라울","KingDani","",""],"replay":"replays/20261009_150819_라울_vs_KingDani_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 15:08","room":142,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_150806_로또영_vs_이재경짱_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 15:07","room":145,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["lonely","드래곤타이거","",""],"replay":"replays/20261009_150648_lonely_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 15:08","room":142,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"142-261009145809-34","nicks":["로또영","이재경짱","",""],"replay":"replays/20261009_150806_로또영_vs_이재경짱_2-1_p1.scr","edition":"cupsocs2"}
 ]
