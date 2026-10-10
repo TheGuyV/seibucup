@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 13:10","room":22,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,3],"ft":2,"series":"22-261010131034-6","nicks":["NooB","핑크팬더","",""],"replay":"replays/20261010_131034_NooB_vs_핑크팬더_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:06","room":21,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,3],"nicks":["율무아빠","형돈이","",""],"replay":"replays/20261010_130650_율무아빠_vs_형돈이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:02","room":21,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,9],"nicks":["율무아빠","형돈이","",""],"replay":"replays/20261010_130245_율무아빠_vs_형돈이_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 12:58","room":21,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,5],"nicks":["율무아빠","형돈이","",""],"replay":"replays/20261010_125836_율무아빠_vs_형돈이_2-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 20:52","room":37,"type":"1v1","time":90,"players":2,"score":[0,1],"teams":[0,3],"nicks":["당연","히든","",""],"replay":"replays/20261008_205201_당연_vs_히든_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:49","room":37,"type":"1v1","time":90,"players":2,"score":[1,2],"teams":[8,5],"nicks":["당연","히든","",""],"replay":"replays/20261008_204929_당연_vs_히든_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:11","room":34,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,8],"ft":3,"series":"34-261008201119-7","nicks":["로또영","왕초보","",""],"replay":"replays/20261008_201121_로또영_vs_왕초보_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 20:05","room":32,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,3],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_200526_로또영_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 20:00","room":32,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,3],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_200055_로또영_vs_판순이_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 20:05","room":32,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,3],"ft":3,"series":"32-261008195634-6","nicks":["로또영","판순이","",""],"replay":"replays/20261008_200526_로또영_vs_판순이_3-4_p1.scr","edition":"cupsocs2"}
 ]
