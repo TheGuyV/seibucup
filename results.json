@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 22:07","room":65,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[7,8],"ft":2,"series":"65-261010220332-11","nicks":["즐축","404page","라울","상봉거지오락실"],"replay":"replays/20261010_220700_즐축_vs_라울_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:06","room":69,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"nicks":["Airwalkv","판순이","",""],"replay":"replays/20261010_220640_Airwalkv_vs_판순이_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 22:03","room":65,"type":"2v2","time":150,"players":4,"score":[2,3],"teams":[7,5],"ft":2,"series":"65-261010220332-11","nicks":["즐축","404page","라울","상봉거지오락실"],"replay":"replays/20261010_220332_즐축_vs_라울_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 21:55","room":60,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,0],"ft":2,"series":"60-261010215059-10","nicks":["즐축","라울","",""],"replay":"replays/20261010_215508_즐축_vs_라울_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 20:51","room":237,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_205134_히든_vs_존경_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:48","room":237,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_204827_히든_vs_존경_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:43","room":233,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":2,"series":"233-261009203806-49","nicks":["Janet","전설의1군","",""],"replay":"replays/20261009_204252_Janet_vs_전설의1군_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 20:38","room":233,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,9],"ft":2,"series":"233-261009203806-49","nicks":["Janet","전설의1군","",""],"replay":"replays/20261009_203758_Janet_vs_전설의1군_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 20:27","room":229,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":2,"series":"229-261009202307-48","nicks":["전설의1군","NooB","",""],"replay":"replays/20261009_202754_전설의1군_vs_NooB_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 20:38","room":233,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,9],"ft":2,"series":"233-261009203806-49","nicks":["Janet","전설의1군","",""],"replay":"replays/20261009_203758_Janet_vs_전설의1군_1-0_p1.scr","edition":"cupsocs2"}
 ]
