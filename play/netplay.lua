@@ -9,7 +9,7 @@
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
 
-local VERSION = 21     -- 21: a level series match can go to golden goal instead of penalties (F pk 2, replays "pk":2); 20: GOD's tournament draws run on the country 1P pointed at (F god 2, replays "god":2); 19: the input delay follows the connection during a match (the host sends L, the others report their waits in W); 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
+local VERSION = 22     -- 22: the 2 vs 2 bottom line (1P/2P marks and PUSH START / CREDIT from the status routine at cupsocs2 $a8a8, cupsoc $a308) is blanked like the CREDIT text - 11 more ROM words (user 2026-10-10 "2:2 PUSH START도 지워줘"); 21: a level series match can go to golden goal instead of penalties (F pk 2, replays "pk":2); 20: GOD's tournament draws run on the country 1P pointed at (F god 2, replays "god":2); 19: the input delay follows the connection during a match (the host sends L, the others report their waits in W); 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
                        --     (two ROM patches every peer must have: the host says so in F, replays in "sel")
                        -- 15: 2v2 seats are the board's players (1P+3P vs 2P+4P) and an FT series swaps 2v2 sides too;
                        --     a stretched match clock is run by the board itself (its tick reload byte, see install_clock_gate)
@@ -1204,10 +1204,18 @@ if is_host and not is_replay and cfg.teams ~= "pve" and cfg.players >= 2 then sc
 SCNP_NOCREDIT = {
   cupsocs2 = { { 0x00ab9c, 0x55c8, 0x0000 }, { 0x00aba4, 0x5257, 0x4e71 }, { 0x00aa30, 0x05c8, 0x0000 }, { 0x00aa38, 0x5257, 0x4e71 },
                { 0x00abe8, 0x05e7, 0x0000 }, { 0x00abfe, 0x0642, 0x7400 }, { 0x00ac00, 0x05de, 0x4e71 }, { 0x00ac0c, 0x0642, 0x7400 },
-               { 0x00ac0e, 0x05de, 0x4e71 } },
+               { 0x00ac0e, 0x05de, 0x4e71 },
+               -- (22) the 2 vs 2 bottom line: the status routine at $a8a8 prints 1P/2P marks (tiles $15c0 / $75c2, two each) and a
+               -- 7-tile word from $05d0 (PUSH START, CREDIT) over the line we draw there - each first tile -> 0, each "next tile" -> nop
+               { 0x00a8ea, 0x15c0, 0x0000 }, { 0x00a8f2, 0x5257, 0x4e71 }, { 0x00a90c, 0x75c2, 0x0000 }, { 0x00a914, 0x5257, 0x4e71 },
+               { 0x00a968, 0x15c0, 0x0000 }, { 0x00a970, 0x5257, 0x4e71 }, { 0x00a98c, 0x75c2, 0x0000 }, { 0x00a994, 0x5257, 0x4e71 },
+               { 0x00a9ac, 0x05d0, 0x0000 }, { 0x00a9c6, 0x5e57, 0x4e71 }, { 0x00a9d0, 0x5257, 0x4e71 } },
   cupsoc   = { { 0x00a5fc, 0x55c8, 0x0000 }, { 0x00a604, 0x5257, 0x4e71 }, { 0x00a490, 0x05c8, 0x0000 }, { 0x00a498, 0x5257, 0x4e71 },
                { 0x00a648, 0x05e7, 0x0000 }, { 0x00a65e, 0x0642, 0x7400 }, { 0x00a660, 0x05de, 0x4e71 }, { 0x00a66c, 0x0642, 0x7400 },
-               { 0x00a66e, 0x05de, 0x4e71 } },
+               { 0x00a66e, 0x05de, 0x4e71 },
+               { 0x00a34a, 0x15c0, 0x0000 }, { 0x00a352, 0x5257, 0x4e71 }, { 0x00a36c, 0x75c2, 0x0000 }, { 0x00a374, 0x5257, 0x4e71 },
+               { 0x00a3c8, 0x15c0, 0x0000 }, { 0x00a3d0, 0x5257, 0x4e71 }, { 0x00a3ec, 0x75c2, 0x0000 }, { 0x00a3f4, 0x5257, 0x4e71 },
+               { 0x00a40c, 0x05d0, 0x0000 }, { 0x00a426, 0x5e57, 0x4e71 }, { 0x00a430, 0x5257, 0x4e71 } },
 }
 SCNP_NOCREDIT.cupsocs = SCNP_NOCREDIT.cupsocs2      -- not checked on that set: the guard below leaves it alone if it differs
 function scnp_nocredit_apply()

@@ -176,7 +176,8 @@
   /* 리플레이 창 (user, 2026-09-27): PC 런처의 리플레이 창과 같은 두 탭 */
   .rmodal { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.6); padding: 16px; }
   .rmodal[hidden] { display: none; }
-  .rbox { background: var(--n-bg); color: var(--n-fg); border: 1px solid var(--n-line); box-shadow: 4px 4px 0 rgba(0,0,0,.5); width: min(960px, 100%); max-height: calc(100vh - 32px); display: flex; flex-direction: column; }
+  .rbox { background: var(--n-bg); color: var(--n-fg); border: 1px solid var(--n-line); box-shadow: 4px 4px 0 rgba(0,0,0,.5); width: min(960px, 100%); max-height: calc(100vh - 32px); display: flex; flex-direction: column;
+          height: min(calc(52vh + 212px), calc(100vh - 32px)); }   /* 두 탭이 같은 크기 - 온라인 탭 기준, 탭을 바꿔도 창이 움직이지 않게 (user 2026-10-10) */
   .rhead { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--n-line); }
   .rhead b { flex: 1; }
   .rhead button { font: inherit; background: transparent; color: var(--n-fg); border: 1px solid var(--n-line); cursor: pointer; padding: 2px 10px; }
@@ -191,7 +192,7 @@
   .net .rfilters input[type=text] { width: 200px; max-width: 100%; flex: 0 1 200px; }
   .net .rfilters select { width: auto; flex: 0 0 auto; }
   .net .rfilters label { display: inline-flex; align-items: center; gap: 4px; width: auto; }
-  .rlist { overflow: auto; flex: 1; min-height: 160px; max-height: 52vh; border: 1px solid var(--n-line); background: var(--n-panel); }
+  .rlist { overflow: auto; flex: 1; min-height: 120px; border: 1px solid var(--n-line); background: var(--n-panel); }
   .rlist table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
   .rlist th { position: sticky; top: 0; background: var(--n-ctl); color: var(--n-mute); font-weight: 400; text-align: left; padding: 5px 8px; white-space: nowrap; }
   .rlist td { padding: 4px 8px; border-top: 1px solid #2a2a2a; white-space: nowrap; }
@@ -427,7 +428,7 @@
           <div class="nrow"><label for="netEd" class="accent"><span class="ko">게임 버전</span><span class="en">Version</span></label>
             <select id="netEd"><option value="cupsocs2"></option></select></div>
           <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
-          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
+          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netKeys" type="button"><span class="ko">키 설정</span><span class="en">Keys</span></button><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
         </div>
         <div class="net-col">
           <div class="nrow"><span class="nlab"><span class="ko">대전타입</span><span class="en">Match type</span></span>
@@ -914,7 +915,7 @@
   // 게임 서버 입구: 실사이트(GitHub Pages)에서는 이 PC 의 게임 서버(play.seibucup.online), 시험 주소에서는 같은 주소의 /ws
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 21;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 22;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true, tie: 'pk', teams: 'pick' };
@@ -1323,6 +1324,7 @@
     // 이 화면의 다른 게임 버튼: 경기 중에 누르면 경기 화면이 닫히므로 막는다
     $('btnClear').disabled = inMatch;
     $('netAlone').disabled = inMatch || !(ed === 'cupsoc' ? romOk.orig : romOk.sel);
+    $('netKeys').disabled = $('netAlone').disabled;
     ['netTut', 'netPractice'].forEach(function (id) {
       $(id).disabled = inMatch || !romOk.sel;
       $(id).title = romOk.sel ? '' : T('튜토리얼과 연습 게임은 셀렉션으로 합니다 - cupsocs2.zip 을 넣으세요', 'The tutorial and practice use Selection - add cupsocs2.zip');
@@ -1806,7 +1808,17 @@
   }
   $('btnSolo').onclick = waitingGame;
   // 혼자놀기: 고른 버전의 원래 오락실 게임 그대로 (넷플레이 없음)
-  $('netAlone').onclick = function () { $('aloneMenu').hidden = !$('aloneMenu').hidden; };
+  $('netAlone').onclick = function () { $('aloneMenu').style.left = $('netAlone').offsetLeft + 'px'; $('aloneMenu').hidden = !$('aloneMenu').hidden; };
+  // 키 설정 (user 2026-10-10 "웹버전에도 키설정 버튼 ... 런처처럼"): PC 런처의 키 설정과 같은 흐름 - 안내 → 게임만 켜기 → Tab 으로
+  // P1 키를 바꾸고 닫기. 게임을 닫을 때 이 브라우저에 저장되는 키 설정(cfg)을 온라인 대전·혼자놀기·연습 게임이 그대로 쓴다
+  $('netKeys').onclick = function () {
+    tx('readonly', function (st) { return st.count(); }, 'cfg').catch(function () { return 0; }).then(function (n) {
+      if (n > 0 && !confirm(T('이 브라우저에 키 설정이 이미 저장되어 있습니다.\n\n키 설정을 다시 하시겠습니까?', 'Your keys are saved in this browser already.\n\nSet them again?'))) return;
+      if (!confirm(T('게임만 따로 켜서 키를 설정합니다.\n\n게임이 켜지면 Tab 키 → Input Settings → Input Assignments (this system) 에서\nP1 의 방향키, Button 1(슛), Button 2(패스), 1 Player Start 를 원하는 키로 바꾸세요. 게임패드도 됩니다.\n\n다 했으면 게임 아래 [그만하기] 로 닫으세요. 그 키가 이 브라우저의 온라인 대전, 혼자놀기, 연습 게임에 그대로 쓰입니다.',
+                     'The game starts on its own so you can set your keys.\n\nIn the game press Tab -> Input Settings -> Input Assignments (this system)\nand set P1\'s directions, Button 1 (shoot), Button 2 (pass) and 1 Player Start. A gamepad works too.\n\nWhen you are done, close the game with [Stop] below it. Online matches, Play solo and Practice in this browser use those keys.'))) return;
+      start('solo', { label: T('키 설정', 'Keys') });
+    });
+  };
   document.querySelectorAll('#aloneMenu button').forEach(function (b) {
     b.onclick = function () {
       $('aloneMenu').hidden = true;
