@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 23:51","room":122,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"nicks":["슛돌이","루키","",""],"replay":"replays/20261010_235127_슛돌이_vs_루키_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:50","room":121,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"nicks":["111","test","",""],"replay":"replays/20261010_235041_111_vs_test_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:48","room":118,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,4],"ft":2,"series":"118-261010234803-26","nicks":["소","라울","",""],"replay":"replays/20261010_234803_소_vs_라울_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:47","room":114,"type":"1v1","time":180,"players":2,"score":[5,1],"teams":[9,5],"ft":2,"series":"114-261010234230-25","nicks":["레온","봉봉오락실","",""],"replay":"replays/20261010_234739_레온_vs_봉봉오락실_5-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 22:37","room":275,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,10],"nicks":["test","hjp017","",""],"replay":"replays/20261009_223703_test_vs_hjp017_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:36","room":276,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"nicks":["왕초보","라울","",""],"replay":"replays/20261009_223648_왕초보_vs_라울_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:35","room":274,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,9],"ft":2,"series":"274-261009223529-67","nicks":["전설의1군","드래곤타이거","",""],"replay":"replays/20261009_223529_전설의1군_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:35","room":272,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"272-261009223044-66","nicks":["소","판순이","",""],"replay":"replays/20261009_223453_소_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:35","room":265,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[4,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_223500_히든_vs_존경_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 22:35","room":272,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"272-261009223044-66","nicks":["소","판순이","",""],"replay":"replays/20261009_223453_소_vs_판순이_2-3_p1.scr","edition":"cupsocs2"}
 ]
