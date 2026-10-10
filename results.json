@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 21:50","room":60,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,0],"ft":2,"series":"60-261010215059-10","nicks":["즐축","라울","",""],"replay":"replays/20261010_215059_즐축_vs_라울_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 21:47","room":56,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[9,3],"nicks":["mizunoasahi","상봉거지오락실","",""],"replay":"replays/20261010_214757_mizunoasahi_vs_상봉거지오락실_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 21:42","room":56,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,7],"nicks":["mizunoasahi","즐축","",""],"replay":"replays/20261010_214214_mizunoasahi_vs_즐축_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 21:40","room":53,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,4],"ft":3,"series":"53-261010213610-9","nicks":["김정은패스","404page","",""],"replay":"replays/20261010_214019_김정은패스_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 20:27","room":229,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":2,"series":"229-261009202307-48","nicks":["전설의1군","NooB","",""],"replay":"replays/20261009_202754_전설의1군_vs_NooB_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:23","room":229,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":2,"series":"229-261009202307-48","nicks":["전설의1군","NooB","",""],"replay":"replays/20261009_202307_전설의1군_vs_NooB_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 20:15","room":228,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,4],"ft":3,"series":"228-261009201106-47","nicks":["NooB","라울","",""],"replay":"replays/20261009_201545_NooB_vs_라울_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 20:11","room":228,"type":"1v1","time":180,"players":2,"score":[1,3],"teams":[5,10],"ft":3,"series":"228-261009201106-47","nicks":["NooB","라울","",""],"replay":"replays/20261009_201105_NooB_vs_라울_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 17:57","room":210,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"210-261009175353-46","nicks":["404page","Todoroki","",""],"replay":"replays/20261009_175754_404page_vs_Todoroki_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 20:11","room":228,"type":"1v1","time":180,"players":2,"score":[1,3],"teams":[5,10],"ft":3,"series":"228-261009201106-47","nicks":["NooB","라울","",""],"replay":"replays/20261009_201105_NooB_vs_라울_1-3_p1.scr","edition":"cupsocs2"}
 ]
