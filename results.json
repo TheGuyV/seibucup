@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 17:15","room":104,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[10,3],"ft":2,"series":"104-261010170921-25","nicks":["전설의1군","율무아빠","",""],"replay":"replays/20261010_171502_전설의1군_vs_율무아빠_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:14","room":115,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"nicks":["골92","로또영","",""],"replay":"replays/20261010_171444_골92_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:13","room":106,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[3,10],"nicks":["princewi","상봉거지오락실","",""],"replay":"replays/20261010_171314_princewi_vs_상봉거지오락실_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:12","room":111,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,5],"nicks":["KingDani","NooB","",""],"replay":"replays/20261010_171253_KingDani_vs_NooB_3-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 15:26","room":161,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,0],"ft":2,"series":"161-261009152604-36","nicks":["KingDani","오버데쓰","",""],"replay":"replays/20261009_152602_KingDani_vs_오버데쓰_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:23","room":153,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[9,0],"nicks":["이재경짱","TEST","",""],"replay":"replays/20261009_152407_이재경짱_vs_TEST_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:21","room":149,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[9,5],"nicks":["KingDani","lonely","",""],"replay":"replays/20261009_152116_KingDani_vs_lonely_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 15:18","room":150,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"ft":3,"series":"150-261009151410-35","nicks":["싸커킴","TEST","",""],"replay":"replays/20261009_151824_싸커킴_vs_TEST_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 15:17","room":149,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,10],"nicks":["KingDani","lonely","",""],"replay":"replays/20261009_151727_KingDani_vs_lonely_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 15:18","room":150,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"ft":3,"series":"150-261009151410-35","nicks":["싸커킴","TEST","",""],"replay":"replays/20261009_151824_싸커킴_vs_TEST_2-3_p1.scr","edition":"cupsocs2"}
 ]
