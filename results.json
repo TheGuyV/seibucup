@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-11 01:08","room":149,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[5,7],"ft":3,"series":"149-261011010237-31","nicks":["로또영","byrlove","",""],"replay":"replays/20261011_010827_로또영_vs_byrlove_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:07","room":150,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,10],"ft":2,"series":"150-261011010716-32","nicks":["Janet","라울","",""],"replay":"replays/20261011_010716_Janet_vs_라울_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:04","room":148,"type":"1v1","time":300,"players":2,"score":[3,5],"teams":[9,10],"nicks":["세이부","전설의1군","",""],"replay":"replays/20261011_010433_세이부_vs_전설의1군_3-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:03","room":146,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[10,3],"ft":2,"series":"146-261011005915-30","nicks":["Janet","뚱이","",""],"replay":"replays/20261011_010306_Janet_vs_뚱이_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 23:22","room":292,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":3,"series":"292-261009231724-74","nicks":["드래곤타이거","익산킹존슨","",""],"replay":"replays/20261009_232219_드래곤타이거_vs_익산킹존슨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:21","room":293,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[9,5],"nicks":["Shaq","남서울오락실","",""],"replay":"replays/20261009_232140_Shaq_vs_남서울오락실_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:20","room":291,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,5],"nicks":["kilimanjaro","로또영","",""],"replay":"replays/20261009_232001_kilimanjaro_vs_로또영_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:18","room":286,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,10],"ft":2,"series":"286-261009231002-73","nicks":["코바오락실","전설의1군","",""],"replay":"replays/20261009_231809_코바오락실_vs_전설의1군_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:17","room":292,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,10],"ft":3,"series":"292-261009231724-74","nicks":["드래곤타이거","익산킹존슨","",""],"replay":"replays/20261009_231724_드래곤타이거_vs_익산킹존슨_2-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 23:18","room":286,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,10],"ft":2,"series":"286-261009231002-73","nicks":["코바오락실","전설의1군","",""],"replay":"replays/20261009_231809_코바오락실_vs_전설의1군_2-3_p1.scr","edition":"cupsocs2"}
 ]
