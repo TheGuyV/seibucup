@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 17:33","room":108,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,5],"nicks":["밍구","Airwalkv","",""],"replay":"replays/20261010_173344_밍구_vs_Airwalkv_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:31","room":115,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,8],"nicks":["골92","상봉거지오락실","",""],"replay":"replays/20261010_173125_골92_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:28","room":106,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,3],"nicks":["princewi","율무아빠","",""],"replay":"replays/20261010_172834_princewi_vs_율무아빠_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 17:27","room":115,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"nicks":["골92","상봉거지오락실","",""],"replay":"replays/20261010_172706_골92_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 16:01","room":174,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_160118_율무아빠_vs_KingDani_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:57","room":174,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,9],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_155729_율무아빠_vs_KingDani_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 15:53","room":174,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,4],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_155343_율무아빠_vs_KingDani_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 15:50","room":174,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,4],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_155002_율무아빠_vs_KingDani_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 15:48","room":170,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,9],"ft":2,"series":"170-261009154336-37","nicks":["소","오버데쓰","",""],"replay":"replays/20261009_154809_소_vs_오버데쓰_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 15:50","room":174,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,4],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261009_155002_율무아빠_vs_KingDani_2-2_p1.scr","edition":"cupsocs2"}
 ]
