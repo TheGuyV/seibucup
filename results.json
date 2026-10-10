@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 13:25","room":29,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261010_132552_율무아빠_vs_KingDani_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:21","room":22,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"22-261010131034-6","nicks":["NooB","핑크팬더","",""],"replay":"replays/20261010_132157_NooB_vs_핑크팬더_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:21","room":27,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,7],"nicks":["율무아빠","byrlove","",""],"replay":"replays/20261010_132107_율무아빠_vs_byrlove_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:20","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,9],"ft":2,"series":"25-261010131544-7","nicks":["404page","KingDani","",""],"replay":"replays/20261010_132028_404page_vs_KingDani_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 21:13","room":40,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,10],"nicks":["로또영","드버거","",""],"replay":"replays/20261008_211351_로또영_vs_드버거_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 21:10","room":40,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,10],"nicks":["로또영","드버거","",""],"replay":"replays/20261008_211014_로또영_vs_드버거_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 21:08","room":39,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"nicks":["존경","히든","",""],"replay":"replays/20261008_210846_존경_vs_히든_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 21:05","room":39,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["존경","히든","",""],"replay":"replays/20261008_210518_존경_vs_히든_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 21:01","room":39,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["존경","히든","",""],"replay":"replays/20261008_210126_존경_vs_히든_2-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 21:05","room":39,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["존경","히든","",""],"replay":"replays/20261008_210518_존경_vs_히든_1-1_p1.scr","edition":"cupsocs2"}
 ]
