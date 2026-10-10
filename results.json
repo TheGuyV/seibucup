@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 13:16","room":22,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"22-261010131034-6","nicks":["NooB","핑크팬더","",""],"replay":"replays/20261010_131619_NooB_vs_핑크팬더_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:15","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,9],"ft":2,"series":"25-261010131544-7","nicks":["404page","KingDani","",""],"replay":"replays/20261010_131544_404page_vs_KingDani_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:13","room":24,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"nicks":["율무아빠","힐리어드","",""],"replay":"replays/20261010_131323_율무아빠_vs_힐리어드_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:10","room":22,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,3],"ft":2,"series":"22-261010131034-6","nicks":["NooB","핑크팬더","",""],"replay":"replays/20261010_131034_NooB_vs_핑크팬더_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 21:01","room":39,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["존경","히든","",""],"replay":"replays/20261008_210126_존경_vs_히든_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:56","room":37,"type":"1v1","time":90,"players":2,"score":[0,1],"teams":[3,5],"nicks":["당연","히든","",""],"replay":"replays/20261008_205656_당연_vs_히든_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 20:54","room":37,"type":"1v1","time":90,"players":2,"score":[1,1],"teams":[4,3],"nicks":["당연","히든","",""],"replay":"replays/20261008_205429_당연_vs_히든_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 20:52","room":37,"type":"1v1","time":90,"players":2,"score":[0,1],"teams":[0,3],"nicks":["당연","히든","",""],"replay":"replays/20261008_205201_당연_vs_히든_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 20:49","room":37,"type":"1v1","time":90,"players":2,"score":[1,2],"teams":[8,5],"nicks":["당연","히든","",""],"replay":"replays/20261008_204929_당연_vs_히든_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 20:52","room":37,"type":"1v1","time":90,"players":2,"score":[0,1],"teams":[0,3],"nicks":["당연","히든","",""],"replay":"replays/20261008_205201_당연_vs_히든_0-1_p1.scr","edition":"cupsocs2"}
 ]
