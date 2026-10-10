@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 18:46","room":157,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,3],"nicks":["슬피우는새","즐축","",""],"replay":"replays/20261010_184623_슬피우는새_vs_즐축_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:42","room":157,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,4],"nicks":["슬피우는새","즐축","",""],"replay":"replays/20261010_184213_슬피우는새_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:41","room":158,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,5],"nicks":["Airwalkv","ㅋ","",""],"replay":"replays/20261010_184107_Airwalkv_vs_ㅋ_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:38","room":157,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[10,7],"nicks":["슬피우는새","즐축","",""],"replay":"replays/20261010_183824_슬피우는새_vs_즐축_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 16:51","room":192,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,0],"ft":2,"series":"192-261009164621-39","nicks":["404page","전설의1군","",""],"replay":"replays/20261009_165059_404page_vs_전설의1군_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:50","room":193,"type":"1v1","time":300,"players":2,"score":[4,3],"teams":[9,10],"ft":3,"series":"193-261009165034-40","nicks":["이재경짱","바트","",""],"replay":"replays/20261009_165044_이재경짱_vs_바트_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:48","room":184,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,7],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_164828_율무아빠_vs_NooB_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 16:46","room":192,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,9],"ft":2,"series":"192-261009164621-39","nicks":["404page","전설의1군","",""],"replay":"replays/20261009_164620_404page_vs_전설의1군_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 16:44","room":187,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,9],"ft":2,"series":"187-261009163547-38","nicks":["소","KingDani","",""],"replay":"replays/20261009_164440_소_vs_KingDani_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 16:46","room":192,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,9],"ft":2,"series":"192-261009164621-39","nicks":["404page","전설의1군","",""],"replay":"replays/20261009_164620_404page_vs_전설의1군_3-1_p1.scr","edition":"cupsocs2"}
 ]
