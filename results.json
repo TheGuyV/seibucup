@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 14:17","room":43,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,4],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_141715_율무아빠_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:13","room":43,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,0],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_141354_율무아빠_vs_드래곤타이거_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:10","room":43,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_141001_율무아빠_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:08","room":42,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"42-261010140816-11","nicks":["로또영","1111","",""],"replay":"replays/20261010_140816_로또영_vs_1111_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 23:46","room":78,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[5,9],"nicks":["히든","존경","",""],"replay":"replays/20261008_234631_히든_vs_존경_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:41","room":78,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,9],"nicks":["히든","존경","",""],"replay":"replays/20261008_234150_히든_vs_존경_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:32","room":60,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[8,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_233202_아무나들어오세요_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:26","room":60,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[10,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_232640_아무나들어오세요_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:21","room":60,"type":"1v1","time":210,"players":2,"score":[3,4],"teams":[7,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_232100_아무나들어오세요_vs_로또영_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 23:26","room":60,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[10,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_232640_아무나들어오세요_vs_로또영_2-3_p1.scr","edition":"cupsocs2"}
 ]
