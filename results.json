@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 13:36","room":29,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,9],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261010_133612_율무아빠_vs_KingDani_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:34","room":31,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,8],"nicks":["byrlove","404page","",""],"replay":"replays/20261010_133447_byrlove_vs_404page_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:32","room":29,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"nicks":["율무아빠","KingDani","",""],"replay":"replays/20261010_133255_율무아빠_vs_KingDani_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:31","room":31,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,7],"nicks":["byrlove","404page","",""],"replay":"replays/20261010_133101_byrlove_vs_404page_0-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 21:37","room":41,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[10,5],"nicks":["드버거","로또영","",""],"replay":"replays/20261008_213735_드버거_vs_로또영_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 21:33","room":41,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,5],"nicks":["드버거","로또영","",""],"replay":"replays/20261008_213351_드버거_vs_로또영_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 21:29","room":41,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,5],"nicks":["드버거","로또영","",""],"replay":"replays/20261008_212953_드버거_vs_로또영_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 21:25","room":41,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,5],"nicks":["드버거","로또영","",""],"replay":"replays/20261008_212545_드버거_vs_로또영_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 21:22","room":41,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"nicks":["드버거","로또영","",""],"replay":"replays/20261008_212200_드버거_vs_로또영_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 21:25","room":41,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,5],"nicks":["드버거","로또영","",""],"replay":"replays/20261008_212545_드버거_vs_로또영_2-1_p1.scr","edition":"cupsocs2"}
 ]
