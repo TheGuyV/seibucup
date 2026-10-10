@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-11 01:43","room":154,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,5],"nicks":["루키","byrlove","",""],"replay":"replays/20261011_014334_루키_vs_byrlove_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:39","room":154,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,7],"nicks":["루키","byrlove","",""],"replay":"replays/20261011_013946_루키_vs_byrlove_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:38","room":158,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[4,3],"nicks":["princewi","왕초보","",""],"replay":"replays/20261011_013848_princewi_vs_왕초보_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:35","room":154,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[0,5],"nicks":["루키","byrlove","",""],"replay":"replays/20261011_013530_루키_vs_byrlove_4-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 23:40","room":308,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"308-261009234004-79","nicks":["로또영","전설의1군","",""],"replay":"replays/20261009_234007_로또영_vs_전설의1군_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:38","room":307,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"307-261009233851-78","nicks":["Janet","익산킹존슨","",""],"replay":"replays/20261009_233843_Janet_vs_익산킹존슨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:35","room":306,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[9,10],"nicks":["Shaq","전설의1군","",""],"replay":"replays/20261009_233544_Shaq_vs_전설의1군_4-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:34","room":303,"type":"1v1","time":150,"players":2,"score":[7,0],"teams":[10,7],"ft":2,"series":"303-261009233437-77","nicks":["Janet","dvdp","",""],"replay":"replays/20261009_233428_Janet_vs_dvdp_7-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:31","room":295,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"295-261009232710-76","nicks":["로또영","익산킹존슨","",""],"replay":"replays/20261009_233120_로또영_vs_익산킹존슨_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 23:34","room":303,"type":"1v1","time":150,"players":2,"score":[7,0],"teams":[10,7],"ft":2,"series":"303-261009233437-77","nicks":["Janet","dvdp","",""],"replay":"replays/20261009_233428_Janet_vs_dvdp_7-0_p1.scr","edition":"cupsocs2"}
 ]
