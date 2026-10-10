@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 19:02","room":163,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":3,"series":"163-261010185410-34","nicks":["로또영","청탑오락실","",""],"replay":"replays/20261010_190244_로또영_vs_청탑오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:58","room":163,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,0],"ft":3,"series":"163-261010185410-34","nicks":["로또영","청탑오락실","",""],"replay":"replays/20261010_185842_로또영_vs_청탑오락실_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:57","room":164,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,5],"nicks":["슬피우는새","Airwalkv","",""],"replay":"replays/20261010_185703_슬피우는새_vs_Airwalkv_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:54","room":163,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,0],"ft":3,"series":"163-261010185410-34","nicks":["로또영","청탑오락실","",""],"replay":"replays/20261010_185410_로또영_vs_청탑오락실_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 17:04","room":193,"type":"1v1","time":300,"players":2,"score":[2,1],"teams":[9,10],"ft":3,"series":"193-261009165034-40","nicks":["이재경짱","바트","",""],"replay":"replays/20261009_170411_이재경짱_vs_바트_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:59","room":184,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_165944_율무아빠_vs_NooB_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:58","room":195,"type":"1v1","time":600,"players":2,"score":[3,9],"teams":[0,8],"nicks":["himac","Todoroki","",""],"replay":"replays/20261009_165837_himac_vs_Todoroki_3-9_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 16:57","room":193,"type":"1v1","time":300,"players":2,"score":[4,3],"teams":[9,10],"ft":3,"series":"193-261009165034-40","nicks":["이재경짱","바트","",""],"replay":"replays/20261009_165747_이재경짱_vs_바트_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 16:56","room":184,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_165616_율무아빠_vs_NooB_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 16:57","room":193,"type":"1v1","time":300,"players":2,"score":[4,3],"teams":[9,10],"ft":3,"series":"193-261009165034-40","nicks":["이재경짱","바트","",""],"replay":"replays/20261009_165747_이재경짱_vs_바트_4-3_p1.scr","edition":"cupsocs2"}
 ]
