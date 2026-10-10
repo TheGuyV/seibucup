@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 18:15","room":140,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,9],"ft":2,"series":"140-261010181109-31","nicks":["드래곤타이거","KingDani","",""],"replay":"replays/20261010_181537_드래곤타이거_vs_KingDani_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:12","room":135,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,7],"ft":2,"series":"135-261010180743-30","nicks":["NooB","상봉거지오락실","",""],"replay":"replays/20261010_181229_NooB_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:11","room":140,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,9],"ft":2,"series":"140-261010181109-31","nicks":["드래곤타이거","KingDani","",""],"replay":"replays/20261010_181109_드래곤타이거_vs_KingDani_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 18:07","room":135,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,3],"ft":2,"series":"135-261010180743-30","nicks":["NooB","상봉거지오락실","",""],"replay":"replays/20261010_180743_NooB_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 16:36","room":184,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,0],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_163618_율무아빠_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:35","room":187,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"ft":2,"series":"187-261009163547-38","nicks":["소","KingDani","",""],"replay":"replays/20261009_163544_소_vs_KingDani_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 16:32","room":182,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[7,0],"nicks":["noa","성내동펠레4","",""],"replay":"replays/20261009_163259_noa_vs_성내동펠레4_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 16:32","room":184,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,4],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_163244_율무아빠_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 16:30","room":186,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["KingDani","전설의1군","",""],"replay":"replays/20261009_163050_KingDani_vs_전설의1군_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 16:32","room":184,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,4],"nicks":["율무아빠","NooB","",""],"replay":"replays/20261009_163244_율무아빠_vs_NooB_1-1_p1.scr","edition":"cupsocs2"}
 ]
