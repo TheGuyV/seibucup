@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 23:16","room":106,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"nicks":["루키","라울","",""],"replay":"replays/20261010_231610_루키_vs_라울_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:12","room":106,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"nicks":["루키","라울","",""],"replay":"replays/20261010_231243_루키_vs_라울_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:12","room":104,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":2,"series":"104-261010231232-21","nicks":["NooB","즐축","",""],"replay":"replays/20261010_231232_NooB_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:06","room":95,"type":"2v2","time":150,"players":4,"score":[1,1],"teams":[3,10],"pk":[5,6],"ft":3,"series":"95-261010225654-20","nicks":["라울","레온","판순이","Janet"],"replay":"replays/20261010_230634_라울_vs_판순이_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 22:13","room":261,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,5],"ft":2,"series":"261-261009220924-63","nicks":["판순이","NooB","",""],"replay":"replays/20261009_221342_판순이_vs_NooB_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:11","room":262,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,10],"ft":2,"series":"262-261009221135-64","nicks":["소","드래곤타이거","",""],"replay":"replays/20261009_221123_소_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:09","room":261,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"ft":2,"series":"261-261009220924-63","nicks":["판순이","NooB","",""],"replay":"replays/20261009_220923_판순이_vs_NooB_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:07","room":259,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":2,"series":"259-261009220338-61","nicks":["Janet","전설의1군","",""],"replay":"replays/20261009_220736_Janet_vs_전설의1군_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:05","room":260,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,9],"ft":2,"series":"260-261009220546-62","nicks":["소","드래곤타이거","",""],"replay":"replays/20261009_220533_소_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 22:07","room":259,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":2,"series":"259-261009220338-61","nicks":["Janet","전설의1군","",""],"replay":"replays/20261009_220736_Janet_vs_전설의1군_3-2_p1.scr","edition":"cupsocs2"}
 ]
