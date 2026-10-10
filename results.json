@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-11 00:00","room":130,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"nicks":["왕초보","dahlia","",""],"replay":"replays/20261011_000007_왕초보_vs_dahlia_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:56","room":130,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,3],"nicks":["왕초보","dahlia","",""],"replay":"replays/20261010_235642_왕초보_vs_dahlia_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:56","room":129,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,8],"nicks":["초보1","봉봉오락실","",""],"replay":"replays/20261010_235616_초보1_vs_봉봉오락실_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:55","room":122,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,5],"nicks":["슛돌이","루키","",""],"replay":"replays/20261010_235510_슛돌이_vs_루키_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 22:47","room":282,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":2,"series":"282-261009224753-69","nicks":["소","코바오락실","",""],"replay":"replays/20261009_224740_소_vs_코바오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:42","room":277,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"277-261009223811-68","nicks":["Janet","777","",""],"replay":"replays/20261009_224157_Janet_vs_777_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:40","room":274,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[10,5],"ft":2,"series":"274-261009223529-67","nicks":["전설의1군","드래곤타이거","",""],"replay":"replays/20261009_224010_전설의1군_vs_드래곤타이거_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:40","room":279,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[10,3],"nicks":["kssss","dahlia","",""],"replay":"replays/20261009_224000_kssss_vs_dahlia_1-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:38","room":277,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,9],"ft":2,"series":"277-261009223811-68","nicks":["Janet","777","",""],"replay":"replays/20261009_223802_Janet_vs_777_3-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 22:40","room":279,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[10,3],"nicks":["kssss","dahlia","",""],"replay":"replays/20261009_224000_kssss_vs_dahlia_1-4_p1.scr","edition":"cupsocs2"}
 ]
