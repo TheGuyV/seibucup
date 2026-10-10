@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 11:35","room":18,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"ft":2,"series":"18-261010112745-3","nicks":["전설의1군","라울","",""],"replay":"replays/20261010_113504_전설의1군_vs_라울_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 11:31","room":18,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,0],"ft":2,"series":"18-261010112745-3","nicks":["전설의1군","라울","",""],"replay":"replays/20261010_113110_전설의1군_vs_라울_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 11:27","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,8],"ft":2,"series":"18-261010112745-3","nicks":["전설의1군","라울","",""],"replay":"replays/20261010_112745_전설의1군_vs_라울_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 11:01","room":11,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,10],"ft":3,"series":"11-261010105338-2","nicks":["로또영","전설의1군","",""],"replay":"replays/20261010_110153_로또영_vs_전설의1군_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 19:38","room":27,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[9,7],"ft":3,"series":"27-261008192258-4","nicks":["아무나들어오세요","404page","",""],"replay":"replays/20261008_193841_아무나들어오세요_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 19:32","room":27,"type":"1v1","time":210,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"27-261008192258-4","nicks":["아무나들어오세요","404page","",""],"replay":"replays/20261008_193220_아무나들어오세요_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 19:27","room":27,"type":"1v1","time":210,"players":2,"score":[0,2],"teams":[8,7],"ft":3,"series":"27-261008192258-4","nicks":["아무나들어오세요","404page","",""],"replay":"replays/20261008_192730_아무나들어오세요_vs_404page_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 19:22","room":27,"type":"1v1","time":210,"players":2,"score":[6,7],"teams":[8,7],"ft":3,"series":"27-261008192258-4","nicks":["아무나들어오세요","404page","",""],"replay":"replays/20261008_192258_아무나들어오세요_vs_404page_6-7_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 18:37","room":25,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[10,5],"ft":3,"series":"25-261008182123-3","nicks":["아무나들어오세요","Janet","",""],"replay":"replays/20261008_183725_아무나들어오세요_vs_Janet_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 19:22","room":27,"type":"1v1","time":210,"players":2,"score":[6,7],"teams":[8,7],"ft":3,"series":"27-261008192258-4","nicks":["아무나들어오세요","404page","",""],"replay":"replays/20261008_192258_아무나들어오세요_vs_404page_6-7_p1.scr","edition":"cupsocs2"}
 ]
