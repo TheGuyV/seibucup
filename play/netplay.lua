@@ -1357,7 +1357,7 @@ SCNP_PF = {
   ["8"] = { 7, 5, 7, 5, 7 }, ["9"] = { 7, 5, 7, 1, 7 },
   A = { 2, 5, 7, 5, 5 }, B = { 6, 5, 6, 5, 6 }, C = { 3, 4, 4, 4, 3 }, E = { 7, 4, 6, 4, 7 }, F = { 7, 4, 6, 4, 4 },
   I = { 7, 2, 2, 2, 7 }, L = { 4, 4, 4, 4, 7 }, N = { 6, 5, 5, 5, 5 }, O = { 7, 5, 5, 5, 7 }, P = { 6, 5, 6, 4, 4 },
-  S = { 3, 4, 2, 1, 6 }, T = { 7, 2, 2, 2, 2 }, U = { 5, 5, 5, 5, 7 },
+  S = { 3, 4, 2, 1, 6 }, T = { 7, 2, 2, 2, 2 }, U = { 5, 5, 5, 5, 7 }, D = { 6, 5, 5, 5, 6 }, Y = { 5, 5, 2, 2, 2 },
   ["%"] = { 5, 1, 2, 4, 5 }, [":"] = { 2, 0, 0, 0, 2, w = 1 }, ["."] = { 0, 0, 0, 0, 2, w = 1 }, [" "] = { 0, 0, 0, 0, 0, w = 2 },
 }
 -- width of a string in dots (1 dot between characters)
@@ -1569,6 +1569,14 @@ local function draw_hud()
       line({ { "FT" .. scnp_series[1] .. "  ", 0xffffd23f }, { string.format("%d : %d", l, r), 0xffffffff } })
     else
       line({ { "seibucup.online", 0xffe1e6e1 } })
+    end
+    -- a replay: the input delay at this point of the match, under the board's clock (right of the line above)
+    if is_replay and SCNP_RPD then
+      local d = SCNP_RPD.d0
+      for i = 1, #SCNP_RPD.at do if frame >= SCNP_RPD.at[i] then d = SCNP_RPD.d[i] end end
+      local t = "DELAY " .. d
+      scnp_pf_draw(w * 0.868 - scnp_pf_w(t) * u / 2, ty, u, { { "DELAY ", 0xff9fd8a8 }, { tostring(d), 0xffffffff } })
+      if d ~= SCNP_RPD.shown then SCNP_RPD.shown = d; log("replay: delay %d shown from frame %d", d, frame) end
     end
   end
   -- the input delay this match runs with: faint, in the bottom-left corner (user 2026-09-27)
@@ -2519,6 +2527,14 @@ local function step()
       clock_run = not r.meta:match('"clock":"stop"')      -- recordings before netplay 10 ran the clock through stoppages
       nplayers = tonumber(r.meta:match('"players":(%d+)')) or 2
       cfg.delay = tonumber(r.meta:match('"delay":(%d+)')) or cfg.delay
+      -- the input delay over the match, shown under the clock (user 2026-10-10 "리플레이에도 딜레이정보 ... 우측하단 게임시계 밑에"):
+      -- "dd" lists the host's changes as old>new@frame; "delay" is the one it ended on
+      SCNP_RPD = { at = {}, d = {} }
+      for od, nd, at in (r.meta:match('"dd":"([^"]*)"') or ""):gmatch("(%d+)>(%d+)@(%d+)") do
+        if not SCNP_RPD.d0 then SCNP_RPD.d0 = tonumber(od) end
+        SCNP_RPD.at[#SCNP_RPD.at + 1] = tonumber(at); SCNP_RPD.d[#SCNP_RPD.d + 1] = tonumber(nd)
+      end
+      SCNP_RPD.d0 = SCNP_RPD.d0 or cfg.delay
       cfg.time = r.meta:match('"time":(%d+)') or cfg.time
       scnp_stage = tonumber(r.meta:match('"stage":(%d+)') or "0") or 0; scnp_install_stage_tap()
       SCNP_PK.on = r.meta:match('"pk":1') ~= nil
