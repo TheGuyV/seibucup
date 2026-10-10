@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 20:32","room":21,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[3,0],"ft":3,"series":"21-261010202010-4","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261010_203206_로또영_vs_상봉거지오락실_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 20:27","room":21,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,7],"ft":3,"series":"21-261010202010-4","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261010_202758_로또영_vs_상봉거지오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 20:24","room":21,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,5],"ft":3,"series":"21-261010202010-4","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261010_202401_로또영_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 20:20","room":21,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"21-261010202010-4","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261010_202010_로또영_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 17:28","room":199,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"nicks":["율무아빠","이재경짱","",""],"replay":"replays/20261009_172821_율무아빠_vs_이재경짱_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:26","room":202,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[3,8],"ft":2,"series":"202-261009172615-42","nicks":["소","dvdp","",""],"replay":"replays/20261009_172612_소_vs_dvdp_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:24","room":199,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["율무아빠","이재경짱","",""],"replay":"replays/20261009_172429_율무아빠_vs_이재경짱_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 17:24","room":200,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[5,10],"pk":[3,4],"ft":2,"series":"200-261009171224-41","nicks":["호세뽕","NooB","",""],"replay":"replays/20261009_172412_호세뽕_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 17:20","room":199,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,9],"nicks":["율무아빠","이재경짱","",""],"replay":"replays/20261009_172034_율무아빠_vs_이재경짱_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 17:24","room":200,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[5,10],"pk":[3,4],"ft":2,"series":"200-261009171224-41","nicks":["호세뽕","NooB","",""],"replay":"replays/20261009_172412_호세뽕_vs_NooB_1-1_p1.scr","edition":"cupsocs2"}
 ]
