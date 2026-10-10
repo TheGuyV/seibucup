@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 23:22","room":108,"type":"1v1","time":180,"players":2,"score":[4,3],"teams":[7,0],"ft":2,"series":"108-261010231756-22","nicks":["레온","소","",""],"replay":"replays/20261010_232258_레온_vs_소_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:22","room":109,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"nicks":["남서울오락실","NooB","",""],"replay":"replays/20261010_232205_남서울오락실_vs_NooB_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:19","room":106,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,4],"nicks":["루키","라울","",""],"replay":"replays/20261010_231950_루키_vs_라울_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 23:17","room":108,"type":"1v1","time":180,"players":2,"score":[3,1],"teams":[7,3],"ft":2,"series":"108-261010231756-22","nicks":["레온","소","",""],"replay":"replays/20261010_231756_레온_vs_소_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 22:20","room":263,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,3],"ft":2,"series":"263-261009221606-65","nicks":["전설의1군","hjp017","",""],"replay":"replays/20261009_222035_전설의1군_vs_hjp017_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:20","room":266,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,8],"nicks":["777","왕초보","",""],"replay":"replays/20261009_222029_777_vs_왕초보_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 22:18","room":265,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"nicks":["히든","존경","",""],"replay":"replays/20261009_221850_히든_vs_존경_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:16","room":263,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"263-261009221606-65","nicks":["전설의1군","hjp017","",""],"replay":"replays/20261009_221608_전설의1군_vs_hjp017_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 22:16","room":262,"type":"1v1","time":150,"players":2,"score":[2,5],"teams":[0,5],"ft":2,"series":"262-261009221135-64","nicks":["소","드래곤타이거","",""],"replay":"replays/20261009_221551_소_vs_드래곤타이거_2-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 22:16","room":263,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"263-261009221606-65","nicks":["전설의1군","hjp017","",""],"replay":"replays/20261009_221608_전설의1군_vs_hjp017_4-3_p1.scr","edition":"cupsocs2"}
 ]
