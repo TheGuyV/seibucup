@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 14:05","room":36,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"nicks":["byrlove","1P","",""],"replay":"replays/20261010_140539_byrlove_vs_1P_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:01","room":36,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,5],"nicks":["byrlove","1P","",""],"replay":"replays/20261010_140147_byrlove_vs_1P_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:59","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"35-261010135131-10","nicks":["드래곤타이거","KingDani","",""],"replay":"replays/20261010_135958_드래곤타이거_vs_KingDani_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 13:58","room":36,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["byrlove","1P","",""],"replay":"replays/20261010_135820_byrlove_vs_1P_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-08 23:14","room":59,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[9,8],"ft":2,"series":"59-261008225905-12","nicks":["뚱이K","롤롤","",""],"replay":"replays/20261008_231444_뚱이K_vs_롤롤_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:13","room":60,"type":"1v1","time":210,"players":2,"score":[5,4],"teams":[0,5],"ft":3,"series":"60-261008231312-14","nicks":["아무나들어오세요","로또영","",""],"replay":"replays/20261008_231311_아무나들어오세요_vs_로또영_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-08 23:12","room":64,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"nicks":["q","t0ast","",""],"replay":"replays/20261008_231243_q_vs_t0ast_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:06","room":60,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"60-261008230645-13","nicks":["아무나들어오세요","t0ast","",""],"replay":"replays/20261008_230645_아무나들어오세요_vs_t0ast_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-08 23:03","room":59,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[0,7],"ft":2,"series":"59-261008225905-12","nicks":["뚱이K","롤롤","",""],"replay":"replays/20261008_230354_뚱이K_vs_롤롤_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-08 23:06","room":60,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"60-261008230645-13","nicks":["아무나들어오세요","t0ast","",""],"replay":"replays/20261008_230645_아무나들어오세요_vs_t0ast_3-2_p1.scr","edition":"cupsocs2"}
 ]
