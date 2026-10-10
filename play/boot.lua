@@ -66,7 +66,8 @@ if os.getenv("WEB_LOCKUI") == "1" then
   for _, tok in ipairs({ "UI_CANCEL", "UI_PAUSE", "UI_PAUSE_SHOT", "UI_MENU", "UI_CONFIGURE", "UI_SHOW_GFX", "UI_PAUSE_SINGLE",
                          "UI_ON_SCREEN_DISPLAY", "UI_RESET_MACHINE", "UI_SOFT_RESET", "UI_SAVE_STATE", "UI_LOAD_STATE",
                          "UI_QUICK_SAVE_STATE", "UI_QUICK_LOAD_STATE", "UI_REWIND_SINGLE", "UI_FAST_FORWARD", "UI_THROTTLE",
-                         "UI_FRAMESKIP_DEC", "UI_FRAMESKIP_INC", "UI_TOGGLE_DEBUG" }) do
+                         "UI_FRAMESKIP_DEC", "UI_FRAMESKIP_INC", "UI_TOGGLE_DEBUG",
+                         "UI_HELP", "UI_AUDIT", "UI_SAVE_STATE_QUICK", "UI_LOAD_STATE_QUICK", "UI_TOGGLE_CHEAT", "UI_TAPE_START", "UI_TAPE_STOP" }) do   -- F1-F8: the quick chat (2026-10-10)
     local ok = pcall(function()
       local t, pl = ioport:token_to_input_type(tok)
       ioport:set_type_seq(t, pl, "standard", none)

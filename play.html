@@ -176,6 +176,18 @@
   /* 리플레이 창 (user, 2026-09-27): PC 런처의 리플레이 창과 같은 두 탭 */
   .rmodal { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.6); padding: 16px; }
   .rmodal[hidden] { display: none; }
+  /* 이용 안내 (2026-10-11): 처음 온라인에 접속하기 전에 한 번, 채팅 아래 "이용 안내"로 다시 */
+  .nbox { background: var(--n-bg); color: var(--n-fg); border: 1px solid #3a3a3a; box-shadow: 5px 5px 0 rgba(0,0,0,.6); width: min(480px, 100%); max-height: calc(100vh - 32px); overflow: auto; font-size: 13.5px; }
+  .nbox .nh { padding: 14px 18px 10px; border-bottom: 1px solid #333; }
+  .nbox h2 { margin: 0; font-size: 17px; color: var(--n-yellow); }
+  .nbox .nsub { margin: 3px 0 0; color: var(--n-mute); font-size: 12px; }
+  .nbox ul { list-style: none; margin: 0; padding: 12px 18px 0; display: grid; gap: 9px; }
+  .nbox li { line-height: 1.5; }
+  .nbox li b { color: var(--n-blue2); margin-right: 6px; }
+  .nbox .nf { display: flex; align-items: center; gap: 10px; padding: 14px 18px 16px; }
+  .nbox .nf a { color: var(--n-blue2); font-size: 12.5px; }
+  .nbox .nf .grow { flex: 1; }
+  .nlink { display: inline-block; margin-top: 6px; font-size: 12px; color: var(--n-mute); }
   .rbox { background: var(--n-bg); color: var(--n-fg); border: 1px solid var(--n-line); box-shadow: 4px 4px 0 rgba(0,0,0,.5); width: min(960px, 100%); max-height: calc(100vh - 32px); display: flex; flex-direction: column;
           height: min(calc(52vh + 212px), calc(100vh - 32px)); }   /* 두 탭이 같은 크기 - 온라인 탭 기준, 탭을 바꿔도 창이 움직이지 않게 (user 2026-10-10) */
   .rhead { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--n-line); }
@@ -254,6 +266,10 @@
   .rfilter { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 0 0 8px; font-size: 12px; }
   .rfilter .chip { font: inherit; font-size: 12px; padding: 2px 10px; border-radius: 999px; border: 1px solid #555; background: transparent; color: var(--n-fg); cursor: pointer; }
   .rfilter .chip.on { border-color: var(--n-blue2); color: var(--n-blue2); background: rgba(110,168,255,.14); }
+  /* 입장 가능: 다른 탭보다 눈에 띄게 (user 2026-10-10) - 초록·굵게, 들어갈 방이 있으면 옅게 칠하고, 고르면 꽉 채운다 */
+  .rfilter .chip.seat { border: 2px solid #4cc477; color: #6ee093; font-weight: 700; }
+  .rfilter .chip.seat.has { background: rgba(76,196,119,.32); }
+  .rfilter .chip.seat.on { background: #2f9e55; border-color: #2f9e55; color: #fff; }
   .rfilter .age { color: var(--n-mute); }
   .tile.open { border: 2px solid var(--n-green); padding: 6px 9px 7px; }
   .tile.sel { border-color: var(--n-blue2); }
@@ -322,6 +338,25 @@
   .chatlog .nk { color: var(--n-blue2); font-weight: 700; }
   .chatlog .nk.me { color: var(--n-yellow); }
   .chatlog .sys { color: var(--n-mute); }
+  /* 공개채팅 = 말풍선 (user 2026-10-11, PC 런처와 같은 B안): 남의 글 왼쪽, 내 글 오른쪽 파랑, 접속·안내는 가운데 알약 */
+  #chatPub { background: #1a1c1f; padding: 2px 10px 8px; line-height: 1.4; overflow-x: hidden; }
+  #chatPub .row { display: flex; flex-direction: column; align-items: flex-start; margin-top: 3px; }
+  #chatPub .row.first { margin-top: 8px; }
+  #chatPub .row.me { align-items: flex-end; }
+  #chatPub .bn { font-size: 11.5px; font-weight: 700; margin: 0 0 2px 3px; }
+  #chatPub .bn .chm { margin-right: 3px; }
+  #chatPub .bl { display: flex; align-items: flex-end; gap: 5px; max-width: 84%; }
+  #chatPub .me .bl { flex-direction: row-reverse; }
+  #chatPub .bb { background: #2c2f34; border: 1px solid #3a3e45; color: #e8e8e8; border-radius: 10px; padding: 3px 10px; overflow-wrap: anywhere; }
+  #chatPub .me .bb { background: #2f62b8; border-color: #2f62b8; color: #fff; }
+  #chatPub .bt { font-size: 10.5px; color: #8c929b; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  #chatPub .pill { width: fit-content; max-width: 92%; margin: 8px auto 0; font-size: 11.5px; color: #aab0b9; background: #2c2f34; border-radius: 10px; padding: 1px 11px; text-align: center; overflow-wrap: anywhere; }
+  #chatPub .pill.join { background: #1c3a26; color: #82d79b; }
+  #chatPub .pill.notice { background: #42361a; color: #f5d278; font-weight: 700; }
+  #chatPub .pill.day { background: transparent; color: #8c929b; font-size: 11px; }
+  /* 방 밖에서는 내 방 칸이 비어 있다: 채팅을 크게 (user 2026-10-11) */
+  .net.noroom .seatbox { height: 46px; }
+  .net.noroom #chatPub { height: 270px; }
   .chatin { display: flex; gap: 6px; margin-top: 8px; }
   .net-notice { background: #2f2a12; color: var(--n-yellow); font-weight: 700; padding: 6px 16px; border-top: 1px solid #4a4220; }
   .net-notice { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -466,6 +501,23 @@
           <div class="ctabs" role="tablist"><button type="button" class="on" data-tab="pub"><span class="ko">공개채팅</span><span class="en">Public chat</span></button><button type="button" data-tab="room"><span class="ko">방 채팅</span><span class="en">Room chat</span></button></div>
           <div class="chatlog" id="chatPub" aria-live="polite"></div><div class="chatlog" id="chatRoom" aria-live="polite" hidden></div>
           <form id="chatform" class="chatin"><input id="chatin" maxlength="200" aria-label="chat" disabled><button class="nbtn" type="submit" id="btnSay" disabled><span class="ko">보내기</span><span class="en">Send</span></button></form>
+          <a href="#" class="nlink" id="unLink"><span class="ko">이용 안내</span><span class="en">Rules &amp; notice</span></a>
+        </div>
+      </div>
+      <div class="rmodal" id="useNotice" hidden role="dialog" aria-modal="true" aria-labelledby="unTitle">
+        <div class="nbox">
+          <div class="nh"><h2 id="unTitle"><span class="ko">세이부 컵 사커 온라인 이용 안내</span><span class="en">Seibu Cup Soccer Online - before you play</span></h2>
+            <p class="nsub"><span class="ko">온라인 대전을 시작하기 전에 한 번 확인해 주세요.</span><span class="en">Please read this once before playing online.</span></p></div>
+          <ul>
+            <li><b><span class="ko">매너</span><span class="en">Manners</span></b><span class="ko">욕설·비매너·경기 중 고의 퇴장은 채팅 제한이나 접속 차단될 수 있습니다. 공개채팅은 접속한 모두에게 보입니다.</span><span class="en">Swearing, bad manners and quitting a match on purpose can get your chat limited or your access blocked. Everybody online sees the public chat.</span></li>
+            <li><b><span class="ko">경기 기록</span><span class="en">Match records</span></b><span class="ko">끝까지 치른 경기의 닉네임·점수·리플레이는 홈페이지 "경기 기록"에 공개됩니다. 비밀번호 방은 공개하지 않습니다.</span><span class="en">Finished matches (nicknames, score, replay) are published on the website's Results page. Password rooms are not published.</span></li>
+            <li><b><span class="ko">영상</span><span class="en">Videos</span></b><span class="ko">공개된 경기의 리플레이는 닉네임 대신 나라(팀) 이름으로 표시해 개발자의 개인 유튜브 채널 등에 영상으로 올라갈 수 있습니다.</span><span class="en">Replays of published matches may be used in videos on the developer's personal YouTube channel and similar places, with each player shown by country (team) instead of nickname.</span></li>
+            <li><b><span class="ko">롬 파일</span><span class="en">ROMs</span></b><span class="ko">본인이 가진 롬 파일만 사용하세요. 이 서비스는 롬을 제공하지 않습니다.</span><span class="en">Use only ROM files you own. This service does not provide ROMs.</span></li>
+            <li><b><span class="ko">개인정보</span><span class="en">Privacy</span></b><span class="ko">접속 IP 등을 어떻게 처리하는지는 개인정보 처리방침에 있습니다.</span><span class="en">How connection data such as IP addresses is handled is in the privacy policy.</span></li>
+          </ul>
+          <div class="nf"><a href="privacy.html" target="_blank" rel="noopener"><span class="ko">개인정보 처리방침</span><span class="en">Privacy policy</span></a><span class="grow"></span>
+            <button class="nbtn" type="button" id="unClose"><span class="ko">동의하지 않음</span><span class="en">I do not agree</span></button>
+            <button class="nbtn primary" type="button" id="unOk"><span class="ko">동의하고 시작</span><span class="en">Agree and play</span></button></div>
         </div>
       </div>
       <div class="rmodal" id="repModal" hidden role="dialog" aria-modal="true" aria-labelledby="repTitle">
@@ -915,7 +967,7 @@
   // 게임 서버 입구: 실사이트(GitHub Pages)에서는 이 PC 의 게임 서버(play.seibucup.online), 시험 주소에서는 같은 주소의 /ws
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 22;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 23;   // 웹판 MAME 의 상태 서명(= PC 0.289 빌드와 같다)과 netplay.lua 의 프로토콜
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: 0, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, sound: true, tie: 'pk', teams: 'pick' };
@@ -1031,22 +1083,22 @@
     b.onclick = function () {
       var v = b.getAttribute('data-teams') === 'random' ? 'random' : 'pick', r = net.room;
       $('teamMenu').hidden = true;
-      if (r && r.type === '2v2' && (r.slot !== 1 || r.state !== 'waiting' || r.wa + r.wb > 0)) {
-        netSay(r.slot !== 1 ? T('팀 방식은 방장이 정합니다.', 'The host picks how the teams are made.') : T('시리즈 도중에는 바꿀 수 없습니다.', 'Not in the middle of a series.'));
+      if (r && r.type === '2v2' && (!isOwner(r) || r.state !== 'waiting' || r.wa + r.wb > 0)) {
+        netSay(!isOwner(r) ? T('팀 방식은 방장이 정합니다.', 'The host picks how the teams are made.') : T('시리즈 도중에는 바꿀 수 없습니다.', 'Not in the middle of a series.'));
         return;
       }
       nset.teams = v; saveSet(); drawType();
-      if (r && r.type === '2v2' && r.slot === 1) send('TEAMS ' + v);
+      if (r && r.type === '2v2' && isOwner(r)) send('TEAMS ' + v);
     };
   });
   document.addEventListener('click', function (e) { if (!e.target.closest('#teamMenu') && !e.target.closest('#btn2v2')) $('teamMenu').hidden = true; });
   document.addEventListener('click', function (e) { if (!e.target.closest('#aloneMenu') && !e.target.closest('#netAlone')) $('aloneMenu').hidden = true; });
   $('netPing').onchange = function () { nset.ping = +this.value; saveSet(); };
   // FT <n> <pk|gg>: 방장의 승부와 동점 처리 (릴레이 2026-09-28 이후가 필요하다: 예전 릴레이는 "3 gg" 를 단판으로 읽는다)
-  function sendFt() { var r = net.room; if (r && r.slot === 1 && r.state === 'waiting') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
+  function sendFt() { var r = net.room; if (isOwner(r) && r.state === 'waiting') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
   $('netFt').onchange = function () { nset.ft = +this.value; saveSet(); sendFt(); drawButtons(); };
   $('netTie').onchange = function () { nset.tie = this.value === 'gg' ? 'gg' : 'pk'; saveSet(); sendFt(); };
-  $('netTime').onchange = function () { nset.time = +this.value; saveSet(); var r = net.room; if (r && r.slot === 1 && r.state === 'waiting') send('TIME ' + nset.time); };
+  $('netTime').onchange = function () { nset.time = +this.value; saveSet(); var r = net.room; if (isOwner(r) && r.state === 'waiting') send('TIME ' + nset.time); };
   $('netStage').onchange = function () { nset.stage = +this.value; saveSet(); };
   $('netBgm').onchange = function () { nset.bgm = this.value; saveSet(); };
   $('netSwap').onclick = function (e) { e.preventDefault(); };    // 연속 경기는 항상 좌우를 바꾼다 (2026-10-01): 표시만 한다
@@ -1102,8 +1154,45 @@
   function hhmm(d) { return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
   // 방 채팅은 PC 런처처럼 "1P 닉네임:" 을 자리 색으로 (1P 빨강, 2P 파랑, 3P 주황, 4P 초록, 관전은 회색), 내가 쓴 말은 굵게
   var SEAT_COLORS = [null, 'rgb(220,60,60)', 'rgb(60,110,230)', 'rgb(200,140,0)', 'rgb(40,160,80)'];
+  // 공개채팅 한 줄을 말풍선으로: 같은 사람이 이어 쓰면 이름은 한 번, 같은 분의 시간은 마지막 말풍선에만, 날짜가 바뀌면 날짜 알약
+  var pubLast = { n: null, when: null, tEl: null, day: undefined };
+  var NAME_COL = ['#be96f0', '#eba95a', '#a59bf5', '#dcbe6e', '#96afe6', '#6ecdd2'];    // 실력 표시의 빨강·초록·파랑과 겹치지 않게
+  function nameCol(n) { var h = 0; for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0; return NAME_COL[h % NAME_COL.length]; }
+  function pubAdd(box, when, who, text, sys, mark) {
+    var day = /^\d\d-\d\d /.test(when) ? when.slice(0, 5) : null, hm = when.replace(/^\d\d-\d\d /, '');
+    function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+    if (day !== pubLast.day) {
+      pubLast.day = day; pubLast.n = null;
+      var d0 = day ? new Date(new Date().getFullYear(), +day.slice(0, 2) - 1, +day.slice(3)) : new Date();
+      box.appendChild(el('div', 'pill day', T((d0.getMonth() + 1) + '월 ' + d0.getDate() + '일', d0.toLocaleDateString('en', { month: 'short', day: 'numeric' }))));
+    }
+    if (sys) {
+      var pl = el('div', 'pill' + (sys === 'join' ? ' join' : sys === 'notice' ? ' notice' : '')), m = /^([▲≈▼]) /.exec(text);
+      if (m) { var k = { '▲': 'u', '≈': 'e', '▼': 'd' }[m[1]], c = el('span', 'chm sk-' + k, m[1] + ' '); c.title = skillWord(k); pl.appendChild(c); text = text.slice(2); }
+      pl.appendChild(document.createTextNode(text));
+      box.appendChild(pl); pubLast.n = null; return;
+    }
+    var me = who === net.nick, run = pubLast.n === who;
+    if (run && pubLast.when === when && pubLast.tEl) pubLast.tEl.remove();
+    var row = el('div', 'row' + (me ? ' me' : '') + (run ? '' : ' first'));
+    if (!me && !run) {
+      var bn = el('div', 'bn'); bn.style.color = nameCol(who);
+      if (mark && SKILL_SYM[mark] && mark !== '?') { var mk = el('span', 'chm sk-' + mark, SKILL_SYM[mark]); mk.title = skillWord(mark); bn.appendChild(mk); }
+      bn.appendChild(document.createTextNode(who)); row.appendChild(bn);
+    }
+    var bl = el('div', 'bl'), tm = el('span', 'bt', hm);
+    bl.appendChild(el('div', 'bb', text)); bl.appendChild(tm); row.appendChild(bl); box.appendChild(row);
+    pubLast.n = who; pubLast.when = when; pubLast.tEl = tm;
+  }
   function chat(tab, when, who, text, sys, slot, mark) {
     var box = $(tab === 'room' ? 'chatRoom' : 'chatPub'), d = document.createElement('div');
+    if (tab !== 'room') {
+      pubAdd(box, when, who, text, sys, mark);
+      while (box.childNodes.length > 400) box.removeChild(box.firstChild);
+      box.scrollTop = box.scrollHeight;
+      if (tab !== net.tab) document.querySelector('.ctabs [data-tab="' + tab + '"]').classList.add('ping');
+      return;
+    }
     var tm = document.createElement('span'); tm.className = 'tm'; tm.textContent = when; d.appendChild(tm);
     if (sys) { var s2 = document.createElement('span'); s2.className = 'sys'; s2.textContent = text; d.appendChild(s2); }
     else {
@@ -1122,7 +1211,7 @@
     box.scrollTop = box.scrollHeight;
     if (tab !== net.tab) document.querySelector('.ctabs [data-tab="' + tab + '"]').classList.add('ping');
   }
-  function sys(tab, text) { chat(tab, hhmm(new Date()), '', text, true); if (typeof tlog === 'function') tlog('sys ' + text); }
+  function sys(tab, text, kind) { chat(tab, hhmm(new Date()), '', text, kind || true); if (typeof tlog === 'function') tlog('sys ' + text); }
   function setTab(t) {
     net.tab = t;
     document.querySelectorAll('.ctabs button').forEach(function (b) { var on = b.getAttribute('data-tab') === t; b.classList.toggle('on', on); if (on) b.classList.remove('ping'); });
@@ -1134,7 +1223,7 @@
 
   // ---- 그리기
   function stateName(st) { return { waiting: T('대기중', 'waiting'), playing: T('경기중', 'playing') }[st] || st; }
-  function drawNet() { drawTiles(); drawSeats(); drawButtons(); drawStatus(); drawType(); }   // drawType: the 2 vs 2 button follows the room's teams
+  function drawNet() { $('net').classList.toggle('noroom', !net.room); drawTiles(); drawSeats(); drawButtons(); drawStatus(); drawType(); }   // drawType: the 2 vs 2 button follows the room's teams
   // 방 목록 (ROOMS 칸, 0부터): 0 id, 1 방장, 2 인원, 3 state, 4 type, 5 정원, 6 방장 핑, 7 핑 제한, 8 잠금, 9 관전, 10 time, 11 build, 12 solo,
   // 13 version, 14 ft, 15 proto, 16 방장 접속, 17 tie, 18 teams, 19 제목, 20 닉1,닉2,.., 21 준비 1,0,.., 22 접속 종류, 23 경기 점수 a:b:남은초, 24 시리즈 wa:wb
   var RF_KEYS = [['전체', 'All'], ['입장 가능', 'Seat free'], ['경기중', 'Playing'], ['관전 가능', 'To watch']];
@@ -1161,7 +1250,7 @@
     var el = $('rfilter'); if (!el) return;
     if (!net.ws) { el.innerHTML = ''; return; }
     var cur = nset.rfilter || 0;
-    el.innerHTML = RF_KEYS.map(function (k, i) { return '<button type="button" class="chip' + (cur === i ? ' on' : '') + '" data-rf="' + i + '">' + esc(T(k[0], k[1]) + ' ' + counts[i]) + '</button>'; }).join('') +
+    el.innerHTML = RF_KEYS.map(function (k, i) { return '<button type="button" class="chip' + (i === 1 ? ' seat' + (counts[i] > 0 ? ' has' : '') : '') + (cur === i ? ' on' : '') + '" data-rf="' + i + '">' + esc(T(k[0], k[1]) + ' ' + counts[i]) + '</button>'; }).join('') +
       '<span class="grow"></span><button type="button" class="chip" data-rsort="1">' + esc(nset.rsort === 'ping' ? T('정렬: 핑 낮은 순', 'Order: lowest ping') : T('정렬: 기본', 'Order: default')) + '</button>' +
       '<span class="age" id="rfAge">' + esc(roomsAge()) + '</span>';
   }
@@ -1239,12 +1328,12 @@
     if (t === 'ethernet') return 'wd';
     return mobile ? 'wm' : 'wd';
   }
-  function seatRows(names, builds, ready, cap, mySlot, specs, type, kinds, rid) {
+  function seatRows(names, builds, ready, cap, mySlot, specs, type, kinds, rid, ownerSlot) {
     var rows = '', teams = type === '2v2';
     for (var i = 0; i < Math.max(2, Math.min(4, cap || 2)); i++) {
       var nm = names[i] || '';
       rows += '<tr class="' + (i + 1 === mySlot ? 'me' : '') + '"><td>' + (i + 1) + 'P</td>' +
-        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i === 0 ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + (function () { var c = skillOf(rid, i); return SKILL_SYM[c] ? '<span class="skw sk-' + (c === '?' ? 'q' : c) + '">' + SKILL_SYM[c] + ' ' + esc(skillWord(c)) + '</span>' : ''; })() + (vsWord(rid, i) ? '<span class="skw sk-vs">' + esc(vsWord(rid, i)) + '</span>' : '') + '</td>'
+        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i + 1 === (ownerSlot || 1) ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + (function () { var c = skillOf(rid, i); return SKILL_SYM[c] ? '<span class="skw sk-' + (c === '?' ? 'q' : c) + '">' + SKILL_SYM[c] + ' ' + esc(skillWord(c)) + '</span>' : ''; })() + (vsWord(rid, i) ? '<span class="skw sk-vs">' + esc(vsWord(rid, i)) + '</span>' : '') + '</td>'
             : '<td class="empty">' + T('(비어 있음)', '(empty)') + '</td><td></td><td></td>') + '</tr>';
     }
     (specs || []).forEach(function (s, k) { if (s) rows += '<tr><td>' + T('관전', 'watch') + '</td><td>' + esc(s) + '</td><td></td><td>' + T('관전자', 'spectator') + '</td></tr>'; });
@@ -1254,7 +1343,7 @@
     var r = net.room, w = net.who;
     if (r) {
       $('roomTitle').textContent = T('내 방', 'My room') + ' · ' + T('방 ', 'room ') + r.id + (r.title ? ' 「' + r.title + '」' : '') + ' ' + r.type.replace('v', ' vs ') + ' (' + stateName(r.state) + ') · ' + (r.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+r.time) + (r.ft > 1 ? ' · FT' + r.ft + ' ' + r.wa + ':' + r.wb : '');
-      $('seatrows').innerHTML = seatRows(r.names, r.builds, r.ready, r.type === '2v2' ? 4 : r.cap, r.slot, r.specs, r.type, r.kinds, r.id);
+      $('seatrows').innerHTML = seatRows(r.names, r.builds, r.ready, r.type === '2v2' ? 4 : r.cap, r.slot, r.specs, r.type, r.kinds, r.id, r.owner);
     } else if (w) {
       var n = w.names.filter(Boolean).length;
       $('roomTitle').textContent = T('선택한 방', 'Selected room') + ' · ' + T('방 ', 'room ') + w.id + ' ' + w.type.replace('v', ' vs ') + ' (' + stateName(w.state) + ', ' + n + '/' + w.cap + ') · ' + (w.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+w.time);
@@ -1277,7 +1366,7 @@
   function drawButtons() {
     var on = !!net.ws, r = net.room;
     var inMatch = !!(running && running.mode === 'match');                        // 이 화면에서 온라인 경기가 돌고 있다
-    var host = !!(r && r.slot === 1), guest = !!(r && r.slot > 1);
+    var host = isOwner(r), guest = !!(r && r.slot >= 1 && r.slot <= 4 && !host);
     var count = r ? r.names.filter(Boolean).length : 0, playing = !!(r && r.state === 'playing');
     var qn = quickWaiting();
     $('btnQuick').classList.toggle('qready', qn > 0 && !r);
@@ -1396,7 +1485,7 @@
       drawSeats();
     }
     else if (cmd === 'ONLINE') { net.online = +arg || 0; drawStatus(); }
-    else if (cmd === 'JOINED') { var a = arg.split(' '), jm = SKILL_SYM[a[3]] && a[3] !== '?' ? SKILL_SYM[a[3]] + ' ' : ''; net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(jm + kindText(a[2]) + a[0] + ' 님이 들어왔습니다', jm + kindText(a[2]) + a[0] + ' joined')); }
+    else if (cmd === 'JOINED') { var a = arg.split(' '), jm = SKILL_SYM[a[3]] && a[3] !== '?' ? SKILL_SYM[a[3]] + ' ' : ''; net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(jm + kindText(a[2]) + a[0] + ' 님이 들어왔습니다', jm + kindText(a[2]) + a[0] + ' joined'), 'join'); }
     // 나간 사람 (릴레이 2026-10-02): 남은 인원과 함께
     else if (cmd === 'PARTED') { var q = arg.split(' '); net.online = +q[1] || net.online; drawStatus(); if (q[0] !== net.nick) sys('pub', T(kindText(q[2]) + q[0] + ' 님이 나갔습니다', kindText(q[2]) + q[0] + ' left')); }
     else if (cmd === 'NOTE' || cmd === 'NOTEM') {
@@ -1408,7 +1497,7 @@
       chat('pub', when, p[1], p.slice(2).join(' '), false, undefined, nm);
     }
     else if (cmd === 'NOTICE') { net.notice = arg.split('\t'); noticeIdx = 0; drawNotice(); }
-    else if (cmd === 'MOTD') sys('pub', arg);
+    else if (cmd === 'MOTD') sys('pub', arg, 'notice');
     else if (cmd === 'PONG') {
       if (net.pingAt) { net.rtt = Math.round(performance.now() - net.pingAt); net.pingAt = 0; drawStatus(); drawTiles(); }
       if (!net.pingSent && net.rtt >= 0) { net.pingSent = true; send('PING ' + net.rtt); }   // 첫 측정값을 바로 알린다: 릴레이가 입력 지연을 이 값으로 정한다
@@ -1520,13 +1609,16 @@
   }
   // ROOMINFO 뒤의 칸 (0부터): 0 id, 1 state, 2 내 자리, 3 닉1,닉2,닉3,닉4, 4 type, 5 maxping, 6 잠금, 7 관전, 8 time, 9 builds,
   // 10 준비 1,0,.., 11 version, 12 ft, 13 wa, 14 wb, 15 quick, 16 over, 17 capacity, 18 접속 종류 pc,ww,,
+  // 방장(방을 만든 사람)인가: 시작·강퇴·설정은 방장이, 경기 결과 보고·실시간 점수는 1P(경기의 호스트)가 (user 2026-10-10)
+  function isOwner(r) { return !!r && r.slot === (r.owner || 1); }
   function onRoomInfo(f) {
     var names = (f[3] || ',,,').split(','); while (names.length < 4) names.push('');
     var was = net.room;
     net.room = { id: f[0], state: f[1], slot: +f[2], names: names, type: f[4] || '1v1', specs: f[7] && f[7] !== '-' ? f[7].split(',') : [],
                  time: f[8] || '150', builds: (f[9] || ',,,').split(','), ready: (f[10] || '0,0,0,0').split(',').map(function (x) { return x === '1'; }),
                  edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2),
-                 kinds: (f[18] || ',,,').split(','), tie: f[19] === 'gg' ? 'gg' : 'pk', teams: f[20] === 'random' ? 'random' : 'pick', title: unescTitle(f[21]) };
+                 kinds: (f[18] || ',,,').split(','), tie: f[19] === 'gg' ? 'gg' : 'pk', teams: f[20] === 'random' ? 'random' : 'pick', title: unescTitle(f[21]),
+                 owner: +(f[22] || 1) || 1 };   // 방장 자리 (릴레이 프로토콜 23: 2 vs 2 랜덤 팀은 방장도 섞인다 - 방장 권한은 그대로, 1P 는 경기의 호스트)
     var r = net.room;
     if (net.ftTraceOn && (!was || was.state !== r.state || was.ready[r.slot - 1] !== r.ready[r.slot - 1])) ftTrace('room ' + r.state + (r.ready[r.slot - 1] ? ' R' : ''));
     if (net.ftTraceOn && !net.ftWaitAt && r.state === 'waiting') net.ftWaitAt = Date.now();   // FT 안전장치: 경기 뒤 대기로 돌아온 방 정보
@@ -1539,8 +1631,8 @@
       net.sel = null; net.who = null; setTab('room');
       sys('room', T('방 ' + r.id + '에 들어왔습니다 (' + (r.slot > 4 ? '관전' : r.slot + 'P') + '). 모두 준비를 누르면 시작합니다.', 'You are in room ' + r.id + ' (' + (r.slot > 4 ? 'watching' : r.slot + 'P') + '). The match starts when everybody is ready.'));
       // 방장은 PC 런처처럼 자기 경기 시간과 승부를 방에 건다
-      if (r.slot === 1 && !r.quick) { send('TIME ' + nset.time); if ((nset.ft !== r.ft || (nset.tie === 'gg' ? 'gg' : 'pk') !== r.tie) && r.type !== 'pve') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
-      if (r.slot === 1 && r.type === '2v2' && (nset.teams === 'random' ? 'random' : 'pick') !== r.teams) send('TEAMS ' + (nset.teams === 'random' ? 'random' : 'pick'));
+      if (isOwner(r) && !r.quick) { send('TIME ' + nset.time); if ((nset.ft !== r.ft || (nset.tie === 'gg' ? 'gg' : 'pk') !== r.tie) && r.type !== 'pve') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
+      if (isOwner(r) && r.type === '2v2' && (nset.teams === 'random' ? 'random' : 'pick') !== r.teams) send('TEAMS ' + (nset.teams === 'random' ? 'random' : 'pick'));
       $('teamMenu').hidden = true;
       $('pveMenu').hidden = true;
     }
@@ -1563,10 +1655,10 @@
     // 빠른 대결·대기중 게임의 자동 시작은 방마다 한 번 (PC 의 _autoStartSent): 경기가 끝난 뒤 같은 두 사람으로 또 시작하지 않는다
     // (user 2026-09-27 "단판인데 게임이 끝나도 계속 자동으로 이어서"). 상대가 나가 혼자가 되면 다음 손님을 위해 다시 켠다
     if (n < 2) net.autoStarted = false;
-    if (r.slot === 1 && r.state === 'waiting' && n >= 2 && !net.startSent && !net.autoStarted && (!running || running.mode === 'solo') && (r.quick || net.quick || net.soloWaiting)) { net.startSent = true; net.autoStarted = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' a' + (nset.swap ? 's' : '')); }
-    else if (r.slot === 1 && r.state === 'waiting' && all && n >= (r.type === 'pve' ? 1 : 2) && (r.type !== '2v2' || n === 4) && !net.startSent && !running) { net.startSent = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' ' + flags); }
+    if (isOwner(r) && r.state === 'waiting' && n >= 2 && !net.startSent && !net.autoStarted && (!running || running.mode === 'solo') && (r.quick || net.quick || net.soloWaiting)) { net.startSent = true; net.autoStarted = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' a' + (nset.swap ? 's' : '')); }
+    else if (isOwner(r) && r.state === 'waiting' && all && n >= (r.type === 'pve' ? 1 : 2) && (r.type !== '2v2' || n === 4) && !net.startSent && !running) { net.startSent = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' ' + flags); }
     if (net.interlude && !net.interlude.won && !net.interlude.critical) drawInterlude();
-    netSay(r.slot === 1 ? T('방을 열었습니다. 상대가 들어와 모두 준비하면 시작합니다.', 'Your room is open. It starts when everybody is ready.') : T('방에 들어왔습니다. 준비를 누르세요.', 'In the room - press Ready.'));
+    netSay(isOwner(r) ? T('방을 열었습니다. 상대가 들어와 모두 준비하면 시작합니다.', 'Your room is open. It starts when everybody is ready.') : T('방에 들어왔습니다. 준비를 누르세요.', 'In the room - press Ready.'));
     drawNet();
   }
   function sideName(side) {
@@ -1740,7 +1832,20 @@
     var nc = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     if (nc && nc.addEventListener) nc.addEventListener('change', function () { if (net.ws && net.ws.readyState === 1) send('CONN ' + myKind()); });
   } catch (e) {}
+  // 이용 안내 (user 2026-10-11 "런처 및 웹런처 최초 사용시 동의서를 받도록 하자. 지금 안받은 사람들에게도"): 버전마다 한 번,
+  // 확인해야 온라인에 접속한다 (내용이 바뀌면 NOTICE_V 를 올린다 - 모두에게 다시 뜬다). 127.0.0.1 시험(autonet)은 건너뛴다
+  var NOTICE_V = 1, noticeThen = null;
+  function noticeOk() { return (+store.get('web_notice') || 0) >= NOTICE_V; }
+  function showNotice(then) { noticeThen = then || null; $('useNotice').hidden = false; $('unOk').focus(); }
+  function hideNotice() { $('useNotice').hidden = true; noticeThen = null; }
+  $('unOk').onclick = function () { store.set('web_notice', String(NOTICE_V)); var t = noticeThen; hideNotice(); if (t) t(); };
+  $('unClose').onclick = function () { hideNotice(); if (!noticeOk()) netSay(T('이용 안내에 동의하지 않으면 온라인 대전(서버 접속)을 할 수 없습니다. 혼자놀기는 됩니다.', 'Without agreeing to the notice there is no online play. Solo play still works.')); };
+  $('useNotice').addEventListener('click', function (e) { if (e.target === this) $('unClose').onclick(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('useNotice').hidden) $('unClose').onclick(); });
+  $('unLink').onclick = function (e) { e.preventDefault(); showNotice(null); };
   function connect() {
+    var autoTest = typeof TESTQ !== 'undefined' && TESTQ && TESTQ.get('autonet') && location.hostname === '127.0.0.1';
+    if (!noticeOk() && !autoTest) { showNotice(connect); return; }
     var nick = cleanNick(nickIn.value); nickIn.value = nick;
     if (!nick) { nickIn.focus(); netSay(T('닉네임을 입력하세요.', 'Enter a nickname.')); return; }
     store.set('web_nick', nick);
@@ -1749,7 +1854,7 @@
     ws.binaryType = 'arraybuffer'; net.ws = ws; net.buf = ''; net.pingSent = false; netSay(T('접속 중…', 'Connecting…')); drawNet();
     var dec = new TextDecoder();
     ws.onopen = function () {
-      send('HELLO ' + nick);
+      send('HELLO ' + nick); send('AGREE ' + (noticeOk() ? NOTICE_V : 0));     // 이용 안내 (릴레이 2026-10-11: 없으면 로비에 못 들어온다)
       net.timer = setInterval(function () { net.pingAt = performance.now(); send('PING ' + Math.max(0, net.rtt)); }, 15000);
       setTimeout(function () { net.pingAt = performance.now(); send('PING'); }, 300);
     };
@@ -1801,7 +1906,7 @@
   }
   $('btnCreate').onclick = createRoom;
   function waitingGame() {
-    var r = net.room; if (!r || r.slot !== 1 || r.state !== 'waiting' || running) return;
+    var r = net.room; if (!isOwner(r) || r.state !== 'waiting' || running) return;
     net.soloWaiting = true; send('SOLO 1');
     sys('room', T('대기중 게임을 합니다. 누가 들어오면 바로 경기가 시작됩니다.', 'Playing a waiting game - the match starts as soon as somebody joins.'));
     start('solo', { label: T('대기중 게임', 'Waiting game') });

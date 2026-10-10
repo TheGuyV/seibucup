@@ -9,7 +9,7 @@
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
 
-local VERSION = 22     -- 22: the 2 vs 2 bottom line (1P/2P marks and PUSH START / CREDIT from the status routine at cupsocs2 $a8a8, cupsoc $a308) is blanked like the CREDIT text - 11 more ROM words (user 2026-10-10 "2:2 PUSH START도 지워줘"); 21: a level series match can go to golden goal instead of penalties (F pk 2, replays "pk":2); 20: GOD's tournament draws run on the country 1P pointed at (F god 2, replays "god":2); 19: the input delay follows the connection during a match (the host sends L, the others report their waits in W); 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
+local VERSION = 23     -- 23: quick chat F1-F8 (the M message, after a goal and at full time); no game change - the relay's random 2 vs 2 draws all four (the room's owner too, he keeps its controls from any seat, ROOMINFO says where) and swaps the country pickers inside each team every match of an FT series (user 2026-10-10); 22: the 2 vs 2 bottom line (1P/2P marks and PUSH START / CREDIT from the status routine at cupsocs2 $a8a8, cupsoc $a308) is blanked like the CREDIT text - 11 more ROM words (user 2026-10-10 "2:2 PUSH START도 지워줘"); 21: a level series match can go to golden goal instead of penalties (F pk 2, replays "pk":2); 20: GOD's tournament draws run on the country 1P pointed at (F god 2, replays "god":2); 19: the input delay follows the connection during a match (the host sends L, the others report their waits in W); 18: PvE may let 1P pick GOD (hold pass while confirming; the host says so in F, replays in "god"); 17: the host tells everybody how many are watching (V), shown right of the HUD clock; 16: a versus country select has no countdown and a country one side took cannot be taken by the other
                        --     (two ROM patches every peer must have: the host says so in F, replays in "sel")
                        -- 15: 2v2 seats are the board's players (1P+3P vs 2P+4P) and an FT series swaps 2v2 sides too;
                        --     a stretched match clock is run by the board itself (its tick reload byte, see install_clock_gate)
@@ -729,7 +729,7 @@ local function broadcast(data)
   for _, p in pairs(peers) do send_to(p, data) end
 end
 
-local MSG_LEN = { L = 2, W = 3, F = 5, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2 }   -- F: gen, pitch, penalties (12), versus select (16), GOD (18); J: gen, frame, random tune (16); V: gen, spectators (17); L: gen, delay; W: gen, ms waited (19)
+local MSG_LEN = { M = 3, L = 2, W = 3, F = 5, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2 }   -- F: gen, pitch, penalties (12), versus select (16), GOD (18); J: gen, frame, random tune (16); V: gen, spectators (17); L: gen, delay; W: gen, ms waited (19)
 local function next_message(p)
   local b = p.rx
   if #b < 1 then return nil end
@@ -2156,6 +2156,184 @@ local function on_post_load()
   else status("netplay synchronised: %d players, you are player %d, delay %d frames", nplayers, local_slot, cfg.delay) end
 end
 
+
+-- ================================================================== quick chat (F1-F8, protocol 23)
+-- User 2026-10-10: "인게임에서 f1~f8까지 매크로 채팅", the look of the mockup (quickchat_2v2.png), "골 뒤랑 경기 끝에만". Eight fixed
+-- phrases, sent as a number in the "M" message (gen, seat, phrase) and shown in each viewer's own language under the sender's
+-- team flag: a dark band, a bar and the seat tag in the seat's marker colour (1P red, 2P blue, 3P yellow, 4P green), the
+-- phrase in white. The window (user 2026-10-11 "골을 넣자마자 바로 ... 승부가 나자마자 바로 ... 채팅시간 끝나면 없애줘"): opens the
+-- moment the ball goes in (the ball's handler at 0x1138a0 turns to the board's goal routine - the score byte only moves at the
+-- restart, ~4.5 s later) for 7 s, and at full time (the relay keeps the games open 4 s after the result); the bands and the
+-- phrase line go when it closes. One phrase per player per window, and the host lets a seat through at most every 3 s. It
+-- never touches game memory, so the lockstep and the checksums do not see it, and replays do not keep it. One global table:
+-- the main chunk is at Lua's 200-local limit.
+QC = {
+  T = {
+    { ko = "안녕하세요! 잘 부탁해요", en = "Hi! Have a good game" },
+    { ko = "나이스 슛!", en = "Nice shot!" },
+    { ko = "아깝다~!", en = "So close!" },
+    { ko = "나이스 패스!", en = "Nice pass!" },
+    { ko = "감사합니다!", en = "Thanks!" },
+    { ko = "미안해요 ㅠ", en = "Sorry!" },
+    { ko = "한게임 더 해요!", en = "One more game!" },
+    { ko = "수고하셨습니다!", en = "Good game!" },
+  },
+  -- the phrase line's short names, for a screen where the whole phrases do not fit on one line
+  S = {
+    { ko = "인사", en = "Hi" }, { ko = "나이스 슛", en = "Nice shot" }, { ko = "아깝다", en = "Close" }, { ko = "나이스 패스", en = "Nice pass" },
+    { ko = "감사", en = "Thanks" }, { ko = "미안", en = "Sorry" }, { ko = "한게임 더", en = "One more" }, { ko = "수고", en = "GG" },
+  },
+  -- the ball's handler while the board celebrates a goal (the same routine in both sets, :Selection:'s 0xcf4 further on)
+  GOAL = { cupsoc = { [0x12064] = true, [0x12078] = true }, cupsocs2 = { [0x12d58] = true, [0x12d6c] = true } },
+  COL = { 0xffff4a4a, 0xff4070ff, 0xffffd23f, 0xff3ccd5f },
+  IN = 8, OUT = 14, GOALWIN = 420, GAP = 180,
+  keys = {}, prev = {}, show = { {}, {} }, last = { -99999, -99999, -99999, -99999 }, sent = false, winTill = -1, score = nil,
+  over = false, open = false, ingoal = false, goalAt = -99999, closeAt = nil, wc = {},
+}
+QC.GOAL.cupsocs = QC.GOAL.cupsocs2
+for i = 1, 8 do QC.keys[i] = input:code_from_token("KEYCODE_F" .. i) end
+function QC.text(id) local t = QC.T[id]; return t and (t[cfg.lang] or t.en) or "" end
+function QC.short(id) local t = QC.S[id]; return t and (t[cfg.lang] or t.en) or "" end
+-- the side whose flag a seat plays under: the board's 1P and 3P on the left (the seats are mapped, sides swap in a series)
+function QC.side(seat) local gp = GAME_PLAYER[seat] or seat; return (gp == 1 or gp == 3) and 1 or 2 end
+function qc_show(seat, id)
+  if not seat or not id or seat < 1 or seat > 4 or not QC.T[id] then return end
+  log("chat: %dP %s", seat, QC.T[id].en)
+  if not QC.open then return end                 -- came in after this machine's window closed: nothing to show any more
+  -- kept by the board's player: the tag and colour are the in-game marker's (a seat plays the board's 2P when sides are swapped)
+  local gp = GAME_PLAYER[seat] or seat
+  QC.show[QC.side(seat)][gp] = { id = id, at = frame }
+end
+-- the host: a player's phrase, checked (his own seat, a phrase there is, the window open, not too often) and passed on to everybody
+function qc_from_peer(p, payload)
+  local seat, id = payload:byte(1, 2)
+  if not seat or seat ~= p.slot or seat < 1 or seat > 4 or not QC.T[id] or not QC.open then return end
+  if frame - QC.last[seat] < QC.GAP then return end
+  QC.last[seat] = frame
+  qc_show(seat, id)
+  broadcast("M" .. string.char(gen, seat, id))
+end
+function qc_send(id)
+  QC.sent = true                                 -- one per window, whoever calls it (the phrase line goes)
+  if is_host then
+    if frame - QC.last[local_slot] < QC.GAP then return end
+    QC.last[local_slot] = frame
+    qc_show(local_slot, id)
+    broadcast("M" .. string.char(gen, local_slot, id))
+  elseif host_peer then
+    send_to(host_peer, "M" .. string.char(gen, local_slot, id))
+  end
+end
+-- each drawn frame: the window (a goal, or full time), and the keys
+function qc_step()
+  if phase ~= "play" then return end
+  local g = QC.GOAL[SCNP_GAME]
+  local goal = g and g[mem:read_u32(0x1138a0)] or false
+  if goal and not QC.ingoal then QC.winTill = frame + QC.GOALWIN; QC.sent = false; QC.goalAt = frame end
+  QC.ingoal = goal
+  if SCNP_G.score_l and SCNP_G.score_r then      -- a goal the handler did not show (should not happen): the score's change
+    local sc = mem:read_u8(SCNP_G.score_l) + mem:read_u8(SCNP_G.score_r)
+    if QC.score and sc > QC.score and frame - QC.goalAt > 600 then QC.winTill = frame + QC.GOALWIN; QC.sent = false end
+    QC.score = sc
+  end
+  -- full time: the clock at 0, not while a shoot-out is still on
+  local over = clock_start ~= nil and mem:read_u16(CLOCK_ADDR) == 0 and SCNP_PK.state ~= "run" and not SCNP_PVE.on
+  if over and not QC.over then QC.sent = false end
+  QC.over = over
+  local open = over or frame <= QC.winTill
+  if open ~= QC.open then
+    QC.closeAt = (not open) and frame or nil
+    if open then QC.show = { {}, {} } end
+    log("chat window %s at frame %d%s", open and "open" or "closed", frame, open and (over and " (full time)" or " (goal)") or "")
+  end
+  QC.open = open
+  if is_replay then return end
+  for i = 1, 8 do
+    local down = QC.keys[i] and input:code_pressed(QC.keys[i])
+    if down and not QC.prev[i] and open and not QC.sent and not is_spec and local_slot >= 1 and local_slot <= 4 then
+      qc_send(i)
+    end
+    QC.prev[i] = down
+  end
+end
+-- a band fades in when it comes and out when the window closes
+function QC.alpha(m)
+  local a = math.min(1, (frame - m.at + 1) / QC.IN)
+  if QC.closeAt then a = math.min(a, 1 - (frame - QC.closeAt) / QC.OUT) end
+  return a
+end
+function QC.argb(col, a) return (math.floor(a * ((col >> 24) & 0xff) + 0.5) << 24) | (col & 0xffffff) end
+-- the width of a string as the UI font draws it on the game screen. The UI's own measure is a share of the render target's
+-- width, which moves with the window's shape; its ratio to ten Hangul syllables does not, and a syllable is 0.83 of the line
+-- height (measured on 960x720 pictures, 2026-10-11 - the old estimate made spaces and Latin letters about twice too wide)
+function QC.width(s)
+  local v = QC.wc[s]
+  if v then return v end
+  local ok, r = pcall(function()
+    local ui = manager.ui
+    return ui:get_string_width(s) / ui:get_string_width("가가가가가가가가가가") * 10
+  end)
+  if ok and r and r > 0 then v = r * 0.83 * HUD_TH
+  else
+    local n = 0
+    pcall(function() for _, cp in utf8.codes(s) do n = n + ((cp >= 0x1100) and 0.83 or (cp == 32 and 0.26 or 0.42)) end end)
+    v = n * HUD_TH
+  end
+  QC.wc[s] = v
+  return v
+end
+-- under each team's flag, one band per seat that spoke (2 vs 2: up to two), as in the mockup at 960x720
+function qc_draw()
+  if not screen then return end
+  local w, h = screen.width or 320, screen.height or 240
+  -- the phrases while one may be sent (user 2026-10-11 "하단에 한줄로"): one line along the bottom, "[F1] 안녕하세요! ..."; when the
+  -- whole phrases do not fit the width, their short names, and only then F1-F4 over F5-F8 (the UI font has one size)
+  if QC.open and not QC.sent and not is_spec and not is_replay and local_slot >= 1 and local_slot <= 4 then
+    local kg, ig = QC.width(" "), QC.width("   ")
+    local function lw(a, b, f) local x = 0; for i = a, b do x = x + QC.width("[F" .. i .. "]") + kg + QC.width(f(i)) + (i < b and ig or 0) end; return x end
+    local f, rows = QC.text, { { 1, 8 } }
+    if lw(1, 8, QC.text) > w - 8 then
+      f = QC.short
+      if lw(1, 8, QC.short) > w - 8 then f, rows = QC.text, { { 1, 4 }, { 5, 8 } } end
+    end
+    local lh = HUD_TH + 2
+    local top = h - #rows * lh - 2
+    box(0, top - 2, w, h, 0xc8000000)
+    for r, rg in ipairs(rows) do
+      local x = (w - lw(rg[1], rg[2], f)) / 2
+      for i = rg[1], rg[2] do
+        local k, t = "[F" .. i .. "]", f(i)
+        screen:draw_text(x, top + (r - 1) * lh, k, 0xffffd23f, 0); x = x + QC.width(k) + kg
+        screen:draw_text(x, top + (r - 1) * lh, t, 0xfff4f4f4, 0); x = x + QC.width(t) + ig
+      end
+    end
+  end
+  local rh, gap, y0 = h * 30 / 720, h * 6 / 720, h * 134 / 720
+  local bar, pad, tgap = w * 5 / 960, w * 8 / 960, w * 7 / 960
+  for side = 1, 2 do
+    local y = y0
+    for seat = 1, 4 do                          -- here: the board's player (1P..4P on the scoreboard)
+      local m = QC.show[side][seat]
+      if m then
+        local a = QC.alpha(m)
+        if a <= 0 then QC.show[side][seat] = nil
+        else
+          local tag, txt = seat .. "P", QC.text(m.id)
+          local tw, gw = QC.width(txt), QC.width(tag)
+          local bw = bar + pad + gw + tgap + tw + pad
+          local x0 = (side == 1) and (w * 24 / 960) or (w * 936 / 960 - bw)
+          local ty = y + (rh - HUD_TH) / 2
+          box(x0, y, x0 + bw, y + rh, QC.argb(0xbe0a0e0c, a))
+          box(x0, y, x0 + bar, y + rh, QC.argb(QC.COL[seat], a))
+          screen:draw_text(x0 + bar + pad, ty, tag, QC.argb(QC.COL[seat], a), 0)
+          screen:draw_text(x0 + bar + pad + gw + tgap, ty, txt, QC.argb(0xffffffff, a), 0)
+          y = y + rh + gap
+        end
+      end
+    end
+  end
+end
+
 local function handle_host_message(p, t, g, payload)
   if t == "H" then
     local ver, _, want = payload:byte(1, 3)
@@ -2225,6 +2403,8 @@ local function handle_host_message(p, t, g, payload)
   elseif t == "Q" then
     local sent = string.unpack("<I4", payload)
     rtt[p.slot] = (now_ms() - sent) & 0xffffffff
+  elseif t == "M" then
+    qc_from_peer(p, payload)
   elseif g ~= gen then
     return
   elseif t == "R" then
@@ -2328,6 +2508,8 @@ local function handle_client_message(t, g, payload)
   elseif t == "Q" then
     local sent = string.unpack("<I4", payload)
     rtt[1] = (now_ms() - sent) & 0xffffffff
+  elseif t == "M" then
+    qc_show(payload:byte(1, 2))
   elseif g ~= gen then
     return
   elseif t == "G" then
@@ -2954,7 +3136,7 @@ local function on_frame_done()
   -- stays and piles up (the HUD's see-through black turned solid and flickered): draw it once per pause
   local W = SCNP_WAIT
   if W.on then if W.drawn then return end; W.drawn = true else W.drawn = false end
-  if phase == "play" then SCNP_FORM.draw(); draw_hud() else draw_overlay() end
+  if phase == "play" then qc_step(); SCNP_FORM.draw(); draw_hud(); qc_draw() else draw_overlay() end
 end
 
 -- SCNP_MODE=probe: the launcher wants the build id before any match has been played (it is
