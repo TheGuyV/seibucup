@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-11 02:05","room":158,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[4,7],"nicks":["princewi","byrlove","",""],"replay":"replays/20261011_020517_princewi_vs_byrlove_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 02:00","room":158,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[0,9],"nicks":["princewi","byrlove","",""],"replay":"replays/20261011_020051_princewi_vs_byrlove_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:55","room":158,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[8,7],"nicks":["princewi","byrlove","",""],"replay":"replays/20261011_015558_princewi_vs_byrlove_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 01:51","room":154,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["루키","byrlove","",""],"replay":"replays/20261011_015115_루키_vs_byrlove_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 23:52","room":310,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["Shaq","로또영","",""],"replay":"replays/20261009_235204_Shaq_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:48","room":308,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"ft":3,"series":"308-261009234004-79","nicks":["로또영","전설의1군","",""],"replay":"replays/20261009_234808_로또영_vs_전설의1군_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 23:47","room":305,"type":"2v2","time":210,"players":4,"score":[4,3],"teams":[7,8],"ft":2,"series":"305-261009234053-80","nicks":["판순이","드래곤타이거","즐축","주물러"],"replay":"replays/20261009_234737_판순이_vs_즐축_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:46","room":306,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,10],"nicks":["Shaq","동추산악회","",""],"replay":"replays/20261009_234645_Shaq_vs_동추산악회_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 23:44","room":308,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"308-261009234004-79","nicks":["로또영","전설의1군","",""],"replay":"replays/20261009_234407_로또영_vs_전설의1군_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 23:46","room":306,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,10],"nicks":["Shaq","동추산악회","",""],"replay":"replays/20261009_234645_Shaq_vs_동추산악회_2-0_p1.scr","edition":"cupsocs2"}
 ]
