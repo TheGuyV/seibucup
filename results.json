@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 16:49","room":100,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,0],"nicks":["Airwalkv","eroo","",""],"replay":"replays/20261010_164935_Airwalkv_vs_eroo_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 16:47","room":94,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"ft":3,"series":"94-261010163514-21","nicks":["로또영","KingDani","",""],"replay":"replays/20261010_164750_로또영_vs_KingDani_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 16:47","room":92,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"92-261010164154-22","nicks":["전설의1군","NooB","",""],"replay":"replays/20261010_164715_전설의1군_vs_NooB_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 16:46","room":91,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,0],"nicks":["밍구","princewi","",""],"replay":"replays/20261010_164657_밍구_vs_princewi_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 14:49","room":143,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,9],"nicks":["TEST","KingDani","",""],"replay":"replays/20261009_144928_TEST_vs_KingDani_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 14:43","room":134,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,7],"ft":3,"series":"134-261009142738-31","nicks":["드래곤타이거","404page","",""],"replay":"replays/20261009_144318_드래곤타이거_vs_404page_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 14:41","room":135,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"135-261009143128-32","nicks":["로또영","KingDani","",""],"replay":"replays/20261009_144122_로또영_vs_KingDani_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 14:38","room":134,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,4],"ft":3,"series":"134-261009142738-31","nicks":["드래곤타이거","404page","",""],"replay":"replays/20261009_143853_드래곤타이거_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 14:36","room":135,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"ft":3,"series":"135-261009143128-32","nicks":["로또영","KingDani","",""],"replay":"replays/20261009_143659_로또영_vs_KingDani_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 14:38","room":134,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,4],"ft":3,"series":"134-261009142738-31","nicks":["드래곤타이거","404page","",""],"replay":"replays/20261009_143853_드래곤타이거_vs_404page_2-1_p1.scr","edition":"cupsocs2"}
 ]
