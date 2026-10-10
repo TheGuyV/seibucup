@@ -1,77 +1,77 @@
 {
-  "version": "2.0.30",
+  "version": "2.0.31",
   "url": "https://seibucup.online/download.html",
-  "notes": "2:2 랜덤 팀을 FT마다 새로 섞고 나라 고르는 사람이 번갈아 바뀝니다 · 경기 중 빠른 채팅(F1~F8, 골 직후와 경기 끝) · 공개채팅 말풍선 · 입장 가능 탭 강조 · 온라인 이용 안내",
+  "notes": "빠른 채팅(F1~F8)이 골 슬로우모션이 시작될 때 바로 열립니다 · PvE에서도 판이 끝날 때 빠른 채팅을 쓸 수 있고, 문구가 사람 팀 쪽에 뜹니다",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/SeibuCupNetplay.exe",
-      "sha256": "0825a80b310edbd51025d33a39834daa45b9d20d243f8cb64501dfb117ce183e",
-      "size": 50645049
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/SeibuCupNetplay.exe",
+      "sha256": "7c84a44a5a644e80d3ad279985056686878d889f93f4f340d72c4e3debe45bc6",
+      "size": 50645053
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/netplay.lua",
-      "sha256": "f035a0f607e84de3f83c0d6e30020291c95890816793c23be393bd57d5ae3b87",
-      "size": 188456
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/netplay.lua",
+      "sha256": "8b757cf423da39e7368c7b7fd421888e56e0d07765d1db82b54c10336bf4f561",
+      "size": 189351
     },
     {
       "path": "netplay/tutorial/tutorial.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/tutorial.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/tutorial.lua",
       "sha256": "2f7f7cf310ef41e518460bf814d8fb656c4b93f9f7cf9263a10f681290df84ef",
       "size": 28122
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/defend.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/defend.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/defend.sta",
       "sha256": "fc387ebda973457ee592e1a6b3094098c559f27eb4c5e5bb3985bff7622e0119",
       "size": 130809
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/header.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/header.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/header.sta",
       "sha256": "722b557eba9e1b433b788d1c1fddfb362b66f7619cfadb23ec72633227863341",
       "size": 122973
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/keeper.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/keeper.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/keeper.sta",
       "sha256": "f9c048c9ae686a53bc1eb1709844599dfd1e4034703e72426e5d010d678334c4",
       "size": 128248
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/kickoff.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/kickoff.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/kickoff.sta",
       "sha256": "0871056edff5f327fef062be4ffb5073e25ad665b188cceb66cf17a11202815f",
       "size": 122432
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/overhead.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/overhead.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/overhead.sta",
       "sha256": "209a418bae60098efbc8486f10dc994c2b3cb60daad5d2e75ec29fc1168264c7",
       "size": 122927
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/shot.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/shot.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/shot.sta",
       "sha256": "e5242ce30b5bd6b3840f4e59e1b97ca045347638b8bc2dee757dac4668c385b1",
       "size": 120343
     },
     {
       "path": "netplay/practice/practice.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/practice.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/practice.lua",
       "sha256": "3925be23a0163b0e54aaff87e5313789430a5fddbff56ad367f3a6b4b893de85",
       "size": 11426
     },
     {
       "path": "netplay/god/god.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/god.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/god.lua",
       "sha256": "d75830be70c0be492c31ec201ec89926a3a2a8ed1f7c88cc8bfeae905a16250e",
       "size": 4620
     },
     {
       "path": "netplay/filters.zip",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.30/filters.zip",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.31/filters.zip",
       "sha256": "f81c18e846f47048feb849874db1cd0815e5eee3fbc7fcd798a4be279b5a82ce",
       "size": 542602
     }

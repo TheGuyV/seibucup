@@ -2161,9 +2161,9 @@ end
 -- User 2026-10-10: "인게임에서 f1~f8까지 매크로 채팅", the look of the mockup (quickchat_2v2.png), "골 뒤랑 경기 끝에만". Eight fixed
 -- phrases, sent as a number in the "M" message (gen, seat, phrase) and shown in each viewer's own language under the sender's
 -- team flag: a dark band, a bar and the seat tag in the seat's marker colour (1P red, 2P blue, 3P yellow, 4P green), the
--- phrase in white. The window (user 2026-10-11 "골을 넣자마자 바로 ... 승부가 나자마자 바로 ... 채팅시간 끝나면 없애줘"): opens the
--- moment the ball goes in (the ball's handler at 0x1138a0 turns to the board's goal routine - the score byte only moves at the
--- restart, ~4.5 s later) for 7 s, and at full time (the relay keeps the games open 4 s after the result); the bands and the
+-- phrase in white. The window (user 2026-10-11 "골을 넣자마자 바로 ... 승부가 나자마자 바로 ... 채팅시간 끝나면 없애줘", then "골을 넣은
+-- 슬로우모션 타이밍에"): opens when the goal's slow motion starts (QC.SLOW; else the ball's handler at 0x1138a0 turning to the board's
+-- goal routine - the score byte only moves at the restart, ~4.5 s later) for 7 s, and at full time (the relay keeps the games open 4 s after the result); the bands and the
 -- phrase line go when it closes. One phrase per player per window, and the host lets a seat through at most every 3 s. It
 -- never touches game memory, so the lockstep and the checksums do not see it, and replays do not keep it. One global table:
 -- the main chunk is at Lua's 200-local limit.
@@ -2185,17 +2185,21 @@ QC = {
   },
   -- the ball's handler while the board celebrates a goal (the same routine in both sets, :Selection:'s 0xcf4 further on)
   GOAL = { cupsoc = { [0x12064] = true, [0x12078] = true }, cupsocs2 = { [0x12d58] = true, [0x12d6c] = true } },
+  -- the goal's slow motion (user 2026-10-11 "골을 넣은 슬로우모션 타이밍에"): bit 4 of the match block's byte 3 is set the frame after
+  -- the ball crosses the line, 1.3-2 s before the goal routine (3 replays: one rise per goal, none otherwise)
+  SLOW = { cupsoc = 0x109d53, cupsocs2 = 0x109ee3, cupsocs = 0x109ee3 },
   COL = { 0xffff4a4a, 0xff4070ff, 0xffffd23f, 0xff3ccd5f },
   IN = 8, OUT = 14, GOALWIN = 420, GAP = 180,
   keys = {}, prev = {}, show = { {}, {} }, last = { -99999, -99999, -99999, -99999 }, sent = false, winTill = -1, score = nil,
-  over = false, open = false, ingoal = false, goalAt = -99999, closeAt = nil, wc = {},
+  over = false, open = false, ingoal = false, inslow = false, goalAt = -99999, closeAt = nil, wc = {},
 }
 QC.GOAL.cupsocs = QC.GOAL.cupsocs2
 for i = 1, 8 do QC.keys[i] = input:code_from_token("KEYCODE_F" .. i) end
 function QC.text(id) local t = QC.T[id]; return t and (t[cfg.lang] or t.en) or "" end
 function QC.short(id) local t = QC.S[id]; return t and (t[cfg.lang] or t.en) or "" end
 -- the side whose flag a seat plays under: the board's 1P and 3P on the left (the seats are mapped, sides swap in a series)
-function QC.side(seat) local gp = GAME_PLAYER[seat] or seat; return (gp == 1 or gp == 3) and 1 or 2 end
+-- (PvE: every human plays on 1P's team - all of them under that flag, user 2026-10-11 "pve 는 채팅 안돼?? f1~8")
+function QC.side(seat) if SCNP_PVE.on then return 1 end local gp = GAME_PLAYER[seat] or seat; return (gp == 1 or gp == 3) and 1 or 2 end
 function qc_show(seat, id)
   if not seat or not id or seat < 1 or seat > 4 or not QC.T[id] then return end
   log("chat: %dP %s", seat, QC.T[id].en)
@@ -2227,17 +2231,22 @@ end
 -- each drawn frame: the window (a goal, or full time), and the keys
 function qc_step()
   if phase ~= "play" then return end
+  -- a goal: its slow motion starts the window; the goal routine (a moment later) only if the slow motion was not seen
+  local sa = QC.SLOW[SCNP_GAME]
+  local slow = sa and (mem:read_u8(sa) & 0x10) ~= 0 or false
   local g = QC.GOAL[SCNP_GAME]
   local goal = g and g[mem:read_u32(0x1138a0)] or false
-  if goal and not QC.ingoal then QC.winTill = frame + QC.GOALWIN; QC.sent = false; QC.goalAt = frame end
-  QC.ingoal = goal
+  if ((slow and not QC.inslow) or (goal and not QC.ingoal)) and frame - QC.goalAt > 300 then
+    QC.winTill = frame + QC.GOALWIN; QC.sent = false; QC.goalAt = frame
+  end
+  QC.inslow = slow; QC.ingoal = goal
   if SCNP_G.score_l and SCNP_G.score_r then      -- a goal the handler did not show (should not happen): the score's change
     local sc = mem:read_u8(SCNP_G.score_l) + mem:read_u8(SCNP_G.score_r)
     if QC.score and sc > QC.score and frame - QC.goalAt > 600 then QC.winTill = frame + QC.GOALWIN; QC.sent = false end
     QC.score = sc
   end
-  -- full time: the clock at 0, not while a shoot-out is still on
-  local over = clock_start ~= nil and mem:read_u16(CLOCK_ADDR) == 0 and SCNP_PK.state ~= "run" and not SCNP_PVE.on
+  -- full time: the clock at 0, not while a shoot-out is still on (PvE too: each match of its run ends there)
+  local over = clock_start ~= nil and mem:read_u16(CLOCK_ADDR) == 0 and SCNP_PK.state ~= "run"
   if over and not QC.over then QC.sent = false end
   QC.over = over
   local open = over or frame <= QC.winTill
