@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 21:07","room":45,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"nicks":["히든","존경","",""],"replay":"replays/20261010_210756_히든_vs_존경_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 20:57","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,9],"ft":3,"series":"39-261010205732-6","nicks":["뚱이K","라울","",""],"replay":"replays/20261010_205732_뚱이K_vs_라울_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 20:49","room":27,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[4,3],"pk":[2,3],"ft":3,"series":"27-261010204002-5","nicks":["상봉거지오락실","뚱이K","",""],"replay":"replays/20261010_204923_상봉거지오락실_vs_뚱이K_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 20:44","room":27,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,0],"ft":3,"series":"27-261010204002-5","nicks":["상봉거지오락실","뚱이K","",""],"replay":"replays/20261010_204423_상봉거지오락실_vs_뚱이K_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 17:34","room":203,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,4],"ft":2,"series":"203-261009173119-44","nicks":["호세뽕","판순이","",""],"replay":"replays/20261009_173445_호세뽕_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:34","room":204,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"204-261009173107-43","nicks":["소","NooB","",""],"replay":"replays/20261009_173435_소_vs_NooB_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 17:31","room":199,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"nicks":["율무아빠","이재경짱","",""],"replay":"replays/20261009_173156_율무아빠_vs_이재경짱_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 17:31","room":203,"type":"1v1","time":150,"players":2,"score":[2,6],"teams":[9,3],"ft":2,"series":"203-261009173119-44","nicks":["호세뽕","판순이","",""],"replay":"replays/20261009_173121_호세뽕_vs_판순이_2-6_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 17:31","room":204,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,5],"ft":2,"series":"204-261009173107-43","nicks":["소","NooB","",""],"replay":"replays/20261009_173104_소_vs_NooB_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 17:31","room":203,"type":"1v1","time":150,"players":2,"score":[2,6],"teams":[9,3],"ft":2,"series":"203-261009173119-44","nicks":["호세뽕","판순이","",""],"replay":"replays/20261009_173121_호세뽕_vs_판순이_2-6_p1.scr","edition":"cupsocs2"}
 ]
