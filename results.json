@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-10 14:44","room":49,"type":"1v1","time":210,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"49-261010143434-13","nicks":["삼손김주성","404page","",""],"replay":"replays/20261010_144436_삼손김주성_vs_404page_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:41","room":43,"type":"1v1","time":150,"players":2,"score":[5,5],"teams":[0,3],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_144135_율무아빠_vs_드래곤타이거_5-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:39","room":49,"type":"1v1","time":210,"players":2,"score":[0,2],"teams":[5,7],"ft":3,"series":"49-261010143434-13","nicks":["삼손김주성","404page","",""],"replay":"replays/20261010_143909_삼손김주성_vs_404page_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-10 14:36","room":43,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,9],"nicks":["율무아빠","드래곤타이거","",""],"replay":"replays/20261010_143626_율무아빠_vs_드래곤타이거_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-09 00:12","room":92,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,5],"ft":2,"series":"92-261009001215-19","nicks":["즐축","로또영","",""],"replay":"replays/20261009_001218_즐축_vs_로또영_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:10","room":88,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"88-261009000530-17","nicks":["Janet","404page","",""],"replay":"replays/20261009_001000_Janet_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-09 00:06","room":84,"type":"1v1","time":210,"players":2,"score":[2,3],"teams":[9,5],"ft":3,"series":"84-261009000654-18","nicks":["아무나들어오세요","테일러장군","",""],"replay":"replays/20261009_000653_아무나들어오세요_vs_테일러장군_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 00:06","room":78,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_000634_히든_vs_존경_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-09 00:05","room":88,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[10,7],"ft":2,"series":"88-261009000530-17","nicks":["Janet","404page","",""],"replay":"replays/20261009_000523_Janet_vs_404page_4-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-09 00:06","room":78,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"nicks":["히든","존경","",""],"replay":"replays/20261009_000634_히든_vs_존경_2-3_p1.scr","edition":"cupsocs2"}
 ]
