@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 10:26","room":5,"type":"1v1","time":150,"players":2,"score":[5,5],"teams":[9,7],"nicks":["mizunoasahi","김정은패스","",""],"replay":"replays/20261014_102601_mizunoasahi_vs_김정은패스_5-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 02:03","room":15,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[7,3],"ft":2,"series":"15-261014015927-2","nicks":["김정은패스","이강인탁구","",""],"replay":"replays/20261014_020333_김정은패스_vs_이강인탁구_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 01:59","room":15,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,0],"ft":2,"series":"15-261014015927-2","nicks":["김정은패스","이강인탁구","",""],"replay":"replays/20261014_015927_김정은패스_vs_이강인탁구_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 01:50","room":12,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,7],"ft":2,"series":"12-261014015053-1","ranked":1,"nicks":["즐축","김정은패스","",""],"replay":"replays/20261014_015053_즐축_vs_김정은패스_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-11 23:33","room":88,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[4,5],"nicks":["하니","삼손김주성","",""],"replay":"replays/20261011_233343_하니_vs_삼손김주성_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 23:31","room":80,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,0],"ft":3,"series":"80-261011232256-16","nicks":["로또영","소","",""],"replay":"replays/20261011_233134_로또영_vs_소_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-11 23:30","room":85,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,7],"ft":3,"series":"85-261011233005-17","nicks":["세교리남자","즐축","",""],"replay":"replays/20261011_233005_세교리남자_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-11 23:27","room":80,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,0],"ft":3,"series":"80-261011232256-16","nicks":["로또영","소","",""],"replay":"replays/20261011_232719_로또영_vs_소_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-11 23:26","room":82,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,5],"nicks":["김정은패스","NooB","",""],"replay":"replays/20261011_232653_김정은패스_vs_NooB_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-11 23:27","room":80,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,0],"ft":3,"series":"80-261011232256-16","nicks":["로또영","소","",""],"replay":"replays/20261011_232719_로또영_vs_소_2-3_p1.scr","edition":"cupsocs2"}
 ]
