@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 23:13","room":155,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[255,255],"ft":3,"series":"155-261014230718-45","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261014_231340_surferKIM_vs_서퍼킴_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 23:12","room":156,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,5],"ft":3,"series":"156-261014230513-44","nicks":["김창식씨","로또영","",""],"replay":"replays/20261014_231239_김창식씨_vs_로또영_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 23:10","room":155,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,5],"ft":3,"series":"155-261014230718-45","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261014_231037_surferKIM_vs_서퍼킴_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 23:09","room":156,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,5],"ft":3,"series":"156-261014230513-44","nicks":["김창식씨","로또영","",""],"replay":"replays/20261014_230908_김창식씨_vs_로또영_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 15:14","room":23,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"23-261013150627-3","nicks":["슛돌이","상봉거지오락실","",""],"replay":"replays/20261013_151430_슛돌이_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 15:10","room":23,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"ft":2,"series":"23-261013150627-3","nicks":["슛돌이","상봉거지오락실","",""],"replay":"replays/20261013_151021_슛돌이_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 15:06","room":23,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,7],"ft":2,"series":"23-261013150627-3","nicks":["슛돌이","상봉거지오락실","",""],"replay":"replays/20261013_150627_슛돌이_vs_상봉거지오락실_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 15:00","room":21,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,10],"nicks":["오락실체어샷","상봉거지오락실","",""],"replay":"replays/20261013_150017_오락실체어샷_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 14:55","room":20,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,0],"nicks":["backsh1224","오락실체어샷","",""],"replay":"replays/20261013_145554_backsh1224_vs_오락실체어샷_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 15:00","room":21,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,10],"nicks":["오락실체어샷","상봉거지오락실","",""],"replay":"replays/20261013_150017_오락실체어샷_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"}
 ]
