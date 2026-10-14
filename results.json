@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 19:40","room":75,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"nicks":["으랏차","라울","",""],"replay":"replays/20261014_194031_으랏차_vs_라울_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:40","room":66,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_194020_인형의기사_vs_이재경짱_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:39","room":76,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,3],"nicks":["정의사회구현","판순이","",""],"replay":"replays/20261014_193935_정의사회구현_vs_판순이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:37","room":77,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,3],"ft":2,"series":"77-261014193734-18","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_193734_드래곤타이거_vs_narahashi_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 20:47","room":13,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"nicks":["인형의기사","로또영","",""],"replay":"replays/20261012_204724_인형의기사_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 20:45","room":12,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,4],"nicks":["루키","라울","",""],"replay":"replays/20261012_204547_루키_vs_라울_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 20:44","room":14,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":3,"series":"14-261012204441-4","nicks":["드래곤타이거","dfdf","",""],"replay":"replays/20261012_204441_드래곤타이거_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 20:43","room":13,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["인형의기사","로또영","",""],"replay":"replays/20261012_204340_인형의기사_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 20:41","room":12,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,4],"nicks":["루키","라울","",""],"replay":"replays/20261012_204148_루키_vs_라울_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 20:43","room":13,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["인형의기사","로또영","",""],"replay":"replays/20261012_204340_인형의기사_vs_로또영_2-3_p1.scr","edition":"cupsocs2"}
 ]
