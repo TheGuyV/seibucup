@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 21:40","room":106,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,10],"nicks":["인형의기사","김창식씨","",""],"replay":"replays/20261014_214037_인형의기사_vs_김창식씨_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:40","room":103,"type":"1v1","time":180,"players":2,"score":[1,3],"teams":[0,5],"nicks":["으랏차","로또영","",""],"replay":"replays/20261014_214022_으랏차_vs_로또영_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:39","room":107,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,9],"nicks":["오락실체어샷","dfdf","",""],"replay":"replays/20261014_213953_오락실체어샷_vs_dfdf_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:37","room":105,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":3,"series":"105-261014213717-24","nicks":["뚱이","상봉거지오락실","",""],"replay":"replays/20261014_213717_뚱이_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 21:39","room":29,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[10,0],"nicks":["하니","라울","",""],"replay":"replays/20261012_213924_하니_vs_라울_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 21:38","room":37,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,7],"ft":2,"series":"37-261012213822-15","nicks":["kilimanjaro","즐축","",""],"replay":"replays/20261012_213822_kilimanjaro_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 21:36","room":29,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"nicks":["하니","라울","",""],"replay":"replays/20261012_213604_하니_vs_라울_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 21:35","room":34,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,5],"nicks":["dfdf","로또영","",""],"replay":"replays/20261012_213555_dfdf_vs_로또영_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 21:35","room":36,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"36-261012213543-14","nicks":["샤부사커","드래곤타이거","",""],"replay":"replays/20261012_213543_샤부사커_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 21:35","room":34,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,5],"nicks":["dfdf","로또영","",""],"replay":"replays/20261012_213555_dfdf_vs_로또영_3-4_p1.scr","edition":"cupsocs2"}
 ]
