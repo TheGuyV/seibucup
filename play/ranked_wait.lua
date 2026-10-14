@@ -187,7 +187,7 @@ local function center(scr, y, text, col) scr:draw_text("center", y, text, col or
 
 local saved = false
 
-local NOCONT = os.getenv("RQW_SOLO") == "1"
+local NOCONT = false
 local NG = ({ cupsoc = { clock = 0x109d64, sl = 0x109d6f, sr = 0x109db7, tm = 0x109d6c },
               cupsocs2 = { clock = 0x109ef4, sl = 0x109eff, sr = 0x109f47, tm = 0x109efc } })[SCNP_GAME]
 local nc = { on = false, endAt = nil }
@@ -200,7 +200,7 @@ local function nocontinue(scr, w)
     local sl, sr = mem:read_u8(NG.sl), mem:read_u8(NG.sr)
     local left = (mem:read_u8(NG.tm) & 1) ~= 0 or (mem:read_u8(NG.tm + 0x48) & 1) == 0
     local mine, theirs = left and sl or sr, left and sr or sl
-    if mine <= theirs then nc.endAt = frame + 180 end
+    if mine < theirs then nc.endAt = frame + 180 end
   end
   if nc.endAt then
     box(scr, w / 2 - 100, 92, w / 2 + 100, 122, 0xe0000000, 0xffff5050)
