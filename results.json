@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 18:13","room":55,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"ft":3,"series":"55-261014181327-13","nicks":["로또영","깜찍만두","",""],"replay":"replays/20261014_181327_로또영_vs_깜찍만두_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 17:55","room":53,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,9],"ft":3,"series":"53-261014175501-12","nicks":["로또영","이재경짱","",""],"replay":"replays/20261014_175501_로또영_vs_이재경짱_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 17:27","room":47,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"ft":3,"series":"47-261014171745-10","nicks":["바트","키아누리브스","",""],"replay":"replays/20261014_172706_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 17:24","room":44,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"44-261014172103-11","nicks":["로또영","왕초보","",""],"replay":"replays/20261014_172433_로또영_vs_왕초보_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 17:49","room":21,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[9,8],"nicks":["KingDani","이재경짱","",""],"replay":"replays/20261012_174933_KingDani_vs_이재경짱_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 17:44","room":21,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,10],"nicks":["KingDani","이재경짱","",""],"replay":"replays/20261012_174446_KingDani_vs_이재경짱_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 16:47","room":14,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":3,"series":"14-261012164701-7","nicks":["샤부사커","로또영","",""],"replay":"replays/20261012_164701_샤부사커_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 16:40","room":13,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,7],"nicks":["zzangbs","jjjjjjj","",""],"replay":"replays/20261012_164043_zzangbs_vs_jjjjjjj_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 16:23","room":11,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,9],"nicks":["오락실체어샷","드래곤타이거","",""],"replay":"replays/20261012_162346_오락실체어샷_vs_드래곤타이거_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 16:40","room":13,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,7],"nicks":["zzangbs","jjjjjjj","",""],"replay":"replays/20261012_164043_zzangbs_vs_jjjjjjj_1-0_p1.scr","edition":"cupsocs2"}
 ]
