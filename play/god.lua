@@ -69,3 +69,12 @@ god_draw = emu.register_frame_done(function()
   local s = machine.screens[":screen"]
   if s then s:draw_box(0, 0, s.width, 9, 0xc0000000, 0xc0000000); s:draw_text("center", 0, hint, 0xffffff40) end
 end)
+
+;(function()
+  local rq = os.getenv("RQW_OVERLAY")
+  if rq and rq ~= "" then
+    local f, err = loadfile(rq, "t", _ENV)
+    local ok = f and pcall(f)
+    if not ok then emu.print_error("ranked overlay: " .. tostring(err)) end
+  end
+end)()

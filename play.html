@@ -717,17 +717,19 @@
     if (extra && extra.replaylocal) q.set('replaylocal', extra.replaylocal);
     if (extra && extra.names) q.set('names', extra.names);
     if (extra && extra.god) q.set('god', '1');
+    if (extra && extra.arcade) q.set('arcade', '1');
+    if (extra && extra.resume) q.set('resume', '1');
 
     try { if (Array.prototype.some.call(navigator.getGamepads(), Boolean)) store.set('web_haspad', '1'); } catch (e) {}
     if (store.get('web_haspad') === '1') q.set('pads', '1');
-    if (mode === 'match') ['kinds', 'token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'dyn', 'ball', 'diff', 'pvegod', 'comic', 'costume'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
+    if (mode === 'match') ['kinds', 'token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'dyn', 'ball', 'diff', 'pvegod', 'comic', 'costume', 'nochat'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
     if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); ['xargs', 'nobeat', 'burn'].forEach(function (k) { if (TESTQ.get(k)) q.set(k, TESTQ.get(k)); }); }
     hideInterlude();
     var f = document.createElement('iframe');
     if (new URLSearchParams(location.search).get('fps')) q.set('fps', '1');
     f.src = 'play/game.html?' + q.toString(); f.title = 'Seibu Cup Soccer'; f.allow = 'autoplay; fullscreen; gamepad';
     $('screen').appendChild(f);
-    running = { mode: mode, frame: f, label: (extra && extra.label) || T(LABEL[mode][0], LABEL[mode][1]), watching: mode === 'match' && extra && +extra.slot >= 5 };
+    running = { mode: mode, frame: f, label: (extra && extra.label) || T(LABEL[mode][0], LABEL[mode][1]), watching: mode === 'match' && extra && +extra.slot >= 5, arcade: !!(extra && extra.arcade) };
     if (mode === 'solo') playBegin(typeof net !== 'undefined' && net.soloWaiting ? 'wait' : (extra && extra.god ? 'god' : 'solo'), q.get('game'));
     else if (mode === 'tutorial' || mode === 'practice') playBegin(mode, 'cupsocs2');
     $('stageTitle').textContent = running.label + (mode === 'match' && extra.slot ? ' · ' + (+extra.slot >= 5 ? T('관전', 'watching') : extra.slot + 'P') : '');
@@ -771,7 +773,8 @@
     function done() {
       ftTrace('closed ' + (r ? r.mode : '-') + ' end=' + (net.matchEnded ? 1 : 0));
 
-      if (r && r.mode === 'match') {
+      if (r && r.mode === 'match' && net.arcRole) { arcGameDone(); net.matchEnded = false; }
+      else if (r && r.mode === 'match') {
         if (!net.matchEnded && net.room) {
           var lwhy = r.watching ? T('관전을 그만두어 방에서 나왔습니다.', 'You stopped watching and left the room.')
                                 : T('경기를 그만두어 방에서 나왔습니다. 경기는 끝났고 결과는 남지 않습니다.', 'You stopped the match and left the room. The match is over and no result is kept.');
@@ -780,6 +783,8 @@
         net.matchEnded = false;
       }
       if (r && r.mode === 'solo' && net.soloWaiting) { net.soloWaiting = false; if (net.room && net.room.state === 'waiting') send('SOLO 0'); }
+      if (r && r.mode === 'solo' && r.arcade && !net.arcHandoff) send('ARC SOLO 0');
+      if (r && r.mode === 'solo' && r.arcade) net.arcHandoff = false;
       setTimeout(drawButtons, 0);
       if (fsEl()) fsExit();
       if (r && r.mode === 'match' && net.interludeDue && (net.room || net.interlude)) { net.interludeDue = false; net.interlude = net.interlude || {}; drawInterlude(); }
@@ -946,6 +951,8 @@
 
       if (d.text && running && running.mode === 'match') try { running.frame.contentWindow.postMessage({ get: 'replay', name: d.text }, location.origin); } catch (e) {}
     }
+    else if (d.type === 'wantstate') { try { running.frame.contentWindow.postMessage({ type: 'arcstate', bytes: net.arcState }, location.origin); } catch (e) {} }
+    else if (d.type === 'arcstate') { if (net.arcStateWait) { var cbs = net.arcStateWait; net.arcStateWait = null; cbs(d.bytes || null); } }
     else if (d.type === 'replaybytes') { if (d.bytes && d.name) keepReplay(d.name, d.bytes, false); if (res.onBytes) { var cb = res.onBytes; res.onBytes = null; cb(d.name, d.bytes); } }
     else if (d.type === 'pk') net.pkEnded = true;
     else if (d.type === 'pad') { logline('gamepad ' + d.text); if (/^connected/.test(d.text)) store.set('web_haspad', '1'); drawPads(); }
@@ -1600,6 +1607,7 @@
 
       if (+c[0] >= 5 && running && running.mode === 'match') { try { running.frame.contentWindow.postMessage({ type: 'specchat', nick: c[1], text: c.slice(2).join(' ') }, location.origin); } catch (e) {} } if (!(net.room && +c[0] === net.room.slot) && (document.hidden || !document.hasFocus())) { chime('chat'); flashTitle(c[1] + ': ' + c.slice(2).join(' ')); } }
     else if (cmd === 'START') onStart(arg.split(' '));
+    else if (cmd === 'ARC') onArc(arg.split(' '));
     else if (cmd === 'QUICK') {
       var q = arg.split(' ');
       if (q[0] === 'created') { net.quick = true; sys('room', T('기다리는 상대가 없어 방을 열었습니다. 대기중 게임을 하다가 누가 들어오면 바로 시작합니다.', 'Nobody was waiting - a room is open; play the CPU until somebody joins.')); setTimeout(waitingGame, 300); }
@@ -1752,7 +1760,7 @@
                  time: f[8] || '150', builds: (f[9] || ',,,').split(','), ready: (f[10] || '0,0,0,0').split(',').map(function (x) { return x === '1'; }),
                  edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2),
                  kinds: (f[18] || ',,,').split(','), tie: f[19] === 'gg' ? 'gg' : 'pk', teams: f[20] === 'random' ? 'random' : 'pick', title: unescTitle(f[21]),
-                 owner: +(f[22] || 1) || 1, diff: f[23] !== undefined && f[23] !== '' ? +f[23] : 3, vsgod: f[24] === '1', ranked: f[25] === '1' };
+                 owner: +(f[22] || 1) || 1, diff: f[23] !== undefined && f[23] !== '' ? +f[23] : 3, vsgod: f[24] === '1', ranked: f[25] === '1', arcade: f[26] === '1' };
     var r = net.room;
     if (net.ftTraceOn && (!was || was.state !== r.state || was.ready[r.slot - 1] !== r.ready[r.slot - 1])) ftTrace('room ' + r.state + (r.ready[r.slot - 1] ? ' R' : ''));
     if (net.ftTraceOn && !net.ftWaitAt && r.state === 'waiting') net.ftWaitAt = Date.now();
@@ -1765,8 +1773,9 @@
       net.sel = null; net.who = null; setTab('room');
       sys('room', T('방 ' + r.id + '에 들어왔습니다 (' + (r.slot > 4 ? '관전' : r.slot + 'P') + '). 모두 준비를 누르면 시작합니다.', 'You are in room ' + r.id + ' (' + (r.slot > 4 ? 'watching' : r.slot + 'P') + '). The match starts when everybody is ready.'));
 
-      if (isOwner(r) && !r.quick) { send('TIME ' + nset.time); if ((nset.ft !== r.ft || (nset.tie === 'gg' ? 'gg' : 'pk') !== r.tie) && r.type !== 'pve') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
-      if (isOwner(r) && r.type === '2v2' && (nset.teams === 'random' ? 'random' : 'pick') !== r.teams) send('TEAMS ' + (nset.teams === 'random' ? 'random' : 'pick'));
+      if (r.arcade && net.arcRole === 'chal') send('READY 1');
+      if (isOwner(r) && !r.quick && !r.arcade) { send('TIME ' + nset.time); if ((nset.ft !== r.ft || (nset.tie === 'gg' ? 'gg' : 'pk') !== r.tie) && r.type !== 'pve') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
+      if (isOwner(r) && r.type === '2v2' && !r.arcade && (nset.teams === 'random' ? 'random' : 'pick') !== r.teams) send('TEAMS ' + (nset.teams === 'random' ? 'random' : 'pick'));
       if (isOwner(r) && r.type === 'pve' && nset.pveDiff !== r.diff) send('DIFF ' + nset.pveDiff);
       if (isOwner(r) && r.type === 'pve' && !!nset.pveVsGod !== r.vsgod) send('PVEGOD ' + (nset.pveVsGod ? 1 : 0));
       $('teamMenu').hidden = true;
@@ -1914,6 +1923,77 @@
     $('stageTitle').textContent = 'FT' + ft + ' · ' + (il.won ? T('시리즈 끝', 'series over') : T('다음 경기 준비', 'next match'));
     var c = $('ilClose'); if (c) c.onclick = function () { hideInterlude(); $('stage').hidden = true; };
   }
+
+  function arcSoloLabel(god) { return god ? T('혼자놀기 · GOD', 'Play solo · GOD') : T('혼자놀기', 'Play solo'); }
+  function arcSolo(god, prio, resume) {
+    net.arcSoloGod = god;
+    start('solo', { label: arcSoloLabel(god), god: god, arcade: romOk.sel, resume: resume });
+    if (romOk.sel) send('ARC SOLO 1' + (prio ? ' p' : ''));
+  }
+  function arcBegin(god) {
+    if (!romOk.sel || net.room || net.arcRole) { start('solo', { label: arcSoloLabel(god), god: god }); return; }
+    net.arcAsk = god ? 2 : 1; send('ARC ASK');
+    setTimeout(function () { if (net.arcAsk) { var g = net.arcAsk === 2; net.arcAsk = 0; arcSolo(g); } }, 4000);
+  }
+  function onArc(q) {
+    var sub = q[0] || '';
+    if (sub === 'OFFER' && net.arcAsk) {
+      var g = net.arcAsk === 2; net.arcAsk = 0;
+      if (confirm(T('게임중인 사람이 있습니다. 온라인 대전을 하시겠습니까?', 'Somebody is playing right now. Play them online?'))) {
+        net.arcRole = 'chal'; net.arcSoloGod = g; send('ARC GO');
+        netSay(T('도전! 곧 대전이 시작됩니다.', 'Challenge sent - the match starts in a moment.'));
+      } else arcSolo(g);
+    } else if (sub === 'NONE') {
+      if (net.arcAsk) { var g2 = net.arcAsk === 2; net.arcAsk = 0; arcSolo(g2); }
+      else if (net.arcRole === 'chal' && !net.room) { net.arcRole = ''; sys('pub', T('상대가 방금 게임을 끝냈습니다. 혼자놀기를 시작합니다.', 'The other player has just stopped - Play solo starts instead.')); arcSolo(net.arcSoloGod); }
+    } else if (sub === 'GO') {
+      net.arcRole = 'chal'; net.arcEnd = null;
+      sys('pub', T('온라인 대전을 시작합니다 (닉네임·대화 없음, 오락실 규칙).', 'Here we go - an online match (no names, no chat, the arcade\'s rules).'));
+    } else if (sub === 'CHALLENGED') {
+      net.arcRole = 'def'; net.arcEnd = null; net.arcState = null;
+      var r = running;
+      sys('pub', T('도전자가 나타났습니다! 지금 게임은 저장되고, 대전이 끝나면 이어서 합니다.', 'Here comes a new challenger! Your game is saved and goes on after the match.'));
+      chime('start'); flashTitle(T('도전자가 나타났습니다!', 'Here comes a new challenger!'));
+      if (r && r.mode === 'solo') try { r.frame.contentWindow.postMessage({ type: 'arc', line: 'CHALLENGE' }, location.origin); } catch (e) {}
+      setTimeout(function () {
+        var ready = function () { net.arcHandoff = true; var go = function () { var q2 = net.room; if (q2 && q2.arcade && q2.slot >= 1 && q2.slot <= 4) send('READY 1'); };
+                                   if (running && running.mode === 'solo') stop(true).then(go); else go(); };
+        if (r && running === r && r.mode === 'solo') {
+          net.arcStateWait = function (bytes) { net.arcState = bytes; ready(); };
+          setTimeout(function () { if (net.arcStateWait) { net.arcStateWait = null; ready(); } }, 2000);
+          try { r.frame.contentWindow.postMessage({ get: 'arcstate' }, location.origin); } catch (e) { net.arcStateWait = null; ready(); }
+        } else ready();
+      }, 5000);
+    } else if (sub === 'END') {
+      net.arcEnd = q[1] || 'lose';
+      if (!running || running.mode !== 'match') arcAfter();
+    }
+  }
+
+  function arcGameDone() {
+    net.arcMatchEnded = !!net.matchEnded;
+    if (net.arcEnd) { arcAfter(); return; }
+    setTimeout(function () { if (net.arcRole && !net.arcEnd) { net.arcEnd = net.arcRole === 'def' ? (net.arcMatchEnded ? 'draw' : 'lose') : 'lose'; arcAfter(); } }, 8000);
+  }
+  function arcAfter() {
+    var res = net.arcEnd, role = net.arcRole, ended = net.arcMatchEnded;
+    if (!res) return;
+    net.arcEnd = null; net.arcRole = ''; net.arcMatchEnded = false;
+    if (net.room) { send('LEAVE'); leftRoom(); }
+    setTimeout(function () {
+      if (role === 'def') {
+        if (res === 'lose' && !ended) { sys('pub', T('대전을 나왔습니다.', 'You left the match.')); return; }
+        sys('pub', T('대전이 끝났습니다. 저장한 게임을 이어서 합니다.', 'The match is over - back to your saved game.'));
+        arcSolo(net.arcSoloGod, false, !!net.arcState);
+      } else if (role === 'chal' && res === 'win') {
+        sys('pub', T('승리! 새 게임을 시작합니다. 다음 도전자는 먼저 당신에게 옵니다.', 'You won! A new game starts - you are the first to be challenged.'));
+        arcSolo(false, true, false);
+      } else {
+        var t = T('게임 오버 - 이번 도전은 아쉽게 끝났습니다.', 'Game over - the challenge did not work out this time.');
+        sys('pub', t); netSay(t);
+      }
+    }, 1200);
+  }
   function leftRoom(keepBoard) { stopCount(); if (!keepBoard) hideInterlude(); resetResults(); net.ftAutoReady = false; net.ftAnnounce = false; net.room = null; net.quick = false; net.soloWaiting = false; net.startSent = false; net.autoStarted = false; setTab('pub'); drawNet(); }
 
   var countTimer = null;
@@ -1941,7 +2021,7 @@
     if (!roms.length) { sys('room', T('롬이 없어 경기에 들어갈 수 없어 방에서 나왔습니다.', 'No ROM - left the room.')); send('LEAVE'); leftRoom(); return; }
     var r = net.room || { names: ['', '', '', ''], ft: 1, wa: 0, wb: 0 }, slot = +f[1];
     var pool = nset.stage === -2 ? [0, 2, 3, 7, 8, 10, 11, 12, 13, 15, 16, 17] : [0, 2, 3, 7];
-    var stage = nset.stage < 0 ? pool[Math.floor(Math.random() * pool.length)] : nset.stage;
+    var stage = nset.stage < 0 || r.arcade ? (r.arcade ? [0, 2, 3, 7] : pool)[Math.floor(Math.random() * (r.arcade ? 4 : pool.length))] : nset.stage;
     sys('room', slot >= 5 ? T('경기를 관전합니다.', 'Watching the match.') : T('경기를 시작합니다! (' + slot + 'P, 입력 지연 ' + f[3] + '프레임)', 'The match starts! (' + slot + 'P, input delay ' + f[3] + ')'));
     netSay(T('경기 중', 'In a match'));
     chime('start'); flashTitle(T('경기 시작!', 'Match starting!'));
@@ -1955,6 +2035,7 @@
                      pvegod: (f[4] === 'pve' && f[1] === '1' && r.vsgod) ? '1' : '',
                      costume: f[11] && f[11] !== '-' ? f[11] : '',
                      dyn: nset.autoDelay === false ? '0' : '',
+                     nochat: r.arcade ? '1' : '',
                      label: T('온라인 경기 · 방 ', 'Online match · room ') + (r.id || '?') });
   }
 
@@ -2067,7 +2148,7 @@
       $('aloneMenu').hidden = true;
       var god = b.getAttribute('data-god') === '1';
       if (!(net.ws && net.ws.readyState === 1)) { alert(T('혼자놀기는 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Play solo needs a connection to the server - press Connect first.')); return; }
-      start('solo', { label: god ? T('혼자놀기 · GOD', 'Play solo · GOD') : T('혼자놀기', 'Play solo'), god: god });
+      arcBegin(god);
     };
   });
   $('netTut').onclick = function () { start('tutorial'); };
