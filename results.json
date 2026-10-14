@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 22:14","room":125,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,7],"ft":3,"series":"125-261014220941-33","nicks":["샤부사커","상봉거지오락실","",""],"replay":"replays/20261014_221408_샤부사커_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:11","room":120,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"120-261014220007-30","nicks":["로또영","surferKIM","",""],"replay":"replays/20261014_221134_로또영_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:11","room":129,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,0],"ft":2,"series":"129-261014221120-35","nicks":["kilimanjaro","핀홀릭","",""],"replay":"replays/20261014_221120_kilimanjaro_vs_핀홀릭_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:10","room":119,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"119-261014220003-29","nicks":["김창식씨","NooB","",""],"replay":"replays/20261014_221045_김창식씨_vs_NooB_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 23:30","room":71,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[9,5],"nicks":["루키","AC밸로마","",""],"replay":"replays/20261012_233003_루키_vs_AC밸로마_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 23:27","room":69,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,4],"ft":2,"series":"69-261012232303-22","nicks":["소","USK","",""],"replay":"replays/20261012_232716_소_vs_USK_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 23:23","room":69,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,4],"ft":2,"series":"69-261012232303-22","nicks":["소","USK","",""],"replay":"replays/20261012_232303_소_vs_USK_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 23:19","room":68,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"ft":3,"series":"68-261012230621-21","nicks":["뚱이","들쥐","",""],"replay":"replays/20261012_231941_뚱이_vs_들쥐_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 23:15","room":68,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,5],"ft":3,"series":"68-261012230621-21","nicks":["뚱이","들쥐","",""],"replay":"replays/20261012_231544_뚱이_vs_들쥐_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 23:19","room":68,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"ft":3,"series":"68-261012230621-21","nicks":["뚱이","들쥐","",""],"replay":"replays/20261012_231941_뚱이_vs_들쥐_1-0_p1.scr","edition":"cupsocs2"}
 ]
