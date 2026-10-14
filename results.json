@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 14:42","room":29,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[3,0],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_144257_드래곤타이거_vs_narahashi_5-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 14:40","room":30,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[7,5],"nicks":["강원fc","상봉거지오락실","",""],"replay":"replays/20261014_144031_강원fc_vs_상봉거지오락실_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 14:38","room":29,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[0,3],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_143824_드래곤타이거_vs_narahashi_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 14:34","room":29,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[9,10],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_143434_드래곤타이거_vs_narahashi_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 00:18","room":101,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_001849_로또영_vs_USK_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 00:14","room":101,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_001451_로또영_vs_USK_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 00:10","room":101,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_001033_로또영_vs_USK_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 00:02","room":97,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"ft":3,"series":"97-261011235452-21","nicks":["로또영","벌쳐","",""],"replay":"replays/20261012_000229_로또영_vs_벌쳐_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-11 23:58","room":97,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"97-261011235452-21","nicks":["로또영","벌쳐","",""],"replay":"replays/20261011_235846_로또영_vs_벌쳐_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 00:02","room":97,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"ft":3,"series":"97-261011235452-21","nicks":["로또영","벌쳐","",""],"replay":"replays/20261012_000229_로또영_vs_벌쳐_2-1_p1.scr","edition":"cupsocs2"}
 ]
