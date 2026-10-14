@@ -8,7 +8,7 @@
 -- details (the package's bin\legal\GPL-3.0.txt, the site's legal/GPL-3.0.txt, or <https://www.gnu.org/licenses/>).
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
-local VERSION = 33
+local VERSION = 34
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -636,18 +636,6 @@ function scnp_night_draw()
     return
   elseif scnp_stage == 17 then
 
-    for k = 0, 9 do
-      local yb = 1040 + k * 52 - cy + 8 * math.sin(frame * 0.03 + k)
-      if yb > -10 and yb < h + 10 then
-        local px, py = nil, nil
-        for xs = -8, w + 8, 8 do
-          local wx = xs + cx
-          local yy = yb + 3 * math.sin(wx * 0.05 + frame * 0.06 + k * 1.7) + 2 * math.sin(wx * 0.11 - frame * 0.04)
-          if px then scr:draw_line(px, py, xs, yy, 0x30e8ffff) end
-          px, py = xs, yy
-        end
-      end
-    end
     if SCNP_GAME ~= "cupsoc" then
       for i = 0, 21 do
         local o = 0x111e54 + i * 0xdc
@@ -981,6 +969,20 @@ SCNP_COMIC = {
 }
 SCNP_COMIC.on = env("SCNP_COMIC", "") == "1"
 
+SCNP_COMIC.MAXDRAW = 2
+for _, W in pairs(SCNP_COMIC.W) do
+  local rows, rects, open = {}, {}, {}
+  for i = 1, #W.s, 3 do rows[#rows + 1] = { W.s[i], W.s[i + 1], W.s[i + 2] } end
+  table.sort(rows, function(p, q) if p[1] ~= q[1] then return p[1] < q[1] end return p[2] < q[2] end)
+  for _, r in ipairs(rows) do
+    local k = r[2] * 1000 + r[3]
+    local o = open[k]
+    if o and o[2] == r[1] - 1 then o[2] = r[1]
+    else o = { r[1], r[1], r[2], r[3] }; rects[#rects + 1] = o; open[k] = o end
+  end
+  W.r = rects
+end
+
 function scnp_comic_step()
   local C = SCNP_COMIC
   if not C.on or SCNP_GAME == "cupsoc" then return end
@@ -1039,10 +1041,15 @@ function scnp_comic_draw()
   local w, h = scr.width or 320, scr.height or 240
   local cx, cy = mem:read_i16(0x109450), mem:read_i16(0x109452)
   local keep = {}
+  local live = 0
+  for _, P in ipairs(C.pops) do local t = frame - P.f0; if t >= 0 and t < C.LIFE then live = live + 1 end end
   for _, P in ipairs(C.pops) do
     local t = frame - P.f0
     if t >= 0 and t < C.LIFE then
       keep[#keep + 1] = P
+      live = live - 1
+    end
+    if t >= 0 and t < C.LIFE and live < C.MAXDRAW then
       local s = t < 4 and (0.35 + 0.8 * t / 4) or (t < 8 and (1.15 - 0.15 * (t - 4) / 4) or 1)
       local al = t < 18 and 1 or math.max(0, 1 - (t - 18) / 10)
       local function A(c) return (math.floor(((c >> 24) & 0xff) * al) << 24) | (c & 0xffffff) end
@@ -1076,13 +1083,11 @@ function scnp_comic_draw()
       local W = C.W[P.kind]
       local u = 0.5 * s
       local x0, y0 = bx - W.w * u / 2, by - W.h * u / 2
-      local sp = W.s
       for pass = 1, 3 do
         local c = pass == 1 and A(0xffc81414) or (pass == 2 and A(0xff000000) or A(col[3]))
         local dx, dy, g = (pass == 1) and 1 or 0, (pass == 1) and 1 or 0, (pass == 2) and 0.75 or 0
-        for i = 1, #sp, 3 do
-          local yy, xa, xb = sp[i], sp[i + 1], sp[i + 2]
-          scr:draw_box(x0 + xa * u + dx - g, y0 + yy * u + dy - g, x0 + (xb + 1) * u + dx + g, y0 + (yy + 1) * u + dy + g, c, c)
+        for _, R in ipairs(W.r) do
+          scr:draw_box(x0 + R[3] * u + dx - g, y0 + R[1] * u + dy - g, x0 + (R[4] + 1) * u + dx + g, y0 + (R[2] + 1) * u + dy + g, c, c)
         end
       end
     end
@@ -2051,13 +2056,15 @@ SCNP_SEL = {
 SCNP_SEL.ED.cupsocs = SCNP_SEL.ED.cupsocs2
 
 SCNP_SEL.mirror = false
-function scnp_sel_code() return SCNP_SEL.on and (SCNP_SEL.mirror and 2 or 1) or 0 end
 
-function scnp_sel_apply(on, mirror)
+function scnp_sel_code() return SCNP_SEL.on and (SCNP_SEL.mirror and (SCNP_SEL.fix and 3 or 2) or 1) or 0 end
+
+function scnp_sel_apply(on, mirror, fix)
   local S, E = SCNP_SEL, SCNP_SEL.ED[SCNP_GAME]
   local rg = manager.machine.memory.regions[":maincpu"]
   on = on and true or false
   mirror = on and mirror and true or false
+  S.fix = mirror and fix and true or false
   if on == S.on and mirror == S.mirror and S.done then return end
   if not E or not rg then S.on = false; S.mirror = false; return end
   local sites = { { E.cd, { 0x5368, 0x0070 }, { 0x4e71, 0x4e71 }, on } }
@@ -2086,7 +2093,7 @@ function scnp_sel_apply(on, mirror)
   log("country select: %s", not on and "the board's own (countdown, same country allowed)" or mirror and "no countdown, the same country may be picked (mirror matches)" or "no countdown, a taken country cannot be picked again")
 end
 
-SCNP_MIRROR = { tap = nil, A0 = 0x109ee0, A1 = 0x10a230, A2 = 0x109efc, A3 = 0x109f44, pc = 0x7cdc }
+SCNP_MIRROR = { tap = nil, A0 = 0x109ee0, A1 = 0x10a230, A2 = 0x109efc, A3 = 0x109f44, pc = 0x7cdc, rpc = 0x8726 }
 function scnp_mirror_install()
   local M = SCNP_MIRROR
   if M.tap or SCNP_GAME ~= "cupsocs2" then return end
@@ -2103,10 +2110,18 @@ function scnp_mirror_install()
     log("mirror match: both picked team %d - 2P goes to the other side at frame %d", team, frame)
     return (data & 0x00ff) | ((am & 0xfd) << 8)
   end)
+
+  M.rtap = mem:install_read_tap(M.A1, M.A1 + 4 * 0x1e - 1, "scnp_mirror_restart", function(offset, data, mask)
+    if (mask & 0x00ff) == 0 or not SCNP_SEL.fix or (offset - M.A1) % 0x1e ~= 0 or cpu.state["CURPC"].value ~= M.rpc then return end
+    local team = cpu.state["D0"].value & 0xff
+    local right = (cpu.state["A2"].value & 0xffffff) >= 0x111e54 + 11 * 0xdc
+    local sideb = (mem:read_u16(offset + 2) & 2) ~= 0
+    return (data & 0xff00) | ((right == sideb) and team or (team ~ 0xff))
+  end)
 end
 
 if is_host and not is_replay and cfg.teams ~= "pve" and cfg.players >= 2 then
-  scnp_sel_apply(true, env("SCNP_MIRROR", "1") ~= "0" and SCNP_GAME == "cupsocs2" and not is_teams and cfg.players == 2)
+  scnp_sel_apply(true, env("SCNP_MIRROR", "1") ~= "0" and SCNP_GAME == "cupsocs2" and not is_teams and cfg.players == 2, true)
 end
 
 SCNP_NOCREDIT = {
@@ -3504,7 +3519,7 @@ local function handle_client_message(t, g, payload)
     local st, pk, sel, god, df = payload:byte(1, 5)
     if st and st <= 17 and st ~= scnp_stage then scnp_stage = st; scnp_install_stage_tap() end
     if pk then SCNP_PK.on = (pk == 1); SCNP_PK.gg = (pk == 2) end
-    if sel then scnp_sel_apply(sel >= 1, sel == 2) end
+    if sel then scnp_sel_apply(sel >= 1, sel >= 2, sel >= 3) end
     if god then scnp_god_apply((god & 3) >= 1, (god & 3) >= 2, (god & 8) ~= 0); scnp_pvegod_apply((god & 4) ~= 0) end
     if df and df <= 3 and SCNP_PVE.on and df ~= SCNP_DIFF.v then scnp_diff_apply(df) end
     return
@@ -3812,7 +3827,7 @@ local function step()
       scnp_stage = tonumber(r.meta:match('"stage":(%d+)') or "0") or 0; scnp_install_stage_tap()
       SCNP_PK.on = r.meta:match('"pk":1') ~= nil
       SCNP_PK.gg = r.meta:match('"pk":2') ~= nil
-      local sv = tonumber(r.meta:match('"sel":(%d)') or "0") or 0; scnp_sel_apply(sv >= 1, sv == 2)
+      local sv = tonumber(r.meta:match('"sel":(%d)') or "0") or 0; scnp_sel_apply(sv >= 1, sv >= 2, sv >= 3)
       do local b = r.meta:match('"ball":"(%a+)"'); if b then SCNP_PAL.BALLNAME = b; SCNP_PAL.BALL = SCNP_PAL.BALLS[b] end end
       scnp_god_apply(r.meta:match('"god":[123]') ~= nil, r.meta:match('"god":[23]') ~= nil, r.meta:match('"god":3') ~= nil)
       SCNP_DEVR.play = {}; SCNP_DEVR.pi = 1
