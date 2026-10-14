@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Seibu Cup Soccer - game</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #canvas { display: block; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; outline: none; background: #000; }
+  #padwait { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 20px; background: rgba(0,0,0,.85); color: #fff; font: 16px 'Malgun Gothic', sans-serif; line-height: 1.7; }
+  #padwait[hidden] { display: none; }
+</style>
+</head>
+<body>
+<canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
+<div id="padwait" hidden></div>
+<button id="sndOn" type="button" hidden style="position:fixed;left:50%;top:10px;transform:translateX(-50%);z-index:9;font:700 14px sans-serif;white-space:nowrap;padding:7px 12px;border:2px solid #ffd23f;background:rgba(0,0,0,.78);color:#ffd23f;border-radius:6px"></button>
+<script>
+
+const AUD = { ctxs: [] };
+(function () {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (AC) {
+    const Tracked = function (...a) { const c = new AC(...a); AUD.ctxs.push(c); try { c.addEventListener('statechange', audState); } catch (e) {} setTimeout(audState, 400); return c; };
+    Tracked.prototype = AC.prototype;
+    window.AudioContext = Tracked; if (window.webkitAudioContext) window.webkitAudioContext = Tracked;
+  }
+  try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
+})();
+
+const AUD_SILENT = "data:audio/wav;base64,UklGRvQHAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YdAHAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA==";
+function audUnlock() {
+  if (!AUD.el && /iP(hone|ad|od)/.test(navigator.userAgent) && !navigator.audioSession) {
+    try { const a = new Audio(AUD_SILENT); a.loop = true; a.setAttribute('playsinline', ''); a.volume = 0.01; const pr = a.play(); AUD.el = a; if (pr && pr.catch) pr.catch(() => { AUD.el = null; }); } catch (e) {}
+  }
+  AUD.ctxs.forEach(c => { if (c.state !== 'running' && c.state !== 'closed') { try { c.resume().then(audState, () => {}); } catch (e) {} } });
+}
+window.__audUnlock = audUnlock; window.__AUD = AUD;
+function audState() {
+  const b = document.getElementById('sndOn'); if (!b) return;
+  const stuck = AUD.ctxs.some(c => c.state === 'suspended' || c.state === 'interrupted');
+  b.textContent = (Q.get('lang') === 'en') ? '🔇 Tap for sound' : '🔇 눌러서 소리 켜기';
+  b.hidden = !stuck;
+}
+['touchend', 'pointerup', 'click', 'keydown', 'mousedown'].forEach(t => addEventListener(t, audUnlock, true));
+document.addEventListener('visibilitychange', () => { if (!document.hidden) audUnlock(); });
+document.getElementById('sndOn').addEventListener('click', e => { e.preventDefault(); audUnlock(); setTimeout(audState, 300); try { document.getElementById('canvas').focus(); } catch (x) {} });
+
+const Q = new URLSearchParams(location.search);
+const mode = Q.get('mode') || 'solo', game = Q.get('game') || 'cupsocs2', lang = Q.get('lang') === 'en' ? 'en' : 'ko';
+let tell = (type, data) => { try { parent.postMessage(Object.assign({ from: 'scgame', type }, data || {}), location.origin); } catch (e) {} };
+
+if (Q.get('postlog')) {
+  const t0 = tell; tell = (type, data) => { t0(type, data); fetch('/log', { method: 'POST', body: (Q.get('slot') ? 's' + Q.get('slot') + ' ' : '') + type + ' ' + ((data && data.text) || '') }).catch(() => {}); };
+  addEventListener('error', e => tell('jserr', { text: String(e.message || e.error) }));
+  addEventListener('unhandledrejection', e => tell('jserr', { text: 'rejection ' + String(e.reason && (e.reason.stack || e.reason)) }));
+  const ce = console.error.bind(console); console.error = (...a) => { tell('jserr', { text: a.map(String).join(' ') }); ce(...a); };
+  const seen = {};
+  setInterval(() => {
+    try { tell('tick', { text: 'timing ' + (typeof MainLoop !== 'undefined' ? MainLoop.timingMode + '/' + MainLoop.timingValue : '?') + ' loop ' + (typeof MainLoop !== 'undefined' ? MainLoop.currentFrameNumber : '?') + ' machine ' + (Module['__ZN15running_machine30emscripten_get_running_machineEv'] ? Module['__ZN15running_machine30emscripten_get_running_machineEv']() : '?') }); } catch (e) { tell('tick', { text: 'tick err ' + e }); }
+  }, 3000);
+
+  if (location.hostname === '127.0.0.1') {
+    const W = { n: 0, busy: 0, max: 0, last: 0, gap: 0 };
+    const iv = setInterval(() => {
+      if (typeof MainLoop === 'undefined' || !MainLoop.runIter || MainLoop.runIter.__timed) return;
+      const orig = MainLoop.runIter.bind(MainLoop);
+      MainLoop.runIter = function (f) { const t0 = performance.now(); if (W.last) W.gap += t0 - W.last; orig(f); const t1 = performance.now(); W.last = t1; const d = t1 - t0; W.n++; W.busy += d; if (d > W.max) W.max = d; };
+      MainLoop.runIter.__timed = true; clearInterval(iv);
+    }, 100);
+    setInterval(() => { if (W.n) tell('perf', { text: 'beat ' + BEAT.on + ' kick ' + !!BEAT.kick + ' kicks ' + (BEAT.kicks || 0) + ' loops ' + W.n + ' busy ' + (W.busy / W.n).toFixed(2) + ' ms max ' + W.max.toFixed(1) + ' gap ' + (W.gap / W.n).toFixed(2) + ' ms' }); W.n = W.busy = W.max = W.gap = 0; }, 3000);
+  }
+  setInterval(() => { try { const t = new TextDecoder().decode(FS.readFile('/tut.log')); if (t.length > (seen.t || 0)) { tell('tut', { text: t.slice(seen.t || 0).trim() }); seen.t = t.length; } } catch (e) {} }, 3000);
+}
+
+const BEAT = { on: false };
+(function () {
+  const FRAME = 1000 / 60, ch = new MessageChannel();
+  let next = 0;
+  ch.port1.onmessage = () => MainLoop.runner();
+  function beat() {
+    const now = performance.now();
+    next = Math.max(next + FRAME, now - 2 * FRAME);
+    const wait = next - now;
+    if (wait > 1) setTimeout(MainLoop.runner, wait); else ch.port2.postMessage(0);
+  }
+  const off = Q.get('nobeat') && location.hostname === '127.0.0.1';
+  setInterval(() => {
+    if (off || typeof MainLoop === 'undefined' || !MainLoop.func || !MainLoop.scheduler) return;
+    if (MainLoop.timingMode === 0 && MainLoop.scheduler !== beat) { next = performance.now(); MainLoop.scheduler = beat; BEAT.on = true; }
+  }, 250);
+
+  const kch = new MessageChannel();
+  let kicked = false;
+  BEAT.kicks = 0;
+  kch.port1.onmessage = () => { kicked = false; if (BEAT.on && MainLoop.func && !ABORT) { BEAT.kicks++; MainLoop.runIter(MainLoop.func); } };
+  const nokick = Q.get('nokick') && location.hostname === '127.0.0.1';
+  const hook = setInterval(() => {
+    if (nokick || mode !== 'match' || !Module.websocket || typeof Module.websocket.on !== 'function') return;
+    Module.websocket.on('message', () => { if (!kicked && BEAT.on) { kicked = true; kch.port2.postMessage(0); } });
+    BEAT.kick = true; clearInterval(hook);
+  }, 250);
+})();
+let romTrouble = false;
+function out(s) {
+  tell('log', { text: s });
+  if (/Required files are missing|required files are missing|NOT FOUND \((?!NO GOOD DUMP)/.test(s)) romTrouble = true;
+  if (/can not be run|cannot be run|Fatal error/i.test(s)) tell('error', { text: s, rom: romTrouble });
+  if (/replay finished/.test(s)) tell('replayDone');
+
+  var m = /RESULT (\{.*\})\s*$/.exec(s); if (m) tell('result', { text: m[1] });
+  m = /\] REPLAY (\S+)\s*$/.exec(s); if (m) tell('replayfile', { text: m[1] });
+  if (/replay: nothing saved/.test(s)) tell('replayfile', { text: '' });
+  if (/\] penalties: \d+-\d+/.test(s)) tell('pk');
+}
+
+function volCfgs(list) {
+
+  const live = Q.get('mode') === 'match' || Q.get('mode') === 'replay';
+  const pick = (k) => { const v = Q.get(k); return live || v === null || v === '' ? 100 : Math.max(0, Math.min(100, +v || 0)); };
+  const gains = [[':ymsnd', Math.pow(pick('bv') / 100, 2)], [':oki', Math.pow(pick('sv') / 100, 2)]];
+  const any = gains.some(g => g[1] < 0.9999);
+  const out = list.filter(([n]) => n !== 'cupsoc.cfg' && n !== 'cupsocs2.cfg');
+  for (const ed of ['cupsoc', 'cupsocs2']) {
+    const name = ed + '.cfg', old = list.find(([n]) => n === name);
+    let doc = null;
+    if (old) { try { doc = new DOMParser().parseFromString(new TextDecoder().decode(old[1]), 'application/xml'); if (doc.getElementsByTagName('parsererror').length || !doc.documentElement || doc.documentElement.nodeName !== 'mameconfig') doc = null; } catch (e) { doc = null; } }
+    if (!doc) { if (!any) { if (old) out.push(old); continue; } doc = new DOMParser().parseFromString('<?xml version="1.0"?><mameconfig version="10"></mameconfig>', 'application/xml'); }
+    const root = doc.documentElement;
+    let sys = Array.from(root.getElementsByTagName('system')).find(s => s.getAttribute('name') === ed);
+    if (!sys) { sys = doc.createElement('system'); sys.setAttribute('name', ed); root.appendChild(sys); }
+    let mixer = Array.from(sys.children).find(c => c.nodeName === 'mixer');
+    if (!mixer) { mixer = doc.createElement('mixer'); sys.appendChild(mixer); }
+    for (const dv of Array.from(mixer.children)) if (dv.nodeName === 'device_volume' && gains.some(g => g[0] === dv.getAttribute('device'))) mixer.removeChild(dv);
+    for (const [dev, g] of gains) if (g < 0.9999) { const e = doc.createElement('device_volume'); e.setAttribute('device', dev); e.setAttribute('gain', String(Math.round(g * 1e6) / 1e6)); mixer.appendChild(e); }
+    let text = new XMLSerializer().serializeToString(doc);
+    if (!text.startsWith('<?xml')) text = '<?xml version="1.0"?>\n' + text;
+    out.push([name, new TextEncoder().encode(text)]);
+  }
+  return out;
+}
+
+function idb() {
+  return new Promise((ok, bad) => {
+    const r = indexedDB.open('seibucup-web', 2);
+    r.onupgradeneeded = () => { for (const n of ['roms', 'cfg']) if (!r.result.objectStoreNames.contains(n)) r.result.createObjectStore(n); };
+    r.onsuccess = () => ok(r.result); r.onerror = () => bad(r.error);
+  });
+}
+async function all(store) {
+  const db = await idb();
+  return new Promise((ok, bad) => {
+    const got = [], c = db.transaction(store, 'readonly').objectStore(store).openCursor();
+    c.onsuccess = () => { const k = c.result; if (!k) { ok(got); return; } got.push([k.key, new Uint8Array(k.value)]); k.continue(); };
+    c.onerror = () => bad(c.error);
+  });
+}
+async function putAll(store, list) {
+  const db = await idb();
+  return new Promise((ok, bad) => {
+    const t = db.transaction(store, 'readwrite'), s = t.objectStore(store);
+    for (const [k, v] of list) s.put(v.slice().buffer, k);
+    t.oncomplete = ok; t.onerror = () => bad(t.error);
+  });
+}
+const bytes = async url => { const r = await fetch(url); if (!r.ok) throw new Error(url + ' ' + r.status); return new Uint8Array(await r.arrayBuffer()); };
+
+const localReplay = name => new Promise((ok, bad) => {
+  const r = indexedDB.open('seibucup-replays', 1);
+  r.onupgradeneeded = () => { if (!r.result.objectStoreNames.contains('reps')) r.result.createObjectStore('reps', { keyPath: 'name' }); };
+  r.onerror = () => bad(r.error);
+  r.onsuccess = () => { const g = r.result.transaction('reps').objectStore('reps').get(name); g.onsuccess = () => g.result ? ok(g.result.bytes) : bad(new Error('no replay ' + name)); g.onerror = () => bad(g.error); };
+});
+
+const FONT = 'https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.601/neodgm/neodgm.ttf';
+
+let cfgAtStart = {};
+function cfgNow() {
+  const o = {};
+  try { for (const n of FS.readdir('/cfg')) if (n.endsWith('.cfg')) o[n] = FS.readFile('/cfg/' + n); } catch (e) {}
+  return o;
+}
+const same = (a, b) => !!a && !!b && a.length === b.length && a.every((x, i) => x === b[i]);
+let quitting = false;
+async function saveAndQuit() {
+  if (quitting) return; quitting = true;
+  try { Module['__ZN15running_machine15emscripten_exitEv'](); } catch (e) {}
+  const t0 = Date.now(); let got = {};
+  while (Date.now() - t0 < 3000) {
+    await new Promise(r => setTimeout(r, 150));
+    got = cfgNow();
+    if (Object.keys(got).some(n => !same(got[n], cfgAtStart[n]))) { await new Promise(r => setTimeout(r, 300)); got = cfgNow(); break; }
+  }
+
+  const changed = (mode === 'replay' || mode === 'match') ? [] : Object.entries(got).filter(([n, d]) => !same(d, cfgAtStart[n]));
+  if (changed.length) { try { await putAll('cfg', changed); } catch (e) {} }
+  tell('saved', { text: changed.map(c => c[0]).join(',') });
+}
+
+(function () {
+  if (!navigator.getGamepads) return;
+  const own = navigator.getGamepads.bind(navigator);
+  navigator.getGamepads = function () {
+    const mine = own();
+    if (Array.prototype.some.call(mine, Boolean)) return mine;
+    try { if (parent !== window) { const p = parent.navigator.getGamepads(); if (Array.prototype.some.call(p, Boolean)) return p; } } catch (e) {}
+    return mine;
+  };
+})();
+const havePad = () => { try { return Array.prototype.some.call(navigator.getGamepads(), Boolean); } catch (e) { return false; } };
+
+let cfgHasJoy = false;
+function padReady() {
+  if (mode === 'replay' || (mode === 'match' && +Q.get('slot') >= 5)) return Promise.resolve();
+  if ((Q.get('pads') !== '1' && !cfgHasJoy) || havePad()) return Promise.resolve();
+  return new Promise(ok => {
+    const box = document.getElementById('padwait');
+    const match = mode === 'match';
+    box.innerHTML = lang === 'en' ? 'Press any button on your joystick' + (match ? ' - the match is waiting for you' : '') + '<br><small>(playing with the keyboard? press any key)</small>'
+                                  : '조이스틱 버튼을 한 번 누르세요' + (match ? ' - 경기가 기다리고 있습니다' : '') + '<br><small>(키보드로 하려면 아무 키나 누르세요)</small>';
+    box.hidden = false; tell('stage', { text: 'pad' });
+    let done = false;
+    const go = () => { if (done) return; done = true; box.hidden = true; clearInterval(t); removeEventListener('keydown', go); ok(); };
+    const t = setInterval(() => { if (havePad()) go(); }, 100);
+    addEventListener('gamepadconnected', go); addEventListener('keydown', go);
+  });
+}
+
+addEventListener('gamepadconnected', e => tell('pad', { text: 'connected: ' + e.gamepad.id + ' (mapping ' + (e.gamepad.mapping || 'none') + ')' }));
+addEventListener('gamepaddisconnected', e => tell('pad', { text: 'disconnected: ' + e.gamepad.id }));
+
+if (Q.get('postlog') && Q.get('fakepad')) {
+  const pad = { id: 'Fake Pad (STANDARD GAMEPAD Vendor: 045e Product: 028e)', index: 0, connected: true, mapping: 'standard', axes: [0, 0, 0, 0],
+                buttons: Array.from({ length: 17 }, () => ({ pressed: false, touched: false, value: 0 })), timestamp: 0 };
+  let shown = Q.get('fakepad') === 'early';
+  navigator.getGamepads = () => { pad.timestamp = performance.now(); return shown ? [pad, null, null, null] : [null, null, null, null]; };
+  setTimeout(() => { shown = true; const e = new Event('gamepadconnected'); e.gamepad = pad; dispatchEvent(e); }, 5000);
+}
+(async () => {
+  try {
+    let roms = await all('roms');
+    if (!roms.length && Q.get('testroms')) roms = [['cupsoc.zip', await bytes('/__testroms/cupsoc.zip')]];
+    if (!roms.length) { tell('error', { text: 'no rom', rom: true }); return; }
+    const cfgs = await all('cfg').catch(() => []);
+    cfgHasJoy = cfgs.some(([n, d]) => /JOYCODE_/.test(new TextDecoder().decode(d)));
+    tell('stage', { text: 'files' });
+    const files = [['/web/boot.lua', await bytes('boot.lua')], ['/ini/ui.ini', new TextEncoder().encode('font_rows 38\n')]];
+    let font = null;
+    try { font = await bytes(FONT); files.push(['/fonts/neodgm.ttf', font]); } catch (e) { out('HUD font not loaded: ' + e); }
+    const env = { SCNP_LANG: lang, TUT_LANG: lang, TUT_LOG: '/tut.log', SCNP_LOG: '/np.log', SCNP_WEB: '1' };
+    if (Q.get('postlog') && Q.get('fakepad')) env.WEB_PADLOG = '1';
+    if (Q.get('postlog') && location.hostname === '127.0.0.1') env.WEB_FPSLOG = '1';
+    if (Q.get('postlog') && Q.get('burn') && location.hostname === '127.0.0.1') env.WEB_BURN = Q.get('burn');
+    if (Q.get('fps')) env.WEB_FPS = '1';
+    let args = [game];
+    if (mode === 'replay') {
+      files.push(['/web/netplay.lua', await bytes('netplay.lua')], ['/replay.scr', Q.get('replaylocal') ? await localReplay(Q.get('replaylocal')) : await bytes('../' + encodeURI(Q.get('replay') || ''))]);
+      Object.assign(env, { WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'replay', SCNP_REPLAY: '/replay.scr', SCNP_GAME: game });
+      if (Q.get('names')) env.SCNP_NAMES = Q.get('names');
+
+      env.WEB_LOCKUI = '1';
+      addEventListener('keydown', e => { if (/^F\d{1,2}$/.test(e.key) || e.key === 'Tab') e.preventDefault(); }, true);
+    } else if (mode === 'tutorial') {
+      args = ['cupsocs2'];
+      files.push(['/web/tutorial.lua', await bytes('tutorial/tutorial.lua')]);
+      for (const n of ['defend', 'header', 'keeper', 'kickoff', 'overhead', 'shot'])
+        files.push(['/scenes/cupsocs2/' + n + '.sta', await bytes('tutorial/scenes/cupsocs2/' + n + '.sta')]);
+      env.WEB_TARGET = '/web/tutorial.lua';
+    } else if (mode === 'match') {
+
+      files.push(['/web/netplay.lua', await bytes(Q.get('postlog') && Q.get('nplua') ? Q.get('nplua') : 'netplay.lua')]);
+      Object.assign(env, {
+        WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'relay', SCNP_GAME: game, SCNP_ADDR: 'relay', SCNP_PORT: '47260',
+        SCNP_TOKEN: Q.get('token') || '', SCNP_SLOT: Q.get('slot') || '1', SCNP_PLAYERS: Q.get('players') || '2',
+        SCNP_DELAY: Q.get('delay') || '3', SCNP_TEAMS: Q.get('type') || '1v1', SCNP_TIME: Q.get('time') || '150',
+        SCNP_SPECTATORS: Q.get('nspec') || '0', SCNP_NAMES: Q.get('names') || '', SCNP_KINDS: /^[WP,]*$/.test(Q.get('kinds') || '') ? (Q.get('kinds') || '') : '', SCNP_SWAP: Q.get('swap') === '1' ? '1' : '0',
+        SCNP_BGM: Q.get('bgm') || 'shuffle', SCNP_STAGE: Q.get('stage') || '0', SCNP_KEYSET: 'own', SCNP_REPLAY_DIR: '/replays', SCNP_WEB: '1',
+      });
+      if (+Q.get('slot') >= 5) env.SCNP_SPECTATE = '1';
+      if (Q.get('postlog') && Q.get('hsretry')) env.SCNP_HS_RETRY_MS = Q.get('hsretry');
+      if (/^(orange|yellow|pink|blue)$/.test(Q.get('ball') || '')) env.SCNP_BALL = Q.get('ball');
+      if (Q.get('series')) env.SCNP_SERIES = Q.get('series');
+      if (Q.get('pk')) env.SCNP_PK = Q.get('pk') === '2' ? '2' : '1';
+      env.WEB_LOCKUI = '1';
+
+      addEventListener('keydown', e => { if (/^F\d{1,2}$/.test(e.key) || e.key === 'Tab') e.preventDefault(); }, true);
+    } else if (mode === 'practice') {
+      args = ['cupsocs2'];
+      files.push(['/web/practice.lua', await bytes('practice.lua')]);
+      env.WEB_TARGET = '/web/practice.lua';
+    }
+    if (mode === 'solo' && Q.get('god')) {
+      files.push(['/web/god.lua', await bytes('god.lua')]);
+      env.WEB_TARGET = '/web/god.lua';
+    }
+    if (mode === 'match' && Q.get('god')) env.SCNP_GOD = '1';
+    if (mode === 'match') env.SCNP_SPECCHAT = '/specchat.txt';
+    if (mode === 'match' || mode === 'replay') {
+      const v = (k) => { const x = Q.get(k); return x === null || x === '' ? 100 : Math.max(0, Math.min(100, +x || 0)); };
+      env.SCNP_VOLBGM = String(v('bv')); env.SCNP_VOLSFX = String(v('sv')); env.SCNP_VOLFILE = '/vol.txt';
+      files.push(['/vol.txt', new TextEncoder().encode(v('bv') + ' ' + v('sv') + '\n')]);
+    }
+    if (mode === 'match' && /^[0-3]$/.test(Q.get('diff') || '')) env.SCNP_DIFF = Q.get('diff');
+    if (mode === 'match' && Q.get('pvegod') === '1') env.SCNP_PVEGOD = '1';
+    if (mode === 'match' && Q.get('costume')) env.SCNP_COSTUME = Q.get('costume');
+    if (mode === 'match' && Q.get('comic') === '1') env.SCNP_COMIC = '1';
+    if (mode === 'match' && Q.get('dyn') === '0') env.SCNP_DYNDELAY = '0';
+    args.push('-rompath', '/roms', '-autoboot_script', '/web/boot.lua', '-window', '-video', 'accel', '-resolution', '960x720', '-nofilter',
+              '-skip_gameinfo', '-nomouse', '-background_input', '-pause_brightness', '1.0', '-inipath', '/ini', '-cfg_directory', '/cfg', '-nvram_directory', '/nvram',
+              '-state_directory', mode === 'tutorial' ? '/scenes' : '/state');
+    if (font) args.push('-uifont', '/fonts/neodgm.ttf');
+    if (Q.get('postlog') && Q.get('xargs') && location.hostname === '127.0.0.1') args.push.apply(args, Q.get('xargs').split(' '));
+    tell('stage', { text: 'mame' });
+    window.Module = {
+      canvas: document.getElementById('canvas'),
+      arguments: args,
+
+      websocket: { url: /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
+                         : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws', subprotocol: 'binary' },
+      print: out, printErr: out,
+      preRun: [() => {
+        for (const d of ['/roms', '/web', '/ini', '/cfg', '/nvram', '/state', '/scenes', '/scenes/cupsocs2', '/fonts', '/replays']) try { FS.mkdir(d); } catch (e) {}
+        for (const [n, d] of roms) FS.writeFile('/roms/' + n, d);
+        for (const [n, d] of volCfgs(cfgs)) FS.writeFile('/cfg/' + n, d);
+        for (const [p, d] of files) FS.writeFile(p, d);
+        cfgAtStart = cfgNow();
+        Object.assign(ENV, env);
+      }],
+      onRuntimeInitialized: () => { tell('running', { text: cfgs.length ? 'cfg ' + cfgs.map(c => c[0]).join(',') : '' }); document.getElementById('canvas').focus(); },
+      onExit: () => tell('ended'),
+      onAbort: what => tell('error', { text: String(what), rom: romTrouble }),
+    };
+    await padReady();
+    const s = document.createElement('script'); s.src = 'seibucup.js'; document.body.appendChild(s);
+  } catch (e) { tell('error', { text: String(e) }); }
+})();
+
+addEventListener('mousedown', () => document.getElementById('canvas').focus());
+
+const VKEYS = {
+  up: [['ArrowUp', 'ArrowUp', 38]], down: [['ArrowDown', 'ArrowDown', 40]], left: [['ArrowLeft', 'ArrowLeft', 37]], right: [['ArrowRight', 'ArrowRight', 39]],
+  shoot: [['z', 'KeyZ', 90], ['Control', 'ControlLeft', 17]], pass: [['x', 'KeyX', 88], ['Alt', 'AltLeft', 18]],
+  coin: [['5', 'Digit5', 53]], start: [['1', 'Digit1', 49]]
+};
+window.__vkey = function (name, down) {
+  const target = document.getElementById('canvas');
+
+  if (down && !document.hasFocus()) { try { window.focus(); target.focus(); } catch (e) {} }
+  (VKEYS[name] || []).forEach(k => {
+    const ev = new KeyboardEvent(down ? 'keydown' : 'keyup', { key: k[0], code: k[1], bubbles: true, cancelable: true });
+    Object.defineProperty(ev, 'keyCode', { get: () => k[2] }); Object.defineProperty(ev, 'which', { get: () => k[2] });
+    target.dispatchEvent(ev);
+  });
+};
+addEventListener('message', e => {
+  if (e.origin !== location.origin) return;
+  if (e.data === 'focus') document.getElementById('canvas').focus();
+  else if (e.data === 'quit') saveAndQuit();
+  else if (e.data && e.data.type === 'vol') {
+    try { FS.writeFile('/vol.txt', (Math.max(0, Math.min(100, +e.data.bgm || 0))) + ' ' + (Math.max(0, Math.min(100, +e.data.sfx || 0))) + '\n'); } catch (x) {}
+  }
+  else if (e.data && e.data.type === 'specchat') {
+    try { window.specSeq = (window.specSeq || 0) + 1; const specSeq = window.specSeq; FS.writeFile('/specchat.txt', specSeq + '\t' + String(e.data.nick || '').replace(/\t/g, ' ') + '\t' + String(e.data.text || '').replace(/[\t\r\n]/g, ' ') + '\n'); } catch (x) {}
+  }
+  else if (e.data && e.data.get === 'replay') {
+    let bytes = null; try { bytes = FS.readFile('/replays/' + e.data.name); } catch (x) {}
+    parent.postMessage({ from: 'scgame', type: 'replaybytes', name: e.data.name, bytes: bytes }, location.origin);
+  }
+});
+</script>
+</body>
+</html>

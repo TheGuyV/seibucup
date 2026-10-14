@@ -1,0 +1,19 @@
+{
+  "name": "세이부 컵 사커 온라인",
+  "short_name": "세이부 컵",
+  "description": "설치 없이 브라우저에서 바로 하는 세이부 컵 사커 (튜토리얼, 연습 게임, 온라인 대전)",
+  "lang": "ko",
+  "start_url": "play.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#0b0d0b",
+  "theme_color": "#186830",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192-full.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-512-full.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

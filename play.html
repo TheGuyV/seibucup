@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바로 플레이 - 세이부 컵 사커 온라인 (Seibu Cup Soccer Online)</title>
+<link rel="canonical" href="https://seibucup.online/play.html">
+<link rel="icon" href="favicon.ico">
+<meta name="theme-color" content="#186830">
+<link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="세이부 컵">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<style>
+
+  .hero.play-hero { padding: 42px 0 30px; }
+  .beta { display: inline-block; vertical-align: middle; margin-left: 10px; padding: 2px 8px; font-size: .9rem; background: var(--hud-orange); color: #000; text-shadow: none; border: 2px solid #000; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .lb { font: 700 .95rem "Galmuri11", sans-serif; padding: 8px 14px; border: 2px solid #fff; background: var(--hud); color: #fff; cursor: pointer; box-shadow: 3px 3px 0 #000; }
+  .lb:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 #000; }
+  .lb:focus-visible { outline: 3px solid var(--hud-yellow); outline-offset: 2px; }
+  .lb.go { background: var(--hud-yellow); color: #000; border-color: #000; }
+  .lb.small { font-size: .8rem; padding: 5px 10px; }
+  .lb:disabled { opacity: .45; cursor: default; transform: none; }
+  .tag { display: inline-block; padding: 0 5px; font-size: .75rem; border: 1px solid var(--panel-line); color: var(--muted); }
+  .statusbar { display: flex; gap: 14px; flex-wrap: wrap; justify-content: space-between; padding: 8px 14px; border-top: 2px solid var(--panel-line); background: #000; font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .statusbar b { color: var(--hud-yellow); font-weight: 400; }
+
+  .needs { display: grid; gap: 8px; margin: 0 0 16px; }
+  .need[hidden] { display: none; }
+  .need { display: flex; align-items: center; gap: 10px 14px; flex-wrap: wrap; padding: 10px 14px; background: var(--panel); border: 3px solid var(--panel-line); box-shadow: 4px 4px 0 rgba(0,0,0,.5); }
+  .need-lab { flex: 0 0 auto; min-width: 118px; color: var(--hud-yellow); font-size: 1.02rem; display: flex; align-items: center; gap: 8px; }
+  .need-msg { flex: 1 1 260px; min-width: 0; font-size: .92rem; color: #fff; line-height: 1.5; }
+  .need-msg .hint { color: var(--muted); font-size: .82rem; }
+  .need .req { font-size: .72rem; padding: 1px 6px; background: #c81e1e; color: #fff; border: 2px solid #000; }
+  .need.bad { border-color: #e04848; background: #3a0d0d; }
+  .need.bad .need-msg { color: #ffc9c9; }
+  .need.warn { border-color: var(--hud-orange); }
+  .need.ok { border-color: #3aa55a; }
+  .need.ok .req { background: #1f7a3a; }
+  .romchip { display: inline-block; margin: 0 6px 2px 0; padding: 1px 8px; background: #0c3a1c; border: 1px solid #3aa55a; color: #c8f5d4; font-size: .82rem; font-variant-numeric: tabular-nums; }
+  .romchip.miss { background: #3a2a06; border-color: var(--hud-orange); color: #ffe3a8; }
+  .padok { color: #8ff0a8; } .padnone { color: #d8d8d8; }
+  .need .lb { white-space: nowrap; }
+  .playstatus { font-size: .85rem; color: var(--muted); padding: 0 2px; font-variant-numeric: tabular-nums; }
+  .playstatus b { color: var(--hud-yellow); font-weight: 400; }
+
+  .netwrap { position: relative; }
+  .netlock { position: absolute; inset: 0; z-index: 4; display: grid; justify-items: center; align-content: start; padding-top: 110px !important; gap: 8px; padding: 20px; text-align: center;
+             background: rgba(10, 12, 10, .88); color: #fff; font-size: 1.05rem; }
+  .netlock[hidden] { display: none; }
+  .netlock .big { font-size: 1.4rem; color: var(--hud-yellow); }
+  .netlock .muted { color: var(--muted); font-size: .88rem; }
+
+  .stage { position: fixed; z-index: 60; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(96vw, calc((100vh - 120px) * 4 / 3));
+           background: #000; border: 3px solid var(--hud-yellow); box-shadow: 6px 6px 0 #000, 0 0 0 100vmax rgba(0, 0, 0, .78); }
+  .stage .ttl { display: flex; align-items: center; gap: 10px; padding: 5px 10px; background: var(--hud-yellow); color: #000; font-size: .9rem; }
+  .stage .ttl b { font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .stage .ttl b::after { content: " - seibucup.online (주변에 많이 알려주세요!)"; opacity: .75; }
+
+  html[lang="en"] .stage .ttl b::after { content: " - seibucup.online (please tell your friends!)"; }
+
+  .screen .wm { display: none; position: absolute; right: var(--wm-r, 10px); top: var(--wm-t, 10px); z-index: 6; pointer-events: none;
+                font: 400 13px "Galmuri11", sans-serif; color: rgba(255,255,255,.6); text-shadow: 1px 1px 0 #000; letter-spacing: .5px; }
+  .screen:fullscreen .wm { display: block; }
+  .stage:fullscreen .wm { display: block; }
+  .stage.touch.land .wm { display: block; }
+  .screen:-webkit-full-screen .wm { display: block; }
+  .stage:-webkit-full-screen .wm { display: block; }
+  .stage .screen { position: relative; width: 100%; aspect-ratio: 4 / 3; margin: 0 auto; background: #000; }
+  body.game-open { overflow: hidden; }
+
+  .screen .fsx { display: none; }
+  .screen:fullscreen .fsx { display: block; position: absolute; top: 10px; right: 10px; z-index: 6; padding: 6px 12px; font: 400 .9rem "Galmuri11", sans-serif;
+                            background: rgba(0,0,0,.6); color: #fff; border: 2px solid var(--hud-yellow); cursor: pointer; opacity: .55; }
+  .screen:fullscreen .fsx:hover, .screen:fullscreen .fsx:focus-visible { opacity: 1; }
+
+  .vpad { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 12px 16px; background: #0b0d0b;
+          border-top: 2px solid var(--hud-yellow); touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+  .vpad[hidden] { display: none; }
+
+  .vstick { --vs: 1; position: relative; flex: 0 0 auto; width: calc(min(150px, 38vw) * var(--vs)); height: calc(min(150px, 38vw) * var(--vs)); border-radius: 50%; background: #1c1f1c; border: 3px solid #3d443d; touch-action: none; }
+  .vstick::before { content: ""; position: absolute; inset: 28%; border-radius: 50%; border: 2px dashed #3d443d; }
+  .vstick .knob { position: absolute; left: 50%; top: 50%; width: calc(64px * var(--vs)); height: calc(64px * var(--vs)); margin: calc(-32px * var(--vs)) 0 0 calc(-32px * var(--vs)); border-radius: 50%; background: var(--hud-yellow); border: 3px solid #000; box-shadow: 0 4px 0 #000; pointer-events: none; }
+
+  .vbtns { --vb: 1; display: grid; grid-template-columns: repeat(2, auto); grid-template-areas: "coin start" "shoot pass"; gap: 12px 10px; align-items: end; justify-items: center; }
+  .vb { font: 400 1rem "Galmuri11", sans-serif; color: #fff; border: 3px solid #000; box-shadow: 0 4px 0 #000; touch-action: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .vb.big { width: min(84px * var(--vb), 21vw * var(--vb), 29vw - 22px); height: min(84px * var(--vb), 21vw * var(--vb), 29vw - 22px); border-radius: 50%; font-size: calc(1.15rem * var(--vb)); }
+  .vb.small { padding: 5px 12px; background: #2b2e2b; font-size: .85rem; border-radius: 14px; }
+  .vb[data-k="shoot"] { grid-area: shoot; background: #d23b3b; }
+  .vb[data-k="pass"] { grid-area: pass; background: #2f6fd0; margin-bottom: calc(26px * var(--vb)); }
+  .vb[data-k="coin"] { grid-area: coin; } .vb[data-k="start"] { grid-area: start; }
+  .vb.on { transform: translateY(3px); box-shadow: 0 1px 0 #000; filter: brightness(1.25); }
+  .stage.touch .keys { display: none; }
+
+  .stage.touch:not(.land) { width: min(96vw, calc((100vh - 300px) * 4 / 3)); width: min(96vw, calc((100dvh - 300px) * 4 / 3)); }
+
+  .stage.touch.land { width: 100vw; height: 100vh; height: 100dvh; left: 0; top: 0; transform: none; border: 0; display: flex; flex-direction: column; }
+  .stage.touch.land .ttl { display: none; }
+  .stage.touch.land .screen { flex: 1 1 0; aspect-ratio: auto; min-height: 0; width: 100%; }
+  .stage.touch.land .vpad { position: absolute; left: 0; right: 0; bottom: 44px; z-index: 5; background: transparent; border: 0; pointer-events: none; padding: 0 14px 10px; }
+  .stage.touch.land .vpad > * { pointer-events: auto; opacity: .78; }
+  .stage.touch.land .vb.big { width: min(72px * var(--vb), 20vh * var(--vb)); height: min(72px * var(--vb), 20vh * var(--vb)); font-size: calc(1rem * var(--vb)); }
+  .stage.touch.land .vstick { width: calc(min(150px, 42vh) * var(--vs)); height: calc(min(150px, 42vh) * var(--vs)); }
+
+  .stage.touch:fullscreen { width: 100vw; height: 100vh; left: 0; top: 0; transform: none; border: 0; display: flex; flex-direction: column; background: #000; }
+  .stage.touch:fullscreen .ttl { display: none; }
+  .stage.touch:fullscreen:not(.land) .screen { flex: 0 0 auto; }
+  .stage.touch:fullscreen:not(.land) .vpad { flex: 1 1 auto; }
+  .stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  .stage .veil { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 20px; color: #fff; background: rgba(0,0,0,.85); font-size: 1rem; }
+  .stage .veil.err { color: #ffb3b3; }
+
+  .stage .veil.busy { z-index: 7; align-content: center; gap: 14px; }
+  .stage .veil.busy::before { content: ""; justify-self: center; width: 42px; height: 42px; border: 5px solid rgba(255,255,255,.25); border-top-color: var(--hud-yellow); border-radius: 50%; animation: vspin .8s linear infinite; }
+  @keyframes vspin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .stage .veil.busy::before { animation-duration: 2.4s; } }
+  #btnStop:disabled { opacity: .7; cursor: progress; }
+
+  .endbanner { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 3; max-width: 92%; background: rgba(0,0,0,.82); color: #fff; border: 2px solid var(--hud-yellow); padding: 8px 18px; font-size: 1rem; text-align: center; box-shadow: 4px 4px 0 #000; }
+  .endbanner[hidden], .interlude[hidden] { display: none; }
+  .interlude { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; align-content: center; gap: 18px; padding: 24px; text-align: center; color: #fff;
+               background: radial-gradient(circle at 50% 40%, #134a26 0%, #07210f 70%); }
+  .interlude .il-tag { font-size: 1.1rem; color: var(--hud-yellow); letter-spacing: 1px; }
+  .interlude .il-board { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 18px; width: min(720px, 100%); }
+  .interlude .il-side { font-size: 1.6rem; overflow-wrap: anywhere; }
+  .interlude .il-side.a { text-align: right; color: #ff8a8a; } .interlude .il-side.b { text-align: left; color: #8fb2ff; }
+  .interlude .il-score { font-size: 3.6rem; line-height: 1; padding: 10px 22px; background: #000; border: 3px solid var(--hud-yellow); box-shadow: 5px 5px 0 #000; font-variant-numeric: tabular-nums; }
+  .interlude .il-note { color: #d8e8dc; font-size: 1rem; max-width: 640px; }
+  .interlude .il-ready { display: flex; gap: 10px 22px; flex-wrap: wrap; justify-content: center; font-size: .95rem; }
+  .interlude .il-ready .ok { color: #7be08f; } .interlude .il-ready .wait { color: #aab8ad; }
+  .interlude .il-win { font-size: 2.2rem; color: var(--hud-yellow); text-shadow: 3px 3px 0 #000; }
+  .stage .bar { display: flex; gap: 10px 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 8px 12px; background: var(--hud); border-top: 2px solid var(--hud-yellow); }
+  .keys { display: flex; gap: 6px 12px; flex-wrap: wrap; font-size: .82rem; color: var(--muted); }
+  .keys kbd { font: .78rem Consolas, monospace; padding: 1px 5px; border: 1px solid #888; background: #1b1b1b; color: #fff; }
+  #runlog { max-height: 140px; overflow: auto; white-space: pre-wrap; font: .75rem Consolas, monospace; color: #9fb8a8; background: #000; padding: 8px; margin: 0; }
+  @media (max-width: 760px) {
+        }
+  @media (prefers-reduced-motion: reduce) { .lb:hover { transform: none; } }
+
+  .net { --n-bg: #1f1f1f; --n-panel: #171717; --n-ctl: #2b2b2b; --n-line: #4a4a4a; --n-fg: #e8e8e8; --n-mute: #9a9a9a; --n-blue: #2f6fd0; --n-blue2: #6ea8ff;
+         --n-green: #54c96f; --n-orange: #f0a13a; --n-yellow: #ffd23f;
+         margin-top: 22px; background: var(--n-bg); color: var(--n-fg); border: 1px solid #3a3a3a; box-shadow: 5px 5px 0 rgba(0,0,0,.6);
+         font: 14px/1.45 "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .net .ko, .net .en { font-family: inherit; }
+  .net-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 16px; border-bottom: 1px solid #333; }
+  .net-head b { font-size: 16px; }
+  .net-test { font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 9px; background: #5b3a00; color: var(--n-yellow); }
+  .net-sub { color: var(--n-mute); font-size: 12px; }
+  .net-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6px 28px; padding: 12px 16px 6px; }
+  .net-col { display: flex; flex-direction: column; gap: 6px; }
+  .nrow { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; gap: 8px; }
+  .nrow > label, .nlab { color: var(--n-fg); }
+  .nrow .accent { color: var(--n-blue2); font-weight: 700; }
+  .nfield { display: flex; gap: 6px; min-width: 0; }
+  .volrow { align-items: center; } .volrow input[type=range] { flex: 1; min-width: 0; accent-color: var(--n-blue); } .volrow span { width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; }
+
+  .nfield.ftpair #netFt { flex: 1.3 1 0; min-width: 0; }
+  .nfield.ftpair #netTie { flex: 1 1 0; min-width: 0; }
+
+  .nfield.soloBtns { flex-wrap: wrap; row-gap: 6px; }
+  @media (max-width: 520px) { .nfield.soloBtns { grid-column: 1 / -1; } .nrow:has(> .soloBtns) > span:first-child { display: none; } }
+  .net input:not([type=checkbox]), .net select { font: inherit; color: var(--n-fg); background: var(--n-ctl); border: 1px solid var(--n-line); height: 28px; padding: 0 8px; min-width: 0; width: 100%; border-radius: 0; }
+  .net select:focus, .net input:focus { outline: 2px solid var(--n-blue); outline-offset: -1px; }
+  .net input:disabled { color: var(--n-mute); }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .seg button { font: inherit; min-height: 28px; padding: 2px 4px; line-height: 1.15; background: var(--n-ctl); color: var(--n-fg); border: 1px solid var(--n-line); cursor: pointer; }
+  .seg button.on { background: var(--n-blue); border-color: var(--n-blue); color: #fff; font-weight: 700; }
+  .seg button:disabled { color: #666; cursor: default; }
+  .nrow { position: relative; } .nrow[hidden] { display: none; }
+
+  .rmodal { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.6); padding: 16px; }
+  .rmodal[hidden] { display: none; }
+
+  .nbox { background: var(--n-bg); color: var(--n-fg); border: 1px solid #3a3a3a; box-shadow: 5px 5px 0 rgba(0,0,0,.6); width: min(480px, 100%); max-height: calc(100vh - 32px); overflow: auto; font-size: 13.5px; }
+  .nbox .nh { padding: 14px 18px 10px; border-bottom: 1px solid #333; }
+  .nbox h2 { margin: 0; font-size: 17px; color: var(--n-yellow); }
+  .nbox .nsub { margin: 3px 0 0; color: var(--n-mute); font-size: 12px; }
+  .nbox ul { list-style: none; margin: 0; padding: 12px 18px 0; display: grid; gap: 9px; }
+  .nbox li { line-height: 1.5; }
+  .nbox li b { color: var(--n-blue2); margin-right: 6px; }
+  .nbox .nf { display: flex; align-items: center; gap: 10px; padding: 14px 18px 16px; }
+  .nbox .nf a { color: var(--n-blue2); font-size: 12.5px; }
+  .nbox .nf .grow { flex: 1; }
+  .nlink { display: inline-block; margin-top: 6px; font-size: 12px; color: var(--n-mute); }
+  .rbox { background: var(--n-bg); color: var(--n-fg); border: 1px solid var(--n-line); box-shadow: 4px 4px 0 rgba(0,0,0,.5); width: min(960px, 100%); max-height: calc(100vh - 32px); display: flex; flex-direction: column;
+          height: min(calc(52vh + 212px), calc(100vh - 32px)); }
+  .rhead { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--n-line); }
+  .rhead b { flex: 1; }
+  .rhead button { font: inherit; background: transparent; color: var(--n-fg); border: 1px solid var(--n-line); cursor: pointer; padding: 2px 10px; }
+  .rtabs { display: flex; gap: 4px; padding: 8px 12px 0; }
+  .rtabs button { font: inherit; background: var(--n-ctl); color: var(--n-mute); border: 1px solid var(--n-line); border-bottom: 0; padding: 6px 14px; cursor: pointer; }
+  .rtabs button.on { background: var(--n-panel); color: var(--n-fg); }
+  .rpane { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px 12px; border-top: 1px solid var(--n-line); min-height: 0; flex: 1; }
+  .rpane[hidden] { display: none; }
+  .rpane .hint { color: var(--n-mute); font-size: 12px; line-height: 1.5; }
+  .rfilters { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 13px; }
+  .rfilters input[type=text], .rfilters select { font: inherit; background: var(--n-ctl); color: var(--n-fg); border: 1px solid var(--n-line); padding: 4px 6px; }
+  .net .rfilters input[type=text] { width: 200px; max-width: 100%; flex: 0 1 200px; }
+  .net .rfilters select { width: auto; flex: 0 0 auto; }
+  .net .rfilters label { display: inline-flex; align-items: center; gap: 4px; width: auto; }
+  .rlist { overflow: auto; flex: 1; min-height: 120px; border: 1px solid var(--n-line); background: var(--n-panel); }
+  .rlist table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .rlist th { position: sticky; top: 0; background: var(--n-ctl); color: var(--n-mute); font-weight: 400; text-align: left; padding: 5px 8px; white-space: nowrap; }
+  .rlist td { padding: 4px 8px; border-top: 1px solid #2a2a2a; white-space: nowrap; }
+  .rlist tr[data-i] { cursor: pointer; }
+  .rlist tr.sel td { background: var(--n-blue); color: #fff; }
+  .rlist tr.dim td { color: var(--n-mute); }
+  .rlist .empty { color: var(--n-mute); padding: 14px 8px; white-space: normal; }
+  .rbtns { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .rbtns .grow { flex: 1; }
+  .rbtns .stat { color: var(--n-mute); font-size: 12px; }
+  #netReplay { color: #5ec8ff; }
+  .pvemenu { position: absolute; right: 0; top: 30px; z-index: 5; display: grid; background: #2b2b2b; border: 1px solid #666; box-shadow: 3px 3px 0 rgba(0,0,0,.5); min-width: 120px; }
+  .pvemenu[hidden] { display: none; }
+  .pvemenu button { font: inherit; text-align: left; padding: 6px 12px; background: transparent; color: var(--n-fg); border: 0; cursor: pointer; }
+  .pvemenu button:hover, .pvemenu button.on { background: var(--n-blue); color: #fff; }
+  .ncheck { display: flex; gap: 6px; align-items: center; margin-left: 84px; cursor: pointer; }
+  .ncheck input { accent-color: var(--n-blue); width: 15px; height: 15px; }
+  .nbtn { font: inherit; height: 28px; padding: 0 14px; background: var(--n-ctl); color: var(--n-fg); border: 1px solid #8a8a8a; cursor: pointer; white-space: nowrap; }
+  .nbtn:hover:not(:disabled) { border-color: #cfcfcf; }
+  .nbtn:focus-visible, .seg button:focus-visible, .ctabs button:focus-visible, .tile:focus-visible { outline: 2px solid var(--n-yellow); outline-offset: 1px; }
+  .nbtn.bold { font-weight: 700; }
+  .nbtn.primary { background: var(--n-blue); border-color: var(--n-blue); color: #fff; font-weight: 700; }
+  .nbtn.cut { background: #3a1414; border: 1px solid #e05252; color: #ffd6d6; font-weight: 700; }
+  .nbtn.cut:hover:not(:disabled) { background: #5a1c1c; border-color: #ff7a7a; color: #fff; }
+  .nbtn:disabled { color: #666; border-color: #444; cursor: default; }
+
+  .seg button.on:disabled, .nbtn.primary:disabled { color: #fff; background: #2a5fb0; border-color: #2a5fb0; }
+  .nbtn.qready { border: 2px solid #c80000; font-weight: 700; animation: qblink .84s steps(1) infinite; }
+  @keyframes qblink { 0% { background: #e11414; color: #fff; } 50% { background: #fff; color: #e11414; } }
+
+  .nbtn.rblink { border: 2px solid #149632; animation: rblink .84s steps(1) infinite; }
+  @keyframes rblink { 0% { background: #149632; color: #fff; } 50% { background: #fff; color: #149632; } }
+  @media (prefers-reduced-motion: reduce) { .nbtn.qready { animation: none; background: #e11414; color: #fff; } }
+  .net-mid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 14px; padding: 8px 16px 12px; }
+  .net-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-height: 34px; margin-bottom: 6px; }
+
+  .ntitle { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-bottom: 4px; }
+  .ntitle label { color: var(--n-fg); white-space: nowrap; }
+  .net .ntitle input { width: 260px; max-width: 100%; flex: 0 1 260px; }
+  @media (max-width: 520px) { .net .ntitle input { flex: 1 1 auto; } }
+  .net-bar b { font-size: 15px; }
+  .grow { flex: 1 1 auto; }
+  .tiles { background: var(--n-panel); border: 1px solid #333; min-height: 300px; max-height: 420px; overflow: auto; padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .tile { text-align: left; font: inherit; color: var(--n-fg); background: #262626; border: 1px solid #454545; border-radius: 8px; padding: 7px 10px 8px; cursor: pointer; display: grid; gap: 2px; min-height: 92px; }
+  .tile:hover { border-color: #777; }
+  .tile.sel { border: 2px solid var(--n-blue2); padding: 6px 9px 7px; }
+  .tile.mine { box-shadow: inset 0 0 0 1px var(--n-yellow); }
+  .tile.new { border: 1px dashed #777; background: transparent; place-items: center; color: #cfcfcf; font-weight: 700; }
+  .tile .t1, .tile .t3, .tile .t4 { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 12px; color: var(--n-mute); }
+  .tile .t2 { font-size: 16px; font-weight: 700; color: var(--n-fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pill { font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 9px; white-space: nowrap; }
+  .pill.wait { background: rgba(84,201,111,.16); color: var(--n-green); }
+  .pill.play { background: rgba(240,161,58,.16); color: var(--n-orange); }
+  .pill.ed { background: #3a3a3a; color: #cfcfcf; font-weight: 400; }
+  .pill.ed.sel2 { background: rgba(160,120,255,.2); color: #c9b3ff; }
+  .tile .png { color: var(--n-green); }
+  .tile .png.far { color: var(--n-orange); }
+
+  .rfilter { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 0 0 8px; font-size: 12px; }
+  .rfilter .chip { font: inherit; font-size: 12px; padding: 2px 10px; border-radius: 999px; border: 1px solid #555; background: transparent; color: var(--n-fg); cursor: pointer; }
+  .rfilter .chip.on { border-color: var(--n-blue2); color: var(--n-blue2); background: rgba(110,168,255,.14); }
+
+  .rfilter .chip.seat { border: 2px solid #4cc477; color: #6ee093; font-weight: 700; }
+  .rfilter .chip.seat.has { background: rgba(76,196,119,.32); }
+  .rfilter .chip.seat.on { background: #2f9e55; border-color: #2f9e55; color: #fff; }
+  .rfilter .age { color: var(--n-mute); }
+  .tile.open { border: 2px solid var(--n-green); padding: 6px 9px 7px; }
+  .tile.sel { border-color: var(--n-blue2); }
+  .tile .t5 { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 12px; color: var(--n-mute); }
+  .tile .seatl { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--n-fg); }
+  .tile .seatl .rdy { color: var(--n-green); } .tile .seatl .emp { color: #777; }
+  .tile .score { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 6px; align-items: center; font-size: 12px; color: var(--n-mute); }
+  .tile .score span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .tile .score span:last-child { text-align: right; }
+  .tile .score b { font-size: 16px; color: var(--n-fg); font-variant-numeric: tabular-nums; }
+  .tile .pinfo { display: inline-flex; align-items: center; gap: 5px; min-width: 0; overflow: hidden; white-space: nowrap; }
+  .bars { display: inline-flex; gap: 1px; align-items: flex-end; height: 12px; flex: 0 0 auto; }
+  .bars i { width: 3px; background: #4a4a4a; display: block; } .bars i.on { background: currentColor; }
+  .tact { font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 5px; border: 1px solid #777; color: var(--n-fg); white-space: nowrap; flex: 0 0 auto; }
+  .tact.go { background: var(--n-green); border-color: var(--n-green); color: #0d1f10; }
+
+  .tiles > * { flex: 0 0 auto; }
+  .tile.new { min-height: 34px; padding: 6px 10px; }
+  .tile.rrow { display: grid; grid-template-columns: 5px 50px minmax(0, 1fr) auto 92px 58px; grid-template-areas: "st no tt seats pg act";
+               align-items: center; gap: 0 12px; padding: 8px 10px 8px 0; min-height: 0; overflow: hidden; }
+  .tile.rrow.sel, .tile.rrow.open { padding: 7px 9px 7px 0; }
+  .rst { grid-area: st; align-self: stretch; margin: -8px 0; }
+  .rno { grid-area: no; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .rty { font-size: 11px; font-weight: 700; width: 50px; text-align: center; padding: 2px 0; border-radius: 5px; background: #383838; color: var(--n-fg); }
+  .rnum { font-size: 11px; color: var(--n-mute); }
+  .rtt { grid-area: tt; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .tile .rtt .t2 { font-size: 15px; }
+  .rmeta { font-size: 12px; color: var(--n-mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .rseats { grid-area: seats; display: inline-flex; flex-direction: column; gap: 4px; }
+  .rav { display: flex; align-items: center; gap: 3px; }
+  .av { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; position: relative; flex: 0 0 auto; }
+  .av.l { background: #0c447c; color: #b5d4f4; } .av.r { background: #712b13; color: #f5c4b3; }
+  .av.e { border: 1px dashed #777; color: #888; } .av.cpu { background: #464646; color: var(--n-fg); font-size: 9px; }
+  .av .ok { position: absolute; right: -3px; bottom: -3px; width: 12px; height: 12px; border-radius: 50%; background: var(--n-green); color: #0d1f10; font-size: 8px; line-height: 12px; text-align: center; box-shadow: 0 0 0 1px var(--n-panel); }
+  .rav .mid { margin: 0 5px; font-size: 11px; color: var(--n-mute); }
+  .rav .mid.sc { font-size: 16px; font-weight: 700; color: var(--n-fg); font-variant-numeric: tabular-nums; }
+
+  .av .skb { position: absolute; top: -7px; right: -8px; min-width: 16px; height: 16px; padding: 0 1px; border-radius: 8px; font-size: 10px; line-height: 16px; text-align: center; font-weight: 700; box-shadow: 0 0 0 1.5px var(--n-panel); }
+  .skb.sk-u { background: #791f1f; color: #f7c1c1; } .skb.sk-e { background: #27500a; color: #c0dd97; } .skb.sk-d { background: #0c447c; color: #b5d4f4; } .skb.sk-q { background: #444; color: #bbb; }
+  .skw { font-size: 11px; padding: 1px 6px; border-radius: 5px; margin-left: 4px; white-space: nowrap; }
+  .skw.sk-vs { background: #3a3a46; color: #e0e0ea; }
+  .skw.sk-u { background: #791f1f; color: #f7c1c1; } .skw.sk-e { background: #27500a; color: #c0dd97; } .skw.sk-d { background: #0c447c; color: #b5d4f4; } .skw.sk-q { background: #333; color: #aaa; }
+  .chm { font-size: 10px; } .chm.sk-u { color: #f09595; } .chm.sk-e { color: #97c459; } .chm.sk-d { color: #85b7eb; }
+  .rbar { height: 3px; background: #3c3c3c; } .rbar i { display: block; height: 100%; background: var(--n-orange); }
+  .rpg { grid-area: pg; display: flex; flex-direction: column; gap: 3px; font-size: 11px; color: var(--n-mute); white-space: nowrap; overflow: hidden; }
+  .rpg.far { color: var(--n-orange); }
+  .tile.rrow .tact { grid-area: act; justify-self: end; text-align: center; width: 56px; padding: 5px 0; }
+  @media (max-width: 560px) {
+    .tile.rrow { grid-template-columns: 5px 46px minmax(0, 1fr) auto; grid-template-areas: "st no tt act" "st no seats pg"; row-gap: 6px; }
+    .rst { margin: -8px 0; }
+  }
+  .seatbox { background: var(--n-panel); border: 1px solid #333; min-height: 104px; max-height: 196px; overflow: auto; }
+  .net table, .net th, .net td { border: 0; background: none; box-shadow: none; }
+  .seats { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .seats th { text-align: left; font-weight: 400; color: var(--n-mute); padding: 4px 8px; border-bottom: 1px solid #333; position: sticky; top: 0; background: var(--n-panel); }
+  .seats td { padding: 3px 8px; white-space: nowrap; }
+  .seats td:last-child { width: 100%; max-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .seats td:nth-child(2) { white-space: nowrap; }
+  .seats tr.me td { color: var(--n-yellow); }
+  .seats td.empty { color: #666; }
+  .seats .rd { color: var(--n-green); }
+  .ctabs { display: flex; gap: 2px; margin-top: 10px; border-bottom: 1px solid #333; }
+  .ctabs button { font: inherit; font-size: 13px; background: transparent; color: var(--n-mute); border: 0; border-bottom: 2px solid transparent; padding: 4px 14px; cursor: pointer; }
+  .ctabs button.on { color: var(--n-fg); border-bottom-color: var(--n-fg); font-weight: 700; }
+  .ctabs button.ping::after { content: " •"; color: var(--n-yellow); }
+  .ctabs .cnews { margin-left: auto; align-self: center; font-size: 12px; font-weight: 700; color: var(--n-yellow); text-decoration: none; padding: 2px 6px; }
+  .ctabs .cnews:hover, .ctabs .cnews:focus-visible { text-decoration: underline; }
+  .chatlog { background: var(--n-panel); border: 1px solid #333; border-top: 0; height: 150px; overflow: auto; padding: 4px 8px; font-size: 12.5px; line-height: 1.55; overflow-wrap: anywhere; }
+  .chatlog .tm { color: var(--n-mute); margin-right: 6px; font-variant-numeric: tabular-nums; }
+  .chatlog .nk { color: var(--n-blue2); font-weight: 700; }
+  .chatlog .nk.me { color: var(--n-yellow); }
+  .chatlog .sys { color: var(--n-mute); }
+
+  #chatPub { background: #1a1c1f; padding: 2px 10px 8px; line-height: 1.4; overflow-x: hidden; }
+  #chatPub .row { display: flex; flex-direction: column; align-items: flex-start; margin-top: 3px; }
+  #chatPub .row.first { margin-top: 8px; }
+  #chatPub .row.me { align-items: flex-end; }
+  #chatPub .bn { font-size: 11.5px; font-weight: 700; margin: 0 0 2px 3px; }
+  #chatPub .bn .chm { margin-right: 3px; }
+  #chatPub .bl { display: flex; align-items: flex-end; gap: 5px; max-width: 84%; }
+  #chatPub .me .bl { flex-direction: row-reverse; }
+  #chatPub .bb { background: #2c2f34; border: 1px solid #3a3e45; color: #e8e8e8; border-radius: 10px; padding: 3px 10px; overflow-wrap: anywhere; }
+  #chatPub .me .bb { background: #2f62b8; border-color: #2f62b8; color: #fff; }
+  #chatPub .bt { font-size: 10.5px; color: #8c929b; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  #chatPub .pill { width: fit-content; max-width: 92%; margin: 8px auto 0; font-size: 11.5px; color: #aab0b9; background: #2c2f34; border-radius: 10px; padding: 1px 11px; text-align: center; overflow-wrap: anywhere; white-space: normal; }
+  #chatPub .pill.join { background: #1c3a26; color: #82d79b; }
+  #chatPub .pill.notice { background: #42361a; color: #f5d278; font-weight: 700; }
+  #chatPub .pill.day { background: transparent; color: #8c929b; font-size: 11px; }
+
+  .net.noroom .seatbox { height: 46px; min-height: 0; }
+  .net.noroom #chatPub { height: 270px; }
+  .chatin { display: flex; gap: 6px; margin-top: 8px; }
+  .net-notice { background: #2f2a12; color: var(--n-yellow); font-weight: 700; padding: 6px 16px; border-top: 1px solid #4a4220; }
+  .net-notice { white-space: normal; overflow-wrap: anywhere; line-height: 1.45; }
+  .net-notice div + div { margin-top: 2px; }
+  .net-status { display: flex; gap: 0; align-items: center; flex-wrap: wrap; background: #262626; border-top: 1px solid #333; padding: 5px 16px; font-size: 12.5px; color: #cfcfcf; }
+  .net-status > span:not(.grow):not(:first-child) { padding: 0 10px; border-left: 1px solid #444; }
+  #netConn::before { content: "● "; color: var(--n-green); }
+  #netConn.off::before { color: #777; }
+  @media (max-width: 760px) {
+    .net-top, .net-mid { grid-template-columns: minmax(0, 1fr); }
+    .ncheck { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="container">
+    <div class="family"><span class="fam-label"><span class="ko">패밀리 사이트</span><span class="en">Family sites</span></span> <span class="fam-here"><span class="ko">세이부 컵 사커 온라인</span><span class="en">Seibu Cup Soccer Online</span></span> · <a href="https://twc98.seibucup.online/"><span class="ko">테크모 월드컵 98 온라인</span><span class="en">Tecmo World Cup '98 Online</span></a> · <a href="https://rg2.seibucup.online/"><span class="ko">런앤건2 온라인</span><span class="en">Run and Gun 2 Online</span></a></div>
+    <a class="brand" href="index.html"><span class="ball"></span><span class="ko">세이부 컵 사커 온라인</span><span class="en">Seibu Cup Soccer Online</span></a>
+    <nav class="menu">
+      <a class="play" href="play.html"><span class="ko">▶ 바로 플레이</span><span class="en">▶ Play now</span></a>
+      <a href="index.html"><span class="ko">소개</span><span class="en">Home</span></a>
+      <a href="download.html"><span class="ko">다운로드</span><span class="en">Download</span></a>
+      <a href="guide.html"><span class="ko">플레이 방법</span><span class="en">How to play</span></a>
+      <a href="results.html"><span class="ko">경기 기록</span><span class="en">Results</span></a>
+      <a href="ranking.html"><span class="ko">랭킹</span><span class="en">Ranking</span></a>
+      <a href="donate.html"><span class="ko">응원</span><span class="en">Support</span></a>
+      <a href="license.html"><span class="ko">라이선스</span><span class="en">License</span></a>
+      <a class="ext" href="https://cafe.naver.com/seibucup" target="_blank" rel="noopener"><span class="ko">네이버카페 ↗</span><span class="en">Naver Cafe ↗</span></a>
+    </nav>
+    <button class="langbtn" id="langbtn" onclick="toggleLang()">English</button>
+  </div>
+</header>
+
+<section class="hero play-hero">
+  <div class="container">
+    <h1><span class="ko">바로 플레이</span><span class="en">Play now</span><span class="beta">BETA</span></h1>
+    <p class="lead"><span class="ko">설치 없이 브라우저에서 바로. 롬만 한 번 넣으면 튜토리얼, 연습 게임, 온라인 대전을 여기서 할 수 있습니다. 게임 계산은 PC 런처의 MAME와 똑같습니다.</span><span class="en">Right in your browser, nothing to install. Add your ROM once and play the tutorial, practice, or online matches here. The game runs exactly like the PC launcher's MAME.</span></p>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="container">
+
+    <div class="needs">
+      <div class="need bad" id="needRom">
+        <span class="need-lab"><span class="ko">내 롬</span><span class="en">My ROM</span> <span class="req"><span class="ko">필수</span><span class="en">required</span></span></span>
+        <span class="need-msg" id="romMsg">…</span>
+        <label class="lb small go" for="romfile" id="romAdd" style="margin:0"></label>
+        <input type="file" id="romfile" accept=".zip" multiple hidden>
+        <button class="lb small" id="btnClear" type="button" hidden><span class="ko">지우기</span><span class="en">Remove</span></button>
+      </div>
+      <div class="need" id="needPad">
+        <span class="need-lab"><span class="ko">조이스틱</span><span class="en">Joystick</span></span>
+        <span class="need-msg"><span id="padstate"></span> <span class="hint"><span class="ko">· 키 바꾸기: 게임 중 <kbd>Tab</kbd></span><span class="en">· keys: <kbd>Tab</kbd> in a game</span></span></span>
+        <button class="lb small" id="btnCfgReset" type="button"><span class="ko">키 설정 초기화</span><span class="en">Reset controls</span></button>
+      </div>
+      <div class="playstatus"><span id="status">…</span></div>
+    </div>
+
+    <div class="stage" id="stage" hidden role="dialog" aria-modal="true" aria-labelledby="stageTitle">
+      <div class="ttl"><b id="stageTitle">Seibu Cup Soccer</b></div>
+      <div class="screen" id="screen">
+        <div class="veil" id="veil"></div>
+        <div class="wm" aria-hidden="true">seibucup.online</div>
+        <div class="endbanner" id="endbanner" hidden></div>
+        <div class="interlude" id="interlude" hidden></div>
+        <button type="button" class="fsx" id="btnFsx"><span class="ko">작게 보기</span><span class="en">Exit full screen</span></button>
+      </div>
+      <div class="vpad" id="vpad" hidden oncontextmenu="return false">
+        <div class="vstick" id="vstick" aria-label="방향"><div class="knob" id="vknob"></div></div>
+        <div class="vbtns">
+          <button type="button" class="vb small" data-k="coin"><span class="ko">동전</span><span class="en">Coin</span></button>
+          <button type="button" class="vb small" data-k="start"><span class="ko">시작</span><span class="en">Start</span></button>
+          <button type="button" class="vb big" data-k="shoot"><span class="ko">슛</span><span class="en">Shoot</span></button>
+          <button type="button" class="vb big" data-k="pass"><span class="ko">패스</span><span class="en">Pass</span></button>
+        </div>
+      </div>
+      <div class="bar">
+        <div class="keys" id="keys">
+          <span><kbd>←↑↓→</kbd> <span class="ko">이동</span><span class="en">move</span></span>
+          <span><kbd>Z</kbd>/<kbd>Ctrl</kbd> <span class="ko">슛</span><span class="en">shoot</span></span>
+          <span><kbd>X</kbd>/<kbd>Alt</kbd> <span class="ko">패스</span><span class="en">pass</span></span>
+          <span><kbd>5</kbd> <span class="ko">동전</span><span class="en">coin</span></span>
+          <span><kbd>1</kbd> <span class="ko">시작</span><span class="en">start</span></span>
+          <span id="keyTab"><kbd>Tab</kbd> <span class="ko">MAME 메뉴 (키 바꾸기)</span><span class="en">MAME menu (keys)</span></span>
+        </div>
+        <div class="row">
+          <button class="lb small" id="btnPad" type="button" hidden><span class="ko">컨트롤러</span><span class="en">Controller</span></button>
+          <button class="lb small" id="btnStick" type="button" hidden title=""></button>
+          <button class="lb small" id="btnVb" type="button" hidden title=""></button>
+          <button class="lb small" id="btnFull" type="button"><span class="ko">전체 화면</span><span class="en">Full screen</span></button>
+          <button class="lb small go" id="btnStop" type="button"><span class="ko">그만하기</span><span class="en">Stop</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="netwrap" id="netWrap">
+    <div class="net" id="net">
+      <div class="net-head"><b><span class="ko">온라인 대전</span><span class="en">Online play</span></b>
+        <span class="net-sub"><span class="ko">PC 런처와 같은 로비</span><span class="en">the same lobby as the PC launcher</span></span></div>
+      <div class="net-top">
+        <div class="net-col">
+          <div class="nrow"><label for="nick"><span class="ko">닉네임</span><span class="en">Nickname</span></label>
+            <div class="nfield"><input id="nick" maxlength="16" autocomplete="nickname"><button class="nbtn primary" id="btnConn" type="button"></button></div></div>
+          <div class="nrow"><label for="netEd" class="accent"><span class="ko">게임 버전</span><span class="en">Version</span></label>
+            <select id="netEd"><option value="cupsocs2"></option></select></div>
+          <div class="nrow"><label for="volBgm"><span class="ko">배경음악</span><span class="en">Music</span></label>
+            <div class="nfield volrow"><input type="range" id="volBgm" min="0" max="100" step="5"><span id="volBgmPct">100%</span></div></div>
+          <div class="nrow"><label for="volSfx"><span class="ko">효과음</span><span class="en">Effects</span></label>
+            <div class="nfield volrow"><input type="range" id="volSfx" min="0" max="100" step="5"><span id="volSfxPct">100%</span></div></div>
+          <div class="nrow"><label><span class="ko">닉네임 열쇠</span><span class="en">Nickname key</span></label>
+            <div class="nfield"><button class="nbtn" id="btnNickKey" type="button"><span class="ko">내 닉네임 열쇠 보기</span><span class="en">Show my nickname key</span></button></div></div>
+          <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
+          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netKeys" type="button"><span class="ko">키 설정</span><span class="en">Keys</span></button><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
+        </div>
+        <div class="net-col">
+          <div class="nrow"><span class="nlab"><span class="ko">대전타입</span><span class="en">Match type</span></span>
+            <div class="seg" id="netType"><button type="button" data-type="1v1">1 vs 1</button><button type="button" data-type="2v2" id="btn2v2">2 vs 2</button><button type="button" data-type="pve" id="btnPve">PvE 4P</button></div>
+            <div class="pvemenu" id="pveMenu" hidden><button type="button" data-cap="2">2 Player</button><button type="button" data-cap="3">3 Player</button><button type="button" data-cap="4">4 Player</button><button type="button" id="pveVsGod" style="border-top:1px solid #555"><span class="ko">GOD 바로가기 (단판)</span><span class="en">Straight to GOD (one match)</span></button><button type="button" id="pveGod"><span class="ko">GOD로 시작 (나라 선택 없음)</span><span class="en">Start as GOD (no country to pick)</span></button><div class="pvehead" style="border-top:1px solid #555;padding:6px 10px 2px;font-size:12px;color:#9aa"><span class="ko">난이도 (컴퓨터 팀)</span><span class="en">Difficulty (the CPU team)</span></div><button type="button" data-diff="2"><span class="ko">쉬움</span><span class="en">Easy</span></button><button type="button" data-diff="3"><span class="ko">보통 (기본)</span><span class="en">Normal (default)</span></button><button type="button" data-diff="1"><span class="ko">어려움</span><span class="en">Hard</span></button><button type="button" data-diff="0"><span class="ko">아주 어려움</span><span class="en">Very hard</span></button></div>
+            <div class="pvemenu" id="teamMenu" hidden><button type="button" data-teams="pick"><span class="ko">팀지정 (1P+3P 대 2P+4P)</span><span class="en">Teams as seated (1P+3P vs 2P+4P)</span></button><button type="button" data-teams="random"><span class="ko">랜덤지정 (시작 직전에 섞기)</span><span class="en">Random teams (drawn at the start)</span></button></div></div>
+          <div class="nrow" hidden><label for="netPing"><span class="ko">핑 제한</span><span class="en">Ping limit</span></label><select id="netPing"></select></div>
+          <div class="nrow"><label for="netFt"><span class="ko">승부</span><span class="en">Series</span></label><div class="nfield ftpair"><select id="netFt"></select><select id="netTie"></select></div></div>
+          <div class="nrow"><label for="netTime"><span class="ko">경기 시간</span><span class="en">Match time</span></label><select id="netTime"></select></div>
+          <div class="nrow"><label for="netDelay"><span class="ko">입력 지연</span><span class="en">Input delay</span></label>
+            <div class="nfield"><select id="netDelay" style="width:auto;flex:0 0 140px"></select><label class="ncheck" style="margin:0"><input type="checkbox" id="netAutoDelay"> <span class="ko">자동 (핑 기준)</span><span class="en">Auto (by ping)</span></label></div></div>
+          <div class="nrow"><label for="netStage"><span class="ko">경기장 (PvP)</span><span class="en">Pitch (PvP)</span></label><select id="netStage"></select></div>
+          <div class="nrow"><label for="netBgm"><span class="ko">BGM(개인)</span><span class="en">BGM (yours)</span></label><select id="netBgm"></select></div>
+          <label class="ncheck"><input type="checkbox" id="netSwap"> <span class="ko">연속 경기 시 좌우 교대 (고정)</span><span class="en">Swap sides on a rematch (fixed)</span></label>
+        </div>
+      </div>
+      <div class="net-mid">
+        <div class="net-rooms">
+
+          <div class="ntitle"><label for="netRoomTitle"><span class="ko">방 제목</span><span class="en">Room title</span></label><input type="text" id="netRoomTitle" maxlength="20" autocomplete="off"></div>
+          <div class="net-bar"><b id="roomsTitle"></b><span class="grow"></span>
+            <button class="nbtn bold" id="btnQuick" type="button" disabled><span class="ko">빠른 대결(단판)</span><span class="en">Quick match (single)</span></button>
+            <button class="nbtn" id="btnJoin" type="button" hidden></button>
+            <button class="nbtn" id="btnCreate" type="button" disabled><span class="ko">방 만들기</span><span class="en">Create room</span></button>
+            <button class="nbtn" id="btnRefresh" type="button" disabled><span class="ko">목록 새로고침</span><span class="en">Refresh list</span></button></div>
+          <div class="rfilter" id="rfilter"></div>
+          <div class="tiles" id="tiles"></div>
+        </div>
+        <div class="net-side">
+          <div class="net-bar"><b id="roomTitle"></b><span class="grow"></span>
+            <button class="nbtn" id="btnSolo" type="button" hidden><span class="ko">대기중 게임</span><span class="en">Waiting game</span></button>
+            <button class="nbtn primary" id="btnReady" type="button" hidden></button>
+            <button class="nbtn" id="btnLeave" type="button" hidden><span class="ko">방 나가기</span><span class="en">Leave room</span></button></div>
+          <div class="seatbox"><table class="seats"><thead><tr><th><span class="ko">자리</span><span class="en">Seat</span></th><th><span class="ko">닉네임</span><span class="en">Nickname</span></th><th><span class="ko">빌드</span><span class="en">Build</span></th><th><span class="ko">역할</span><span class="en">Role</span></th></tr></thead><tbody id="seatrows"></tbody></table></div>
+          <div class="ctabs" role="tablist"><button type="button" class="on" data-tab="pub"><span class="ko">공개채팅</span><span class="en">Public chat</span></button><button type="button" data-tab="room"><span class="ko">방 채팅</span><span class="en">Room chat</span></button><a class="cnews" href="https://cafe.naver.com/f-e/cafes/31791288/menus/5?viewType=L" target="_blank" rel="noopener"><span class="ko">공지사항/업데이트</span><span class="en">News / updates</span></a></div>
+          <div class="chatlog" id="chatPub" aria-live="polite"></div><div class="chatlog" id="chatRoom" aria-live="polite" hidden></div>
+          <form id="chatform" class="chatin"><input id="chatin" maxlength="200" aria-label="chat" disabled><button class="nbtn" type="submit" id="btnSay" disabled><span class="ko">보내기</span><span class="en">Send</span></button></form>
+          <a href="#" class="nlink" id="unLink"><span class="ko">이용 안내</span><span class="en">Rules &amp; notice</span></a>
+        </div>
+      </div>
+      <div class="rmodal" id="useNotice" hidden role="dialog" aria-modal="true" aria-labelledby="unTitle">
+        <div class="nbox">
+          <div class="nh"><h2 id="unTitle"><span class="ko">세이부 컵 사커 온라인 이용 안내</span><span class="en">Seibu Cup Soccer Online - before you play</span></h2>
+            <p class="nsub"><span class="ko">온라인 대전을 시작하기 전에 한 번 확인해 주세요.</span><span class="en">Please read this once before playing online.</span></p></div>
+          <ul>
+            <li><b><span class="ko">팬페이지</span><span class="en">Fan page</span></b><span class="ko">이 홈페이지와 런처, 온라인 서버는 팬이 만든 비공식 팬페이지입니다. 원작 게임 개발사·판권사의 공식 서비스가 아닙니다.</span><span class="en">This website, the launcher and the online server are an unofficial fan page made by fans - not an official service of the original game's developer or rights holders.</span></li>
+            <li><b><span class="ko">매너</span><span class="en">Manners</span></b><span class="ko">욕설·비매너·경기 중 고의 퇴장은 채팅 제한이나 접속 차단될 수 있습니다. 공개채팅은 접속한 모두에게 보입니다.</span><span class="en">Swearing, bad manners and quitting a match on purpose can get your chat limited or your access blocked. Everybody online sees the public chat.</span></li>
+            <li><b><span class="ko">경기 기록</span><span class="en">Match records</span></b><span class="ko">끝까지 치른 경기의 닉네임·점수·리플레이는 홈페이지 "경기 기록"에 공개됩니다. 비밀번호 방은 공개하지 않습니다.</span><span class="en">Finished matches (nicknames, score, replay) are published on the website's Results page. Password rooms are not published.</span></li>
+            <li><b><span class="ko">영상</span><span class="en">Videos</span></b><span class="ko">공개된 경기의 리플레이는 닉네임 대신 나라(팀) 이름으로 표시해 개발자의 개인 유튜브 채널 등에 영상으로 올라갈 수 있습니다.</span><span class="en">Replays of published matches may be used in videos on the developer's personal YouTube channel and similar places, with each player shown by country (team) instead of nickname.</span></li>
+            <li><b><span class="ko">롬 파일</span><span class="en">ROMs</span></b><span class="ko">본인이 가진 롬 파일만 사용하세요. 이 서비스는 롬을 제공하지 않습니다.</span><span class="en">Use only ROM files you own. This service does not provide ROMs.</span></li>
+            <li><b><span class="ko">개인정보</span><span class="en">Privacy</span></b><span class="ko">접속 IP 등을 어떻게 처리하는지는 개인정보 처리방침에 있습니다.</span><span class="en">How connection data such as IP addresses is handled is in the privacy policy.</span></li>
+          </ul>
+          <div class="nf"><a href="privacy.html" target="_blank" rel="noopener"><span class="ko">개인정보 처리방침</span><span class="en">Privacy policy</span></a><span class="grow"></span>
+            <button class="nbtn" type="button" id="unClose"><span class="ko">동의하지 않음</span><span class="en">I do not agree</span></button>
+            <button class="nbtn primary" type="button" id="unOk"><span class="ko">동의하고 시작</span><span class="en">Agree and play</span></button></div>
+        </div>
+      </div>
+      <div class="rmodal" id="repModal" hidden role="dialog" aria-modal="true" aria-labelledby="repTitle">
+        <div class="rbox">
+          <div class="rhead"><b id="repTitle"><span class="ko">리플레이 - 녹화된 경기</span><span class="en">Replays - recorded matches</span></b><button type="button" id="repClose" aria-label="close">✕</button></div>
+          <div class="rtabs"><button type="button" data-rt="mine" class="on" id="repTabMine"></button><button type="button" data-rt="online" id="repTabOnline"></button></div>
+          <div class="rpane" id="repMine">
+            <div class="hint"><span class="ko">웹에서 한 온라인 경기는 끝나면 이 브라우저에 자동으로 녹화됩니다(최근 100경기, 보통 50~100 KB). 리플레이는 녹화한 것과 같은 게임 빌드에서만 똑같이 재생됩니다. PC 런처의 녹화 파일(.scr)도 <b>파일 열기</b>로 재생할 수 있습니다.</span><span class="en">Every online match you play here is recorded in this browser automatically (the last 100, usually 50-100 KB each). A replay plays exactly only on the build it was recorded with. <b>Open file</b> also plays the PC launcher's recordings (.scr).</span></div>
+            <div class="rlist"><table><thead><tr><th><span class="ko">날짜</span><span class="en">Date</span></th><th><span class="ko">대진</span><span class="en">Match</span></th><th><span class="ko">점수</span><span class="en">Score</span></th><th><span class="ko">길이</span><span class="en">Length</span></th><th><span class="ko">비고</span><span class="en">Note</span></th></tr></thead><tbody id="repMineRows"></tbody></table></div>
+            <div class="rbtns"><button type="button" class="nbtn primary" id="repPlay" disabled><span class="ko">재생</span><span class="en">Play</span></button><button type="button" class="nbtn" id="repSave" disabled><span class="ko">파일로 저장</span><span class="en">Save file</span></button><button type="button" class="nbtn" id="repDel" disabled><span class="ko">삭제</span><span class="en">Delete</span></button><span class="grow"></span><button type="button" class="nbtn" id="repOpen"><span class="ko">파일 열기...</span><span class="en">Open file...</span></button><input type="file" id="repFile" accept=".scr" hidden></div>
+          </div>
+          <div class="rpane" id="repOnline" hidden>
+            <div class="hint"><span class="ko">사이트에 올라간 공개 경기입니다(비밀방 경기는 없습니다). 고른 경기를 받아서 바로 재생합니다.</span><span class="en">Public matches on the site (private rooms are not there). Play downloads the match and plays it.</span></div>
+            <div class="rfilters"><input type="text" id="repQ" placeholder=""><label><input type="checkbox" id="repMineOnly"> <span class="ko">내 경기만</span><span class="en">My matches only</span></label><select id="repEd"></select><select id="repTy"></select><span class="stat" id="repFresh"></span></div>
+            <div class="rlist"><table><thead><tr><th><span class="ko">날짜</span><span class="en">Date</span></th><th><span class="ko">대진</span><span class="en">Match</span></th><th><span class="ko">점수</span><span class="en">Score</span></th><th><span class="ko">승부</span><span class="en">Series</span></th><th><span class="ko">버전</span><span class="en">Version</span></th><th><span class="ko">길이</span><span class="en">Length</span></th><th><span class="ko">상태</span><span class="en">State</span></th></tr></thead><tbody id="repOnRows"></tbody></table></div>
+            <div class="rbtns"><button type="button" class="nbtn primary" id="repOnPlay" disabled><span class="ko">받아서 재생</span><span class="en">Get and play</span></button><button type="button" class="nbtn" id="repCopy" disabled><span class="ko">링크 복사</span><span class="en">Copy link</span></button><span class="grow"></span><a class="nbtn" href="results.html" target="_blank" rel="noopener"><span class="ko">사이트에서 보기</span><span class="en">On the site</span></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="net-notice" id="netNotice" hidden></div>
+      <div class="net-status"><span id="netStatus"></span><span class="grow"></span><span id="netConn" class="off"></span><span id="netPingTxt"></span><span id="netCounts"></span></div>
+    </div>
+      <div class="netlock" id="netLock" hidden>
+        <div class="big"><span class="ko">롬을 넣으면 열립니다</span><span class="en">Add your ROM to open this</span></div>
+        <div id="netLockWhy"></div>
+        <div class="muted"><span class="ko">위의 <b>내 롬</b> 줄에서 넣으세요. 롬은 이 브라우저 안에만 저장되고 어디로도 보내지지 않습니다.</span><span class="en">Use the <b>My ROM</b> row above. The ROM stays in this browser and is sent nowhere.</span></div>
+      </div>
+    </div>
+
+    <details style="margin-top:18px">
+      <summary class="muted" style="cursor:pointer"><span class="ko">실행 기록 (문제가 있을 때 보세요)</span><span class="en">Run log (for troubleshooting)</span></summary>
+      <pre id="runlog"></pre>
+    </details>
+    <p class="small"><span class="ko">웹판 MAME는 PC 패키지와 같은 비공식 수정판(MAME 0.289 + <a href="SeibuCup_MAME_Patch.zip">패치 키트</a>, GPL v3)을 WebAssembly로 빌드한 것입니다. 소스: <a href="https://github.com/mamedev/mame/tree/mame0289">MAME 0.289</a>. 롬은 제공하지 않습니다. 웹 전용 수정과 빌드 방법은 키트의 <code>web/</code>에, 라이선스 전문은 <a href="license.html">라이선스</a> 페이지에 있습니다.</span><span class="en">The web MAME is the same unofficial fixed build as the PC package (MAME 0.289 + <a href="SeibuCup_MAME_Patch.zip">the patch kit</a>, GPL v3), compiled to WebAssembly. Source: <a href="https://github.com/mamedev/mame/tree/mame0289">MAME 0.289</a>. ROMs are not provided. The web-only changes and how to build are in the kit's <code>web/</code>; the license texts are on the <a href="license.html">License</a> page.</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div><span class="ko">Seibu Cup Soccer © 1992 Seibu Kaihatsu. 팬 프로젝트, 공식 관계 없음.</span><span class="en">Seibu Cup Soccer © 1992 Seibu Kaihatsu. Fan project, not affiliated.</span></div>
+    <div><a href="license.html"><span class="ko">라이선스 · 크레딧</span><span class="en">License · Credits</span></a> · <a href="privacy.html"><span class="ko">개인정보 처리방침</span><span class="en">Privacy</span></a></div>
+    <div class="family"><span class="ko">패밀리 사이트</span><span class="en">Family sites</span>: <a href="https://twc98.seibucup.online/" rel="noopener"><span class="ko">테크모 월드컵 98 온라인</span><span class="en">Tecmo World Cup '98 Online</span></a> · <a href="https://rg2.seibucup.online/" rel="noopener"><span class="ko">런앤건2 온라인</span><span class="en">Run and Gun 2 Online</span></a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var ko = function () { return document.documentElement.getAttribute('lang') !== 'en'; };
+  var T = function (k, e) { return ko() ? k : e; };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+  function idb() {
+    return new Promise(function (ok, bad) {
+      var r = indexedDB.open('seibucup-web', 2);
+      r.onupgradeneeded = function () { ['roms', 'cfg'].forEach(function (n) { if (!r.result.objectStoreNames.contains(n)) r.result.createObjectStore(n); }); };
+      r.onsuccess = function () { ok(r.result); }; r.onerror = function () { bad(r.error); };
+    });
+  }
+  function tx(mode, fn, name) {
+    name = name || 'roms';
+    return idb().then(function (db) {
+      return new Promise(function (ok, bad) {
+        var t = db.transaction(name, mode), res = fn(t.objectStore(name));
+        t.oncomplete = function () { ok(res && res.result); }; t.onerror = function () { bad(t.error); };
+      });
+    });
+  }
+  var roms = [];
+  function loadRoms() {
+    return idb().then(function (db) {
+      return new Promise(function (ok) {
+        var out = [], c = db.transaction('roms', 'readonly').objectStore('roms').openCursor();
+        c.onsuccess = function () { var k = c.result; if (!k) { ok(out); return; } out.push({ name: k.key, size: k.value.byteLength, files: zipNames(k.value) }); k.continue(); };
+        c.onerror = function () { ok(out); };
+      });
+    }).catch(function () { return []; }).then(function (list) { roms = list; drawRoms(); });
+  }
+
+  function zipNames(buf) {
+    try {
+      var v = new DataView(buf), n = buf.byteLength, e = -1;
+      for (var p = n - 22; p >= Math.max(0, n - 65557); p--) if (v.getUint32(p, true) === 0x06054b50) { e = p; break; }
+      if (e < 0) return null;
+      var cnt = v.getUint16(e + 10, true), off = v.getUint32(e + 16, true), out = [], dec = new TextDecoder();
+      for (var k = 0; k < cnt && off + 46 <= n; k++) {
+        if (v.getUint32(off, true) !== 0x02014b50) break;
+        var nl = v.getUint16(off + 28, true), xl = v.getUint16(off + 30, true), cl = v.getUint16(off + 32, true);
+        out.push(dec.decode(new Uint8Array(buf, off + 46, nl)).toLowerCase().split('/').pop());
+        off += 46 + nl + xl + cl;
+      }
+      return out;
+    } catch (err) { return null; }
+  }
+
+  var romOk = { orig: false, sel: false };
+  function romCheck() {
+    var has = {};
+    roms.forEach(function (r) {
+      (r.files || []).forEach(function (f) { has[f] = 1; });
+      if (!r.files && r.name === 'cupsoc.zip') has['scc_01.bin'] = has['obj.8c'] = 1;
+      if (!r.files && r.name === 'cupsocs2.zip') has['seibu1.10n'] = 1;
+    });
+    romOk = { orig: !!(has['scc_01.bin'] && has['obj.8c']), sel: !!(has['seibu1.10n'] && has['obj.8c']) };
+  }
+  function drawRoms() {
+    romCheck();
+    var any = romOk.sel;
+    $('needRom').className = 'need ' + (any ? 'ok' : 'bad');
+    var chips = roms.map(function (r) { return '<span class="romchip">' + esc(r.name) + ' · ' + (r.size / 1048576).toFixed(1) + ' MB</span>'; }).join('');
+    var msg;
+    if (!roms.length) msg = T('롬이 없습니다 — <b>cupsoc.zip</b> 과 <b>cupsocs2.zip</b> 을 함께 넣으세요 (셀렉션도 그래픽은 cupsoc.zip 안에 있습니다).', 'No ROM yet — add <b>cupsoc.zip</b> and <b>cupsocs2.zip</b> together (Selection takes its graphics from cupsoc.zip).');
+    else if (!any) msg = chips + (romOk.orig ? T('<b>cupsocs2.zip</b> 도 필요합니다 (대전은 셀렉션 버전으로 합니다).', '<b>cupsocs2.zip</b> is needed too (matches play the Selection version).')
+                                            : T('<b>cupsoc.zip</b> 도 필요합니다 (셀렉션도 그래픽은 그 안에 있습니다).', '<b>cupsoc.zip</b> is needed too (Selection takes its graphics from it).'));
+    else msg = chips + ' <span class="hint">' + T('이 브라우저 안에만 저장', 'kept in this browser only') + '</span>';
+    $('romMsg').innerHTML = msg;
+    $('romAdd').textContent = roms.length ? T('롬 추가', 'Add ROM') : T('롬 넣기', 'Add ROM');
+    $('romAdd').className = 'lb small' + (any ? '' : ' go');
+    $('btnClear').hidden = !roms.length;
+
+    $('net').inert = !any; $('netLock').hidden = any; $('needPad').hidden = !any;
+    $('netLockWhy').innerHTML = roms.length && !any ? (romOk.orig ? T('cupsocs2.zip 이 아직 없습니다.', 'cupsocs2.zip is still missing.') : T('cupsoc.zip 이 아직 없습니다.', 'cupsoc.zip is still missing.')) : '';
+    drawEdition();
+    if (typeof drawButtons === 'function' && typeof net !== 'undefined') drawButtons();
+    if (!running) idle();
+  }
+  $('romfile').onchange = function () {
+    var files = Array.prototype.slice.call(this.files).filter(function (f) { return /\.zip$/i.test(f.name); });
+    this.value = '';
+    if (!files.length) return;
+    Promise.all(files.map(function (f) { return f.arrayBuffer().then(function (b) { return [f.name.toLowerCase(), b]; }); }))
+      .then(function (all) { return tx('readwrite', function (s) { all.forEach(function (x) { s.put(x[1], x[0]); }); }); })
+      .then(loadRoms).then(function () { say(T('롬을 넣었습니다: ', 'ROM added: ') + esc(files.map(function (f) { return f.name; }).join(', '))); })
+      .catch(function (e) { say(T('롬을 저장하지 못했습니다 (브라우저 저장 공간을 확인하세요): ', 'Could not store the ROM (check the browser storage): ') + esc(e)); });
+  };
+  $('btnClear').onclick = function () {
+    if (!confirm(T('이 브라우저에 넣어 둔 롬을 지울까요?', 'Remove the ROM stored in this browser?'))) return;
+    tx('readwrite', function (s) { s.clear(); }).then(loadRoms).then(function () { say(T('롬을 지웠습니다.', 'ROM removed.')); });
+  };
+
+  function drawPads() {
+    var pads = [];
+    try { pads = Array.prototype.filter.call(navigator.getGamepads ? navigator.getGamepads() : [], Boolean); } catch (e) {}
+    if (pads.length) store.set('web_haspad', '1');
+    if (typeof drawVpad === 'function') drawVpad();
+    $('padstate').innerHTML = pads.length
+      ? pads.map(function (g) { return '● ' + esc(g.id.replace(/\s*\(.*$/, '').slice(0, 40)); }).join('<br>')
+      : T('인식된 조이스틱 없음 — 연결한 뒤 이 페이지에서 버튼을 한 번 누르세요 (그러면 게임을 켤 때 다시 묻지 않습니다).', 'No joystick seen yet — connect it and press a button here once (then the game does not ask again).');
+  }
+  window.addEventListener('gamepadconnected', drawPads); window.addEventListener('gamepaddisconnected', drawPads);
+  setInterval(drawPads, 2000);
+  $('btnCfgReset').onclick = function () {
+    if (!confirm(T('이 브라우저에 저장된 키·조이스틱 설정을 지울까요? (다음 게임부터 기본값)', 'Clear the saved keys and joystick settings in this browser? (defaults from the next game)'))) return;
+    tx('readwrite', function (s) { s.clear(); }, 'cfg').then(function () { say(T('키 설정을 기본값으로 되돌렸습니다.', 'Controls reset to the defaults.')); });
+  };
+
+  var ed = 'cupsocs2';
+  function drawEdition() {
+    var sel = $('netEd'); if (!sel || !sel.options.length) return;
+    sel.options[0].textContent = romOk.sel ? T('셀렉션', 'Selection') : T('셀렉션 (cupsocs2.zip 필요)', 'Selection (needs cupsocs2.zip)');
+    sel.value = ed;
+  }
+
+  var running = null;
+  function say(s) { $('status').innerHTML = s; }
+  function idle() { say(romOk.sel ? '<b>' + T('준비됨', 'Ready') + '</b> · ' + T('셀렉션', 'Selection')
+                                      : T('먼저 맨 위 <b>내 롬</b> 줄에서 cupsoc.zip 과 cupsocs2.zip 을 넣으세요.', 'First add cupsoc.zip and cupsocs2.zip in the <b>My ROM</b> row at the top.')); }
+  function logline(s) { var p = $('runlog'); p.textContent += s + '\n'; if (p.textContent.length > 60000) p.textContent = p.textContent.slice(-40000); p.scrollTop = p.scrollHeight; }
+
+  var LABEL = { solo: ['대기중 게임', 'Solo game'], tutorial: ['튜토리얼', 'Tutorial'], practice: ['연습 게임', 'Practice'], replay: ['리플레이', 'Replay'], match: ['온라인 경기', 'Online match'] };
+  function veil(text, err, busy) { var v = $('veil'); v.hidden = !text; v.className = 'veil' + (err ? ' err' : '') + (busy ? ' busy' : ''); v.textContent = text || ''; }
+
+  function stopBusy(on) {
+    $('btnStop').disabled = on;
+    $('btnStop').innerHTML = on ? '<span class="ko">닫는 중…</span><span class="en">Closing…</span>' : '<span class="ko">그만하기</span><span class="en">Stop</span>';
+  }
+  function start(mode, extra) {
+    if (!romOk.orig && !romOk.sel) { say(T('롬이 없습니다. 먼저 맨 위 <b>내 롬</b> 줄에서 cupsoc.zip 과 cupsocs2.zip (셀렉션, 추천) 을 넣으세요.', 'No ROM. Add cupsoc.zip and cupsocs2.zip (Selection, recommended) in the <b>My ROM</b> row first.')); $('needRom').scrollIntoView({ block: 'center' }); return; }
+    if (running) { stop(true).then(function () { start(mode, extra); }); return; }
+    var q = new URLSearchParams({ mode: mode, game: (extra && extra.game) || ed, lang: ko() ? 'ko' : 'en' });
+    q.set('bv', nset.bgmVol); q.set('sv', nset.sfxVol);
+    if (extra && extra.replay) q.set('replay', extra.replay);
+    if (extra && extra.replaylocal) q.set('replaylocal', extra.replaylocal);
+    if (extra && extra.names) q.set('names', extra.names);
+    if (extra && extra.god) q.set('god', '1');
+
+    try { if (Array.prototype.some.call(navigator.getGamepads(), Boolean)) store.set('web_haspad', '1'); } catch (e) {}
+    if (store.get('web_haspad') === '1') q.set('pads', '1');
+    if (mode === 'match') ['kinds', 'token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'dyn', 'ball', 'diff', 'pvegod', 'comic', 'costume'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
+    if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); ['xargs', 'nobeat', 'burn'].forEach(function (k) { if (TESTQ.get(k)) q.set(k, TESTQ.get(k)); }); }
+    hideInterlude();
+    var f = document.createElement('iframe');
+    if (new URLSearchParams(location.search).get('fps')) q.set('fps', '1');
+    f.src = 'play/game.html?' + q.toString(); f.title = 'Seibu Cup Soccer'; f.allow = 'autoplay; fullscreen; gamepad';
+    $('screen').appendChild(f);
+    running = { mode: mode, frame: f, label: (extra && extra.label) || T(LABEL[mode][0], LABEL[mode][1]), watching: mode === 'match' && extra && +extra.slot >= 5 };
+    if (mode === 'solo') playBegin(typeof net !== 'undefined' && net.soloWaiting ? 'wait' : (extra && extra.god ? 'god' : 'solo'), q.get('game'));
+    else if (mode === 'tutorial' || mode === 'practice') playBegin(mode, 'cupsocs2');
+    $('stageTitle').textContent = running.label + (mode === 'match' && extra.slot ? ' · ' + (+extra.slot >= 5 ? T('관전', 'watching') : extra.slot + 'P') : '');
+    $('stage').hidden = false; $('runlog').textContent = ''; vpadForce = false; drawVpad();
+    $('keyTab').hidden = mode === 'match' || mode === 'replay';
+    veil(T('게임을 불러오는 중… (처음에는 약 34 MB)', 'Loading the game… (about 34 MB the first time)'));
+    say('<b>' + esc(running.label) + '</b> · ' + T('불러오는 중', 'loading'));
+    if (typeof drawButtons === 'function') drawButtons();
+  }
+
+  var playConn = null;
+  function playBegin(mode, edition) {
+    playEnd();
+    try {
+      var nick = cleanNick(store.get('web_nick') || '');
+      var ws = new WebSocket(relayWsUrl()), t = null;
+      ws.binaryType = 'arraybuffer';
+      ws.onopen = function () {
+        ws.send(new TextEncoder().encode('PLAYING ' + mode + ' ' + (edition === 'cupsoc' ? 'cupsoc' : 'cupsocs2') + (nick ? ' ' + nick : '') + '\n'));
+        t = setInterval(function () { try { ws.send(new TextEncoder().encode('.')); } catch (e) {} }, 30000);
+      };
+      ws.onclose = function () { clearInterval(t); };
+      playConn = { stop: function () { clearInterval(t); try { ws.close(); } catch (e) {} } };
+    } catch (e) {}
+  }
+  function playEnd() { if (playConn) { playConn.stop(); playConn = null; } }
+
+  var savedWait = null;
+  function stop(quiet) {
+    var r = running;
+    if (!r) { done(); return Promise.resolve(); }
+    say('<b>' + esc(r.label) + '</b> · ' + T('설정 저장하고 닫는 중…', 'saving settings and closing…'));
+    veil(r.mode === 'match' || r.mode === 'replay' ? T('게임을 닫는 중…', 'Closing the game…') : T('키 설정을 저장하고 닫는 중…', 'Saving your key settings and closing…'), false, true);
+    stopBusy(true);
+    return new Promise(function (ok) {
+      var t = setTimeout(fin, 4000);
+      savedWait = function (names) { clearTimeout(t); if (names) logline('saved: ' + names); fin(); };
+      function fin() { savedWait = null; vrelease(); r.frame.remove(); if (running === r) running = null; playEnd(); veil(''); stopBusy(false); drawVpad(); done(); ok(); }
+      try { r.frame.contentWindow.postMessage('quit', location.origin); } catch (e) { fin(); }
+    });
+    function done() {
+      ftTrace('closed ' + (r ? r.mode : '-') + ' end=' + (net.matchEnded ? 1 : 0));
+
+      if (r && r.mode === 'match') {
+        if (!net.matchEnded && net.room) {
+          var lwhy = r.watching ? T('관전을 그만두어 방에서 나왔습니다.', 'You stopped watching and left the room.')
+                                : T('경기를 그만두어 방에서 나왔습니다. 경기는 끝났고 결과는 남지 않습니다.', 'You stopped the match and left the room. The match is over and no result is kept.');
+          send('LEAVE'); sys('pub', lwhy); leftRoom(); netSay(lwhy);
+        } else setTimeout(autoReadyIfClosed, 0);
+        net.matchEnded = false;
+      }
+      if (r && r.mode === 'solo' && net.soloWaiting) { net.soloWaiting = false; if (net.room && net.room.state === 'waiting') send('SOLO 0'); }
+      setTimeout(drawButtons, 0);
+      if (fsEl()) fsExit();
+      if (r && r.mode === 'match' && net.interludeDue && (net.room || net.interlude)) { net.interludeDue = false; net.interlude = net.interlude || {}; drawInterlude(); }
+      else if (!net.interlude) $('stage').hidden = true;
+      if (!quiet) idle();
+    }
+  }
+  $('btnStop').onclick = function () {
+    if (!running && net.interlude) { hideInterlude(); $('stage').hidden = true; return; }
+
+    if (running && running.mode === 'match' && !running.watching && !confirm(T('경기를 그만두면 상대의 경기도 끝나고 방에서 나가게 됩니다. 그만할까요?', 'Stopping ends the match for the other side too, and you leave the room. Stop?'))) return;
+    stop();
+  };
+
+  (function () {
+    var sc = $('screen');
+    function placeWm() {
+      var W = sc.clientWidth, H = sc.clientHeight; if (!W || !H) return;
+      var gw = Math.min(W, H * 4 / 3), gh = gw * 3 / 4;
+      sc.style.setProperty('--wm-r', Math.round((W - gw) / 2 + gw * 0.012) + 'px');
+      sc.style.setProperty('--wm-t', Math.round((H - gh) / 2 + gh * 0.045 + 3) + 'px');
+    }
+    if (window.ResizeObserver) new ResizeObserver(placeWm).observe(sc);
+    document.addEventListener('fullscreenchange', placeWm); window.addEventListener('resize', placeWm);
+    placeWm();
+  })();
+  new MutationObserver(function () { document.body.classList.toggle('game-open', !$('stage').hidden); }).observe($('stage'), { attributes: true, attributeFilter: ['hidden'] });
+
+  var TOUCH = (window.matchMedia && matchMedia('(pointer: coarse)').matches) || (navigator.maxTouchPoints || 0) > 0;
+  function padWanted() { var v = store.get('web_vpad'); return v === null ? TOUCH : v === '1'; }
+
+  var vpadForce = false;
+  function padSeen() {
+    function any(list) { try { return Array.prototype.some.call(list || [], Boolean); } catch (e) { return false; } }
+    var seen = false;
+    try { seen = any(navigator.getGamepads && navigator.getGamepads()); } catch (e) {}
+    try { if (!seen && running) seen = any(running.frame.contentWindow.navigator.getGamepads()); } catch (e) {}
+    return seen;
+  }
+
+  var VS = [0.6, 0.7, 0.8, 0.9, 1.0];
+  function stickLevel() { var v = +store.get('web_vstick'); return v >= 1 && v <= 5 ? v : 5; }
+  function drawStick() {
+    var lv = stickLevel();
+    $('vstick').style.setProperty('--vs', String(VS[lv - 1]));
+    $('btnStick').innerHTML = '<span class="ko">이동 원 ' + lv + '</span><span class="en">Stick ' + lv + '</span>';
+    $('btnStick').title = T('누를 때마다 이동 원이 한 단계씩 작아집니다 (5 = 원래 크기, 1 = 가장 작게)', 'Each press makes the move circle a step smaller (5 = full size, 1 = smallest)');
+  }
+  $('btnStick').onclick = function () { var lv = stickLevel() - 1; if (lv < 1) lv = 5; store.set('web_vstick', String(lv)); drawStick(); };
+
+  var VB = [0.8, 1.0, 1.2], VBN = [['작게', 'Small'], ['보통', 'Normal'], ['크게', 'Large']];
+  function vbLevel() { var v = +store.get('web_vbtn'); return v >= 1 && v <= 3 ? v : 2; }
+  function drawVb() {
+    var lv = vbLevel();
+    document.querySelector('.vbtns').style.setProperty('--vb', String(VB[lv - 1]));
+    $('btnVb').innerHTML = '<span class="ko">버튼 ' + VBN[lv - 1][0] + '</span><span class="en">Buttons ' + VBN[lv - 1][1] + '</span>';
+    $('btnVb').title = T('누를 때마다 슛·패스 버튼 크기가 바뀝니다 (작게 → 보통 → 크게)', 'Each press changes the size of the Shoot/Pass buttons (small → normal → large)');
+  }
+  $('btnVb').onclick = function () { var lv = vbLevel() + 1; if (lv > 3) lv = 1; store.set('web_vbtn', String(lv)); drawVb(); };
+  function drawVpad() {
+    var r = running, watch = !r || r.mode === 'replay' || (r.mode === 'match' && r.watching);
+    var on = !!r && !watch && padWanted() && (vpadForce || !padSeen());
+
+    $('vpad').hidden = !on; $('stage').classList.toggle('touch', !!r && (TOUCH || on)); vland();
+    $('btnPad').hidden = !r || watch || !(TOUCH || store.get('web_vpad') === '1');
+    $('btnPad').classList.toggle('go', on);
+    $('btnStick').hidden = !on; drawStick();
+    $('btnVb').hidden = !on; drawVb();
+    if (!on) vrelease();
+  }
+
+  function vland() { $('stage').classList.toggle('land', window.innerWidth > window.innerHeight); }
+  window.addEventListener('resize', vland); window.addEventListener('orientationchange', function () { setTimeout(vland, 200); });
+  document.addEventListener('fullscreenchange', function () { setTimeout(vland, 50); }); document.addEventListener('webkitfullscreenchange', function () { setTimeout(vland, 50); });
+  $('btnPad').onclick = function () {
+    if (!$('vpad').hidden) { store.set('web_vpad', '0'); vpadForce = false; }
+    else { store.set('web_vpad', '1'); vpadForce = padSeen(); }
+    drawVpad();
+  };
+  window.addEventListener('gamepadconnected', function () { drawVpad(); }); window.addEventListener('gamepaddisconnected', function () { drawVpad(); });
+
+  function vkey(name, down) {
+    try {
+      if (down && !running.frame.contentDocument.hasFocus()) { running.frame.focus(); running.frame.contentWindow.focus(); }
+      running.frame.contentWindow.__vkey(name, down);
+    } catch (e) {}
+  }
+
+  $('vpad').addEventListener('touchstart', function (e) { e.preventDefault(); }, { passive: false });
+  $('vpad').addEventListener('mousedown', function (e) { e.preventDefault(); });
+  document.querySelectorAll('#vpad .vb').forEach(function (b) { b.tabIndex = -1; });
+  var vdirs = { up: false, down: false, left: false, right: false };
+  function vsetDirs(want) {
+    Object.keys(vdirs).forEach(function (k) { if (vdirs[k] !== !!want[k]) { vdirs[k] = !!want[k]; vkey(k, vdirs[k]); } });
+  }
+  function vrelease() { vsetDirs({}); $('vknob').style.transform = ''; document.querySelectorAll('.vb.on').forEach(function (b) { b.classList.remove('on'); vkey(b.getAttribute('data-k'), false); }); }
+  (function () {
+    var st = $('vstick'), id = null;
+    function move(e) {
+      var r = st.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      var vs = VS[stickLevel() - 1];
+      var dx = e.clientX - cx, dy = e.clientY - cy, n = Math.hypot(dx, dy), max = r.width / 2 - 20 * vs;
+      var k = n > max ? max / n : 1;
+      $('vknob').style.transform = 'translate(' + (dx * k) + 'px,' + (dy * k) + 'px)';
+      if (n < r.width * 0.12) { vsetDirs({}); return; }
+      var ux = dx / n, uy = dy / n;
+      vsetDirs({ right: ux > 0.38, left: ux < -0.38, down: uy > 0.38, up: uy < -0.38 });
+    }
+    st.addEventListener('pointerdown', function (e) { e.preventDefault(); id = e.pointerId; try { st.setPointerCapture(id); } catch (x) {} move(e); if (navigator.vibrate) navigator.vibrate(8); });
+    st.addEventListener('pointermove', function (e) { if (e.pointerId === id) { e.preventDefault(); move(e); } });
+    function end(e) { if (e.pointerId !== id) return; id = null; vsetDirs({}); $('vknob').style.transform = ''; }
+    st.addEventListener('pointerup', end); st.addEventListener('pointercancel', end); st.addEventListener('lostpointercapture', end);
+  })();
+  document.querySelectorAll('.vb').forEach(function (b) {
+    var k = b.getAttribute('data-k'), id = null;
+    b.addEventListener('pointerdown', function (e) {
+      e.preventDefault(); id = e.pointerId; try { b.setPointerCapture(id); } catch (x) {}
+      b.classList.add('on'); vkey(k, true); if (navigator.vibrate) navigator.vibrate(12);
+    });
+    function up(e) { if (e.pointerId !== id) return; id = null; b.classList.remove('on'); vkey(k, false); }
+    b.addEventListener('pointerup', up); b.addEventListener('pointercancel', up); b.addEventListener('lostpointercapture', up);
+  });
+
+  document.addEventListener('visibilitychange', function () { if (document.hidden) vrelease(); });
+
+  function fsEl() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
+  function fsExit() { try { var p = (document.exitFullscreen || document.webkitExitFullscreen).call(document); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
+  function fsReq(el) {
+    var f = el.requestFullscreen || el.webkitRequestFullscreen;
+    if (!f) return;
+    try { var p = f.call(el); if (p && p.then) p.then(focusGame).catch(function () {}); else focusGame(); } catch (e) {}
+  }
+  var FS_OK = !!(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen) && document.fullscreenEnabled !== false;
+  if (!FS_OK) $('btnFull').hidden = true;
+  function drawFull() {
+    var on = !!fsEl();
+    $('btnFull').innerHTML = on ? '<span class="ko">작게 보기</span><span class="en">Exit full screen</span>' : '<span class="ko">전체 화면</span><span class="en">Full screen</span>';
+  }
+  document.addEventListener('fullscreenchange', drawFull); document.addEventListener('webkitfullscreenchange', drawFull);
+  $('btnFsx').onclick = function (e) { e.stopPropagation(); if (fsEl()) fsExit(); };
+  $('btnFull').onclick = function () {
+    if (fsEl()) { fsExit(); return; }
+
+    var s = $('stage').classList.contains('touch') ? $('stage') : $('screen');
+    fsReq(s);
+  };
+  function focusGame() { if (running) { running.frame.focus(); try { running.frame.contentWindow.postMessage('focus', location.origin); } catch (e) {} } }
+  $('screen').addEventListener('click', focusGame);
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (e.origin !== location.origin || !d || d.from !== 'scgame' || !running || e.source !== running.frame.contentWindow) return;
+    if (d.type === 'log') {
+      logline(d.text);
+      var lm = /\] LIVE (\d+) (\d+) (\d+)(?: (\d+))?\s*$/.exec(d.text);
+
+      var dm = /\] (spectator \d+ drifted from us.*)$/.exec(d.text);
+      if (dm && net.room && net.room.slot === 1) send('DIAG ' + dm[1].slice(0, 190));
+      if (lm && net.room && net.room.slot === 1 && (lm[0] !== net.liveSent || Date.now() - (net.liveAt || 0) >= 10000)) { net.liveSent = lm[0]; net.liveAt = Date.now(); send('LIVE ' + lm[1] + ' ' + lm[2] + ' ' + lm[3] + (lm[4] ? ' ' + lm[4] : '')); }
+    }
+    else if (d.type === 'saved') { ftTrace('saved'); if (savedWait) savedWait(d.text); }
+    else if (d.type === 'result') onResult(d.text);
+    else if (d.type === 'replayfile') {
+      res.known = true; res.replay = d.text || null; if (res.list.length && res.sent === 0 && net.room && net.room.slot === 1) reportResults();
+
+      if (d.text && running && running.mode === 'match') try { running.frame.contentWindow.postMessage({ get: 'replay', name: d.text }, location.origin); } catch (e) {}
+    }
+    else if (d.type === 'replaybytes') { if (d.bytes && d.name) keepReplay(d.name, d.bytes, false); if (res.onBytes) { var cb = res.onBytes; res.onBytes = null; cb(d.name, d.bytes); } }
+    else if (d.type === 'pk') net.pkEnded = true;
+    else if (d.type === 'pad') { logline('gamepad ' + d.text); if (/^connected/.test(d.text)) store.set('web_haspad', '1'); drawPads(); }
+    else if (d.type === 'running') { veil(''); focusGame(); say('<b>' + esc(running.label) + '</b> · ' + T('게임 중 — 화면을 누르면 키가 들어갑니다', 'playing — click the screen for keys')); }
+    else if (d.type === 'replayDone') say('<b>' + esc(running.label) + '</b> · ' + T('리플레이가 끝났습니다', 'replay finished'));
+    else if (d.type === 'ended') { ftTrace('ended'); if (!savedWait) stop().then(function () { say(T('게임이 끝났습니다.', 'The game ended.')); }); }
+    else if (d.type === 'error') {
+      logline('ERROR ' + d.text); ftTrace('error');
+      veil(d.rom ? T('이 롬으로는 이 버전을 실행할 수 없습니다. 원판은 cupsoc.zip, 셀렉션은 cupsocs2.zip 도 필요합니다 (또는 병합 cupsoc.zip).',
+                     'This ROM cannot run this version. The original needs cupsoc.zip; Selection also needs cupsocs2.zip (or a merged cupsoc.zip).')
+                 : T('게임을 시작하지 못했습니다. 아래 실행 기록을 확인하세요.', 'The game could not start. See the run log below.'), true);
+      say('<b>' + esc(running.label) + '</b> · ' + T('실행 실패', 'failed'));
+    }
+  });
+
+  var lb = $('langbtn'); if (lb) lb.addEventListener('click', function () { setTimeout(drawRoms, 0); });
+
+  var PING_LIMITS = [0, 50, 80, 100, 150], FTS = [1, 2, 3, 5], TIMES = [60, 90, 120, 150, 180, 210, 240, 270, 300, 360, 420, 480, 540, 600];
+  var STAGES = [-1, -2, 'sep', 0, 2, 3, 7, 'sep', 16, 17, 15, 10, 8, 11, 12, 13], BGMS = ['random', '38', '3a', '36', '3c'], BGM_ROUNDS = [[1, 5], [2, 6], [3, 7], [4, 8]];
+
+  function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
+                                  : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 33;
+  var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
+              room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
+  var nset = { ping: 100, ft: 1, time: 150, stage: -1, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, pveDiff: 3, pveVsGod: false, sound: true, tie: 'pk', teams: 'pick' };
+  try { Object.assign(nset, JSON.parse(store.get('web_net') || '{}')); } catch (e) {}
+  if (!(nset.bgmVol >= 0 && nset.bgmVol <= 100)) nset.bgmVol = 100;
+  if (!(nset.sfxVol >= 0 && nset.sfxVol <= 100)) nset.sfxVol = 100;
+  if ((nset.stage === 0 && !nset.stageDef) || nset.stage === 9 || nset.stage === 14) nset.stage = -1;
+  if (!(nset.delay >= 2 && nset.delay <= 8)) nset.delay = 3;
+  function saveSet() { store.set('web_net', JSON.stringify(nset)); }
+
+  var devId = (function () {
+    var v = ''; try { v = store.get('web_devid') || ''; } catch (e) {}
+    if (!/^[0-9a-f]{32}$/.test(v)) {
+      var b = new Uint8Array(16); crypto.getRandomValues(b);
+      v = Array.prototype.map.call(b, function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+      try { store.set('web_devid', v); } catch (e) {}
+    }
+    return v;
+  })();
+
+  var fpId = '';
+  function sendFp() { if (fpId && !net.fpSent && net.ws && net.ws.readyState === 1 && net.fpOk) { send('FP ' + fpId); net.fpSent = true; } }
+  (function () {
+    try {
+      var gl = '', c = document.createElement('canvas'), g = c.getContext('webgl') || c.getContext('experimental-webgl');
+      if (g) {
+        var ext = g.getExtension('WEBGL_debug_renderer_info');
+        gl = (ext ? g.getParameter(ext.UNMASKED_VENDOR_WEBGL) + '|' + g.getParameter(ext.UNMASKED_RENDERER_WEBGL) : g.getParameter(g.RENDERER)) +
+             '|' + g.getParameter(g.MAX_TEXTURE_SIZE) + '|' + (g.getSupportedExtensions() || []).length;
+      }
+      var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e2) {}
+      var sw = Math.min(screen.width, screen.height), sh = Math.max(screen.width, screen.height);
+      var parts = [navigator.userAgent, navigator.platform, (navigator.languages || [navigator.language]).join(','), tz,
+                   sw + 'x' + sh + 'x' + screen.colorDepth, window.devicePixelRatio, navigator.hardwareConcurrency, navigator.deviceMemory, navigator.maxTouchPoints, gl];
+      crypto.subtle.digest('SHA-256', new TextEncoder().encode(parts.join('#'))).then(function (h) {
+        fpId = Array.prototype.map.call(new Uint8Array(h).slice(0, 16), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+        sendFp();
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+  var SKILL_SYM = { u: '▲', e: '≈', d: '▼', '?': '?' };
+  function skillWord(c) { return c === 'u' ? T('나보다 잘함', 'better than you') : c === 'e' ? T('비슷함', 'about the same') : c === 'd' ? T('나보다 아직 서툼', 'not yet as good') : c === '?' ? T('기록 적음 (새 기기일 수 있음)', 'few matches yet (maybe a new device)') : ''; }
+  function skillOf(rid, seat) { var v = (net.skill || {})[rid] || ''; return v.charAt(seat); }
+
+  function vsWord(rid, seat) {
+    var v = (net.vs || {})[rid + '.' + (seat + 1)]; if (!v) return '';
+    return v[2] > 0 ? T('나와 ' + v[0] + '승 ' + v[1] + '패 ' + v[2] + '무', 'you ' + v[0] + 'W ' + v[1] + 'L ' + v[2] + 'D')
+                    : T('나와 ' + v[0] + '승 ' + v[1] + '패', 'you ' + v[0] + 'W ' + v[1] + 'L');
+  }
+  function skillBadge(rid, seat) { var c = skillOf(rid, seat); return SKILL_SYM[c] ? '<span class="skb sk-' + (c === '?' ? 'q' : c) + '" title="' + esc(skillWord(c)) + '">' + SKILL_SYM[c] + '</span>' : ''; }
+
+  function cleanTitle(v) { return Array.from(String(v || '').replace(/[\u0000-\u001f\u007f|;<>]/g, '').replace(/\s+/g, ' ').trim()).slice(0, 20).join(''); }
+  function unescTitle(v) { try { return v ? cleanTitle(decodeURIComponent(v)) : ''; } catch (e) { return ''; } }
+
+  if (!nset.titles) nset.titles = { '1v1': nset.title || '', '2v2': nset.title || '', pve: nset.title || '' };
+  var titleIn = $('netRoomTitle'); titleIn.value = cleanTitle(nset.titles[nset.type] || '');
+  titleIn.addEventListener('change', function () { titleIn.value = cleanTitle(titleIn.value); nset.titles[nset.type] = nset.title = titleIn.value; saveSet(); });
+
+  function cleanNick(v) { return String(v || '').trim().split('').filter(function (c) { return /^[\p{L}\p{Nd}_-]$/u.test(c); }).join('').slice(0, 16); }
+  var nickIn = $('nick'); nickIn.value = cleanNick(store.get('web_nick'));
+  nickIn.addEventListener('input', function (e) {
+    if (e.isComposing) return;
+    var v = cleanNick(nickIn.value);
+    if (v !== nickIn.value.trim()) { nickIn.value = v; netSay(T('닉네임에는 한글·영문·숫자와 _ - 만 쓸 수 있습니다 (16자까지).', 'Nicknames take letters, digits, _ and - only (up to 16).')); }
+  });
+  nickIn.addEventListener('compositionend', function () { var v = cleanNick(nickIn.value); if (v !== nickIn.value) nickIn.value = v; });
+  function mmss(s) { return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+  function opt(sel, items, cur) {
+    sel.innerHTML = items.map(function (it) { return '<option value="' + esc(it[0]) + '">' + esc(it[1]) + '</option>'; }).join('');
+    sel.value = String(cur);
+  }
+  function netLabels() {
+
+    var stageNames = [T('무작위 (오리지날)', 'Random (original)'), T('무작위 (전체)', 'Random (all)'), '', T('일반 (오리지날 1,2)', 'Normal (original 1, 2)'), T('모래 (오리지날 3,5,6,7)', 'Sand (original 3, 5, 6, 7)'), T('붉은 (오리지날 4)', 'Red (original 4)'), T('청록 (오리지날 8)', 'Teal (original 8)'), '', T('봄', 'Spring'), T('여름', 'Summer'), T('가을', 'Autumn'), T('겨울', 'Winter'), T('야간', 'Night'), T('비', 'Rain'), T('실내', 'Indoor'), T('할로윈', 'Halloween')];
+    opt($('netEd'), [['cupsocs2', T('셀렉션', 'Selection')]], ed); drawEdition();
+    $('netRoomTitle').placeholder = T('비우면 닉네임으로 표시 (20자)', 'Blank = your nickname (20 max)');
+    opt($('netPing'), PING_LIMITS.map(function (v) { return [v, v === 0 ? T('제한 없음', 'No limit') : T(v + ' ms 이하', 'up to ' + v + ' ms')]; }), nset.ping);
+    opt($('netFt'), FTS.map(function (v) { return [v, v === 1 ? T('승부차기 없는 단판', 'Single match, no shoot-out') : T('FT' + v + ' (' + v + '선승)', 'FT' + v + ' (first to ' + v + ')')]; }), nset.ft);
+    opt($('netTie'), [['pk', T('동점 시 승부차기', 'Level: penalties')], ['gg', T('동점 시 골든골', 'Level: golden goal')]], nset.tie === 'gg' ? 'gg' : 'pk');
+    opt($('netTime'), TIMES.map(function (v) { return [v, mmss(v) + (v === 150 ? T('  (기본)', '  (default)') : '')]; }), nset.time);
+    opt($('netStage'), STAGES.map(function (v, i) { return [v, stageNames[i]]; }), nset.stage);
+    [].forEach.call($('netStage').options, function (o) { if (o.value === 'sep') { o.disabled = true; o.textContent = '──────────'; } });
+    opt($('netBgm'), BGMS.map(function (v, i) { return [v, i === 0 ? T('무작위', 'Random') : 'Stage ' + BGM_ROUNDS[i - 1][0] + ' / ' + BGM_ROUNDS[i - 1][1]]; }), nset.bgm);
+    $('netSwap').checked = true; $('netSound').checked = nset.sound !== false;
+    $('volBgm').value = nset.bgmVol; $('volSfx').value = nset.sfxVol; volLabels();
+    opt($('netDelay'), [2, 3, 4, 5, 6, 7, 8].map(function (v) { return [v, v + T('프레임', ' frames') + (v === 3 ? T(' (기본)', ' (default)') : '')]; }), nset.delay);
+    $('netAutoDelay').checked = !!nset.autoDelay; $('netDelay').disabled = !!nset.autoDelay;
+    drawType();
+    $('chatin').placeholder = net.tab === 'room' ? T('방 채팅', 'Room chat') : T('공개 채팅', 'Public chat');
+    drawNet();
+  }
+
+  function drawType() {
+    document.querySelectorAll('#netType button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-type') === nset.type); });
+    $('btnPve').textContent = 'PvE ' + nset.pveCap + 'P' + (nset.pveVsGod ? ' vs GOD' : '') + (nset.pveGod ? ' GOD' : '') + (nset.pveDiff !== 3 ? ' · ' + diffName(nset.pveDiff) : '');
+    $('pveVsGod').classList.toggle('on', !!nset.pveVsGod);
+    document.querySelectorAll('#pveMenu button[data-diff]').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-diff') === nset.pveDiff); });
+    var tcur = (typeof net !== 'undefined' && net && net.room && net.room.type === '2v2') ? net.room.teams : nset.teams;
+    $('btn2v2').textContent = '2 vs 2' + (tcur === 'random' ? ' · ' + T('랜덤', 'random') : '');
+    document.querySelectorAll('#teamMenu button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-teams') === tcur); });
+    $('pveGod').classList.toggle('on', !!nset.pveGod);
+    document.querySelectorAll('#pveMenu button[data-cap]').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-cap') === nset.pveCap); });
+  }
+  document.querySelectorAll('#netType button').forEach(function (b) {
+    b.onclick = function () {
+      nset.titles[nset.type] = cleanTitle(titleIn.value);
+      nset.type = b.getAttribute('data-type'); titleIn.value = cleanTitle(nset.titles[nset.type] || ''); saveSet(); drawType(); drawButtons();
+      if (nset.type === 'pve') $('pveMenu').hidden = !$('pveMenu').hidden; else $('pveMenu').hidden = true;
+      if (nset.type === '2v2') $('teamMenu').hidden = !$('teamMenu').hidden; else $('teamMenu').hidden = true;
+    };
+  });
+
+  function setVsGod(on) { nset.pveVsGod = on; var r = net.room; if (r && r.type === 'pve' && isOwner(r) && !!r.vsgod !== on) send('PVEGOD ' + (on ? 1 : 0)); }
+  $('pveVsGod').onclick = function () { setVsGod(!nset.pveVsGod); saveSet(); drawType(); $('pveMenu').hidden = true; };
+  document.querySelectorAll('#pveMenu button[data-cap]').forEach(function (b) { b.onclick = function () { nset.pveCap = +b.getAttribute('data-cap'); saveSet(); drawType(); $('pveMenu').hidden = true; }; });
+
+  function diffName(v) { return [T('아주 어려움', 'Very hard'), T('어려움', 'Hard'), T('쉬움', 'Easy'), T('보통', 'Normal')][v] || ''; }
+  document.querySelectorAll('#pveMenu button[data-diff]').forEach(function (b) { b.onclick = function () {
+    nset.pveDiff = +b.getAttribute('data-diff'); saveSet(); drawType(); $('pveMenu').hidden = true;
+    var r = net.room; if (r && r.type === 'pve' && isOwner(r)) send('DIFF ' + nset.pveDiff);
+  }; });
+
+  $('pveGod').onclick = function () {
+    nset.pveGod = !nset.pveGod; saveSet(); drawType(); $('pveMenu').hidden = true;
+    if (nset.pveGod) netSay(T('앞으로 여는 PvE 방은 나라를 고르지 않고 GOD로 시작합니다 (나라 선택 화면은 저절로 넘어갑니다).', 'PvE rooms you open start as GOD - the country select passes by itself.'));
+  };
+  document.addEventListener('click', function (e) { if (!e.target.closest('#pveMenu') && !e.target.closest('#btnPve')) $('pveMenu').hidden = true; });
+
+  document.querySelectorAll('#teamMenu button[data-teams]').forEach(function (b) {
+    b.onclick = function () {
+      var v = b.getAttribute('data-teams') === 'random' ? 'random' : 'pick', r = net.room;
+      $('teamMenu').hidden = true;
+      if (r && r.type === '2v2' && (!isOwner(r) || r.state !== 'waiting' || r.wa + r.wb > 0)) {
+        netSay(!isOwner(r) ? T('팀 방식은 방장이 정합니다.', 'The host picks how the teams are made.') : T('시리즈 도중에는 바꿀 수 없습니다.', 'Not in the middle of a series.'));
+        return;
+      }
+      nset.teams = v; saveSet(); drawType();
+      if (r && r.type === '2v2' && isOwner(r)) send('TEAMS ' + v);
+    };
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#teamMenu') && !e.target.closest('#btn2v2')) $('teamMenu').hidden = true; });
+  document.addEventListener('click', function (e) { if (!e.target.closest('#aloneMenu') && !e.target.closest('#netAlone')) $('aloneMenu').hidden = true; });
+  $('netPing').onchange = function () { nset.ping = +this.value; saveSet(); };
+
+  function sendFt() { var r = net.room; if (isOwner(r) && r.state === 'waiting') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
+  $('netFt').onchange = function () { nset.ft = +this.value; saveSet(); sendFt(); drawButtons(); };
+  $('netTie').onchange = function () { nset.tie = this.value === 'gg' ? 'gg' : 'pk'; saveSet(); sendFt(); };
+  $('netTime').onchange = function () { nset.time = +this.value; saveSet(); var r = net.room; if (isOwner(r) && r.state === 'waiting') send('TIME ' + nset.time); };
+  $('netStage').onchange = function () { nset.stage = +this.value; nset.stageDef = 2; saveSet(); };
+  $('netBgm').onchange = function () { nset.bgm = this.value; saveSet(); };
+  $('netSwap').onclick = function (e) { e.preventDefault(); };
+  $('netDelay').onchange = function () { nset.delay = +this.value; saveSet(); };
+  $('netAutoDelay').onchange = function () { nset.autoDelay = this.checked; $('netDelay').disabled = this.checked; saveSet(); };
+
+  function delayArg() { return nset.autoDelay ? 'auto' : String(nset.delay); }
+
+  var CHIMES = {
+    join:  [[880.0, 130, 0.5], [1174.7, 260, 0.5]],
+    me:    [[659.3, 140, 0.35]],
+    room:  [[784.0, 100, 0.4], [0, 60, 0], [784.0, 160, 0.4]],
+    start: [[659.3, 110, 0.45], [784.0, 110, 0.45], [1046.5, 300, 0.5]],
+    chat:  [[1318.5, 55, 0.2]],
+    kick:  [[392.0, 180, 0.4], [293.7, 260, 0.4]]
+  };
+  var actx = null;
+  function audioReady() {
+    try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === 'suspended') actx.resume(); } catch (e) {}
+  }
+  function chime(kind) {
+    if (nset.sound === false) return;
+    audioReady(); if (!actx) return;
+    try {
+      var t = actx.currentTime + 0.01;
+      (CHIMES[kind] || [[523.3, 120, 0.35]]).forEach(function (n) {
+        var len = n[1] / 1000;
+        if (n[0] > 0) [[1, 0.8], [2, 0.2]].forEach(function (h) {
+          var o = actx.createOscillator(), g = actx.createGain(), peak = n[2] * h[1] * 0.6;
+          o.type = 'sine'; o.frequency.value = n[0] * h[0];
+          g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(peak, t + 0.008);
+          g.gain.setValueAtTime(peak, Math.max(t + 0.008, t + len - 0.06)); g.gain.linearRampToValueAtTime(0, t + len);
+          o.connect(g); g.connect(actx.destination); o.start(t); o.stop(t + len + 0.02);
+        });
+        t += len;
+      });
+    } catch (e) {}
+  }
+
+  var titleBase = document.title, titleTimer = null;
+  function flashTitle(text) {
+    if (!document.hidden && document.hasFocus()) return;
+    clearInterval(titleTimer); var on = false;
+    titleTimer = setInterval(function () { on = !on; document.title = on ? '● ' + text : titleBase; }, 900);
+  }
+  function stopFlash() { clearInterval(titleTimer); titleTimer = null; document.title = titleBase; }
+  window.addEventListener('focus', stopFlash); document.addEventListener('visibilitychange', function () { if (!document.hidden) stopFlash(); });
+  $('netSound').onchange = function () { nset.sound = this.checked; saveSet(); if (this.checked) chime('me'); };
+
+  function volLabels() { $('volBgmPct').textContent = nset.bgmVol + '%'; $('volSfxPct').textContent = nset.sfxVol + '%'; }
+  function volLive() {
+    if (running && (running.mode === 'match' || running.mode === 'replay')) { try { running.frame.contentWindow.postMessage({ type: 'vol', bgm: nset.bgmVol, sfx: nset.sfxVol }, location.origin); } catch (e) {} }
+  }
+  $('volBgm').oninput = function () { nset.bgmVol = +this.value; volLabels(); saveSet(); volLive(); };
+  $('volSfx').oninput = function () { nset.sfxVol = +this.value; volLabels(); saveSet(); volLive(); };
+  $('volSfx').onchange = function () { previewSfx(); };
+  var whistle = null;
+  function romWhistle() {
+    if (whistle) return Promise.resolve(whistle);
+    return idb().then(function (db) {
+      return new Promise(function (ok) {
+        var out = [], c = db.transaction('roms', 'readonly').objectStore('roms').openCursor();
+        c.onsuccess = function () { var k = c.result; if (!k) { ok(out); return; } out.push(k.value); k.continue(); };
+        c.onerror = function () { ok(out); };
+      });
+    }).then(function (zips) {
+
+      for (var z = 0; z < zips.length; z++) {
+        var u = new Uint8Array(zips[z]), dv = new DataView(u.buffer, u.byteOffset, u.byteLength), e = -1;
+        for (var i = u.length - 22; i >= Math.max(0, u.length - 65557); i--) if (dv.getUint32(i, true) === 0x06054b50) { e = i; break; }
+        if (e < 0) continue;
+        var n = dv.getUint16(e + 10, true), p = dv.getUint32(e + 16, true);
+        for (var j = 0; j < n && p + 46 <= u.length; j++) {
+          if (dv.getUint32(p, true) !== 0x02014b50) break;
+          var meth = dv.getUint16(p + 10, true), crc = dv.getUint32(p + 16, true), csz = dv.getUint32(p + 20, true), usz = dv.getUint32(p + 24, true);
+          var nl = dv.getUint16(p + 28, true), xl = dv.getUint16(p + 30, true), cl = dv.getUint16(p + 32, true), lo = dv.getUint32(p + 42, true);
+          if (crc === 0x6f594808 && usz === 0x40000) {
+            var d0 = lo + 30 + dv.getUint16(lo + 26, true) + dv.getUint16(lo + 28, true), data = u.subarray(d0, d0 + csz);
+            var got = meth === 0 ? Promise.resolve(data) : meth === 8 && window.DecompressionStream
+              ? new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer().then(function (b) { return new Uint8Array(b); })
+              : Promise.reject();
+            return got.then(function (rom) {
+              var a = ((rom[104] << 16) | (rom[105] << 8) | rom[106]) & 0x3ffff, b = ((rom[107] << 16) | (rom[108] << 8) | rom[109]) & 0x3ffff;
+              var STEP = [16,17,19,21,23,25,28,31,34,37,41,45,50,55,60,66,73,80,88,97,107,118,130,143,157,173,190,209,230,253,279,307,337,371,408,449,494,544,598,658,724,796,876,963,1060,1166,1282,1411,1552];
+              var ADJ = [-1,-1,-1,-1,2,4,6,8], out = new Float32Array((b - a + 1) * 2), sig = 0, idx = 0, k = 0;
+              for (var q = a; q <= b; q++) [rom[q] >> 4, rom[q] & 15].forEach(function (nib) {
+                var df = Math.floor((2 * (nib & 7) + 1) * STEP[idx] / 8);
+                sig = Math.max(-2048, Math.min(2047, nib & 8 ? sig - df : sig + df)); out[k++] = sig / 2048 * 0.40;
+                idx = Math.max(0, Math.min(48, idx + ADJ[nib & 7]));
+              });
+              for (var f = 0; f < 76; f++) { out[f] *= f / 76; out[out.length - 1 - f] *= f / 76; }
+              whistle = out; return out;
+            });
+          }
+          p += 46 + nl + xl + cl;
+        }
+      }
+      return null;
+    });
+  }
+  function previewSfx() {
+    audioReady(); if (!actx) return;
+    var g = Math.pow(nset.sfxVol / 100, 2);
+    romWhistle().then(function (w) {
+      if (!w) { netSay(T('미리듣기를 할 수 없습니다: 롬(cupsoc.zip)이 없습니다.', 'No preview: the ROM (cupsoc.zip) is missing.')); return; }
+      if (g <= 0) return;
+      var buf = actx.createBuffer(1, w.length, 1000000 / 132); buf.copyToChannel(w, 0);
+      var src = actx.createBufferSource(), gn = actx.createGain(); gn.gain.value = g;
+      src.buffer = buf; src.connect(gn); gn.connect(actx.destination); src.start();
+    }).catch(function () { netSay(T('미리듣기를 할 수 없습니다.', 'No preview.')); });
+  }
+
+  function send(line) { if (net.ws && net.ws.readyState === 1) net.ws.send(new TextEncoder().encode(line + '\n')); }
+  function netSay(t) { $('netStatus').textContent = t; }
+
+  var maintLater = null;
+  function maintAlert(t) { if (running && running.mode === 'match') maintLater = t; else setTimeout(function () { alert(t); }, 0); }
+  setInterval(function () { if (maintLater && !(running && running.mode === 'match')) { var t = maintLater; maintLater = null; alert(t); } }, 1000);
+  function hhmm(d) { return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
+
+  var SEAT_COLORS = [null, 'rgb(220,60,60)', 'rgb(60,110,230)', 'rgb(200,140,0)', 'rgb(40,160,80)'];
+
+  var pubLast = { n: null, when: null, tEl: null, day: undefined };
+  var NAME_COL = ['#be96f0', '#eba95a', '#a59bf5', '#dcbe6e', '#96afe6', '#6ecdd2'];
+  function nameCol(n) { var h = 0; for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0; return NAME_COL[h % NAME_COL.length]; }
+  function pubAdd(box, when, who, text, sys, mark) {
+    var day = /^\d\d-\d\d /.test(when) ? when.slice(0, 5) : null, hm = when.replace(/^\d\d-\d\d /, '');
+    function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+    if (day !== pubLast.day) {
+      pubLast.day = day; pubLast.n = null;
+      var d0 = day ? new Date(new Date().getFullYear(), +day.slice(0, 2) - 1, +day.slice(3)) : new Date();
+      box.appendChild(el('div', 'pill day', T((d0.getMonth() + 1) + '월 ' + d0.getDate() + '일', d0.toLocaleDateString('en', { month: 'short', day: 'numeric' }))));
+    }
+    if (sys) {
+      var pl = el('div', 'pill' + (sys === 'join' ? ' join' : sys === 'notice' ? ' notice' : '')), m = /^([▲≈▼]) /.exec(text);
+      if (m) { var k = { '▲': 'u', '≈': 'e', '▼': 'd' }[m[1]], c = el('span', 'chm sk-' + k, m[1] + ' '); c.title = skillWord(k); pl.appendChild(c); text = text.slice(2); }
+      pl.appendChild(document.createTextNode(text));
+      box.appendChild(pl); pubLast.n = null; return;
+    }
+    var me = who === net.nick, run = pubLast.n === who;
+    if (run && pubLast.when === when && pubLast.tEl) pubLast.tEl.remove();
+    var row = el('div', 'row' + (me ? ' me' : '') + (run ? '' : ' first'));
+    if (!me && !run) {
+      var bn = el('div', 'bn'); bn.style.color = nameCol(who);
+      if (mark && SKILL_SYM[mark] && mark !== '?') { var mk = el('span', 'chm sk-' + mark, SKILL_SYM[mark]); mk.title = skillWord(mark); bn.appendChild(mk); }
+      bn.appendChild(document.createTextNode(who)); row.appendChild(bn);
+    }
+    var bl = el('div', 'bl'), tm = el('span', 'bt', hm);
+    bl.appendChild(el('div', 'bb', text)); bl.appendChild(tm); row.appendChild(bl); box.appendChild(row);
+    pubLast.n = who; pubLast.when = when; pubLast.tEl = tm;
+  }
+  function chat(tab, when, who, text, sys, slot, mark) {
+    var box = $(tab === 'room' ? 'chatRoom' : 'chatPub'), d = document.createElement('div');
+    if (tab !== 'room') {
+      pubAdd(box, when, who, text, sys, mark);
+      while (box.childNodes.length > 400) box.removeChild(box.firstChild);
+      box.scrollTop = box.scrollHeight;
+      if (tab !== net.tab) document.querySelector('.ctabs [data-tab="' + tab + '"]').classList.add('ping');
+      return;
+    }
+    var tm = document.createElement('span'); tm.className = 'tm'; tm.textContent = when; d.appendChild(tm);
+    if (sys) { var s2 = document.createElement('span'); s2.className = 'sys'; s2.textContent = text; d.appendChild(s2); }
+    else {
+      var nk = document.createElement('span'); nk.className = 'nk' + (who === net.nick ? ' me' : '');
+      if (slot != null) {
+        nk.textContent = (slot >= 1 && slot <= 4 ? slot + 'P ' : '') + who + ': ';
+        nk.style.color = slot >= 1 && slot <= 4 ? SEAT_COLORS[slot] : 'var(--n-mute)';
+      } else nk.textContent = who + ': ';
+      if (mark && SKILL_SYM[mark] && mark !== '?') { var mk = document.createElement('span'); mk.className = 'chm sk-' + mark; mk.textContent = SKILL_SYM[mark] + ' '; mk.title = skillWord(mark); d.appendChild(mk); }
+      d.appendChild(nk);
+      var tx = document.createElement('span'); tx.textContent = text;
+      if (slot != null && net.room && slot === net.room.slot) tx.style.fontWeight = '700';
+      d.appendChild(tx);
+    }
+    box.appendChild(d); while (box.childNodes.length > 400) box.removeChild(box.firstChild);
+    box.scrollTop = box.scrollHeight;
+    if (tab !== net.tab) document.querySelector('.ctabs [data-tab="' + tab + '"]').classList.add('ping');
+  }
+  function sys(tab, text, kind) { chat(tab, hhmm(new Date()), '', text, kind || true); if (typeof tlog === 'function') tlog('sys ' + text); }
+  function setTab(t) {
+    net.tab = t;
+    document.querySelectorAll('.ctabs button').forEach(function (b) { var on = b.getAttribute('data-tab') === t; b.classList.toggle('on', on); if (on) b.classList.remove('ping'); });
+    $('chatPub').hidden = t !== 'pub'; $('chatRoom').hidden = t !== 'room';
+    $('chatin').placeholder = t === 'room' ? T('방 채팅', 'Room chat') : T('공개 채팅', 'Public chat');
+    var box = $(t === 'room' ? 'chatRoom' : 'chatPub'); box.scrollTop = box.scrollHeight;
+  }
+  document.querySelectorAll('.ctabs button').forEach(function (b) { b.onclick = function () { setTab(b.getAttribute('data-tab')); }; });
+
+  function stateName(st) { return { waiting: T('대기중', 'waiting'), playing: T('경기중', 'playing') }[st] || st; }
+  function drawNet() { $('net').classList.toggle('noroom', !net.room); drawTiles(); drawSeats(); drawButtons(); drawStatus(); drawType(); }
+
+  var RF_KEYS = [['전체', 'All'], ['입장 가능', 'Seat free'], ['경기중', 'Playing'], ['관전 가능', 'To watch']];
+  function roomInfo(f) {
+    var n = +f[2], cap = +(f[5] || 2), specs = +(f[9] || 0), playing = f[3] === 'playing', pve = (f[4] || '1v1') === 'pve';
+    var smax = +(f[15] || 0) >= 31 ? 8 : 4;
+    var mine = !!(net.room && net.room.id === f[0]);
+    var live = (f[23] || '').split(':'), hasLive = playing && live.length >= 3;
+    return { mine: mine, n: n, cap: cap, specs: specs, playing: playing, pve: pve, full: n >= cap,
+             open: !mine && ((!playing && n < cap) || (playing && pve && n < cap)), watch: !mine && playing && specs < smax,
+             joinable: !mine && ((!playing && (n < cap || specs < smax)) || (playing && (specs < smax || (pve && n < cap)))),
+             seats: (f[20] || f[1] || '').split(','), ready: (f[21] || '').split(','), live: hasLive ? live.map(Number) : null };
+  }
+  function delayEst(mine, host, web) {
+    if (mine < 0 || host < 0) return -1;
+    var oneWay = (mine + host) / 2 + (web ? 1000 / 60 : 0), floor = (!web && Math.max(mine, host) <= 20) ? 2 : 3;
+    return Math.min(8, Math.max(floor, Math.ceil((oneWay + 10) / (1000 / 60))));
+  }
+  function roomsAge() {
+    if (!net.ws || !net.roomsAt) return '';
+    var s = Math.floor((Date.now() - net.roomsAt) / 1000);
+    return s < 3 ? T('방금 갱신', 'Updated just now') : T(s + '초 전 갱신', 'Updated ' + s + ' s ago');
+  }
+  function drawFilter(counts) {
+    var el = $('rfilter'); if (!el) return;
+    if (!net.ws) { el.innerHTML = ''; return; }
+    var cur = nset.rfilter || 0;
+    el.innerHTML = RF_KEYS.map(function (k, i) { return '<button type="button" class="chip' + (i === 1 ? ' seat' + (counts[i] > 0 ? ' has' : '') : '') + (cur === i ? ' on' : '') + '" data-rf="' + i + '">' + esc(T(k[0], k[1]) + ' ' + counts[i]) + '</button>'; }).join('') +
+      '<span class="grow"></span><button type="button" class="chip" data-rsort="1">' + esc(nset.rsort === 'ping' ? T('정렬: 핑 낮은 순', 'Order: lowest ping') : T('정렬: 기본', 'Order: default')) + '</button>' +
+      '<span class="age" id="rfAge">' + esc(roomsAge()) + '</span>';
+  }
+  function drawTiles() {
+    var on = !!net.ws;
+    $('roomsTitle').textContent = T('방 목록 (' + net.rooms.length + ')', 'Rooms (' + net.rooms.length + ')');
+    if (!on) { drawFilter([0, 0, 0, 0]); $('tiles').innerHTML = '<div class="tile new" style="cursor:default">' + esc(T('접속하면 방 목록이 보입니다', 'Connect to see the rooms')) + '</div>'; return; }
+    var counts = [0, 0, 0, 0], cur = nset.rfilter || 0;
+    var list = net.rooms.map(function (f) { var ri = roomInfo(f); counts[0]++; if (ri.open) counts[1]++; if (ri.playing) counts[2]++; if (ri.watch) counts[3]++; return [f, ri]; })
+      .filter(function (x) { var ri = x[1]; return ri.mine || cur === 0 || (cur === 1 && ri.open) || (cur === 2 && ri.playing) || (cur === 3 && ri.watch); });
+    if (nset.rsort === 'ping') list.sort(function (p, q) { var a = +(p[0][6] || -1), b = +(q[0][6] || -1); return (a < 0 ? 1e9 : a) - (b < 0 ? 1e9 : b); });
+    list.sort(function (p, q) { return (q[1].mine ? 1 : 0) - (p[1].mine ? 1 : 0); });
+    drawFilter(counts);
+    var html = '<button type="button" class="tile new" data-new="1">+ ' + esc(T('방 만들기', 'Create room')) + '</button>';
+    html += list.map(function (x) {
+      var f = x[0], ri = x[1];
+      var id = f[0], ping = +(f[6] || -1), lim = +(f[7] || 0), secs = +(f[10] || 150), edn = f[13] || 'cupsoc', ft = +(f[14] || 1), type = f[4] || '1v1';
+      var cls = 'tile rrow' + (net.sel === id ? ' sel' : '') + (ri.mine ? ' mine' : '') + (ri.open ? ' open' : '');
+      var my = net.rtt >= 0 && ping >= 0 ? net.rtt + ping : -1, far = lim > 0 && (ping > lim ? net.rtt : my) > lim, title = unescTitle(f[19]);
+      var ready = f[12] === '1' && !ri.playing;
+      var stripe = ri.mine ? 'var(--n-yellow)' : f[8] === '1' ? '#777' : ready ? '#ff7373' : ri.playing ? 'var(--n-orange)' : 'var(--n-green)';
+
+      var badge = '<span class="rno"><span class="rty">' + esc(type === 'pve' ? 'PvE' : type === '2v2' ? '2 vs 2' : type === 'free' ? 'FREE' : '1 vs 1') + '</span><span class="rnum">#' + esc(id) + '</span></span>';
+
+      var meta = [];
+      if (ri.mine) meta.push(esc(T('내 방', 'My room')));
+      if (ready) meta.push(esc(T('바로대결가능', 'READY TO PLAY'))); else if (ri.playing && !ri.live) meta.push(esc(stateName(f[3])));
+      if (title) meta.push(kindIcon(f[16]) + esc(f[1]));
+      meta.push(esc(ri.live ? T('남은 ' + mmss(ri.live[2]), mmss(ri.live[2]) + ' left') : mmss(secs)));
+      if (ft > 1) meta.push(esc('FT' + ft + (ri.playing || f[24] && f[24] !== '0:0' ? ' (' + (f[24] || '0:0') + ')' : '') + (f[17] === 'gg' ? ' ' + T('골든골', 'golden goal') : '')));
+      if (f[18] === 'random') meta.push(esc(T('랜덤 팀', 'random teams')));
+      if (ri.pve && f[26] === '1') meta.push(esc(T('vs GOD 단판', 'vs GOD, one match')));
+      if (ri.pve && f[25] !== undefined && f[25] !== '' && +f[25] !== 3) meta.push(esc(T('난이도: ', 'difficulty: ') + diffName(+f[25])));
+      if (ri.pve && ri.playing && !ri.full) meta.push(esc(T('중간 참여 가능', 'join in any time')));
+      if (edn !== 'cupsocs2') meta.push(esc(edn === 'cupsoc' ? T('기본', 'Original') : edn));
+      var tt = '<span class="rtt"><span class="t2">' + (f[8] === '1' ? '🔒 ' : '') + (title ? esc(title) : kindIcon(f[16]) + esc(f[1])) + '</span><span class="rmeta">' + meta.join(' · ') + '</span></span>';
+
+      var av = function (k, side) {
+        var nick = ri.seats[k];
+        if (!nick) return '<span class="av e">+</span>';
+        var sw = [skillWord(skillOf(id, k)), vsWord(id, k)].filter(Boolean).join(' · ');
+        return '<span class="av ' + (side ? 'r' : 'l') + '" title="' + esc(nick + (sw ? ' - ' + sw : '')) + '">' + esc(Array.from(nick).slice(0, 2).join('')) + (ri.ready[k] === '1' ? '<span class="ok">✓</span>' : '') + skillBadge(id, k) + '</span>';
+      };
+      var Ls = ri.pve ? [0, 1, 2, 3].slice(0, Math.max(1, Math.min(4, ri.cap))) : type === '1v1' ? [0] : [0, 2], Rs = ri.pve ? [] : type === '1v1' ? [1] : [1, 3];
+      var seats = '<span class="rseats"><span class="rav">' + Ls.map(function (k) { return av(k, 0); }).join('') +
+        (ri.live ? '<b class="mid sc">' + ri.live[0] + ' : ' + ri.live[1] + '</b>' : '<span class="mid">vs</span>') +
+        (ri.pve ? '<span class="av cpu">CPU</span>' : Rs.map(function (k) { return av(k, 1); }).join('')) + '</span>' +
+        (ri.live && secs > 0 ? '<span class="rbar"><i style="width:' + Math.round(100 * Math.max(0, Math.min(1, 1 - ri.live[2] / secs))) + '%"></i></span>' : '') + '</span>';
+
+      var lit = my < 0 ? 0 : my <= 40 ? 4 : my <= 80 ? 3 : my <= 150 ? 2 : 1, pc = my < 0 ? '#777' : (far || my > 150) ? 'var(--n-orange)' : my > 60 ? 'var(--n-yellow)' : 'var(--n-green)';
+      var bars = '<span class="bars" style="color:' + pc + ';height:14px">'; for (var b = 0; b < 4; b++) bars += '<i' + (b < lit ? ' class="on"' : '') + ' style="width:4px;height:' + (5 + b * 3) + 'px"></i>'; bars += '</span>';
+      var dl = delayEst(net.rtt, ping, true);
+
+      var info = ri.playing ? ((ri.live && ri.live[3] > 0 ? T('지연 ' + ri.live[3] + 'F', 'delay ' + ri.live[3] + 'f') : (my >= 0 ? my + ' ms' : '-')) + (ri.specs > 0 ? ' · ' + T('관전 ' + ri.specs, ri.specs + ' watching') : ''))
+                            : (my >= 0 ? my + ' ms' : '-') + (dl > 0 ? ' · ' + T('예상 ' + dl + 'F', 'est. ' + dl + 'f') : '');
+      var pg = '<span class="rpg' + (far ? ' far' : '') + '">' + bars + '<span>' + esc(info) + '</span></span>';
+      var act = (ri.mine || !ri.joinable) ? '' : (ri.playing && ri.pve && !ri.full) ? T('참여', 'Join in') : (ri.playing || ri.full) ? T('관전', 'Watch') : T('입장', 'Join');
+      var tip = ri.seats.filter(Boolean).join(', ') + (lim > 0 ? '  ·  ' + T('핑 제한 ' + lim + ' ms', 'Ping limit ' + lim + ' ms') : '');
+      return '<button type="button" class="' + cls + '" data-id="' + esc(id) + '" title="' + esc(tip) + '"><span class="rst" style="background:' + stripe + '"></span>' +
+        badge + tt + seats + pg + (act ? '<span class="tact' + (ri.open ? ' go' : '') + '" data-act="1">' + esc(act) + '</span>' : '<span style="grid-area:act"></span>') + '</button>';
+    }).join('');
+    if (!list.length && cur !== 0 && net.rooms.length) html += '<div style="grid-column:1/-1;color:var(--n-mute);font-size:12px;padding:8px 2px">' + esc(T('조건에 맞는 방이 없습니다. "전체"를 누르면 모든 방이 보입니다.', 'No room matches - pick "All" to see every room.')) + '</div>';
+    $('tiles').innerHTML = html;
+  }
+
+  var KIND = { pc: ['💻', 'PC 런처', 'PC launcher'], wd: ['💻', '웹 (PC 브라우저)', 'web (PC browser)'], ww: ['📶', '웹 (휴대폰, 와이파이)', 'web (phone, Wi-Fi)'],
+               wc: ['📱', '웹 (휴대폰, 모바일 데이터)', 'web (phone, mobile data)'], wm: ['📱', '웹 (휴대폰)', 'web (phone)'], w: ['🌐', '웹', 'web'] };
+  function kindIcon(k) { var d = Object.prototype.hasOwnProperty.call(KIND, k) && KIND[k]; return d ?'<span class="kind" title="' + esc(T(d[1], d[2])) + '">' + d[0] + '</span> ' : ''; }
+  function kindText(k) { var d = KIND[k]; return d ? d[0] + ' ' : ''; }
+
+  function myKind() {
+    var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    var mobile = (window.matchMedia && matchMedia('(pointer: coarse)').matches) || /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
+    var t = c && c.type;
+    if (t === 'wifi') return mobile ? 'ww' : 'wd';
+    if (t === 'cellular') return 'wc';
+    if (t === 'ethernet') return 'wd';
+    return mobile ? 'wm' : 'wd';
+  }
+  function seatRows(names, builds, ready, cap, mySlot, specs, type, kinds, rid, ownerSlot, teamMode) {
+    var rows = '', teams = type === '2v2' && teamMode !== 'random';
+    for (var i = 0; i < Math.max(2, Math.min(4, cap || 2)); i++) {
+      var nm = names[i] || '';
+      rows += '<tr class="' + (i + 1 === mySlot ? 'me' : '') + '"><td>' + (i + 1) + 'P</td>' +
+        (nm ? '<td>' + kindIcon((kinds || [])[i]) + esc(nm) + '</td><td>' + esc((builds[i] || '').slice(0, 3)) + '</td><td>' + (i + 1 === (ownerSlot || 1) ? T('방장', 'host') : '') + (teams ? ' ' + (i % 2 === 0 ? T('A팀', 'team A') : T('B팀', 'team B')) : '') + (ready[i] ? ' <span class="rd">✔ ' + T('준비', 'ready') + '</span>' : '') + (function () { var c = skillOf(rid, i); return SKILL_SYM[c] ? '<span class="skw sk-' + (c === '?' ? 'q' : c) + '">' + SKILL_SYM[c] + ' ' + esc(skillWord(c)) + '</span>' : ''; })() + (vsWord(rid, i) ? '<span class="skw sk-vs">' + esc(vsWord(rid, i)) + '</span>' : '') + '</td>'
+            : '<td class="empty">' + T('(비어 있음)', '(empty)') + '</td><td></td><td></td>') + '</tr>';
+    }
+    (specs || []).forEach(function (s, k) { if (s) rows += '<tr><td>' + T('관전', 'watch') + '</td><td>' + esc(s) + '</td><td></td><td>' + T('관전자', 'spectator') + '</td></tr>'; });
+    return rows;
+  }
+  function drawSeats() {
+    var r = net.room, w = net.who;
+    if (r) {
+      $('roomTitle').textContent = T('내 방', 'My room') + ' · ' + T('방 ', 'room ') + r.id + (r.title ? ' 「' + r.title + '」' : '') + ' ' + r.type.replace('v', ' vs ') + ' (' + stateName(r.state) + ') · ' + (r.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+r.time) + (r.ft > 1 ? ' · FT' + r.ft + ' ' + r.wa + ':' + r.wb : '');
+      $('seatrows').innerHTML = seatRows(r.names, r.builds, r.ready, r.type === '2v2' ? 4 : r.cap, r.slot, r.specs, r.type, r.kinds, r.id, r.owner, r.teams);
+    } else if (w) {
+      var n = w.names.filter(Boolean).length;
+      $('roomTitle').textContent = T('선택한 방', 'Selected room') + ' · ' + T('방 ', 'room ') + w.id + ' ' + w.type.replace('v', ' vs ') + ' (' + stateName(w.state) + ', ' + n + '/' + w.cap + ') · ' + (w.edition === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + ' · ' + mmss(+w.time);
+      $('seatrows').innerHTML = seatRows(w.names, w.builds, [], w.type === '2v2' ? 4 : w.cap, 0, w.specs, w.type, undefined, w.id);
+    } else {
+      $('roomTitle').textContent = T('내 방', 'My room');
+      $('seatrows').innerHTML = '';
+    }
+  }
+
+  function quickWaiting() {
+    if (!net.ws || net.room) return 0;
+    return net.rooms.filter(function (f) {
+      var n = +f[2], cap = +(f[5] || 2), rtt = +(f[6] || -1), lim = +(f[7] || 0), proto = +(f[15] || 0);
+      return f[12] === '1' && f[3] === 'waiting' && f[8] !== '1' && (f[4] || '1v1') === '1v1' && n < cap && (f[13] || 'cupsoc') === ed &&
+             +(f[14] || 1) <= 1 && (proto === 0 || proto === WEB_PROTO) && !(lim > 0 && (net.rtt < 0 || net.rtt + Math.max(0, rtt) > lim));
+    }).length;
+  }
+  function drawButtons() {
+    var on = !!net.ws, r = net.room;
+    var inMatch = !!(running && running.mode === 'match');
+    var host = isOwner(r), guest = !!(r && r.slot >= 1 && r.slot <= 4 && !host);
+    var count = r ? r.names.filter(Boolean).length : 0, playing = !!(r && r.state === 'playing');
+    var qn = quickWaiting();
+    $('btnQuick').classList.toggle('qready', qn > 0 && !r);
+    $('btnQuick').innerHTML = qn > 0 && !r ? esc(T('빠른 대결 가능', 'MATCH AVAILABLE!')) : '<span class="ko">빠른 대결(단판)</span><span class="en">Quick match (single)</span>';
+    $('btnConn').textContent = on ? T('끊기', 'Disconnect') : T('접속', 'Connect');
+    $('btnConn').className = 'nbtn' + (on ? ' cut' : ' primary');
+    $('btnConn').disabled = inMatch;
+    nickIn.disabled = on;
+    $('btnQuick').disabled = $('btnCreate').disabled = $('netRoomTitle').disabled = !on || !!r || inMatch;
+    $('btnRefresh').disabled = !on;
+    var sel = !r && net.sel && net.rooms.filter(function (f) { return f[0] === net.sel; })[0];
+    $('btnJoin').hidden = !sel; $('btnJoin').disabled = inMatch;
+    if (sel) $('btnJoin').textContent = T('참가', 'Join');
+
+    var alone = r && r.type === '1v1' && count < 2;
+    $('btnReady').hidden = !r || r.slot > 4 || playing;
+    $('btnReady').disabled = !!alone || inMatch || !!(r && r.over);
+    $('btnReady').title = alone ? T('상대가 들어오면 준비할 수 있습니다', 'You can get ready once somebody joins') : '';
+    if (r && r.slot <= 4) $('btnReady').textContent = r.ready[r.slot - 1] ? T('준비 취소', 'Cancel ready') : T('준비', 'Ready');
+    $('btnReady').classList.toggle('rblink', !!(r && r.slot <= 4 && !playing && !$('btnReady').disabled && r.state === 'waiting' && count >= (r.cap || 2) && !r.ready[r.slot - 1]));
+
+    var watchingNow = !!(r && r.slot >= 5);
+    $('btnLeave').hidden = !r; $('btnLeave').disabled = (playing || inMatch) && !watchingNow;
+    $('btnLeave').title = playing || inMatch ? T('경기 중에는 나갈 수 없습니다 - 게임 화면의 그만하기를 쓰세요', 'Not during a match - use Stop on the game screen') : '';
+
+    $('btnSolo').hidden = !host || playing;
+    $('btnSolo').disabled = !!running;
+    $('chatin').disabled = $('btnSay').disabled = !on;
+
+    $('netEd').disabled = !!r || !!running;
+    document.querySelectorAll('#netType button').forEach(function (b) { b.disabled = !!r || inMatch; });
+    ['netPing', 'netFt', 'netTie', 'netTime', 'netStage', 'netAutoDelay'].forEach(function (id) {
+      $(id).disabled = guest || playing || inMatch;
+      $(id).title = guest ? T('방장이 정합니다', 'The host decides') : '';
+    });
+
+    if (r && guest) { $('netFt').value = String(r.ft); $('netTie').value = r.tie; }
+    else { $('netFt').value = String(nset.ft); $('netTie').value = nset.tie === 'gg' ? 'gg' : 'pk'; }
+    if ((r && guest ? r.ft : nset.ft) <= 1) $('netTie').disabled = true;
+    $('netDelay').disabled = guest || playing || inMatch || !!nset.autoDelay;
+
+    var pveNow = r ? r.type === 'pve' : nset.type === 'pve';
+    $('netBgm').disabled = inMatch || pveNow; $('netSwap').disabled = inMatch;
+    $('netBgm').title = pveNow ? T('PvE(CPU 대전)는 게임 원래 음악으로 나옵니다', 'PvE (against the CPU) plays the game\'s own music') : '';
+
+    $('btnClear').disabled = inMatch;
+    $('netAlone').disabled = inMatch || !(ed === 'cupsoc' ? romOk.orig : romOk.sel);
+    $('netKeys').disabled = $('netAlone').disabled;
+    ['netTut', 'netPractice'].forEach(function (id) {
+      $(id).disabled = inMatch || !romOk.sel;
+      $(id).title = romOk.sel ? '' : T('튜토리얼과 연습 게임은 셀렉션으로 합니다 - cupsocs2.zip 을 넣으세요', 'The tutorial and practice use Selection - add cupsocs2.zip');
+    });
+  }
+  function drawStatus() {
+    var on = !!net.ws;
+    $('netConn').className = on ? '' : 'off';
+    $('netConn').textContent = on ? T('접속됨', 'Connected') : T('접속 안 됨', 'Offline');
+    $('netPingTxt').textContent = on && net.rtt >= 0 ? T('핑 ', 'ping ') + net.rtt + ' ms' : '';
+    $('netPingTxt').hidden = !($('netPingTxt').textContent);
+    var sg = net.single >= 0 ? net.single : -1;
+    $('netCounts').textContent = on ? T('접속자 ' + net.online + '명' + (sg >= 0 ? ' (싱글: ' + sg + '명)' : '') + ' · 방 ' + net.rooms.length + '개', net.online + ' online' + (sg >= 0 ? ' (solo: ' + sg + ')' : '') + ' · ' + net.rooms.length + ' rooms') : '';
+    $('netCounts').hidden = !on;
+  }
+
+  var noticeIdx = 0;
+  function noticeLines() { return (net.notice || []).map(function (t) { return t.replace(/^\s*\]\s*/, '').trim(); }).filter(Boolean); }
+  function drawNotice() {
+    var box = $('netNotice'), lines = noticeLines();
+    box.hidden = !lines.length;
+    if (!lines.length) { box.textContent = ''; return; }
+    box.textContent = '';
+    lines.forEach(function (t, i) { var d = document.createElement('div'); d.textContent = (i ? '' : T('[공지] ', '[Notice] ')) + t; box.appendChild(d); });
+    box.title = '';
+  }
+
+  function onLine(l) {
+    if (typeof tlog === 'function' && /^(QUICK|START|MATCHEND|GAMEOVER|ERROR|SERIES)/.test(l)) tlog('<< ' + l);
+    var sp = l.indexOf(' '), cmd = sp < 0 ? l : l.slice(0, sp), arg = sp < 0 ? '' : l.slice(sp + 1);
+    if (cmd === 'WELCOME') {
+      net.nick = arg.split(' ').slice(1).join(' ');
+      net.fpSent = false; net.fpOk = true;
+
+      var nkey = nickKeyFor(store.get('web_nick') || net.nick);
+      send('BUILD ' + WEB_BUILD + ' ' + WEB_PROTO); send('NOTES'); sendFp(); if (nkey) send('NICKKEY ' + nkey); send('DEV ' + devId); send('CONN ' + myKind());
+      sys('pub', T('로비에 있는 모두와 이야기해 보세요 - 상대 구함, 인사, 건의.', 'Talk with everybody in the lobby - find a match, say hello.'));
+      sys('pub', T(net.nick + ' 님, 환영합니다! 이 채팅은 접속한 모두에게 보입니다 - 인사해 보세요.', 'Welcome, ' + net.nick + '! Everybody online sees this chat.'));
+      netSay(T('접속됨. 방을 골라 참가하거나 새로 만드세요.', 'Connected. Pick a room to join, or create one.'));
+      drawNet();
+    } else if (cmd === 'ROOMS') {
+      net.roomsAt = Date.now();
+      var before = net.seenRooms;
+      net.rooms = arg ? arg.split(';').filter(Boolean).map(function (r) { return r.split('|'); }) : [];
+      net.seenRooms = {}; net.rooms.forEach(function (f) { net.seenRooms[f[0]] = 1; });
+      if (before && !net.room) {
+        var fresh = net.rooms.filter(function (f) { return !before[f[0]] && f[1] !== net.nick; });
+        if (fresh.length) { chime('room'); flashTitle(T(fresh[0][1] + ' 님이 방을 만들었습니다', fresh[0][1] + ' opened a room')); }
+      }
+      if (net.sel && !net.rooms.some(function (f) { return f[0] === net.sel; })) { net.sel = null; net.who = null; }
+      drawNet();
+    } else if (cmd === 'ROOMINFO') onRoomInfo(arg.split(' '));
+    else if (cmd === 'SKILL') {
+      net.skill = {};
+      arg.split(';').forEach(function (p) { var c = p.indexOf(':'); if (c > 0) net.skill[p.slice(0, c)] = p.slice(c + 1); });
+      drawTiles(); drawSeats();
+    }
+    else if (cmd === 'VS') {
+      var vs = {};
+      arg.split(' ').forEach(function (p) { var m = /^(\d+)\.([1-4])=(\d+)-(\d+)-(\d+)$/.exec(p); if (m) vs[m[1] + '.' + m[2]] = [+m[3], +m[4], +m[5]]; });
+      if (JSON.stringify(vs) !== JSON.stringify(net.vs || {})) { net.vs = vs; drawTiles(); drawSeats(); }
+    }
+    else if (cmd === 'ROOMWHO') {
+
+      var w = arg.split(' ');
+      if (w[1] === 'gone') { net.who = null; net.sel = null; drawNet(); return; }
+      if (w[0] !== net.sel) return;
+      net.who = { id: w[0], state: w[1], type: w[2], names: (w[3] || ',,,').split(','), specs: w[4] && w[4] !== '-' ? w[4].split(',') : [],
+                  builds: (w[5] || ',,,').split(','), edition: w[6] || 'cupsoc', time: w[7] || '150', cap: +(w[10] || 2) };
+      drawSeats();
+    }
+    else if (cmd === 'ONLINE') { net.online = +arg || 0; drawStatus(); }
+    else if (cmd === 'SINGLE') { net.single = +arg || 0; drawStatus(); }
+    else if (cmd === 'JOINED') { var a = arg.split(' '), jm = SKILL_SYM[a[3]] && a[3] !== '?' ? SKILL_SYM[a[3]] + ' ' : ''; net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(jm + kindText(a[2]) + a[0] + ' 님이 들어왔습니다', jm + kindText(a[2]) + a[0] + ' joined'), 'join'); }
+
+    else if (cmd === 'PARTED') { var q = arg.split(' '); net.online = +q[1] || net.online; drawStatus(); if (q[0] !== net.nick) sys('pub', T(kindText(q[2]) + q[0] + ' 님이 나갔습니다', kindText(q[2]) + q[0] + ' left')); }
+    else if (cmd === 'NOTE' || cmd === 'NOTEM') {
+
+      var nm = '';
+      if (cmd === 'NOTEM') { nm = arg.charAt(0); arg = arg.slice(2); }
+      var p = arg.split(' '), d = new Date(+p[0] || Date.now());
+      var when = (d.toDateString() === new Date().toDateString()) ? hhmm(d) : ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) + ' ' + hhmm(d);
+      chat('pub', when, p[1], p.slice(2).join(' '), false, undefined, nm);
+    }
+    else if (cmd === 'NOTICE') { net.notice = arg.split('\t'); noticeIdx = 0; drawNotice(); }
+    else if (cmd === 'ATTEND') {
+      var aq = arg.split(' '), ad = +aq[0] || 0, aof = +aq[1] || 7;
+      sys('pub', aq[2] === 'new' ? T(aof + '일 연속 출석 완료! 아이템 \'이펙트\'를 받았습니다. PC 런처의 [아이템] 메뉴에서 켜고 끌 수 있습니다.', aof + ' days in a row! You got the item "Effect" - switch it in the PC launcher\'s Items menu.')
+                 : aq[2] === 'done' ? T('출석 이벤트: 아이템 \'이펙트\'를 이미 받으셨습니다 (지금 ' + ad + '일 연속 출석).', 'Attendance event: you already have the item "Effect" (' + ad + ' days in a row so far).')
+                 : T('출석 이벤트 진행 중입니다! ' + aof + '일 중 ' + ad + '일 출석 완료! 자세한 내용은 공지사항을 참고해 주세요.', 'The attendance event is on! Day ' + ad + ' of ' + aof + ' done. See the notices for details.'), 'notice');
+    }
+    else if (cmd === 'MOTD') { sys('pub', arg, 'notice'); if (arg.indexOf('서버 점검') >= 0) { sys('room', arg, 'notice'); netSay(arg); } if (arg.indexOf('서버 점검 예정') >= 0) maintAlert(arg); }
+    else if (cmd === 'PONG') {
+      if (net.pingAt) { net.rtt = Math.round(performance.now() - net.pingAt); net.pingAt = 0; drawStatus(); drawTiles(); }
+      if (!net.pingSent && net.rtt >= 0) { net.pingSent = true; send('PING ' + net.rtt); }
+    }
+    else if (cmd === 'CHAT') { var c = arg.split(' '); chat('room', hhmm(new Date()), c[1], c.slice(2).join(' '), false, +c[0]);
+
+      if (+c[0] >= 5 && running && running.mode === 'match') { try { running.frame.contentWindow.postMessage({ type: 'specchat', nick: c[1], text: c.slice(2).join(' ') }, location.origin); } catch (e) {} } if (!(net.room && +c[0] === net.room.slot) && (document.hidden || !document.hasFocus())) { chime('chat'); flashTitle(c[1] + ': ' + c.slice(2).join(' ')); } }
+    else if (cmd === 'START') onStart(arg.split(' '));
+    else if (cmd === 'QUICK') {
+      var q = arg.split(' ');
+      if (q[0] === 'created') { net.quick = true; sys('room', T('기다리는 상대가 없어 방을 열었습니다. 대기중 게임을 하다가 누가 들어오면 바로 시작합니다.', 'Nobody was waiting - a room is open; play the CPU until somebody joins.')); setTimeout(waitingGame, 300); }
+      else sys('room', T('기다리던 상대의 방에 들어갑니다.', 'Joining somebody who was waiting.'));
+    }
+    else if (cmd === 'MATCHEND') {
+      net.startSent = false; net.matchEnded = true;
+      if (/abort/.test(arg)) {
+
+        sys('room', T('경기가 시작 직후 끊겨 방이 대기 상태로 돌아왔습니다. 시리즈 점수는 그대로입니다. 모두 준비를 다시 누르면 이어서 합니다.', 'The match stopped in its first seconds; the room is waiting again and the series score stays. Press Ready to play it.'));
+        if (running && running.mode === 'match') stop(true);
+      } else {
+        net.ftAnnounce = true;
+        if (net.room && net.room.ft > 1 && !net.room.over && net.room.slot >= 1 && net.room.slot <= 4) ftGuardStart();
+        if (running && running.mode === 'match') {
+          var wait = net.pkEnded ? 0 : 3;
+          if (wait) sys('room', T('경기 종료 - 결과가 기록되었습니다. ' + wait + '초 뒤 게임을 닫고 방으로 돌아갑니다.', 'Full time - the result is recorded. The game closes in ' + wait + ' seconds; you stay in the room.'));
+          if (!(net.interlude && net.interlude.won)) endBanner(T('경기 종료 - 결과가 기록되었습니다.' + (wait ? ' ' + wait + '초 뒤 ' : ' ') + (net.room && net.room.ft > 1 ? '다음 경기로 넘어갑니다' : '방으로 돌아갑니다'),
+                      'Full time - result recorded.' + (wait ? ' In ' + wait + ' s ' : ' ') + (net.room && net.room.ft > 1 ? 'on to the next match' : 'back to the room')), wait + 1);
+          if (net.room && net.room.ft > 1 && !net.room.over) net.interludeDue = true;
+          setTimeout(function () { if (running && running.mode === 'match') stop(true); }, wait * 1000);
+        } else sys('room', T('경기가 끝났습니다. 방에 그대로 있습니다.', 'Full time. You stay in the room.'));
+      }
+    }
+    else if (cmd === 'SERIES') {
+
+      var sf = arg.split(' '); net.seriesEnded = true; chime('me');
+      net.interludeDue = false;
+      net.interlude = { ft: +sf[0], wa: +sf[1], wb: +sf[2], won: sideName(sf[3] === 'A' ? 0 : 1) };
+      if (!(running && running.mode === 'match')) drawInterlude();
+      else { endBanner(T('🏆 ' + net.interlude.won + ' 님 FT' + sf[0] + ' 우승! (' + sf[1] + ' : ' + sf[2] + ')', '🏆 ' + net.interlude.won + ' wins the FT' + sf[0] + '! (' + sf[1] + ' : ' + sf[2] + ')'), 0); net.interludeDue = true; }
+      var aWon = sf[3] === 'A';
+      sys('room', T(sideName(aWon ? 0 : 1) + ' 님이 FT' + sf[0] + ' 승리! (' + (aWon ? sf[1] : sf[2]) + ' : ' + (aWon ? sf[2] : sf[1]) + ')', sideName(aWon ? 0 : 1) + ' wins the FT' + sf[0] + ' series, ' + (aWon ? sf[1] : sf[2]) + ' : ' + (aWon ? sf[2] : sf[1]) + '!'));
+      sys('room', T('FT 시리즈가 끝났습니다. 게임이 닫히면 방도 닫히고 로비로 돌아갑니다.', 'The FT series is over. When the game closes, the room closes too and you go back to the lobby.'));
+    }
+    else if (cmd === 'GAMEOVER' || cmd === 'KICKED') {
+      var why = cmd === 'KICKED' ? T('방장이 방에서 내보냈습니다', 'The host removed you') : T('상대가 나가서 방이 닫혔습니다', 'A player left - the room closed');
+      if (cmd === 'KICKED') chime('kick');
+      sys('pub', why); leftRoom(); netSay(why);
+      if (running && running.mode === 'match') {
+
+        var g = arg.split(' '), gwho = g[1] || '?', gslot = g[0] || '?', lost = g[2] === 'lost';
+        var big = cmd === 'KICKED' ? why
+          : lost ? T('상대 ' + gwho + '님(' + gslot + 'P)의 연결이 끊겼습니다', gwho + ' (' + gslot + 'P) lost the connection')
+                 : T('상대 ' + gwho + '님(' + gslot + 'P)이 경기를 그만뒀습니다', gwho + ' (' + gslot + 'P) left the match');
+        var small = cmd === 'KICKED' ? '' : (lost ? T('프로그램이 꺼졌거나 인터넷이 끊겼습니다. ', 'Their program closed or their network dropped. ')
+                                                  : T('게임 창을 닫았거나 게임이 꺼졌습니다. ', 'They closed the game, or it shut down. '))
+                    + T('경기는 여기서 끝나고 결과는 남지 않습니다. 로비로 돌아왔습니다.', 'The match is over and no result is kept. You are back in the lobby.');
+        chime('kick'); flashTitle(big);
+        stop(true).then(function () { say(esc(why)); criticalBoard(big, small); });
+      }
+    }
+    else if (cmd === 'CLOSED') {
+
+      var il = net.interlude, won = il && il.won ? T(' (' + il.won + ' 님 FT' + il.ft + ' 우승, ' + Math.max(il.wa, il.wb) + ' : ' + Math.min(il.wa, il.wb) + ')', ' (' + il.won + ' won the FT' + il.ft + ', ' + Math.max(il.wa, il.wb) + ' : ' + Math.min(il.wa, il.wb) + ')') : '';
+      var cwhy = T('FT 시리즈가 끝나 방이 닫혔습니다' + won + '. 로비로 돌아왔습니다.', 'The FT series is over and the room has closed' + won + '. You are back in the lobby.');
+      sys('pub', cwhy); leftRoom(true); netSay(cwhy);
+    }
+    else if (cmd === 'ERROR' && /^not in a room/.test(arg) && !net.room) {   }
+    else if (cmd === 'ERROR' && arg.indexOf('server maintenance') === 0) {
+
+      var mt = T('서버 점검을 앞두고 있어 지금은 새 경기나 방을 시작할 수 없습니다. 진행 중인 경기가 끝나면 점검을 하고, 몇 분 뒤 다시 접속하면 됩니다.', 'Server maintenance is coming: no new matches or rooms for now. The matches under way finish first; after the maintenance (a few minutes) connect again.');
+      if (arg.indexOf('server maintenance closing') === 0) {
+        var how = arg.slice(26).trim();
+        mt = T('서버 점검을 시작합니다' + (how ? ' (약 ' + how + ')' : '') + '. 잠시 후 다시 접속해 주세요.', 'The server is going into maintenance' + (how ? ' (' + how + ')' : '') + '. Please connect again in a little while.');
+        netSay(mt); sys('room', mt, 'notice'); sys('pub', mt, 'notice'); net.maintSaid = false;
+        setTimeout(function () { alert(mt); }, 0);
+      } else {
+        netSay(mt); sys('room', mt, 'notice');
+        if (!net.maintSaid) { net.maintSaid = true; setTimeout(function () { alert(mt); }, 0); }
+      }
+    }
+    else if (cmd === 'ERROR' && arg.indexOf('nickname reserved') === 0) {
+
+      var taken = T('이미 다른 분(다른 기기)이 쓰는 닉네임입니다. 다른 닉네임으로 바꾸거나, 내 닉네임이면 닉네임 열쇠를 입력해 주세요.', 'This nickname belongs to another device. Pick another one, or enter your nickname key if it is yours.');
+      netSay(taken);
+      setTimeout(function () {
+        var k = prompt(taken + '\n\n' + T('열쇠(영문·숫자 8자리) - 이 닉네임을 이미 쓰는 기기의 [설정 > 내 닉네임 열쇠]에서 볼 수 있습니다', 'Key (8 letters/digits) - on the device that already uses this nickname: Settings > My nickname key'), '');
+        k = (k || '').trim().toUpperCase();
+        if (!/^[A-Z0-9]{8}$/.test(k)) { if (k) netSay(T('열쇠는 영문·숫자 8자리입니다.', 'A key is 8 letters or digits.')); return; }
+        store.set('web_nickkey', (store.get('web_nick') || '') + '|' + k);
+        netSay(T('열쇠를 저장했습니다. 다시 접속합니다...', 'Key saved - connecting again...'));
+        setTimeout(function () { if (!net.ws) connect(); }, 2500);
+      }, 0);
+    }
+    else if (cmd === 'ERROR' && arg.indexOf('nickname rule') === 0) {
+      var rule = T('닉네임 규칙: 영문·숫자는 4~16자, 한글이 들어가면 한글 2자 이상, 전체 8자 이하입니다. 닉네임을 바꾼 뒤 다시 접속해 주세요.', 'Nicknames: 4-16 letters or digits; with Hangul, at least 2 Hangul and at most 8 characters. Change it and connect again.');
+      netSay(rule); setTimeout(function () { alert(rule); }, 0);
+    }
+    else if (cmd === 'MYKEY') {
+      var mk = arg.split(' '), kk = mk[mk.length - 1], kn = mk.slice(0, -1).join(' ');
+      if (kk === '-') alert(T('이 기기는 이 닉네임의 주인이 아닙니다.', 'This device does not own the nickname.'));
+      else {
+        try { navigator.clipboard.writeText(kk); } catch (e) {}
+        alert(T('닉네임 ' + kn + '의 열쇠: ' + kk + '\n\n다른 PC나 웹에서 닉네임이 거절될 때 이 열쇠를 넣으면 됩니다. 열쇠를 가진 사람은 누구나 이 닉네임을 쓸 수 있으니 남에게 알려 주지 마세요. (복사해 두었습니다)',
+                'The key of nickname ' + kn + ': ' + kk + "\n\nOn another PC or the web page, enter it when the nickname is refused. Keep it to yourself - whoever has it can use your nickname. (Copied)"));
+      }
+    }
+    else if (cmd === 'ERROR' && arg.indexOf('nickname not allowed') === 0) { netSay(T('이 닉네임은 쓸 수 없습니다. 닉네임을 바꾼 뒤 다시 접속해 주세요.', "This nickname can't be used - change it and connect again.")); }
+    else if (cmd === 'ERROR' && arg.indexOf('title not allowed') === 0) { netSay(T('그 방 제목은 쓸 수 없어서 닉네임으로 표시됩니다.', "That room title can't be used - the room shows your nickname instead.")); }
+    else if (cmd === 'ERROR') {
+      var etxt = relayErrText(arg);
+      sys(net.room ? 'room' : 'pub', etxt); netSay(etxt);
+      if (!net.room) net.quick = false;
+      if (/already in a room/.test(arg) && !net.room) send('LEAVE');
+    }
+  }
+
+  function relayErrText(arg) {
+    var a = arg.split(' '), n = function (i) { return +(a[i] || 0); };
+    var M = [
+      [/^chat locked/, 'VPN 등으로 처음 접속한 기기는 하루 동안(또는 5경기를 하기 전까지) 채팅을 쓸 수 없습니다. 경기는 할 수 있습니다.', 'A new device on a VPN cannot chat for a day (or until it has played 5 matches). It can still play.'],
+      [/^already in a room/, '이미 방에 들어가 있습니다. 방을 나간 뒤 다시 시도하세요.', 'You are already in a room. Leave it first, then try again.'],
+      [/^server full/, '지금 서버에 열린 방이 너무 많아 새 방을 만들 수 없습니다. 있는 방에 참가하거나 잠시 후 다시 시도하세요.', 'The server has too many rooms open right now. Join an existing room or try again in a moment.'],
+      [/^too many rooms from your address/, '같은 인터넷 주소에서 이미 방이 3개 열려 있어 더 만들 수 없습니다. 열려 있는 방을 닫은 뒤 다시 만드세요.', 'Three rooms are already open from your internet address. Close one of them, then make a new one.'],
+      [/^no such room/, '그 방은 방금 없어졌습니다. 방 목록을 새로 불러왔습니다.', 'That room has just closed. The room list has been refreshed.'],
+      [/^room is full/, '그 방은 자리와 관전석(4명)이 모두 찼습니다. 다른 방을 골라 주세요.', 'Every seat and all four spectator places in that room are taken. Pick another room.'],
+      [/^wrong password/, '비밀번호가 틀렸습니다.', 'Wrong password.'],
+      [/^ping unknown/, '핑을 측정하지 못했습니다. 잠시 후 다시 시도하세요.', 'Your ping could not be measured. Try again in a moment.'],
+      [/^series over/, '이 방의 FT 시리즈가 끝나서 더 이상 경기를 할 수 없습니다. 더 하려면 방을 나가 새 방을 만드세요.', 'The FT series in this room is over. To play on, leave and open a new room.'],
+      [/^series in progress/, 'FT 시리즈가 진행 중이라 지금은 바꿀 수 없습니다.', 'An FT series is in progress, so this cannot be changed now.'],
+      [/^already started/, '경기가 이미 시작되었습니다.', 'The match has already started.'],
+      [/^a 2v2 room needs/, '2 vs 2 는 4명이 다 들어와야 시작할 수 있습니다.', 'A 2 vs 2 room can start only when all four players are in.'],
+      [/^only the host/, '방장(1P)만 할 수 있습니다.', 'Only the host (1P) can do that.'],
+      [/^teams are for 2v2/, '팀 나누기는 2 vs 2 방에서만 됩니다.', 'Teams are for 2 vs 2 rooms only.'],
+      [/^cannot swap/, '지금은 자리를 바꿀 수 없습니다 (대기 중인 방에서, 둘 중 한 자리에 사람이 있어야 합니다).', 'Seats cannot be swapped right now (only in a waiting room, and one of the two seats must be taken).'],
+      [/^nobody in that seat/, '그 자리에는 이제 아무도 없습니다.', 'Nobody is in that seat any more.'],
+      [/^chat too fast/, '채팅을 너무 빨리 보내고 있습니다. 몇 초 뒤에 다시 보내 주세요.', 'You are sending chat too fast - wait a few seconds and send it again.'],
+      [/^note too fast/, '방명록은 5초에 한 줄씩만 쓸 수 있습니다.', 'Please wait 5 seconds between guestbook lines.'],
+      [/^not in a room/, '방에 들어가 있지 않습니다.', 'You are not in a room.']
+    ];
+    for (var i = 0; i < M.length; i++) if (M[i][0].test(arg)) return T(M[i][1], M[i][2]);
+    if (/^ping too high/.test(arg))
+      return T('핑 초과: 내 ' + n(3) + ' ms + 방장 ' + n(4) + ' ms = ' + (n(3) + n(4)) + ' ms > 제한 ' + n(5) + ' ms. 이 방에는 들어갈 수 없습니다.',
+               'Ping too high for this room: you ' + n(3) + ' ms + host ' + n(4) + ' ms = ' + (n(3) + n(4)) + ' ms > limit ' + n(5) + ' ms.');
+    if (/^protocol mismatch/.test(arg))
+      return n(2) > n(3) ? T('방장의 게임 버전이 더 새것이라 함께 할 수 없습니다. 이 페이지를 새로고침(Ctrl+F5)한 뒤 다시 들어가 보세요.', "The host runs a newer version. Reload this page (Ctrl+F5) and try again.")
+                         : T('방장의 PC 런처가 옛 버전이라 함께 할 수 없습니다. 방장이 런처를 업데이트해야 합니다.', "The host's PC launcher is out of date, so you cannot play together until it is updated.");
+    if (/^build mismatch/.test(arg))
+      return T('방장의 게임 프로그램이 이 웹판과 달라 함께 할 수 없습니다. 방장이 런처를 업데이트하거나, 이 페이지를 새로고침(Ctrl+F5)해 보세요.', "The host's game program differs from this web version. The host should update the launcher, or reload this page (Ctrl+F5).");
+    if (/^(bad |unknown command)/.test(arg)) return T('요청이 올바르지 않아 처리되지 않았습니다. 페이지를 새로고침한 뒤 다시 해 보세요.', 'That request was not understood. Reload the page and try again.');
+    return T('서버가 요청을 처리하지 못했습니다: ', 'The server refused the request: ') + arg;
+  }
+
+  function isOwner(r) { return !!r && r.slot === (r.owner || 1); }
+  function onRoomInfo(f) {
+    var names = (f[3] || ',,,').split(','); while (names.length < 4) names.push('');
+    var was = net.room;
+    net.room = { id: f[0], state: f[1], slot: +f[2], names: names, type: f[4] || '1v1', specs: f[7] && f[7] !== '-' ? f[7].split(',') : [],
+                 time: f[8] || '150', builds: (f[9] || ',,,').split(','), ready: (f[10] || '0,0,0,0').split(',').map(function (x) { return x === '1'; }),
+                 edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2),
+                 kinds: (f[18] || ',,,').split(','), tie: f[19] === 'gg' ? 'gg' : 'pk', teams: f[20] === 'random' ? 'random' : 'pick', title: unescTitle(f[21]),
+                 owner: +(f[22] || 1) || 1, diff: f[23] !== undefined && f[23] !== '' ? +f[23] : 3, vsgod: f[24] === '1', ranked: f[25] === '1' };
+    var r = net.room;
+    if (net.ftTraceOn && (!was || was.state !== r.state || was.ready[r.slot - 1] !== r.ready[r.slot - 1])) ftTrace('room ' + r.state + (r.ready[r.slot - 1] ? ' R' : ''));
+    if (net.ftTraceOn && !net.ftWaitAt && r.state === 'waiting') net.ftWaitAt = Date.now();
+    if (!was) chime('me');
+    else if (r.id === was.id) {
+      var arrived = names.filter(function (nm, i) { return nm && was.names.indexOf(nm) < 0 && i + 1 !== r.slot; });
+      if (arrived.length) { chime('join'); flashTitle(T(arrived[0] + ' 님이 방에 들어왔습니다', arrived[0] + ' joined your room')); }
+    }
+    if (!was) {
+      net.sel = null; net.who = null; setTab('room');
+      sys('room', T('방 ' + r.id + '에 들어왔습니다 (' + (r.slot > 4 ? '관전' : r.slot + 'P') + '). 모두 준비를 누르면 시작합니다.', 'You are in room ' + r.id + ' (' + (r.slot > 4 ? 'watching' : r.slot + 'P') + '). The match starts when everybody is ready.'));
+
+      if (isOwner(r) && !r.quick) { send('TIME ' + nset.time); if ((nset.ft !== r.ft || (nset.tie === 'gg' ? 'gg' : 'pk') !== r.tie) && r.type !== 'pve') send('FT ' + nset.ft + ' ' + (nset.tie === 'gg' ? 'gg' : 'pk')); }
+      if (isOwner(r) && r.type === '2v2' && (nset.teams === 'random' ? 'random' : 'pick') !== r.teams) send('TEAMS ' + (nset.teams === 'random' ? 'random' : 'pick'));
+      if (isOwner(r) && r.type === 'pve' && nset.pveDiff !== r.diff) send('DIFF ' + nset.pveDiff);
+      if (isOwner(r) && r.type === 'pve' && !!nset.pveVsGod !== r.vsgod) send('PVEGOD ' + (nset.pveVsGod ? 1 : 0));
+      $('teamMenu').hidden = true;
+      $('pveMenu').hidden = true;
+    }
+    if (net.ftAnnounce && r.state === 'waiting') {
+      net.ftAnnounce = false; ftTrace('announce');
+      if (net.seriesEnded) net.seriesEnded = false;
+      else if (r.ft > 1 && r.slot >= 1 && r.slot <= 4 && !r.over) {
+        sys('room', T('FT' + r.ft + ' 진행 중 - ' + sideName(0) + ' ' + r.wa + ' : ' + r.wb + ' ' + sideName(1) + '. 게임 창이 닫히면 준비가 자동으로 눌리고, 모두 준비되면 다음 경기가 바로 시작됩니다.',
+                      'FT' + r.ft + ' - ' + sideName(0) + ' ' + r.wa + ' : ' + r.wb + ' ' + sideName(1) + '. Ready is pressed for you once your game has closed; the next match starts when everybody is ready.'));
+        net.ftAutoReady = true; autoReadyIfClosed();
+      }
+    }
+    if (r.over && !was) sys('room', T('이 방의 FT 시리즈가 끝나서 더 이상 경기를 할 수 없습니다. 더 하려면 방을 나가 새 방을 만드세요.', 'The FT series in this room is over. To play on, leave and open a new room.'));
+    var n = 0, all = true;
+    for (var i = 0; i < 4; i++) if (names[i]) { n++; if (!r.ready[i]) all = false; }
+    if (typeof TESTQ !== 'undefined' && TESTQ.get('autoroom') && r.state === 'waiting' && !r.over && n >= 2 && r.slot <= 4 && !r.ready[r.slot - 1] && !net.testReadySent && !net.ftAnnounce && !running) { net.testReadySent = true; tlog('ready'); send('READY 1'); setTimeout(function () { net.testReadySent = false; }, 3000); }
+    if (r.state !== 'waiting' || !all) net.startSent = false;
+    var bgm = nset.bgm, flags = 's';
+
+    if (n < 2) net.autoStarted = false;
+    if (isOwner(r) && r.state === 'waiting' && n >= 2 && !net.startSent && !net.autoStarted && (!running || running.mode === 'solo') && (r.quick || net.quick || net.soloWaiting)) { net.startSent = true; net.autoStarted = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' a' + (nset.swap ? 's' : '')); }
+    else if (isOwner(r) && r.state === 'waiting' && all && n >= (r.type === 'pve' ? 1 : 2) && (r.type !== '2v2' || n === 4) && !net.startSent && !running) { net.startSent = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' ' + flags); }
+    if (net.interlude && !net.interlude.won && !net.interlude.critical) drawInterlude();
+    netSay(isOwner(r) ? T('방을 열었습니다. 상대가 들어와 모두 준비하면 시작합니다.', 'Your room is open. It starts when everybody is ready.') : T('방에 들어왔습니다. 준비를 누르세요.', 'In the room - press Ready.'));
+    drawNet();
+  }
+  function sideName(side) {
+    var nm = (net.room && net.room.names) || ['', '', '', ''];
+    if (!net.room || net.room.type !== '2v2') return nm[side === 0 ? 0 : 1] || (side === 0 ? 'A' : 'B');
+    return (side === 0 ? [nm[0], nm[2]] : [nm[1], nm[3]]).filter(Boolean).join('+');
+  }
+  function autoReadyIfClosed() {
+    ftTrace('auto ' + (!net.ftAutoReady ? 'off' : (running && running.mode === 'match') ? 'wait' : 'go'));
+    if (!net.ftAutoReady || (running && running.mode === 'match')) return;
+    net.ftAutoReady = false;
+    var r = net.room; if (r && r.slot >= 1 && r.slot <= 4 && !r.ready[r.slot - 1]) send('READY 1');
+  }
+
+  var ftg = null;
+  function ftTrace(t) {
+    if (!net.ftTraceOn) return;
+    net.ftTrace.push(((Date.now() - net.ftTraceAt) / 1000).toFixed(1) + 's ' + t); if (net.ftTrace.length > 24) net.ftTrace.shift();
+  }
+  function ftGuardStart() {
+    clearInterval(ftg); net.ftTraceOn = true; net.ftTraceAt = Date.now(); net.ftTrace = []; net.ftWaitAt = 0; ftTrace('matchend run=' + (running ? running.mode : '-'));
+    var t0 = Date.now();
+    ftg = setInterval(function () {
+      var r = net.room, end = function () { clearInterval(ftg); ftg = null; net.ftTraceOn = false; };
+      if (!r || r.slot < 1 || r.slot > 4 || r.ft <= 1 || r.over || Date.now() - t0 > 90000) return end();
+
+      if (!net.ftWaitAt) return;
+      if (r.state !== 'waiting') return end();
+      if (r.ready[r.slot - 1]) return end();
+      if (Date.now() - net.ftWaitAt < 8000) return;
+      end();
+      var why = 'ftready missed: run=' + (running ? running.mode : '-') + ' auto=' + (net.ftAutoReady ? 1 : 0) + ' ann=' + (net.ftAnnounce ? 1 : 0) + ' closing=' + (savedWait ? 1 : 0) + ' | ' + net.ftTrace.join(', ');
+      logline(why); send('DIAG ' + why.slice(0, 190));
+      sys('room', T('다음 경기 준비가 자동으로 눌리지 않아 대신 눌렀습니다.', 'Ready for the next match was not pressed by itself - pressed it for you.'));
+      var press = function () { var q = net.room; if (q && q.state === 'waiting' && !q.over && q.slot >= 1 && q.slot <= 4 && !q.ready[q.slot - 1]) send('READY 1'); };
+      if (running && running.mode === 'match') { if (savedWait) { savedWait(''); press(); } else stop(true).then(press); }
+      else press();
+    }, 1000);
+  }
+
+  var res = { list: [], sent: 0, replay: null, known: false, timer: null };
+  function resetResults() { res = { list: [], sent: 0, replay: null, known: false, timer: null }; net.pkEnded = false; }
+  function onResult(json) {
+    res.list.push(json);
+    if (!net.room || net.room.slot !== 1) return;
+    clearTimeout(res.timer);
+    if (res.sent > 0 || res.known) reportResults(); else res.timer = setTimeout(reportResults, 3000);
+  }
+  function reportResults() {
+    clearTimeout(res.timer);
+    var go = function () {
+      for (var n = res.sent; n < res.list.length; n++) {
+        var json = res.list[n];
+        if (json.length > 400 || json.slice(-1) !== '}') continue;
+        send('RESULT ' + json);
+        sys('room', T('경기 결과를 서버에 보고했습니다: ', 'Match result reported to the relay: ') + json);
+      }
+      res.sent = res.list.length;
+    };
+    if (res.sent === 0 && res.list.length) {
+      if (net.room && net.room.locked) { sys('room', T('비밀방 경기라 녹화 파일을 보내지 않았고, 경기 기록에도 올라가지 않습니다.', 'A private (password) room: the recording is not sent and the match is not published.')); go(); return; }
+      if (res.replay && running && running.mode === 'match') {
+        var t = setTimeout(go, 2000);
+        res.onBytes = function (name, bytes) {
+          clearTimeout(t);
+          if (bytes && bytes.length <= 2 * 1024 * 1024) {
+            var bin = ''; for (var i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+            var b64 = btoa(bin);
+            send('RPL BEGIN ' + name + ' ' + bytes.length);
+            for (var k = 0; k < b64.length; k += 6000) send('RPL D ' + b64.substr(k, 6000));
+            send('RPL END');
+            sys('room', T('녹화 파일을 보냈습니다 (' + Math.round(bytes.length / 1024) + ' KB).', 'Recording sent (' + Math.round(bytes.length / 1024) + ' KB).'));
+          }
+          go();
+        };
+        try { running.frame.contentWindow.postMessage({ get: 'replay', name: res.replay }, location.origin); } catch (e) { go(); }
+        return;
+      }
+    }
+    go();
+  }
+
+  var bannerTimer = null;
+  function endBanner(text, secs) {
+    var b = $('endbanner'); b.textContent = text; b.hidden = false;
+    clearTimeout(bannerTimer); if (secs) bannerTimer = setTimeout(function () { b.hidden = true; }, secs * 1000);
+  }
+
+  function criticalBoard(big, small) {
+    net.interlude = { critical: true };
+    tlog('critical ' + big);
+    var box = $('interlude');
+    box.innerHTML = '<div class="il-tag" style="color:#ff8a8a">' + esc(T('경기 중단', 'Match stopped')) + '</div>' +
+      '<div class="il-win" style="color:#fff">⚠ ' + esc(big) + '</div>' +
+      (small ? '<div class="il-note">' + esc(small) + '</div>' : '') +
+      '<button type="button" class="lb small go" id="ilClose">' + esc(T('닫기', 'Close')) + '</button>';
+    box.hidden = false; $('stage').hidden = false; $('endbanner').hidden = true;
+    $('stageTitle').textContent = T('경기 중단', 'Match stopped');
+    $('ilClose').onclick = function () { hideInterlude(); $('stage').hidden = true; };
+    $('ilClose').focus();
+  }
+  function hideInterlude() { $('interlude').hidden = true; $('endbanner').hidden = true; net.interlude = null; }
+  function drawInterlude() {
+    var il = net.interlude, r = net.room; if (!il) return;
+    var box = $('interlude'), a = sideName(0), b = sideName(1);
+    var ft = il.ft || (r && r.ft) || 2, wa = il.wa != null ? il.wa : (r ? r.wa : 0), wb = il.wb != null ? il.wb : (r ? r.wb : 0);
+    var html = '<div class="il-tag">FT' + ft + ' · ' + esc(il.won ? T('시리즈 끝', 'Series over') : T('다음 경기 준비', 'Next match')) + '</div>' +
+      '<div class="il-board"><div class="il-side a">' + esc(a) + '</div><div class="il-score">' + wa + ' : ' + wb + '</div><div class="il-side b">' + esc(b) + '</div></div>';
+    if (il.won) {
+      html += '<div class="il-win">🏆 ' + esc(il.won) + T(' 님 FT' + ft + ' 우승!', ' wins the FT' + ft + '!') + '</div>' +
+        '<div class="il-note">' + esc(T('시리즈가 끝나 방이 닫혔습니다. 로비에서 새 방을 만들거나 들어가세요.', 'The series is over and the room has closed. Open or join a room in the lobby.')) + '</div>' +
+        '<button type="button" class="lb small go" id="ilClose">' + esc(T('닫기', 'Close')) + '</button>';
+    } else if (r) {
+      var marks = '';
+      for (var i = 0; i < 4; i++) if (r.names[i]) marks += '<span class="' + (r.ready[i] ? 'ok' : 'wait') + '">' + (r.ready[i] ? '✔ ' : '… ') + esc(r.names[i]) + '</span>';
+      html += '<div class="il-ready">' + marks + '</div><div class="il-note">' + esc(T('모두 준비되면 다음 경기가 바로 시작됩니다. (준비는 저절로 눌립니다)', 'The next match starts as soon as everybody is ready (Ready is pressed for you).')) + '</div>';
+    }
+    box.innerHTML = html; box.hidden = false; $('stage').hidden = false; $('endbanner').hidden = true;
+    $('stageTitle').textContent = 'FT' + ft + ' · ' + (il.won ? T('시리즈 끝', 'series over') : T('다음 경기 준비', 'next match'));
+    var c = $('ilClose'); if (c) c.onclick = function () { hideInterlude(); $('stage').hidden = true; };
+  }
+  function leftRoom(keepBoard) { stopCount(); if (!keepBoard) hideInterlude(); resetResults(); net.ftAutoReady = false; net.ftAnnounce = false; net.room = null; net.quick = false; net.soloWaiting = false; net.startSent = false; net.autoStarted = false; setTab('pub'); drawNet(); }
+
+  var countTimer = null;
+  function stopCount() { if (countTimer) { clearInterval(countTimer); countTimer = null; } }
+  function onStart(f) {
+    if (f.length < 4) return;
+    stopCount();
+    if (!roms.length) { sys('room', T('롬이 없어 경기에 들어갈 수 없어 방에서 나왔습니다.', 'No ROM - left the room.')); send('LEAVE'); leftRoom(); return; }
+    if (!(net.room && net.room.state === 'waiting')) { onStartNow(f); return; }
+    var left = 3;
+    var say1 = function () {
+      var line = left > 0 ? T(left + '초 후 게임 시작...', 'Game starts in ' + left + '...') : T('시작!', 'GO!');
+      sys('room', line); netSay(line);
+    };
+    setTab('room'); say1();
+    countTimer = setInterval(function () {
+      left--; say1();
+      if (left <= 0) { stopCount(); onStartNow(f); }
+    }, 1000);
+  }
+  function onStartNow(f) {
+    net.matchEnded = false;
+
+    if (typeof TESTLOG !== 'undefined' && TESTLOG && TESTQ.get('autostop')) setTimeout(function () { tlog('autostop'); stop(); }, +TESTQ.get('autostop') * 1000);
+    if (!roms.length) { sys('room', T('롬이 없어 경기에 들어갈 수 없어 방에서 나왔습니다.', 'No ROM - left the room.')); send('LEAVE'); leftRoom(); return; }
+    var r = net.room || { names: ['', '', '', ''], ft: 1, wa: 0, wb: 0 }, slot = +f[1];
+    var pool = nset.stage === -2 ? [0, 2, 3, 7, 8, 10, 11, 12, 13, 15, 16, 17] : [0, 2, 3, 7];
+    var stage = nset.stage < 0 ? pool[Math.floor(Math.random() * pool.length)] : nset.stage;
+    sys('room', slot >= 5 ? T('경기를 관전합니다.', 'Watching the match.') : T('경기를 시작합니다! (' + slot + 'P, 입력 지연 ' + f[3] + '프레임)', 'The match starts! (' + slot + 'P, input delay ' + f[3] + ')'));
+    netSay(T('경기 중', 'In a match'));
+    chime('start'); flashTitle(T('경기 시작!', 'Match starting!'));
+    resetResults();
+    start('match', { game: f[9] === 'cupsoc' ? 'cupsoc' : 'cupsocs2', token: f[0], slot: f[1], players: f[2], delay: f[3], type: f[4] || '1v1', time: f[5] || '150',
+                     nspec: f[6] || '0', swap: f[8] === '1' ? '1' : '0', names: r.names.map(encodeURIComponent).join(','), kinds: (r.kinds || []).map(function (k) { return !k ? '' : /^w/.test(k) ? 'W' : 'P'; }).join(','),
+                     stage: String(stage), ball: /^(orange|yellow|pink|blue)$/.test(f[10] || '') ? f[10] : '', bgm: nset.bgm === 'random' ? 'shuffle' : nset.bgm,
+                     series: r.ft > 1 ? r.ft + ',' + r.wa + ',' + r.wb : '', pk: r.ft > 1 ? (r.tie === 'gg' ? '2' : '1') : '',
+                     god: (f[4] === 'pve' && f[1] === '1' && nset.pveGod) ? '1' : '',
+                     diff: (f[4] === 'pve' && f[1] === '1' && r.diff !== 3) ? String(r.diff) : '',
+                     pvegod: (f[4] === 'pve' && f[1] === '1' && r.vsgod) ? '1' : '',
+                     costume: f[11] && f[11] !== '-' ? f[11] : '',
+                     dyn: nset.autoDelay === false ? '0' : '',
+                     label: T('온라인 경기 · 방 ', 'Online match · room ') + (r.id || '?') });
+  }
+
+  try {
+    var nc = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (nc && nc.addEventListener) nc.addEventListener('change', function () { if (net.ws && net.ws.readyState === 1) send('CONN ' + myKind()); });
+  } catch (e) {}
+
+  var NOTICE_V = 2, noticeThen = null;
+  function noticeOk() { return (+store.get('web_notice') || 0) >= NOTICE_V; }
+  function showNotice(then) { noticeThen = then || null; $('useNotice').hidden = false; $('unOk').focus(); }
+  function hideNotice() { $('useNotice').hidden = true; noticeThen = null; }
+  $('unOk').onclick = function () { store.set('web_notice', String(NOTICE_V)); var t = noticeThen; hideNotice(); if (t) t(); };
+  $('unClose').onclick = function () { hideNotice(); if (!noticeOk()) netSay(T('이용 안내에 동의하지 않으면 온라인 대전(서버 접속)을 할 수 없습니다. 혼자놀기는 됩니다.', 'Without agreeing to the notice there is no online play. Solo play still works.')); };
+  $('useNotice').addEventListener('click', function (e) { if (e.target === this) $('unClose').onclick(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('useNotice').hidden) $('unClose').onclick(); });
+  $('unLink').onclick = function (e) { e.preventDefault(); showNotice(null); };
+
+  function nickKeyFor(nick) {
+    var v = store.get('web_nickkey') || '', i = v.lastIndexOf('|');
+    return i > 0 && v.slice(0, i).toLowerCase() === String(nick || '').toLowerCase() ? v.slice(i + 1) : '';
+  }
+  function connect() {
+    var autoTest = typeof TESTQ !== 'undefined' && TESTQ && TESTQ.get('autonet') && location.hostname === '127.0.0.1';
+    if (!noticeOk() && !autoTest) { showNotice(connect); return; }
+    var nick = cleanNick(nickIn.value); nickIn.value = nick;
+    if (!nick) { nickIn.focus(); netSay(T('닉네임을 입력하세요.', 'Enter a nickname.')); return; }
+    store.set('web_nick', nick);
+    net.fpOk = false;
+    var ws; try { ws = new WebSocket(relayWsUrl()); } catch (e) { netSay(T('접속하지 못했습니다: ', 'Could not connect: ') + e); return; }
+    ws.binaryType = 'arraybuffer'; net.ws = ws; net.buf = ''; net.pingSent = false; netSay(T('접속 중…', 'Connecting…')); drawNet();
+    var dec = new TextDecoder();
+    ws.onopen = function () {
+      send('HELLO ' + nick); send('AGREE ' + (noticeOk() ? NOTICE_V : 0));
+      net.timer = setInterval(function () { net.pingAt = performance.now(); send('PING ' + Math.max(0, net.rtt)); }, 15000);
+      setTimeout(function () { net.pingAt = performance.now(); send('PING'); }, 300);
+    };
+    ws.onmessage = function (e) {
+      net.buf += typeof e.data === 'string' ? e.data : dec.decode(e.data, { stream: true });
+      var i; while ((i = net.buf.indexOf('\n')) >= 0) { var l = net.buf.slice(0, i).replace(/\r$/, ''); net.buf = net.buf.slice(i + 1); if (l) onLine(l); }
+    };
+    ws.onclose = function () {
+      if (net.ws !== ws) return;
+      clearInterval(net.timer); net.ws = null; net.rooms = []; net.seenRooms = null; net.sel = null; net.who = null; leftRoom();
+      netSay(T('로비에서 나왔습니다.', 'Left the lobby.'));
+    };
+    ws.onerror = function () { netSay(T('게임 서버에 접속하지 못했습니다.', 'Could not reach the game server.')); };
+  }
+  $('btnNickKey').onclick = function () {
+    if (net.ws && net.ws.readyState === 1) send('KEY');
+    else netSay(T('먼저 접속해 주세요. 열쇠는 서버에서 받아옵니다.', 'Connect first - the key comes from the server.'));
+  };
+  $('btnConn').onclick = function () {
+    audioReady();
+    if (net.ws) { var w = net.ws; net.ws = null; w.close(); clearInterval(net.timer); net.rooms = []; net.sel = null; net.who = null; leftRoom(); netSay(T('로비에서 나왔습니다.', 'Left the lobby.')); }
+    else connect();
+  };
+  nickIn.addEventListener('keydown', function (e) { if (e.key === 'Enter') connect(); });
+  function needRom() { if (roms.length) return false; netSay(T('먼저 왼쪽 위 "롬 넣기"로 cupsoc.zip 과 cupsocs2.zip (셀렉션, 추천) 을 넣으세요.', 'Add your ROM first (top left): cupsoc.zip and cupsocs2.zip (Selection, recommended).')); return true; }
+
+  function createRoom() { if (needRom()) return; send('CREATE ' + nset.type + ' 0 - ' + ed + ' ' + (nset.type === 'pve' ? 1 : nset.ft) + (nset.type === 'pve' ? ' ' + nset.pveCap : ''));
+    var title = cleanTitle(titleIn.value); titleIn.value = title; nset.title = title; nset.titles[nset.type] = title; saveSet();
+    if (title) send('TITLE ' + title); }
+  function joinRoom(id) {
+    if (needRom()) return;
+    var f = net.rooms.filter(function (x) { return x[0] === id; })[0]; if (!f) return;
+
+    var proto = +(f[15] || 0);
+    if (proto > 0 && proto !== WEB_PROTO) {
+      alert(T('이 방의 방장은 다른 버전의 넷플레이(프로토콜 ' + proto + ')를 쓰고 있어 함께 할 수 없습니다. 이 웹판은 프로토콜 ' + WEB_PROTO + '입니다.',
+              "This room's host runs another netplay version (protocol " + proto + '); this web version is protocol ' + WEB_PROTO + ', so you cannot play together.'));
+      return;
+    }
+    var playing = f[3] === 'playing', full = +f[2] >= +(f[5] || 2), pw = '-';
+    var pve = (f[4] || '1v1') === 'pve', watch = (playing && !pve) || full;
+    if (pve && !full && !confirm(T('게임을 하시겠습니까?\n(취소 = 참관합니다)', 'Do you want to play?\n(Cancel = watch)'))) watch = true;
+    else if (watch && !confirm(playing ? T('현재 게임 중이므로 관전만 가능합니다. 관전 하시겠습니까?', 'This match is already running, so you can only watch it. Watch?')
+                                  : T('자리가 모두 찼으므로 관전만 가능합니다. 관전 하시겠습니까?', 'Every seat is taken, so you can only watch. Watch?'))) return;
+
+    if (f[8] === '1' && !watch) {
+      var got = prompt(T('이 방의 비밀번호 (1~4자리)\n비워 두고 확인을 누르면 관전만 합니다.', 'Room password (1-4 characters)\nLeave it empty and press OK to just watch.'));
+      if (got === null) return;
+      pw = got.trim() || '-'; if (pw === '-') watch = true;
+    }
+    send('JOIN ' + id + ' ' + Math.max(0, net.rtt) + ' ' + pw + (watch ? ' watch' : ''));
+  }
+  $('btnCreate').onclick = createRoom;
+  function waitingGame() {
+    var r = net.room; if (!isOwner(r) || r.state !== 'waiting' || running) return;
+    net.soloWaiting = true; send('SOLO 1');
+    sys('room', T('대기중 게임을 합니다. 누가 들어오면 바로 경기가 시작됩니다.', 'Playing a waiting game - the match starts as soon as somebody joins.'));
+    start('solo', { label: T('대기중 게임', 'Waiting game') });
+  }
+  $('btnSolo').onclick = waitingGame;
+
+  $('netAlone').onclick = function () { $('aloneMenu').style.left = $('netAlone').offsetLeft + 'px'; $('aloneMenu').hidden = !$('aloneMenu').hidden; };
+
+  $('netKeys').onclick = function () {
+    tx('readonly', function (st) { return st.count(); }, 'cfg').catch(function () { return 0; }).then(function (n) {
+      if (n > 0 && !confirm(T('이 브라우저에 키 설정이 이미 저장되어 있습니다.\n\n키 설정을 다시 하시겠습니까?', 'Your keys are saved in this browser already.\n\nSet them again?'))) return;
+      if (!confirm(T('게임만 따로 켜서 키를 설정합니다.\n\n게임이 켜지면 Tab 키 → Input Settings → Input Assignments (this system) 에서\nP1 의 방향키, Button 1(슛), Button 2(패스), 1 Player Start 를 원하는 키로 바꾸세요. 게임패드도 됩니다.\n\n다 했으면 게임 아래 [그만하기] 로 닫으세요. 그 키가 이 브라우저의 온라인 대전, 혼자놀기, 연습 게임에 그대로 쓰입니다.',
+                     'The game starts on its own so you can set your keys.\n\nIn the game press Tab -> Input Settings -> Input Assignments (this system)\nand set P1\'s directions, Button 1 (shoot), Button 2 (pass) and 1 Player Start. A gamepad works too.\n\nWhen you are done, close the game with [Stop] below it. Online matches, Play solo and Practice in this browser use those keys.'))) return;
+      start('solo', { label: T('키 설정', 'Keys') });
+    });
+  };
+  document.querySelectorAll('#aloneMenu button').forEach(function (b) {
+    b.onclick = function () {
+      $('aloneMenu').hidden = true;
+      var god = b.getAttribute('data-god') === '1';
+      start('solo', { label: god ? T('혼자놀기 · GOD', 'Play solo · GOD') : T('혼자놀기', 'Play solo'), god: god });
+    };
+  });
+  $('netTut').onclick = function () { start('tutorial'); };
+  $('netPractice').onclick = function () { start('practice'); };
+
+  ['touchend', 'click', 'keydown', 'pointerup'].forEach(function (t) {
+    document.addEventListener(t, function () { try { if (running && running.frame && running.frame.contentWindow.__audUnlock) running.frame.contentWindow.__audUnlock(); } catch (e) {} }, true);
+  });
+
+  var REP = { db: null, mine: [], online: null, selMine: -1, selOn: -1, tab: 'mine', MAX: 100 };
+  function repdb() {
+    if (REP.db) return REP.db;
+    REP.db = new Promise(function (ok, bad) {
+      var r = indexedDB.open('seibucup-replays', 1);
+      r.onupgradeneeded = function () { if (!r.result.objectStoreNames.contains('reps')) r.result.createObjectStore('reps', { keyPath: 'name' }); };
+      r.onsuccess = function () { ok(r.result); }; r.onerror = function () { REP.db = null; bad(r.error); };
+    });
+    return REP.db;
+  }
+  function repTx(mode, fn) {
+    return repdb().then(function (db) {
+      return new Promise(function (ok, bad) {
+        var t = db.transaction('reps', mode), res = fn(t.objectStore('reps'));
+        t.oncomplete = function () { ok(res && res.result); }; t.onerror = function () { bad(t.error); };
+      });
+    });
+  }
+
+  function repMeta(bytes) {
+    try {
+      var head = new TextDecoder().decode(bytes.subarray(0, Math.min(bytes.length, 4096)));
+      var i = head.indexOf('\n'), j = head.indexOf('\n', i + 1);
+      if (head.slice(0, i).indexOf('SCNPRPL') !== 0 || j < 0) return null;
+      var line = head.slice(i + 1, j);
+      try { return JSON.parse(line); }
+      catch (e1) { return JSON.parse(line.replace('},"devs":', ',"devs":')); }
+    } catch (e) { return null; }
+  }
+
+  function keepReplay(name, bytes, online) {
+    if (!name || !bytes || !bytes.length || bytes.length > 4 * 1024 * 1024) return Promise.resolve(null);
+    var meta = repMeta(bytes); if (!meta) return Promise.resolve(null);
+    var rec = { name: name, bytes: bytes, meta: meta, saved: Date.now(), online: !!online };
+    return repTx('readwrite', function (st) { st.put(rec); })
+      .then(function () { if (typeof tlog === 'function') tlog('replay kept ' + name + (online ? ' (online)' : '')); return repTx('readonly', function (st) { return st.getAll(); }); })
+      .then(function (all) {
+        var mine = all.filter(function (x) { return !x.online; }).sort(function (a, b) { return b.saved - a.saved; });
+        var gone = mine.slice(REP.MAX).concat(all.filter(function (x) { return x.online; }).sort(function (a, b) { return b.saved - a.saved; }).slice(30));
+        if (!gone.length) return rec;
+        return repTx('readwrite', function (st) { gone.forEach(function (x) { st.delete(x.name); }); }).then(function () { return rec; });
+      }).catch(function () { return null; });
+  }
+  function repNames(meta) { return String(meta.names || '').split(',').map(function (n) { try { return decodeURIComponent(n); } catch (e) { return n; } }); }
+  function repMatch(meta) {
+    var n = repNames(meta); while (n.length < 4) n.push('');
+    if (meta.type === '2v2') return n.filter(function (x, i) { return x && i % 2 === 0; }).join('·') + ' vs ' + n.filter(function (x, i) { return x && i % 2 === 1; }).join('·');
+    return (n[0] || '?') + ' vs ' + (n[1] || (meta.type === 'pve' ? 'CPU' : '?'));
+  }
+  function repOpen(tab) {
+    $('repModal').hidden = false; repTab(tab || REP.tab); repLoadMine();
+    if (!REP.online) repLoadOnline();
+  }
+  function repClose() { $('repModal').hidden = true; }
+  function repTab(t) {
+    REP.tab = t;
+    $('repMine').hidden = t !== 'mine'; $('repOnline').hidden = t !== 'online';
+    document.querySelectorAll('.rtabs button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-rt') === t); });
+  }
+  function repLabels() {
+    $('repTabMine').textContent = T('내 녹화', 'My recordings') + ' (' + REP.mine.length + ')';
+    $('repTabOnline').textContent = T('온라인', 'Online') + ' (' + (REP.online ? REP.online.length : '…') + ')';
+  }
+  function repLoadMine() {
+    return repTx('readonly', function (st) { return st.getAll(); }).then(function (all) {
+      REP.mine = (all || []).filter(function (x) { return !x.online; }).sort(function (a, b) { return b.saved - a.saved; });
+      REP.selMine = -1; drawRepMine(); repLabels(); if (REP.online) drawRepOnline();
+    }).catch(function () { REP.mine = []; drawRepMine(); repLabels(); });
+  }
+  function drawRepMine() {
+    var rows = REP.mine.map(function (x, i) {
+
+      var m = x.meta || {}, sc = Array.isArray(m.score) ? m.score : [0, 0], frames = Math.max(0, Number(m.frames) || 0);
+      var note = (m.complete === false ? T('중단됨', 'unfinished') : '') + (m.build && m.build !== WEB_BUILD ? (m.complete === false ? ', ' : '') + T('다른 빌드', 'other build') : '');
+      return '<tr data-i="' + i + '" class="' + (i === REP.selMine ? 'sel' : '') + '"><td>' + esc(String(m.date || '').slice(5)) + '</td><td>' + esc(repMatch(m)) + '</td><td>' + (Number(sc[0]) || 0) + ' - ' + (Number(sc[1]) || 0) +
+             '</td><td>' + esc(mmss(Math.round(frames / 60))) + '</td><td>' + esc(note) + '</td></tr>';
+    }).join('');
+    $('repMineRows').innerHTML = rows || '<tr><td colspan="5" class="empty">' + esc(T('아직 녹화된 경기가 없습니다 - 먼저 한 판 하세요.', 'No recordings yet - play a match first.')) + '</td></tr>';
+    var on = REP.selMine >= 0; $('repPlay').disabled = !on; $('repSave').disabled = !on; $('repDel').disabled = !on;
+  }
+  function repPlayRec(x) {
+    var m = x.meta || {};
+    if (m.build && m.build !== WEB_BUILD && !confirm(T('이 경기는 다른 빌드에서 녹화되어, 실제 경기와 다르게 보일 수 있습니다. 그래도 재생할까요?', 'This match was recorded on another build, so what you see may differ from what was played. Play it anyway?'))) return;
+    repClose();
+    start('replay', { replaylocal: x.name, game: m.game === 'cupsoc' ? 'cupsoc' : 'cupsocs2', names: repNames(m).map(encodeURIComponent).join(','),
+                      label: T('리플레이', 'Replay') + ' · ' + repMatch(m) });
+  }
+  function repSaveFile(x) {
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([x.bytes], { type: 'application/octet-stream' }));
+    a.download = x.name; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+
+  function repLoadOnline() {
+    $('repFresh').textContent = T('목록을 불러오는 중...', 'Loading the list...');
+    fetch('results.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (all) {
+      REP.online = (all || []).filter(function (x) { return x && typeof x.replay === 'string' && /\.scr$/i.test(x.replay); }).map(function (x) {
+        var n = (x.nicks || []).slice(); while (n.length < 4) n.push('');
+        var match = x.type === '2v2' ? [n[0], n[1]].filter(Boolean).join('·') + ' vs ' + [n[2], n[3]].filter(Boolean).join('·') : n[0] + ' vs ' + n[1];
+        var ft = +x.ft || 1, res = ft > 1 ? 'FT' + ft : T('단판', 'single');
+        if (x.pk && x.pk.length >= 2) res += ' · PK ' + x.pk[0] + '-' + x.pk[1];
+        return { when: String(x.when || ''), match: match, score: (x.score || [0, 0])[0] + ' - ' + (x.score || [0, 0])[1], res: res, ft: ft > 1, teams: x.type === '2v2',
+                 ed: x.edition === 'cupsocs2' ? 'cupsocs2' : 'cupsoc', len: x.time ? mmss(+x.time) : '', path: x.replay, name: x.replay.split('/').pop(), nicks: n };
+      }).sort(function (a, b) { return a.when < b.when ? 1 : a.when > b.when ? -1 : 0; });
+      $('repFresh').textContent = T(hhmm(new Date()) + ' 기준 ' + REP.online.length + '경기', REP.online.length + ' matches as of ' + hhmm(new Date()));
+      REP.selOn = -1; drawRepOnline(); repLabels();
+    }).catch(function (e) { $('repFresh').textContent = T('목록을 받지 못했습니다: ', 'Could not get the list: ') + e.message; REP.online = []; repLabels(); });
+  }
+  function repFiltered() {
+    var q = $('repQ').value.trim().toLowerCase(), me = cleanNick(nickIn.value).toLowerCase(), mineOnly = $('repMineOnly').checked;
+    var ed = $('repEd').value, ty = $('repTy').value;
+    return (REP.online || []).filter(function (r) {
+      if (q && !r.nicks.some(function (n) { return n.toLowerCase().indexOf(q) >= 0; })) return false;
+      if (mineOnly && !(me && r.nicks.some(function (n) { return n.toLowerCase() === me; }))) return false;
+      if (ed !== 'all' && r.ed !== ed) return false;
+      if (ty === '1v1' && r.teams) return false;
+      if (ty === '2v2' && !r.teams) return false;
+      if (ty === 'ft' && !r.ft) return false;
+      return true;
+    });
+  }
+  function drawRepOnline() {
+    var list = repFiltered(), got = {}, mineKeys = {};
+    REP.mine.forEach(function (x) { mineKeys[x.name.replace(/_p\d+\.scr$/i, '')] = 1; });
+    REP.onlineGot = REP.onlineGot || {};
+    $('repOnRows').innerHTML = list.map(function (r, i) {
+      var state = mineKeys[r.name.replace(/_p\d+\.scr$/i, '')] ? T('내 녹화에 있음', 'in my recordings') : REP.onlineGot[r.name] ? T('받음', 'downloaded') : T('받기 필요', 'to download');
+      return '<tr data-i="' + i + '" class="' + (i === REP.selOn ? 'sel' : '') + '"><td>' + esc(r.when.slice(5)) + '</td><td>' + esc(r.match) + '</td><td>' + esc(r.score) + '</td><td>' + esc(r.res) +
+             '</td><td>' + esc(r.ed === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + '</td><td>' + esc(r.len) + '</td><td>' + esc(state) + '</td></tr>';
+    }).join('') || '<tr><td colspan="7" class="empty">' + esc(REP.online ? T('조건에 맞는 경기가 없습니다.', 'No match fits.') : T('목록을 불러오는 중...', 'Loading the list...')) + '</td></tr>';
+    REP.shown = list;
+    var on = REP.selOn >= 0 && REP.selOn < list.length; $('repOnPlay').disabled = !on; $('repCopy').disabled = !on;
+  }
+  function repPlayOnline(r) {
+    $('repOnPlay').disabled = true; $('repFresh').textContent = T(r.name + ' 받는 중...', 'Downloading ' + r.name + '...');
+    fetch(r.path.split('/').map(encodeURIComponent).join('/')).then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.arrayBuffer(); }).then(function (buf) {
+      return keepReplay(r.name, new Uint8Array(buf), true);
+    }).then(function (rec) {
+      $('repOnPlay').disabled = false;
+      if (!rec) { $('repFresh').textContent = T(r.name + ' 을(를) 받지 못했습니다.', 'Could not get ' + r.name + '.'); return; }
+      REP.onlineGot[r.name] = 1; drawRepOnline(); repPlayRec(rec);
+    }).catch(function (e) { $('repOnPlay').disabled = false; $('repFresh').textContent = T(r.name + ' 을(를) 받지 못했습니다 (', 'Could not get ' + r.name + ' (') + e.message + ')'; });
+  }
+  (function () {
+    [['all', '버전: 전체', 'Version: all'], ['cupsocs2', '셀렉션', 'Selection'], ['cupsoc', '기본', 'Original']].forEach(function (o) { var e = document.createElement('option'); e.value = o[0]; e.textContent = T(o[1], o[2]); $('repEd').appendChild(e); });
+    [['all', '방식: 전체', 'Type: all'], ['1v1', '1 vs 1', '1 vs 1'], ['2v2', '2 vs 2', '2 vs 2'], ['ft', 'FT만', 'FT only']].forEach(function (o) { var e = document.createElement('option'); e.value = o[0]; e.textContent = T(o[1], o[2]); $('repTy').appendChild(e); });
+    $('repQ').placeholder = T('닉네임으로 찾기', 'Find a nickname');
+    $('netReplay').onclick = function () { repOpen(); };
+    $('repClose').onclick = repClose;
+    $('repModal').addEventListener('click', function (e) { if (e.target === $('repModal')) repClose(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('repModal').hidden) repClose(); });
+    document.querySelectorAll('.rtabs button').forEach(function (b) { b.onclick = function () { repTab(b.getAttribute('data-rt')); }; });
+    $('repMineRows').addEventListener('click', function (e) { var tr = e.target.closest('tr[data-i]'); if (!tr) return; REP.selMine = +tr.getAttribute('data-i'); drawRepMine(); });
+    $('repMineRows').addEventListener('dblclick', function (e) { var tr = e.target.closest('tr[data-i]'); if (tr) repPlayRec(REP.mine[+tr.getAttribute('data-i')]); });
+    $('repOnRows').addEventListener('click', function (e) { var tr = e.target.closest('tr[data-i]'); if (!tr) return; REP.selOn = +tr.getAttribute('data-i'); drawRepOnline(); });
+    $('repOnRows').addEventListener('dblclick', function (e) { var tr = e.target.closest('tr[data-i]'); if (tr) repPlayOnline(REP.shown[+tr.getAttribute('data-i')]); });
+    $('repPlay').onclick = function () { var x = REP.mine[REP.selMine]; if (x) repPlayRec(x); };
+    $('repSave').onclick = function () { var x = REP.mine[REP.selMine]; if (x) repSaveFile(x); };
+    $('repDel').onclick = function () {
+      var x = REP.mine[REP.selMine]; if (!x || !confirm(T(x.name + ' 을(를) 지울까요?', 'Delete ' + x.name + '?'))) return;
+      repTx('readwrite', function (st) { st.delete(x.name); }).then(repLoadMine);
+    };
+    $('repOpen').onclick = function () { $('repFile').value = ''; $('repFile').click(); };
+    $('repFile').onchange = function () {
+      var f = $('repFile').files[0]; if (!f) return;
+      f.arrayBuffer().then(function (buf) { return keepReplay(f.name, new Uint8Array(buf), false); }).then(function (rec) {
+        if (!rec) { alert(T('리플레이 파일(.scr)이 아닙니다.', 'Not a replay file (.scr).')); return; }
+        repLoadMine().then(function () { repPlayRec(rec); });
+      });
+    };
+    $('repOnPlay').onclick = function () { var r = (REP.shown || [])[REP.selOn]; if (r) repPlayOnline(r); };
+    $('repCopy').onclick = function () {
+      var r = (REP.shown || [])[REP.selOn]; if (!r) return;
+      var url = 'https://seibucup.online/' + r.path.split('/').map(encodeURIComponent).join('/');
+      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { $('repFresh').textContent = T('링크를 복사했습니다.', 'Link copied.'); }, function () { prompt(T('링크', 'Link'), url); });
+    };
+    ['repQ', 'repMineOnly', 'repEd', 'repTy'].forEach(function (id) { $(id).addEventListener(id === 'repQ' ? 'input' : 'change', function () { REP.selOn = -1; drawRepOnline(); }); });
+    repLabels();
+  })();
+
+  $('btnQuick').onclick = function () { if (needRom()) return; net.quick = true; send('QUICK ' + nset.time + ' 0 ' + ed); };
+  $('btnRefresh').onclick = function () { send('LIST'); if (net.sel) send('WHO ' + net.sel); };
+  $('btnJoin').onclick = function () { if (net.sel) joinRoom(net.sel); };
+  $('btnReady').onclick = function () {
+    var r = net.room; if (!r || r.slot > 4) return;
+    if (!r.ready[r.slot - 1] && needRom()) return;
+    send('READY ' + (r.ready[r.slot - 1] ? '0' : '1'));
+  };
+  $('btnLeave').onclick = function () {
+    var watching = !!(running && running.mode === 'match' && running.watching);
+    send('LEAVE'); leftRoom(); netSay(T('방에서 나왔습니다.', 'Left the room.'));
+    if (watching) stop(true);
+  };
+
+  var lastTap = { id: null, at: 0 };
+  setInterval(function () { var a = $('rfAge'); if (a) a.textContent = roomsAge(); }, 1000);
+  $('rfilter').addEventListener('click', function (e) {
+    var c = e.target.closest('.chip'); if (!c) return;
+    if (c.getAttribute('data-rsort')) nset.rsort = nset.rsort === 'ping' ? '' : 'ping';
+    else nset.rfilter = +c.getAttribute('data-rf') || 0;
+    saveSet(); drawTiles();
+  });
+  $('tiles').addEventListener('click', function (e) {
+    var t = e.target.closest('.tile'); if (!t || !net.ws) return;
+    if (t.getAttribute('data-new')) { if (!net.room) createRoom(); return; }
+    var id = t.getAttribute('data-id'); if (!id || net.room) return;
+    if (e.target.closest('.tact')) { lastTap.id = null; joinRoom(id); return; }
+    var now = performance.now();
+    if (lastTap.id === id && now - lastTap.at < 450) { lastTap.id = null; joinRoom(id); return; }
+    lastTap = { id: id, at: now };
+    if (net.sel !== id) {
+      net.sel = id; net.who = null; send('WHO ' + id);
+      document.querySelectorAll('#tiles .tile[data-id]').forEach(function (x) { x.classList.toggle('sel', x.getAttribute('data-id') === id); });
+      drawSeats(); drawButtons();
+    }
+  });
+  $('chatform').onsubmit = function (e) {
+    e.preventDefault(); var t = $('chatin').value.trim(); if (!t) return;
+    if (net.tab === 'room') { if (!net.room) { sys('room', T('방에 들어가야 방 채팅을 쓸 수 있습니다.', 'Join a room to use the room chat.')); return; } send('SAY ' + t); }
+    else send('NOTE ' + t);
+    $('chatin').value = '';
+  };
+  function drawRooms() { drawNet(); }
+  netLabels(); netSay(T('닉네임을 넣고 접속하세요. PC 런처 사용자와 같은 로비에서 만납니다.', 'Enter a nickname and connect. You meet the PC launcher players in the same lobby.'));
+  var lbn = $('langbtn'); if (lbn) lbn.addEventListener('click', function () { setTimeout(netLabels, 0); });
+
+  var TESTQ = new URLSearchParams(location.search), TESTLOG = TESTQ.get('postlog') && location.hostname === '127.0.0.1';
+  function tlog(t) { if (TESTLOG) fetch('/log', { method: 'POST', body: 'L[' + (net.nick || '?') + '] ' + t }).catch(function () {}); }
+
+  (function () { var ap = TESTQ.get('autoplay');
+    if (!ap || location.hostname !== '127.0.0.1') return;
+    fetch('/__testroms/cupsoc.zip').then(function (r) { return r.arrayBuffer(); })
+      .then(function (b) { return tx('readwrite', function (st) { st.put(b, 'cupsoc.zip'); }); }).then(loadRoms).then(function () { start(ap, TESTQ.get('rep') ? { replay: TESTQ.get('rep'), game: 'cupsocs2' } : undefined); });
+  })();
+  (function () { var an = TESTQ.get('autonet');
+    if (!an || location.hostname !== '127.0.0.1') return;
+    nickIn.value = an; document.querySelectorAll('.play-hero, .needs').forEach(function (e) { e.style.display = 'none'; });
+    var go = function () {
+      connect();
+      setTimeout(function () {
+        if (TESTQ.get('autoquick')) { if (TESTQ.get('autotime')) nset.time = +TESTQ.get('autotime'); tlog('press quick'); $('btnQuick').click(); return; }
+        if (TESTQ.get('autoroom') === 'create') { nset.ft = +(TESTQ.get('autoft') || 1); nset.time = +(TESTQ.get('autotime') || 150); nset.type = '1v1'; createRoom(); tlog('create ft ' + nset.ft); return; }
+        if (TESTQ.get('autoroom') === 'watch') {
+          var tw = setInterval(function () {
+            var f = net.rooms.filter(function (x) { return x[1] === TESTQ.get('host') && x[3] === 'playing'; })[0];
+            if (f && !net.room) { clearInterval(tw); tlog('watch ' + f[0]); send('JOIN ' + f[0] + ' 5 - watch'); }
+          }, 500);
+          return;
+        }
+        if (TESTQ.get('autoroom') === 'join') {
+          var tj = setInterval(function () {
+            var f = net.rooms.filter(function (x) { return x[1] === TESTQ.get('host') && x[3] === 'waiting'; })[0];
+            if (f && !net.room) { clearInterval(tj); tlog('join ' + f[0]); send('JOIN ' + f[0] + ' 5 -'); }
+          }, 500);
+          return;
+        }
+        var t = document.querySelector('.tile[data-id]'); if (t) t.click(); document.getElementById('net').scrollIntoView(); window.scrollBy(0, -120);
+      }, 2500);
+    };
+    if ((TESTQ.get('autoquick') || TESTQ.get('autoroom')) && !roms.length)
+      fetch('/__testroms/cupsoc.zip').then(function (r) { return r.arrayBuffer(); })
+        .then(function (b) { return tx('readwrite', function (st) { st.put(b, 'cupsoc.zip'); }); }).then(loadRoms).then(go);
+    else go();
+  })();
+
+  window.addEventListener('beforeunload', function (e) { if (running && running.mode === 'match') { e.preventDefault(); e.returnValue = ''; } });
+
+  window.addEventListener('pagehide', function () { if (net.ws) { try { net.ws.close(); } catch (e) {} } });
+
+  loadRoms(); drawPads();
+})();
+</script>
+</body>
+</html>
