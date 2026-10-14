@@ -1518,6 +1518,14 @@ local function setup_fields()
   scnp_install_stage_tap()
 end
 
+if cfg.mode == "lib" then
+  SCNP_SEL = SCNP_SEL or { mirror = false, on = false }
+  install_bgm_tap()
+  scnp_install_stage_tap()
+  SCNP_LIB = { frame = function() frame = frame + 1; scnp_stage_palette() end, draw = function() scnp_night_draw() end }
+  return
+end
+
 local function bind_local_keys()
   local names = {}
   for bit = 1, 8 do
