@@ -3119,6 +3119,7 @@ local function on_post_load()
   else status("netplay synchronised: %d players, you are player %d, delay %d frames", nplayers, local_slot, cfg.delay) end
 end
 
+SCNP_NOCHAT = env("SCNP_NOCHAT", "") == "1"
 QC = {
   T = {
     { ko = "안녕하세요! 잘 부탁해요", en = "Hi! Have a good game" },
@@ -3162,6 +3163,7 @@ function qc_show(seat, id)
 end
 
 function qc_from_peer(p, payload)
+  if SCNP_NOCHAT then return end
   local seat, id = payload:byte(1, 2)
   if not seat or seat ~= p.slot or seat < 1 or seat > 4 or not QC.T[id] or not (QC.open or SCNP_PVE.on) then return end
   if frame - QC.last[seat] < (SCNP_PVE.on and QC.PVEGAP or QC.GAP) then return end
@@ -3170,6 +3172,7 @@ function qc_from_peer(p, payload)
   broadcast("M" .. string.char(gen, seat, id))
 end
 function qc_send(id)
+  if SCNP_NOCHAT then return end
   QC.sent = true
   QC.mine = frame
   if is_host then
@@ -3206,7 +3209,7 @@ function qc_step()
   local selecting = sl and clock_start == nil and (mem:read_u8(sl) == 2 or mem:read_u8(sl) == 3) or false
   if selecting and not QC.insel then QC.sent = false end
   QC.insel = selecting
-  local open = over or frame <= QC.winTill or selecting
+  local open = not SCNP_NOCHAT and (over or frame <= QC.winTill or selecting)
   if open ~= QC.open then
     QC.closeAt = (not open) and frame or nil
     if open then QC.show = { {}, {} } end
