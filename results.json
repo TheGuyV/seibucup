@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 18:55","room":64,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[10,9],"nicks":["duli0212","이재경짱","",""],"replay":"replays/20261014_185546_duli0212_vs_이재경짱_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 18:40","room":61,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,5],"ft":2,"series":"61-261014183458-16","nicks":["드래곤타이거","11115","",""],"replay":"replays/20261014_184021_드래곤타이거_vs_11115_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 18:34","room":61,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,5],"ft":2,"series":"61-261014183458-16","nicks":["드래곤타이거","11115","",""],"replay":"replays/20261014_183458_드래곤타이거_vs_11115_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 18:34","room":58,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"58-261014182704-15","nicks":["로또영","김정은패스","",""],"replay":"replays/20261014_183440_로또영_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 19:26","room":10,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":3,"series":"10-261012192217-1","nicks":["드래곤타이거","이재경짱","",""],"replay":"replays/20261012_192654_드래곤타이거_vs_이재경짱_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 19:22","room":10,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":3,"series":"10-261012192217-1","nicks":["드래곤타이거","이재경짱","",""],"replay":"replays/20261012_192217_드래곤타이거_vs_이재경짱_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 19:14","room":9,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,0],"nicks":["초보","오락실체어샷","",""],"replay":"replays/20261012_191415_초보_vs_오락실체어샷_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 18:25","room":6,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,9],"nicks":["오락실체어샷","KingDani","",""],"replay":"replays/20261012_182515_오락실체어샷_vs_KingDani_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 18:22","room":5,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,5],"nicks":["mizunoasahi","skm","",""],"replay":"replays/20261012_182238_mizunoasahi_vs_skm_0-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 18:25","room":6,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,9],"nicks":["오락실체어샷","KingDani","",""],"replay":"replays/20261012_182515_오락실체어샷_vs_KingDani_2-2_p1.scr","edition":"cupsocs2"}
 ]
