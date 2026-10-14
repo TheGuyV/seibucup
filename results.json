@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 22:53","room":151,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":2,"series":"151-261014225345-43","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"슛돌이":["슛돌이 FC","FCX"]},"nicks":["Janet","슛돌이","",""],"replay":"replays/20261014_225345_Janet_vs_슛돌이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:52","room":147,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"nicks":["세이부축구만쉐","김창식씨","",""],"replay":"replays/20261014_225227_세이부축구만쉐_vs_김창식씨_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:49","room":147,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"nicks":["세이부축구만쉐","김창식씨","",""],"replay":"replays/20261014_224901_세이부축구만쉐_vs_김창식씨_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:46","room":143,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,5],"ft":3,"series":"143-261014223746-41","nicks":["상봉거지오락실","narahashi","",""],"replay":"replays/20261014_224627_상봉거지오락실_vs_narahashi_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 01:29","room":101,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":2,"series":"101-261013012945-30","nicks":["Janet","드래곤타이거","",""],"replay":"replays/20261013_012945_Janet_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 01:17","room":99,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,4],"ft":2,"series":"99-261013011337-28","nicks":["슛돌이","MrKei","",""],"replay":"replays/20261013_011731_슛돌이_vs_MrKei_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 01:16","room":97,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,10],"ft":3,"series":"97-261013011124-27","nicks":["123","NooB","",""],"replay":"replays/20261013_011640_123_vs_NooB_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 01:13","room":99,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"99-261013011337-28","nicks":["슛돌이","MrKei","",""],"replay":"replays/20261013_011337_슛돌이_vs_MrKei_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 01:11","room":97,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[5,10],"ft":3,"series":"97-261013011124-27","nicks":["123","NooB","",""],"replay":"replays/20261013_011124_123_vs_NooB_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 01:13","room":99,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"99-261013011337-28","nicks":["슛돌이","MrKei","",""],"replay":"replays/20261013_011337_슛돌이_vs_MrKei_3-2_p1.scr","edition":"cupsocs2"}
 ]
