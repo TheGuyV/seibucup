@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 19:12","room":66,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_191235_인형의기사_vs_이재경짱_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:08","room":66,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_190826_인형의기사_vs_이재경짱_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:04","room":66,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_190406_인형의기사_vs_이재경짱_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:00","room":64,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,9],"nicks":["duli0212","이재경짱","",""],"replay":"replays/20261014_190029_duli0212_vs_이재경짱_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 19:48","room":12,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"ft":3,"series":"12-261012194410-2","nicks":["이재경짱","드래곤타이거","",""],"replay":"replays/20261012_194816_이재경짱_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 19:44","room":12,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[9,10],"ft":3,"series":"12-261012194410-2","nicks":["이재경짱","드래곤타이거","",""],"replay":"replays/20261012_194410_이재경짱_vs_드래곤타이거_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 19:35","room":10,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":3,"series":"10-261012192217-1","nicks":["드래곤타이거","이재경짱","",""],"replay":"replays/20261012_193540_드래곤타이거_vs_이재경짱_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 19:31","room":10,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,9],"ft":3,"series":"10-261012192217-1","nicks":["드래곤타이거","이재경짱","",""],"replay":"replays/20261012_193131_드래곤타이거_vs_이재경짱_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 19:26","room":10,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":3,"series":"10-261012192217-1","nicks":["드래곤타이거","이재경짱","",""],"replay":"replays/20261012_192654_드래곤타이거_vs_이재경짱_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 19:31","room":10,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,9],"ft":3,"series":"10-261012192217-1","nicks":["드래곤타이거","이재경짱","",""],"replay":"replays/20261012_193131_드래곤타이거_vs_이재경짱_3-4_p1.scr","edition":"cupsocs2"}
 ]
