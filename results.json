@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 22:38","room":137,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[7,5],"pk":[4,5],"ft":3,"series":"137-261014222905-39","nicks":["이강인탁구","surferKIM","",""],"replay":"replays/20261014_223858_이강인탁구_vs_surferKIM_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:37","room":143,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"143-261014223746-41","nicks":["상봉거지오락실","narahashi","",""],"replay":"replays/20261014_223746_상봉거지오락실_vs_narahashi_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:35","room":141,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[0,5],"nicks":["슈니쇼빠더","로또영","",""],"replay":"replays/20261014_223550_슈니쇼빠더_vs_로또영_1-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:32","room":137,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":3,"series":"137-261014222905-39","nicks":["이강인탁구","surferKIM","",""],"replay":"replays/20261014_223256_이강인탁구_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 01:08","room":94,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"94-261013010009-26","nicks":["로또영","김정은패스","",""],"replay":"replays/20261013_010803_로또영_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 01:03","room":94,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"ft":3,"series":"94-261013010009-26","nicks":["로또영","김정은패스","",""],"replay":"replays/20261013_010355_로또영_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 01:00","room":94,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"94-261013010009-26","nicks":["로또영","김정은패스","",""],"replay":"replays/20261013_010009_로또영_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 00:35","room":90,"type":"1v1","time":180,"players":2,"score":[0,1],"teams":[5,3],"ft":3,"series":"90-261013003510-25","nicks":["dimakin","슛돌이","",""],"replay":"replays/20261013_003510_dimakin_vs_슛돌이_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 00:20","room":78,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,9],"nicks":["루키","소","",""],"replay":"replays/20261013_002054_루키_vs_소_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 00:35","room":90,"type":"1v1","time":180,"players":2,"score":[0,1],"teams":[5,3],"ft":3,"series":"90-261013003510-25","nicks":["dimakin","슛돌이","",""],"replay":"replays/20261013_003510_dimakin_vs_슛돌이_0-1_p1.scr","edition":"cupsocs2"}
 ]
