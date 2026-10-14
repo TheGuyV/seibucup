@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 21:58","room":106,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"nicks":["인형의기사","벌점","",""],"replay":"replays/20261014_215817_인형의기사_vs_벌점_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:57","room":118,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,0],"ft":3,"series":"118-261014215753-28","nicks":["샤부사커","이탈리아맨","",""],"replay":"replays/20261014_215753_샤부사커_vs_이탈리아맨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:55","room":114,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"ft":2,"series":"114-261014215032-27","nicks":["404page","상봉거지오락실","",""],"replay":"replays/20261014_215555_404page_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:55","room":116,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[5,0],"nicks":["슈니쇼빠더","소소","",""],"replay":"replays/20261014_215506_슈니쇼빠더_vs_소소_0-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 22:17","room":53,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,0],"nicks":["dfdf","샤부사커","",""],"replay":"replays/20261012_221758_dfdf_vs_샤부사커_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 22:13","room":53,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"nicks":["dfdf","샤부사커","",""],"replay":"replays/20261012_221349_dfdf_vs_샤부사커_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 22:11","room":47,"type":"2v2","time":150,"players":4,"score":[0,1],"teams":[7,8],"nicks":["드래곤타이거","소림축구","as","소"],"replay":"replays/20261012_221138_드래곤타이거_vs_as_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 22:07","room":47,"type":"2v2","time":150,"players":4,"score":[0,0],"teams":[10,7],"nicks":["드래곤타이거","소","소림축구","as"],"replay":"replays/20261012_220730_드래곤타이거_vs_소림축구_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 22:07","room":48,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"ft":3,"series":"48-261012215854-18","nicks":["샤부사커","dfdf","",""],"replay":"replays/20261012_220721_샤부사커_vs_dfdf_3-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 22:07","room":47,"type":"2v2","time":150,"players":4,"score":[0,0],"teams":[10,7],"nicks":["드래곤타이거","소","소림축구","as"],"replay":"replays/20261012_220730_드래곤타이거_vs_소림축구_0-0_p1.scr","edition":"cupsocs2"}
 ]
