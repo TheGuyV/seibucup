@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 21:54","room":106,"type":"1v1","time":150,"players":2,"score":[5,5],"teams":[7,3],"nicks":["인형의기사","김창식씨","",""],"replay":"replays/20261014_215418_인형의기사_vs_김창식씨_5-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:51","room":115,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"112-261014214814-25","ranked":1,"tnames":{"레온":["레온 FC","LEO"],"NooB":["NooB FC","NOO"]},"nicks":["레온","NooB","",""],"replay":"replays/20261014_215154_레온_vs_NooB_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:50","room":111,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,0],"nicks":["세이부축구만쉐","벌점","",""],"replay":"replays/20261014_215042_세이부축구만쉐_vs_벌점_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:50","room":114,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,5],"ft":2,"series":"114-261014215032-27","nicks":["404page","상봉거지오락실","",""],"replay":"replays/20261014_215032_404page_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 21:58","room":48,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":3,"series":"48-261012215854-18","nicks":["샤부사커","dfdf","",""],"replay":"replays/20261012_215854_샤부사커_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 21:54","room":43,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[8,10],"ft":2,"series":"43-261012215054-17","nicks":["404page","판순이","소","라울"],"replay":"replays/20261012_215436_404page_vs_소_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 21:53","room":36,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,9],"ft":3,"series":"36-261012213543-14","nicks":["샤부사커","드래곤타이거","",""],"replay":"replays/20261012_215327_샤부사커_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 21:50","room":43,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[8,4],"ft":2,"series":"43-261012215054-17","nicks":["판순이","404page","라울","소"],"replay":"replays/20261012_215054_판순이_vs_라울_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 21:49","room":36,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"ft":3,"series":"36-261012213543-14","nicks":["샤부사커","드래곤타이거","",""],"replay":"replays/20261012_214901_샤부사커_vs_드래곤타이거_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 21:50","room":43,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[8,4],"ft":2,"series":"43-261012215054-17","nicks":["판순이","404page","라울","소"],"replay":"replays/20261012_215054_판순이_vs_라울_1-0_p1.scr","edition":"cupsocs2"}
 ]
