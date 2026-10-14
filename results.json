@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 22:31","room":131,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"131-261014222320-38","nicks":["로또영","소소","",""],"replay":"replays/20261014_223118_로또영_vs_소소_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:29","room":137,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,5],"ft":3,"series":"137-261014222905-39","nicks":["이강인탁구","surferKIM","",""],"replay":"replays/20261014_222905_이강인탁구_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:27","room":131,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"131-261014222320-38","nicks":["로또영","소소","",""],"replay":"replays/20261014_222709_로또영_vs_소소_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:25","room":135,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"nicks":["세이부축구만쉐","레온","",""],"replay":"replays/20261014_222501_세이부축구만쉐_vs_레온_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 00:20","room":78,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,9],"nicks":["루키","소","",""],"replay":"replays/20261013_002054_루키_vs_소_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 00:17","room":86,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,3],"ft":3,"series":"86-261013001733-24","nicks":["dimakin","as","",""],"replay":"replays/20261013_001733_dimakin_vs_as_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 00:16","room":78,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"nicks":["루키","소","",""],"replay":"replays/20261013_001644_루키_vs_소_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 00:12","room":78,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,0],"nicks":["루키","소","",""],"replay":"replays/20261013_001232_루키_vs_소_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 00:08","room":78,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"nicks":["루키","소","",""],"replay":"replays/20261013_000825_루키_vs_소_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 00:12","room":78,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,0],"nicks":["루키","소","",""],"replay":"replays/20261013_001232_루키_vs_소_2-2_p1.scr","edition":"cupsocs2"}
 ]
