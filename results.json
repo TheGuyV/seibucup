@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-14 15:16","room":32,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,4],"ft":3,"series":"32-261014150817-6","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261014_151639_로또영_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 15:12","room":32,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"32-261014150817-6","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261014_151223_로또영_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 15:08","room":32,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"ft":3,"series":"32-261014150817-6","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261014_150817_로또영_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 14:42","room":29,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[3,0],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_144257_드래곤타이거_vs_narahashi_5-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-12 00:31","room":110,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"110-261012003159-23","nicks":["로또영","소림축구","",""],"replay":"replays/20261012_003159_로또영_vs_소림축구_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 00:26","room":101,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_002651_로또영_vs_USK_5-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-12 00:22","room":101,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_002225_로또영_vs_USK_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 00:18","room":101,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_001849_로또영_vs_USK_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-12 00:14","room":101,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_001451_로또영_vs_USK_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-12 00:18","room":101,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"101-261012001033-22","nicks":["로또영","USK","",""],"replay":"replays/20261012_001849_로또영_vs_USK_2-1_p1.scr","edition":"cupsocs2"}
 ]
