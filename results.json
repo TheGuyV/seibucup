@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 19:15","room":91,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,9],"nicks":["인형의기사","신발벗어","",""],"replay":"replays/20261015_191532_인형의기사_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:14","room":92,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"arcade":1,"nicks":["대한민국","미국","",""],"replay":"replays/20261015_191402_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:11","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"nicks":["sangrr","신발벗어","",""],"replay":"replays/20261015_191136_sangrr_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:07","room":84,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,7],"nicks":["신발벗어","인형의기사","",""],"replay":"replays/20261015_190709_신발벗어_vs_인형의기사_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 20:43","room":15,"type":"1v1","time":180,"players":2,"score":[4,1],"teams":[5,4],"ft":3,"series":"15-261013204346-7","nicks":["테일러장군","404page","",""],"replay":"replays/20261013_204346_테일러장군_vs_404page_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 20:41","room":13,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,8],"ft":2,"series":"13-261013203737-6","nicks":["빽이","라울","",""],"replay":"replays/20261013_204123_빽이_vs_라울_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 20:37","room":13,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[9,4],"ft":2,"series":"13-261013203737-6","nicks":["빽이","라울","",""],"replay":"replays/20261013_203737_빽이_vs_라울_0-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 20:36","room":10,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"10-261013202809-5","nicks":["404page","즐축","",""],"replay":"replays/20261013_203657_404page_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 20:32","room":10,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,7],"ft":2,"series":"10-261013202809-5","nicks":["404page","즐축","",""],"replay":"replays/20261013_203230_404page_vs_즐축_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 20:36","room":10,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"10-261013202809-5","nicks":["404page","즐축","",""],"replay":"replays/20261013_203657_404page_vs_즐축_3-2_p1.scr","edition":"cupsocs2"}
 ]
