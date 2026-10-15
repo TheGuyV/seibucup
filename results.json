@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 18:40","room":70,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,3],"nicks":["인형의기사","윈드","",""],"replay":"replays/20261015_184000_인형의기사_vs_윈드_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 18:36","room":70,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[7,0],"nicks":["인형의기사","윈드","",""],"replay":"replays/20261015_183624_인형의기사_vs_윈드_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 18:32","room":70,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,5],"nicks":["인형의기사","윈드","",""],"replay":"replays/20261015_183254_인형의기사_vs_윈드_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 18:11","room":62,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["세이부축구만쉐","duli0212","",""],"replay":"replays/20261015_181117_세이부축구만쉐_vs_duli0212_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 20:28","room":10,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,8],"ft":2,"series":"10-261013202809-5","nicks":["404page","즐축","",""],"replay":"replays/20261013_202809_404page_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 20:18","room":6,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[5,4],"ft":3,"series":"6-261013201842-4","nicks":["드래곤타이거","라울","",""],"replay":"replays/20261013_201842_드래곤타이거_vs_라울_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 19:40","room":1,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":3,"series":"1-261013193157-1","nicks":["이재경짱","홍명보","",""],"replay":"replays/20261013_194046_이재경짱_vs_홍명보_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 19:36","room":1,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":3,"series":"1-261013193157-1","nicks":["이재경짱","홍명보","",""],"replay":"replays/20261013_193641_이재경짱_vs_홍명보_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 19:31","room":1,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"ft":3,"series":"1-261013193157-1","nicks":["이재경짱","홍명보","",""],"replay":"replays/20261013_193157_이재경짱_vs_홍명보_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 19:36","room":1,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":3,"series":"1-261013193157-1","nicks":["이재경짱","홍명보","",""],"replay":"replays/20261013_193641_이재경짱_vs_홍명보_2-3_p1.scr","edition":"cupsocs2"}
 ]
