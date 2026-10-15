@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 20:06","room":127,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["초조","mizunoasahi","",""],"replay":"replays/20261015_200656_초조_vs_mizunoasahi_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:06","room":121,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["으랏차","순숙델","",""],"replay":"replays/20261015_200635_으랏차_vs_순숙델_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:05","room":123,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,0],"nicks":["인형의기사","narahashi","",""],"replay":"replays/20261015_200506_인형의기사_vs_narahashi_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:03","room":124,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,7],"ft":2,"series":"124-261015200317-18","nicks":["김정은패스","콩메모","",""],"replay":"replays/20261015_200317_김정은패스_vs_콩메모_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 23:25","room":3,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,0],"nicks":["404page","소소","",""],"replay":"replays/20261013_232547_404page_vs_소소_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 23:23","room":1,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"ft":3,"series":"1-261013232310-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261013_232310_로또영_vs_dfdf_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 23:12","room":56,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,4],"ft":3,"series":"56-261013225750-17","nicks":["드래곤타이거","슛돌이","",""],"replay":"replays/20261013_231220_드래곤타이거_vs_슛돌이_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 23:07","room":56,"type":"1v1","time":150,"players":2,"score":[5,6],"teams":[0,7],"ft":3,"series":"56-261013225750-17","nicks":["드래곤타이거","슛돌이","",""],"replay":"replays/20261013_230730_드래곤타이거_vs_슛돌이_5-6_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 23:01","room":56,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,7],"ft":3,"series":"56-261013225750-17","nicks":["드래곤타이거","슛돌이","",""],"replay":"replays/20261013_230141_드래곤타이거_vs_슛돌이_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 23:07","room":56,"type":"1v1","time":150,"players":2,"score":[5,6],"teams":[0,7],"ft":3,"series":"56-261013225750-17","nicks":["드래곤타이거","슛돌이","",""],"replay":"replays/20261013_230730_드래곤타이거_vs_슛돌이_5-6_p1.scr","edition":"cupsocs2"}
 ]
