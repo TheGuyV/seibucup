@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 00:52","room":1,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"1-261016004141-2","nicks":["로또영","zxzx","",""],"replay":"replays/20261016_005202_로또영_vs_zxzx_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:51","room":6,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,8],"arcade":1,"nicks":["브라질","아르헨티나","",""],"replay":"replays/20261016_005107_arcade_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:50","room":5,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,5],"nicks":["leeno","싸커킴","",""],"replay":"replays/20261016_005025_leeno_vs_싸커킴_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:45","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"1-261016004141-2","nicks":["로또영","zxzx","",""],"replay":"replays/20261016_004558_로또영_vs_zxzx_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 20:46","room":91,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"nicks":["인형의기사","ggds2","",""],"replay":"replays/20261014_204636_인형의기사_vs_ggds2_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 20:16","room":81,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[0,3],"ft":3,"series":"81-261014195853-20","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261014_201654_드래곤타이거_vs_판순이_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 20:11","room":81,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"81-261014195853-20","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261014_201113_드래곤타이거_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 20:07","room":81,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,4],"ft":3,"series":"81-261014195853-20","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261014_200717_드래곤타이거_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 20:02","room":81,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,4],"ft":3,"series":"81-261014195853-20","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261014_200246_드래곤타이거_vs_판순이_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 20:07","room":81,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,4],"ft":3,"series":"81-261014195853-20","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261014_200717_드래곤타이거_vs_판순이_3-4_p1.scr","edition":"cupsocs2"}
 ]
