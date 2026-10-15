@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 20:51","room":145,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,10],"ft":2,"series":"142-261015204728-22","ranked":1,"tnames":{"404page":["404page Cafe","PAG"]},"nicks":["404page","드래곤타이거","",""],"replay":"replays/20261015_205148_404page_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:51","room":134,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[7,0],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_205122_신발벗어_vs_덕장배_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:50","room":140,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,4],"ft":2,"series":"140-261015204657-21","nicks":["Janet","김창식씨","",""],"replay":"replays/20261015_205046_Janet_vs_김창식씨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:47","room":134,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[8,4],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_204743_신발벗어_vs_덕장배_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 00:25","room":35,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,10],"ft":2,"series":"35-261014002550-10","nicks":["신홍기","뚱이","",""],"replay":"replays/20261014_002550_신홍기_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 00:23","room":33,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"33-261014001812-9","nicks":["로또영","이강인탁구","",""],"replay":"replays/20261014_002308_로또영_vs_이강인탁구_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 00:18","room":33,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"ft":3,"series":"33-261014001812-9","nicks":["로또영","이강인탁구","",""],"replay":"replays/20261014_001812_로또영_vs_이강인탁구_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 00:12","room":25,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,3],"ft":2,"series":"25-261014000417-8","nicks":["슛돌이","로또영","",""],"replay":"replays/20261014_001208_슛돌이_vs_로또영_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 00:08","room":25,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,9],"ft":2,"series":"25-261014000417-8","nicks":["슛돌이","로또영","",""],"replay":"replays/20261014_000812_슛돌이_vs_로또영_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 00:12","room":25,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,3],"ft":2,"series":"25-261014000417-8","nicks":["슛돌이","로또영","",""],"replay":"replays/20261014_001208_슛돌이_vs_로또영_3-1_p1.scr","edition":"cupsocs2"}
 ]
