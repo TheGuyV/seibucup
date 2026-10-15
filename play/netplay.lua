@@ -1255,6 +1255,14 @@ function scnp_costume_hud_step()
     end
   end
 end
+
+function scnp_flag_mid(kit)
+  local function far(x, y) return x and y and math.sqrt((x[1] - y[1]) ^ 2 + (x[2] - y[2]) ^ 2 + (x[3] - y[3]) ^ 2) >= 90 end
+  local s = kit[1]
+  if far(s, kit[2]) then return kit[2] end
+  if far(s, kit[3]) then return kit[3] end
+  return (0.3 * s[1] + 0.59 * s[2] + 0.11 * s[3]) > 140 and { 32, 32, 40 } or { 255, 255, 255 }
+end
 function scnp_costume_hud_draw()
   local C, H = SCNP_COSTUME, SCNP_COSTUME.HUD
   if not C.on or not H.vis then return end
@@ -1270,7 +1278,7 @@ function scnp_costume_hud_draw()
     if s then
       local px = H.X[side].px
       local kit = (C.kit and C.kit[side]) or s.home
-      local a, b = team(kit[1]), team(kit[2])
+      local a, b = team(kit[1]), team(scnp_flag_mid(kit))
       box(px, 8, px + 8, 23, a); box(px + 8, 8, px + 15, 23, b); box(px + 15, 8, px + 23, 23, a)
       box(px + 23, 8, px + 24, 23, black); box(px + 1, 23, px + 24, 24, black)
       local ab = (s.abbr or ""):upper()
