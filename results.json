@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 01:18","room":6,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"nicks":["zxzx","roiii","",""],"replay":"replays/20261016_011837_zxzx_vs_roiii_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:15","room":4,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,9],"arcade":1,"nicks":["서독","서독","",""],"replay":"replays/20261016_011539_arcade_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:06","room":3,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,8],"ft":2,"series":"2-261016010257-1","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_010643_즐축_vs_주물러_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:02","room":2,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,8],"ft":2,"series":"2-261016010257-1","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_010257_즐축_vs_주물러_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 21:03","room":91,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,5],"nicks":["인형의기사","김창식씨","",""],"replay":"replays/20261014_210351_인형의기사_vs_김창식씨_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:03","room":97,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"97-261014210317-22","ranked":1,"tnames":{"김정은패스":["김정은패스 FC","FCX"]},"nicks":["Janet","김정은패스","",""],"replay":"replays/20261014_210317_Janet_vs_김정은패스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:01","room":95,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":2,"series":"95-261014210118-21","nicks":["404page","드래곤타이거","",""],"replay":"replays/20261014_210118_404page_vs_드래곤타이거_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 20:59","room":91,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,0],"nicks":["인형의기사","김창식씨","",""],"replay":"replays/20261014_205946_인형의기사_vs_김창식씨_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 20:55","room":91,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,10],"nicks":["인형의기사","김창식씨","",""],"replay":"replays/20261014_205547_인형의기사_vs_김창식씨_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 20:59","room":91,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,0],"nicks":["인형의기사","김창식씨","",""],"replay":"replays/20261014_205946_인형의기사_vs_김창식씨_1-3_p1.scr","edition":"cupsocs2"}
 ]
