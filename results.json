@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 01:53","room":10,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_015311_zxzx_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:51","room":12,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"12-261016015110-7","nicks":["싸커킴","dfdf","",""],"replay":"replays/20261016_015110_싸커킴_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:49","room":10,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_014930_zxzx_vs_로또영_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:45","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"11-261016014538-6","nicks":["싸커킴","roiii","",""],"replay":"replays/20261016_014538_싸커킴_vs_roiii_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 21:31","room":103,"type":"1v1","time":180,"players":2,"score":[3,3],"teams":[10,5],"nicks":["으랏차","로또영","",""],"replay":"replays/20261014_213115_으랏차_vs_로또영_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:26","room":91,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"nicks":["인형의기사","모이자오락실","",""],"replay":"replays/20261014_212635_인형의기사_vs_모이자오락실_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 21:26","room":103,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[7,5],"nicks":["으랏차","로또영","",""],"replay":"replays/20261014_212611_으랏차_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 21:23","room":100,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,9],"ft":3,"series":"100-261014211129-23","nicks":["김창식씨","상봉거지오락실","",""],"replay":"replays/20261014_212327_김창식씨_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 21:20","room":91,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[3,5],"nicks":["인형의기사","로또영","",""],"replay":"replays/20261014_212047_인형의기사_vs_로또영_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 21:23","room":100,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,9],"ft":3,"series":"100-261014211129-23","nicks":["김창식씨","상봉거지오락실","",""],"replay":"replays/20261014_212327_김창식씨_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"}
 ]
