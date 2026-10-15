@@ -271,6 +271,7 @@
   .rfilter .chip.seat.has { background: rgba(76,196,119,.32); }
   .rfilter .chip.seat.on { background: #2f9e55; border-color: #2f9e55; color: #fff; }
   .rfilter .age { color: var(--n-mute); }
+  .rfilter .chip.rep { margin-left: 4px; }
   .tile.open { border: 2px solid var(--n-green); padding: 6px 9px 7px; }
   .tile.sel { border-color: var(--n-blue2); }
   .tile .t5 { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 12px; color: var(--n-mute); }
@@ -1341,6 +1342,8 @@
     if (!net.ws) { el.innerHTML = ''; return; }
     var cur = nset.rfilter || 0;
     el.innerHTML = RF_KEYS.map(function (k, i) { return '<button type="button" class="chip' + (i === 1 ? ' seat' + (counts[i] > 0 ? ' has' : '') : '') + (cur === i ? ' on' : '') + '" data-rf="' + i + '">' + esc(T(k[0], k[1]) + ' ' + counts[i]) + '</button>'; }).join('') +
+
+      '<button type="button" class="chip rep" data-rrep="1">' + esc('▶ ' + T('리플레이', 'Replays')) + '</button>' +
       '<span class="grow"></span><button type="button" class="chip" data-rsort="1">' + esc(nset.rsort === 'ping' ? T('정렬: 핑 낮은 순', 'Order: lowest ping') : T('정렬: 기본', 'Order: default')) + '</button>' +
       '<span class="age" id="rfAge">' + esc(roomsAge()) + '</span>';
   }
@@ -2355,6 +2358,7 @@
   setInterval(function () { var a = $('rfAge'); if (a) a.textContent = roomsAge(); }, 1000);
   $('rfilter').addEventListener('click', function (e) {
     var c = e.target.closest('.chip'); if (!c) return;
+    if (c.getAttribute('data-rrep')) { repOpen(); return; }
     if (c.getAttribute('data-rsort')) nset.rsort = nset.rsort === 'ping' ? '' : 'ping';
     else nset.rfilter = +c.getAttribute('data-rf') || 0;
     saveSet(); drawTiles();
