@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 22:10","room":177,"type":"2v2","time":150,"players":4,"score":[0,1],"teams":[8,4],"ft":2,"series":"177-261015220708-26","nicks":["즐축","rdsa","판순이","콩메모"],"replay":"replays/20261015_221050_즐축_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:07","room":161,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,9],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_220743_인형의기사_vs_소소_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:07","room":177,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[3,7],"ft":2,"series":"177-261015220708-26","nicks":["rdsa","즐축","콩메모","판순이"],"replay":"replays/20261015_220708_rdsa_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:03","room":161,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[7,3],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_220323_인형의기사_vs_소소_1-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 17:27","room":47,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"ft":3,"series":"47-261014171745-10","nicks":["바트","키아누리브스","",""],"replay":"replays/20261014_172706_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 17:24","room":44,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"44-261014172103-11","nicks":["로또영","왕초보","",""],"replay":"replays/20261014_172433_로또영_vs_왕초보_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 17:23","room":47,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[8,9],"ft":3,"series":"47-261014171745-10","nicks":["바트","키아누리브스","",""],"replay":"replays/20261014_172312_바트_vs_키아누리브스_4-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 17:21","room":44,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"44-261014172103-11","nicks":["로또영","왕초보","",""],"replay":"replays/20261014_172103_로또영_vs_왕초보_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 17:17","room":47,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":3,"series":"47-261014171745-10","nicks":["바트","키아누리브스","",""],"replay":"replays/20261014_171745_바트_vs_키아누리브스_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 17:21","room":44,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"ft":3,"series":"44-261014172103-11","nicks":["로또영","왕초보","",""],"replay":"replays/20261014_172103_로또영_vs_왕초보_1-0_p1.scr","edition":"cupsocs2"}
 ]
