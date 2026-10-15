@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 21:59","room":161,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,0],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_215904_인형의기사_vs_소소_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:56","room":173,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"nicks":["서퍼킴","김창식씨","",""],"replay":"replays/20261015_215658_서퍼킴_vs_김창식씨_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:54","room":174,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,7],"ft":2,"series":"172-261015215040-25","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"즐축":["TheSoccer","EJY"]},"nicks":["판순이","즐축","",""],"replay":"replays/20261015_215447_판순이_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:53","room":173,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"nicks":["서퍼킴","김창식씨","",""],"replay":"replays/20261015_215321_서퍼킴_vs_김창식씨_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 17:12","room":47,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,5],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261014_171214_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 17:08","room":47,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,4],"nicks":["바트","키아누리브스","",""],"replay":"replays/20261014_170821_바트_vs_키아누리브스_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 16:02","room":38,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"38-261014160232-9","ranked":1,"nicks":["Janet","상봉거지오락실","",""],"replay":"replays/20261014_160232_Janet_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 15:53","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"35-261014154944-8","nicks":["로또영","정의사회구현","",""],"replay":"replays/20261014_155352_로또영_vs_정의사회구현_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 15:49","room":35,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"35-261014154944-8","nicks":["로또영","정의사회구현","",""],"replay":"replays/20261014_154944_로또영_vs_정의사회구현_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 15:53","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"35-261014154944-8","nicks":["로또영","정의사회구현","",""],"replay":"replays/20261014_155352_로또영_vs_정의사회구현_3-2_p1.scr","edition":"cupsocs2"}
 ]
