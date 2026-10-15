@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 09:44","room":4,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"arcade":1,"nicks":["일본","서독","",""],"replay":"replays/20261015_094450_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 00:51","room":168,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"168-261015003112-46","nicks":["anungdf","즐축","",""],"replay":"replays/20261015_005128_anungdf_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 00:46","room":168,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"168-261015003112-46","nicks":["anungdf","즐축","",""],"replay":"replays/20261015_004600_anungdf_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 00:41","room":168,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,8],"ft":3,"series":"168-261015003112-46","nicks":["anungdf","즐축","",""],"replay":"replays/20261015_004106_anungdf_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 16:20","room":37,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":3,"series":"37-261013162003-5","nicks":["로또영","빽이","",""],"replay":"replays/20261013_162003_로또영_vs_빽이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 16:01","room":34,"type":"1v1","time":600,"players":2,"score":[6,5],"teams":[3,5],"ft":5,"series":"34-261013160113-4","nicks":["윤각수","기수","",""],"replay":"replays/20261013_160113_윤각수_vs_기수_6-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 15:47","room":31,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[10,5],"nicks":["빽이","1","",""],"replay":"replays/20261013_154755_빽이_vs_1_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 15:46","room":26,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,7],"nicks":["기수","윤각수","",""],"replay":"replays/20261013_154633_기수_vs_윤각수_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 15:43","room":27,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,10],"nicks":["Airwalkv","NooB","",""],"replay":"replays/20261013_154302_Airwalkv_vs_NooB_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 15:46","room":26,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,7],"nicks":["기수","윤각수","",""],"replay":"replays/20261013_154633_기수_vs_윤각수_2-2_p1.scr","edition":"cupsocs2"}
 ]
