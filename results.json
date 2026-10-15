@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 21:42","room":156,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,9],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_214237_신발벗어_vs_덕장배_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:42","room":161,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"nicks":["인형의기사","콩메모","",""],"replay":"replays/20261015_214209_인형의기사_vs_콩메모_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:38","room":156,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[4,7],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_213838_신발벗어_vs_덕장배_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:38","room":164,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,5],"arcade":1,"nicks":["대한민국","대한민국","",""],"replay":"replays/20261015_213827_arcade_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 15:08","room":32,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"ft":3,"series":"32-261014150817-6","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261014_150817_로또영_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 14:42","room":29,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[3,0],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_144257_드래곤타이거_vs_narahashi_5-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 14:40","room":30,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[7,5],"nicks":["강원fc","상봉거지오락실","",""],"replay":"replays/20261014_144031_강원fc_vs_상봉거지오락실_0-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 14:38","room":29,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[0,3],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_143824_드래곤타이거_vs_narahashi_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 14:34","room":29,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[9,10],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_143434_드래곤타이거_vs_narahashi_3-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 14:38","room":29,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[0,3],"ft":3,"series":"29-261014143434-5","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_143824_드래곤타이거_vs_narahashi_3-0_p1.scr","edition":"cupsocs2"}
 ]
