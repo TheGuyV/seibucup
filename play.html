@@ -474,7 +474,7 @@
           <div class="nrow"><label><span class="ko">닉네임 열쇠</span><span class="en">Nickname key</span></label>
             <div class="nfield"><button class="nbtn" id="btnNickKey" type="button"><span class="ko">내 닉네임 열쇠 보기</span><span class="en">Show my nickname key</span></button></div></div>
           <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
-          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netKeys" type="button"><span class="ko">키 설정</span><span class="en">Keys</span></button><button class="nbtn" id="netAlone" type="button"><span class="ko">혼자놀기</span><span class="en">Play solo</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
+          <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">패스로 GOD 선택</span><span class="en">Pick GOD with Pass</span></button></div><button class="nbtn" id="netKeys" type="button"><span class="ko">키 설정</span><span class="en">Keys</span></button><button class="nbtn" id="netAlone" type="button"><span class="ko">동전넣기</span><span class="en">Insert Coin</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button></div></div>
         </div>
         <div class="net-col">
           <div class="nrow"><span class="nlab"><span class="ko">대전타입</span><span class="en">Match type</span></span>
@@ -1924,7 +1924,7 @@
     var c = $('ilClose'); if (c) c.onclick = function () { hideInterlude(); $('stage').hidden = true; };
   }
 
-  function arcSoloLabel(god) { return god ? T('혼자놀기 · GOD', 'Play solo · GOD') : T('혼자놀기', 'Play solo'); }
+  function arcSoloLabel(god) { return god ? T('동전넣기 · GOD', 'Insert Coin · GOD') : T('동전넣기', 'Insert Coin'); }
   function arcSolo(god, prio, resume) {
     net.arcSoloGod = god;
     start('solo', { label: arcSoloLabel(god), god: god, arcade: romOk.sel, resume: resume });
@@ -1945,7 +1945,7 @@
       } else arcSolo(g);
     } else if (sub === 'NONE') {
       if (net.arcAsk) { var g2 = net.arcAsk === 2; net.arcAsk = 0; arcSolo(g2); }
-      else if (net.arcRole === 'chal' && !net.room) { net.arcRole = ''; sys('pub', T('상대가 방금 게임을 끝냈습니다. 혼자놀기를 시작합니다.', 'The other player has just stopped - Play solo starts instead.')); arcSolo(net.arcSoloGod); }
+      else if (net.arcRole === 'chal' && !net.room) { net.arcRole = ''; sys('pub', T('상대가 방금 게임을 끝냈습니다. 동전넣기를 시작합니다.', 'The other player has just stopped - Insert Coin starts instead.')); arcSolo(net.arcSoloGod); }
     } else if (sub === 'GO') {
       net.arcRole = 'chal'; net.arcEnd = null;
       sys('pub', T('온라인 대전을 시작합니다 (닉네임·대화 없음, 오락실 규칙).', 'Here we go - an online match (no names, no chat, the arcade\'s rules).'));
@@ -2049,7 +2049,7 @@
   function showNotice(then) { noticeThen = then || null; $('useNotice').hidden = false; $('unOk').focus(); }
   function hideNotice() { $('useNotice').hidden = true; noticeThen = null; }
   $('unOk').onclick = function () { store.set('web_notice', String(NOTICE_V)); var t = noticeThen; hideNotice(); if (t) t(); };
-  $('unClose').onclick = function () { hideNotice(); if (!noticeOk()) netSay(T('이용 안내에 동의하지 않으면 온라인 대전(서버 접속)을 할 수 없습니다. 튜토리얼과 연습 게임은 됩니다.', 'Without agreeing to the notice there is no online play (Play solo included). The tutorial and practice still work.')); };
+  $('unClose').onclick = function () { hideNotice(); if (!noticeOk()) netSay(T('이용 안내에 동의하지 않으면 온라인 대전(서버 접속)을 할 수 없습니다. 튜토리얼과 연습 게임은 됩니다.', 'Without agreeing to the notice there is no online play (Insert Coin included). The tutorial and practice still work.')); };
   $('useNotice').addEventListener('click', function (e) { if (e.target === this) $('unClose').onclick(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('useNotice').hidden) $('unClose').onclick(); });
   $('unLink').onclick = function (e) { e.preventDefault(); showNotice(null); };
@@ -2132,14 +2132,14 @@
   $('btnSolo').onclick = waitingGame;
 
   $('netAlone').onclick = function () {
-    if (!(net.ws && net.ws.readyState === 1)) { $('aloneMenu').hidden = true; alert(T('혼자놀기는 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Play solo needs a connection to the server - press Connect first.')); return; }
+    if (!(net.ws && net.ws.readyState === 1)) { $('aloneMenu').hidden = true; alert(T('동전넣기는 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Insert Coin needs a connection to the server - press Connect first.')); return; }
     $('aloneMenu').style.left = $('netAlone').offsetLeft + 'px'; $('aloneMenu').hidden = !$('aloneMenu').hidden; };
 
   $('netKeys').onclick = function () {
     tx('readonly', function (st) { return st.count(); }, 'cfg').catch(function () { return 0; }).then(function (n) {
       if (n > 0 && !confirm(T('이 브라우저에 키 설정이 이미 저장되어 있습니다.\n\n키 설정을 다시 하시겠습니까?', 'Your keys are saved in this browser already.\n\nSet them again?'))) return;
-      if (!confirm(T('게임만 따로 켜서 키를 설정합니다.\n\n게임이 켜지면 Tab 키 → Input Settings → Input Assignments (this system) 에서\nP1 의 방향키, Button 1(슛), Button 2(패스), 1 Player Start 를 원하는 키로 바꾸세요. 게임패드도 됩니다.\n\n다 했으면 게임 아래 [그만하기] 로 닫으세요. 그 키가 이 브라우저의 온라인 대전, 혼자놀기, 연습 게임에 그대로 쓰입니다.',
-                     'The game starts on its own so you can set your keys.\n\nIn the game press Tab -> Input Settings -> Input Assignments (this system)\nand set P1\'s directions, Button 1 (shoot), Button 2 (pass) and 1 Player Start. A gamepad works too.\n\nWhen you are done, close the game with [Stop] below it. Online matches, Play solo and Practice in this browser use those keys.'))) return;
+      if (!confirm(T('게임만 따로 켜서 키를 설정합니다.\n\n게임이 켜지면 Tab 키 → Input Settings → Input Assignments (this system) 에서\nP1 의 방향키, Button 1(슛), Button 2(패스), 1 Player Start 를 원하는 키로 바꾸세요. 게임패드도 됩니다.\n\n다 했으면 게임 아래 [그만하기] 로 닫으세요. 그 키가 이 브라우저의 온라인 대전, 동전넣기, 연습 게임에 그대로 쓰입니다.',
+                     'The game starts on its own so you can set your keys.\n\nIn the game press Tab -> Input Settings -> Input Assignments (this system)\nand set P1\'s directions, Button 1 (shoot), Button 2 (pass) and 1 Player Start. A gamepad works too.\n\nWhen you are done, close the game with [Stop] below it. Online matches, Insert Coin and Practice in this browser use those keys.'))) return;
       start('solo', { label: T('키 설정', 'Keys') });
     });
   };
@@ -2147,7 +2147,7 @@
     b.onclick = function () {
       $('aloneMenu').hidden = true;
       var god = b.getAttribute('data-god') === '1';
-      if (!(net.ws && net.ws.readyState === 1)) { alert(T('혼자놀기는 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Play solo needs a connection to the server - press Connect first.')); return; }
+      if (!(net.ws && net.ws.readyState === 1)) { alert(T('동전넣기는 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Insert Coin needs a connection to the server - press Connect first.')); return; }
       arcBegin(god);
     };
   });
