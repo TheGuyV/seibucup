@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 00:19","room":1,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001902_로또영_vs_dfdf_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:13","room":1,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,9],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001328_로또영_vs_dfdf_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:10","room":1,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001002_로또영_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:00","room":222,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[0,8],"nicks":["소소","주물러","",""],"replay":"replays/20261016_000016_소소_vs_주물러_4-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 19:44","room":66,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_194422_인형의기사_vs_이재경짱_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:43","room":76,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,3],"nicks":["정의사회구현","판순이","",""],"replay":"replays/20261014_194330_정의사회구현_vs_판순이_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:41","room":77,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,0],"ft":2,"series":"77-261014193734-18","nicks":["드래곤타이거","narahashi","",""],"replay":"replays/20261014_194124_드래곤타이거_vs_narahashi_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 19:40","room":75,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"nicks":["으랏차","라울","",""],"replay":"replays/20261014_194031_으랏차_vs_라울_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 19:40","room":66,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_194020_인형의기사_vs_이재경짱_4-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 19:40","room":75,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"nicks":["으랏차","라울","",""],"replay":"replays/20261014_194031_으랏차_vs_라울_2-3_p1.scr","edition":"cupsocs2"}
 ]
