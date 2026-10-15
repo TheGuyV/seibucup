@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 03:13","room":19,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[7,9],"nicks":["감자","dfdf","",""],"replay":"replays/20261016_031322_감자_vs_dfdf_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 03:08","room":19,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,7],"nicks":["감자","dfdf","",""],"replay":"replays/20261016_030854_감자_vs_dfdf_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 03:05","room":19,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["감자","dfdf","",""],"replay":"replays/20261016_030507_감자_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 03:01","room":19,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,7],"nicks":["감자","dfdf","",""],"replay":"replays/20261016_030133_감자_vs_dfdf_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 22:03","room":119,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"119-261014220003-29","nicks":["김창식씨","NooB","",""],"replay":"replays/20261014_220342_김창식씨_vs_NooB_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:02","room":123,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,0],"ft":3,"series":"123-261014220243-32","nicks":["뚱이","세이부축구만쉐","",""],"replay":"replays/20261014_220243_뚱이_vs_세이부축구만쉐_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:01","room":106,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[7,3],"nicks":["인형의기사","벌점","",""],"replay":"replays/20261014_220130_인형의기사_vs_벌점_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:00","room":121,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"121-261014220031-31","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"레온":["레온 FC","LEO"]},"nicks":["Janet","레온","",""],"replay":"replays/20261014_220031_Janet_vs_레온_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:00","room":120,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":3,"series":"120-261014220007-30","nicks":["로또영","surferKIM","",""],"replay":"replays/20261014_220007_로또영_vs_surferKIM_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 22:00","room":121,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"121-261014220031-31","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"레온":["레온 FC","LEO"]},"nicks":["Janet","레온","",""],"replay":"replays/20261014_220031_Janet_vs_레온_2-1_p1.scr","edition":"cupsocs2"}
 ]
