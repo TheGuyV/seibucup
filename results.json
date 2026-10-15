@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 20:47","room":142,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,3],"ft":2,"series":"142-261015204728-22","ranked":1,"tnames":{"404page":["404page Cafe","PAG"]},"nicks":["404page","드래곤타이거","",""],"replay":"replays/20261015_204728_404page_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:46","room":140,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"140-261015204657-21","nicks":["Janet","김창식씨","",""],"replay":"replays/20261015_204657_Janet_vs_김창식씨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:43","room":134,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_204331_신발벗어_vs_덕장배_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:42","room":138,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,5],"ft":3,"series":"138-261015203514-20","nicks":["김창식씨","초조","",""],"replay":"replays/20261015_204243_김창식씨_vs_초조_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 00:08","room":25,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,9],"ft":2,"series":"25-261014000417-8","nicks":["슛돌이","로또영","",""],"replay":"replays/20261014_000812_슛돌이_vs_로또영_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 00:04","room":25,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"25-261014000417-8","nicks":["슛돌이","로또영","",""],"replay":"replays/20261014_000417_슛돌이_vs_로또영_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 00:00","room":22,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"ft":2,"series":"22-261013235636-7","nicks":["404page","dfdf","",""],"replay":"replays/20261014_000026_404page_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 23:56","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,7],"ft":2,"series":"18-261013235308-6","nicks":["소소","슛돌이","",""],"replay":"replays/20261013_235641_소소_vs_슛돌이_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 23:56","room":22,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":2,"series":"22-261013235636-7","nicks":["404page","dfdf","",""],"replay":"replays/20261013_235636_404page_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 23:56","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,7],"ft":2,"series":"18-261013235308-6","nicks":["소소","슛돌이","",""],"replay":"replays/20261013_235641_소소_vs_슛돌이_1-0_p1.scr","edition":"cupsocs2"}
 ]
