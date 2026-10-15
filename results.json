@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 21:30","room":159,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,0],"arcade":1,"nicks":["대한민국","이탈리아","",""],"replay":"replays/20261015_213023_arcade_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:29","room":156,"type":"1v1","time":180,"players":2,"score":[5,3],"teams":[9,8],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_212946_신발벗어_vs_덕장배_5-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:29","room":151,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"151-261015212530-23","nicks":["뚱이","콩메모","",""],"replay":"replays/20261015_212920_뚱이_vs_콩메모_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:28","room":148,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,9],"nicks":["인형의기사","정의사회구현","",""],"replay":"replays/20261015_212825_인형의기사_vs_정의사회구현_2-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 14:00","room":22,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[8,7],"ft":3,"series":"22-261014140038-3","nicks":["드래곤타이거","소림축구","",""],"replay":"replays/20261014_140038_드래곤타이거_vs_소림축구_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 13:59","room":21,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"nicks":["정의사회구현","상봉거지오락실","",""],"replay":"replays/20261014_135940_정의사회구현_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 13:56","room":21,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,5],"nicks":["정의사회구현","상봉거지오락실","",""],"replay":"replays/20261014_135610_정의사회구현_vs_상봉거지오락실_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 13:48","room":19,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,3],"ft":3,"series":"19-261014133504-2","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261014_134835_드래곤타이거_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 13:43","room":19,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[8,7],"ft":3,"series":"19-261014133504-2","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261014_134310_드래곤타이거_vs_상봉거지오락실_4-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 13:48","room":19,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,3],"ft":3,"series":"19-261014133504-2","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261014_134835_드래곤타이거_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"}
 ]
