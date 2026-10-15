@@ -975,7 +975,7 @@
 
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 35;
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 36;
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: -1, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, pveDiff: 3, pveVsGod: false, sound: true, tie: 'pk', teams: 'pick' };

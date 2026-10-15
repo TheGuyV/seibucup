@@ -8,7 +8,7 @@
 -- details (the package's bin\legal\GPL-3.0.txt, the site's legal/GPL-3.0.txt, or <https://www.gnu.org/licenses/>).
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
-local VERSION = 35
+local VERSION = 36
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -3434,8 +3434,14 @@ local function handle_host_message(p, t, g, payload)
       p.ready = true
 
       if phase == "play" and not p.join_at and p.handed ~= gen then
-        p.join_at = frame + cfg.delay + 3
-        log("spectator %d joins mid-match, state at frame %d", p.slot, p.join_at)
+        if is_relay then
+
+          p.handed = gen; p.resync_base = frame
+          log("spectator %d joins mid-match - the relay feeds it the match", p.slot)
+        else
+          p.join_at = frame + cfg.delay + 3
+          log("spectator %d joins mid-match, state at frame %d", p.slot, p.join_at)
+        end
       end
       return
     end
@@ -3498,9 +3504,10 @@ local function handle_host_message(p, t, g, payload)
       if mine and mine ~= sum then
 
         p.resyncs = p.resyncs or 0
-        if phase == "play" and not p.join_at and p.handed == gen and p.resyncs < 6 and frame - (p.resync_at or -100000) >= 600 then
+        if phase == "play" and not p.join_at and p.handed == gen and p.resyncs < 1 and frame - (p.resync_at or -100000) >= 600 then
           p.resyncs = p.resyncs + 1; p.resync_at = frame; p.force = true; p.agree_logged = nil
-          p.join_at = frame + cfg.delay + 3
+
+          if is_relay then send_to(p, "K" .. string.char(gen)); p.force = nil; p.resync_base = frame else p.join_at = frame + cfg.delay + 3 end
           log("spectator %d drifted from us at frame %d (host %08x, spectator %08x) - sending it the game again (%d)", p.slot, f, mine, sum, p.resyncs)
         elseif not p.drift_logged then p.drift_logged = true; log("spectator %d drifted from us at frame %d (host %08x, spectator %08x)", p.slot, f, mine, sum) end
       end
@@ -3752,6 +3759,31 @@ pcall(function()
     if spec_join and not spec_join.real then spec_join.real = frame end
   end)
 end)
+
+SCNP_CATCH = { on = false, att = nil, pct = 0 }
+function scnp_catchup_step(behind)
+  local C = SCNP_CATCH
+  if not C.on and behind > 300 then
+    C.on = true
+    pcall(function() C.att = manager.machine.sound.attenuation; manager.machine.sound.attenuation = -32 end)
+    log("catching up with the match: %d frame(s) behind", behind)
+  elseif C.on and behind < 15 then
+    C.on = false
+    pcall(function() manager.machine.sound.attenuation = C.att or 0 end)
+    log("caught up with the match at frame %d", frame)
+  end
+  C.pct = agg_max > 0 and math.min(99, math.floor(frame * 100 / agg_max)) or 0
+end
+function scnp_catchup_draw()
+  local C = SCNP_CATCH
+  if not C.on or not screen then return end
+  local t = cfg.lang == "ko" and string.format("관전 화면을 따라잡는 중... %d%%", C.pct) or string.format("Catching up with the match... %d%%", C.pct)
+  screen:draw_text("center", 100, t, 0xffffe060, 0xc0000000)
+end
+function scnp_dead_ball()
+  local v = mem:read_u32(0x1138a0) & 0xffffff
+  return v == 0 or (v >= 0x12800 and v <= 0x12fff and v ~= 0x12a08)
+end
 local function spec_join_step()
   if spec_join then
     local data, info = read_state_file(spec_join.name)
@@ -3779,7 +3811,9 @@ local function spec_join_step()
   end
   for slot = 2, 12 do
     local p = peers[slot]
-    if p and p.join_at and frame >= p.join_at and (slot >= 5 or SCNP_PVE.late[slot]) then
+
+    if p and p.join_at and frame >= p.join_at and (slot >= 5 or SCNP_PVE.late[slot])
+       and (slot < 5 or scnp_dead_ball() or frame >= p.join_at + 600) then
 
       SCNP_SPEC_N = (SCNP_SPEC_N or 0) + 1
       local name = SPEC_STATE .. "_" .. SCNP_SPEC_N .. "_" .. (os.time() % 100000)
@@ -4088,6 +4122,7 @@ local function step()
   if is_spec or SCNP_PVE.catchup then
 
     local behind = agg_max - frame
+    if is_spec then scnp_catchup_step(behind) end
     local want_throttle = behind < 15
     if behind > 90 then want_throttle = false end
     if SCNP_PVE.catchup and not is_spec and behind < 10 then SCNP_PVE.catchup = false; want_throttle = true; log("PvE: caught up at frame %d", frame) end
@@ -4271,7 +4306,7 @@ local function on_frame_done()
 
   local W = SCNP_WAIT
   if W.on then if W.drawn then return end; W.drawn = true else W.drawn = false end
-  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); draw_hud(); scnp_pick_draw(); qc_draw(); scnp_specchat_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
+  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); draw_hud(); scnp_pick_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
 end
 
 if cfg.mode == "probe" then
