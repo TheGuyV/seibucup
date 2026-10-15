@@ -255,7 +255,6 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
     });
     $('sMe').textContent = me > 0 ? me + (en() ? '' : '위') : '-';
     $('meNick').textContent = q ? $('find').value.trim() : (en() ? '' : '닉네임 찾기로');
-    try { localStorage.setItem('rank_find', $('find').value.trim()); } catch (e) {}
   }
   function tabs(d) {
     var box = $('tabs'); box.innerHTML = '';
@@ -267,7 +266,7 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
       });
     });
   }
-  try { $('find').value = localStorage.getItem('rank_find') || localStorage.getItem('web_nick') || ''; } catch (e) {}
+
   $('find').addEventListener('input', find);
   fetch('ranking.json?' + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { cur = d; draw(d); tabs(d); })
     .catch(function () { $('empty').hidden = false; $('bar').innerHTML = ''; });

@@ -8,7 +8,7 @@
 -- details (the package's bin\legal\GPL-3.0.txt, the site's legal/GPL-3.0.txt, or <https://www.gnu.org/licenses/>).
 -- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
 -- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
-local VERSION = 34
+local VERSION = 35
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -2065,14 +2065,15 @@ SCNP_SEL.ED.cupsocs = SCNP_SEL.ED.cupsocs2
 
 SCNP_SEL.mirror = false
 
-function scnp_sel_code() return SCNP_SEL.on and (SCNP_SEL.mirror and (SCNP_SEL.fix and 3 or 2) or 1) or 0 end
+function scnp_sel_code() return SCNP_SEL.on and (SCNP_SEL.mirror and (SCNP_SEL.fix and (SCNP_SEL.fix2 and 4 or 3) or 2) or 1) or 0 end
 
-function scnp_sel_apply(on, mirror, fix)
+function scnp_sel_apply(on, mirror, fix, fix2)
   local S, E = SCNP_SEL, SCNP_SEL.ED[SCNP_GAME]
   local rg = manager.machine.memory.regions[":maincpu"]
   on = on and true or false
   mirror = on and mirror and true or false
   S.fix = mirror and fix and true or false
+  S.fix2 = S.fix and fix2 and true or false
   if on == S.on and mirror == S.mirror and S.done then return end
   if not E or not rg then S.on = false; S.mirror = false; return end
   local sites = { { E.cd, { 0x5368, 0x0070 }, { 0x4e71, 0x4e71 }, on } }
@@ -2121,6 +2122,8 @@ function scnp_mirror_install()
 
   M.rtap = mem:install_read_tap(M.A1, M.A1 + 4 * 0x1e - 1, "scnp_mirror_restart", function(offset, data, mask)
     if (mask & 0x00ff) == 0 or not SCNP_SEL.fix or (offset - M.A1) % 0x1e ~= 0 or cpu.state["CURPC"].value ~= M.rpc then return end
+
+    if SCNP_SEL.fix2 and (data & 0xff) == 0xff then return end
     local team = cpu.state["D0"].value & 0xff
     local right = (cpu.state["A2"].value & 0xffffff) >= 0x111e54 + 11 * 0xdc
     local sideb = (mem:read_u16(offset + 2) & 2) ~= 0
@@ -2129,7 +2132,7 @@ function scnp_mirror_install()
 end
 
 if is_host and not is_replay and cfg.teams ~= "pve" and cfg.players >= 2 then
-  scnp_sel_apply(true, env("SCNP_MIRROR", "1") ~= "0" and SCNP_GAME == "cupsocs2" and not is_teams and cfg.players == 2, true)
+  scnp_sel_apply(true, env("SCNP_MIRROR", "1") ~= "0" and SCNP_GAME == "cupsocs2" and not is_teams and cfg.players == 2, true, true)
 end
 
 SCNP_NOCREDIT = {
@@ -3530,7 +3533,7 @@ local function handle_client_message(t, g, payload)
     local st, pk, sel, god, df = payload:byte(1, 5)
     if st and st <= 17 and st ~= scnp_stage then scnp_stage = st; scnp_install_stage_tap() end
     if pk then SCNP_PK.on = (pk == 1); SCNP_PK.gg = (pk == 2) end
-    if sel then scnp_sel_apply(sel >= 1, sel >= 2, sel >= 3) end
+    if sel then scnp_sel_apply(sel >= 1, sel >= 2, sel >= 3, sel >= 4) end
     if god then scnp_god_apply((god & 3) >= 1, (god & 3) >= 2, (god & 8) ~= 0); scnp_pvegod_apply((god & 4) ~= 0) end
     if df and df <= 3 and SCNP_PVE.on and df ~= SCNP_DIFF.v then scnp_diff_apply(df) end
     return
@@ -3838,7 +3841,7 @@ local function step()
       scnp_stage = tonumber(r.meta:match('"stage":(%d+)') or "0") or 0; scnp_install_stage_tap()
       SCNP_PK.on = r.meta:match('"pk":1') ~= nil
       SCNP_PK.gg = r.meta:match('"pk":2') ~= nil
-      local sv = tonumber(r.meta:match('"sel":(%d)') or "0") or 0; scnp_sel_apply(sv >= 1, sv >= 2, sv >= 3)
+      local sv = tonumber(r.meta:match('"sel":(%d)') or "0") or 0; scnp_sel_apply(sv >= 1, sv >= 2, sv >= 3, sv >= 4)
       do local b = r.meta:match('"ball":"(%a+)"'); if b then SCNP_PAL.BALLNAME = b; SCNP_PAL.BALL = SCNP_PAL.BALLS[b] end end
       scnp_god_apply(r.meta:match('"god":[123]') ~= nil, r.meta:match('"god":[23]') ~= nil, r.meta:match('"god":3') ~= nil)
       SCNP_DEVR.play = {}; SCNP_DEVR.pi = 1
