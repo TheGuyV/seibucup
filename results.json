@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 00:40","room":3,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,8],"ft":2,"series":"2-261016003612-1","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_004026_즐축_vs_주물러_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:36","room":2,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"2-261016003612-1","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_003612_즐축_vs_주물러_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:31","room":7,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"7-261016003123-2","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_003123_즐축_vs_주물러_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:19","room":1,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001902_로또영_vs_dfdf_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 19:51","room":66,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"ft":2,"series":"66-261014194747-19","nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_195114_인형의기사_vs_이재경짱_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:47","room":66,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":2,"series":"66-261014194747-19","nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_194747_인형의기사_vs_이재경짱_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:47","room":75,"type":"1v1","time":180,"players":2,"score":[6,6],"teams":[5,0],"nicks":["으랏차","narahashi","",""],"replay":"replays/20261014_194729_으랏차_vs_narahashi_6-6_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 19:44","room":66,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_194422_인형의기사_vs_이재경짱_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 19:43","room":76,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,3],"nicks":["정의사회구현","판순이","",""],"replay":"replays/20261014_194330_정의사회구현_vs_판순이_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 19:44","room":66,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_194422_인형의기사_vs_이재경짱_2-2_p1.scr","edition":"cupsocs2"}
 ]
