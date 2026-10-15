@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 23:01","room":205,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":3,"series":"205-261015230114-30","nicks":["로또영","rdsa","",""],"replay":"replays/20261015_230114_로또영_vs_rdsa_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:58","room":199,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,5],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_225841_뚱이_vs_야가미최씨_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:53","room":203,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"nicks":["rdsa","로또영","",""],"replay":"replays/20261015_225317_rdsa_vs_로또영_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:52","room":199,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,0],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_225244_뚱이_vs_야가미최씨_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 19:23","room":66,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_192349_인형의기사_vs_이재경짱_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:20","room":66,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_192020_인형의기사_vs_이재경짱_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 19:16","room":66,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_191620_인형의기사_vs_이재경짱_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 19:12","room":66,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_191235_인형의기사_vs_이재경짱_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 19:08","room":66,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_190826_인형의기사_vs_이재경짱_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 19:12","room":66,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261014_191235_인형의기사_vs_이재경짱_2-2_p1.scr","edition":"cupsocs2"}
 ]
