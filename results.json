@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 19:52","room":117,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[0,5],"ft":3,"series":"117-261015194817-16","nicks":["드래곤타이거","콩메모","",""],"replay":"replays/20261015_195226_드래곤타이거_vs_콩메모_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:50","room":119,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,7],"nicks":["정의사회구현","김정은패스","",""],"replay":"replays/20261015_195011_정의사회구현_vs_김정은패스_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:49","room":110,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,10],"nicks":["narahashi","축구황제","",""],"replay":"replays/20261015_194903_narahashi_vs_축구황제_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:48","room":108,"type":"1v1","time":150,"players":2,"score":[1,6],"teams":[10,5],"nicks":["으랏차","Todoroki","",""],"replay":"replays/20261015_194821_으랏차_vs_Todoroki_1-6_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 22:32","room":46,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[7,4],"nicks":["하니","판순이","",""],"replay":"replays/20261013_223233_하니_vs_판순이_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 22:29","room":47,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,9],"nicks":["이강인탁구","정의사회구현","",""],"replay":"replays/20261013_222943_이강인탁구_vs_정의사회구현_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 22:28","room":46,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[8,4],"nicks":["하니","판순이","",""],"replay":"replays/20261013_222838_하니_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 22:26","room":47,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[8,9],"nicks":["이강인탁구","정의사회구현","",""],"replay":"replays/20261013_222604_이강인탁구_vs_정의사회구현_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 22:24","room":46,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,3],"nicks":["하니","판순이","",""],"replay":"replays/20261013_222448_하니_vs_판순이_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 22:26","room":47,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[8,9],"nicks":["이강인탁구","정의사회구현","",""],"replay":"replays/20261013_222604_이강인탁구_vs_정의사회구현_0-0_p1.scr","edition":"cupsocs2"}
 ]
