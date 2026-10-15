@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 20:35","room":138,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,7],"ft":3,"series":"138-261015203514-20","nicks":["김창식씨","초조","",""],"replay":"replays/20261015_203514_김창식씨_vs_초조_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:34","room":134,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,9],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_203448_신발벗어_vs_덕장배_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:32","room":137,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["인형의기사","깜찍만두","",""],"replay":"replays/20261015_203208_인형의기사_vs_깜찍만두_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:31","room":136,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,3],"ft":2,"series":"136-261015203124-19","nicks":["초조","라면","",""],"replay":"replays/20261015_203124_초조_vs_라면_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 23:48","room":19,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,7],"ft":2,"series":"15-261013234516-5","ranked":1,"nicks":["Janet","즐축","",""],"replay":"replays/20261013_234851_Janet_vs_즐축_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 23:47","room":11,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[0,7],"ft":3,"series":"11-261013233726-4","nicks":["드래곤타이거","김정은패스","",""],"replay":"replays/20261013_234735_드래곤타이거_vs_김정은패스_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 23:47","room":17,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,7],"nicks":["dfdf","로또영","",""],"replay":"replays/20261013_234707_dfdf_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 23:45","room":15,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,10],"ft":2,"series":"15-261013234516-5","ranked":1,"nicks":["Janet","즐축","",""],"replay":"replays/20261013_234516_Janet_vs_즐축_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 23:42","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,7],"ft":3,"series":"11-261013233726-4","nicks":["드래곤타이거","김정은패스","",""],"replay":"replays/20261013_234243_드래곤타이거_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 23:45","room":15,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,10],"ft":2,"series":"15-261013234516-5","ranked":1,"nicks":["Janet","즐축","",""],"replay":"replays/20261013_234516_Janet_vs_즐축_2-1_p1.scr","edition":"cupsocs2"}
 ]
