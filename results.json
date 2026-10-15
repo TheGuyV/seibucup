@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 19:39","room":103,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":3,"series":"103-261015193536-15","nicks":["드래곤타이거","왕펀치맨","",""],"replay":"replays/20261015_193957_드래곤타이거_vs_왕펀치맨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:39","room":108,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[0,5],"nicks":["으랏차","Todoroki","",""],"replay":"replays/20261015_193920_으랏차_vs_Todoroki_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:35","room":103,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,3],"ft":3,"series":"103-261015193536-15","nicks":["드래곤타이거","왕펀치맨","",""],"replay":"replays/20261015_193536_드래곤타이거_vs_왕펀치맨_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:35","room":99,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"99-261015192532-14","nicks":["신홍기","인형의기사","",""],"replay":"replays/20261015_193526_신홍기_vs_인형의기사_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 21:21","room":23,"type":"1v1","time":180,"players":2,"score":[5,1],"teams":[5,7],"ft":3,"series":"23-261013211213-10","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261013_212146_테일러장군_vs_플로레알_5-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 21:20","room":30,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,3],"ft":2,"series":"30-261013212034-11","nicks":["뚱이","판순이","",""],"replay":"replays/20261013_212034_뚱이_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 21:16","room":23,"type":"1v1","time":180,"players":2,"score":[3,1],"teams":[10,10],"ft":3,"series":"23-261013211213-10","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261013_211646_테일러장군_vs_플로레알_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 21:12","room":23,"type":"1v1","time":180,"players":2,"score":[3,1],"teams":[5,9],"ft":3,"series":"23-261013211213-10","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261013_211213_테일러장군_vs_플로레알_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 21:07","room":20,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"20-261013210736-9","ranked":1,"nicks":["즐축","mizunoasahi","",""],"replay":"replays/20261013_210736_즐축_vs_mizunoasahi_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 21:12","room":23,"type":"1v1","time":180,"players":2,"score":[3,1],"teams":[5,9],"ft":3,"series":"23-261013211213-10","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261013_211213_테일러장군_vs_플로레알_3-1_p1.scr","edition":"cupsocs2"}
 ]
