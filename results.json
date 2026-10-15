@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 22:17","room":177,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[9,5],"ft":2,"series":"177-261015220708-26","nicks":["rdsa","즐축","콩메모","판순이"],"replay":"replays/20261015_221752_rdsa_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:17","room":183,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,9],"nicks":["벌점","himac","",""],"replay":"replays/20261015_221738_벌점_vs_himac_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:15","room":161,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,10],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_221503_인형의기사_vs_소소_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:11","room":161,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,0],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_221138_인형의기사_vs_소소_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 18:21","room":56,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"56-261014181731-14","nicks":["슛돌이","로또영","",""],"replay":"replays/20261014_182126_슛돌이_vs_로또영_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 18:17","room":56,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,5],"ft":2,"series":"56-261014181731-14","nicks":["슛돌이","로또영","",""],"replay":"replays/20261014_181731_슛돌이_vs_로또영_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 18:13","room":55,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"ft":3,"series":"55-261014181327-13","nicks":["로또영","깜찍만두","",""],"replay":"replays/20261014_181327_로또영_vs_깜찍만두_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 17:55","room":53,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,9],"ft":3,"series":"53-261014175501-12","nicks":["로또영","이재경짱","",""],"replay":"replays/20261014_175501_로또영_vs_이재경짱_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 17:27","room":47,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"ft":3,"series":"47-261014171745-10","nicks":["바트","키아누리브스","",""],"replay":"replays/20261014_172706_바트_vs_키아누리브스_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 17:55","room":53,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,9],"ft":3,"series":"53-261014175501-12","nicks":["로또영","이재경짱","",""],"replay":"replays/20261014_175501_로또영_vs_이재경짱_3-1_p1.scr","edition":"cupsocs2"}
 ]
