@@ -227,7 +227,9 @@ RQW_SUB = emu.register_frame_done(function()
     local blink = (frame // 15) % 2 == 0
     box(scr, w / 2 - 110, 60, w / 2 + 110, 130, 0xe0140a28, blink and 0xffffd600 or 0xffb48cff)
     center(scr, 68, T("랭크전 상대를 찾았습니다!", "Ranked match found!"), 0xffffd600)
-    center(scr, 84, T("상대: ", "Opponent: ") .. st.opp .. (st.rank ~= "" and st.rank ~= "-" and " (" .. st.rank .. ")" or ""))
+
+    if st.opp == "?" then center(scr, 84, T("상대는 둘 다 수락하면 보입니다", "Who it is shows once you both accept"))
+    else center(scr, 84, T("상대: ", "Opponent: ") .. st.opp .. (st.rank ~= "" and st.rank ~= "-" and " (" .. st.rank .. ")" or "")) end
     if answered == "ACCEPT" then center(scr, 102, T("수락했습니다 - 상대를 기다리는 중", "Accepted - waiting for the opponent"), 0xff9cf0a8)
     elseif answered == "DECLINE" then center(scr, 102, T("거절했습니다", "Declined"), 0xffff9c9c)
     else center(scr, 102, T("Y 수락    N 거절", "Y accept    N decline"), 0xffffffff) end
