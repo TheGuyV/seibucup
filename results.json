@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 21:50","room":172,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,7],"ft":2,"series":"172-261015215040-25","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"즐축":["TheSoccer","EJY"]},"nicks":["판순이","즐축","",""],"replay":"replays/20261015_215040_판순이_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:50","room":161,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"nicks":["인형의기사","콩메모","",""],"replay":"replays/20261015_215015_인형의기사_vs_콩메모_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:46","room":156,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,10],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_214633_신발벗어_vs_덕장배_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:45","room":161,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,5],"nicks":["인형의기사","콩메모","",""],"replay":"replays/20261015_214555_인형의기사_vs_콩메모_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 15:30","room":33,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":3,"series":"33-261014152137-7","nicks":["로또영","신홍기","",""],"replay":"replays/20261014_153039_로또영_vs_신홍기_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 15:25","room":33,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"ft":3,"series":"33-261014152137-7","nicks":["로또영","신홍기","",""],"replay":"replays/20261014_152527_로또영_vs_신홍기_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 15:21","room":33,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":3,"series":"33-261014152137-7","nicks":["로또영","신홍기","",""],"replay":"replays/20261014_152137_로또영_vs_신홍기_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 15:16","room":32,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,4],"ft":3,"series":"32-261014150817-6","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261014_151639_로또영_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 15:12","room":32,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"32-261014150817-6","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261014_151223_로또영_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 15:16","room":32,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,4],"ft":3,"series":"32-261014150817-6","nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261014_151639_로또영_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"}
 ]
