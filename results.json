@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-15 17:01","room":43,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"43-261015170149-11","ranked":1,"tnames":{"김정은패스":["김정은패스 FC","KOF"]},"nicks":["김정은패스","거성","",""],"replay":"replays/20261015_170149_김정은패스_vs_거성_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 16:53","room":41,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,7],"nicks":["오락실체어샷","김정은패스","",""],"replay":"replays/20261015_165352_오락실체어샷_vs_김정은패스_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 16:18","room":32,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,5],"nicks":["오락실체어샷","으랏차","",""],"replay":"replays/20261015_161803_오락실체어샷_vs_으랏차_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 16:06","room":26,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[9,5],"ft":3,"series":"26-261015155709-10","nicks":["드래곤타이거","제일오락실","",""],"replay":"replays/20261015_160652_드래곤타이거_vs_제일오락실_4-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-13 17:53","room":5,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[9,7],"nicks":["정의사회구현","빽이","",""],"replay":"replays/20261013_175357_정의사회구현_vs_빽이_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 17:48","room":5,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,5],"nicks":["정의사회구현","빽이","",""],"replay":"replays/20261013_174847_정의사회구현_vs_빽이_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-13 17:33","room":1,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"nicks":["정의사회구현","로또영","",""],"replay":"replays/20261013_173353_정의사회구현_vs_로또영_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 17:30","room":47,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"47-261013171722-10","nicks":["로또영","GG","",""],"replay":"replays/20261013_173016_로또영_vs_GG_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-13 17:23","room":47,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,0],"ft":3,"series":"47-261013171722-10","nicks":["로또영","GG","",""],"replay":"replays/20261013_172317_로또영_vs_GG_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-13 17:30","room":47,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"47-261013171722-10","nicks":["로또영","GG","",""],"replay":"replays/20261013_173016_로또영_vs_GG_3-2_p1.scr","edition":"cupsocs2"}
 ]
