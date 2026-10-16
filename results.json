@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 09:45","room":6,"type":"1v1","time":180,"players":2,"score":[4,1],"teams":[5,9],"ft":2,"series":"6-261016093851-1","nicks":["테일러장군","KingDani","",""],"replay":"replays/20261016_094500_테일러장군_vs_KingDani_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 09:38","room":6,"type":"1v1","time":180,"players":2,"score":[3,0],"teams":[5,9],"ft":2,"series":"6-261016093851-1","nicks":["테일러장군","KingDani","",""],"replay":"replays/20261016_093851_테일러장군_vs_KingDani_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 09:33","room":5,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,9],"nicks":["쑥곰","KingDani","",""],"replay":"replays/20261016_093306_쑥곰_vs_KingDani_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 09:28","room":5,"type":"1v1","time":180,"players":2,"score":[4,5],"teams":[5,9],"nicks":["쑥곰","KingDani","",""],"replay":"replays/20261016_092819_쑥곰_vs_KingDani_4-5_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 22:09","room":122,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,8],"ft":2,"series":"122-261014220946-34","nicks":["소소","404page","",""],"replay":"replays/20261014_220946_소소_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:09","room":125,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":3,"series":"125-261014220941-33","nicks":["샤부사커","상봉거지오락실","",""],"replay":"replays/20261014_220941_샤부사커_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:07","room":120,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":3,"series":"120-261014220007-30","nicks":["로또영","surferKIM","",""],"replay":"replays/20261014_220752_로또영_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:07","room":119,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,4],"ft":3,"series":"119-261014220003-29","nicks":["김창식씨","NooB","",""],"replay":"replays/20261014_220700_김창식씨_vs_NooB_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:06","room":123,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":3,"series":"123-261014220243-32","nicks":["뚱이","세이부축구만쉐","",""],"replay":"replays/20261014_220635_뚱이_vs_세이부축구만쉐_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 22:07","room":119,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,4],"ft":3,"series":"119-261014220003-29","nicks":["김창식씨","NooB","",""],"replay":"replays/20261014_220700_김창식씨_vs_NooB_1-0_p1.scr","edition":"cupsocs2"}
 ]
