@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 22:32","room":144,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,3],"ft":2,"series":"144-261016223204-29","nicks":["Janet","판순이","",""],"replay":"replays/20261016_223204_Janet_vs_판순이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:28","room":143,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"arcade":1,"nicks":["대한민국","잉글랜드","",""],"replay":"replays/20261016_222836_arcade_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:28","room":139,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,10],"nicks":["atfn","축구오랜만","",""],"replay":"replays/20261016_222830_atfn_vs_축구오랜만_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:27","room":142,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,7],"ft":2,"series":"138-261016222302-28","ranked":1,"tnames":{"김정은패스":["김정은패스 FC","KOF"],"404page":["404page Cafe","PAG"]},"nicks":["김정은패스","404page","",""],"replay":"replays/20261016_222757_김정은패스_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 20:46","room":140,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"140-261015204657-21","nicks":["Janet","김창식씨","",""],"replay":"replays/20261015_204657_Janet_vs_김창식씨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:43","room":134,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_204331_신발벗어_vs_덕장배_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:42","room":138,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,5],"ft":3,"series":"138-261015203514-20","nicks":["김창식씨","초조","",""],"replay":"replays/20261015_204243_김창식씨_vs_초조_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 20:39","room":137,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["인형의기사","깜찍만두","",""],"replay":"replays/20261015_203936_인형의기사_vs_깜찍만두_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 20:39","room":134,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,9],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_203918_신발벗어_vs_덕장배_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 20:39","room":137,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["인형의기사","깜찍만두","",""],"replay":"replays/20261015_203936_인형의기사_vs_깜찍만두_2-1_p1.scr","edition":"cupsocs2"}
 ]
