@@ -291,12 +291,14 @@ if (Q.get('postlog') && Q.get('fakepad')) {
     if (mode === 'solo' && Q.get('god')) {
       files.push(['/web/god.lua', await bytes('god.lua')]);
       env.WEB_TARGET = '/web/god.lua';
+      env.GOD_ALWAYS = '1';
     }
 
     let arcState = null;
     if (mode === 'solo' && Q.get('arcade')) {
       files.push(['/web/ranked_wait.lua', await bytes('ranked_wait.lua')], ['/rqwait.txt', new TextEncoder().encode('\n')]);
       Object.assign(env, { RQW_FILE: '/rqwait.txt', RQW_ANSWER: '/rqans.txt', RQW_LANG: lang, RQW_COMIC: '0', RQW_SOLO: '1' });
+      if (/^[0-3]$/.test(Q.get('diff') || '')) env.RQW_DIFF = Q.get('diff');
       if (Q.get('god')) env.RQW_OVERLAY = '/web/ranked_wait.lua'; else env.WEB_TARGET = '/web/ranked_wait.lua';
       if (Q.get('resume')) {
         arcState = await new Promise(res => {

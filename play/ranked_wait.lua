@@ -154,6 +154,14 @@ function scnp_comic_draw()
   C.pops = keep
 end
 
+local RQW_DIFF = tonumber(os.getenv("RQW_DIFF") or "")
+local DSW2 = ({ cupsoc = 0x10075c, cupsocs = 0x10071c, cupsocs2 = 0x10071c })[SCNP_GAME]
+if RQW_DIFF and RQW_DIFF >= 0 and RQW_DIFF <= 3 and RQW_DIFF ~= 3 and DSW2 then
+  RQW_DIFF_TAP = mem:install_read_tap(DSW2, DSW2 + 1, "rqw_diff", function(offset, data, mask)
+    if (mask & 3) ~= 0 then return (data & ~3) | RQW_DIFF end
+  end)
+end
+
 local st = { kind = "", t = 0 }
 local answered = nil
 local function readstate()

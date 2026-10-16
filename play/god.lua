@@ -23,7 +23,10 @@ for _, port in pairs(machine.ioport.ports) do
     if name == "P1 Pass" or name == "P2 Pass" then passes[#passes + 1] = { port = port, mask = f.mask, dv = f.defvalue & f.mask } end
   end
 end
+
+local ALWAYS = os.getenv("GOD_ALWAYS") == "1"
 local function pass_held()
+  if ALWAYS then return true end
   for _, p in ipairs(passes) do if (p.port:read() & p.mask) ~= p.dv then return true end end
   return false
 end
@@ -61,9 +64,10 @@ god_rtap = mem:install_read_tap(e[6], e[7] + 1, "god_r", function(offset, data, 
   if c and mask & 0xff00 ~= 0 and (data >> 8) == 11 then data = (data & 0x00ff) | (c << 8) end
   return data
 end)
-print("god.lua: hold Pass while confirming a country to play as GOD")
+print(ALWAYS and "god.lua: every country confirmed plays as GOD" or "god.lua: hold Pass while confirming a country to play as GOD")
 
-local hint = ko and "패스를 누른 채 결정하면 GOD" or "Hold PASS while confirming to play as GOD"
+local hint = ALWAYS and (ko and "GOD로 플레이합니다 - 아무 나라나 결정하세요" or "You play as GOD - confirm any country")
+  or (ko and "패스를 누른 채 결정하면 GOD" or "Hold PASS while confirming to play as GOD")
 god_draw = emu.register_frame_done(function()
   if mem:read_u8(e[3] + 2) ~= 2 then return end
   local s = machine.screens[":screen"]

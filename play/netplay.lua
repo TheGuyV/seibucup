@@ -3057,6 +3057,11 @@ local function try_broadcast()
   end
 end
 
+function scnp_load_latch()
+  if not SCNP_LOADIN or not reloading or not spec_base then SCNP_LOADIN = nil; return end
+  local a1 = agg[spec_base + 1]
+  if a1 then for s = 1, 4 do apply_input(s, (SCNP_PVE.on and s >= 2 and a1[s] == 0xff) and 0 or a1[s]) end end
+end
 local function begin_sync(reason)
 
   do local P = SCNP_PVE; if P.cont_at then P.cont_at = P.cont_at - frame end; P.cur = nil; P.next_try = 0; P.joining = nil end
@@ -3079,6 +3084,7 @@ local function start_load()
   reloading = true
   load_started = os.time()
   clear_all_inputs()
+  if spec_base then SCNP_LOADIN = true; scnp_load_latch() end
   if not SCNP_QUIET then set_overlay(C_INFO, "NETPLAY: loading the game state...") end
   machine:load(STATE_NAME)
 end
@@ -4391,6 +4397,7 @@ set_overlay(C_INFO, is_host and "NETPLAY: starting..." or "NETPLAY: connecting..
 log("state dir: %s | cfg dir: %s", state_dir, manager.options.entries.cfg_directory:value())
 
 frame_sub    = emu.register_frame_done(on_frame_done)
+SCNP_LOADSUB = emu.register_frame_done(function() if SCNP_LOADIN then scnp_load_latch(); SCNP_LOADIN = nil end end)
 
 if cfg.web then
   SCNP_WAIT.sub = emu.register_periodic(function()
