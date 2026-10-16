@@ -83,6 +83,18 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
 .rules { margin-top: 22px; background: var(--panel); border: 1px solid var(--panel-line); padding: 14px 18px; font-size: .92rem; line-height: 1.7; }
 .rules h3 { margin: 0 0 6px; font-size: 1rem; color: var(--hud-yellow); }
 .rules ul { margin: 0; padding-left: 1.2em; }
+
+button.club { all: unset; cursor: pointer; border-bottom: 1px dashed rgba(255,210,63,.75); }
+button.club:hover { color: var(--hud-yellow); }
+button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset: 2px; }
+.clubwin { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0,0,0,.7); }
+.clubbox { background: #0d0f14; border: 2px solid var(--hud-yellow); box-shadow: 6px 6px 0 #000; padding: 14px; width: 380px; max-width: 100%; max-height: 100%; overflow-y: auto; }
+.clubbox canvas { width: 100%; height: auto; display: block; }
+.clubbar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.clubbar button { font: inherit; font-weight: 700; font-size: .85rem; padding: 6px 12px; border: 2px solid var(--hud-yellow); background: transparent; color: var(--hud-yellow); cursor: pointer; }
+.clubbar button.fill { background: var(--hud-yellow); color: #000; }
+.clubbar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.clubbar .x { margin-left: auto; }
 @media (max-width: 760px) {
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .podium { grid-template-columns: 1fr; } .pod.p1 { order: -1; }
@@ -119,7 +131,7 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
 <section class="hero">
   <div class="container">
     <h1><span class="ko">랭크전 순위표</span><span class="en">Ranked leaderboard</span></h1>
-    <p class="lead"><span class="ko">PC 런처의 <strong>랭크전</strong>으로 쌓은 점수 순위입니다. 랭크전이 끝날 때마다 몇 분 안에 갱신됩니다. 랭크전은 Windows 런처에서만 할 수 있습니다(<a href="guide.html#ranked">랭크전 안내</a>).</span><span class="en">Points earned in the PC launcher's <strong>Ranked</strong> matches, updated within minutes of each one. Ranked is Windows launcher only (<a href="guide.html#ranked">how it works</a>).</span></p>
+    <p class="lead"><span class="ko">PC 런처의 <strong>랭크전</strong>으로 쌓은 점수 순위입니다. 랭크전이 끝날 때마다 몇 분 안에 갱신됩니다. 랭크전은 Windows 런처에서만 할 수 있습니다(<a href="guide.html#ranked">랭크전 안내</a>). 밑줄 친 닉네임을 누르면 그 선수의 <strong>클럽 카드</strong>가 열립니다.</span><span class="en">Points earned in the PC launcher's <strong>Ranked</strong> matches, updated within minutes of each one. Ranked is Windows launcher only (<a href="guide.html#ranked">how it works</a>). Click an underlined name to see that player's <strong>club card</strong>.</span></p>
     <div class="season">
       <span id="tabs"></span>
       <span class="left" id="leftbox" hidden><span class="ko">시즌 종료까지 <b id="left"></b></span><span class="en">Season ends in <b id="left2"></b></span></span>
@@ -182,9 +194,20 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
     <div class="family"><span class="ko">패밀리 사이트</span><span class="en">Family sites</span>: <a href="https://twc98.seibucup.online/" rel="noopener"><span class="ko">테크모 월드컵 98 온라인</span><span class="en">Tecmo World Cup '98 Online</span></a> · <a href="https://rg2.seibucup.online/" rel="noopener"><span class="ko">런앤건2 온라인</span><span class="en">Run and Gun 2 Online</span></a></div>
   </div>
 </footer>
+<div class="clubwin" id="clubwin" hidden>
+  <div class="clubbox" role="dialog" aria-modal="true" aria-label="클럽 카드">
+    <canvas id="clubcv" width="800" height="1172"></canvas>
+    <div class="clubbar">
+      <button type="button" class="fill" id="clubAway"></button>
+      <button type="button" id="clubSave"><span class="ko">이미지 저장</span><span class="en">Save image</span></button>
+      <button type="button" class="x" id="clubX"><span class="ko">닫기</span><span class="en">Close</span></button>
+    </div>
+  </div>
+</div>
+<script src="club_card.js"></script>
 <script>
 (function () {
-  var KO = '초보|9급|8급|7급|6급|5급|4급|3급|2급|1급|초단|2단|3단|4단|5단|6단|7단|8단|9단|세이부 마스터'.split('|');
+  var KO ='초보|9급|8급|7급|6급|5급|4급|3급|2급|1급|초단|2단|3단|4단|5단|6단|7단|8단|9단|세이부 마스터'.split('|');
   var EN = 'Rookie|9 Kyu|8 Kyu|7 Kyu|6 Kyu|5 Kyu|4 Kyu|3 Kyu|2 Kyu|1 Kyu|1 Dan|2 Dan|3 Dan|4 Dan|5 Dan|6 Dan|7 Dan|8 Dan|9 Dan|Seibu Master'.split('|');
   var FLOOR = [0, 50, 120, 200, 290, 390, 500, 620, 750, 890, 1040, 1200, 1370, 1540, 1710, 1880, 2050, 2220, 2390, 2560];
   var GROUPS = [['초보', 'Rookie', '#b8c0c8'], ['9~5급', '9-5 Kyu', '#6fdc8c'], ['4~1급', '4-1 Kyu', '#3fc6c6'], ['초단~4단', '1-4 Dan', '#ffa53f'], ['5~9단', '5-9 Dan', '#ff5a4a'], ['마스터', 'Master', '#ffd23f']];
@@ -208,7 +231,7 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
       var tr = document.createElement('tr'); tr.dataset.n = p.n.toLowerCase();
       var mv = p.d > 0 ? '<span class="up">▲' + p.d + '</span>' : p.d < 0 ? '<span class="down">▼' + (-p.d) + '</span>' : '<span class="same">-</span>';
       var g = p.w + p.l;
-      tr.innerHTML = '<td class="pos">' + (i + 1) + '</td><td class="nick">' + esc(p.n) + '</td><td><span class="rk ' + cls(p.r) + '">' + rname(p.r) + '</span></td>' +
+      tr.innerHTML = '<td class="pos">' + (i + 1) + '</td><td class="nick">' + nick(p, i) + '</td><td><span class="rk ' + cls(p.r) + '">' + rname(p.r) + '</span></td>' +
         '<td><div class="pts"><b>' + p.p + '</b><span class="b"' + (next ? ' title="' + (en() ? (next - p.p) + ' to the next rank' : '다음 단계까지 ' + (next - p.p) + '점') + '"' : '') + '><span style="width:' + prog + '%"></span></span></div></td>' +
         '<td class="hide-s">' + (en() ? p.w + 'W ' + p.l + 'L' : p.w + '승 ' + p.l + '패') + '</td><td>' + (g ? Math.round(100 * p.w / g) : 0) + '%</td>' +
         '<td class="hide-s"><span class="form">' + (p.f || '').split('').map(function (c) { return '<i class="' + (c === 'W' ? 'w">' + (en() ? 'W' : '승') : 'l">' + (en() ? 'L' : '패')) + '</i>'; }).join('') + '</span></td>' +
@@ -219,7 +242,7 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
     [1, 0, 2].forEach(function (k) {
       var p = players[k]; if (!p) return;
       var g = p.w + p.l, el = document.createElement('div'); el.className = 'pod p' + (k + 1);
-      el.innerHTML = '<div class="place">' + (k + 1) + (en() ? '' : '위') + '</div><div class="nick">' + esc(p.n) + '</div><span class="rk ' + cls(p.r) + '">' + rname(p.r) + '</span>' +
+      el.innerHTML = '<div class="place">' + (k + 1) + (en() ? '' : '위') + '</div><div class="nick">' + nick(p, k) + '</div><span class="rk ' + cls(p.r) + '">' + rname(p.r) + '</span>' +
         '<div class="meta" style="margin-top:8px">' + p.p + (en() ? ' pts · ' + p.w + 'W ' + p.l + 'L · ' : '점 · ' + p.w + '승 ' + p.l + '패 · 승률 ') + (g ? Math.round(100 * p.w / g) : 0) + '%</div>';
       pod.appendChild(el);
     });
@@ -266,6 +289,135 @@ table.rank tr.me td.nick::after { content: " ◀"; color: var(--hud-yellow); fon
       });
     });
   }
+
+  var BASES = [3, 9, 4, 10, 0, 7, 8, 5];
+  var BASE_KO = ['잉글랜드', '서독', '미국', '일본', '이탈리아', '브라질', '아르헨티나', '대한민국'];
+  var BASE_EN = ['England', 'West Germany', 'USA', 'Japan', 'Italy', 'Brazil', 'Argentina', 'Korea'];
+  var FORM_KO = ['리베로 + 3-3-3', '3-2-2-3', '리베로 + 4-2-3', '3-2-2-3', '2-3-2-3', '4-2-4', '리베로 + 3-2-4', '리베로 + 4-2-3'];
+  var FORM_EN = ['Sweeper + 3-3-3', '3-2-2-3', 'Sweeper + 4-2-3', '3-2-2-3', '2-3-2-3', '4-2-4', 'Sweeper + 3-2-4', 'Sweeper + 4-2-3'];
+  var HEX = /^[0-9a-f]{6}$/;
+  function club(spec) {
+    var f = String(spec || '').split(','), name;
+    if (f.length < 7 || BASES.indexOf(+f[0]) < 0) return null;
+    try { name = decodeURIComponent(f[6]); } catch (e) { return null; }
+    var c = { box: BASES.indexOf(+f[0]), hs: f[1], hp: f[2], as: f[3], ap: f[4], abbr: f[5], name: name, sh: '202028', hk: f[1], ak: f[3], hair: '-' };
+    if (f.length >= 8 && HEX.test(f[7])) c.sh = f[7];
+    if (f.length === 11) { if (HEX.test(f[8])) c.hk = f[8]; if (HEX.test(f[9])) c.ak = f[9]; if (HEX.test(f[10]) || f[10] === '-') c.hair = f[10]; }
+    return c;
+  }
+  function nick(p, i) { return p.c && club(p.c) && window.CLUB_CARD ? '<button type="button" class="club" data-i="' + i + '">' + esc(p.n) + '</button>' : esc(p.n); }
+  function rgb(h) { return [parseInt(h.substr(0, 2), 16), parseInt(h.substr(2, 2), 16), parseInt(h.substr(4, 2), 16)]; }
+  var q5 = function (v) { return Math.round(v / 255 * 31) * 255 / 31 | 0; };
+
+  function kitColours(shirt, shorts, socks) {
+    var S = window.CLUB_CARD.shade, o = [];
+    for (var i = 0; i < 8; i++) {
+      var t = rgb(i < 2 ? socks : i < 5 ? shirt : shorts), f = S[i];
+      o.push(t.map(function (v) { var x = v * (0.42 + 0.58 * f) + 26 * Math.max(0, f - 0.85); return Math.round(Math.max(0, Math.min(255, x)) / 255 * 31) * 255 / 31 | 0; }));
+    }
+    return o;
+  }
+
+  function player(shirt, shorts, socks, shoes, hair) {
+    var D = window.CLUB_CARD, cv = document.createElement('canvas'); cv.width = D.w; cv.height = D.h;
+    var g = cv.getContext('2d'), img = g.createImageData(D.w, D.h), kc = kitColours(shirt, shorts, socks);
+    var sc = rgb(shoes).map(q5), pal = D.pal.map(function (h) { return rgb(h.slice(1)); }), at = D.shoe + 1, hl = null, hd = null;
+    if (HEX.test(hair)) { var hc = rgb(hair); hl = hc.map(q5); hd = hc.map(function (v) { return q5(v * 0.55 | 0); }); }
+    var same = function (a, h) { return a[0] === h[0] && a[1] === h[1] && a[2] === h[2]; };
+    var LIGHT = [0x9c, 0x63, 0x29], DARK = [0x52, 0x39, 0x18], SHADOW = [0x73, 0x4a, 0x18];
+    for (var p = 0; p < D.w * D.h; p++) {
+      var v = parseInt(D.frame.charAt(p), 36); if (!v) continue;
+      var c = v <= 8 ? kc[v - 1] : v === D.shoe ? sc : pal[v - at] || [255, 0, 255];
+      if (hl && v > 8 && v !== D.shoe) { if (same(c, LIGHT)) c = hl; else if (same(c, DARK)) c = hd; }
+      if (same(c, SHADOW)) continue;
+      img.data[p * 4] = c[0]; img.data[p * 4 + 1] = c[1]; img.data[p * 4 + 2] = c[2]; img.data[p * 4 + 3] = 255;
+    }
+    g.putImageData(img, 0, 0); return cv;
+  }
+  function round(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+
+  function board(g, text, x0, y0, s) {
+    var F = window.CLUB_CARD.font;
+    for (var n = 0; n < text.length; n++) {
+      var gl = F[text.charAt(n)]; if (!gl) continue;
+      var on = function (x, y) { return y >= 0 && y < 6 && x >= 0 && x < 6 && gl[y].charAt(x) === '#'; }, bx = x0 + n * 8 * s;
+      g.fillStyle = '#000';
+      for (var y = 0; y < 7; y++) for (var x = 0; x < 7; x++) if (on(x - 1, y - 1) && !on(x, y)) g.fillRect(bx + x * s, y0 + y * s, s, s);
+      for (y = 0; y < 6; y++) for (x = 0; x < 6; x++) if (on(x, y)) { g.fillStyle = x < 2 ? '#f7ce00' : x === 5 ? '#ffff94' : '#ffff00'; g.fillRect(bx + x * s, y0 + y * s, s, s); }
+    }
+  }
+  function ink(h) { var c = rgb(h); return (c[0] * 299 + c[1] * 587 + c[2] * 114) / 1000 > 150 ? '#12141a' : '#ffffff'; }
+  function fit(g, t, w) { if (g.measureText(t).width <= w) return t; while (t.length > 1 && g.measureText(t + '…').width > w) t = t.slice(0, -1); return t + '…'; }
+  var SANS = 'Pretendard, "Malgun Gothic", sans-serif', cardP = null, cardAway = false, faceImg = [];
+  function drawCard() {
+    var p = cardP, c = club(p.c), cv = $('clubcv'), g = cv.getContext('2d'), W = cv.width, H = cv.height, E = en();
+    var shirt = cardAway ? c.as : c.hs, shorts = cardAway ? c.ap : c.hp, socks = cardAway ? c.ak : c.hk;
+    g.setTransform(1, 0, 0, 1, 0, 0); g.imageSmoothingEnabled = true; g.textAlign = 'left'; g.textBaseline = 'top';
+    g.fillStyle = '#12141a'; g.fillRect(0, 0, W, H);
+    round(g, 20, 20, W - 40, H - 40, 36); g.fillStyle = '#' + shirt; g.fill();
+    round(g, 44, 44, W - 88, H - 88, 24); g.fillStyle = '#' + shorts; g.fill();
+
+    g.save(); round(g, 60, 150, W - 120, 620, 18); g.clip();
+    g.fillStyle = 'rgb(30,98,50)'; g.fillRect(60, 150, W - 120, 620);
+    g.fillStyle = 'rgb(35,109,57)'; for (var y = 150; y < 770; y += 80) g.fillRect(60, y, W - 120, 40);
+    g.strokeStyle = 'rgba(255,255,255,.10)'; g.lineWidth = 10;
+    for (var i = 0; i < W - 120 + 620; i += 28) { g.beginPath(); g.moveTo(60 + i, 150); g.lineTo(60 + i - 620, 770); g.stroke(); }
+    g.restore();
+    var D = window.CLUB_CARD; g.imageSmoothingEnabled = false;
+    g.drawImage(player(shirt, shorts, socks, c.sh, c.hair), 60 + (W - 120 - D.w * 8) / 2, 156, D.w * 8, D.h * 8);
+    board(g, (c.abbr + '   ').slice(0, 3), 70, 62, 8);
+    g.imageSmoothingEnabled = true;
+    g.font = '700 40px Galmuri11, ' + SANS; g.fillStyle = ink(shorts); g.textAlign = 'right'; g.textBaseline = 'middle';
+    g.fillText(fit(g, c.name, W - 70 - 270), W - 70, 98);
+
+    g.textAlign = 'left'; g.textBaseline = 'top';
+    round(g, 60, 790, W - 120, H - 64 - 790, 18); g.fillStyle = 'rgb(16,18,24)'; g.fill();
+    var gm = p.w + p.l, season = rname(p.r) + ' · ' + p.p + (E ? ' pts · ' + p.w + 'W ' + p.l + 'L' : '점 · ' + p.w + '승 ' + p.l + '패');
+    var rows = [[E ? 'Base' : '기반 국가', (E ? BASE_EN : BASE_KO)[c.box]], [E ? 'Formation' : '포메이션', (E ? FORM_EN : FORM_KO)[c.box]], [E ? 'Coach' : '감독', p.n],
+      [view && view.season ? view.season.name : (E ? 'Season' : '시즌'), season]];
+    rows.forEach(function (r, i) {
+      var yy = 816 + i * 52;
+      g.font = '26px ' + SANS; g.fillStyle = 'rgb(150,156,168)'; g.fillText(fit(g, r[0], 190), 90, yy);
+      g.font = '700 28px ' + SANS; g.fillStyle = '#fff'; g.fillText(fit(g, String(r[1]), i < 3 ? 300 : W - 90 - 290), 290, yy - 2);
+    });
+    var face = faceImg[c.box];
+    if (face && face.complete && face.naturalWidth) { g.imageSmoothingEnabled = false; g.drawImage(face, W - 60 - 30 - 92, 806, 92, 148); g.imageSmoothingEnabled = true; }
+
+    var chips = [shirt, shorts, socks, c.sh], names = E ? ['Shirt', 'Shorts', 'Socks', 'Boots'] : ['상의', '하의', '양말', '신발'], cx = 90;
+    if (c.hair !== '-') { chips.push(c.hair); names.push(E ? 'Hair' : '머리'); }
+    chips.forEach(function (h) { round(g, cx, 1042, 40, 40, 8); g.fillStyle = '#' + h; g.fill(); g.strokeStyle = '#fff'; g.lineWidth = 2; g.stroke(); cx += 52; });
+    g.font = '15px ' + SANS; g.fillStyle = 'rgb(150,156,168)'; g.textBaseline = 'middle';
+    g.fillText(fit(g, names.join(' · '), W - 60 - 20 - cx - 6), cx + 6, 1062);
+    g.fillStyle = 'rgb(110,116,128)'; g.textAlign = 'right'; g.textBaseline = 'top'; g.fillText('seibucup.online', W - 90, H - 64 - 34);
+    $('clubAway').innerHTML = cardAway ? '<span class="ko">홈 유니폼 보기</span><span class="en">Home kit</span>' : '<span class="ko">원정 유니폼 보기</span><span class="en">Away kit</span>';
+  }
+  var lastFocus = null;
+  function openCard(p) {
+    var D = window.CLUB_CARD; if (!D || !club(p.c)) return;
+    var c = club(p.c);
+    if (!faceImg[c.box]) { faceImg[c.box] = new Image(); faceImg[c.box].onload = function () { if (cardP === p) drawCard(); }; faceImg[c.box].src = D.faces[c.box]; }
+    cardP = p; cardAway = false; lastFocus = document.activeElement;
+    $('clubwin').hidden = false; drawCard(); $('clubX').focus();
+    if (document.fonts && document.fonts.load) document.fonts.load('700 40px Galmuri11').then(function () { if (cardP === p) drawCard(); }, function () {});
+  }
+  function closeCard() { $('clubwin').hidden = true; cardP = null; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('button.club'); if (!b || !view) return;
+    var p = (view.players || [])[+b.dataset.i]; if (p) openCard(p);
+  });
+  $('clubX').addEventListener('click', closeCard);
+  $('clubwin').addEventListener('click', function (e) { if (e.target === this) closeCard(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('clubwin').hidden) closeCard(); });
+  $('clubAway').addEventListener('click', function () { if (cardP) { cardAway = !cardAway; drawCard(); } });
+  $('clubSave').addEventListener('click', function () {
+    if (!cardP) return;
+    var c = club(cardP.c), name = (c.name || 'club').replace(/[\\/:*?"<>|]/g, '_') + (cardAway ? '_away' : '') + '.png';
+    $('clubcv').toBlob(function (b) {
+      if (!b) return;
+      var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }, 'image/png');
+  });
 
   $('find').addEventListener('input', find);
   fetch('ranking.json?' + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { cur = d; draw(d); tabs(d); })
