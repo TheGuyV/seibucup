@@ -1807,7 +1807,7 @@
 
     if (n < 2) net.autoStarted = false;
     if (isOwner(r) && r.state === 'waiting' && n >= 2 && !net.startSent && !net.autoStarted && (!running || running.mode === 'solo') && (r.quick || net.quick || net.soloWaiting)) { net.startSent = true; net.autoStarted = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' a' + (nset.swap ? 's' : '')); }
-    else if (isOwner(r) && r.state === 'waiting' && all && n >= (r.type === 'pve' ? 1 : 2) && (r.type !== '2v2' || n === 4) && !net.startSent && !running) { net.startSent = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' ' + flags); }
+    else if (isOwner(r) && r.state === 'waiting' && all && n >= (r.type === 'pve' && !r.locked ? 1 : 2) && (r.type !== '2v2' || n === 4) && !net.startSent && !running) { net.startSent = true; send('START ' + delayArg() + ' ' + r.time + ' ' + bgm + ' ' + flags); }
     if (net.interlude && !net.interlude.won && !net.interlude.critical) drawInterlude();
     netSay(isOwner(r) ? T('방을 열었습니다. 상대가 들어와 모두 준비하면 시작합니다.', 'Your room is open. It starts when everybody is ready.') : T('방에 들어왔습니다. 준비를 누르세요.', 'In the room - press Ready.'));
     drawNet();

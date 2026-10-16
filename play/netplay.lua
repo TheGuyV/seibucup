@@ -2675,6 +2675,7 @@ local function lose(fmt, ...)
   overlay_hint = tr("close this window, then start again from the launcher")
   clear_all_inputs()
   phase = "lost"
+  if SCNP_SHADOW then log("the server's watcher: the match is gone - closing"); machine:exit() end
 end
 
 local function prefill()
@@ -3416,7 +3417,8 @@ end
 
 local function handle_host_message(p, t, g, payload)
   if t == "H" then
-    local ver, _, want = payload:byte(1, 3)
+    local ver, _, want, hfl = payload:byte(1, 4)
+    if p.slot >= 5 and hfl and (hfl & 1) ~= 0 then p.shadow = true end
     if ver ~= VERSION then status("player %d has protocol version %d (need %d)", p.slot, ver, VERSION); return end
     local ml, mh = payload:byte(6, 7)
     local pm = (ml or 0) + (mh or 0) * 256
@@ -3742,7 +3744,7 @@ local function client_connect()
     end
   end
   host_peer = p
-  send_to(p, "H" .. string.char(0, VERSION, 0, cfg.slot, 0, 0) .. mame_bytes())
+  send_to(p, "H" .. string.char(0, VERSION, 0, cfg.slot, SCNP_SHADOW and 1 or 0, 0) .. mame_bytes())
   phase = "handshake"
   hs_wait = now_ms()
   set_overlay(C_INFO, "NETPLAY: connected, waiting for the host's reply...")
@@ -3758,6 +3760,7 @@ pcall(function()
   SCNP_PRESAVE = emu.add_machine_pre_save_notifier(function()
     if spec_join and not spec_join.real then spec_join.real = frame end
     if SCNP_CKPT and SCNP_CKPT.pend and not SCNP_CKPT.pend.real then SCNP_CKPT.pend.real = frame end
+    if SCNP_SHADOWQ and SCNP_SHADOWQ.pend and not SCNP_SHADOWQ.pend.real then SCNP_SHADOWQ.pend.real = frame end
   end)
 end)
 
@@ -3816,6 +3819,31 @@ function scnp_ckpt_step()
   local name = SPEC_STATE .. "_ck" .. SCNP_SPEC_N .. "_" .. (os.time() % 100000)
   machine:save(name)
   C.pend = { name = name, at = frame + SPEC_SAVE_LAG, t = os.time(), why = why }
+end
+
+SCNP_SHADOW = os.getenv("SCNP_SHADOW")
+if SCNP_SHADOW == "" then SCNP_SHADOW = nil end
+SCNP_SHADOWQ = { pend = nil, last = 0, EVERY = 300, n = 0 }
+function scnp_shadow_step()
+  local Q = SCNP_SHADOWQ
+  if not SCNP_SHADOW or not is_spec or phase ~= "play" then return end
+  if Q.pend then
+    local data, fpath = read_state_file(Q.pend.name)
+    if data then
+      local at = Q.pend.real or Q.pend.at
+      local base = SCNP_SHADOW .. "/ck_" .. gen .. "_" .. at .. "_" .. (bgm_rand or 0)
+      local h = io.open(base .. ".tmp", "wb")
+      if h then h:write(data); h:close(); os.rename(base .. ".tmp", base .. ".sta") end
+      pcall(os.remove, fpath)
+      Q.last = at; Q.pend = nil
+    elseif os.time() - Q.pend.t > 5 then Q.pend = nil end
+    return
+  end
+  if SCNP_QUIET or agg_max - frame > 15 or frame - Q.last < Q.EVERY then return end
+  Q.n = Q.n + 1
+  local name = "np_shadow_" .. Q.n
+  machine:save(name)
+  Q.pend = { name = name, at = frame + SPEC_SAVE_LAG, t = os.time() }
 end
 local function spec_join_step()
   if spec_join then
@@ -4095,6 +4123,7 @@ local function step()
     end
   end
   if is_host then spec_join_step(); scnp_ckpt_step() end
+  if is_spec and SCNP_SHADOW then scnp_shadow_step() end
 
   frame = frame + 1
   scnp_poss_step()
@@ -4175,7 +4204,7 @@ local function step()
       for i = 1, 4 do q[i] = (i == 1) and 0 or (rtt[i] and math.min(254, math.floor(rtt[i] / 4)) or 255) end
       broadcast("T" .. string.char(gen, q[1], q[2], q[3], q[4], hud_dev[1] or 0, hud_dev[2] or 0, hud_dev[3] or 0, hud_dev[4] or 0))
       local nspec = 0
-      for s = 5, 12 do if peers[s] and peers[s].ready then nspec = nspec + 1 end end
+      for s = 5, 12 do if peers[s] and peers[s].ready and not peers[s].shadow then nspec = nspec + 1 end end
       if nspec ~= SCNP_SPEC.n then log("watching now: %d", nspec) end
       SCNP_SPEC.n = nspec
       broadcast("V" .. string.char(gen, nspec))
