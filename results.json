@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 02:44","room":24,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_024451_로또영_vs_trga_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:40","room":24,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_024026_로또영_vs_trga_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:33","room":24,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_023333_로또영_vs_trga_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:28","room":24,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_022845_로또영_vs_trga_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 00:41","room":1,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"1-261016004141-2","nicks":["로또영","zxzx","",""],"replay":"replays/20261016_004141_로또영_vs_zxzx_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:40","room":3,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,8],"ft":2,"series":"2-261016003612-1","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_004026_즐축_vs_주물러_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:36","room":2,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"2-261016003612-1","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_003612_즐축_vs_주물러_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 00:31","room":7,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"7-261016003123-2","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_003123_즐축_vs_주물러_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 00:19","room":1,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001902_로또영_vs_dfdf_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 00:31","room":7,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,8],"ft":2,"series":"7-261016003123-2","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"주물러":["주물러 Cola","FCX"]},"nicks":["즐축","주물러","",""],"replay":"replays/20261016_003123_즐축_vs_주물러_3-2_p1.scr","edition":"cupsocs2"}
 ]
