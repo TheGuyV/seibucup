@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 01:54","room":17,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"17-261017015113-4","nicks":["로또영","감자","",""],"replay":"replays/20261017_015444_로또영_vs_감자_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:51","room":17,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"ft":3,"series":"17-261017015113-4","nicks":["로또영","감자","",""],"replay":"replays/20261017_015113_로또영_vs_감자_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:47","room":16,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"16-261017014342-3","nicks":["싸커킴","쑥곰","",""],"replay":"replays/20261017_014714_싸커킴_vs_쑥곰_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:43","room":16,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,10],"ft":3,"series":"16-261017014342-3","nicks":["싸커킴","쑥곰","",""],"replay":"replays/20261017_014342_싸커킴_vs_쑥곰_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 23:49","room":219,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,0],"ft":2,"series":"219-261015234550-34","nicks":["Janet","소소","",""],"replay":"replays/20261015_234921_Janet_vs_소소_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 23:45","room":219,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,0],"ft":2,"series":"219-261015234550-34","nicks":["Janet","소소","",""],"replay":"replays/20261015_234550_Janet_vs_소소_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 23:45","room":218,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"ft":3,"series":"218-261015234538-33","nicks":["로또영","주물러","",""],"replay":"replays/20261015_234538_로또영_vs_주물러_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 23:24","room":214,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,5],"nicks":["zxzx","미스타쏭","",""],"replay":"replays/20261015_232411_zxzx_vs_미스타쏭_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 23:20","room":215,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,5],"ft":2,"series":"215-261015231701-32","nicks":["Janet","야가미최씨","",""],"replay":"replays/20261015_232027_Janet_vs_야가미최씨_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 23:24","room":214,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,5],"nicks":["zxzx","미스타쏭","",""],"replay":"replays/20261015_232411_zxzx_vs_미스타쏭_2-0_p1.scr","edition":"cupsocs2"}
 ]
