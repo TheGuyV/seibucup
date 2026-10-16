@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 17:55","room":24,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[10,8],"nicks":["zzangbs","jjjjjjj","",""],"replay":"replays/20261016_175546_zzangbs_vs_jjjjjjj_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:55","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":2,"series":"25-261016175511-4","nicks":["Janet","RhOK","",""],"replay":"replays/20261016_175511_Janet_vs_RhOK_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:54","room":23,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"ft":2,"series":"23-261016175025-3","nicks":["바바리","으랏차","",""],"replay":"replays/20261016_175402_바바리_vs_으랏차_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:50","room":24,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,3],"nicks":["zzangbs","jjjjjjj","",""],"replay":"replays/20261016_175037_zzangbs_vs_jjjjjjj_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 15:39","room":20,"type":"1v1","time":180,"players":2,"score":[2,0],"teams":[5,9],"ft":3,"series":"20-261015153908-7","nicks":["신홍기","슈퍼노멀","",""],"replay":"replays/20261015_153908_신홍기_vs_슈퍼노멀_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 15:34","room":20,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,8],"ft":3,"series":"20-261015153419-6","nicks":["신홍기","슈퍼노멀","",""],"replay":"replays/20261015_153419_신홍기_vs_슈퍼노멀_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 15:33","room":21,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,7],"ft":3,"series":"21-261015153303-5","nicks":["드래곤타이거","김정은패스","",""],"replay":"replays/20261015_153303_드래곤타이거_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 15:27","room":19,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[10,8],"ft":3,"series":"19-261015152749-4","nicks":["드래곤타이거","슈퍼노멀","",""],"replay":"replays/20261015_152749_드래곤타이거_vs_슈퍼노멀_5-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 15:25","room":18,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"18-261015152547-3","nicks":["신홍기","김정은패스","",""],"replay":"replays/20261015_152547_신홍기_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 15:27","room":19,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[10,8],"ft":3,"series":"19-261015152749-4","nicks":["드래곤타이거","슈퍼노멀","",""],"replay":"replays/20261015_152749_드래곤타이거_vs_슈퍼노멀_5-1_p1.scr","edition":"cupsocs2"}
 ]
