@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 17:30","room":16,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"arcade":1,"nicks":["대한민국","이탈리아","",""],"replay":"replays/20261016_173027_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:29","room":13,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,10],"ft":3,"series":"13-261016172128-1","nicks":["드래곤타이거","바바리","",""],"replay":"replays/20261016_172946_드래곤타이거_vs_바바리_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:25","room":13,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,9],"ft":3,"series":"13-261016172128-1","nicks":["드래곤타이거","바바리","",""],"replay":"replays/20261016_172536_드래곤타이거_vs_바바리_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:21","room":13,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[0,5],"ft":3,"series":"13-261016172128-1","nicks":["드래곤타이거","바바리","",""],"replay":"replays/20261016_172128_드래곤타이거_vs_바바리_4-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 14:55","room":13,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,0],"arcade":1,"nicks":["대한민국","이탈리아","",""],"replay":"replays/20261015_145519_arcade_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 14:33","room":10,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,9],"nicks":["세이부축구만쉐","mizunoasahi","",""],"replay":"replays/20261015_143351_세이부축구만쉐_vs_mizunoasahi_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 11:12","room":7,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[0,0],"nicks":["오락실체어샷","슈니쇼빠더","",""],"replay":"replays/20261015_111217_오락실체어샷_vs_슈니쇼빠더_5-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 09:44","room":4,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"arcade":1,"nicks":["일본","서독","",""],"replay":"replays/20261015_094450_arcade_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 00:51","room":168,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"168-261015003112-46","nicks":["anungdf","즐축","",""],"replay":"replays/20261015_005128_anungdf_vs_즐축_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 09:44","room":4,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"arcade":1,"nicks":["일본","서독","",""],"replay":"replays/20261015_094450_arcade_1-1_p1.scr","edition":"cupsocs2"}
 ]
