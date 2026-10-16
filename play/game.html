@@ -310,6 +310,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
       }
     }
     if (mode === 'match' && Q.get('nochat') === '1') env.SCNP_NOCHAT = '1';
+    if (mode === 'match' && Q.get('dip') === '1') env.SCNP_DIPTIME = '1';
     if (mode === 'match' && Q.get('god')) env.SCNP_GOD = '1';
     if (mode === 'match') env.SCNP_SPECCHAT = '/specchat.txt';
     if (mode === 'match' || mode === 'replay') {

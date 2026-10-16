@@ -1,13 +1,11 @@
 -- Seibu Cup Soccer Online - web start-up script (boot.lua)
--- Copyright (C) 2026 seibucup.online (https://seibucup.online)
--- SPDX-License-Identifier: GPL-3.0-or-later
+-- Copyright (C) 2026 seibucup.online (https://seibucup.online). All rights reserved.
+-- SPDX-License-Identifier: LicenseRef-SeibuCupOnline-Proprietary
 --
--- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General
--- Public License as published by the Free Software Foundation, either version 3 of the License, or (at your
--- option) any later version. It is distributed WITHOUT ANY WARRANTY; see the GNU General Public License for
--- details (the package's bin\legal\GPL-3.0.txt, the site's legal/GPL-3.0.txt, or <https://www.gnu.org/licenses/>).
--- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
--- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
+-- 이 파일은 세이부 컵 사커 온라인의 런처와 웹 플레이에서 쓰기 위해서만 배포됩니다.
+-- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
+-- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
+-- It may not be modified or redistributed without permission.
 local input = manager.machine.input
 local extra = { ["P1 Shoot"] = "KEYCODE_Z", ["P1 Pass"] = "KEYCODE_X" }
 for tag, port in pairs(manager.machine.ioport.ports) do

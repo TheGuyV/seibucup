@@ -1,6 +1,11 @@
 -- Seibu Cup Soccer Online - 혼자놀기 while waiting for a ranked match (ranked_wait.lua)
--- Copyright (C) 2026 seibucup.online (https://seibucup.online)
--- SPDX-License-Identifier: GPL-3.0-or-later
+-- Copyright (C) 2026 seibucup.online (https://seibucup.online). All rights reserved.
+-- SPDX-License-Identifier: LicenseRef-SeibuCupOnline-Proprietary
+--
+-- 이 파일은 세이부 컵 사커 온라인의 런처와 웹 플레이에서 쓰기 위해서만 배포됩니다.
+-- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
+-- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
+-- It may not be modified or redistributed without permission.
 local machine = manager.machine
 local mem = machine.devices[":maincpu"].spaces["program"]
 local SCNP_GAME = machine.system.name

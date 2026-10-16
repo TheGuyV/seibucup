@@ -1,14 +1,12 @@
 -- Seibu Cup Soccer Online - netplay script (netplay.lua)
--- Copyright (C) 2026 seibucup.online (https://seibucup.online)
--- SPDX-License-Identifier: GPL-3.0-or-later
+-- Copyright (C) 2026 seibucup.online (https://seibucup.online). All rights reserved.
+-- SPDX-License-Identifier: LicenseRef-SeibuCupOnline-Proprietary
 --
--- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General
--- Public License as published by the Free Software Foundation, either version 3 of the License, or (at your
--- option) any later version. It is distributed WITHOUT ANY WARRANTY; see the GNU General Public License for
--- details (the package's bin\legal\GPL-3.0.txt, the site's legal/GPL-3.0.txt, or <https://www.gnu.org/licenses/>).
--- Additional terms under section 7 of the GPL: a modified version must be marked as changed from the original,
--- and it may not use the name "Seibu Cup Soccer Online" (세이부 컵 사커 온라인).
-local VERSION = 36
+-- 이 파일은 세이부 컵 사커 온라인의 런처와 웹 플레이에서 쓰기 위해서만 배포됩니다.
+-- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
+-- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
+-- It may not be modified or redistributed without permission.
+local VERSION = 37
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -39,6 +37,7 @@ local is_teams = (cfg.teams == "2v2")
 
 SCNP_FREE = (cfg.mode ~= "replay")
 
+SCNP_DIPTIME = os.getenv("SCNP_DIPTIME") == "1"
 SCNP_PACE = (cfg.mode ~= "replay")
 SCNP_RELOAD = nil
 SCNP_FREE_ADD = 0
@@ -1386,7 +1385,9 @@ local function install_clock_gate()
   local fpu = (nplayers == 1 or SCNP_PVE.on) and math.floor(SCNP_G.fpu * 52 / 72 + 0.5) or SCNP_G.fpu
   clock_fpu = fpu
   local base = CLOCK_UNITS * fpu
+  if SCNP_DIPTIME then secs = 150 end
   local target = math.floor(secs * 60 + 0.5)
+  if SCNP_DIPTIME then target = 91 * CLOCK_UNITS end
   local boundary = target / CLOCK_UNITS
   clock_secs = secs
   clock_units0 = target < base and math.max(10, math.floor(CLOCK_UNITS * target / base + 0.5)) or CLOCK_UNITS
@@ -1687,7 +1688,7 @@ local function broadcast(data)
   for _, p in pairs(peers) do send_to(p, data) end
 end
 
-local MSG_LEN = { M = 3, L = 2, W = 3, F = 6, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2, O = 17 }
+local MSG_LEN = { M = 3, L = 2, W = 3, F = 7, H = 8, I = 6, A = 9, C = 9, P = 5, Q = 5, X = 1, R = 1, G = 1, T = 9, D = 2, J = 6, V = 2, O = 17 }
 local function next_message(p)
   local b = p.rx
   if #b < 1 then return nil end
@@ -1887,8 +1888,8 @@ local function rec_save(complete)
   local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".scr"
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
-  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"ball":"%s","devs":"%s","diff":%d,"pvegod":%d,"comic":%d,"costume":"%s"}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, SCNP_SAFE.type(cfg.teams), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, scnp_sel_code(), table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.auto and 3 or (SCNP_GOD.fix and 2 or 1)) or 0, SCNP_PAL.BALL and SCNP_PAL.BALLNAME or "white", table.concat(SCNP_DEVR.hist, ";"), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_PVEGOD.on and 1 or 0, SCNP_COMIC.on and 1 or 0, (SCNP_COSTUME.wire or ""):gsub('"', ""))
+  local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"ball":"%s","devs":"%s","diff":%d,"pvegod":%d,"comic":%d,"costume":"%s","dip":%d}',
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, SCNP_SAFE.type(cfg.teams), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, scnp_sel_code(), table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.auto and 3 or (SCNP_GOD.fix and 2 or 1)) or 0, SCNP_PAL.BALL and SCNP_PAL.BALLNAME or "white", table.concat(SCNP_DEVR.hist, ";"), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_PVEGOD.on and 1 or 0, SCNP_COMIC.on and 1 or 0, ((SCNP_COSTUME.wire or ""):gsub('"', "")), SCNP_DIPTIME and 1 or 0)
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
 
@@ -3430,14 +3431,14 @@ local function handle_host_message(p, t, g, payload)
     local pm = (ml or 0) + (mh or 0) * 256
     if pm > 0 and MAME_MINOR > 0 and pm ~= MAME_MINOR then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
       if p.slot >= 5 then log("spectator %d has MAME %s (we run %s) - ignored", p.slot, mame_str(pm), mame_str(MAME_MINOR)); return end
       lose("MAME version differs: player %d has %s, you have %s - everybody needs the same MAME build", p.slot, mame_str(pm), mame_str(MAME_MINOR))
       return
     end
     if p.slot >= 5 then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
       if not p.ready then log("spectator %d joined", p.slot) end
       p.ready = true
 
@@ -3459,19 +3460,19 @@ local function handle_host_message(p, t, g, payload)
       P.dropped[p.slot] = nil; P.gone[p.slot] = nil; P.mark[p.slot] = nil; P.tries[p.slot] = nil
       P.late[p.slot] = nil; P.live[p.slot] = nil; allow[p.slot] = 0; inputs[p.slot] = {}; peer_sums[p.slot] = {}
       if p.slot > nplayers then nplayers = p.slot end
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
       p.ready = true
 
       P.sync_join = true; P.joining = P.joining or {}; P.joining[p.slot] = true
       log("PvE: %dP joins the running match (resync)", p.slot); status("PvE: %dP is joining the match", p.slot)
       return
     end
-    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3)); return end
+    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0)); return end
 
     if want and want >= 2 and want <= nplayers and want ~= p.slot and not peers[want] then
       peers[p.slot] = nil; peers[want] = p; p.slot = want
     end
-    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3))
+    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
     p.ready = true
     log("player %d joined (%d/%d)", p.slot, p.slot, nplayers)
     status("player %d joined (%d of %d)", p.slot, p.slot, nplayers)
@@ -3545,7 +3546,8 @@ end
 local function handle_client_message(t, g, payload)
   if t == "F" then
 
-    local st, pk, sel, god, df = payload:byte(1, 5)
+    local st, pk, sel, god, df, dt = payload:byte(1, 6)
+    if dt and (dt == 1) ~= SCNP_DIPTIME then SCNP_DIPTIME = (dt == 1); install_clock_gate() end
     if st and st <= 17 and st ~= scnp_stage then scnp_stage = st; scnp_install_stage_tap() end
     if pk then SCNP_PK.on = (pk == 1); SCNP_PK.gg = (pk == 2) end
     if sel then scnp_sel_apply(sel >= 1, sel >= 2, sel >= 3, sel >= 4) end
@@ -3927,6 +3929,7 @@ local function step()
       if r.meta:match('"pvegod":1') then scnp_pvegod_apply(true) end
       do local cw = r.meta:match('"costume":"([^"]*)"'); if cw and cw ~= "" then scnp_costume_parse(cw) end end
       SCNP_FREE = r.meta:match('"free":1') ~= nil
+      SCNP_DIPTIME = r.meta:match('"dip":1') ~= nil
       SCNP_PACE = r.meta:match('"pace":2') ~= nil
       clock_run = not r.meta:match('"clock":"stop"')
       nplayers = tonumber(r.meta:match('"players":(%d+)')) or 2

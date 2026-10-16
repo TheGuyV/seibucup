@@ -722,7 +722,7 @@
 
     try { if (Array.prototype.some.call(navigator.getGamepads(), Boolean)) store.set('web_haspad', '1'); } catch (e) {}
     if (store.get('web_haspad') === '1') q.set('pads', '1');
-    if (mode === 'match') ['kinds', 'token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'dyn', 'ball', 'diff', 'pvegod', 'comic', 'costume', 'nochat'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
+    if (mode === 'match') ['kinds', 'token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'dyn', 'ball', 'diff', 'pvegod', 'comic', 'costume', 'nochat', 'dip'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
     if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); ['xargs', 'nobeat', 'burn'].forEach(function (k) { if (TESTQ.get(k)) q.set(k, TESTQ.get(k)); }); }
     hideInterlude();
     var f = document.createElement('iframe');
@@ -975,7 +975,7 @@
 
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 36;
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 37;
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: -1, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, pveDiff: 3, aloneDiff: 3, pveVsGod: false, sound: true, tie: 'pk', teams: 'pick' };
@@ -2043,7 +2043,8 @@
                      pvegod: (f[4] === 'pve' && f[1] === '1' && r.vsgod) ? '1' : '',
                      costume: f[11] && f[11] !== '-' ? f[11] : '',
                      dyn: nset.autoDelay === false ? '0' : '',
-                     nochat: r.arcade ? '1' : '',
+                     nochat: r.arcade ? '1' : '', dip: r.arcade ? '1' : '',
+
                      label: T('온라인 경기 · 방 ', 'Online match · room ') + (r.id || '?') });
   }
 
