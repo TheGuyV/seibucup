@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 00:03","room":183,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":2,"series":"183-261016235959-41","nicks":["메시","뚱이","",""],"replay":"replays/20261017_000342_메시_vs_뚱이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:03","room":182,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[8,7],"nicks":["불꽃슛마스터","코바오락실","",""],"replay":"replays/20261017_000320_불꽃슛마스터_vs_코바오락실_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:59","room":183,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"183-261016235959-41","nicks":["메시","뚱이","",""],"replay":"replays/20261016_235959_메시_vs_뚱이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:58","room":182,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["불꽃슛마스터","코바오락실","",""],"replay":"replays/20261016_235842_불꽃슛마스터_vs_코바오락실_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 22:27","room":185,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,0],"ft":3,"series":"185-261015221829-27","nicks":["뚱이","소소","",""],"replay":"replays/20261015_222717_뚱이_vs_소소_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:25","room":188,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["벌점","콩메모","",""],"replay":"replays/20261015_222511_벌점_vs_콩메모_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:23","room":185,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,3],"ft":3,"series":"185-261015221829-27","nicks":["뚱이","소소","",""],"replay":"replays/20261015_222303_뚱이_vs_소소_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:18","room":185,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,3],"ft":3,"series":"185-261015221829-27","nicks":["뚱이","소소","",""],"replay":"replays/20261015_221829_뚱이_vs_소소_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:17","room":177,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[9,5],"ft":2,"series":"177-261015220708-26","nicks":["rdsa","즐축","콩메모","판순이"],"replay":"replays/20261015_221752_rdsa_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 22:18","room":185,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,3],"ft":3,"series":"185-261015221829-27","nicks":["뚱이","소소","",""],"replay":"replays/20261015_221829_뚱이_vs_소소_0-1_p1.scr","edition":"cupsocs2"}
 ]
