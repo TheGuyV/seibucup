@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 22:22","room":137,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,3],"arcade":1,"nicks":["일본","잉글랜드","",""],"replay":"replays/20261016_222243_arcade_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:20","room":136,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,10],"ft":2,"series":"133-261016221658-27","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["인형의기사","Janet","",""],"replay":"replays/20261016_222054_인형의기사_vs_Janet_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:18","room":134,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,3],"nicks":["atfn","dahlia","",""],"replay":"replays/20261016_221847_atfn_vs_dahlia_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:16","room":133,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,10],"ft":2,"series":"133-261016221658-27","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["인형의기사","Janet","",""],"replay":"replays/20261016_221658_인형의기사_vs_Janet_0-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 20:35","room":137,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[7,5],"nicks":["인형의기사","깜찍만두","",""],"replay":"replays/20261015_203539_인형의기사_vs_깜찍만두_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:35","room":138,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,7],"ft":3,"series":"138-261015203514-20","nicks":["김창식씨","초조","",""],"replay":"replays/20261015_203514_김창식씨_vs_초조_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:34","room":134,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,9],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_203448_신발벗어_vs_덕장배_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 20:32","room":137,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["인형의기사","깜찍만두","",""],"replay":"replays/20261015_203208_인형의기사_vs_깜찍만두_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 20:31","room":136,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,3],"ft":2,"series":"136-261015203124-19","nicks":["초조","라면","",""],"replay":"replays/20261015_203124_초조_vs_라면_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 20:32","room":137,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["인형의기사","깜찍만두","",""],"replay":"replays/20261015_203208_인형의기사_vs_깜찍만두_2-1_p1.scr","edition":"cupsocs2"}
 ]
