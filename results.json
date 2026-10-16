@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 01:28","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_012837_로또영_vs_감자_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:24","room":11,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_012411_로또영_vs_감자_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:15","room":9,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_011548_로또영_vs_atfn_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:10","room":9,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_011016_로또영_vs_atfn_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 23:07","room":210,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"210-261015230718-31","nicks":["로또영","narahashi","",""],"replay":"replays/20261015_230718_로또영_vs_narahashi_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 23:02","room":199,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,5],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_230234_뚱이_vs_야가미최씨_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 23:01","room":205,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":3,"series":"205-261015230114-30","nicks":["로또영","rdsa","",""],"replay":"replays/20261015_230114_로또영_vs_rdsa_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:58","room":199,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,5],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_225841_뚱이_vs_야가미최씨_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:53","room":203,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"nicks":["rdsa","로또영","",""],"replay":"replays/20261015_225317_rdsa_vs_로또영_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 22:58","room":199,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,5],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_225841_뚱이_vs_야가미최씨_3-4_p1.scr","edition":"cupsocs2"}
 ]
