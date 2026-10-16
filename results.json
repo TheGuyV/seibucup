@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 15:27","room":12,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,9],"pk":[2,4],"ft":2,"series":"12-261016152702-2","nicks":["인형의기사","mizunoasahi","",""],"replay":"replays/20261016_152702_인형의기사_vs_mizunoasahi_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 15:19","room":5,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,7],"nicks":["사하구신평동","인형의기사","",""],"replay":"replays/20261016_151917_사하구신평동_vs_인형의기사_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 15:15","room":5,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,7],"nicks":["사하구신평동","인형의기사","",""],"replay":"replays/20261016_151536_사하구신평동_vs_인형의기사_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 15:11","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"nicks":["surferKIM","인형의기사","",""],"replay":"replays/20261016_151108_surferKIM_vs_인형의기사_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 22:55","room":147,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"nicks":["세이부축구만쉐","김창식씨","",""],"replay":"replays/20261014_225554_세이부축구만쉐_vs_김창식씨_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:53","room":151,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":2,"series":"151-261014225345-43","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"슛돌이":["슛돌이 FC","FCX"]},"nicks":["Janet","슛돌이","",""],"replay":"replays/20261014_225345_Janet_vs_슛돌이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:52","room":147,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"nicks":["세이부축구만쉐","김창식씨","",""],"replay":"replays/20261014_225227_세이부축구만쉐_vs_김창식씨_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:49","room":147,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"nicks":["세이부축구만쉐","김창식씨","",""],"replay":"replays/20261014_224901_세이부축구만쉐_vs_김창식씨_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:46","room":143,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,5],"ft":3,"series":"143-261014223746-41","nicks":["상봉거지오락실","narahashi","",""],"replay":"replays/20261014_224627_상봉거지오락실_vs_narahashi_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 22:49","room":147,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,4],"nicks":["세이부축구만쉐","김창식씨","",""],"replay":"replays/20261014_224901_세이부축구만쉐_vs_김창식씨_1-1_p1.scr","edition":"cupsocs2"}
 ]
