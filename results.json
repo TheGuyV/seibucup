@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 02:06","room":20,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"20-261017020645-5","nicks":["쑥곰","trga","",""],"replay":"replays/20261017_020645_쑥곰_vs_trga_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:01","room":17,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":3,"series":"17-261017015113-4","nicks":["로또영","감자","",""],"replay":"replays/20261017_020127_로또영_vs_감자_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:54","room":17,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"17-261017015113-4","nicks":["로또영","감자","",""],"replay":"replays/20261017_015444_로또영_vs_감자_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:51","room":17,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"ft":3,"series":"17-261017015113-4","nicks":["로또영","감자","",""],"replay":"replays/20261017_015113_로또영_vs_감자_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 23:55","room":222,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,8],"nicks":["소소","주물러","",""],"replay":"replays/20261015_235534_소소_vs_주물러_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 23:53","room":220,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"ft":3,"series":"220-261015235314-35","nicks":["로또영","콩메모","",""],"replay":"replays/20261015_235314_로또영_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 23:49","room":219,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,0],"ft":2,"series":"219-261015234550-34","nicks":["Janet","소소","",""],"replay":"replays/20261015_234921_Janet_vs_소소_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 23:45","room":219,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,0],"ft":2,"series":"219-261015234550-34","nicks":["Janet","소소","",""],"replay":"replays/20261015_234550_Janet_vs_소소_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 23:45","room":218,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"ft":3,"series":"218-261015234538-33","nicks":["로또영","주물러","",""],"replay":"replays/20261015_234538_로또영_vs_주물러_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 23:45","room":219,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,0],"ft":2,"series":"219-261015234550-34","nicks":["Janet","소소","",""],"replay":"replays/20261015_234550_Janet_vs_소소_3-2_p1.scr","edition":"cupsocs2"}
 ]
