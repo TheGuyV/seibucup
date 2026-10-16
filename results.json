@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 19:33","room":52,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,3],"nicks":["콩메모","모이자오락실","",""],"replay":"replays/20261016_193307_콩메모_vs_모이자오락실_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:29","room":50,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"48-261016192455-12","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","상봉거지오락실","",""],"replay":"replays/20261016_192908_Janet_vs_상봉거지오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:26","room":47,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["모이자오락실","콩메모","",""],"replay":"replays/20261016_192643_모이자오락실_vs_콩메모_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:24","room":48,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"48-261016192455-12","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","상봉거지오락실","",""],"replay":"replays/20261016_192455_Janet_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 19:02","room":83,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,7],"nicks":["sangrr","인형의기사","",""],"replay":"replays/20261015_190217_sangrr_vs_인형의기사_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 18:56","room":75,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[7,0],"nicks":["인형의기사","sangrr","",""],"replay":"replays/20261015_185626_인형의기사_vs_sangrr_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 18:53","room":74,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,0],"nicks":["믹키육천","신발벗어","",""],"replay":"replays/20261015_185353_믹키육천_vs_신발벗어_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 18:40","room":70,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,3],"nicks":["인형의기사","윈드","",""],"replay":"replays/20261015_184000_인형의기사_vs_윈드_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 18:36","room":70,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[7,0],"nicks":["인형의기사","윈드","",""],"replay":"replays/20261015_183624_인형의기사_vs_윈드_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 18:40","room":70,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,3],"nicks":["인형의기사","윈드","",""],"replay":"replays/20261015_184000_인형의기사_vs_윈드_0-1_p1.scr","edition":"cupsocs2"}
 ]
