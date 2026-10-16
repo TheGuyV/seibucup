@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 21:57","room":124,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":3,"series":"124-261016215204-23","nicks":["로또영","인형의기사","",""],"replay":"replays/20261016_215706_로또영_vs_인형의기사_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:55","room":127,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[4,7],"ft":2,"series":"125-261016215117-22","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"김정은패스":["김정은패스 FC","KOF"]},"nicks":["판순이","김정은패스","",""],"replay":"replays/20261016_215519_판순이_vs_김정은패스_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:54","room":126,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,10],"ft":2,"series":"126-261016215412-24","nicks":["404page","Janet","",""],"replay":"replays/20261016_215412_404page_vs_Janet_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:52","room":124,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,7],"ft":3,"series":"124-261016215204-23","nicks":["로또영","인형의기사","",""],"replay":"replays/20261016_215204_로또영_vs_인형의기사_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 20:11","room":121,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[8,9],"nicks":["으랏차","순숙델","",""],"replay":"replays/20261015_201145_으랏차_vs_순숙델_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:11","room":124,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"124-261015200317-18","nicks":["김정은패스","콩메모","",""],"replay":"replays/20261015_201136_김정은패스_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 20:09","room":123,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,0],"nicks":["인형의기사","narahashi","",""],"replay":"replays/20261015_200912_인형의기사_vs_narahashi_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 20:07","room":124,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"124-261015200317-18","nicks":["김정은패스","콩메모","",""],"replay":"replays/20261015_200724_김정은패스_vs_콩메모_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 20:06","room":127,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["초조","mizunoasahi","",""],"replay":"replays/20261015_200656_초조_vs_mizunoasahi_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 20:07","room":124,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"124-261015200317-18","nicks":["김정은패스","콩메모","",""],"replay":"replays/20261015_200724_김정은패스_vs_콩메모_3-2_p1.scr","edition":"cupsocs2"}
 ]
