@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 01:10","room":9,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_011016_로또영_vs_atfn_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:06","room":9,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_010616_로또영_vs_atfn_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:02","room":9,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_010254_로또영_vs_atfn_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:58","room":9,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_005815_로또영_vs_atfn_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 22:58","room":199,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,5],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_225841_뚱이_vs_야가미최씨_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:53","room":203,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"nicks":["rdsa","로또영","",""],"replay":"replays/20261015_225317_rdsa_vs_로또영_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:52","room":199,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,0],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_225244_뚱이_vs_야가미최씨_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:49","room":200,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[4,9],"nicks":["Nogizaka46","himac","",""],"replay":"replays/20261015_224944_Nogizaka46_vs_himac_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:49","room":199,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_224909_뚱이_vs_야가미최씨_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 22:49","room":200,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[4,9],"nicks":["Nogizaka46","himac","",""],"replay":"replays/20261015_224944_Nogizaka46_vs_himac_2-0_p1.scr","edition":"cupsocs2"}
 ]
