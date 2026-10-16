@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 18:58","room":34,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[10,0],"nicks":["사하구신평동","narahashi","",""],"replay":"replays/20261016_185826_사하구신평동_vs_narahashi_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 18:57","room":35,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,5],"ft":2,"series":"35-261016185740-8","nicks":["상봉거지오락실","세이부축구만쉐","",""],"replay":"replays/20261016_185740_상봉거지오락실_vs_세이부축구만쉐_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 18:54","room":34,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[10,0],"nicks":["사하구신평동","narahashi","",""],"replay":"replays/20261016_185410_사하구신평동_vs_narahashi_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 18:50","room":34,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,0],"nicks":["사하구신평동","narahashi","",""],"replay":"replays/20261016_185001_사하구신평동_vs_narahashi_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 17:37","room":48,"type":"1v1","time":150,"players":2,"score":[8,3],"teams":[5,7],"ft":3,"series":"48-261015172732-12","nicks":["드래곤타이거","으랏차","",""],"replay":"replays/20261015_173718_드래곤타이거_vs_으랏차_8-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 17:32","room":48,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,10],"ft":3,"series":"48-261015172732-12","nicks":["드래곤타이거","으랏차","",""],"replay":"replays/20261015_173207_드래곤타이거_vs_으랏차_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 17:27","room":48,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[9,0],"ft":3,"series":"48-261015172732-12","nicks":["드래곤타이거","으랏차","",""],"replay":"replays/20261015_172732_드래곤타이거_vs_으랏차_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 17:01","room":43,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"43-261015170149-11","ranked":1,"tnames":{"김정은패스":["김정은패스 FC","KOF"]},"nicks":["김정은패스","거성","",""],"replay":"replays/20261015_170149_김정은패스_vs_거성_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 16:53","room":41,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,7],"nicks":["오락실체어샷","김정은패스","",""],"replay":"replays/20261015_165352_오락실체어샷_vs_김정은패스_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 17:01","room":43,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"43-261015170149-11","ranked":1,"tnames":{"김정은패스":["김정은패스 FC","KOF"]},"nicks":["김정은패스","거성","",""],"replay":"replays/20261015_170149_김정은패스_vs_거성_1-0_p1.scr","edition":"cupsocs2"}
 ]
