@@ -2644,6 +2644,7 @@ local TR = {
   ["MAME version differs (host %s, you %s) - everybody needs the same MAME build"] = { ko = "MAME 버전이 다릅니다 (방장 %s, 나 %s) - 모두 같은 MAME 빌드를 써야 합니다", ja = "MAME のバージョンが違います (ホスト %s、自分 %s) - 全員が同じ MAME ビルドを使う必要があります", zh = "MAME 版本不同（房主 %s，你 %s）- 所有人必须使用相同的 MAME 版本" },
   ["protocol version mismatch (%d vs %d) - update netplay.lua on both sides"] = { ko = "프로토콜 버전이 다릅니다 (%d / %d) - 양쪽 모두 최신 패키지로 갱신하세요", ja = "プロトコルのバージョンが違います (%d / %d) - 両方とも最新パッケージに更新してください", zh = "协议版本不一致 (%d / %d) - 请双方都更新到最新版本" },
   ["The 2P side picks its country first - wait a moment"] = { ko = "2P 진영이 먼저 나라를 고릅니다 - 잠시 기다리세요", ja = "2P側が先に国を選びます - 少しお待ちください", zh = "2P方先选择国家 - 请稍候" },
+  ["You may pick the same team as the other side"] = { ko = "같은 팀을 골라도 대전이 됩니다.", ja = "同じチームを選んでも対戦できます。", zh = "选择相同的队伍也可以对战。" },
   ["Your side picks first - choose your country"] = { ko = "2P 진영 우선권: 먼저 나라를 고르세요", ja = "2P側優先: 先に国を選んでください", zh = "2P方优先：请先选择国家" },
   ["2v2: YOU pick the LEFT team's country (your teammate joins automatically)"] = { ko = "2v2: 당신이 왼쪽 팀의 나라를 고릅니다 (팀원은 자동으로 합류)", ja = "2v2: あなたが左チームの国を選びます (チームメイトは自動で合流)", zh = "2v2: 由你选择左队的国家 (队友自动加入)" },
   ["2v2: YOU pick the RIGHT team's country (your teammate joins automatically)"] = { ko = "2v2: 당신이 오른쪽 팀의 나라를 고릅니다 (팀원은 자동으로 합류)", ja = "2v2: あなたが右チームの国を選びます (チームメイトは自動で合流)", zh = "2v2: 由你选择右队的国家 (队友自动加入)" },
@@ -4372,12 +4373,23 @@ function scnp_pick_draw()
   elseif b == 2 then t = scnp_tr("Your side picks first - choose your country") end
   if t then screen:draw_text("center", HUD_H + 3, t, 0xffffe080, 0xc0000000) end
 end
+
+function scnp_mirror_note_draw()
+  local P = SCNP_PICK
+  if not screen or not P.sel or not (SCNP_SEL and SCNP_SEL.on and SCNP_SEL.mirror) or SCNP_PVE.on or nplayers < 2 then return end
+  if mem:read_u8(P.sel) ~= 2 then return end
+  local t, w = scnp_tr("You may pick the same team as the other side"), screen.width
+  local half = 88
+  pcall(function() half = math.max(60, math.min(w / 2 - 4, manager.ui:get_string_width(t) * w / 2 + 6)) end)
+  screen:draw_box(w / 2 - half, 21, w / 2 + half, 31, 0xffffd600, 0xe0101018)
+  screen:draw_text("center", 22, t, 0xffffe060, 0x00000000)
+end
 local function on_frame_done()
   step()
 
   local W = SCNP_WAIT
   if W.on then if W.drawn then return end; W.drawn = true else W.drawn = false end
-  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); draw_hud(); scnp_pick_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
+  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
 end
 
 if cfg.mode == "probe" then
