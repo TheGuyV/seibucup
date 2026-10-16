@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 17:08","room":7,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,5],"nicks":["사하구신평동","바바리","",""],"replay":"replays/20261016_170824_사하구신평동_vs_바바리_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 16:50","room":1,"type":"1v1","time":150,"players":2,"score":[6,3],"teams":[10,0],"nicks":["사하구신평동","RhOK","",""],"replay":"replays/20261016_165018_사하구신평동_vs_RhOK_6-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 16:45","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"nicks":["사하구신평동","RhOK","",""],"replay":"replays/20261016_164522_사하구신평동_vs_RhOK_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 16:30","room":40,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,9],"ft":2,"series":"40-261016163000-8","nicks":["Janet","zzangbs","",""],"replay":"replays/20261016_163000_Janet_vs_zzangbs_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 00:41","room":168,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,8],"ft":3,"series":"168-261015003112-46","nicks":["anungdf","즐축","",""],"replay":"replays/20261015_004106_anungdf_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 00:36","room":168,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,5],"ft":3,"series":"168-261015003112-46","nicks":["anungdf","즐축","",""],"replay":"replays/20261015_003615_anungdf_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 00:31","room":168,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"168-261015003112-46","nicks":["anungdf","즐축","",""],"replay":"replays/20261015_003112_anungdf_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 23:26","room":155,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,5],"pk":[4,5],"ft":3,"series":"155-261014230718-45","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261014_232616_surferKIM_vs_서퍼킴_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 23:20","room":155,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,5],"ft":3,"series":"155-261014230718-45","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261014_232022_surferKIM_vs_서퍼킴_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 23:26","room":155,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,5],"pk":[4,5],"ft":3,"series":"155-261014230718-45","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261014_232616_surferKIM_vs_서퍼킴_3-3_p1.scr","edition":"cupsocs2"}
 ]
