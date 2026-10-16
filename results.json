@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 23:34","room":171,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,3],"nicks":["슛돌이","atfn","",""],"replay":"replays/20261016_233433_슛돌이_vs_atfn_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:33","room":168,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_233334_뚱이_vs_코바오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:33","room":170,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,3],"nicks":["연산국민학교","땡삐","",""],"replay":"replays/20261016_233323_연산국민학교_vs_땡삐_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:31","room":169,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":2,"series":"169-261016232722-36","nicks":["바바리","적토마고정운","",""],"replay":"replays/20261016_233131_바바리_vs_적토마고정운_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 21:51","room":156,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[4,0],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_215108_신발벗어_vs_덕장배_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:50","room":172,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,7],"ft":2,"series":"172-261015215040-25","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"즐축":["TheSoccer","EJY"]},"nicks":["판순이","즐축","",""],"replay":"replays/20261015_215040_판순이_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 21:50","room":161,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"nicks":["인형의기사","콩메모","",""],"replay":"replays/20261015_215015_인형의기사_vs_콩메모_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 21:46","room":156,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,10],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_214633_신발벗어_vs_덕장배_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 21:45","room":161,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,5],"nicks":["인형의기사","콩메모","",""],"replay":"replays/20261015_214555_인형의기사_vs_콩메모_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 21:46","room":156,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,10],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261015_214633_신발벗어_vs_덕장배_1-0_p1.scr","edition":"cupsocs2"}
 ]
