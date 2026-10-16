@@ -3757,6 +3757,7 @@ local spec_join = nil
 pcall(function()
   SCNP_PRESAVE = emu.add_machine_pre_save_notifier(function()
     if spec_join and not spec_join.real then spec_join.real = frame end
+    if SCNP_CKPT and SCNP_CKPT.pend and not SCNP_CKPT.pend.real then SCNP_CKPT.pend.real = frame end
   end)
 end)
 
@@ -3766,10 +3767,13 @@ function scnp_catchup_step(behind)
   if not C.on and behind > 300 then
     C.on = true
     pcall(function() C.att = manager.machine.sound.attenuation; manager.machine.sound.attenuation = -32 end)
+
+    pcall(function() C.fs = manager.machine.video.frameskip; manager.machine.video.frameskip = 10 end)
     log("catching up with the match: %d frame(s) behind", behind)
   elseif C.on and behind < 15 then
     C.on = false
     pcall(function() manager.machine.sound.attenuation = C.att or 0 end)
+    pcall(function() manager.machine.video.frameskip = C.fs or 0 end)
     log("caught up with the match at frame %d", frame)
   end
   C.pct = agg_max > 0 and math.min(99, math.floor(frame * 100 / agg_max)) or 0
@@ -3783,6 +3787,35 @@ end
 function scnp_dead_ball()
   local v = mem:read_u32(0x1138a0) & 0xffffff
   return v == 0 or (v >= 0x12800 and v <= 0x12fff and v ~= 0x12a08)
+end
+
+SCNP_CKPT = { last = 0, pend = nil, dead = nil, since = 0, MIN = 600, AT = tonumber(os.getenv("SCNP_CKPT_AT") or "") }
+function scnp_ckpt_step()
+  local C = SCNP_CKPT
+  if not is_relay or not is_host or is_replay or phase ~= "play" then return end
+  if C.pend then
+    local data = read_state_file(C.pend.name)
+    if data then
+      local at = C.pend.real or C.pend.at
+      relay_write(1, "Z" .. string.char(gen) .. u32le(at) .. string.char(bgm_rand or 0) .. u32le(#data) .. data)
+      log("checkpoint for the relay: frame %d (%d bytes, %s)", at, #data, C.pend.why)
+      C.last = at; C.pend = nil
+    elseif os.time() - C.pend.t > 5 then
+      log("checkpoint: could not read the state back - skipped"); C.pend = nil
+    end
+    return
+  end
+  if spec_join or frame - C.last < C.MIN then return end
+  local v = mem:read_u32(0x1138a0) & 0xffffff
+  local why = (v == 0) and "half time" or ((v == 0x12d58 or v == 0x12d6c) and "a goal") or nil
+  if C.AT and frame >= C.AT then why = "test"; C.dead = why; C.since = frame - 20; C.AT = nil end
+  if not why then C.dead = nil; return end
+  if C.dead ~= why then C.dead = why; C.since = frame end
+  if frame - C.since < 20 then return end
+  SCNP_SPEC_N = (SCNP_SPEC_N or 0) + 1
+  local name = SPEC_STATE .. "_ck" .. SCNP_SPEC_N .. "_" .. (os.time() % 100000)
+  machine:save(name)
+  C.pend = { name = name, at = frame + SPEC_SAVE_LAG, t = os.time(), why = why }
 end
 local function spec_join_step()
   if spec_join then
@@ -4061,7 +4094,7 @@ local function step()
       end
     end
   end
-  if is_host then spec_join_step() end
+  if is_host then spec_join_step(); scnp_ckpt_step() end
 
   frame = frame + 1
   scnp_poss_step()
