@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 14:55","room":2,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":2,"series":"2-261016145545-1","ranked":1,"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_145545_드래곤타이거_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 14:44","room":13,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,5],"ft":3,"series":"13-261016142313-3","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_144426_드래곤타이거_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 14:39","room":13,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,7],"ft":3,"series":"13-261016142313-3","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_143944_드래곤타이거_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 14:33","room":13,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[0,9],"ft":3,"series":"13-261016142313-3","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_143327_드래곤타이거_vs_상봉거지오락실_4-5_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 22:32","room":137,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":3,"series":"137-261014222905-39","nicks":["이강인탁구","surferKIM","",""],"replay":"replays/20261014_223256_이강인탁구_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:31","room":131,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"131-261014222320-38","nicks":["로또영","소소","",""],"replay":"replays/20261014_223118_로또영_vs_소소_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:29","room":137,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,5],"ft":3,"series":"137-261014222905-39","nicks":["이강인탁구","surferKIM","",""],"replay":"replays/20261014_222905_이강인탁구_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:27","room":131,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"131-261014222320-38","nicks":["로또영","소소","",""],"replay":"replays/20261014_222709_로또영_vs_소소_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:25","room":135,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"nicks":["세이부축구만쉐","레온","",""],"replay":"replays/20261014_222501_세이부축구만쉐_vs_레온_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 22:27","room":131,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":3,"series":"131-261014222320-38","nicks":["로또영","소소","",""],"replay":"replays/20261014_222709_로또영_vs_소소_2-1_p1.scr","edition":"cupsocs2"}
 ]
