@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 21:12","room":115,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,4],"ft":3,"series":"115-261016211259-19","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261016_211259_드래곤타이거_vs_판순이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:04","room":113,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,7],"ft":2,"series":"112-261016210059-18","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["상봉거지오락실","즐축","",""],"replay":"replays/20261016_210446_상봉거지오락실_vs_즐축_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:00","room":112,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":2,"series":"112-261016210059-18","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["상봉거지오락실","즐축","",""],"replay":"replays/20261016_210059_상봉거지오락실_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 20:55","room":105,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,10],"ft":3,"series":"105-261016204528-16","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_205537_드래곤타이거_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 19:54","room":119,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,7],"nicks":["정의사회구현","김정은패스","",""],"replay":"replays/20261015_195425_정의사회구현_vs_김정은패스_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:52","room":121,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,3],"nicks":["으랏차","Todoroki","",""],"replay":"replays/20261015_195241_으랏차_vs_Todoroki_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 19:52","room":110,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,10],"nicks":["narahashi","축구황제","",""],"replay":"replays/20261015_195237_narahashi_vs_축구황제_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 19:52","room":117,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[0,5],"ft":3,"series":"117-261015194817-16","nicks":["드래곤타이거","콩메모","",""],"replay":"replays/20261015_195226_드래곤타이거_vs_콩메모_4-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 19:50","room":119,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,7],"nicks":["정의사회구현","김정은패스","",""],"replay":"replays/20261015_195011_정의사회구현_vs_김정은패스_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 19:52","room":117,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[0,5],"ft":3,"series":"117-261015194817-16","nicks":["드래곤타이거","콩메모","",""],"replay":"replays/20261015_195226_드래곤타이거_vs_콩메모_4-1_p1.scr","edition":"cupsocs2"}
 ]
