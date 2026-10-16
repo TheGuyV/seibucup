@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 00:58","room":9,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_005815_로또영_vs_atfn_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:21","room":185,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_002150_코바오락실_vs_메시_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:18","room":185,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_001825_코바오락실_vs_메시_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:15","room":184,"type":"1v1","time":600,"players":2,"score":[7,8],"teams":[0,4],"arcade":1,"nicks":["이탈리아","미국","",""],"replay":"replays/20261017_001509_arcade_7-8_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 22:49","room":200,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[4,9],"nicks":["Nogizaka46","himac","",""],"replay":"replays/20261015_224944_Nogizaka46_vs_himac_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:49","room":199,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":3,"series":"199-261015224909-29","nicks":["뚱이","야가미최씨","",""],"replay":"replays/20261015_224909_뚱이_vs_야가미최씨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:42","room":197,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,3],"nicks":["Nogizaka46","판순이","",""],"replay":"replays/20261015_224231_Nogizaka46_vs_판순이_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:37","room":190,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,5],"ft":2,"series":"190-261015223343-28","nicks":["판순이","쑥곰","",""],"replay":"replays/20261015_223741_판순이_vs_쑥곰_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:33","room":190,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[4,5],"ft":2,"series":"190-261015223343-28","nicks":["판순이","쑥곰","",""],"replay":"replays/20261015_223343_판순이_vs_쑥곰_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 22:37","room":190,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,5],"ft":2,"series":"190-261015223343-28","nicks":["판순이","쑥곰","",""],"replay":"replays/20261015_223741_판순이_vs_쑥곰_3-1_p1.scr","edition":"cupsocs2"}
 ]
