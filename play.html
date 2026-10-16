@@ -509,7 +509,7 @@
             <button class="nbtn primary" id="btnReady" type="button" hidden></button>
             <button class="nbtn" id="btnLeave" type="button" hidden><span class="ko">방 나가기</span><span class="en">Leave room</span></button></div>
           <div class="seatbox"><table class="seats"><thead><tr><th><span class="ko">자리</span><span class="en">Seat</span></th><th><span class="ko">닉네임</span><span class="en">Nickname</span></th><th><span class="ko">빌드</span><span class="en">Build</span></th><th><span class="ko">역할</span><span class="en">Role</span></th></tr></thead><tbody id="seatrows"></tbody></table></div>
-          <div class="ctabs" role="tablist"><button type="button" class="on" data-tab="pub"><span class="ko">공개채팅</span><span class="en">Public chat</span></button><button type="button" data-tab="room"><span class="ko">방 채팅</span><span class="en">Room chat</span></button><a class="cnews" href="https://cafe.naver.com/f-e/cafes/31791288/menus/5?viewType=L" target="_blank" rel="noopener"><span class="ko">공지사항/업데이트</span><span class="en">News / updates</span></a></div>
+          <div class="ctabs" role="tablist"><button type="button" class="on" data-tab="pub"><span class="ko">공개채팅</span><span class="en">Public chat</span></button><button type="button" data-tab="room"><span class="ko">방 알림</span><span class="en">Room notices</span></button><a class="cnews" href="https://cafe.naver.com/f-e/cafes/31791288/menus/5?viewType=L" target="_blank" rel="noopener"><span class="ko">공지사항/업데이트</span><span class="en">News / updates</span></a></div>
           <div class="chatlog" id="chatPub" aria-live="polite"></div><div class="chatlog" id="chatRoom" aria-live="polite" hidden></div>
           <form id="chatform" class="chatin"><input id="chatin" maxlength="200" aria-label="chat" disabled><button class="nbtn" type="submit" id="btnSay" disabled><span class="ko">보내기</span><span class="en">Send</span></button></form>
           <a href="#" class="nlink" id="unLink"><span class="ko">이용 안내</span><span class="en">Rules &amp; notice</span></a>
@@ -1064,7 +1064,7 @@
     opt($('netDelay'), [2, 3, 4, 5, 6, 7, 8].map(function (v) { return [v, v + T('프레임', ' frames') + (v === 3 ? T(' (기본)', ' (default)') : '')]; }), nset.delay);
     $('netAutoDelay').checked = !!nset.autoDelay; $('netDelay').disabled = !!nset.autoDelay;
     drawType();
-    $('chatin').placeholder = net.tab === 'room' ? T('방 채팅', 'Room chat') : T('공개 채팅', 'Public chat');
+    chatInputFor(net.tab);
     drawNet();
   }
 
@@ -1303,11 +1303,17 @@
     if (tab !== net.tab) document.querySelector('.ctabs [data-tab="' + tab + '"]').classList.add('ping');
   }
   function sys(tab, text, kind) { chat(tab, hhmm(new Date()), '', text, kind || true); if (typeof tlog === 'function') tlog('sys ' + text); }
+
+  function chatInputFor(t) {
+    var room = t === 'room';
+    $('chatin').disabled = $('btnSay').disabled = room || !(net.ws && net.ws.readyState === 1);
+    $('chatin').placeholder = room ? T('방 알림은 안내만 나옵니다 - 이야기는 공개채팅에서', 'Room notices only - talk in the public chat') : T('공개 채팅', 'Public chat');
+  }
   function setTab(t) {
     net.tab = t;
     document.querySelectorAll('.ctabs button').forEach(function (b) { var on = b.getAttribute('data-tab') === t; b.classList.toggle('on', on); if (on) b.classList.remove('ping'); });
     $('chatPub').hidden = t !== 'pub'; $('chatRoom').hidden = t !== 'room';
-    $('chatin').placeholder = t === 'room' ? T('방 채팅', 'Room chat') : T('공개 채팅', 'Public chat');
+    chatInputFor(t);
     var box = $(t === 'room' ? 'chatRoom' : 'chatPub'); box.scrollTop = box.scrollHeight;
   }
   document.querySelectorAll('.ctabs button').forEach(function (b) { b.onclick = function () { setTab(b.getAttribute('data-tab')); }; });
@@ -1487,7 +1493,7 @@
 
     $('btnSolo').hidden = !host || playing;
     $('btnSolo').disabled = !!running;
-    $('chatin').disabled = $('btnSay').disabled = !on;
+    $('chatin').disabled = $('btnSay').disabled = !on || net.tab === 'room';
 
     $('netEd').disabled = !!r || !!running;
     document.querySelectorAll('#netType button').forEach(function (b) { b.disabled = !!r || inMatch; });
@@ -2378,8 +2384,8 @@
   });
   $('chatform').onsubmit = function (e) {
     e.preventDefault(); var t = $('chatin').value.trim(); if (!t) return;
-    if (net.tab === 'room') { if (!net.room) { sys('room', T('방에 들어가야 방 채팅을 쓸 수 있습니다.', 'Join a room to use the room chat.')); return; } send('SAY ' + t); }
-    else send('NOTE ' + t);
+    if (net.tab === 'room') return;
+    send('NOTE ' + t);
     $('chatin').value = '';
   };
   function drawRooms() { drawNet(); }
