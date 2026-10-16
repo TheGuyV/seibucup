@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 23:46","room":175,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,4],"pk":[4,5],"ft":2,"series":"175-261016234121-37","nicks":["메시","판순이","",""],"replay":"replays/20261016_234646_메시_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:46","room":180,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,9],"nicks":["이탈리아맨","연산국민학교","",""],"replay":"replays/20261016_234625_이탈리아맨_vs_연산국민학교_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:45","room":168,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_234504_뚱이_vs_코바오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:44","room":178,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"178-261016234422-38","nicks":["1111","슛돌이","",""],"replay":"replays/20261016_234422_1111_vs_슛돌이_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 22:10","room":177,"type":"2v2","time":150,"players":4,"score":[0,1],"teams":[8,4],"ft":2,"series":"177-261015220708-26","nicks":["즐축","rdsa","판순이","콩메모"],"replay":"replays/20261015_221050_즐축_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:07","room":161,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,9],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_220743_인형의기사_vs_소소_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 22:07","room":177,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[3,7],"ft":2,"series":"177-261015220708-26","nicks":["rdsa","즐축","콩메모","판순이"],"replay":"replays/20261015_220708_rdsa_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:03","room":161,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[7,3],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_220323_인형의기사_vs_소소_1-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 22:01","room":173,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,10],"nicks":["서퍼킴","김창식씨","",""],"replay":"replays/20261015_220111_서퍼킴_vs_김창식씨_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 22:03","room":161,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[7,3],"nicks":["인형의기사","소소","",""],"replay":"replays/20261015_220323_인형의기사_vs_소소_1-4_p1.scr","edition":"cupsocs2"}
 ]
