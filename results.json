@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 02:25","room":24,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_022526_로또영_vs_trga_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:20","room":23,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["trga","NooB","",""],"replay":"replays/20261017_022050_trga_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:17","room":23,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[7,5],"nicks":["trga","NooB","",""],"replay":"replays/20261017_021705_trga_vs_NooB_4-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:10","room":20,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"20-261017020645-5","nicks":["쑥곰","trga","",""],"replay":"replays/20261017_021057_쑥곰_vs_trga_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 00:19","room":1,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,7],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001902_로또영_vs_dfdf_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:13","room":1,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,9],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001328_로또영_vs_dfdf_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 00:10","room":1,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"1-261016001002-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261016_001002_로또영_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 00:00","room":222,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[0,8],"nicks":["소소","주물러","",""],"replay":"replays/20261016_000016_소소_vs_주물러_4-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 23:55","room":222,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,8],"nicks":["소소","주물러","",""],"replay":"replays/20261015_235534_소소_vs_주물러_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 00:00","room":222,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[0,8],"nicks":["소소","주물러","",""],"replay":"replays/20261016_000016_소소_vs_주물러_4-4_p1.scr","edition":"cupsocs2"}
 ]
