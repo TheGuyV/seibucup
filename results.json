@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 13:57","room":9,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,7],"nicks":["사하구신평동","김정은패스","",""],"replay":"replays/20261016_135750_사하구신평동_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 13:26","room":6,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,7],"nicks":["KingDani","김정은패스","",""],"replay":"replays/20261016_132600_KingDani_vs_김정은패스_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 13:22","room":6,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,7],"nicks":["KingDani","김정은패스","",""],"replay":"replays/20261016_132222_KingDani_vs_김정은패스_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 12:39","room":3,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,10],"ft":2,"series":"3-261016123950-2","nicks":["narahashi","깜찍만두","",""],"replay":"replays/20261016_123950_narahashi_vs_깜찍만두_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-14 22:19","room":133,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,9],"ft":2,"series":"133-261014221931-36","nicks":["kilimanjaro","dfdf","",""],"replay":"replays/20261014_221931_kilimanjaro_vs_dfdf_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:18","room":125,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,9],"ft":3,"series":"125-261014220941-33","nicks":["샤부사커","상봉거지오락실","",""],"replay":"replays/20261014_221803_샤부사커_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-14 22:15","room":129,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"ft":2,"series":"129-261014221120-35","nicks":["kilimanjaro","핀홀릭","",""],"replay":"replays/20261014_221504_kilimanjaro_vs_핀홀릭_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:14","room":122,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,3],"ft":2,"series":"122-261014220946-34","nicks":["소소","404page","",""],"replay":"replays/20261014_221439_소소_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-14 22:14","room":125,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,7],"ft":3,"series":"125-261014220941-33","nicks":["샤부사커","상봉거지오락실","",""],"replay":"replays/20261014_221408_샤부사커_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-14 22:14","room":122,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,3],"ft":2,"series":"122-261014220946-34","nicks":["소소","404page","",""],"replay":"replays/20261014_221439_소소_vs_404page_2-3_p1.scr","edition":"cupsocs2"}
 ]
