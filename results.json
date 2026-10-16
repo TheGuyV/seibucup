@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-16 19:13","room":36,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,3],"ft":2,"series":"36-261016191347-11","nicks":["인형의기사","고정운","",""],"replay":"replays/20261016_191347_인형의기사_vs_고정운_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:12","room":40,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":2,"series":"40-261016191240-10","ranked":1,"tnames":{"김정은패스":["김정은패스 FC","KOF"]},"nicks":["김정은패스","상봉거지오락실","",""],"replay":"replays/20261016_191240_김정은패스_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:01","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"35-261016185740-8","nicks":["상봉거지오락실","세이부축구만쉐","",""],"replay":"replays/20261016_190155_상봉거지오락실_vs_세이부축구만쉐_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:00","room":36,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,7],"pk":[4,5],"ft":2,"series":"36-261016190058-9","nicks":["인형의기사","김정은패스","",""],"replay":"replays/20261016_190058_인형의기사_vs_김정은패스_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-15 18:11","room":62,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["세이부축구만쉐","duli0212","",""],"replay":"replays/20261015_181117_세이부축구만쉐_vs_duli0212_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 18:09","room":58,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,9],"nicks":["변이구","mizunoasahi","",""],"replay":"replays/20261015_180951_변이구_vs_mizunoasahi_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-15 18:05","room":58,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,9],"nicks":["변이구","mizunoasahi","",""],"replay":"replays/20261015_180534_변이구_vs_mizunoasahi_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 17:44","room":51,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[7,8],"nicks":["으랏차","player","",""],"replay":"replays/20261015_174449_으랏차_vs_player_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-15 17:37","room":48,"type":"1v1","time":150,"players":2,"score":[8,3],"teams":[5,7],"ft":3,"series":"48-261015172732-12","nicks":["드래곤타이거","으랏차","",""],"replay":"replays/20261015_173718_드래곤타이거_vs_으랏차_8-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-15 17:44","room":51,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[7,8],"nicks":["으랏차","player","",""],"replay":"replays/20261015_174449_으랏차_vs_player_3-0_p1.scr","edition":"cupsocs2"}
 ]
