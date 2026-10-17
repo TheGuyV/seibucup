@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 22:46","room":90,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"90-261017223709-22","nicks":["싸커킴","남서울오락실","",""],"replay":"replays/20261017_224601_싸커킴_vs_남서울오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:41","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"ft":3,"series":"90-261017223709-22","nicks":["싸커킴","남서울오락실","",""],"replay":"replays/20261017_224139_싸커킴_vs_남서울오락실_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:41","room":91,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"nicks":["왕초보","모이자오락실","",""],"replay":"replays/20261017_224132_왕초보_vs_모이자오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:41","room":92,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,9],"arcade":1,"nicks":["이탈리아","서독","",""],"replay":"replays/20261017_224119_arcade_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 20:02","room":83,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":3,"series":"83-261016200220-13","nicks":["드래곤타이거","거성","",""],"replay":"replays/20261016_200220_드래곤타이거_vs_거성_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:59","room":75,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[0,9],"nicks":["연산국민학교","RhOK","",""],"replay":"replays/20261016_195955_연산국민학교_vs_RhOK_5-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:58","room":73,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[8,3],"nicks":["고슴도치","판순이","",""],"replay":"replays/20261016_195816_고슴도치_vs_판순이_0-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 19:55","room":65,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,9],"nicks":["연산국민학교","정의사회구현","",""],"replay":"replays/20261016_195510_연산국민학교_vs_정의사회구현_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 19:47","room":60,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,0],"nicks":["거성","연산국민학교","",""],"replay":"replays/20261016_194747_거성_vs_연산국민학교_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 19:55","room":65,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,9],"nicks":["연산국민학교","정의사회구현","",""],"replay":"replays/20261016_195510_연산국민학교_vs_정의사회구현_2-3_p1.scr","edition":"cupsocs2"}
 ]
