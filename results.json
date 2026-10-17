@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 00:15","room":132,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,10],"ft":3,"series":"132-261018001516-30","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_001516_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 00:11","room":130,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,10],"ft":3,"series":"130-261018000440-29","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_001137_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 00:08","room":130,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[0,10],"ft":3,"series":"130-261018000440-29","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_000815_덕장배_vs_신발벗어_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 00:06","room":131,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261018_000602_arcade_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 22:18","room":134,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,3],"nicks":["atfn","dahlia","",""],"replay":"replays/20261016_221847_atfn_vs_dahlia_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:16","room":133,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,10],"ft":2,"series":"133-261016221658-27","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["인형의기사","Janet","",""],"replay":"replays/20261016_221658_인형의기사_vs_Janet_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:12","room":131,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,7],"ft":2,"series":"129-261016220822-26","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"404page":["404page Cafe","PAG"]},"nicks":["판순이","404page","",""],"replay":"replays/20261016_221228_판순이_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 22:11","room":124,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"ft":3,"series":"124-261016215204-23","nicks":["로또영","인형의기사","",""],"replay":"replays/20261016_221105_로또영_vs_인형의기사_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 22:08","room":129,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[4,7],"ft":2,"series":"129-261016220822-26","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"404page":["404page Cafe","PAG"]},"nicks":["판순이","404page","",""],"replay":"replays/20261016_220822_판순이_vs_404page_4-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 22:11","room":124,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"ft":3,"series":"124-261016215204-23","nicks":["로또영","인형의기사","",""],"replay":"replays/20261016_221105_로또영_vs_인형의기사_0-1_p1.scr","edition":"cupsocs2"}
 ]
