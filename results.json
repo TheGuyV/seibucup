@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 23:49","room":117,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_234913_덕장배_vs_신발벗어_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:45","room":117,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_234509_덕장배_vs_신발벗어_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:41","room":117,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_234124_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:38","room":123,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[3,4],"nicks":["루키","판순이","",""],"replay":"replays/20261017_233806_루키_vs_판순이_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 21:57","room":124,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":3,"series":"124-261016215204-23","nicks":["로또영","인형의기사","",""],"replay":"replays/20261016_215706_로또영_vs_인형의기사_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:55","room":127,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[4,7],"ft":2,"series":"125-261016215117-22","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"김정은패스":["김정은패스 FC","KOF"]},"nicks":["판순이","김정은패스","",""],"replay":"replays/20261016_215519_판순이_vs_김정은패스_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:54","room":126,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,10],"ft":2,"series":"126-261016215412-24","nicks":["404page","Janet","",""],"replay":"replays/20261016_215412_404page_vs_Janet_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 21:52","room":124,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,7],"ft":3,"series":"124-261016215204-23","nicks":["로또영","인형의기사","",""],"replay":"replays/20261016_215204_로또영_vs_인형의기사_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 21:51","room":125,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,7],"ft":2,"series":"125-261016215117-22","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"김정은패스":["김정은패스 FC","KOF"]},"nicks":["판순이","김정은패스","",""],"replay":"replays/20261016_215117_판순이_vs_김정은패스_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 21:52","room":124,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,7],"ft":3,"series":"124-261016215204-23","nicks":["로또영","인형의기사","",""],"replay":"replays/20261016_215204_로또영_vs_인형의기사_4-3_p1.scr","edition":"cupsocs2"}
 ]
