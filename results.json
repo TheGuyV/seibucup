@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 20:07","room":10,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[9,7],"nicks":["레트로성지","슛돌이","",""],"replay":"replays/20261017_200721_레트로성지_vs_슛돌이_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 19:59","room":7,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,9],"nicks":["mizunoasahi","KingDani","",""],"replay":"replays/20261017_195932_mizunoasahi_vs_KingDani_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 19:52","room":5,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,9],"nicks":["KingDani","mizunoasahi","",""],"replay":"replays/20261017_195209_KingDani_vs_mizunoasahi_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 19:07","room":8,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["콩메모","KingDani","",""],"replay":"replays/20261017_190708_콩메모_vs_KingDani_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 15:05","room":4,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,9],"ft":2,"series":"2-261016145545-1","ranked":1,"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_150546_드래곤타이거_vs_상봉거지오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 15:03","room":1,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"nicks":["surferKIM","인형의기사","",""],"replay":"replays/20261016_150310_surferKIM_vs_인형의기사_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 15:01","room":3,"type":"1v1","time":150,"players":2,"score":[6,5],"teams":[5,4],"ft":2,"series":"2-261016145545-1","ranked":1,"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_150143_드래곤타이거_vs_상봉거지오락실_6-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 14:59","room":1,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"nicks":["surferKIM","인형의기사","",""],"replay":"replays/20261016_145940_surferKIM_vs_인형의기사_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 14:55","room":1,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"nicks":["surferKIM","인형의기사","",""],"replay":"replays/20261016_145549_surferKIM_vs_인형의기사_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 14:59","room":1,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"nicks":["surferKIM","인형의기사","",""],"replay":"replays/20261016_145940_surferKIM_vs_인형의기사_2-1_p1.scr","edition":"cupsocs2"}
 ]
