@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 22:06","room":72,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"72-261017220256-18","nicks":["레온","NooB","",""],"replay":"replays/20261017_220618_레온_vs_NooB_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:06","room":37,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,4],"nicks":["surferKIM","김창식씨","",""],"replay":"replays/20261017_220607_surferKIM_vs_김창식씨_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:05","room":73,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,3],"ft":2,"series":"71-261017220200-17","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"판순이":["판순이 FC","YSY"]},"nicks":["Janet","판순이","",""],"replay":"replays/20261017_220526_Janet_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:02","room":72,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,5],"ft":2,"series":"72-261017220256-18","nicks":["레온","NooB","",""],"replay":"replays/20261017_220256_레온_vs_NooB_2-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 18:54","room":34,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[10,0],"nicks":["사하구신평동","narahashi","",""],"replay":"replays/20261016_185410_사하구신평동_vs_narahashi_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 18:50","room":34,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,0],"nicks":["사하구신평동","narahashi","",""],"replay":"replays/20261016_185001_사하구신평동_vs_narahashi_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 18:48","room":32,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,3],"pk":[2,4],"ft":2,"series":"32-261016184352-7","nicks":["인형의기사","상봉거지오락실","",""],"replay":"replays/20261016_184839_인형의기사_vs_상봉거지오락실_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 18:43","room":32,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,8],"ft":2,"series":"32-261016184352-7","nicks":["인형의기사","상봉거지오락실","",""],"replay":"replays/20261016_184352_인형의기사_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 18:39","room":29,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[5,10],"ft":3,"series":"29-261016182543-6","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261016_183930_적토마고정운_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 18:43","room":32,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,8],"ft":2,"series":"32-261016184352-7","nicks":["인형의기사","상봉거지오락실","",""],"replay":"replays/20261016_184352_인형의기사_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"}
 ]
