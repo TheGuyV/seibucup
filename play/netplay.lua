@@ -1102,6 +1102,7 @@ function scnp_stage_palette()
   scnp_mirror_kit()
   scnp_costume_kit()
   scnp_costume_hud_step()
+  scnp_costume_board_step()
   scnp_stripes_step()
   scnp_comic_step()
 end
@@ -1252,6 +1253,28 @@ function scnp_costume_hud_step()
           local a = T + (r * 64 + H.X[side].col + k) * 2
           local v = mem:read_u16(a)
           if v ~= 0 and (v >> 12) == (r == 4 and 4 or 11) then mem:write_u16(a, 0) end
+        end
+      end
+    end
+  end
+end
+
+SCNP_COSTUME.BOARD = { vis = false, X = { [1] = { col = 4, px = 33 }, [2] = { col = 30, px = 241 } } }
+function scnp_costume_board_step()
+  local C, B = SCNP_COSTUME, SCNP_COSTUME.BOARD
+  B.vis = false
+  if not C.on then return end
+  local T = 0x102000
+  local function led(r, c) local v = mem:read_u16(T + (r * 64 + c) * 2); return (v >> 12) == 6 and (v & 0xf00) == 0x200 end
+  if not (led(14, 10) and led(19, 10) and led(14, 29) and led(19, 29)) then return end
+  B.vis = true
+  for side = 1, 2 do
+    if C.seat[scnp_seat_of(side)] then
+      for k = 0, 5 do
+        for r = 15, 19 do
+          local a = T + (r * 64 + B.X[side].col + k) * 2
+          local v = mem:read_u16(a)
+          if v ~= 0 and (v >> 12) == (r == 19 and 0 or 11) then mem:write_u16(a, 0) end
         end
       end
     end
@@ -4366,6 +4389,50 @@ function scnp_costume_names_draw()
   end
 end
 
+function scnp_costume_board_draw()
+  local C, B = SCNP_COSTUME, SCNP_COSTUME.BOARD
+  if not C.on or not B.vis then return end
+  local scr = machine.screens[":screen"]
+  local F = C.HUD.F
+  local function box(x0, y0, x1, y1, c) scr:draw_box(x0, y0, x1, y1, 0, c) end
+  local function rgb(t, k) return 0xff000000 | (math.min(255, math.floor(t[1] * k)) << 16) | (math.min(255, math.floor(t[2] * k)) << 8) | math.min(255, math.floor(t[3] * k)) end
+  for side = 1, 2 do
+    local s = C.seat[scnp_seat_of(side)]
+    if s then
+      local x0 = B.X[side].px
+      local kit = (C.kit and C.kit[side]) or s.home
+      local a, b = kit[1], scnp_flag_mid(kit)
+      box(x0 - 1, 111, x0 + 47, 145, 0xff101018)
+      for x = 0, 45 do
+        local t = (x >= 15 and x < 31) and b or a
+        for y = 0, 31, 4 do box(x0 + x, 112 + y, x0 + x + 1, 116 + y, rgb(t, 0.86 + 0.14 * math.sin(x * 0.16 - y * 0.10))) end
+      end
+      local ab = (s.abbr or ""):upper():sub(1, 3)
+      local lx, ly = x0 + 23 - (#ab * 14 - 2) // 2, 122
+      local cells = {}
+      for n = 1, #ab do
+        local g = F[ab:sub(n, n)]
+        if g then
+          for y = 0, 5 do for x = 0, 5 do
+            if g[y + 1]:sub(x + 1, x + 1) == "#" then cells[#cells + 1] = { lx + (n - 1) * 14 + x * 2, ly + y * 2, y } end
+          end end
+        end
+      end
+      for _, c in ipairs(cells) do box(c[1] - 1, c[2] - 1, c[1] + 3, c[2] + 3, 0xff000000) end
+      for _, c in ipairs(cells) do box(c[1], c[2], c[1] + 2, c[2] + 2, c[3] < 2 and 0xfff7ce00 or (c[3] == 5 and 0xffffff94 or 0xffffff00)) end
+      local nm = s.name or ""
+      if nm ~= "" then
+        local tw = 6 * #nm
+        pcall(function() tw = manager.ui:get_string_width(nm) * scr.width end)
+        local tx = x0 + 23 - tw / 2
+        if side == 1 then tx = math.min(tx, 79 - tw - 2) else tx = math.max(tx, 243) end
+        box(tx - 3, 144, tx + tw + 3, 153, 0xd80a0c14)
+        scr:draw_text(tx, 145, nm, 0xff7af2fa, 0x00000000)
+      end
+    end
+  end
+end
+
 function scnp_pick_draw()
   local P = SCNP_PICK
   if not P.sel or not (SCNP_SEL and SCNP_SEL.on) or SCNP_SEL.mirror or SCNP_PVE.on or nplayers < 2 or local_slot > 4 then return end
@@ -4392,7 +4459,7 @@ local function on_frame_done()
 
   local W = SCNP_WAIT
   if W.on then if W.drawn then return end; W.drawn = true else W.drawn = false end
-  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
+  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); scnp_costume_board_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
 end
 
 if cfg.mode == "probe" then
