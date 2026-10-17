@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 23:22","room":115,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,3],"nicks":["아깨비","판순이","",""],"replay":"replays/20261017_232201_아깨비_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:21","room":96,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,9],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_232147_인형의기사_vs_pppqqq_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:18","room":106,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[4,8],"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261017_231815_신발벗어_vs_덕장배_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:17","room":111,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,4],"nicks":["아깨비","김창식씨","",""],"replay":"replays/20261017_231756_아깨비_vs_김창식씨_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 20:49","room":105,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"ft":3,"series":"105-261016204528-16","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_204935_드래곤타이거_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 20:47","room":103,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"nicks":["깜찍만두","로또영","",""],"replay":"replays/20261016_204710_깜찍만두_vs_로또영_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 20:45","room":105,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"ft":3,"series":"105-261016204528-16","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_204528_드래곤타이거_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 20:40","room":103,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,3],"nicks":["깜찍만두","상봉거지오락실","",""],"replay":"replays/20261016_204046_깜찍만두_vs_상봉거지오락실_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 20:36","room":103,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"nicks":["깜찍만두","상봉거지오락실","",""],"replay":"replays/20261016_203638_깜찍만두_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 20:40","room":103,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,3],"nicks":["깜찍만두","상봉거지오락실","",""],"replay":"replays/20261016_204046_깜찍만두_vs_상봉거지오락실_2-2_p1.scr","edition":"cupsocs2"}
 ]
