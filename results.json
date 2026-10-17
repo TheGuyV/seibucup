@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 23:37","room":117,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_233758_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:34","room":117,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_233436_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:34","room":122,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,7],"ft":2,"series":"122-261017233428-27","nicks":["김창식씨","pppqqq","",""],"replay":"replays/20261017_233428_김창식씨_vs_pppqqq_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:34","room":121,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"nicks":["야가미최씨","dfdf","",""],"replay":"replays/20261017_233414_야가미최씨_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 21:51","room":125,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,7],"ft":2,"series":"125-261016215117-22","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"김정은패스":["김정은패스 FC","KOF"]},"nicks":["판순이","김정은패스","",""],"replay":"replays/20261016_215117_판순이_vs_김정은패스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:47","room":122,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"122-261016214707-21","nicks":["로또영","정의사회구현","",""],"replay":"replays/20261016_214707_로또영_vs_정의사회구현_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 21:38","room":117,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,7],"nicks":["왕초보","연산국민학교","",""],"replay":"replays/20261016_213801_왕초보_vs_연산국민학교_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 21:33","room":117,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"nicks":["왕초보","연산국민학교","",""],"replay":"replays/20261016_213352_왕초보_vs_연산국민학교_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 21:31","room":115,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,3],"ft":3,"series":"115-261016211259-19","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261016_213105_드래곤타이거_vs_판순이_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 21:33","room":117,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"nicks":["왕초보","연산국민학교","",""],"replay":"replays/20261016_213352_왕초보_vs_연산국민학교_2-1_p1.scr","edition":"cupsocs2"}
 ]
