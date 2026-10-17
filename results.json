@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 18:39","room":2,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[3,5],"ft":2,"series":"2-261017183908-2","nicks":["상봉거지오락실","surferKIM","",""],"replay":"replays/20261017_183908_상봉거지오락실_vs_surferKIM_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:38","room":1,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,9],"ft":3,"series":"1-261017183020-1","nicks":["로또영","한반두","",""],"replay":"replays/20261017_183838_로또영_vs_한반두_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:33","room":1,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,0],"ft":3,"series":"1-261017183020-1","nicks":["로또영","한반두","",""],"replay":"replays/20261017_183356_로또영_vs_한반두_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:33","room":3,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[3,5],"nicks":["모이자오락실","surferKIM","",""],"replay":"replays/20261017_183319_모이자오락실_vs_surferKIM_0-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 14:23","room":13,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,3],"ft":3,"series":"13-261016142313-3","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_142313_드래곤타이거_vs_상봉거지오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 14:15","room":11,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,7],"nicks":["오락실체어샷","김정은패스","",""],"replay":"replays/20261016_141523_오락실체어샷_vs_김정은패스_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 14:12","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"nicks":["사하구신평동","상봉거지오락실","",""],"replay":"replays/20261016_141228_사하구신평동_vs_상봉거지오락실_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 14:08","room":10,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[8,7],"nicks":["사하구신평동","상봉거지오락실","",""],"replay":"replays/20261016_140855_사하구신평동_vs_상봉거지오락실_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 14:02","room":9,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[10,7],"nicks":["사하구신평동","김정은패스","",""],"replay":"replays/20261016_140200_사하구신평동_vs_김정은패스_1-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 14:08","room":10,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[8,7],"nicks":["사하구신평동","상봉거지오락실","",""],"replay":"replays/20261016_140855_사하구신평동_vs_상봉거지오락실_2-2_p1.scr","edition":"cupsocs2"}
 ]
