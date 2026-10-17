@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 16:42","room":76,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,5],"nicks":["마리나베이시티","invu","",""],"replay":"replays/20261017_164239_마리나베이시티_vs_invu_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 16:37","room":75,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["duli0212","모이자오락실","",""],"replay":"replays/20261017_163742_duli0212_vs_모이자오락실_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 16:31","room":74,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261017_163142_arcade_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 16:31","room":72,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,5],"arcade":1,"nicks":["대한민국","대한민국","",""],"replay":"replays/20261017_163135_arcade_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 02:37","room":16,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"ft":3,"series":"16-261016023310-9","nicks":["싸커킴","dfdf","",""],"replay":"replays/20261016_023721_싸커킴_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 02:35","room":10,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_023507_zxzx_vs_로또영_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 02:33","room":16,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"16-261016023310-9","nicks":["싸커킴","dfdf","",""],"replay":"replays/20261016_023310_싸커킴_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 02:31","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_023144_zxzx_vs_로또영_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 02:28","room":15,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"nicks":["북경오리","dfdf","",""],"replay":"replays/20261016_022833_북경오리_vs_dfdf_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 02:31","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_023144_zxzx_vs_로또영_2-0_p1.scr","edition":"cupsocs2"}
 ]
