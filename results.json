@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 17:52","room":92,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,5],"ft":3,"series":"92-261017174106-15","nicks":["로또영","기러기","",""],"replay":"replays/20261017_175242_로또영_vs_기러기_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 17:46","room":92,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,5],"ft":3,"series":"92-261017174106-15","nicks":["로또영","기러기","",""],"replay":"replays/20261017_174624_로또영_vs_기러기_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 17:41","room":92,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,9],"ft":3,"series":"92-261017174106-15","nicks":["로또영","기러기","",""],"replay":"replays/20261017_174106_로또영_vs_기러기_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 17:35","room":78,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,5],"ft":3,"series":"78-261017171752-13","nicks":["로또영","surferKIM","",""],"replay":"replays/20261017_173537_로또영_vs_surferKIM_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 09:33","room":5,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,9],"nicks":["쑥곰","KingDani","",""],"replay":"replays/20261016_093306_쑥곰_vs_KingDani_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 09:28","room":5,"type":"1v1","time":180,"players":2,"score":[4,5],"teams":[5,9],"nicks":["쑥곰","KingDani","",""],"replay":"replays/20261016_092819_쑥곰_vs_KingDani_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 05:40","room":2,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,9],"nicks":["세이부부젤라","dfdf","",""],"replay":"replays/20261016_054029_세이부부젤라_vs_dfdf_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 03:25","room":19,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"nicks":["감자","dfdf","",""],"replay":"replays/20261016_032529_감자_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 03:21","room":19,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,9],"nicks":["감자","dfdf","",""],"replay":"replays/20261016_032118_감자_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 03:25","room":19,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"nicks":["감자","dfdf","",""],"replay":"replays/20261016_032529_감자_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"}
 ]
