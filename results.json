@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 01:45","room":12,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,8],"ft":3,"series":"12-261018014524-5","nicks":["이강인탁구","기러기","",""],"replay":"replays/20261018_014524_이강인탁구_vs_기러기_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 01:44","room":11,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"11-261018014450-4","nicks":["로또영","pppqqq","",""],"replay":"replays/20261018_014450_로또영_vs_pppqqq_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 01:36","room":9,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,5],"nicks":["기러기","로또영","",""],"replay":"replays/20261018_013657_기러기_vs_로또영_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 01:36","room":7,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[0,0],"ft":2,"series":"7-261018012508-3","nicks":["404page","즐축","",""],"replay":"replays/20261018_013612_404page_vs_즐축_5-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 22:57","room":151,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["atfn","판순이","",""],"replay":"replays/20261016_225735_atfn_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:54","room":151,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"nicks":["atfn","판순이","",""],"replay":"replays/20261016_225400_atfn_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:54","room":154,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":2,"series":"152-261016224947-32","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"즐축":["TheSoccer","EJY"]},"nicks":["Janet","즐축","",""],"replay":"replays/20261016_225400_Janet_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 22:53","room":149,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,3],"ft":2,"series":"149-261016224921-31","nicks":["404page","땡삐","",""],"replay":"replays/20261016_225311_404page_vs_땡삐_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 22:49","room":152,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":2,"series":"152-261016224947-32","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"즐축":["TheSoccer","EJY"]},"nicks":["Janet","즐축","",""],"replay":"replays/20261016_224947_Janet_vs_즐축_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 22:53","room":149,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,3],"ft":2,"series":"149-261016224921-31","nicks":["404page","땡삐","",""],"replay":"replays/20261016_225311_404page_vs_땡삐_2-1_p1.scr","edition":"cupsocs2"}
 ]
