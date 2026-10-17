@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 14:25","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"35-261017142146-5","nicks":["상봉거지오락실","쑥곰","",""],"replay":"replays/20261017_142557_상봉거지오락실_vs_쑥곰_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:21","room":35,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,5],"ft":2,"series":"35-261017142146-5","nicks":["상봉거지오락실","쑥곰","",""],"replay":"replays/20261017_142146_상봉거지오락실_vs_쑥곰_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:19","room":33,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[4,5],"ft":2,"series":"33-261017141909-4","nicks":["멸치","삼아","",""],"replay":"replays/20261017_141909_멸치_vs_삼아_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:10","room":30,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,3],"ft":2,"series":"30-261017140240-3","nicks":["멸치","삼아","",""],"replay":"replays/20261017_141049_멸치_vs_삼아_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 01:42","room":10,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,3],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_014201_zxzx_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:38","room":10,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_013800_zxzx_vs_로또영_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:35","room":8,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,9],"ft":2,"series":"8-261016012809-5","nicks":["narahashi","dfdf","",""],"replay":"replays/20261016_013540_narahashi_vs_dfdf_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 01:34","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_013400_zxzx_vs_로또영_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 01:31","room":8,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"ft":2,"series":"8-261016012809-5","nicks":["narahashi","dfdf","",""],"replay":"replays/20261016_013139_narahashi_vs_dfdf_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 01:34","room":10,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_013400_zxzx_vs_로또영_2-0_p1.scr","edition":"cupsocs2"}
 ]
