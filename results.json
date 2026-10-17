@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 21:25","room":37,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_212507_surferKIM_vs_판순이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:24","room":42,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[4,7],"arcade":1,"nicks":["미국","브라질","",""],"replay":"replays/20261017_212437_arcade_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:23","room":40,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":2,"series":"40-261017212319-8","ranked":1,"tnames":{"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["샤마2","상봉거지오락실","",""],"replay":"replays/20261017_212319_샤마2_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:20","room":37,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_212049_surferKIM_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 16:18","room":32,"type":"1v1","time":180,"players":2,"score":[1,7],"teams":[10,9],"nicks":["슈니쇼빠더","쑥곰","",""],"replay":"replays/20261016_161848_슈니쇼빠더_vs_쑥곰_1-7_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 16:13","room":32,"type":"1v1","time":180,"players":2,"score":[0,3],"teams":[0,5],"nicks":["슈니쇼빠더","쑥곰","",""],"replay":"replays/20261016_161339_슈니쇼빠더_vs_쑥곰_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 16:08","room":22,"type":"1v1","time":210,"players":2,"score":[4,2],"teams":[7,0],"ft":3,"series":"22-261016160234-7","nicks":["골인","세이부축구만쉐","",""],"replay":"replays/20261016_160805_골인_vs_세이부축구만쉐_4-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 16:03","room":21,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,5],"ft":2,"series":"21-261016155929-6","nicks":["Janet","신홍기","",""],"replay":"replays/20261016_160322_Janet_vs_신홍기_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 16:02","room":22,"type":"1v1","time":210,"players":2,"score":[3,2],"teams":[7,5],"ft":3,"series":"22-261016160234-7","nicks":["골인","세이부축구만쉐","",""],"replay":"replays/20261016_160234_골인_vs_세이부축구만쉐_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 16:03","room":21,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,5],"ft":2,"series":"21-261016155929-6","nicks":["Janet","신홍기","",""],"replay":"replays/20261016_160322_Janet_vs_신홍기_1-0_p1.scr","edition":"cupsocs2"}
 ]
