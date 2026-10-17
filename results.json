@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 22:32","room":88,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"nicks":["왕초보","이탈리아맨","",""],"replay":"replays/20261017_223245_왕초보_vs_이탈리아맨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:24","room":82,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"nicks":["왕초보","sangrr","",""],"replay":"replays/20261017_222444_왕초보_vs_sangrr_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:24","room":84,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"78-261017221510-20","ranked":1,"tnames":{"레온":["레온 FC","FCX"],"즐축":["TheSoccer","EJY"]},"nicks":["레온","즐축","",""],"replay":"replays/20261017_222400_레온_vs_즐축_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:21","room":82,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"nicks":["왕초보","sangrr","",""],"replay":"replays/20261017_222101_왕초보_vs_sangrr_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 19:33","room":52,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,3],"nicks":["콩메모","모이자오락실","",""],"replay":"replays/20261016_193307_콩메모_vs_모이자오락실_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:29","room":50,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"48-261016192455-12","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","상봉거지오락실","",""],"replay":"replays/20261016_192908_Janet_vs_상봉거지오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 19:26","room":47,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["모이자오락실","콩메모","",""],"replay":"replays/20261016_192643_모이자오락실_vs_콩메모_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 19:24","room":48,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"48-261016192455-12","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","상봉거지오락실","",""],"replay":"replays/20261016_192455_Janet_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 19:23","room":47,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,0],"nicks":["모이자오락실","narahashi","",""],"replay":"replays/20261016_192300_모이자오락실_vs_narahashi_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 19:24","room":48,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"48-261016192455-12","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","상봉거지오락실","",""],"replay":"replays/20261016_192455_Janet_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"}
 ]
