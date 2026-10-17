@@ -2,6 +2,9 @@
 -- Copyright (C) 2026 seibucup.online (https://seibucup.online). All rights reserved.
 -- SPDX-License-Identifier: LicenseRef-SeibuCupOnline-Proprietary
 --
+-- 세이부 컵 사커 온라인(seibucup.online)은 비영리 팬 사이트이며, 원작사 세이부 개발(Seibu Kaihatsu) 및 원작 권리자와 관계가 없습니다.
+-- Seibu Cup Soccer Online (seibucup.online) is a non-commercial fan site, not affiliated with Seibu Kaihatsu or any rights holder of the original game.
+--
 -- 이 파일은 세이부 컵 사커 온라인의 런처와 웹 플레이에서 쓰기 위해서만 배포됩니다.
 -- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
 -- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
