@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 23:25","room":96,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,7],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_232546_인형의기사_vs_pppqqq_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:23","room":116,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,9],"ft":2,"series":"116-261017232358-24","nicks":["슛돌이","dfdf","",""],"replay":"replays/20261017_232358_슛돌이_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:23","room":117,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_232347_덕장배_vs_신발벗어_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:22","room":115,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,3],"nicks":["아깨비","판순이","",""],"replay":"replays/20261017_232201_아깨비_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 21:00","room":112,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":2,"series":"112-261016210059-18","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["상봉거지오락실","즐축","",""],"replay":"replays/20261016_210059_상봉거지오락실_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 20:55","room":105,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,10],"ft":3,"series":"105-261016204528-16","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_205537_드래곤타이거_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 20:50","room":103,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,5],"nicks":["깜찍만두","로또영","",""],"replay":"replays/20261016_205052_깜찍만두_vs_로또영_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 20:49","room":105,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"ft":3,"series":"105-261016204528-16","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_204935_드래곤타이거_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 20:47","room":103,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"nicks":["깜찍만두","로또영","",""],"replay":"replays/20261016_204710_깜찍만두_vs_로또영_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 20:49","room":105,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"ft":3,"series":"105-261016204528-16","nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261016_204935_드래곤타이거_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"}
 ]
