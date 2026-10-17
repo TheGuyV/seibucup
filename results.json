@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 02:21","room":19,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":3,"series":"19-261018022127-9","nicks":["감자","dfdf","",""],"replay":"replays/20261018_022127_감자_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 02:14","room":18,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,9],"ft":3,"series":"18-261018021452-8","nicks":["미네로","dfdf","",""],"replay":"replays/20261018_021452_미네로_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 02:12","room":17,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"17-261018021223-7","nicks":["pppqqq","로또영","",""],"replay":"replays/20261018_021223_pppqqq_vs_로또영_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 02:00","room":13,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":3,"series":"13-261018020003-6","nicks":["기러기","로또영","",""],"replay":"replays/20261018_020003_기러기_vs_로또영_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 23:20","room":163,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[7,7],"ft":2,"series":"163-261016231645-34","nicks":["김정은패스","즐축","",""],"replay":"replays/20261016_232045_김정은패스_vs_즐축_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:18","room":151,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,8],"nicks":["atfn","판순이","",""],"replay":"replays/20261016_231825_atfn_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:16","room":163,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,7],"ft":2,"series":"163-261016231645-34","nicks":["김정은패스","즐축","",""],"replay":"replays/20261016_231645_김정은패스_vs_즐축_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:14","room":151,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,4],"nicks":["atfn","판순이","",""],"replay":"replays/20261016_231420_atfn_vs_판순이_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:09","room":151,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"nicks":["atfn","판순이","",""],"replay":"replays/20261016_230955_atfn_vs_판순이_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 23:14","room":151,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,4],"nicks":["atfn","판순이","",""],"replay":"replays/20261016_231420_atfn_vs_판순이_3-3_p1.scr","edition":"cupsocs2"}
 ]
