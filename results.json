@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 18:13","room":101,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,4],"ft":3,"series":"101-261017180927-17","nicks":["로또영","김창식씨","",""],"replay":"replays/20261017_181357_로또영_vs_김창식씨_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:09","room":101,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,5],"ft":3,"series":"101-261017180927-17","nicks":["로또영","김창식씨","",""],"replay":"replays/20261017_180927_로또영_vs_김창식씨_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:04","room":100,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,4],"ft":2,"series":"100-261017180453-16","nicks":["오락실체어샷","김창식씨","",""],"replay":"replays/20261017_180453_오락실체어샷_vs_김창식씨_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:02","room":99,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,0],"nicks":["거성","SDFDSFDSDSF","",""],"replay":"replays/20261017_180244_거성_vs_SDFDSFDSDSF_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 13:22","room":6,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,7],"nicks":["KingDani","김정은패스","",""],"replay":"replays/20261016_132222_KingDani_vs_김정은패스_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 12:39","room":3,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,10],"ft":2,"series":"3-261016123950-2","nicks":["narahashi","깜찍만두","",""],"replay":"replays/20261016_123950_narahashi_vs_깜찍만두_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 11:40","room":2,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,5],"pk":[4,2],"ft":2,"series":"2-261016113440-1","nicks":["인형의기사","제일오락실","",""],"replay":"replays/20261016_114005_인형의기사_vs_제일오락실_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 11:34","room":2,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,3],"pk":[3,2],"ft":2,"series":"2-261016113440-1","nicks":["인형의기사","제일오락실","",""],"replay":"replays/20261016_113440_인형의기사_vs_제일오락실_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 10:22","room":1,"type":"1v1","time":180,"players":2,"score":[5,1],"teams":[5,3],"nicks":["쑥곰","제일오락실","",""],"replay":"replays/20261016_102250_쑥곰_vs_제일오락실_5-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 11:34","room":2,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,3],"pk":[3,2],"ft":2,"series":"2-261016113440-1","nicks":["인형의기사","제일오락실","",""],"replay":"replays/20261016_113440_인형의기사_vs_제일오락실_2-2_p1.scr","edition":"cupsocs2"}
 ]
