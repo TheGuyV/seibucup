@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 21:54","room":65,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":2,"series":"65-261017215416-16","ranked":1,"tnames":{"NooB":["NooB FC","NOO"]},"nicks":["샤마2","NooB","",""],"replay":"replays/20261017_215416_샤마2_vs_NooB_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:53","room":63,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":2,"series":"63-261017215325-15","nicks":["Janet","dfdf","",""],"replay":"replays/20261017_215325_Janet_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:53","room":59,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":3,"series":"59-261017214909-14","nicks":["뚱이","왕자오락실","",""],"replay":"replays/20261017_215319_뚱이_vs_왕자오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:50","room":37,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,10],"nicks":["surferKIM","김창식씨","",""],"replay":"replays/20261017_215026_surferKIM_vs_김창식씨_3-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 17:59","room":23,"type":"1v1","time":150,"players":2,"score":[7,5],"teams":[8,4],"ft":2,"series":"23-261016175025-3","nicks":["바바리","으랏차","",""],"replay":"replays/20261016_175921_바바리_vs_으랏차_7-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:55","room":24,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[10,8],"nicks":["zzangbs","jjjjjjj","",""],"replay":"replays/20261016_175546_zzangbs_vs_jjjjjjj_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:55","room":25,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":2,"series":"25-261016175511-4","nicks":["Janet","RhOK","",""],"replay":"replays/20261016_175511_Janet_vs_RhOK_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 17:54","room":23,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"ft":2,"series":"23-261016175025-3","nicks":["바바리","으랏차","",""],"replay":"replays/20261016_175402_바바리_vs_으랏차_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 17:50","room":24,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,3],"nicks":["zzangbs","jjjjjjj","",""],"replay":"replays/20261016_175037_zzangbs_vs_jjjjjjj_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 17:54","room":23,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"ft":2,"series":"23-261016175025-3","nicks":["바바리","으랏차","",""],"replay":"replays/20261016_175402_바바리_vs_으랏차_1-0_p1.scr","edition":"cupsocs2"}
 ]
