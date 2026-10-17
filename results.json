@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 01:08","room":5,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[10,7],"ft":2,"series":"5-261018010431-2","nicks":["Janet","즐축","",""],"replay":"replays/20261018_010838_Janet_vs_즐축_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 01:06","room":4,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"4-261018010203-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261018_010604_로또영_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 01:04","room":5,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,8],"ft":2,"series":"5-261018010431-2","nicks":["Janet","즐축","",""],"replay":"replays/20261018_010431_Janet_vs_즐축_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 01:02","room":4,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":3,"series":"4-261018010203-1","nicks":["로또영","dfdf","",""],"replay":"replays/20261018_010203_로또영_vs_dfdf_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 22:37","room":145,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,7],"nicks":["atfn","김정은패스","",""],"replay":"replays/20261016_223741_atfn_vs_김정은패스_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:35","room":144,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,3],"ft":2,"series":"144-261016223204-29","nicks":["Janet","판순이","",""],"replay":"replays/20261016_223544_Janet_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 22:34","room":145,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,7],"nicks":["atfn","김정은패스","",""],"replay":"replays/20261016_223407_atfn_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 22:32","room":144,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,3],"ft":2,"series":"144-261016223204-29","nicks":["Janet","판순이","",""],"replay":"replays/20261016_223204_Janet_vs_판순이_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 22:28","room":143,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"arcade":1,"nicks":["대한민국","잉글랜드","",""],"replay":"replays/20261016_222836_arcade_0-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 22:32","room":144,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,3],"ft":2,"series":"144-261016223204-29","nicks":["Janet","판순이","",""],"replay":"replays/20261016_223204_Janet_vs_판순이_2-1_p1.scr","edition":"cupsocs2"}
 ]
