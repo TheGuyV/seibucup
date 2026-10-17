@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 21:33","room":48,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,5],"ft":2,"series":"48-261017213322-11","nicks":["김창식씨","상봉거지오락실","",""],"replay":"replays/20261017_213322_김창식씨_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:30","room":46,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[8,7],"nicks":["Nogizaka46","김정은패스","",""],"replay":"replays/20261017_213046_Nogizaka46_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:29","room":37,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_212927_surferKIM_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:29","room":43,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"43-261017212508-10","nicks":["김창식씨","dfdf","",""],"replay":"replays/20261017_212910_김창식씨_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 17:12","room":7,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,9],"nicks":["사하구신평동","바바리","",""],"replay":"replays/20261016_171248_사하구신평동_vs_바바리_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 17:08","room":7,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,5],"nicks":["사하구신평동","바바리","",""],"replay":"replays/20261016_170824_사하구신평동_vs_바바리_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 16:50","room":1,"type":"1v1","time":150,"players":2,"score":[6,3],"teams":[10,0],"nicks":["사하구신평동","RhOK","",""],"replay":"replays/20261016_165018_사하구신평동_vs_RhOK_6-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 16:45","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"nicks":["사하구신평동","RhOK","",""],"replay":"replays/20261016_164522_사하구신평동_vs_RhOK_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 16:30","room":40,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,9],"ft":2,"series":"40-261016163000-8","nicks":["Janet","zzangbs","",""],"replay":"replays/20261016_163000_Janet_vs_zzangbs_3-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 16:45","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"nicks":["사하구신평동","RhOK","",""],"replay":"replays/20261016_164522_사하구신평동_vs_RhOK_3-2_p1.scr","edition":"cupsocs2"}
 ]
