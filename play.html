@@ -1606,7 +1606,7 @@
                  : aq[2] === 'done' ? T('출석 이벤트: 아이템 \'이펙트\'를 이미 받으셨습니다 (지금 ' + ad + '일 연속 출석).', 'Attendance event: you already have the item "Effect" (' + ad + ' days in a row so far).')
                  : T('출석 이벤트 진행 중입니다! ' + aof + '일 중 ' + ad + '일 출석 완료! 자세한 내용은 공지사항을 참고해 주세요.', 'The attendance event is on! Day ' + ad + ' of ' + aof + ' done. See the notices for details.'), 'notice');
     }
-    else if (cmd === 'MOTD') { sys('pub', arg, 'notice'); if (arg.indexOf('서버 점검') >= 0) { sys('room', arg, 'notice'); netSay(arg); } if (arg.indexOf('서버 점검 예정') >= 0) maintAlert(arg); }
+    else if (cmd === 'MOTD') { sys('pub', arg, 'notice'); if (arg.indexOf('서버 점검') >= 0) { net.maintAt = Date.now(); sys('room', arg, 'notice'); netSay(arg); } if (arg.indexOf('서버 점검 예정') >= 0) maintAlert(arg); }
     else if (cmd === 'PONG') {
       if (net.pingAt) { net.rtt = Math.round(performance.now() - net.pingAt); net.pingAt = 0; drawStatus(); drawTiles(); }
       if (!net.pingSent && net.rtt >= 0) { net.pingSent = true; send('PING ' + net.rtt); }
@@ -1676,6 +1676,7 @@
     }
     else if (cmd === 'ERROR' && /^not in a room/.test(arg) && !net.room) {   }
     else if (cmd === 'ERROR' && arg.indexOf('server maintenance') === 0) {
+      net.maintAt = Date.now();
 
       var mt = T('서버 점검을 앞두고 있어 지금은 새 경기나 방을 시작할 수 없습니다. 진행 중인 경기가 끝나면 점검을 하고, 몇 분 뒤 다시 접속하면 됩니다.', 'Server maintenance is coming: no new matches or rooms for now. The matches under way finish first; after the maintenance (a few minutes) connect again.');
       if (arg.indexOf('server maintenance closing') === 0) {
@@ -1939,7 +1940,7 @@
     if (romOk.sel) send('ARC SOLO 1' + (prio ? ' p' : ''));
   }
   function arcBegin(god) {
-    if (!romOk.sel || net.room || net.arcRole) { start('solo', { label: arcSoloLabel(god), god: god }); return; }
+    if (!romOk.sel || net.room || net.arcRole || !(net.ws && net.ws.readyState === 1)) { start('solo', { label: arcSoloLabel(god), god: god }); return; }
     net.arcAsk = god ? 2 : 1; send('ARC ASK');
     setTimeout(function () { if (net.arcAsk) { var g = net.arcAsk === 2; net.arcAsk = 0; arcSolo(g); } }, 4000);
   }
@@ -2140,8 +2141,10 @@
   }
   $('btnSolo').onclick = waitingGame;
 
+  function aloneReady() { return (net.ws && net.ws.readyState === 1) || (net.maintAt && Date.now() - net.maintAt < 900000); }
+
   $('netAlone').onclick = function () {
-    if (!(net.ws && net.ws.readyState === 1)) { $('aloneMenu').hidden = true; alert(T('CPU대전은 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Vs CPU needs a connection to the server - press Connect first.')); return; }
+    if (!aloneReady()) { $('aloneMenu').hidden = true; alert(T('CPU대전은 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Vs CPU needs a connection to the server - press Connect first.')); return; }
     $('aloneMenu').style.left = $('netAlone').offsetLeft + 'px'; $('aloneMenu').hidden = !$('aloneMenu').hidden; };
 
   $('netKeys').onclick = function () {
@@ -2160,7 +2163,7 @@
     b.onclick = function () {
       $('aloneMenu').hidden = true;
       var god = b.getAttribute('data-god') === '1';
-      if (!(net.ws && net.ws.readyState === 1)) { alert(T('CPU대전은 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Vs CPU needs a connection to the server - press Connect first.')); return; }
+      if (!aloneReady()) { alert(T('CPU대전은 서버에 접속한 뒤에 할 수 있습니다. 먼저 [접속]을 눌러 주세요.', 'Vs CPU needs a connection to the server - press Connect first.')); return; }
       arcBegin(god);
     };
   });
