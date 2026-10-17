@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 13:56","room":27,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,5],"ft":2,"series":"27-261017135257-2","nicks":["쑥곰","거성","",""],"replay":"replays/20261017_135636_쑥곰_vs_거성_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 13:52","room":27,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,5],"ft":2,"series":"27-261017135257-2","nicks":["쑥곰","거성","",""],"replay":"replays/20261017_135257_쑥곰_vs_거성_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 13:23","room":24,"type":"1v1","time":180,"players":2,"score":[4,0],"teams":[5,8],"nicks":["쑥곰","princewi","",""],"replay":"replays/20261017_132359_쑥곰_vs_princewi_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 13:10","room":20,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,9],"nicks":["princewi","쑥곰","",""],"replay":"replays/20261017_131032_princewi_vs_쑥곰_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 01:25","room":6,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,0],"nicks":["zxzx","roiii","",""],"replay":"replays/20261016_012548_zxzx_vs_roiii_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:24","room":7,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,10],"ft":2,"series":"7-261016012028-4","nicks":["Janet","narahashi","",""],"replay":"replays/20261016_012416_Janet_vs_narahashi_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:22","room":6,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"nicks":["zxzx","roiii","",""],"replay":"replays/20261016_012215_zxzx_vs_roiii_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 01:20","room":7,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,0],"ft":2,"series":"7-261016012028-4","nicks":["Janet","narahashi","",""],"replay":"replays/20261016_012028_Janet_vs_narahashi_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 01:18","room":6,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,9],"nicks":["zxzx","roiii","",""],"replay":"replays/20261016_011837_zxzx_vs_roiii_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 01:20","room":7,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,0],"ft":2,"series":"7-261016012028-4","nicks":["Janet","narahashi","",""],"replay":"replays/20261016_012028_Janet_vs_narahashi_2-0_p1.scr","edition":"cupsocs2"}
 ]
