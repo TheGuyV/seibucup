@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-17 14:44","room":46,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,5],"ft":2,"series":"46-261017144454-7","nicks":["쑥곰","surferKIM","",""],"replay":"replays/20261017_144454_쑥곰_vs_surferKIM_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:39","room":38,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"ft":2,"series":"38-261017143217-6","nicks":["쑥곰","상봉거지오락실","",""],"replay":"replays/20261017_143957_쑥곰_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:36","room":39,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"nicks":["surferKIM","로또영","",""],"replay":"replays/20261017_143620_surferKIM_vs_로또영_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:36","room":38,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"38-261017143217-6","nicks":["쑥곰","상봉거지오락실","",""],"replay":"replays/20261017_143609_쑥곰_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 01:55","room":12,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,9],"ft":3,"series":"12-261016015110-7","nicks":["싸커킴","dfdf","",""],"replay":"replays/20261016_015506_싸커킴_vs_dfdf_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:53","room":10,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_015311_zxzx_vs_로또영_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 01:51","room":12,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":3,"series":"12-261016015110-7","nicks":["싸커킴","dfdf","",""],"replay":"replays/20261016_015110_싸커킴_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 01:49","room":10,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_014930_zxzx_vs_로또영_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 01:45","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"11-261016014538-6","nicks":["싸커킴","roiii","",""],"replay":"replays/20261016_014538_싸커킴_vs_roiii_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 01:49","room":10,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"nicks":["zxzx","로또영","",""],"replay":"replays/20261016_014930_zxzx_vs_로또영_3-1_p1.scr","edition":"cupsocs2"}
 ]
