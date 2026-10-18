@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 18:51","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"nicks":["surferKIM","이태원후렌드치킨","",""],"replay":"replays/20261018_185127_surferKIM_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 18:47","room":1,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"nicks":["surferKIM","이태원후렌드치킨","",""],"replay":"replays/20261018_184723_surferKIM_vs_이태원후렌드치킨_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 18:33","room":139,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[4,5],"nicks":["므와바","surferKIM","",""],"replay":"replays/20261018_183305_므와바_vs_surferKIM_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 18:31","room":140,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,3],"ft":2,"series":"140-261018183122-22","nicks":["상봉거지오락실","키키키","",""],"replay":"replays/20261018_183122_상봉거지오락실_vs_키키키_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 08:33","room":7,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261017_083345_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 03:25","room":2,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,5],"ft":2,"series":"2-261017032018-1","nicks":["쑥곰","즐축","",""],"replay":"replays/20261017_032521_쑥곰_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 03:20","room":2,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"2-261017032018-1","nicks":["쑥곰","즐축","",""],"replay":"replays/20261017_032018_쑥곰_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 02:44","room":24,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_024451_로또영_vs_trga_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 02:40","room":24,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_024026_로또영_vs_trga_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 02:44","room":24,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_024451_로또영_vs_trga_1-2_p1.scr","edition":"cupsocs2"}
 ]
