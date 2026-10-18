@@ -9,7 +9,7 @@
 -- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
 -- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
 -- It may not be modified or redistributed without permission.
-local VERSION = 37
+local VERSION = 38
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -1915,7 +1915,7 @@ local function rec_save(complete)
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
   local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"ball":"%s","devs":"%s","diff":%d,"pvegod":%d,"comic":%d,"costume":"%s","dip":%d}',
-    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, SCNP_SAFE.type(cfg.teams), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, scnp_sel_code(), table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.auto and 3 or (SCNP_GOD.fix and 2 or 1)) or 0, SCNP_PAL.BALL and SCNP_PAL.BALLNAME or "white", table.concat(SCNP_DEVR.hist, ";"), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_PVEGOD.on and 1 or 0, SCNP_COMIC.on and 1 or 0, ((SCNP_COSTUME.wire or ""):gsub('"', "")), SCNP_DIPTIME and 1 or 0)
+    SCNP_GAME, build, os.date("%Y-%m-%d %H:%M"), nplayers, SCNP_SAFE.type(cfg.teams), tonumber(cfg.time) or 150, cfg.delay, names, s1, s2, complete and "true" or "false", #rec_inputs, local_slot, scnp_swap and 1 or 0, clock_run and "run" or "stop", scnp_stage, scnp_pk_byte(), SCNP_FREE and 1 or 0, table.concat(GAME_PLAYER), SCNP_PACE and 2 or 1, scnp_sel_code(), table.concat(SCNP_DD.hist or {}, ";"), SCNP_GOD.on and (SCNP_GOD.auto and 3 or (SCNP_GOD.fix and 2 or 1)) or 0, SCNP_PAL.BALL and SCNP_PAL.BALLNAME or "white", table.concat(SCNP_DEVR.hist, ";"), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_PVEGOD.on and 1 or 0, SCNP_COMIC.on and 1 or 0, ((SCNP_COSTUME.wire or ""):gsub('"', "")), SCNP_DIPTIME and 1 or 0)
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
 
@@ -1963,7 +1963,9 @@ local function pct_decode(s) return (s:gsub("%%(%x%x)", function(h) return strin
 SCNP_PK = {
   on = env("SCNP_PK", "0") == "1",
 
-  gg = env("SCNP_PK", "0") == "2", gg_n = 0, gg_end = false, gg_note = 0, gg_text = nil,
+  gg = env("SCNP_PK", "0") == "2", gg_n = 0, gg_end = false, gg_note = 0, gg_text = nil, gg_arg = nil,
+
+  race = ({ ["1"] = 1, ["3"] = 3, ["5"] = 5 })[env("SCNP_RACE", "0")] or 0, race_end = false,
 
   ED = {
     cupsoc   = { a0 = 0x109d50, br = 0x8262, br_old = 0x09ac, br_new = 0x0566, rot = 0x88de, rot_old = 0x5240, rot_new = 0x7000, ctl = 0x10a080 },
@@ -1975,6 +1977,11 @@ SCNP_PK = {
   cap = tonumber(env("SCNP_PK_CAP", "480")) or 480,
   cut = false,
 }
+
+function scnp_pk_byte()
+  if SCNP_PK.race > 0 then return 10 + SCNP_PK.race end
+  return SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0)
+end
 
 function scnp_pk_decide()
   local P, E = SCNP_PK, SCNP_PK.ED[SCNP_GAME]
@@ -2051,11 +2058,22 @@ end
 
 function scnp_gg_extend()
   local P = SCNP_PK
+  if P.race > 0 then
+
+    if P.race_end or SCNP_PVE.on or nplayers ~= (is_teams and 4 or 2) then return nil end
+    if math.max(mem:read_u8(SCORE_LEFT), mem:read_u8(SCORE_RIGHT)) >= P.race then return nil end
+    local units = math.max(1, math.floor(30 / clock_spu + 0.5))
+    P.gg_n = P.gg_n + 1
+    P.gg_note = frame + 180; P.gg_text = "FIRST TO %d - 30 more seconds"; P.gg_arg = P.race
+    if clock_run then clock_u0 = clock_u0 + units end
+    log("first to %d: %d-%d at full time - 30 s more (%d units, extension %d)", P.race, mem:read_u8(SCORE_LEFT), mem:read_u8(SCORE_RIGHT), units, P.gg_n)
+    return units
+  end
   if not P.gg or P.gg_end or SCNP_PVE.on or nplayers ~= (is_teams and 4 or 2) then return nil end
   if mem:read_u8(SCORE_LEFT) ~= mem:read_u8(SCORE_RIGHT) then return nil end
   local units = math.max(1, math.floor(30 / clock_spu + 0.5))
   P.gg_n = P.gg_n + 1
-  P.gg_note = frame + 180; P.gg_text = "GOLDEN GOAL - 30 more seconds, the first goal wins"
+  P.gg_note = frame + 180; P.gg_text = "GOLDEN GOAL - 30 more seconds, the first goal wins"; P.gg_arg = nil
   if clock_run then clock_u0 = clock_u0 + units end
   log("golden goal: level at %d-%d - 30 s more (%d units, extension %d)", mem:read_u8(SCORE_LEFT), mem:read_u8(SCORE_RIGHT), units, P.gg_n)
   return units
@@ -2063,13 +2081,28 @@ end
 
 function scnp_gg_step()
   local P = SCNP_PK
+  if P.race > 0 then scnp_race_step(); return end
   if P.gg_n == 0 or P.gg_end then return end
   if mem:read_u8(SCORE_LEFT) == mem:read_u8(SCORE_RIGHT) then return end
   P.gg_end = true
-  P.gg_note = frame + 180; P.gg_text = "GOLDEN GOAL!"
+  P.gg_note = frame + 180; P.gg_text = "GOLDEN GOAL!"; P.gg_arg = nil
   clock_ours = true; mem:write_u16(CLOCK_ADDR, 1); clock_ours = false
   mem:write_u8(CLOCK_ADDR + 3, 1)
   log("golden goal: %d-%d at frame %d - the match ends", mem:read_u8(SCORE_LEFT), mem:read_u8(SCORE_RIGHT), frame)
+end
+
+function scnp_race_step()
+  local P = SCNP_PK
+  if P.race_end or SCNP_PVE.on or nplayers ~= (is_teams and 4 or 2) then return end
+  if not clock_start then P.race_told = false; return end
+  if not P.race_told then P.race_told = true; P.gg_note = frame + 240; P.gg_text = "FIRST TO %d GOALS - the first to score %d wins"; P.gg_arg = P.race end
+  local a, b = mem:read_u8(SCORE_LEFT), mem:read_u8(SCORE_RIGHT)
+  if math.max(a, b) < P.race or mem:read_u16(CLOCK_ADDR) == 0 then return end
+  P.race_end = true
+  P.gg_note = frame + 180; P.gg_text = "FIRST TO %d - WIN!"; P.gg_arg = P.race
+  clock_ours = true; mem:write_u16(CLOCK_ADDR, 1); clock_ours = false
+  mem:write_u8(CLOCK_ADDR + 3, 1)
+  log("first to %d: %d-%d at frame %d - the match ends", P.race, a, b, frame)
 end
 
 function scnp_pk_seats()
@@ -2577,6 +2610,7 @@ local function draw_hud()
   end
   if SCNP_PK.gg_text and frame < SCNP_PK.gg_note then
     local t = scnp_tr(SCNP_PK.gg_text)
+    if SCNP_PK.gg_arg then t = string.format(t, SCNP_PK.gg_arg, SCNP_PK.gg_arg) end
     local tw = text_w(t)
     box(w / 2 - tw / 2 - 6, HUD_H + 14, w / 2 + tw / 2 + 6, HUD_H + 16 + HUD_TH + 4, 0xd0000000)
     screen:draw_text("center", HUD_H + 16, t, 0xffffd24a, 0)
@@ -2642,6 +2676,9 @@ local TR = {
   ["NETPLAY: starting..."] = { ko = "NETPLAY: 시작하는 중...", ja = "NETPLAY: 開始しています...", zh = "NETPLAY: 正在启动..." },
   ["GOLDEN GOAL - 30 more seconds, the first goal wins"] = { ko = "골든골! 30초 연장 - 먼저 골을 넣으면 승리", ja = "ゴールデンゴール！30秒延長 - 先に決めた方の勝ち", zh = "金球！加时30秒 - 先进球者获胜" },
   ["GOLDEN GOAL!"] = { ko = "골든골!", ja = "ゴールデンゴール！", zh = "金球！" },
+  ["FIRST TO %d GOALS - the first to score %d wins"] = { ko = "선취 %d골 - 먼저 %d골 넣으면 승리", ja = "%d点先取 - 先に%d点取った方の勝ち", zh = "先进%d球 - 先进%d球者获胜" },
+  ["FIRST TO %d - 30 more seconds"] = { ko = "선취 %d골 - 30초 연장", ja = "%d点先取 - 30秒延長", zh = "先进%d球 - 加时30秒" },
+  ["FIRST TO %d - WIN!"] = { ko = "선취 %d골 달성!", ja = "%d点先取 達成！", zh = "先进%d球 达成！" },
   ["NETPLAY: connecting..."] = { ko = "NETPLAY: 접속하는 중...", ja = "NETPLAY: 接続しています...", zh = "NETPLAY: 正在连接..." },
   ["NETPLAY: hosting on port %d, waiting for %d more player(s)..."] = { ko = "NETPLAY: 포트 %d 에서 대기 중, %d명 더 기다립니다...", ja = "NETPLAY: ポート %d で待機中、あと %d 人待っています...", zh = "NETPLAY: 在端口 %d 等待，还差 %d 名玩家..." },
   ["NETPLAY: connecting to %s:%d ... (attempt %d of 40)"] = { ko = "NETPLAY: %s:%d 에 접속 중... (%d/40회 시도)", ja = "NETPLAY: %s:%d に接続中... (%d/40 回目)", zh = "NETPLAY: 正在连接 %s:%d ... (第 %d/40 次)" },
@@ -2672,6 +2709,7 @@ local TR = {
   ["The 2P side picks its country first - wait a moment"] = { ko = "2P 진영이 먼저 나라를 고릅니다 - 잠시 기다리세요", ja = "2P側が先に国を選びます - 少しお待ちください", zh = "2P方先选择国家 - 请稍候" },
   ["You may pick the same team as the other side"] = { ko = "같은 팀을 골라도 대전이 됩니다.", ja = "同じチームを選んでも対戦できます。", zh = "选择相同的队伍也可以对战。" },
   ["Wait until the game closes by itself"] = { ko = "자동종료 될 때까지 기다려주세요.", ja = "自動で閉じるまでお待ちください。", zh = "请等待游戏自动关闭。" },
+  ["[Tip!] Closing the game by hand during a match, not letting it close by itself, may bring a penalty"] = { ko = "[중요팁!] 게임 중 자동이 아닌 강제 종료 시 패널티가 부여될 수 있습니다", ja = "[重要!] 試合中に自動ではなく強制終了すると、ペナルティが科されることがあります", zh = "[重要提示!] 比赛中非自动而是强制关闭游戏，可能会受到处罚" },
   ["Closing the window now can lose the match record"] = { ko = "지금 창을 닫으면 경기 기록이 남지 않을 수 있습니다", ja = "今ウィンドウを閉じると試合の記録が残らないことがあります", zh = "现在关闭窗口可能会丢失比赛记录" },
   ["Your side picks first - choose your country"] = { ko = "2P 진영 우선권: 먼저 나라를 고르세요", ja = "2P側優先: 先に国を選んでください", zh = "2P方优先：请先选择国家" },
   ["2v2: YOU pick the LEFT team's country (your teammate joins automatically)"] = { ko = "2v2: 당신이 왼쪽 팀의 나라를 고릅니다 (팀원은 자동으로 합류)", ja = "2v2: あなたが左チームの国を選びます (チームメイトは自動で合流)", zh = "2v2: 由你选择左队的国家 (队友自动加入)" },
@@ -3460,14 +3498,14 @@ local function handle_host_message(p, t, g, payload)
     local pm = (ml or 0) + (mh or 0) * 256
     if pm > 0 and MAME_MINOR > 0 and pm ~= MAME_MINOR then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, scnp_pk_byte(), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
       if p.slot >= 5 then log("spectator %d has MAME %s (we run %s) - ignored", p.slot, mame_str(pm), mame_str(MAME_MINOR)); return end
       lose("MAME version differs: player %d has %s, you have %s - everybody needs the same MAME build", p.slot, mame_str(pm), mame_str(MAME_MINOR))
       return
     end
     if p.slot >= 5 then
 
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, scnp_pk_byte(), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
       if not p.ready then log("spectator %d joined", p.slot) end
       p.ready = true
 
@@ -3489,19 +3527,19 @@ local function handle_host_message(p, t, g, payload)
       P.dropped[p.slot] = nil; P.gone[p.slot] = nil; P.mark[p.slot] = nil; P.tries[p.slot] = nil
       P.late[p.slot] = nil; P.live[p.slot] = nil; allow[p.slot] = 0; inputs[p.slot] = {}; peer_sums[p.slot] = {}
       if p.slot > nplayers then nplayers = p.slot end
-      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
+      send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, scnp_pk_byte(), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
       p.ready = true
 
       P.sync_join = true; P.joining = P.joining or {}; P.joining[p.slot] = true
       log("PvE: %dP joins the running match (resync)", p.slot); status("PvE: %dP is joining the match", p.slot)
       return
     end
-    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0)); return end
+    if p.ready then send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, scnp_pk_byte(), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0)); return end
 
     if want and want >= 2 and want <= nplayers and want ~= p.slot and not peers[want] then
       peers[p.slot] = nil; peers[want] = p; p.slot = want
     end
-    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, SCNP_PK.on and 1 or (SCNP_PK.gg and 2 or 0), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
+    send_to(p, "H" .. string.char(gen, VERSION, cfg.delay, p.slot, nplayers, time_byte()) .. mame_bytes()); send_to(p, "F" .. string.char(gen, scnp_stage, scnp_pk_byte(), scnp_sel_code(), (SCNP_GOD.on and (SCNP_GOD.fix and 2 or 1) or 0) | (SCNP_GOD.auto and 8 or 0) | (SCNP_PVEGOD.on and 4 or 0), SCNP_PVE.on and SCNP_DIFF.v or 3, SCNP_DIPTIME and 1 or 0))
     p.ready = true
     log("player %d joined (%d/%d)", p.slot, p.slot, nplayers)
     status("player %d joined (%d of %d)", p.slot, p.slot, nplayers)
@@ -3578,7 +3616,7 @@ local function handle_client_message(t, g, payload)
     local st, pk, sel, god, df, dt = payload:byte(1, 6)
     if dt and (dt == 1) ~= SCNP_DIPTIME then SCNP_DIPTIME = (dt == 1); install_clock_gate() end
     if st and st <= 17 and st ~= scnp_stage then scnp_stage = st; scnp_install_stage_tap() end
-    if pk then SCNP_PK.on = (pk == 1); SCNP_PK.gg = (pk == 2) end
+    if pk then SCNP_PK.on = (pk == 1); SCNP_PK.gg = (pk == 2); SCNP_PK.race = (pk > 10 and pk < 20) and (pk - 10) or 0 end
     if sel then scnp_sel_apply(sel >= 1, sel >= 2, sel >= 3, sel >= 4) end
     if god then scnp_god_apply((god & 3) >= 1, (god & 3) >= 2, (god & 8) ~= 0); scnp_pvegod_apply((god & 4) ~= 0) end
     if df and df <= 3 and SCNP_PVE.on and df ~= SCNP_DIFF.v then scnp_diff_apply(df) end
@@ -3972,8 +4010,9 @@ local function step()
       SCNP_RPD.d0 = SCNP_RPD.d0 or cfg.delay
       cfg.time = r.meta:match('"time":(%d+)') or cfg.time
       scnp_stage = tonumber(r.meta:match('"stage":(%d+)') or "0") or 0; scnp_install_stage_tap()
-      SCNP_PK.on = r.meta:match('"pk":1') ~= nil
-      SCNP_PK.gg = r.meta:match('"pk":2') ~= nil
+      SCNP_PK.on = r.meta:match('"pk":1[,}]') ~= nil
+      SCNP_PK.gg = r.meta:match('"pk":2[,}]') ~= nil
+      do local pv = tonumber(r.meta:match('"pk":(%d+)') or ""); SCNP_PK.race = (pv and pv > 10 and pv < 20) and (pv - 10) or 0 end
       local sv = tonumber(r.meta:match('"sel":(%d)') or "0") or 0; scnp_sel_apply(sv >= 1, sv >= 2, sv >= 3, sv >= 4)
       do local b = r.meta:match('"ball":"(%a+)"'); if b then SCNP_PAL.BALLNAME = b; SCNP_PAL.BALL = SCNP_PAL.BALLS[b] end end
       scnp_god_apply(r.meta:match('"god":[123]') ~= nil, r.meta:match('"god":[23]') ~= nil, r.meta:match('"god":3') ~= nil)
@@ -4469,6 +4508,7 @@ function scnp_endwait_draw()
   if not SCNP_PVEGOD.on and SCNP_PK.state ~= "off" and SCNP_PK.state ~= "done" then return end
   local E, u, w, h = SCNP_ENDWAIT, 2, screen.width, screen.height or 240
   local sub = tr("Closing the window now can lose the match record")
+  local tip = tr("[Tip!] Closing the game by hand during a match, not letting it close by itself, may bring a penalty")
   if cfg.lang == "ko" then
     if not E.rs then
       E.rs = {}
@@ -4480,18 +4520,20 @@ function scnp_endwait_draw()
     end
     local hh = 0; for _, L in ipairs(E.KO) do hh = hh + L.h * u + 6 end
     local y = math.floor(h / 2 - (hh + 12) / 2)
-    screen:draw_box(w / 2 - 120, y - 10, w / 2 + 120, y + hh + 14, 0xffffd600, 0xe8101018)
+    screen:draw_box(w / 2 - 120, y - 10, w / 2 + 120, y + hh + 23, 0xffffd600, 0xe8101018)
     for i, L in ipairs(E.KO) do
       local x0 = math.floor(w / 2 - L.w * u / 2)
       for _, R in ipairs(E.rs[i]) do screen:draw_box(x0 + R[1] * u, y + R[2] * u, x0 + (R[1] + R[3]) * u, y + (R[2] + R[4]) * u, 0, 0xffffe040) end
       y = y + L.h * u + 6
     end
     screen:draw_text("center", y + 1, sub, 0xffd8d8d8, 0x00000000)
+    screen:draw_text("center", y + 10, tip, 0xffffc060, 0x00000000)
   else
     local y = math.floor(h / 2 - 16)
-    screen:draw_box(w / 2 - 120, y - 6, w / 2 + 120, y + 28, 0xffffd600, 0xe8101018)
+    screen:draw_box(w / 2 - 120, y - 6, w / 2 + 120, y + 37, 0xffffd600, 0xe8101018)
     screen:draw_text("center", y + 2, tr("Wait until the game closes by itself"), 0xffffe040, 0x00000000)
     screen:draw_text("center", y + 14, sub, 0xffd8d8d8, 0x00000000)
+    screen:draw_text("center", y + 23, tip, 0xffffc060, 0x00000000)
   end
 end
 local function on_frame_done()

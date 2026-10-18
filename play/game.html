@@ -280,6 +280,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
       if (/^(orange|yellow|pink|blue)$/.test(Q.get('ball') || '')) env.SCNP_BALL = Q.get('ball');
       if (Q.get('series')) env.SCNP_SERIES = Q.get('series');
       if (Q.get('pk')) env.SCNP_PK = Q.get('pk') === '2' ? '2' : '1';
+      if (/^[135]$/.test(Q.get('race') || '')) env.SCNP_RACE = Q.get('race');
       env.WEB_LOCKUI = '1';
 
       addEventListener('keydown', e => { if (/^F\d{1,2}$/.test(e.key) || e.key === 'Tab') e.preventDefault(); }, true);
