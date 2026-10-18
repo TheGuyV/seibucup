@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 21:50","room":72,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"72-261018215032-17","nicks":["로또영","rhythmmania","",""],"replay":"replays/20261018_215032_로또영_vs_rhythmmania_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:48","room":65,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[7,5],"nicks":["소소","surferKIM","",""],"replay":"replays/20261018_214847_소소_vs_surferKIM_3-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:44","room":68,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,8],"nicks":["미네로","rhythmmania","",""],"replay":"replays/20261018_214430_미네로_vs_rhythmmania_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:44","room":65,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,5],"nicks":["소소","surferKIM","",""],"replay":"replays/20261018_214405_소소_vs_surferKIM_0-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 19:59","room":7,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,9],"nicks":["mizunoasahi","KingDani","",""],"replay":"replays/20261017_195932_mizunoasahi_vs_KingDani_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 19:52","room":5,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,9],"nicks":["KingDani","mizunoasahi","",""],"replay":"replays/20261017_195209_KingDani_vs_mizunoasahi_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 19:07","room":8,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["콩메모","KingDani","",""],"replay":"replays/20261017_190708_콩메모_vs_KingDani_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 19:03","room":8,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"nicks":["콩메모","KingDani","",""],"replay":"replays/20261017_190317_콩메모_vs_KingDani_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 19:00","room":8,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["콩메모","KingDani","",""],"replay":"replays/20261017_190004_콩메모_vs_KingDani_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 19:03","room":8,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"nicks":["콩메모","KingDani","",""],"replay":"replays/20261017_190317_콩메모_vs_KingDani_0-0_p1.scr","edition":"cupsocs2"}
 ]
