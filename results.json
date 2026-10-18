@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 21:40","room":65,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,5],"nicks":["소소","surferKIM","",""],"replay":"replays/20261018_214032_소소_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:40","room":68,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,7],"nicks":["미네로","rhythmmania","",""],"replay":"replays/20261018_214014_미네로_vs_rhythmmania_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:36","room":56,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_213619_surferKIM_vs_rhythmmania_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:33","room":65,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,5],"nicks":["소소","레온","",""],"replay":"replays/20261018_213324_소소_vs_레온_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 19:00","room":8,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["콩메모","KingDani","",""],"replay":"replays/20261017_190004_콩메모_vs_KingDani_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:56","room":8,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["콩메모","KingDani","",""],"replay":"replays/20261017_185620_콩메모_vs_KingDani_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:50","room":7,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":2,"series":"7-261017185030-3","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["즐축","상봉거지오락실","",""],"replay":"replays/20261017_185030_즐축_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 18:47","room":5,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["surferKIM","KingDani","",""],"replay":"replays/20261017_184742_surferKIM_vs_KingDani_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 18:43","room":2,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"2-261017183908-2","nicks":["상봉거지오락실","surferKIM","",""],"replay":"replays/20261017_184335_상봉거지오락실_vs_surferKIM_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 18:47","room":5,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["surferKIM","KingDani","",""],"replay":"replays/20261017_184742_surferKIM_vs_KingDani_1-1_p1.scr","edition":"cupsocs2"}
 ]
