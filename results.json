@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 22:56","room":95,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_225627_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:54","room":89,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,5],"nicks":["소소","에어","",""],"replay":"replays/20261018_225454_소소_vs_에어_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:52","room":95,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,3],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_225244_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:50","room":97,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,0],"nicks":["미네로","에어","",""],"replay":"replays/20261018_225031_미네로_vs_에어_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 21:33","room":37,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_213339_surferKIM_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:33","room":49,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"nicks":["123454","dfdf","",""],"replay":"replays/20261017_213327_123454_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:33","room":48,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,5],"ft":2,"series":"48-261017213322-11","nicks":["김창식씨","상봉거지오락실","",""],"replay":"replays/20261017_213322_김창식씨_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 21:30","room":46,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[8,7],"nicks":["Nogizaka46","김정은패스","",""],"replay":"replays/20261017_213046_Nogizaka46_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 21:29","room":37,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_212927_surferKIM_vs_판순이_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 21:30","room":46,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[8,7],"nicks":["Nogizaka46","김정은패스","",""],"replay":"replays/20261017_213046_Nogizaka46_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"}
 ]
