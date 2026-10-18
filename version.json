@@ -1,107 +1,107 @@
 {
-  "version": "2.0.78",
+  "version": "2.0.79",
   "url": "https://seibucup.online/download.html",
   "notes": "",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/SeibuCupNetplay.exe",
-      "sha256": "925f1646eb7fb313bf45cb63b30b31fd57dd4a171459f22087280edf2ee717f9",
-      "size": 51412859
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/SeibuCupNetplay.exe",
+      "sha256": "d91d23ad0f54116ffcfcaf77141f8b7e6bbb6dd02dbdc0adf22bda48c821ee4c",
+      "size": 51412897
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/netplay.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/netplay.lua",
       "sha256": "45d406e6c9454340f8db4bd4492414a724aa66c136331951ca13a109364f23db",
       "size": 231383
     },
     {
       "path": "netplay/tutorial/tutorial.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/tutorial.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/tutorial.lua",
       "sha256": "1e501ff2240515af18116d3209ff0a4da11a593e2d25b59cb829ba58153a65a9",
       "size": 24169
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/defend.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/defend.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/defend.sta",
       "sha256": "fc387ebda973457ee592e1a6b3094098c559f27eb4c5e5bb3985bff7622e0119",
       "size": 130809
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/header.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/header.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/header.sta",
       "sha256": "722b557eba9e1b433b788d1c1fddfb362b66f7619cfadb23ec72633227863341",
       "size": 122973
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/keeper.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/keeper.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/keeper.sta",
       "sha256": "f9c048c9ae686a53bc1eb1709844599dfd1e4034703e72426e5d010d678334c4",
       "size": 128248
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/kickoff.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/kickoff.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/kickoff.sta",
       "sha256": "0871056edff5f327fef062be4ffb5073e25ad665b188cceb66cf17a11202815f",
       "size": 122432
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/overhead.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/overhead.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/overhead.sta",
       "sha256": "209a418bae60098efbc8486f10dc994c2b3cb60daad5d2e75ec29fc1168264c7",
       "size": 122927
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/shot.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/shot.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/shot.sta",
       "sha256": "e5242ce30b5bd6b3840f4e59e1b97ca045347638b8bc2dee757dac4668c385b1",
       "size": 120343
     },
     {
       "path": "netplay/practice/practice.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/practice.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/practice.lua",
       "sha256": "53aa6a5634da394e8321cc95b979e0d0d5f6da5057c83416fc5a9aafe260dcc1",
       "size": 24439
     },
     {
       "path": "netplay/god/god.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/god.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/god.lua",
       "sha256": "076b2512009c9c633bca184a84d1493d68832f8fcde535450af4a6e0775335e3",
       "size": 3802
     },
     {
       "path": "netplay/ranked_wait.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/ranked_wait.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/ranked_wait.lua",
       "sha256": "93eccf676b8c6d9fa6c6b50c78bc4ce05c5b96764c2e5880746050c4a3f19461",
       "size": 16789
     },
     {
       "path": "netplay/filters.zip",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/filters.zip",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/filters.zip",
       "sha256": "0a02c23b8cc27147f14a6ff03c4026d8ef37e4663db8094b713306edf52cf96c",
       "size": 561960
     },
     {
       "path": "netplay/plugins/scnp_nowarn/plugin.json",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/plugin.json",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/plugin.json",
       "sha256": "8d92e3a27e8c5207b65918a74fb4388a74496d80135b7aaa0e3def55c0f48449",
       "size": 203
     },
     {
       "path": "netplay/plugins/scnp_nowarn/init.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/init.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/init.lua",
       "sha256": "51eac70e527d1a4420ed982cb22206632a665abd19c486073ad747740b6690ae",
       "size": 1588
     },
     {
       "path": "netplay/netplay_rb.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/netplay_rb.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/netplay_rb.lua",
       "sha256": "dc282cb5dfa9135617b0377251fa488a17edbbb5ffb2f2d2af115186386971d7",
       "size": 251791
     },
     {
       "path": "netplay/rb/mame.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.78/mame.exe",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.0.79/mame.exe",
       "sha256": "f87f644073b36bf79971e8a1cd267559bec0f6241d84f1cc16e395f289a12e2b",
       "size": 59898880
     }
