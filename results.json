@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 00:45","room":139,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,5],"ft":2,"series":"139-261019004523-31","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"미네로":["미네로 FC","FCX"]},"nicks":["즐축","미네로","",""],"replay":"replays/20261019_004523_즐축_vs_미네로_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:45","room":137,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,3],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_004518_이태원후렌드치킨_vs_소떡_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:41","room":137,"type":"1v1","time":150,"players":2,"score":[0,4],"teams":[0,7],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_004138_이태원후렌드치킨_vs_소떡_0-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:37","room":137,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_003736_이태원후렌드치킨_vs_소떡_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 23:31","room":117,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,0],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_233104_덕장배_vs_신발벗어_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:30","room":118,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,3],"ft":2,"series":"118-261017232703-25","nicks":["김창식씨","판순이","",""],"replay":"replays/20261017_233033_김창식씨_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:28","room":119,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[5,0],"nicks":["루키","청탑오락실","",""],"replay":"replays/20261017_232829_루키_vs_청탑오락실_4-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 23:27","room":117,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_232730_덕장배_vs_신발벗어_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 23:27","room":116,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"ft":2,"series":"116-261017232358-24","nicks":["슛돌이","dfdf","",""],"replay":"replays/20261017_232726_슛돌이_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 23:27","room":117,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_232730_덕장배_vs_신발벗어_1-1_p1.scr","edition":"cupsocs2"}
 ]
