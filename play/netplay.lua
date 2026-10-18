@@ -2671,6 +2671,8 @@ local TR = {
   ["protocol version mismatch (%d vs %d) - update netplay.lua on both sides"] = { ko = "프로토콜 버전이 다릅니다 (%d / %d) - 양쪽 모두 최신 패키지로 갱신하세요", ja = "プロトコルのバージョンが違います (%d / %d) - 両方とも最新パッケージに更新してください", zh = "协议版本不一致 (%d / %d) - 请双方都更新到最新版本" },
   ["The 2P side picks its country first - wait a moment"] = { ko = "2P 진영이 먼저 나라를 고릅니다 - 잠시 기다리세요", ja = "2P側が先に国を選びます - 少しお待ちください", zh = "2P方先选择国家 - 请稍候" },
   ["You may pick the same team as the other side"] = { ko = "같은 팀을 골라도 대전이 됩니다.", ja = "同じチームを選んでも対戦できます。", zh = "选择相同的队伍也可以对战。" },
+  ["Wait until the game closes by itself"] = { ko = "자동종료 될 때까지 기다려주세요.", ja = "自動で閉じるまでお待ちください。", zh = "请等待游戏自动关闭。" },
+  ["Closing the window now can lose the match record"] = { ko = "지금 창을 닫으면 경기 기록이 남지 않을 수 있습니다", ja = "今ウィンドウを閉じると試合の記録が残らないことがあります", zh = "现在关闭窗口可能会丢失比赛记录" },
   ["Your side picks first - choose your country"] = { ko = "2P 진영 우선권: 먼저 나라를 고르세요", ja = "2P側優先: 先に国を選んでください", zh = "2P方优先：请先选择国家" },
   ["2v2: YOU pick the LEFT team's country (your teammate joins automatically)"] = { ko = "2v2: 당신이 왼쪽 팀의 나라를 고릅니다 (팀원은 자동으로 합류)", ja = "2v2: あなたが左チームの国を選びます (チームメイトは自動で合流)", zh = "2v2: 由你选择左队的国家 (队友自动加入)" },
   ["2v2: YOU pick the RIGHT team's country (your teammate joins automatically)"] = { ko = "2v2: 당신이 오른쪽 팀의 나라를 고릅니다 (팀원은 자동으로 합류)", ja = "2v2: あなたが右チームの国を選びます (チームメイトは自動で合流)", zh = "2v2: 由你选择右队的国家 (队友自动加入)" },
@@ -4454,12 +4456,50 @@ function scnp_mirror_note_draw()
   screen:draw_box(w / 2 - half, 21, w / 2 + half, 31, 0xffffd600, 0xe0101018)
   screen:draw_text("center", 22, t, 0xffffe060, 0x00000000)
 end
+
+SCNP_ENDWAIT = {}
+SCNP_ENDWAIT.KO = {
+  { w = 104, h = 11, r = "54,0,6,1 13,0,9,1 94,0,6,2 0,0,6,2 82,0,7,2 25,0,9,2 70,0,5,2 37,0,9,2 54,1,2,1 13,1,2,1 44,2,2,1 30,2,2,1 54,2,6,1 27,2,2,1 8,0,2,4 78,0,2,4 61,0,2,4 76,0,1,4 90,0,2,4 2,2,2,2 13,2,9,2 96,2,2,2 31,3,3,1 56,3,2,1 25,3,3,1 37,3,9,1 87,2,2,3 84,2,2,3 37,4,2,1 17,4,2,1 29,4,2,1 53,4,10,1 90,4,3,2 76,4,4,2 8,4,3,2 12,5,11,1 24,5,11,1 86,5,3,1 1,4,4,3 95,4,4,3 37,5,9,2 54,6,9,1 73,2,1,6 70,2,2,6 83,5,2,3 86,6,2,2 26,7,7,1 94,7,6,1 0,7,6,1 43,7,2,1 38,7,2,1 58,7,5,1 14,7,7,1 32,8,2,1 85,8,3,1 54,8,4,1 25,8,2,1 20,8,2,1 13,8,2,1 82,8,2,2 70,8,5,2 4,8,2,2 94,8,2,2 98,8,2,2 0,8,2,2 36,8,11,2 85,9,2,1 25,9,9,1 13,9,9,1 102,0,2,11 8,6,2,5 78,6,2,5 76,6,1,5 90,6,2,5 54,9,9,2 26,10,7,1 14,10,7,1" },
+  { w = 74, h = 11, r = "62,0,7,1 24,0,6,2 32,0,2,2 0,0,6,2 12,0,6,2 37,0,9,2 61,1,9,1 50,0,2,3 54,0,1,3 39,2,5,1 20,0,2,4 68,2,2,2 61,2,2,2 28,2,6,2 50,3,5,1 37,3,4,1 42,3,4,1 4,2,2,3 24,4,6,1 32,4,2,1 49,4,6,1 43,4,3,1 61,4,9,1 37,4,3,1 20,4,3,2 3,5,3,1 24,5,10,1 62,5,7,1 54,5,1,2 49,5,4,2 30,6,4,1 3,6,2,1 12,2,2,6 24,6,2,2 62,6,2,2 67,6,2,2 36,6,11,2 48,7,7,1 2,7,3,1 0,8,4,1 48,8,2,2 12,8,7,2 52,8,3,2 60,8,11,2 24,8,7,2 0,9,3,1 56,0,2,11 8,0,2,11 20,6,2,5 32,7,2,4 41,8,2,3 72,9,2,2 54,10,1,1" },
+}
+function scnp_endwait_draw()
+  if is_replay or is_spec or local_slot < 1 or local_slot > 4 or nplayers < 2 or not screen then return end
+  if SCNP_PVE.on and not SCNP_PVEGOD.on then return end
+  if clock_start == nil or mem:read_u16(CLOCK_ADDR) ~= 0 then return end
+  if not SCNP_PVEGOD.on and SCNP_PK.state ~= "off" and SCNP_PK.state ~= "done" then return end
+  local E, u, w, h = SCNP_ENDWAIT, 2, screen.width, screen.height or 240
+  local sub = tr("Closing the window now can lose the match record")
+  if cfg.lang == "ko" then
+    if not E.rs then
+      E.rs = {}
+      for i, L in ipairs(E.KO) do
+        local t = {}
+        for x, y, a, b in L.r:gmatch("(%d+),(%d+),(%d+),(%d+)") do t[#t + 1] = { tonumber(x), tonumber(y), tonumber(a), tonumber(b) } end
+        E.rs[i] = t
+      end
+    end
+    local hh = 0; for _, L in ipairs(E.KO) do hh = hh + L.h * u + 6 end
+    local y = math.floor(h / 2 - (hh + 12) / 2)
+    screen:draw_box(w / 2 - 120, y - 10, w / 2 + 120, y + hh + 14, 0xffffd600, 0xe8101018)
+    for i, L in ipairs(E.KO) do
+      local x0 = math.floor(w / 2 - L.w * u / 2)
+      for _, R in ipairs(E.rs[i]) do screen:draw_box(x0 + R[1] * u, y + R[2] * u, x0 + (R[1] + R[3]) * u, y + (R[2] + R[4]) * u, 0, 0xffffe040) end
+      y = y + L.h * u + 6
+    end
+    screen:draw_text("center", y + 1, sub, 0xffd8d8d8, 0x00000000)
+  else
+    local y = math.floor(h / 2 - 16)
+    screen:draw_box(w / 2 - 120, y - 6, w / 2 + 120, y + 28, 0xffffd600, 0xe8101018)
+    screen:draw_text("center", y + 2, tr("Wait until the game closes by itself"), 0xffffe040, 0x00000000)
+    screen:draw_text("center", y + 14, sub, 0xffd8d8d8, 0x00000000)
+  end
+end
 local function on_frame_done()
   step()
 
   local W = SCNP_WAIT
   if W.on then if W.drawn then return end; W.drawn = true else W.drawn = false end
-  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); scnp_costume_board_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
+  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); scnp_costume_board_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw(); scnp_endwait_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
 end
 
 if cfg.mode == "probe" then
