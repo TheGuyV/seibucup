@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 15:20","room":98,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":2,"series":"98-261018152057-18","nicks":["축구오랜만","미네로","",""],"replay":"replays/20261018_152057_축구오랜만_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:09","room":93,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,7],"ft":2,"series":"93-261018150508-17","nicks":["판순이","인형의기사","",""],"replay":"replays/20261018_150923_판순이_vs_인형의기사_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:05","room":93,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,7],"ft":2,"series":"93-261018150508-17","nicks":["판순이","인형의기사","",""],"replay":"replays/20261018_150508_판순이_vs_인형의기사_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:50","room":89,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,9],"nicks":["테일러장군","narahashi","",""],"replay":"replays/20261018_145001_테일러장군_vs_narahashi_4-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 00:21","room":185,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_002150_코바오락실_vs_메시_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:18","room":185,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_001825_코바오락실_vs_메시_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:15","room":184,"type":"1v1","time":600,"players":2,"score":[7,8],"teams":[0,4],"arcade":1,"nicks":["이탈리아","미국","",""],"replay":"replays/20261017_001509_arcade_7-8_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 00:08","room":185,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_000817_코바오락실_vs_메시_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 00:03","room":183,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":2,"series":"183-261016235959-41","nicks":["메시","뚱이","",""],"replay":"replays/20261017_000342_메시_vs_뚱이_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 00:08","room":185,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_000817_코바오락실_vs_메시_3-2_p1.scr","edition":"cupsocs2"}
 ]
