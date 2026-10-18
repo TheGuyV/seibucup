@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 11:43","room":50,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,0],"nicks":["들쥐","duli0212","",""],"replay":"replays/20261018_114319_들쥐_vs_duli0212_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 11:36","room":49,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261018_113636_arcade_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 10:51","room":48,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,8],"ft":2,"series":"48-261018105111-13","ranked":1,"tnames":{"즐축":["아르헨티나","ARG"]},"nicks":["duli0212","즐축","",""],"replay":"replays/20261018_105111_duli0212_vs_즐축_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 10:37","room":47,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"47-261018103746-12","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"Todoroki":["Todoroki FC","TOD"]},"nicks":["즐축","Todoroki","",""],"replay":"replays/20261018_103746_즐축_vs_Todoroki_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 23:38","room":171,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,3],"nicks":["슛돌이","atfn","",""],"replay":"replays/20261016_233809_슛돌이_vs_atfn_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:35","room":169,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,5],"ft":2,"series":"169-261016232722-36","nicks":["바바리","적토마고정운","",""],"replay":"replays/20261016_233518_바바리_vs_적토마고정운_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:34","room":171,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,3],"nicks":["슛돌이","atfn","",""],"replay":"replays/20261016_233433_슛돌이_vs_atfn_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:33","room":168,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_233334_뚱이_vs_코바오락실_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:33","room":170,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,3],"nicks":["연산국민학교","땡삐","",""],"replay":"replays/20261016_233323_연산국민학교_vs_땡삐_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 23:33","room":168,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_233334_뚱이_vs_코바오락실_3-2_p1.scr","edition":"cupsocs2"}
 ]
