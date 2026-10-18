@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 20:12","room":22,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_201240_이태원후렌드치킨_vs_하니_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:08","room":22,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_200850_이태원후렌드치킨_vs_하니_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:07","room":23,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,5],"nicks":["MrKei","20260101","",""],"replay":"replays/20261018_200713_MrKei_vs_20260101_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:05","room":22,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_200512_이태원후렌드치킨_vs_하니_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 15:12","room":54,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"nicks":["surferKIM","적토마고정운","",""],"replay":"replays/20261017_151242_surferKIM_vs_적토마고정운_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 15:08","room":54,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,5],"nicks":["surferKIM","적토마고정운","",""],"replay":"replays/20261017_150849_surferKIM_vs_적토마고정운_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 15:04","room":54,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,5],"nicks":["surferKIM","적토마고정운","",""],"replay":"replays/20261017_150430_surferKIM_vs_적토마고정운_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 15:02","room":44,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":3,"series":"44-261017145443-9","nicks":["로또영","jmson34","",""],"replay":"replays/20261017_150251_로또영_vs_jmson34_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 15:02","room":50,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,5],"ft":2,"series":"50-261017145402-8","nicks":["상봉거지오락실","쑥곰","",""],"replay":"replays/20261017_150247_상봉거지오락실_vs_쑥곰_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 15:02","room":44,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":3,"series":"44-261017145443-9","nicks":["로또영","jmson34","",""],"replay":"replays/20261017_150251_로또영_vs_jmson34_2-1_p1.scr","edition":"cupsocs2"}
 ]
