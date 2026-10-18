@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 22:50","room":97,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,0],"nicks":["미네로","에어","",""],"replay":"replays/20261018_225031_미네로_vs_에어_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:49","room":95,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,9],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_224921_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:45","room":95,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_224559_덕장배_vs_신발벗어_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:44","room":89,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["소소","쌍송이","",""],"replay":"replays/20261018_224416_소소_vs_쌍송이_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 21:30","room":46,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[8,7],"nicks":["Nogizaka46","김정은패스","",""],"replay":"replays/20261017_213046_Nogizaka46_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:29","room":37,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_212927_surferKIM_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:29","room":43,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"43-261017212508-10","nicks":["김창식씨","dfdf","",""],"replay":"replays/20261017_212910_김창식씨_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 21:28","room":45,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[4,5],"ft":2,"series":"40-261017212319-8","ranked":1,"tnames":{"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["샤마2","상봉거지오락실","",""],"replay":"replays/20261017_212812_샤마2_vs_상봉거지오락실_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 21:25","room":43,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,9],"ft":2,"series":"43-261017212508-10","nicks":["김창식씨","dfdf","",""],"replay":"replays/20261017_212508_김창식씨_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 21:28","room":45,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[4,5],"ft":2,"series":"40-261017212319-8","ranked":1,"tnames":{"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["샤마2","상봉거지오락실","",""],"replay":"replays/20261017_212812_샤마2_vs_상봉거지오락실_3-4_p1.scr","edition":"cupsocs2"}
 ]
