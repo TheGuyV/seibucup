@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 13:04","room":56,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"nicks":["111132","narahashi","",""],"replay":"replays/20261018_130450_111132_vs_narahashi_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 12:59","room":52,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"ft":3,"series":"52-261018125915-14","nicks":["미네로","호세뽕","",""],"replay":"replays/20261018_125915_미네로_vs_호세뽕_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 11:43","room":50,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,0],"nicks":["들쥐","duli0212","",""],"replay":"replays/20261018_114319_들쥐_vs_duli0212_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 11:36","room":49,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261018_113636_arcade_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 23:40","room":168,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_234037_뚱이_vs_코바오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:38","room":172,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[3,7],"nicks":["Nogizaka46","연산국민학교","",""],"replay":"replays/20261016_233824_Nogizaka46_vs_연산국민학교_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:38","room":171,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,3],"nicks":["슛돌이","atfn","",""],"replay":"replays/20261016_233809_슛돌이_vs_atfn_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:35","room":169,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,5],"ft":2,"series":"169-261016232722-36","nicks":["바바리","적토마고정운","",""],"replay":"replays/20261016_233518_바바리_vs_적토마고정운_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:34","room":171,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,3],"nicks":["슛돌이","atfn","",""],"replay":"replays/20261016_233433_슛돌이_vs_atfn_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 23:35","room":169,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,5],"ft":2,"series":"169-261016232722-36","nicks":["바바리","적토마고정운","",""],"replay":"replays/20261016_233518_바바리_vs_적토마고정운_1-2_p1.scr","edition":"cupsocs2"}
 ]
