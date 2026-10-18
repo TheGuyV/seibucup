@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 18:23","room":132,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,4],"ft":2,"series":"132-261018181946-21","nicks":["상봉거지오락실","므와바","",""],"replay":"replays/20261018_182325_상봉거지오락실_vs_므와바_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 18:19","room":136,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,9],"nicks":["키키키","레트로성지","",""],"replay":"replays/20261018_181950_키키키_vs_레트로성지_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 18:19","room":132,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,0],"ft":2,"series":"132-261018181946-21","nicks":["상봉거지오락실","므와바","",""],"replay":"replays/20261018_181946_상봉거지오락실_vs_므와바_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 18:12","room":131,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[10,5],"ft":2,"series":"131-261018181238-20","ranked":1,"tnames":{"키키키":["키키키 FC","FCX"],"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["키키키","상봉거지오락실","",""],"replay":"replays/20261018_181238_키키키_vs_상봉거지오락실_2-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 02:25","room":24,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":3,"series":"24-261017022526-6","nicks":["로또영","trga","",""],"replay":"replays/20261017_022526_로또영_vs_trga_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:20","room":23,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["trga","NooB","",""],"replay":"replays/20261017_022050_trga_vs_NooB_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 02:17","room":23,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[7,5],"nicks":["trga","NooB","",""],"replay":"replays/20261017_021705_trga_vs_NooB_4-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 02:10","room":20,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"20-261017020645-5","nicks":["쑥곰","trga","",""],"replay":"replays/20261017_021057_쑥곰_vs_trga_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 02:06","room":20,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"20-261017020645-5","nicks":["쑥곰","trga","",""],"replay":"replays/20261017_020645_쑥곰_vs_trga_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 02:10","room":20,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"20-261017020645-5","nicks":["쑥곰","trga","",""],"replay":"replays/20261017_021057_쑥곰_vs_trga_2-1_p1.scr","edition":"cupsocs2"}
 ]
