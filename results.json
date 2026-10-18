@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 23:03","room":95,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,9],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_230340_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:02","room":98,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[5,7],"nicks":["미네로","fnfn","",""],"replay":"replays/20261018_230248_미네로_vs_fnfn_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:01","room":89,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["소소","guyloide","",""],"replay":"replays/20261018_230107_소소_vs_guyloide_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:00","room":95,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_230013_덕장배_vs_신발벗어_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 21:40","room":53,"type":"1v1","time":180,"players":2,"score":[1,3],"teams":[10,5],"nicks":["Nogizaka46","갤럭새","",""],"replay":"replays/20261017_214038_Nogizaka46_vs_갤럭새_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:38","room":52,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[10,9],"nicks":["태극오락실","dfdf","",""],"replay":"replays/20261017_213800_태극오락실_vs_dfdf_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 21:37","room":48,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,9],"ft":2,"series":"48-261017213322-11","nicks":["김창식씨","상봉거지오락실","",""],"replay":"replays/20261017_213736_김창식씨_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 21:37","room":37,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_213721_surferKIM_vs_판순이_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 21:34","room":51,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,5],"nicks":["샤마2","Nogizaka46","",""],"replay":"replays/20261017_213445_샤마2_vs_Nogizaka46_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 21:37","room":37,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"nicks":["surferKIM","판순이","",""],"replay":"replays/20261017_213721_surferKIM_vs_판순이_1-1_p1.scr","edition":"cupsocs2"}
 ]
