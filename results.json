@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 15:57","room":102,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,5],"nicks":["하니","미네로","",""],"replay":"replays/20261018_155724_하니_vs_미네로_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:53","room":102,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,5],"nicks":["하니","미네로","",""],"replay":"replays/20261018_155306_하니_vs_미네로_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:49","room":102,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,5],"nicks":["하니","미네로","",""],"replay":"replays/20261018_154911_하니_vs_미네로_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:26","room":98,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,5],"pk":[3,4],"ft":2,"series":"98-261018152057-18","nicks":["축구오랜만","미네로","",""],"replay":"replays/20261018_152610_축구오랜만_vs_미네로_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 01:10","room":9,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_011016_로또영_vs_atfn_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:06","room":9,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_010616_로또영_vs_atfn_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:02","room":9,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_010254_로또영_vs_atfn_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 00:58","room":9,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_005815_로또영_vs_atfn_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 00:21","room":185,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_002150_코바오락실_vs_메시_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 00:58","room":9,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":3,"series":"9-261017005815-1","nicks":["로또영","atfn","",""],"replay":"replays/20261017_005815_로또영_vs_atfn_1-2_p1.scr","edition":"cupsocs2"}
 ]
