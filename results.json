@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 01:09","room":2,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,5],"nicks":["불꽃슛마스터","기러기","",""],"replay":"replays/20261019_010955_불꽃슛마스터_vs_기러기_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 01:06","room":1,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_010609_이태원후렌드치킨_vs_qqppaa_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:59","room":137,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,7],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_005910_이태원후렌드치킨_vs_소떡_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:55","room":137,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,9],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_005540_이태원후렌드치킨_vs_소떡_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 23:45","room":117,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_234509_덕장배_vs_신발벗어_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:41","room":117,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_234124_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:38","room":123,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[3,4],"nicks":["루키","판순이","",""],"replay":"replays/20261017_233806_루키_vs_판순이_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 23:37","room":117,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_233758_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 23:34","room":117,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_233436_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 23:37","room":117,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261017_233758_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"}
 ]
