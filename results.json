@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 13:30","room":65,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["mizunoasahi","미네로","",""],"replay":"replays/20261018_133010_mizunoasahi_vs_미네로_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 13:26","room":64,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["swhong","미네로","",""],"replay":"replays/20261018_132630_swhong_vs_미네로_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 13:21","room":62,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[8,5],"nicks":["swhong","미네로","",""],"replay":"replays/20261018_132144_swhong_vs_미네로_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 13:16","room":57,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"57-261018130806-15","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_131638_인형의기사_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 23:51","room":180,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,5],"ft":2,"series":"180-261016235131-40","nicks":["이탈리아맨","메시","",""],"replay":"replays/20261016_235131_이탈리아맨_vs_메시_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:50","room":178,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,7],"ft":2,"series":"178-261016235020-39","nicks":["1111","코바오락실","",""],"replay":"replays/20261016_235020_1111_vs_코바오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:46","room":175,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,4],"pk":[4,5],"ft":2,"series":"175-261016234121-37","nicks":["메시","판순이","",""],"replay":"replays/20261016_234646_메시_vs_판순이_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:46","room":180,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,9],"nicks":["이탈리아맨","연산국민학교","",""],"replay":"replays/20261016_234625_이탈리아맨_vs_연산국민학교_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:45","room":168,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_234504_뚱이_vs_코바오락실_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 23:46","room":180,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,9],"nicks":["이탈리아맨","연산국민학교","",""],"replay":"replays/20261016_234625_이탈리아맨_vs_연산국민학교_1-2_p1.scr","edition":"cupsocs2"}
 ]
