@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 17:37","room":121,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[8,0],"nicks":["rhythmmania","ZIII","",""],"replay":"replays/20261018_173746_rhythmmania_vs_ZIII_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 17:31","room":120,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,8],"arcade":1,"nicks":["잉글랜드","아르헨티나","",""],"replay":"replays/20261018_173114_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 16:30","room":106,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,5],"arcade":1,"nicks":["대한민국","대한민국","",""],"replay":"replays/20261018_163052_arcade_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 16:09","room":102,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"nicks":["하니","미네로","",""],"replay":"replays/20261018_160905_하니_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 01:43","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_014316_로또영_vs_감자_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:38","room":11,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_013828_로또영_vs_감자_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 01:34","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_013436_로또영_vs_감자_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 01:28","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_012837_로또영_vs_감자_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 01:24","room":11,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_012411_로또영_vs_감자_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 01:28","room":11,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"11-261017012411-2","nicks":["로또영","감자","",""],"replay":"replays/20261017_012837_로또영_vs_감자_2-3_p1.scr","edition":"cupsocs2"}
 ]
