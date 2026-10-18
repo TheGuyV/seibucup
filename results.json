@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 20:28","room":33,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[7,9],"ft":2,"series":"33-261018202358-6","nicks":["이태원후렌드치킨","mizunoasahi","",""],"replay":"replays/20261018_202800_이태원후렌드치킨_vs_mizunoasahi_0-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:24","room":35,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[10,3],"ft":2,"series":"32-261018202048-5","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"판순이":["판순이 FC","YSY"]},"nicks":["MrKei","판순이","",""],"replay":"replays/20261018_202455_MrKei_vs_판순이_0-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:23","room":33,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"pk":[4,2],"ft":2,"series":"33-261018202358-6","nicks":["이태원후렌드치킨","mizunoasahi","",""],"replay":"replays/20261018_202358_이태원후렌드치킨_vs_mizunoasahi_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:20","room":32,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[10,3],"ft":2,"series":"32-261018202048-5","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"판순이":["판순이 FC","YSY"]},"nicks":["MrKei","판순이","",""],"replay":"replays/20261018_202048_MrKei_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 16:24","room":66,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,7],"ft":3,"series":"66-261017161615-12","nicks":["로또영","냥이냥이","",""],"replay":"replays/20261017_162421_로또영_vs_냥이냥이_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 16:19","room":66,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"66-261017161615-12","nicks":["로또영","냥이냥이","",""],"replay":"replays/20261017_161956_로또영_vs_냥이냥이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 16:16","room":66,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"66-261017161615-12","nicks":["로또영","냥이냥이","",""],"replay":"replays/20261017_161615_로또영_vs_냥이냥이_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 16:11","room":65,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"ft":2,"series":"65-261017161118-11","nicks":["narahashi","로또영","",""],"replay":"replays/20261017_161118_narahashi_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 15:49","room":62,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,0],"ft":3,"series":"62-261017154939-10","nicks":["로또영","오락실체어샷","",""],"replay":"replays/20261017_154939_로또영_vs_오락실체어샷_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 16:11","room":65,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"ft":2,"series":"65-261017161118-11","nicks":["narahashi","로또영","",""],"replay":"replays/20261017_161118_narahashi_vs_로또영_2-3_p1.scr","edition":"cupsocs2"}
 ]
