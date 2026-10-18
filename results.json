@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 00:21","room":111,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,7],"nicks":["소소","소떡","",""],"replay":"replays/20261019_002137_소소_vs_소떡_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:21","room":126,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":2,"series":"126-261019002135-28","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"미네로":["미네로 FC","FCX"]},"nicks":["MrKei","미네로","",""],"replay":"replays/20261019_002135_MrKei_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:20","room":123,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,8],"nicks":["이태원후렌드치킨","즐축","",""],"replay":"replays/20261019_002016_이태원후렌드치킨_vs_즐축_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:17","room":111,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,7],"nicks":["소소","소떡","",""],"replay":"replays/20261019_001737_소소_vs_소떡_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 23:13","room":96,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,3],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_231348_인형의기사_vs_pppqqq_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:13","room":106,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[3,5],"nicks":["신발벗어","asdf","",""],"replay":"replays/20261017_231341_신발벗어_vs_asdf_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 23:12","room":104,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[7,9],"ft":2,"series":"104-261017231220-23","nicks":["슛돌이","dfdf","",""],"replay":"replays/20261017_231220_슛돌이_vs_dfdf_4-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 23:09","room":96,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,5],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_230950_인형의기사_vs_pppqqq_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 23:05","room":96,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,5],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_230547_인형의기사_vs_pppqqq_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 23:09","room":96,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,5],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_230950_인형의기사_vs_pppqqq_2-2_p1.scr","edition":"cupsocs2"}
 ]
