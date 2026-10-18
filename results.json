@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 02:07","room":8,"type":"1v1","time":150,"players":2,"score":[2,5],"teams":[0,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_020714_이태원후렌드치킨_vs_qqppaa_2-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 02:03","room":8,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[0,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_020303_이태원후렌드치킨_vs_qqppaa_0-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 01:59","room":8,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_015908_이태원후렌드치킨_vs_qqppaa_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 01:54","room":8,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_015438_이태원후렌드치킨_vs_qqppaa_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 00:23","room":132,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,4],"ft":3,"series":"132-261018001516-30","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_002304_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 00:19","room":132,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,10],"pk":[2,4],"ft":3,"series":"132-261018001516-30","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_001950_덕장배_vs_신발벗어_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 00:16","room":133,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261018_001659_arcade_0-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 00:15","room":132,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,10],"ft":3,"series":"132-261018001516-30","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_001516_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 00:11","room":130,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,10],"ft":3,"series":"130-261018000440-29","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_001137_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 00:15","room":132,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,10],"ft":3,"series":"132-261018001516-30","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_001516_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"}
 ]
