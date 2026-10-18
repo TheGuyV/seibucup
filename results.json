@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 00:08","room":115,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,4],"ft":3,"series":"115-261018235616-26","nicks":["미네로","MrKei","",""],"replay":"replays/20261019_000848_미네로_vs_MrKei_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:07","room":118,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["아얏둘","이태원후렌드치킨","",""],"replay":"replays/20261019_000721_아얏둘_vs_이태원후렌드치킨_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:05","room":111,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,7],"nicks":["소소","소떡","",""],"replay":"replays/20261019_000549_소소_vs_소떡_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:05","room":115,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":3,"series":"115-261018235616-26","nicks":["미네로","MrKei","",""],"replay":"replays/20261019_000500_미네로_vs_MrKei_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 22:46","room":94,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,3],"nicks":["왕초보","모이자오락실","",""],"replay":"replays/20261017_224633_왕초보_vs_모이자오락실_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:46","room":90,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"90-261017223709-22","nicks":["싸커킴","남서울오락실","",""],"replay":"replays/20261017_224601_싸커킴_vs_남서울오락실_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:41","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"ft":3,"series":"90-261017223709-22","nicks":["싸커킴","남서울오락실","",""],"replay":"replays/20261017_224139_싸커킴_vs_남서울오락실_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 22:41","room":91,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"nicks":["왕초보","모이자오락실","",""],"replay":"replays/20261017_224132_왕초보_vs_모이자오락실_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 22:41","room":92,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,9],"arcade":1,"nicks":["이탈리아","서독","",""],"replay":"replays/20261017_224119_arcade_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 22:41","room":91,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"nicks":["왕초보","모이자오락실","",""],"replay":"replays/20261017_224132_왕초보_vs_모이자오락실_2-1_p1.scr","edition":"cupsocs2"}
 ]
