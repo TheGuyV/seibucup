@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 19:20","room":3,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[4,3],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_192053_므와바_vs_이태원후렌드치킨_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:15","room":3,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,9],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_191556_므와바_vs_이태원후렌드치킨_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:13","room":4,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,5],"nicks":["surferKIM","미네로","",""],"replay":"replays/20261018_191329_surferKIM_vs_미네로_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:12","room":3,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,9],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_191204_므와바_vs_이태원후렌드치킨_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 13:06","room":20,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"nicks":["princewi","쑥곰","",""],"replay":"replays/20261017_130621_princewi_vs_쑥곰_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 13:01","room":20,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,5],"nicks":["princewi","쑥곰","",""],"replay":"replays/20261017_130135_princewi_vs_쑥곰_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 12:57","room":20,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[4,5],"nicks":["princewi","쑥곰","",""],"replay":"replays/20261017_125726_princewi_vs_쑥곰_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 12:50","room":19,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,7],"arcade":1,"nicks":["대한민국","브라질","",""],"replay":"replays/20261017_125036_arcade_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 12:41","room":15,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[5,0],"ft":2,"series":"15-261017124123-1","nicks":["쑥곰","narahashi","",""],"replay":"replays/20261017_124123_쑥곰_vs_narahashi_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 12:50","room":19,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,7],"arcade":1,"nicks":["대한민국","브라질","",""],"replay":"replays/20261017_125036_arcade_2-0_p1.scr","edition":"cupsocs2"}
 ]
