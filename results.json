@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 00:16","room":123,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,7],"nicks":["이태원후렌드치킨","즐축","",""],"replay":"replays/20261019_001617_이태원후렌드치킨_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:13","room":122,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":2,"series":"122-261019001348-27","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"미네로":["미네로 FC","FCX"]},"nicks":["MrKei","미네로","",""],"replay":"replays/20261019_001348_MrKei_vs_미네로_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:13","room":111,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"nicks":["소소","소떡","",""],"replay":"replays/20261019_001338_소소_vs_소떡_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:11","room":118,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,5],"nicks":["아얏둘","이태원후렌드치킨","",""],"replay":"replays/20261019_001127_아얏둘_vs_이태원후렌드치킨_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 22:57","room":96,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,9],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_225731_인형의기사_vs_pppqqq_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:56","room":100,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,7],"arcade":1,"nicks":["서독","브라질","",""],"replay":"replays/20261017_225608_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:53","room":96,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_225329_인형의기사_vs_pppqqq_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 22:50","room":98,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,5],"nicks":["왕초보","싸커킴","",""],"replay":"replays/20261017_225009_왕초보_vs_싸커킴_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 22:49","room":96,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,3],"nicks":["인형의기사","pppqqq","",""],"replay":"replays/20261017_224936_인형의기사_vs_pppqqq_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 22:50","room":98,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,5],"nicks":["왕초보","싸커킴","",""],"replay":"replays/20261017_225009_왕초보_vs_싸커킴_0-0_p1.scr","edition":"cupsocs2"}
 ]
