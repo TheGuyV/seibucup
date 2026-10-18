@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 19:53","room":17,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[7,3],"nicks":["므와바","하니","",""],"replay":"replays/20261018_195331_므와바_vs_하니_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:53","room":13,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"nicks":["미네로","이태원후렌드치킨","",""],"replay":"replays/20261018_195312_미네로_vs_이태원후렌드치킨_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:49","room":17,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[9,3],"nicks":["므와바","판순이","",""],"replay":"replays/20261018_194938_므와바_vs_판순이_0-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:49","room":15,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,9],"ft":2,"series":"15-261018194055-2","nicks":["드래곤타이거","이태원후렌드치킨","",""],"replay":"replays/20261018_194900_드래곤타이거_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 14:53","room":48,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[0,5],"nicks":["오락실체어샷","surferKIM","",""],"replay":"replays/20261017_145354_오락실체어샷_vs_surferKIM_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:49","room":46,"type":"1v1","time":150,"players":2,"score":[6,5],"teams":[10,5],"ft":2,"series":"46-261017144454-7","nicks":["쑥곰","surferKIM","",""],"replay":"replays/20261017_144958_쑥곰_vs_surferKIM_6-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:44","room":46,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,5],"ft":2,"series":"46-261017144454-7","nicks":["쑥곰","surferKIM","",""],"replay":"replays/20261017_144454_쑥곰_vs_surferKIM_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 14:39","room":38,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"ft":2,"series":"38-261017143217-6","nicks":["쑥곰","상봉거지오락실","",""],"replay":"replays/20261017_143957_쑥곰_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 14:36","room":39,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"nicks":["surferKIM","로또영","",""],"replay":"replays/20261017_143620_surferKIM_vs_로또영_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 14:39","room":38,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"ft":2,"series":"38-261017143217-6","nicks":["쑥곰","상봉거지오락실","",""],"replay":"replays/20261017_143957_쑥곰_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"}
 ]
