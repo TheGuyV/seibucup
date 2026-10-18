@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 21:09","room":58,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"ft":2,"series":"58-261018210555-14","nicks":["미네로","Todoroki","",""],"replay":"replays/20261018_210941_미네로_vs_Todoroki_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:06","room":56,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,10],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_210622_surferKIM_vs_rhythmmania_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:06","room":54,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,4],"ft":2,"series":"54-261018205640-13","nicks":["드래곤타이거","404page","",""],"replay":"replays/20261018_210614_드래곤타이거_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:05","room":58,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,8],"ft":2,"series":"58-261018210555-14","nicks":["미네로","Todoroki","",""],"replay":"replays/20261018_210555_미네로_vs_Todoroki_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 18:01","room":98,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[9,5],"nicks":["깜찍만두","로또영","",""],"replay":"replays/20261017_180152_깜찍만두_vs_로또영_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 17:58","room":94,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"nicks":["surferKIM","거성","",""],"replay":"replays/20261017_175817_surferKIM_vs_거성_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 17:57","room":92,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,5],"ft":3,"series":"92-261017174106-15","nicks":["로또영","기러기","",""],"replay":"replays/20261017_175715_로또영_vs_기러기_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 17:52","room":92,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,5],"ft":3,"series":"92-261017174106-15","nicks":["로또영","기러기","",""],"replay":"replays/20261017_175242_로또영_vs_기러기_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 17:46","room":92,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,5],"ft":3,"series":"92-261017174106-15","nicks":["로또영","기러기","",""],"replay":"replays/20261017_174624_로또영_vs_기러기_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 17:52","room":92,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,5],"ft":3,"series":"92-261017174106-15","nicks":["로또영","기러기","",""],"replay":"replays/20261017_175242_로또영_vs_기러기_3-4_p1.scr","edition":"cupsocs2"}
 ]
