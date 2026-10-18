@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 23:57","room":116,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"arcade":1,"nicks":["대한민국","브라질","",""],"replay":"replays/20261018_235734_arcade_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:57","room":111,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,7],"nicks":["소소","소떡","",""],"replay":"replays/20261018_235703_소소_vs_소떡_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:56","room":115,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,8],"ft":3,"series":"115-261018235616-26","nicks":["미네로","MrKei","",""],"replay":"replays/20261018_235616_미네로_vs_MrKei_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:54","room":113,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,9],"nicks":["청라대장","아얏둘","",""],"replay":"replays/20261018_235433_청라대장_vs_아얏둘_3-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 22:34","room":89,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,7],"ft":2,"series":"89-261017223450-21","nicks":["sangrr","김정은패스","",""],"replay":"replays/20261017_223450_sangrr_vs_김정은패스_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:32","room":88,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,0],"nicks":["왕초보","이탈리아맨","",""],"replay":"replays/20261017_223245_왕초보_vs_이탈리아맨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 22:24","room":82,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"nicks":["왕초보","sangrr","",""],"replay":"replays/20261017_222444_왕초보_vs_sangrr_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 22:24","room":84,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"78-261017221510-20","ranked":1,"tnames":{"레온":["레온 FC","FCX"],"즐축":["TheSoccer","EJY"]},"nicks":["레온","즐축","",""],"replay":"replays/20261017_222400_레온_vs_즐축_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 22:21","room":82,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"nicks":["왕초보","sangrr","",""],"replay":"replays/20261017_222101_왕초보_vs_sangrr_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 22:24","room":84,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"78-261017221510-20","ranked":1,"tnames":{"레온":["레온 FC","FCX"],"즐축":["TheSoccer","EJY"]},"nicks":["레온","즐축","",""],"replay":"replays/20261017_222400_레온_vs_즐축_2-1_p1.scr","edition":"cupsocs2"}
 ]
