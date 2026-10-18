@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 21:19","room":62,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,7],"ft":2,"series":"60-261018211249-15","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"레온":["레온 FC","LEO"]},"nicks":["Janet","레온","",""],"replay":"replays/20261018_211916_Janet_vs_레온_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:17","room":56,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,8],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_211734_surferKIM_vs_rhythmmania_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:16","room":61,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,4],"ft":2,"series":"61-261018211603-16","nicks":["미네로","404page","",""],"replay":"replays/20261018_211603_미네로_vs_404page_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:13","room":56,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_211355_surferKIM_vs_rhythmmania_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 18:18","room":101,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"101-261017180927-17","nicks":["로또영","김창식씨","",""],"replay":"replays/20261017_181802_로또영_vs_김창식씨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:13","room":101,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,4],"ft":3,"series":"101-261017180927-17","nicks":["로또영","김창식씨","",""],"replay":"replays/20261017_181357_로또영_vs_김창식씨_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 18:09","room":101,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,5],"ft":3,"series":"101-261017180927-17","nicks":["로또영","김창식씨","",""],"replay":"replays/20261017_180927_로또영_vs_김창식씨_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 18:04","room":100,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,4],"ft":2,"series":"100-261017180453-16","nicks":["오락실체어샷","김창식씨","",""],"replay":"replays/20261017_180453_오락실체어샷_vs_김창식씨_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 18:02","room":99,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,0],"nicks":["거성","SDFDSFDSDSF","",""],"replay":"replays/20261017_180244_거성_vs_SDFDSFDSDSF_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 18:04","room":100,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,4],"ft":2,"series":"100-261017180453-16","nicks":["오락실체어샷","김창식씨","",""],"replay":"replays/20261017_180453_오락실체어샷_vs_김창식씨_3-4_p1.scr","edition":"cupsocs2"}
 ]
