@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 20:36","room":42,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"ft":5,"series":"42-261018203602-9","nicks":["111132","Todoroki","",""],"replay":"replays/20261018_203602_111132_vs_Todoroki_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:34","room":41,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,10],"nicks":["미네로","매화난무","",""],"replay":"replays/20261018_203427_미네로_vs_매화난무_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:32","room":33,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[0,9],"ft":2,"series":"33-261018202358-6","nicks":["이태원후렌드치킨","mizunoasahi","",""],"replay":"replays/20261018_203254_이태원후렌드치킨_vs_mizunoasahi_3-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:32","room":37,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"37-261018203222-8","nicks":["로또영","쌍송이","",""],"replay":"replays/20261018_203222_로또영_vs_쌍송이_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 16:49","room":79,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"nicks":["duli0212","모이자오락실","",""],"replay":"replays/20261017_164935_duli0212_vs_모이자오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 16:48","room":76,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,7],"nicks":["마리나베이시티","invu","",""],"replay":"replays/20261017_164843_마리나베이시티_vs_invu_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 16:42","room":76,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,5],"nicks":["마리나베이시티","invu","",""],"replay":"replays/20261017_164239_마리나베이시티_vs_invu_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 16:37","room":75,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["duli0212","모이자오락실","",""],"replay":"replays/20261017_163742_duli0212_vs_모이자오락실_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 16:31","room":74,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261017_163142_arcade_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 16:37","room":75,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["duli0212","모이자오락실","",""],"replay":"replays/20261017_163742_duli0212_vs_모이자오락실_0-1_p1.scr","edition":"cupsocs2"}
 ]
