@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 14:34","room":81,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"81-261018143054-16","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_143428_인형의기사_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:30","room":81,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,5],"ft":2,"series":"81-261018143054-16","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_143054_인형의기사_vs_미네로_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:21","room":80,"type":"1v1","time":150,"players":2,"score":[6,4],"teams":[5,7],"nicks":["미네로","1111","",""],"replay":"replays/20261018_142135_미네로_vs_1111_6-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:16","room":80,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"nicks":["미네로","1111","",""],"replay":"replays/20261018_141636_미네로_vs_1111_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 23:59","room":183,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"183-261016235959-41","nicks":["메시","뚱이","",""],"replay":"replays/20261016_235959_메시_vs_뚱이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:58","room":182,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["불꽃슛마스터","코바오락실","",""],"replay":"replays/20261016_235842_불꽃슛마스터_vs_코바오락실_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:55","room":180,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"ft":2,"series":"180-261016235131-40","nicks":["이탈리아맨","메시","",""],"replay":"replays/20261016_235544_이탈리아맨_vs_메시_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:54","room":178,"type":"1v1","time":180,"players":2,"score":[2,0],"teams":[5,7],"ft":2,"series":"178-261016235020-39","nicks":["1111","코바오락실","",""],"replay":"replays/20261016_235422_1111_vs_코바오락실_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:51","room":180,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,5],"ft":2,"series":"180-261016235131-40","nicks":["이탈리아맨","메시","",""],"replay":"replays/20261016_235131_이탈리아맨_vs_메시_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 23:54","room":178,"type":"1v1","time":180,"players":2,"score":[2,0],"teams":[5,7],"ft":2,"series":"178-261016235020-39","nicks":["1111","코바오락실","",""],"replay":"replays/20261016_235422_1111_vs_코바오락실_2-0_p1.scr","edition":"cupsocs2"}
 ]
