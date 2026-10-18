@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 19:42","room":16,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[10,8],"ft":2,"series":"14-261018193801-1","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"MrKei":["MrKei","KEI"]},"nicks":["Janet","MrKei","",""],"replay":"replays/20261018_194200_Janet_vs_MrKei_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:41","room":13,"type":"1v1","time":150,"players":2,"score":[6,4],"teams":[9,3],"nicks":["미네로","하니","",""],"replay":"replays/20261018_194125_미네로_vs_하니_6-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:40","room":15,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,0],"ft":2,"series":"15-261018194055-2","nicks":["드래곤타이거","이태원후렌드치킨","",""],"replay":"replays/20261018_194055_드래곤타이거_vs_이태원후렌드치킨_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:38","room":14,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,8],"ft":2,"series":"14-261018193801-1","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"MrKei":["MrKei","KEI"]},"nicks":["Janet","MrKei","",""],"replay":"replays/20261018_193801_Janet_vs_MrKei_2-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 14:25","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"35-261017142146-5","nicks":["상봉거지오락실","쑥곰","",""],"replay":"replays/20261017_142557_상봉거지오락실_vs_쑥곰_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:21","room":35,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,5],"ft":2,"series":"35-261017142146-5","nicks":["상봉거지오락실","쑥곰","",""],"replay":"replays/20261017_142146_상봉거지오락실_vs_쑥곰_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 14:19","room":33,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[4,5],"ft":2,"series":"33-261017141909-4","nicks":["멸치","삼아","",""],"replay":"replays/20261017_141909_멸치_vs_삼아_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 14:10","room":30,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,3],"ft":2,"series":"30-261017140240-3","nicks":["멸치","삼아","",""],"replay":"replays/20261017_141049_멸치_vs_삼아_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-17 14:07","room":30,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,9],"ft":2,"series":"30-261017140240-3","nicks":["멸치","삼아","",""],"replay":"replays/20261017_140713_멸치_vs_삼아_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-17 14:10","room":30,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,3],"ft":2,"series":"30-261017140240-3","nicks":["멸치","삼아","",""],"replay":"replays/20261017_141049_멸치_vs_삼아_1-0_p1.scr","edition":"cupsocs2"}
 ]
