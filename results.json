@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 14:50","room":89,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,9],"nicks":["테일러장군","narahashi","",""],"replay":"replays/20261018_145001_테일러장군_vs_narahashi_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:47","room":85,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["미네로","김창식씨","",""],"replay":"replays/20261018_144723_미네로_vs_김창식씨_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:42","room":85,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,10],"nicks":["미네로","테일러장군","",""],"replay":"replays/20261018_144246_미네로_vs_테일러장군_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:34","room":81,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"81-261018143054-16","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_143428_인형의기사_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-17 00:08","room":185,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,5],"ft":2,"series":"185-261017000817-42","nicks":["코바오락실","메시","",""],"replay":"replays/20261017_000817_코바오락실_vs_메시_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:03","room":183,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":2,"series":"183-261016235959-41","nicks":["메시","뚱이","",""],"replay":"replays/20261017_000342_메시_vs_뚱이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-17 00:03","room":182,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[8,7],"nicks":["불꽃슛마스터","코바오락실","",""],"replay":"replays/20261017_000320_불꽃슛마스터_vs_코바오락실_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:59","room":183,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"183-261016235959-41","nicks":["메시","뚱이","",""],"replay":"replays/20261016_235959_메시_vs_뚱이_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:58","room":182,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["불꽃슛마스터","코바오락실","",""],"replay":"replays/20261016_235842_불꽃슛마스터_vs_코바오락실_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 23:59","room":183,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"183-261016235959-41","nicks":["메시","뚱이","",""],"replay":"replays/20261016_235959_메시_vs_뚱이_2-1_p1.scr","edition":"cupsocs2"}
 ]
