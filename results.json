@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-18 10:22","room":44,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,9],"arcade":1,"nicks":["이탈리아","서독","",""],"edition":"cupsocs2"},
 {"when":"2026-10-18 09:16","room":39,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"arcade":1,"nicks":["서독","대한민국","",""],"replay":"replays/20261018_091620_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 05:14","room":28,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261018_051435_arcade_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 02:43","room":20,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"ft":3,"series":"20-261018023130-10","nicks":["미네로","NooB","",""],"replay":"replays/20261018_024304_미네로_vs_NooB_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-16 23:31","room":169,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":2,"series":"169-261016232722-36","nicks":["바바리","적토마고정운","",""],"replay":"replays/20261016_233131_바바리_vs_적토마고정운_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:29","room":151,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,3],"nicks":["atfn","판순이","",""],"replay":"replays/20261016_232957_atfn_vs_판순이_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-16 23:29","room":170,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,3],"nicks":["연산국민학교","땡삐","",""],"replay":"replays/20261016_232938_연산국민학교_vs_땡삐_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:27","room":168,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_232751_뚱이_vs_코바오락실_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-16 23:27","room":169,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,5],"pk":[7,6],"ft":2,"series":"169-261016232722-36","nicks":["바바리","적토마고정운","",""],"replay":"replays/20261016_232722_바바리_vs_적토마고정운_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-16 23:27","room":168,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"ft":3,"series":"168-261016232408-35","nicks":["뚱이","코바오락실","",""],"replay":"replays/20261016_232751_뚱이_vs_코바오락실_2-1_p1.scr","edition":"cupsocs2"}
 ]
