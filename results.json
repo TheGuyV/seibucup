@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 23:14","room":72,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,7],"nicks":["이죄만신영섭","jay1111","",""],"replay":"replays/20261019_231443_이죄만신영섭_vs_jay1111_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:13","room":82,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[10,9],"arcade":1,"nicks":["일본","서독","",""],"replay":"replays/20261019_231353_arcade_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:13","room":81,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,7],"ft":2,"series":"81-261019231347-18","nicks":["Janet","레온","",""],"replay":"replays/20261019_231347_Janet_vs_레온_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:12","room":80,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,3],"arcade":1,"nicks":["미국","잉글랜드","",""],"replay":"replays/20261019_231210_arcade_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 20:32","room":33,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[0,9],"ft":2,"series":"33-261018202358-6","nicks":["이태원후렌드치킨","mizunoasahi","",""],"replay":"replays/20261018_203254_이태원후렌드치킨_vs_mizunoasahi_3-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:32","room":37,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"37-261018203222-8","nicks":["로또영","쌍송이","",""],"replay":"replays/20261018_203222_로또영_vs_쌍송이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:32","room":39,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"39-261018203218-7","ranked":1,"tnames":{"Todoroki":["Todo FC","TOD"],"판순이":["판순이 FC","YSY"]},"nicks":["Todoroki","판순이","",""],"replay":"replays/20261018_203218_Todoroki_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:32","room":40,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,7],"arcade":1,"nicks":["이탈리아","브라질","",""],"replay":"replays/20261018_203217_arcade_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:28","room":33,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[7,9],"ft":2,"series":"33-261018202358-6","nicks":["이태원후렌드치킨","mizunoasahi","",""],"replay":"replays/20261018_202800_이태원후렌드치킨_vs_mizunoasahi_0-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 20:32","room":40,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,7],"arcade":1,"nicks":["이탈리아","브라질","",""],"replay":"replays/20261018_203217_arcade_1-0_p1.scr","edition":"cupsocs2"}
 ]
