@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 22:59","room":72,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[4,5],"nicks":["이죄만신영섭","jay1111","",""],"replay":"replays/20261019_225903_이죄만신영섭_vs_jay1111_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:55","room":70,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,3],"nicks":["레온","왕초보","",""],"replay":"replays/20261019_225539_레온_vs_왕초보_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:52","room":67,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["이죄만신영섭","jay1111","",""],"replay":"replays/20261019_225201_이죄만신영섭_vs_jay1111_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:51","room":66,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,7],"ft":2,"series":"66-261019225133-15","nicks":["드래곤타이거","즐축","",""],"replay":"replays/20261019_225133_드래곤타이거_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 20:07","room":23,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,5],"nicks":["MrKei","20260101","",""],"replay":"replays/20261018_200713_MrKei_vs_20260101_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:05","room":22,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_200512_이태원후렌드치킨_vs_하니_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:00","room":13,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"nicks":["미네로","이태원후렌드치킨","",""],"replay":"replays/20261018_200052_미네로_vs_이태원후렌드치킨_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:00","room":17,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["므와바","하니","",""],"replay":"replays/20261018_200049_므와바_vs_하니_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 19:59","room":20,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[7,10],"ft":2,"series":"18-261018195535-3","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"Janet":["Janet FC","JNT"]},"nicks":["MrKei","Janet","",""],"replay":"replays/20261018_195946_MrKei_vs_Janet_2-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 20:00","room":17,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["므와바","하니","",""],"replay":"replays/20261018_200049_므와바_vs_하니_0-1_p1.scr","edition":"cupsocs2"}
 ]
