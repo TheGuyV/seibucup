@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 23:08","room":77,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,7],"ft":2,"series":"75-261019230345-17","ranked":1,"tnames":{"즐축":["아르헨티나","ARG"],"레온":["레온 FC","LEO"]},"nicks":["즐축","레온","",""],"replay":"replays/20261019_230825_즐축_vs_레온_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:07","room":72,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["이죄만신영섭","jay1111","",""],"replay":"replays/20261019_230736_이죄만신영섭_vs_jay1111_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:04","room":74,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,3],"ft":2,"series":"74-261019230038-16","nicks":["드래곤타이거","왕초보","",""],"replay":"replays/20261019_230415_드래곤타이거_vs_왕초보_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:03","room":75,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,7],"ft":2,"series":"75-261019230345-17","ranked":1,"tnames":{"즐축":["아르헨티나","ARG"],"레온":["레온 FC","LEO"]},"nicks":["즐축","레온","",""],"replay":"replays/20261019_230345_즐축_vs_레온_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 20:24","room":35,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[10,3],"ft":2,"series":"32-261018202048-5","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"판순이":["판순이 FC","YSY"]},"nicks":["MrKei","판순이","",""],"replay":"replays/20261018_202455_MrKei_vs_판순이_0-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:23","room":33,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"pk":[4,2],"ft":2,"series":"33-261018202358-6","nicks":["이태원후렌드치킨","mizunoasahi","",""],"replay":"replays/20261018_202358_이태원후렌드치킨_vs_mizunoasahi_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:20","room":32,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[10,3],"ft":2,"series":"32-261018202048-5","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"판순이":["판순이 FC","YSY"]},"nicks":["MrKei","판순이","",""],"replay":"replays/20261018_202048_MrKei_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:15","room":30,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,7],"nicks":["미네로","MrKei","",""],"replay":"replays/20261018_201500_미네로_vs_MrKei_4-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:12","room":22,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_201240_이태원후렌드치킨_vs_하니_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 20:15","room":30,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,7],"nicks":["미네로","MrKei","",""],"replay":"replays/20261018_201500_미네로_vs_MrKei_4-1_p1.scr","edition":"cupsocs2"}
 ]
