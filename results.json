@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 18:50","room":47,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,9],"nicks":["쌍송이","아얏둘","",""],"replay":"replays/20261019_185045_쌍송이_vs_아얏둘_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:48","room":51,"type":"1v1","time":150,"players":2,"score":[0,6],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261019_184823_arcade_0-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:47","room":47,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["쌍송이","아얏둘","",""],"replay":"replays/20261019_184714_쌍송이_vs_아얏둘_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:42","room":47,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,7],"nicks":["쌍송이","아얏둘","",""],"replay":"replays/20261019_184258_쌍송이_vs_아얏둘_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 14:34","room":81,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"81-261018143054-16","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_143428_인형의기사_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:30","room":81,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,5],"ft":2,"series":"81-261018143054-16","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_143054_인형의기사_vs_미네로_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:21","room":80,"type":"1v1","time":150,"players":2,"score":[6,4],"teams":[5,7],"nicks":["미네로","1111","",""],"replay":"replays/20261018_142135_미네로_vs_1111_6-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 14:16","room":80,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"nicks":["미네로","1111","",""],"replay":"replays/20261018_141636_미네로_vs_1111_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 13:30","room":65,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["mizunoasahi","미네로","",""],"replay":"replays/20261018_133010_mizunoasahi_vs_미네로_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 14:16","room":80,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"nicks":["미네로","1111","",""],"replay":"replays/20261018_141636_미네로_vs_1111_1-0_p1.scr","edition":"cupsocs2"}
 ]
