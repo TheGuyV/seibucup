@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 22:19","room":53,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,9],"ft":3,"series":"53-261019221946-11","nicks":["샤부사커","이태원후렌드치킨","",""],"replay":"replays/20261019_221946_샤부사커_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:17","room":52,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,5],"ft":2,"series":"52-261019221741-10","nicks":["드래곤타이거","콩메모","",""],"replay":"replays/20261019_221741_드래곤타이거_vs_콩메모_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:17","room":50,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,9],"nicks":["불꽃슛마스터","test","",""],"replay":"replays/20261019_221703_불꽃슛마스터_vs_test_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:14","room":46,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,3],"ft":3,"series":"46-261019220643-8","nicks":["샤부사커","이태원후렌드치킨","",""],"replay":"replays/20261019_221450_샤부사커_vs_이태원후렌드치킨_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 19:32","room":3,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,7],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_193242_므와바_vs_이태원후렌드치킨_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:28","room":3,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[8,7],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_192825_므와바_vs_이태원후렌드치킨_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:25","room":5,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,5],"nicks":["surferKIM","쌍송이","",""],"replay":"replays/20261018_192516_surferKIM_vs_쌍송이_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 19:24","room":3,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[10,5],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_192446_므와바_vs_이태원후렌드치킨_0-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 19:20","room":3,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[4,3],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_192053_므와바_vs_이태원후렌드치킨_1-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 19:24","room":3,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[10,5],"nicks":["므와바","이태원후렌드치킨","",""],"replay":"replays/20261018_192446_므와바_vs_이태원후렌드치킨_0-3_p1.scr","edition":"cupsocs2"}
 ]
