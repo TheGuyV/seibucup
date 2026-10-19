@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 02:04","room":27,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[7,9],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_020448_aapp_vs_미네로_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 01:58","room":27,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_015844_aapp_vs_미네로_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 01:54","room":27,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,5],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_015443_aapp_vs_미네로_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 01:51","room":27,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,10],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_015114_aapp_vs_미네로_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 21:25","room":61,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"61-261018211603-16","nicks":["미네로","404page","",""],"replay":"replays/20261018_212545_미네로_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:25","room":56,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_212534_surferKIM_vs_rhythmmania_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:21","room":56,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,8],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_212140_surferKIM_vs_rhythmmania_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 21:21","room":61,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"61-261018211603-16","nicks":["미네로","404page","",""],"replay":"replays/20261018_212122_미네로_vs_404page_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 21:19","room":62,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,7],"ft":2,"series":"60-261018211249-15","ranked":1,"tnames":{"Janet":["Janet FC","JNT"],"레온":["레온 FC","LEO"]},"nicks":["Janet","레온","",""],"replay":"replays/20261018_211916_Janet_vs_레온_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 21:21","room":61,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"61-261018211603-16","nicks":["미네로","404page","",""],"replay":"replays/20261018_212122_미네로_vs_404page_3-2_p1.scr","edition":"cupsocs2"}
 ]
