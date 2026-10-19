@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 23:03","room":72,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,3],"nicks":["이죄만신영섭","jay1111","",""],"replay":"replays/20261019_230311_이죄만신영섭_vs_jay1111_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:00","room":74,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,3],"ft":2,"series":"74-261019230038-16","nicks":["드래곤타이거","왕초보","",""],"replay":"replays/20261019_230038_드래곤타이거_vs_왕초보_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:59","room":72,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[4,5],"nicks":["이죄만신영섭","jay1111","",""],"replay":"replays/20261019_225903_이죄만신영섭_vs_jay1111_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:55","room":70,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,3],"nicks":["레온","왕초보","",""],"replay":"replays/20261019_225539_레온_vs_왕초보_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 20:12","room":22,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_201240_이태원후렌드치킨_vs_하니_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:08","room":22,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_200850_이태원후렌드치킨_vs_하니_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:07","room":23,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,5],"nicks":["MrKei","20260101","",""],"replay":"replays/20261018_200713_MrKei_vs_20260101_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:05","room":22,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_200512_이태원후렌드치킨_vs_하니_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:00","room":13,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,3],"nicks":["미네로","이태원후렌드치킨","",""],"replay":"replays/20261018_200052_미네로_vs_이태원후렌드치킨_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 20:05","room":22,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"22-261018200512-4","nicks":["이태원후렌드치킨","하니","",""],"replay":"replays/20261018_200512_이태원후렌드치킨_vs_하니_2-1_p1.scr","edition":"cupsocs2"}
 ]
