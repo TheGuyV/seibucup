@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 20:50","room":11,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,0],"ft":5,"series":"11-261019202108-1","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261019_205042_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:50","room":16,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"16-261019204210-4","nicks":["드래곤타이거","surferKIM","",""],"replay":"replays/20261019_205032_드래곤타이거_vs_surferKIM_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:46","room":11,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,0],"ft":5,"series":"11-261019202108-1","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261019_204659_덕장배_vs_신발벗어_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:46","room":16,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,5],"ft":2,"series":"16-261019204210-4","nicks":["드래곤타이거","surferKIM","",""],"replay":"replays/20261019_204625_드래곤타이거_vs_surferKIM_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 17:58","room":126,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["레트로성지","므와바","",""],"replay":"replays/20261018_175800_레트로성지_vs_므와바_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 17:56","room":125,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[9,7],"nicks":["키키키","Todoroki","",""],"replay":"replays/20261018_175641_키키키_vs_Todoroki_1-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 17:45","room":122,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,9],"ft":2,"series":"122-261018174158-19","nicks":["404page","rhythmmania","",""],"replay":"replays/20261018_174530_404page_vs_rhythmmania_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 17:41","room":122,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[4,8],"ft":2,"series":"122-261018174158-19","nicks":["404page","rhythmmania","",""],"replay":"replays/20261018_174158_404page_vs_rhythmmania_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 17:37","room":121,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[8,0],"nicks":["rhythmmania","ZIII","",""],"replay":"replays/20261018_173746_rhythmmania_vs_ZIII_2-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 17:41","room":122,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[4,8],"ft":2,"series":"122-261018174158-19","nicks":["404page","rhythmmania","",""],"replay":"replays/20261018_174158_404page_vs_rhythmmania_3-1_p1.scr","edition":"cupsocs2"}
 ]
