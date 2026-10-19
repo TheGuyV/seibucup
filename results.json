@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 18:21","room":39,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[5,9],"ft":2,"series":"39-261019181711-4","nicks":["적토마고정운","하이요오","",""],"replay":"replays/20261019_182105_적토마고정운_vs_하이요오_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:17","room":39,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,5],"ft":2,"series":"39-261019181711-4","nicks":["적토마고정운","하이요오","",""],"replay":"replays/20261019_181711_적토마고정운_vs_하이요오_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:13","room":38,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"nicks":["mizunoasahi","김정은패스","",""],"replay":"replays/20261019_181316_mizunoasahi_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 17:56","room":32,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["cupcup","드래곤타이거","",""],"replay":"replays/20261019_175640_cupcup_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 13:08","room":57,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,7],"ft":2,"series":"57-261018130806-15","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_130806_인형의기사_vs_미네로_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 13:04","room":56,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,0],"nicks":["111132","narahashi","",""],"replay":"replays/20261018_130450_111132_vs_narahashi_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 12:59","room":52,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"ft":3,"series":"52-261018125915-14","nicks":["미네로","호세뽕","",""],"replay":"replays/20261018_125915_미네로_vs_호세뽕_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 11:43","room":50,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,0],"nicks":["들쥐","duli0212","",""],"replay":"replays/20261018_114319_들쥐_vs_duli0212_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 11:36","room":49,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261018_113636_arcade_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 11:43","room":50,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,0],"nicks":["들쥐","duli0212","",""],"replay":"replays/20261018_114319_들쥐_vs_duli0212_2-2_p1.scr","edition":"cupsocs2"}
 ]
