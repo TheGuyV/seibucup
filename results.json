@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 18:47","room":47,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["쌍송이","아얏둘","",""],"replay":"replays/20261019_184714_쌍송이_vs_아얏둘_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:42","room":47,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,7],"nicks":["쌍송이","아얏둘","",""],"replay":"replays/20261019_184258_쌍송이_vs_아얏둘_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:39","room":46,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"nicks":["테일러장군","아얏둘","",""],"replay":"replays/20261019_183917_테일러장군_vs_아얏둘_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:38","room":42,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"42-261019183413-6","nicks":["적토마고정운","쌍송이","",""],"replay":"replays/20261019_183846_적토마고정운_vs_쌍송이_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 14:21","room":80,"type":"1v1","time":150,"players":2,"score":[6,4],"teams":[5,7],"nicks":["미네로","1111","",""],"replay":"replays/20261018_142135_미네로_vs_1111_6-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:16","room":80,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"nicks":["미네로","1111","",""],"replay":"replays/20261018_141636_미네로_vs_1111_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 13:30","room":65,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["mizunoasahi","미네로","",""],"replay":"replays/20261018_133010_mizunoasahi_vs_미네로_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 13:26","room":64,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["swhong","미네로","",""],"replay":"replays/20261018_132630_swhong_vs_미네로_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 13:21","room":62,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[8,5],"nicks":["swhong","미네로","",""],"replay":"replays/20261018_132144_swhong_vs_미네로_0-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 13:26","room":64,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["swhong","미네로","",""],"replay":"replays/20261018_132630_swhong_vs_미네로_1-1_p1.scr","edition":"cupsocs2"}
 ]
