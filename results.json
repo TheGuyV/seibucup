@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 18:39","room":46,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,9],"nicks":["테일러장군","아얏둘","",""],"replay":"replays/20261019_183917_테일러장군_vs_아얏둘_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:38","room":42,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"42-261019183413-6","nicks":["적토마고정운","쌍송이","",""],"replay":"replays/20261019_183846_적토마고정운_vs_쌍송이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:34","room":42,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"42-261019183413-6","nicks":["적토마고정운","쌍송이","",""],"replay":"replays/20261019_183413_적토마고정운_vs_쌍송이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:34","room":44,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,7],"ft":2,"series":"44-261019182606-5","nicks":["김정은패스","하이요오","",""],"replay":"replays/20261019_183407_김정은패스_vs_하이요오_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 13:30","room":65,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["mizunoasahi","미네로","",""],"replay":"replays/20261018_133010_mizunoasahi_vs_미네로_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 13:26","room":64,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["swhong","미네로","",""],"replay":"replays/20261018_132630_swhong_vs_미네로_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 13:21","room":62,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[8,5],"nicks":["swhong","미네로","",""],"replay":"replays/20261018_132144_swhong_vs_미네로_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 13:16","room":57,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"57-261018130806-15","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_131638_인형의기사_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 13:16","room":60,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,8],"nicks":["초보1","swhong","",""],"replay":"replays/20261018_131608_초보1_vs_swhong_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 13:16","room":57,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"57-261018130806-15","nicks":["인형의기사","미네로","",""],"replay":"replays/20261018_131638_인형의기사_vs_미네로_0-1_p1.scr","edition":"cupsocs2"}
 ]
