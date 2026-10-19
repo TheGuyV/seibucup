@@ -9,7 +9,7 @@
 -- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
 -- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
 -- It may not be modified or redistributed without permission.
-local VERSION = 38
+local VERSION = 39
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -1678,7 +1678,7 @@ local function clear_all_inputs()
   for s = 1, 4 do apply_input(s, 0) end
 end
 
-local SUM_BASE, SUM_SIZE = 0x110000, 0x4000
+local SUM_BASE, SUM_SIZE = 0x110000, 0x3f00
 local function ram_checksum()
   local s = 0
   for a = SUM_BASE, SUM_BASE + SUM_SIZE - 4, 4 do
@@ -3234,12 +3234,22 @@ QC = {
   over = false, open = false, ingoal = false, inslow = false, goalAt = -99999, closeAt = nil, wc = {},
 }
 QC.GOAL.cupsocs = QC.GOAL.cupsocs2
+
+for s = 5, 12 do QC.last[s] = -99999 end
+QC.spec = {}
+
+function QC.mayi() return (not is_spec and local_slot >= 1 and local_slot <= 4) or (is_spec and not SCNP_SHADOW and local_slot >= 5 and local_slot <= 12) end
 for i = 1, 8 do QC.keys[i] = input:code_from_token("KEYCODE_F" .. i) end
 function QC.text(id) local t = QC.T[id]; return t and (t[cfg.lang] or t.en) or "" end
 function QC.short(id) local t = QC.S[id]; return t and (t[cfg.lang] or t.en) or "" end
 
 function QC.side(seat) if SCNP_PVE.on then return 1 end local gp = GAME_PLAYER[seat] or seat; return (gp == 1 or gp == 3) and 1 or 2 end
 function qc_show(seat, id)
+  if seat and seat >= 5 and seat <= 12 and id and QC.T[id] then
+    log("chat: spectator %d %s", seat - 4, QC.T[id].en)
+    if QC.open then QC.spec[seat] = { id = id, at = frame } end
+    return
+  end
   if not seat or not id or seat < 1 or seat > 4 or not QC.T[id] then return end
   log("chat: %dP %s", seat, QC.T[id].en)
   if not QC.open then return end
@@ -3251,7 +3261,7 @@ end
 function qc_from_peer(p, payload)
   if SCNP_NOCHAT then return end
   local seat, id = payload:byte(1, 2)
-  if not seat or seat ~= p.slot or seat < 1 or seat > 4 or not QC.T[id] or not (QC.open or SCNP_PVE.on) then return end
+  if not seat or seat ~= p.slot or seat < 1 or seat > 12 or not QC.T[id] or not (QC.open or SCNP_PVE.on) then return end
   if frame - QC.last[seat] < (SCNP_PVE.on and QC.PVEGAP or QC.GAP) then return end
   QC.last[seat] = frame
   qc_show(seat, id)
@@ -3298,7 +3308,7 @@ function qc_step()
   local open = not SCNP_NOCHAT and (over or frame <= QC.winTill or selecting)
   if open ~= QC.open then
     QC.closeAt = (not open) and frame or nil
-    if open then QC.show = { {}, {} } end
+    if open then QC.show = { {}, {} }; QC.spec = {} end
     log("chat window %s at frame %d%s", open and "open" or "closed", frame, open and (over and " (full time)" or selecting and " (country select)" or " (goal)") or "")
   end
   QC.open = open
@@ -3307,7 +3317,7 @@ function qc_step()
     local down = QC.keys[i] and input:code_pressed(QC.keys[i])
 
     local free = SCNP_PVE.on and frame - (QC.mine or -99999) >= QC.PVEGAP
-    if down and not QC.prev[i] and ((open and not QC.sent) or free) and not is_spec and local_slot >= 1 and local_slot <= 4 then
+    if down and not QC.prev[i] and ((open and not QC.sent) or free) and QC.mayi() then
       qc_send(i)
     end
     QC.prev[i] = down
@@ -3438,7 +3448,7 @@ function qc_draw()
   local win = QC.open and not QC.sent
   local pve = SCNP_PVE.on and phase == "play"
   QC.top = nil
-  if (win or pve) and not is_spec and not is_replay and local_slot >= 1 and local_slot <= 4 then
+  if (win or pve) and not is_replay and QC.mayi() then
     local dim = (not win) and frame - (QC.mine or -99999) < QC.PVEGAP
     local ka = dim and 0.4 or 1
     local kg, ig = QC.width(" "), QC.width("   ")
@@ -3484,6 +3494,27 @@ function qc_draw()
           screen:draw_text(x0 + bar + pad + gw + tgap, ty, txt, QC.argb(0xffffffff, a), 0)
           y = y + rh + gap
         end
+      end
+    end
+  end
+
+  local y = y0
+  for seat = 5, 12 do
+    local m = QC.spec[seat]
+    if m then
+      local a = QC.alpha(m)
+      if a <= 0 then QC.spec[seat] = nil
+      else
+        local tag, txt = (cfg.lang == "ko" and "등뒤 " or "Behind ") .. (seat - 4), QC.text(m.id)
+        local tw, gw = QC.width(txt), QC.width(tag)
+        local bw = bar + pad + gw + tgap + tw + pad
+        local x0 = (w - bw) / 2
+        local ty = y + (rh - HUD_TH) / 2
+        box(x0, y, x0 + bw, y + rh, QC.argb(0xbe0a0e0c, a))
+        box(x0, y, x0 + bar, y + rh, QC.argb(0xffb4b4b4, a))
+        screen:draw_text(x0 + bar + pad, ty, tag, QC.argb(0xffc8c8c8, a), 0)
+        screen:draw_text(x0 + bar + pad + gw + tgap, ty, txt, QC.argb(0xffffffff, a), 0)
+        y = y + rh + gap
       end
     end
   end
