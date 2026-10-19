@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 20:29","room":11,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"ft":5,"series":"11-261019202108-1","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261019_202929_덕장배_vs_신발벗어_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:29","room":14,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,8],"ft":2,"series":"14-261019202534-2","nicks":["상봉거지오락실","즐축","",""],"replay":"replays/20261019_202902_상봉거지오락실_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:25","room":11,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,0],"ft":5,"series":"11-261019202108-1","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261019_202539_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:25","room":14,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,7],"ft":2,"series":"14-261019202534-2","nicks":["상봉거지오락실","즐축","",""],"replay":"replays/20261019_202534_상봉거지오락실_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 15:49","room":102,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,5],"nicks":["하니","미네로","",""],"replay":"replays/20261018_154911_하니_vs_미네로_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:26","room":98,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,5],"pk":[3,4],"ft":2,"series":"98-261018152057-18","nicks":["축구오랜만","미네로","",""],"replay":"replays/20261018_152610_축구오랜만_vs_미네로_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:20","room":98,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":2,"series":"98-261018152057-18","nicks":["축구오랜만","미네로","",""],"replay":"replays/20261018_152057_축구오랜만_vs_미네로_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 15:09","room":93,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,7],"ft":2,"series":"93-261018150508-17","nicks":["판순이","인형의기사","",""],"replay":"replays/20261018_150923_판순이_vs_인형의기사_4-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 15:05","room":93,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,7],"ft":2,"series":"93-261018150508-17","nicks":["판순이","인형의기사","",""],"replay":"replays/20261018_150508_판순이_vs_인형의기사_3-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 15:09","room":93,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,7],"ft":2,"series":"93-261018150508-17","nicks":["판순이","인형의기사","",""],"replay":"replays/20261018_150923_판순이_vs_인형의기사_4-1_p1.scr","edition":"cupsocs2"}
 ]
