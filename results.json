@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 17:00","room":11,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":2,"series":"11-261019170022-1","ranked":1,"tnames":{"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["상봉거지오락실","드래곤타이거","",""],"replay":"replays/20261019_170022_상봉거지오락실_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 16:53","room":8,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,3],"nicks":["rhythmmania","상봉거지오락실","",""],"replay":"replays/20261019_165303_rhythmmania_vs_상봉거지오락실_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 16:49","room":8,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,5],"nicks":["rhythmmania","상봉거지오락실","",""],"replay":"replays/20261019_164926_rhythmmania_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 16:45","room":8,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,7],"nicks":["rhythmmania","상봉거지오락실","",""],"replay":"replays/20261019_164512_rhythmmania_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 02:35","room":20,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"ft":3,"series":"20-261018023130-10","nicks":["미네로","NooB","",""],"replay":"replays/20261018_023501_미네로_vs_NooB_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 02:31","room":20,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":3,"series":"20-261018023130-10","nicks":["미네로","NooB","",""],"replay":"replays/20261018_023130_미네로_vs_NooB_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 02:29","room":19,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":3,"series":"19-261018022127-9","nicks":["감자","dfdf","",""],"replay":"replays/20261018_022901_감자_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 02:24","room":19,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"ft":3,"series":"19-261018022127-9","nicks":["감자","dfdf","",""],"replay":"replays/20261018_022457_감자_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 02:21","room":19,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":3,"series":"19-261018022127-9","nicks":["감자","dfdf","",""],"replay":"replays/20261018_022127_감자_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 02:24","room":19,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"ft":3,"series":"19-261018022127-9","nicks":["감자","dfdf","",""],"replay":"replays/20261018_022457_감자_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"}
 ]
