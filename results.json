@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 22:34","room":58,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[9,8],"nicks":["소소","즐축","",""],"replay":"replays/20261019_223442_소소_vs_즐축_3-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:34","room":59,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,9],"nicks":["이태원후렌드치킨","아얏둘","",""],"replay":"replays/20261019_223430_이태원후렌드치킨_vs_아얏둘_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:30","room":58,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,7],"nicks":["소소","즐축","",""],"replay":"replays/20261019_223009_소소_vs_즐축_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:30","room":57,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"57-261019222612-13","nicks":["드래곤타이거","아얏둘","",""],"replay":"replays/20261019_223002_드래곤타이거_vs_아얏둘_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 19:53","room":13,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"nicks":["미네로","이태원후렌드치킨","",""],"replay":"replays/20261018_195312_미네로_vs_이태원후렌드치킨_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:49","room":17,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[9,3],"nicks":["므와바","판순이","",""],"replay":"replays/20261018_194938_므와바_vs_판순이_0-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 19:49","room":15,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,9],"ft":2,"series":"15-261018194055-2","nicks":["드래곤타이거","이태원후렌드치킨","",""],"replay":"replays/20261018_194900_드래곤타이거_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 19:48","room":13,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,8],"nicks":["미네로","하니","",""],"replay":"replays/20261018_194857_미네로_vs_하니_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 19:45","room":15,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,3],"ft":2,"series":"15-261018194055-2","nicks":["드래곤타이거","이태원후렌드치킨","",""],"replay":"replays/20261018_194507_드래곤타이거_vs_이태원후렌드치킨_5-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 19:48","room":13,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,8],"nicks":["미네로","하니","",""],"replay":"replays/20261018_194857_미네로_vs_하니_2-2_p1.scr","edition":"cupsocs2"}
 ]
