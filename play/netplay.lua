@@ -4537,10 +4537,10 @@ function scnp_endwait_draw()
   end
 end
 local function on_frame_done()
-  step()
 
-  local W = SCNP_WAIT
-  if W.on then if W.drawn then return end; W.drawn = true else W.drawn = false end
+  local held = machine.paused
+  step()
+  if held then return end
   if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); scnp_costume_board_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw(); scnp_endwait_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
 end
 
