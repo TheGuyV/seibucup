@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 23:25","room":87,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[10,8],"ft":2,"series":"87-261019232228-19","nicks":["Janet","즐축","",""],"replay":"replays/20261019_232559_Janet_vs_즐축_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:22","room":87,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"87-261019232228-19","nicks":["Janet","즐축","",""],"replay":"replays/20261019_232228_Janet_vs_즐축_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:21","room":86,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[4,9],"arcade":1,"nicks":["미국","서독","",""],"replay":"replays/20261019_232108_arcade_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 23:19","room":72,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,0],"nicks":["이죄만신영섭","jay1111","",""],"replay":"replays/20261019_231920_이죄만신영섭_vs_jay1111_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 20:43","room":46,"type":"1v1","time":150,"players":2,"score":[0,6],"teams":[0,3],"nicks":["이태원후렌드치킨","판순이","",""],"replay":"replays/20261018_204332_이태원후렌드치킨_vs_판순이_0-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:40","room":42,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":5,"series":"42-261018203602-9","nicks":["111132","Todoroki","",""],"replay":"replays/20261018_204005_111132_vs_Todoroki_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 20:39","room":46,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,4],"nicks":["이태원후렌드치킨","판순이","",""],"replay":"replays/20261018_203909_이태원후렌드치킨_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:36","room":37,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":3,"series":"37-261018203222-8","nicks":["로또영","쌍송이","",""],"replay":"replays/20261018_203614_로또영_vs_쌍송이_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 20:36","room":42,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"ft":5,"series":"42-261018203602-9","nicks":["111132","Todoroki","",""],"replay":"replays/20261018_203602_111132_vs_Todoroki_0-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 20:36","room":37,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":3,"series":"37-261018203222-8","nicks":["로또영","쌍송이","",""],"replay":"replays/20261018_203614_로또영_vs_쌍송이_2-1_p1.scr","edition":"cupsocs2"}
 ]
