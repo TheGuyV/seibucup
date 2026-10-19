@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-19 20:25","room":14,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[8,7],"ft":2,"series":"14-261019202534-2","nicks":["상봉거지오락실","즐축","",""],"replay":"replays/20261019_202534_상봉거지오락실_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:21","room":11,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,0],"ft":5,"series":"11-261019202108-1","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261019_202108_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:16","room":10,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,5],"nicks":["덕장배","상봉거지오락실","",""],"replay":"replays/20261019_201645_덕장배_vs_상봉거지오락실_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 20:11","room":7,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["야가미최씨","도도리","",""],"replay":"replays/20261019_201104_야가미최씨_vs_도도리_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 15:09","room":93,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,7],"ft":2,"series":"93-261018150508-17","nicks":["판순이","인형의기사","",""],"replay":"replays/20261018_150923_판순이_vs_인형의기사_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 15:05","room":93,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,7],"ft":2,"series":"93-261018150508-17","nicks":["판순이","인형의기사","",""],"replay":"replays/20261018_150508_판순이_vs_인형의기사_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 14:50","room":89,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,9],"nicks":["테일러장군","narahashi","",""],"replay":"replays/20261018_145001_테일러장군_vs_narahashi_4-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 14:47","room":85,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["미네로","김창식씨","",""],"replay":"replays/20261018_144723_미네로_vs_김창식씨_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 14:42","room":85,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,10],"nicks":["미네로","테일러장군","",""],"replay":"replays/20261018_144246_미네로_vs_테일러장군_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 14:47","room":85,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,9],"nicks":["미네로","김창식씨","",""],"replay":"replays/20261018_144723_미네로_vs_김창식씨_2-2_p1.scr","edition":"cupsocs2"}
 ]
