@@ -162,6 +162,179 @@ function scnp_comic_draw()
   C.pops = keep
 end
 
+RQC = { on = false, save = {}, out = {}, SPR = 0x103800, TXT = 0x102000, PAL = 0x103680, CLOCK = 0x109ef4, vis = false }
+;(function()
+  local F = {}
+  for _, p in pairs(manager.machine.ioport.ports) do for n, fl in pairs(p.fields) do F[n] = fl end end
+  local f = {}
+  for x in (os.getenv("RQW_COSTUME") or ""):gmatch("[^,]+") do f[#f + 1] = x end
+  local function rgb(h) return { tonumber(h:sub(1, 2), 16) or 0, tonumber(h:sub(3, 4), 16) or 0, tonumber(h:sub(5, 6), 16) or 0 } end
+  local function hx(v) return (v and v:match("^%x%x%x%x%x%x$")) and rgb(v) or nil end
+  if manager.machine.system.name ~= "cupsocs2" or #f < 7 or not hx(f[2]) or not hx(f[3]) then return end
+  RQC.on = true
+  RQC.kit = { rgb(f[2]), rgb(f[3]), hx(f[9]) }
+  RQC.abbr = (f[6] or ""):upper(); RQC.boots = hx(f[8]); RQC.hair = hx(f[11])
+  RQC.name = ((f[7] or ""):gsub("%%(%x%x)", function(h) return string.char(tonumber(h, 16)) end))
+
+  local base = tonumber(f[1]) or -1
+  RQC.box = ({ [3] = 0, [9] = 1, [4] = 2, [10] = 3, [0] = 4, [7] = 5, [8] = 6, [5] = 7 })[base]
+
+  if not RQC.box and (base == 6 or base == 2 or base == 1) then
+    RQC.box = 6
+    local cpu = manager.machine.devices[":maincpu"]
+    local m = cpu.spaces["program"]
+    local function catch(a, hi)
+      return m:install_write_tap(a, a + 1, "rqc_hid_" .. string.format("%x", a), function(offset, data, mask)
+        if not RQC.active then return nil end
+        local pc = cpu.state["CURPC"].value
+        if pc < 0x7c60 or pc >= 0x7e80 then return nil end
+        if hi then
+          if (mask & 0xff00) == 0 or ((data >> 8) & 0xff) ~= 8 then return nil end
+          return (data & 0x00ff) | (base << 8)
+        end
+        if (mask & 0x00ff) == 0 or (data & 0xff) ~= 8 then return nil end
+        return (data & 0xff00) | base
+      end)
+    end
+    RQC.taps = { catch(0x109efe, true), catch(0x10a230, false) }
+  end
+  RQC.F = {
+    A = { "..##..", ".####.", "##..##", "######", "##..##", "##..##" }, B = { "#####.", "##..##", "#####.", "##..##", "##..##", "#####." },
+    C = { ".####.", "##..##", "##....", "##....", "##..##", ".####." }, D = { "#####.", "##..##", "##..##", "##..##", "##..##", "#####." },
+    E = { "######", "##....", "#####.", "##....", "##....", "######" }, F = { "######", "##....", "#####.", "##....", "##....", "##...." },
+    G = { ".#####", "##....", "##.###", "##..##", "##..##", ".#####" }, H = { "##..##", "##..##", "######", "##..##", "##..##", "##..##" },
+    I = { "######", "..##..", "..##..", "..##..", "..##..", "######" }, J = { "....##", "....##", "....##", "##..##", "##..##", ".####." },
+    K = { "##..##", "##.##.", "####..", "##.##.", "##..##", "##..##" }, L = { "##....", "##....", "##....", "##....", "##....", "######" },
+    M = { "##..##", "######", "######", "##..##", "##..##", "##..##" }, N = { "##..##", "###.##", "######", "##.###", "##..##", "##..##" },
+    O = { ".####.", "##..##", "##..##", "##..##", "##..##", ".####." }, P = { "#####.", "##..##", "##..##", "#####.", "##....", "##...." },
+    Q = { ".####.", "##..##", "##..##", "##.###", "##..##", ".###.#" }, R = { "#####.", "##..##", "##..##", "#####.", "##.##.", "##..##" },
+    S = { ".#####", "##....", ".####.", "....##", "....##", "#####." }, T = { "######", "..##..", "..##..", "..##..", "..##..", "..##.." },
+    U = { "##..##", "##..##", "##..##", "##..##", "##..##", ".####." }, V = { "##..##", "##..##", "##..##", "##..##", ".####.", "..##.." },
+    W = { "##..##", "##..##", "##..##", "######", "######", "##..##" }, X = { "##..##", ".####.", "..##..", "..##..", ".####.", "##..##" },
+    Y = { "##..##", "##..##", ".####.", "..##..", "..##..", "..##.." }, Z = { "######", "...##.", "..##..", ".##...", "##....", "######" } }
+  local mem = manager.machine.devices[":maincpu"].spaces["program"]
+  local function sp(c) return c & 31, (c >> 5) & 31, (c >> 10) & 31 end
+  local function lum(c) local r, g, b = sp(c); return 0.3 * r + 0.59 * g + 0.11 * b end
+  local function q(v, f) return math.max(0, math.min(31, math.floor(v * (f or 1) / 255 * 31 + 0.5))) end
+  local function put(a, v) if mem:read_u16(a) ~= RQC.out[a] then RQC.save[a] = mem:read_u16(a); RQC.out[a] = v; mem:write_u16(a, v) end end
+
+  local KEYS = { "P1 Down", "P1 Left", "P1 Right", "P1 Shoot" }
+  local function press(which) for _, k in ipairs(KEYS) do if F[k] then F[k]:set_value(k == which and 1 or 0) end end; RQC.held = which ~= nil end
+  local function lock()
+    local C = RQC
+    if not C.box then return end
+    if mem:read_u8(0x109c75) ~= 2 then if C.held then press(nil) end; return end
+    local cur = mem:read_u16(0x109c76)
+    C.n = (C.n or 0) + 1
+    if cur == 0 or C.n % 8 >= 2 then if C.held then press(nil) end; return end
+    local i; for n = 0, 7 do if cur == (1 << n) then i = n end end
+    if not i then return end
+    local t = C.box
+    if i == t then press("P1 Shoot")
+    elseif (i // 4) ~= (t // 4) then press("P1 Down")
+    else local d = (t % 4 - i % 4) % 4; press(d <= 2 and "P1 Right" or "P1 Left") end
+  end
+
+  local QFILE, qn, queued, qc = os.getenv("RQW_FILE") or "", -1000, false, 0
+  local function inqueue()
+    qc = qc + 1
+    if qc - qn >= 30 then
+      qn = qc; queued = false
+      local h = QFILE ~= "" and io.open(QFILE, "rb")
+      if h then local w = (h:read("*l") or ""):match("^(%S+)"); h:close(); queued = w == "WAIT" or w == "FOUND" or w == "WAITOTHER" or w == "GO" end
+    end
+    return queued
+  end
+
+  local function off(keys)
+    local C = RQC
+    for a, v in pairs(C.save) do if mem:read_u16(a) == C.out[a] then mem:write_u16(a, v) end end
+    for a, v in pairs(C.cells) do if mem:read_u16(a) == 0 then mem:write_u16(a, v) end end
+    C.save, C.out, C.cells, C.vis = {}, {}, {}, false
+    if keys ~= false and C.held then press(nil) end
+  end
+  RQC.cells = {}
+  local function step()
+    local C = RQC
+    C.active = inqueue()
+    if not C.active then off(); return end
+    lock()
+    if mem:read_u16(C.CLOCK) == 0 then off(false); return end
+    local k = C.kit
+    for line = 1, 3 do
+      local la = C.SPR + line * 32
+      local orig = {}
+      for i = 6, 13 do local a = la + i * 2; local c = mem:read_u16(a); if c == C.out[a] then c = C.save[a] end; orig[i] = c end
+      local m1, m2 = 0, 0
+      for i = 6, 10 do m1 = math.max(m1, lum(orig[i])) end
+      for i = 11, 13 do m2 = math.max(m2, lum(orig[i])) end
+      for i = 6, 13 do
+        local a = la + i * 2
+        local c = mem:read_u16(a)
+        if c ~= C.out[a] then
+          C.save[a] = c
+          local m = i <= 10 and m1 or m2
+          local f = m > 0 and lum(c) / m or 1
+          local t = (i <= 7 and (k[3] or k[1])) or (i <= 10 and k[1]) or k[2]
+          local function ch(v) local x = v * (0.42 + 0.58 * f) + 26 * math.max(0, f - 0.85); return math.max(0, math.min(31, math.floor(x / 255 * 31 + 0.5))) end
+          C.out[a] = ch(t[1]) | (ch(t[2]) << 5) | (ch(t[3]) << 10)
+          mem:write_u16(a, C.out[a])
+        end
+      end
+      if C.hair then for i = 4, 5 do local f = i == 5 and 1 or 0.55; put(la + i * 2, q(C.hair[1], f) | (q(C.hair[2], f) << 5) | (q(C.hair[3], f) << 10)) end end
+      if C.boots then put(la + 28, q(C.boots[1]) | (q(C.boots[2]) << 5) | (q(C.boots[3]) << 10)) end
+    end
+
+    local T = C.TXT
+    C.vis = (mem:read_u16(T + (3 * 64 + 4) * 2) >> 12) == 10
+    if C.vis then
+      for kk = 0, 2 do for r = 2, 4 do
+        local a = T + (r * 64 + 1 + kk) * 2
+        local v = mem:read_u16(a)
+        if v ~= 0 and (v >> 12) == (r == 4 and 4 or 11) then C.cells[a] = v; mem:write_u16(a, 0) end
+      end end
+    end
+  end
+  local FS = 1
+  pcall(function() FS = manager.ui.line_height * (manager.machine.screens[":screen"].height or 224) / 7.3 end)
+  local function text_w(s) local w = 0; for _, cp in utf8.codes(s) do w = w + ((cp < 128) and 1 or 2) end; return w * 4.2 * FS end
+  local function draw()
+    local C = RQC
+    if not C.active then return end
+    local scr = manager.machine.screens[":screen"]; if not scr then return end
+    for i = 0, 15 do
+      if mem:read_u16(0x107002 + i * 8) == 0x5eef then
+        local y = mem:read_i16(0x107006 + i * 8) + 49
+        if y >= 0 and y <= 230 and C.name ~= "" then scr:draw_text(88 - text_w(C.name) / 2, y, C.name, 0xffffffff, 0xb0000000) end
+        return
+      end
+    end
+    if not C.vis then return end
+    local function argb(w) local r, g, b = sp(w); return 0xff000000 | ((r * 255 // 31) << 16) | ((g * 255 // 31) << 8) | (b * 255 // 31) end
+    local c1, c2, c3 = argb(mem:read_u16(C.PAL + 2)), argb(mem:read_u16(C.PAL + 4)), argb(mem:read_u16(C.PAL + 6))
+    local dim = (mem:read_u16(C.PAL + 4) & 31) / 31
+    local function team(t) return 0xff000000 | (math.floor(t[1] * dim) << 16) | (math.floor(t[2] * dim) << 8) | math.floor(t[3] * dim) end
+    local function box(x0, y0, x1, y1, c) scr:draw_box(x0, y0, x1, y1, 0, c) end
+
+    local function far(x, y) return x and y and math.sqrt((x[1] - y[1]) ^ 2 + (x[2] - y[2]) ^ 2 + (x[3] - y[3]) ^ 2) >= 90 end
+    local s = C.kit[1]
+    local m = far(s, C.kit[2]) and C.kit[2] or far(s, C.kit[3]) and C.kit[3] or ((0.3 * s[1] + 0.59 * s[2] + 0.11 * s[3]) > 140 and { 32, 32, 40 } or { 255, 255, 255 })
+    local px, a, b, black = 8, team(C.kit[1]), team(m), 0xff000000
+    box(px, 8, px + 8, 23, a); box(px + 8, 8, px + 15, 23, b); box(px + 15, 8, px + 23, 23, a)
+    box(px + 23, 8, px + 24, 23, black); box(px + 1, 23, px + 24, 24, black)
+    for n = 1, math.min(3, #C.abbr) do
+      local g = C.F[C.abbr:sub(n, n)]
+      if g then
+        local x0, y0 = px + (n - 1) * 8, 25
+        local function on(x, y) return y >= 0 and y < 6 and x >= 0 and x < 6 and g[y + 1]:sub(x + 1, x + 1) == "#" end
+        for y = 0, 6 do for x = 0, 6 do if on(x - 1, y - 1) and not on(x, y) then box(x0 + x, y0 + y, x0 + x + 1, y0 + y + 1, black) end end end
+        for y = 0, 5 do for x = 0, 5 do if on(x, y) then box(x0 + x, y0 + y, x0 + x + 1, y0 + y + 1, x < 2 and c3 or (x == 5 and c1 or c2)) end end end
+      end
+    end
+  end
+  __rqcos = emu.register_frame_done(function() step(); draw() end)
+end)()
+
 local RQW_DIFF = tonumber(os.getenv("RQW_DIFF") or "")
 local DSW2 = ({ cupsoc = 0x10075c, cupsocs = 0x10071c, cupsocs2 = 0x10071c })[SCNP_GAME]
 if RQW_DIFF and RQW_DIFF >= 0 and RQW_DIFF <= 3 and RQW_DIFF ~= 3 and DSW2 then

@@ -1663,6 +1663,8 @@ local function read_local_input()
   end
   if last_joy_frame > last_kbd_frame then local_dev = 2 elseif last_kbd_frame > last_joy_frame then local_dev = 1 end
   if local_dev == 0 then local_dev = 1 end
+
+  if SCNP_FREE then mask = mask & ~0x80 end
   return mask
 end
 
