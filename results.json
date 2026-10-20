@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 00:09","room":86,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[6,5],"ft":2,"series":"83-261020235930-27","ranked":1,"tnames":{"즐축":["즐축 FC","FCX"]},"nicks":["즐축","드래곤타이거","",""],"replay":"replays/20261021_000931_즐축_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:08","room":84,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,5],"ft":2,"series":"84-261021000411-28","nicks":["기러기","징기즈칸","",""],"replay":"replays/20261021_000848_기러기_vs_징기즈칸_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:05","room":85,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[6,5],"ft":2,"series":"83-261020235930-27","ranked":1,"tnames":{"즐축":["즐축 FC","FCX"]},"nicks":["즐축","드래곤타이거","",""],"replay":"replays/20261021_000500_즐축_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:04","room":84,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,5],"ft":2,"series":"84-261021000411-28","nicks":["기러기","징기즈칸","",""],"replay":"replays/20261021_000411_기러기_vs_징기즈칸_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 17:50","room":27,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,9],"ft":2,"series":"27-261019174618-3","nicks":["드래곤타이거","마야","",""],"replay":"replays/20261019_175040_드래곤타이거_vs_마야_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 17:48","room":28,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"nicks":["cupcup","상봉거지오락실","",""],"replay":"replays/20261019_174853_cupcup_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 17:46","room":27,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,9],"ft":2,"series":"27-261019174618-3","nicks":["드래곤타이거","마야","",""],"replay":"replays/20261019_174618_드래곤타이거_vs_마야_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 17:29","room":22,"type":"1v1","time":150,"players":2,"score":[5,3],"teams":[0,10],"ft":2,"series":"22-261019172502-2","nicks":["상봉거지오락실","애스콧테일러","",""],"replay":"replays/20261019_172952_상봉거지오락실_vs_애스콧테일러_5-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 17:25","room":22,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"22-261019172502-2","nicks":["상봉거지오락실","애스콧테일러","",""],"replay":"replays/20261019_172502_상봉거지오락실_vs_애스콧테일러_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 17:29","room":22,"type":"1v1","time":150,"players":2,"score":[5,3],"teams":[0,10],"ft":2,"series":"22-261019172502-2","nicks":["상봉거지오락실","애스콧테일러","",""],"replay":"replays/20261019_172952_상봉거지오락실_vs_애스콧테일러_5-3_p1.scr","edition":"cupsocs2"}
 ]
