@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 23:35","room":67,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"nicks":["우이우이운이","dfdf","",""],"replay":"replays/20261020_233559_우이우이운이_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:35","room":70,"type":"2v2","time":150,"players":4,"score":[3,2],"teams":[3,5],"ft":3,"series":"70-261020232628-24","nicks":["aapp","판순이","미네로","드래곤타이거"],"replay":"replays/20261020_233555_aapp_vs_미네로_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:31","room":67,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,5],"nicks":["우이우이운이","dfdf","",""],"replay":"replays/20261020_233126_우이우이운이_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:30","room":70,"type":"2v2","time":150,"players":4,"score":[0,1],"teams":[3,0],"ft":3,"series":"70-261020232628-24","nicks":["판순이","aapp","드래곤타이거","미네로"],"replay":"replays/20261020_233008_판순이_vs_드래곤타이거_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 16:19","room":1,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,4],"nicks":["쌍송이","rhythmmania","",""],"replay":"replays/20261019_161903_쌍송이_vs_rhythmmania_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 16:15","room":1,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[10,8],"nicks":["쌍송이","rhythmmania","",""],"replay":"replays/20261019_161541_쌍송이_vs_rhythmmania_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 16:11","room":1,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"nicks":["쌍송이","rhythmmania","",""],"replay":"replays/20261019_161112_쌍송이_vs_rhythmmania_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 16:07","room":1,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,8],"nicks":["쌍송이","rhythmmania","",""],"replay":"replays/20261019_160721_쌍송이_vs_rhythmmania_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 14:59","room":23,"type":"1v1","time":180,"players":2,"score":[3,1],"teams":[10,5],"ft":2,"series":"23-261019145901-5","nicks":["적토마고정운","깜찍만두","",""],"replay":"replays/20261019_145901_적토마고정운_vs_깜찍만두_3-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 16:07","room":1,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,8],"nicks":["쌍송이","rhythmmania","",""],"replay":"replays/20261019_160721_쌍송이_vs_rhythmmania_2-1_p1.scr","edition":"cupsocs2"}
 ]
