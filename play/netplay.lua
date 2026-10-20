@@ -9,7 +9,7 @@
 -- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
 -- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
 -- It may not be modified or redistributed without permission.
-local VERSION = 39
+local VERSION = 40
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -1131,19 +1131,65 @@ end
 scnp_costume_parse(env("SCNP_COSTUME", ""))
 
 SCNP_COSTUME.BOX = { [3] = 0, [9] = 1, [4] = 2, [10] = 3, [0] = 4, [7] = 5, [8] = 6, [5] = 7 }
+
+SCNP_CHID = { HID = { [6] = true, [2] = true, [1] = true }, BOXC = { [0] = 3, 9, 4, 10, 0, 7, 8, 5 }, PROXY = { 6, 5, 0, 4, 7, 1, 2, 3 },
+              pick = {}, under = {}, proxy = {}, ready = false }
+function scnp_chid_setup()
+  local H, C = SCNP_CHID, SCNP_COSTUME
+  if H.ready then return end
+  H.ready = true
+  local want = {}
+  for b = 1, 2 do local c = C.seat[scnp_seat_of(b)]; if c and C.BOX[c.base] then want[b] = C.BOX[c.base] end end
+  for b = 1, 2 do
+    local c = C.seat[scnp_seat_of(b)]
+    if c and H.HID[c.base] then
+      local o = 3 - b
+      for _, box in ipairs(H.PROXY) do
+        if box ~= want[o] and box ~= H.proxy[o] then H.proxy[b] = box; break end
+      end
+      H.pick[b] = c.base; H.under[b] = H.BOXC[H.proxy[b]]
+      log("hidden team: %dP plays slot %d through box %d (country %d)", b, c.base, H.proxy[b], H.under[b])
+    end
+  end
+  if not H.pick[1] and not H.pick[2] then return end
+  local cpu = manager.machine.devices[":maincpu"]
+  local function swap(v) for b = 1, 2 do if H.pick[b] and H.under[b] == v then return H.pick[b] end end return nil end
+  local function catch(base, hi)
+    return mem:install_write_tap(base, base + 1, "scnp_chid_" .. string.format("%x", base), function(offset, data, mask)
+      if clock_start ~= nil then return nil end
+      local pc = cpu.state["CURPC"].value
+      if pc < 0x7c60 or pc >= 0x7e80 then return nil end
+      if hi then
+        if (mask & 0xff00) == 0 then return nil end
+        local t = swap((data >> 8) & 0xff); if not t then return nil end
+        return (data & 0x00ff) | (t << 8)
+      end
+      if (mask & 0x00ff) == 0 then return nil end
+      local t = swap(data & 0xff); if not t then return nil end
+      return (data & 0xff00) | t
+    end)
+  end
+  H.taps = { catch(0x109efe, true), catch(0x109f46, true), catch(0x10a230, false), catch(0x10a24e, false) }
+end
 function scnp_costume_lock(b, mask)
   local C, P = SCNP_COSTUME, SCNP_PICK
   if not C.on or (b ~= 1 and b ~= 2) or not P or not P.sel or not P.cur or SCNP_PVE.on then return mask end
-  local c = C.seat[scnp_seat_of(b)]
-  if not c or not C.BOX[c.base] then return mask end
   if mem:read_u8(P.sel) ~= 2 then return mask end
+  scnp_chid_setup()
+  local H = SCNP_CHID
+  local c = C.seat[scnp_seat_of(b)]
+  local t = c and (C.BOX[c.base] or H.proxy[b])
+  if not t then
+    local o = H.proxy[3 - b]
+    if o and mem:read_u16(P.cur + (b - 1) * 2) == (1 << o) then mask = mask & ~0x10 end
+    return mask
+  end
 
   local cur = mem:read_u16(P.cur + (b - 1) * 2)
   mask = mask & ~0x7f
   if cur == 0 or frame % 8 >= 2 then return mask end
   local i; for n = 0, 7 do if cur == (1 << n) then i = n end end
   if not i then return mask end
-  local t = C.BOX[c.base]
   if i == t then return mask | 0x10 end
   if (i // 4) ~= (t // 4) then return mask | 0x02 end
   local d = (t % 4 - i % 4) % 4

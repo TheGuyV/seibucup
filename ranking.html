@@ -293,11 +293,11 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
     });
   }
 
-  var BASES = [3, 9, 4, 10, 0, 7, 8, 5];
-  var BASE_KO = ['잉글랜드', '서독', '미국', '일본', '이탈리아', '브라질', '아르헨티나', '대한민국'];
-  var BASE_EN = ['England', 'West Germany', 'USA', 'Japan', 'Italy', 'Brazil', 'Argentina', 'Korea'];
-  var FORM_KO = ['리베로 + 3-3-3', '3-2-2-3', '리베로 + 4-2-3', '3-2-2-3', '2-3-2-3', '4-2-4', '리베로 + 3-2-4', '리베로 + 4-2-3'];
-  var FORM_EN = ['Sweeper + 3-3-3', '3-2-2-3', 'Sweeper + 4-2-3', '3-2-2-3', '2-3-2-3', '4-2-4', 'Sweeper + 3-2-4', 'Sweeper + 4-2-3'];
+  var BASES = [3, 9, 4, 10, 0, 7, 8, 5, 6, 2, 1];
+  var BASE_KO = ['잉글랜드', '서독', '미국', '일본', '이탈리아', '브라질', '아르헨티나', '대한민국', '프랑스', '네덜란드', '스페인'];
+  var BASE_EN = ['England', 'West Germany', 'USA', 'Japan', 'Italy', 'Brazil', 'Argentina', 'Korea', 'France', 'Holland', 'Spain'];
+  var FORM_KO = ['리베로 + 3-3-3', '3-2-2-3', '리베로 + 4-2-3', '3-2-2-3', '2-3-2-3', '4-2-4', '리베로 + 3-2-4', '리베로 + 4-2-3', '3-4-3', '리베로 + 3-2-4', '리베로 + 3-2-4'];
+  var FORM_EN = ['Sweeper + 3-3-3', '3-2-2-3', 'Sweeper + 4-2-3', '3-2-2-3', '2-3-2-3', '4-2-4', 'Sweeper + 3-2-4', 'Sweeper + 4-2-3', '3-4-3', 'Sweeper + 3-2-4', 'Sweeper + 3-2-4'];
   var HEX = /^[0-9a-f]{6}$/;
   function club(spec) {
     var f = String(spec || '').split(','), name;
