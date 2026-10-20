@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 00:30","room":88,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,5],"ft":2,"series":"88-261021003039-29","ranked":1,"tnames":{"날쌘돌이서정원":["KOREA FC","KFC"]},"nicks":["날쌘돌이서정원","드래곤타이거","",""],"replay":"replays/20261021_003039_날쌘돌이서정원_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:13","room":84,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"84-261021000411-28","nicks":["기러기","징기즈칸","",""],"replay":"replays/20261021_001312_기러기_vs_징기즈칸_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:09","room":86,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[6,5],"ft":2,"series":"83-261020235930-27","ranked":1,"tnames":{"즐축":["즐축 FC","FCX"]},"nicks":["즐축","드래곤타이거","",""],"replay":"replays/20261021_000931_즐축_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:08","room":84,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,5],"ft":2,"series":"84-261021000411-28","nicks":["기러기","징기즈칸","",""],"replay":"replays/20261021_000848_기러기_vs_징기즈칸_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 18:13","room":38,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"nicks":["mizunoasahi","김정은패스","",""],"replay":"replays/20261019_181316_mizunoasahi_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 17:56","room":32,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["cupcup","드래곤타이거","",""],"replay":"replays/20261019_175640_cupcup_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 17:50","room":27,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,9],"ft":2,"series":"27-261019174618-3","nicks":["드래곤타이거","마야","",""],"replay":"replays/20261019_175040_드래곤타이거_vs_마야_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 17:48","room":28,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"nicks":["cupcup","상봉거지오락실","",""],"replay":"replays/20261019_174853_cupcup_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 17:46","room":27,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,9],"ft":2,"series":"27-261019174618-3","nicks":["드래곤타이거","마야","",""],"replay":"replays/20261019_174618_드래곤타이거_vs_마야_2-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 17:48","room":28,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"nicks":["cupcup","상봉거지오락실","",""],"replay":"replays/20261019_174853_cupcup_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"}
 ]
