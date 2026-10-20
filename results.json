@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 23:11","room":65,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[4,0],"arcade":1,"nicks":["미국","이탈리아","",""],"replay":"replays/20261020_231118_arcade_5-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:10","room":59,"type":"2v2","time":150,"players":4,"score":[1,2],"teams":[5,3],"ft":2,"series":"59-261020230613-22","nicks":["surferKIM","사직동락스타","드래곤타이거","레온"],"replay":"replays/20261020_231002_surferKIM_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:09","room":58,"type":"1v1","time":180,"players":2,"score":[5,4],"teams":[10,9],"ft":2,"series":"58-261020230331-21","nicks":["날쌘돌이서정원","dfdf","",""],"replay":"replays/20261020_230935_날쌘돌이서정원_vs_dfdf_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:06","room":61,"type":"1v1","time":180,"players":2,"score":[3,1],"teams":[5,10],"nicks":["징기즈칸","이태원후렌드치킨","",""],"replay":"replays/20261020_230659_징기즈칸_vs_이태원후렌드치킨_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 14:32","room":19,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,0],"ft":2,"series":"19-261019143214-2","nicks":["드래곤타이거","깜찍만두","",""],"replay":"replays/20261019_143214_드래곤타이거_vs_깜찍만두_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 14:14","room":14,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":3,"series":"14-261019141402-1","nicks":["로또영","간지민","",""],"replay":"replays/20261019_141402_로또영_vs_간지민_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 13:27","room":11,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,9],"nicks":["test","소소","",""],"replay":"replays/20261019_132755_test_vs_소소_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 13:14","room":9,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"arcade":1,"nicks":["이탈리아","서독","",""],"replay":"replays/20261019_131416_arcade_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 12:28","room":3,"type":"1v1","time":150,"players":2,"score":[11,0],"teams":[8,4],"nicks":["불꽃슛마스터","Maya","",""],"replay":"replays/20261019_122852_불꽃슛마스터_vs_Maya_11-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 13:14","room":9,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,9],"arcade":1,"nicks":["이탈리아","서독","",""],"replay":"replays/20261019_131416_arcade_0-1_p1.scr","edition":"cupsocs2"}
 ]
