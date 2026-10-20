@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 15:36","room":67,"type":"1v1","time":180,"players":2,"score":[5,4],"teams":[5,7],"ft":2,"series":"67-261020153051-10","nicks":["날쌘돌이서정원","rdsa","",""],"replay":"replays/20261020_153619_날쌘돌이서정원_vs_rdsa_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:30","room":67,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"67-261020153051-10","nicks":["날쌘돌이서정원","rdsa","",""],"replay":"replays/20261020_153051_날쌘돌이서정원_vs_rdsa_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:16","room":64,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,8],"ft":2,"series":"64-261020150646-9","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_151617_적토마고정운_vs_상봉거지오락실_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:06","room":64,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,5],"ft":2,"series":"64-261020150646-9","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_150646_적토마고정운_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 22:22","room":83,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261018_222242_arcade_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:14","room":74,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,5],"ft":3,"series":"74-261018215751-18","nicks":["로또영","쌍송이","",""],"replay":"replays/20261018_221414_로또영_vs_쌍송이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:09","room":74,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,5],"ft":3,"series":"74-261018215751-18","nicks":["로또영","쌍송이","",""],"replay":"replays/20261018_220958_로또영_vs_쌍송이_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:06","room":75,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,3],"nicks":["rhythmmania","판순이","",""],"replay":"replays/20261018_220645_rhythmmania_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:05","room":74,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"74-261018215751-18","nicks":["로또영","쌍송이","",""],"replay":"replays/20261018_220533_로또영_vs_쌍송이_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 22:06","room":75,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,3],"nicks":["rhythmmania","판순이","",""],"replay":"replays/20261018_220645_rhythmmania_vs_판순이_0-2_p1.scr","edition":"cupsocs2"}
 ]
