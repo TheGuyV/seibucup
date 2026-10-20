@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 21:23","room":8,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[0,9],"ft":2,"series":"8-261020211815-3","nicks":["이탈리아맨","드래곤타이거","",""],"replay":"replays/20261020_212304_이탈리아맨_vs_드래곤타이거_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:18","room":8,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[0,5],"ft":2,"series":"8-261020211815-3","nicks":["이탈리아맨","드래곤타이거","",""],"replay":"replays/20261020_211815_이탈리아맨_vs_드래곤타이거_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 20:49","room":3,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,7],"ft":2,"series":"3-261020204935-2","nicks":["드래곤타이거","이태원후렌드치킨","",""],"replay":"replays/20261020_204935_드래곤타이거_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 20:38","room":1,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,3],"ft":2,"series":"1-261020203413-1","nicks":["404page","이태원후렌드치킨","",""],"replay":"replays/20261020_203838_404page_vs_이태원후렌드치킨_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 23:56","room":115,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,8],"ft":3,"series":"115-261018235616-26","nicks":["미네로","MrKei","",""],"replay":"replays/20261018_235616_미네로_vs_MrKei_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:54","room":113,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,9],"nicks":["청라대장","아얏둘","",""],"replay":"replays/20261018_235433_청라대장_vs_아얏둘_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:52","room":111,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,7],"nicks":["소소","소떡","",""],"replay":"replays/20261018_235257_소소_vs_소떡_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:48","room":111,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,9],"nicks":["소소","아얏둘","",""],"replay":"replays/20261018_234809_소소_vs_아얏둘_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:47","room":110,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":2,"series":"110-261018234315-25","nicks":["기러기","소떡","",""],"replay":"replays/20261018_234715_기러기_vs_소떡_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 23:48","room":111,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,9],"nicks":["소소","아얏둘","",""],"replay":"replays/20261018_234809_소소_vs_아얏둘_3-2_p1.scr","edition":"cupsocs2"}
 ]
