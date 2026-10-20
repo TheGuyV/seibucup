@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 17:26","room":91,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"91-261020172626-14","nicks":["로또영","샤부사커","",""],"replay":"replays/20261020_172626_로또영_vs_샤부사커_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:23","room":88,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[8,7],"nicks":["버섯커1","날아","",""],"replay":"replays/20261020_172324_버섯커1_vs_날아_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:18","room":88,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"nicks":["버섯커1","날아","",""],"replay":"replays/20261020_171847_버섯커1_vs_날아_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:14","room":88,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[0,3],"nicks":["버섯커1","날아","",""],"replay":"replays/20261020_171433_버섯커1_vs_날아_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 22:56","room":95,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_225627_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:54","room":89,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,5],"nicks":["소소","에어","",""],"replay":"replays/20261018_225454_소소_vs_에어_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:52","room":95,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,3],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_225244_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:50","room":97,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,0],"nicks":["미네로","에어","",""],"replay":"replays/20261018_225031_미네로_vs_에어_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:49","room":95,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,9],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_224921_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 22:50","room":97,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,0],"nicks":["미네로","에어","",""],"replay":"replays/20261018_225031_미네로_vs_에어_3-1_p1.scr","edition":"cupsocs2"}
 ]
