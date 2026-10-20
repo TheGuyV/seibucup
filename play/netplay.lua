@@ -3524,6 +3524,105 @@ function qc_draw()
   end
 end
 
+SCNP_PF.G = SCNP_PF.G or { 3, 4, 5, 5, 3 }
+SCNP_PF.K = SCNP_PF.K or { 5, 5, 6, 5, 5 }
+SCNP_PF.R = SCNP_PF.R or { 6, 5, 6, 5, 5 }
+SCNP_PF.M = SCNP_PF.M or { 17, 27, 21, 17, 17, w = 5 }
+SCNP_PF.W = SCNP_PF.W or { 17, 17, 21, 27, 17, w = 5 }
+SCNP_POST = { on = env("SCNP_POSTAG", "1") ~= "0", key = nil, tag = {}, cap = {}, alpha = {}, hide = false, hideclk = nil }
+function SCNP_POST.classify()
+  local P = SCNP_POST
+  P.tag, P.cap = {}, {}
+  for side = 0, 1 do
+    local field = {}
+    for k = 0, 10 do
+      local i = side * 11 + k
+      local o = 0x111e54 + i * 0xdc
+      local ty = mem:read_u8(o + 1)
+      local y, x = mem:read_i16(o + 0xd4), mem:read_i16(o + 0xd6)
+      local m = { i = i, ace = (ty == 2 or ty == 5), depth = (side == 0) and (x - 400) or (1617 - x), lat = (side == 0) and (1272 - y) or (y - 1272) }
+      if ty == 3 or ty == 6 then P.tag[i] = "GK" else field[#field + 1] = m end
+      if m.ace then P.cap[i] = true end
+    end
+    local acedepth = 0
+    for _, m in ipairs(field) do if m.ace then acedepth = m.depth end end
+    local fw, rest = {}, {}
+    for _, m in ipairs(field) do if m.depth >= acedepth - 70 then fw[#fw + 1] = m else rest[#rest + 1] = m end end
+    table.sort(rest, function(a, b) return a.depth < b.depth end)
+    local lines, cur = {}, nil
+    for _, m in ipairs(rest) do
+      if cur and m.depth - cur.last <= 45 then cur[#cur + 1] = m; cur.last = m.depth
+      else cur = { m, last = m.depth }; lines[#lines + 1] = cur end
+    end
+    lines[#lines + 1] = fw
+    local first = 1
+    if #lines >= 3 and #lines[1] == 1 and lines[2][1].depth - lines[1][1].depth >= 60 then P.tag[lines[1][1].i] = "SW"; first = 2 end
+    local function byside(l) table.sort(l, function(a, b) return a.lat > b.lat end) return l end
+    local fl = byside(lines[#lines])
+    for k, m in ipairs(fl) do P.tag[m.i] = m.ace and "CF" or ((k == 1 and #fl >= 3) and "LW" or (k == #fl and #fl >= 3) and "RW" or "ST") end
+    if first < #lines then
+      local dl = byside(lines[first])
+      for k, m in ipairs(dl) do P.tag[m.i] = (#dl >= 3 and k == 1) and "LB" or (#dl >= 3 and k == #dl) and "RB" or "CB" end
+    end
+    local mids = {}
+    for li = first + 1, #lines - 1 do mids[#mids + 1] = byside(lines[li]) end
+    for mi, l in ipairs(mids) do
+      for _, m in ipairs(l) do
+        if math.abs(m.lat) > 120 then P.tag[m.i] = m.lat > 0 and "LM" or "RM"
+        elseif #mids >= 2 then P.tag[m.i] = (mi == 1) and "DM" or "AM"
+        else P.tag[m.i] = "CM" end
+      end
+    end
+  end
+  local s = {}
+  for i = 0, 21 do s[#s + 1] = P.tag[i] or "?" end
+  log("position tags: %s | %s", table.concat(s, " ", 1, 11), table.concat(s, " ", 12, 22))
+end
+function scnp_postag_draw()
+  local P = SCNP_POST
+  if not P.on or SCNP_GAME == "cupsoc" or not screen or not clock_start then return end
+
+  local key = mem:read_u8(0x111e54 + 0xc4) * 256 + mem:read_u8(0x111e54 + 11 * 0xdc + 0xc4)
+  if key ~= P.key then P.key = key; P.classify(); P.hide = false end
+  local clk = mem:read_u16(CLOCK_ADDR)
+  local sa, g = QC.SLOW[SCNP_GAME], QC.GOAL[SCNP_GAME]
+  if (sa and (mem:read_u8(sa) & 0x10) ~= 0) or (g and g[mem:read_u32(0x1138a0)]) then P.hide = true; P.hideclk = clk end
+  if P.hide and clk ~= P.hideclk then P.hide = false end
+  if P.hide or clk == 0 or (SCNP_PK and SCNP_PK.state == "run") then return end
+  local cx, cy = mem:read_i16(0x109450), mem:read_i16(0x109452)
+  local w, h = screen.width or 320, screen.height or 240
+  local px, py = {}, {}
+  for i = 0, 21 do
+    local o = 0x111e54 + i * 0xdc
+    px[i], py[i] = mem:read_i32(o + 8) / 65536 - cx, mem:read_i32(o + 4) / 65536 - cy
+  end
+  for i = 0, 21 do
+    local near = false
+    for j = 0, 21 do
+      if j ~= i and math.abs(px[i] - px[j]) < 18 and math.abs(py[i] - py[j]) < 24 then near = true; break end
+    end
+    local a = P.alpha[i] or 1
+    a = near and math.max(0, a - 1 / 8) or math.min(1, a + 1 / 8)
+    P.alpha[i] = a
+    local t = P.tag[i]
+    if t and a > 0 then
+      local tw = scnp_pf_w(t)
+      local x, y = px[i] - tw / 2, py[i] - 9
+
+      if x > -8 and x < w + 8 and y > 24 and y < h - 12 and not (y < 38 and (x < 72 or x > w - 80 or (x > w * 0.38 and x < w * 0.62))) then
+        local al = math.floor(a * 255 + 0.5) << 24
+        local col = (i < 11) and 0xffb0b0 or 0xb8d4ff
+        if t == "GK" then col = 0xffe08a end
+        if P.cap[i] then
+          screen:draw_box(x - 2, y - 2, x + tw + 2, y + 7, al | 0xffd23f, 0)
+          screen:draw_box(x - 1, y - 1, x + tw + 1, y + 6, math.floor(a * 0x90) << 24, 0)
+        end
+        scnp_pf_draw(x, y, 1, { { t, al | col } })
+      end
+    end
+  end
+end
+
 local function handle_host_message(p, t, g, payload)
   if t == "H" then
     local ver, _, want, hfl = payload:byte(1, 4)
@@ -4576,7 +4675,7 @@ local function on_frame_done()
   local held = machine.paused
   step()
   if held then return end
-  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); scnp_costume_board_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw(); scnp_endwait_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
+  if phase == "play" then scnp_pvegod_step(); qc_step(); SCNP_FORM.draw(); scnp_night_draw(); scnp_postag_draw(); scnp_comic_draw(); scnp_costume_hud_draw(); scnp_costume_names_draw(); scnp_costume_board_draw(); draw_hud(); scnp_pick_draw(); scnp_mirror_note_draw(); qc_draw(); scnp_specchat_draw(); scnp_catchup_draw(); scnp_endwait_draw() elseif SCNP_QUIET then scnp_night_draw() else draw_overlay() end
 end
 
 if cfg.mode == "probe" then
