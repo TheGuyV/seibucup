@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 21:52","room":17,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"17-261020215252-8","nicks":["Janet","콩메모","",""],"replay":"replays/20261020_215252_Janet_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:50","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_215040_이태원후렌드치킨_vs_aapp_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:50","room":16,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[5,0],"ft":2,"series":"16-261020215032-7","ranked":1,"tnames":{"NooB":["NooB FC","NOO"]},"nicks":["NooB","드래곤타이거","",""],"replay":"replays/20261020_215032_NooB_vs_드래곤타이거_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:48","room":15,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,5],"nicks":["서퍼킴","콩메모","",""],"replay":"replays/20261020_214859_서퍼킴_vs_콩메모_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 00:17","room":124,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[7,5],"ft":2,"series":"122-261019001348-27","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"미네로":["미네로 FC","FCX"]},"nicks":["MrKei","미네로","",""],"replay":"replays/20261019_001736_MrKei_vs_미네로_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:17","room":125,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261019_001713_arcade_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:16","room":123,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,7],"nicks":["이태원후렌드치킨","즐축","",""],"replay":"replays/20261019_001617_이태원후렌드치킨_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 00:13","room":122,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":2,"series":"122-261019001348-27","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"미네로":["미네로 FC","FCX"]},"nicks":["MrKei","미네로","",""],"replay":"replays/20261019_001348_MrKei_vs_미네로_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 00:13","room":111,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"nicks":["소소","소떡","",""],"replay":"replays/20261019_001338_소소_vs_소떡_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 00:13","room":122,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":2,"series":"122-261019001348-27","ranked":1,"tnames":{"MrKei":["MrKei","KEI"],"미네로":["미네로 FC","FCX"]},"nicks":["MrKei","미네로","",""],"replay":"replays/20261019_001348_MrKei_vs_미네로_1-2_p1.scr","edition":"cupsocs2"}
 ]
