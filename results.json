@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 21:40","room":12,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,3],"ft":2,"series":"12-261020214032-5","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261020_214032_드래곤타이거_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:37","room":10,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,3],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_213743_이태원후렌드치킨_vs_aapp_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:35","room":9,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[8,5],"ft":2,"series":"9-261020213049-4","nicks":["드래곤타이거","dfdf","",""],"replay":"replays/20261020_213514_드래곤타이거_vs_dfdf_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:33","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_213354_이태원후렌드치킨_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 00:03","room":118,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["아얏둘","이태원후렌드치킨","",""],"replay":"replays/20261019_000334_아얏둘_vs_이태원후렌드치킨_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:01","room":111,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,9],"nicks":["소소","소떡","",""],"replay":"replays/20261019_000133_소소_vs_소떡_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:01","room":115,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":3,"series":"115-261018235616-26","nicks":["미네로","MrKei","",""],"replay":"replays/20261019_000113_미네로_vs_MrKei_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:57","room":116,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"arcade":1,"nicks":["대한민국","브라질","",""],"replay":"replays/20261018_235734_arcade_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:57","room":111,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,7],"nicks":["소소","소떡","",""],"replay":"replays/20261018_235703_소소_vs_소떡_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 23:57","room":116,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"arcade":1,"nicks":["대한민국","브라질","",""],"replay":"replays/20261018_235734_arcade_0-1_p1.scr","edition":"cupsocs2"}
 ]
