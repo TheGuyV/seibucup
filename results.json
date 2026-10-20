@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 22:38","room":38,"type":"2v2","time":150,"players":4,"score":[1,2],"teams":[5,8],"ft":3,"series":"38-261020222709-13","nicks":["surferKIM","사직동락스타","판순이","드래곤타이거"],"replay":"replays/20261020_223843_surferKIM_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:38","room":36,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"pk":[6,5],"ft":3,"series":"36-261020222435-12","nicks":["축구오랜만","aapp","",""],"replay":"replays/20261020_223834_축구오랜만_vs_aapp_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:35","room":41,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[6,8],"ft":2,"series":"41-261020223554-15","ranked":1,"tnames":{"레온":["레온 FC","FCX"],"즐축":["아르헨티나","ARG"]},"nicks":["레온","즐축","",""],"replay":"replays/20261020_223554_레온_vs_즐축_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:34","room":37,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,5],"ft":2,"series":"37-261020223041-14","nicks":["뚱이","dfdf","",""],"replay":"replays/20261020_223448_뚱이_vs_dfdf_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 01:18","room":1,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[5,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_011830_이태원후렌드치킨_vs_qqppaa_2-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 01:14","room":1,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_011409_이태원후렌드치킨_vs_qqppaa_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 01:10","room":1,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[7,3],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_011038_이태원후렌드치킨_vs_qqppaa_1-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 01:09","room":2,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,5],"nicks":["불꽃슛마스터","기러기","",""],"replay":"replays/20261019_010955_불꽃슛마스터_vs_기러기_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 01:06","room":1,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_010609_이태원후렌드치킨_vs_qqppaa_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 01:09","room":2,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,5],"nicks":["불꽃슛마스터","기러기","",""],"replay":"replays/20261019_010955_불꽃슛마스터_vs_기러기_1-3_p1.scr","edition":"cupsocs2"}
 ]
