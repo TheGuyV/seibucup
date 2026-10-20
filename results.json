@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 17:10","room":88,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["버섯커1","날아","",""],"replay":"replays/20261020_171044_버섯커1_vs_날아_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:07","room":88,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,3],"nicks":["버섯커1","날아","",""],"replay":"replays/20261020_170709_버섯커1_vs_날아_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 16:31","room":82,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_163101_로또영_vs_aappa_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 16:24","room":82,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_162438_로또영_vs_aappa_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 22:49","room":95,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,9],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_224921_덕장배_vs_신발벗어_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:45","room":95,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_224559_덕장배_vs_신발벗어_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:44","room":89,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["소소","쌍송이","",""],"replay":"replays/20261018_224416_소소_vs_쌍송이_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:42","room":90,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":3,"series":"90-261018224231-22","nicks":["fnfn","dfdf","",""],"replay":"replays/20261018_224231_fnfn_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:40","room":89,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,5],"nicks":["소소","쌍송이","",""],"replay":"replays/20261018_224043_소소_vs_쌍송이_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 22:42","room":90,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":3,"series":"90-261018224231-22","nicks":["fnfn","dfdf","",""],"replay":"replays/20261018_224231_fnfn_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"}
 ]
