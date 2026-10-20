@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 17:35","room":91,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":3,"series":"91-261020172626-14","nicks":["로또영","샤부사커","",""],"replay":"replays/20261020_173529_로또영_vs_샤부사커_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:31","room":91,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"91-261020172626-14","nicks":["로또영","샤부사커","",""],"replay":"replays/20261020_173116_로또영_vs_샤부사커_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:29","room":95,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,5],"nicks":["버섯커1","떡을내뿜게","",""],"replay":"replays/20261020_172907_버섯커1_vs_떡을내뿜게_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:26","room":91,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":3,"series":"91-261020172626-14","nicks":["로또영","샤부사커","",""],"replay":"replays/20261020_172626_로또영_vs_샤부사커_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 23:01","room":89,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["소소","guyloide","",""],"replay":"replays/20261018_230107_소소_vs_guyloide_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:00","room":95,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_230013_덕장배_vs_신발벗어_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:58","room":98,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,7],"nicks":["미네로","fnfn","",""],"replay":"replays/20261018_225813_미네로_vs_fnfn_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:56","room":95,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_225627_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:54","room":89,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,5],"nicks":["소소","에어","",""],"replay":"replays/20261018_225454_소소_vs_에어_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 22:56","room":95,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_225627_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"}
 ]
