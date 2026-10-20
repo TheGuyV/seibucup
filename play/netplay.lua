@@ -2622,7 +2622,7 @@ local function draw_hud()
     local u = h / 240
     local ty = (y0 + y1) / 2 - 2.5 * u
 
-    if SCNP_PVE.on and QC.top and ty + 6 * u > QC.top then ty = QC.top - 7 * u end
+    if QC.free() and QC.top and ty + 6 * u > QC.top then ty = QC.top - 7 * u end
     local function line(runs, k)
       local t = ""; for _, r in ipairs(runs) do t = t .. r[1] end
       if k and k < 1 then
@@ -2664,7 +2664,7 @@ local function draw_hud()
 
   if not is_replay then
     local dy = (screen.height or 240) - 9
-    if SCNP_PVE.on and QC.top and dy + 8 > QC.top then dy = QC.top - 9 end
+    if QC.free() and QC.top and dy + 8 > QC.top then dy = QC.top - 9 end
     screen:draw_text(2, dy, "delay " .. tostring(cfg.delay), 0x80ffffff, 0)
   end
 end
@@ -3235,6 +3235,9 @@ QC = {
 }
 QC.GOAL.cupsocs = QC.GOAL.cupsocs2
 
+QC.LIVE = 300
+function QC.free() return SCNP_PVE.on or is_teams or nplayers > 2 end
+
 for s = 5, 12 do QC.last[s] = -99999 end
 QC.spec = {}
 
@@ -3247,22 +3250,22 @@ function QC.side(seat) if SCNP_PVE.on then return 1 end local gp = GAME_PLAYER[s
 function qc_show(seat, id)
   if seat and seat >= 5 and seat <= 12 and id and QC.T[id] then
     log("chat: spectator %d %s", seat - 4, QC.T[id].en)
-    if QC.open then QC.spec[seat] = { id = id, at = frame } end
+    if QC.open or QC.free() then QC.spec[seat] = { id = id, at = frame, free = not QC.open } end
     return
   end
   if not seat or not id or seat < 1 or seat > 4 or not QC.T[id] then return end
   log("chat: %dP %s", seat, QC.T[id].en)
-  if not QC.open then return end
+  if not QC.open and not QC.free() then return end
 
   local gp = GAME_PLAYER[seat] or seat
-  QC.show[QC.side(seat)][gp] = { id = id, at = frame }
+  QC.show[QC.side(seat)][gp] = { id = id, at = frame, free = not QC.open }
 end
 
 function qc_from_peer(p, payload)
   if SCNP_NOCHAT then return end
   local seat, id = payload:byte(1, 2)
-  if not seat or seat ~= p.slot or seat < 1 or seat > 12 or not QC.T[id] or not (QC.open or SCNP_PVE.on) then return end
-  if frame - QC.last[seat] < (SCNP_PVE.on and QC.PVEGAP or QC.GAP) then return end
+  if not seat or seat ~= p.slot or seat < 1 or seat > 12 or not QC.T[id] or not (QC.open or QC.free()) then return end
+  if frame - QC.last[seat] < (QC.free() and QC.PVEGAP or QC.GAP) then return end
   QC.last[seat] = frame
   qc_show(seat, id)
   broadcast("M" .. string.char(gen, seat, id))
@@ -3272,7 +3275,7 @@ function qc_send(id)
   QC.sent = true
   QC.mine = frame
   if is_host then
-    if frame - QC.last[local_slot] < (SCNP_PVE.on and QC.PVEGAP or QC.GAP) then return end
+    if frame - QC.last[local_slot] < (QC.free() and QC.PVEGAP or QC.GAP) then return end
     QC.last[local_slot] = frame
     qc_show(local_slot, id)
     broadcast("M" .. string.char(gen, local_slot, id))
@@ -3316,7 +3319,7 @@ function qc_step()
   for i = 1, 8 do
     local down = QC.keys[i] and input:code_pressed(QC.keys[i])
 
-    local free = SCNP_PVE.on and frame - (QC.mine or -99999) >= QC.PVEGAP
+    local free = QC.free() and frame - (QC.mine or -99999) >= QC.PVEGAP
     if down and not QC.prev[i] and ((open and not QC.sent) or free) and QC.mayi() then
       qc_send(i)
     end
@@ -3326,7 +3329,8 @@ end
 
 function QC.alpha(m)
   local a = math.min(1, (frame - m.at + 1) / QC.IN)
-  if QC.closeAt then a = math.min(a, 1 - (frame - QC.closeAt) / QC.OUT) end
+  if QC.closeAt and m.at <= QC.closeAt then a = math.min(a, 1 - (frame - QC.closeAt) / QC.OUT) end
+  if m.free and not QC.open and frame - m.at > QC.LIVE then a = math.min(a, 1 - (frame - m.at - QC.LIVE) / QC.OUT) end
   return a
 end
 function QC.argb(col, a) return (math.floor(a * ((col >> 24) & 0xff) + 0.5) << 24) | (col & 0xffffff) end
@@ -3437,7 +3441,7 @@ function scnp_specchat_draw()
   while QC.width(t) > w * 0.9 and utf8.len(t) and utf8.len(t) > 4 do t = t:sub(1, utf8.offset(t, -1) - 1) end
   local tw, lh = QC.width(t), HUD_TH + 2
 
-  local y = QC.top and ((SCNP_PVE.on and (QC.top - 7 * h / 240) or math.min(QC.top, h * 664 / 720)) - lh - 2) or (h - lh - 1)
+  local y = QC.top and ((QC.free() and (QC.top - 7 * h / 240) or math.min(QC.top, h * 664 / 720)) - lh - 2) or (h - lh - 1)
   box((w - tw) / 2 - 6, y - 1, (w + tw) / 2 + 6, y + lh, math.floor(a * 0.63) << 24)
   screen:draw_text((w - tw) / 2, y, t, (a << 24) | 0x9fe8ff, 0)
 end
@@ -3446,7 +3450,7 @@ function qc_draw()
   local w, h = screen.width or 320, screen.height or 240
 
   local win = QC.open and not QC.sent
-  local pve = SCNP_PVE.on and phase == "play"
+  local pve = QC.free() and phase == "play"
   QC.top = nil
   if (win or pve) and not is_replay and QC.mayi() then
     local dim = (not win) and frame - (QC.mine or -99999) < QC.PVEGAP
