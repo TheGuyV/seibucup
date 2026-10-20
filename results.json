@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 23:03","room":58,"type":"1v1","time":180,"players":2,"score":[4,2],"teams":[5,9],"ft":2,"series":"58-261020230331-21","nicks":["날쌘돌이서정원","dfdf","",""],"replay":"replays/20261020_230331_날쌘돌이서정원_vs_dfdf_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:02","room":60,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261020_230252_arcade_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:01","room":57,"type":"2v2","time":150,"players":4,"score":[0,1],"teams":[5,3],"ft":3,"series":"57-261020230146-20","nicks":["레온","허접","aapp","404page"],"replay":"replays/20261020_230146_레온_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:01","room":52,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,4],"ft":3,"series":"52-261020225714-19","nicks":["미네로","뚱이","",""],"replay":"replays/20261020_230142_미네로_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 02:25","room":8,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[4,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_022540_이태원후렌드치킨_vs_qqppaa_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 02:21","room":8,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_022148_이태원후렌드치킨_vs_qqppaa_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 02:18","room":8,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[3,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_021811_이태원후렌드치킨_vs_qqppaa_1-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 02:14","room":8,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_021421_이태원후렌드치킨_vs_qqppaa_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 02:10","room":8,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_021050_이태원후렌드치킨_vs_qqppaa_0-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 02:14","room":8,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_021421_이태원후렌드치킨_vs_qqppaa_1-1_p1.scr","edition":"cupsocs2"}
 ]
