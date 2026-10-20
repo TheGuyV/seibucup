@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 12:03","room":41,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"nicks":["열쇠","듀티프리","",""],"replay":"replays/20261020_120325_열쇠_vs_듀티프리_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 12:00","room":41,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"nicks":["열쇠","듀티프리","",""],"replay":"replays/20261020_120056_열쇠_vs_듀티프리_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 02:09","room":27,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,5],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_020953_aapp_vs_미네로_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 02:04","room":27,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[7,9],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_020448_aapp_vs_미네로_5-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 21:32","room":56,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,8],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_213250_surferKIM_vs_rhythmmania_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:29","room":65,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,7],"nicks":["소소","레온","",""],"replay":"replays/20261018_212917_소소_vs_레온_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:29","room":56,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_212904_surferKIM_vs_rhythmmania_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 21:25","room":61,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"61-261018211603-16","nicks":["미네로","404page","",""],"replay":"replays/20261018_212545_미네로_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 21:25","room":56,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["surferKIM","rhythmmania","",""],"replay":"replays/20261018_212534_surferKIM_vs_rhythmmania_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 21:25","room":61,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"61-261018211603-16","nicks":["미네로","404page","",""],"replay":"replays/20261018_212545_미네로_vs_404page_2-1_p1.scr","edition":"cupsocs2"}
 ]
