@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 16:24","room":82,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_162438_로또영_vs_aappa_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 16:19","room":82,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_161903_로또영_vs_aappa_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 16:12","room":80,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":3,"series":"80-261020161217-12","nicks":["로또영","초보선수","",""],"replay":"replays/20261020_161217_로또영_vs_초보선수_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:56","room":70,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"70-261020154814-11","nicks":["로또영","rdsa","",""],"replay":"replays/20261020_155644_로또영_vs_rdsa_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 22:42","room":90,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":3,"series":"90-261018224231-22","nicks":["fnfn","dfdf","",""],"replay":"replays/20261018_224231_fnfn_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:40","room":89,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[7,5],"nicks":["소소","쌍송이","",""],"replay":"replays/20261018_224043_소소_vs_쌍송이_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 22:38","room":84,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[0,9],"pk":[5,4],"ft":2,"series":"84-261018222808-20","nicks":["축구오랜만","dfdf","",""],"replay":"replays/20261018_223809_축구오랜만_vs_dfdf_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:33","room":84,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"pk":[3,4],"ft":2,"series":"84-261018222808-20","nicks":["축구오랜만","dfdf","",""],"replay":"replays/20261018_223308_축구오랜만_vs_dfdf_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 22:28","room":84,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"pk":[4,3],"ft":2,"series":"84-261018222808-20","nicks":["축구오랜만","dfdf","",""],"replay":"replays/20261018_222808_축구오랜만_vs_dfdf_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 22:33","room":84,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[10,9],"pk":[3,4],"ft":2,"series":"84-261018222808-20","nicks":["축구오랜만","dfdf","",""],"replay":"replays/20261018_223308_축구오랜만_vs_dfdf_1-1_p1.scr","edition":"cupsocs2"}
 ]
