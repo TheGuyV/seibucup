@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 18:41","room":117,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["홍빵지","고년","",""],"replay":"replays/20261020_184121_홍빵지_vs_고년_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 18:39","room":114,"type":"1v1","time":180,"players":2,"score":[3,0],"teams":[5,5],"ft":2,"series":"114-261020183913-18","nicks":["날쌘돌이서정원","HIHI_LEEHI","",""],"replay":"replays/20261020_183913_날쌘돌이서정원_vs_HIHI_LEEHI_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 18:33","room":114,"type":"1v1","time":180,"players":2,"score":[2,3],"teams":[5,5],"ft":2,"series":"114-261020183318-17","nicks":["날쌘돌이서정원","HIHI_LEEHI","",""],"replay":"replays/20261020_183318_날쌘돌이서정원_vs_HIHI_LEEHI_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 18:27","room":113,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"nicks":["고년","홍빵지","",""],"replay":"replays/20261020_182757_고년_vs_홍빵지_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 23:17","room":100,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[5,9],"nicks":["미네로","dfdf","",""],"replay":"replays/20261018_231718_미네로_vs_dfdf_4-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:16","room":102,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,8],"nicks":["아얏둘","즐축","",""],"replay":"replays/20261018_231636_아얏둘_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:15","room":99,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"99-261018231032-24","nicks":["로또영","fnfn","",""],"replay":"replays/20261018_231522_로또영_vs_fnfn_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:14","room":95,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,7],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_231436_덕장배_vs_신발벗어_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:13","room":100,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[5,9],"nicks":["미네로","dfdf","",""],"replay":"replays/20261018_231319_미네로_vs_dfdf_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 23:14","room":95,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,7],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_231436_덕장배_vs_신발벗어_2-3_p1.scr","edition":"cupsocs2"}
 ]
