@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 23:21","room":66,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[10,7],"ft":2,"series":"66-261020231556-23","nicks":["날쌘돌이서정원","즐축","",""],"replay":"replays/20261020_232114_날쌘돌이서정원_vs_즐축_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:20","room":67,"type":"1v1","time":150,"players":2,"score":[0,5],"teams":[8,10],"nicks":["우이우이운이","미네로","",""],"replay":"replays/20261020_232032_우이우이운이_vs_미네로_0-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:16","room":68,"type":"1v1","time":180,"players":2,"score":[4,1],"teams":[5,0],"nicks":["징기즈칸","이태원후렌드치킨","",""],"replay":"replays/20261020_231628_징기즈칸_vs_이태원후렌드치킨_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:15","room":66,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,8],"ft":2,"series":"66-261020231556-23","nicks":["날쌘돌이서정원","즐축","",""],"replay":"replays/20261020_231556_날쌘돌이서정원_vs_즐축_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 14:49","room":22,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,4],"ft":3,"series":"22-261019144049-3","nicks":["로또영","깜찍만두","",""],"replay":"replays/20261019_144937_로또영_vs_깜찍만두_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 14:48","room":25,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[8,7],"nicks":["불꽃슛마스터","드래곤타이거","",""],"replay":"replays/20261019_144848_불꽃슛마스터_vs_드래곤타이거_1-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 14:48","room":23,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[5,0],"ft":2,"series":"23-261019144832-4","nicks":["적토마고정운","오락실체어샷","",""],"replay":"replays/20261019_144832_적토마고정운_vs_오락실체어샷_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 14:44","room":22,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"22-261019144049-3","nicks":["로또영","깜찍만두","",""],"replay":"replays/20261019_144458_로또영_vs_깜찍만두_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 14:40","room":22,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,0],"ft":3,"series":"22-261019144049-3","nicks":["로또영","깜찍만두","",""],"replay":"replays/20261019_144049_로또영_vs_깜찍만두_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 14:44","room":22,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"22-261019144049-3","nicks":["로또영","깜찍만두","",""],"replay":"replays/20261019_144458_로또영_vs_깜찍만두_3-2_p1.scr","edition":"cupsocs2"}
 ]
