@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 17:48","room":100,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,0],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174844_버섯커1_vs_샤부사커_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:44","room":100,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174414_버섯커1_vs_샤부사커_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:40","room":100,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[3,7],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174010_버섯커1_vs_샤부사커_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:35","room":91,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":3,"series":"91-261020172626-14","nicks":["로또영","샤부사커","",""],"replay":"replays/20261020_173529_로또영_vs_샤부사커_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 23:06","room":98,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,3],"nicks":["미네로","fnfn","",""],"replay":"replays/20261018_230651_미네로_vs_fnfn_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:03","room":95,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,9],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_230340_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 23:02","room":98,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[5,7],"nicks":["미네로","fnfn","",""],"replay":"replays/20261018_230248_미네로_vs_fnfn_4-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:01","room":89,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["소소","guyloide","",""],"replay":"replays/20261018_230107_소소_vs_guyloide_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 23:00","room":95,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,4],"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261018_230013_덕장배_vs_신발벗어_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 23:01","room":89,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["소소","guyloide","",""],"replay":"replays/20261018_230107_소소_vs_guyloide_2-1_p1.scr","edition":"cupsocs2"}
 ]
