@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 22:34","room":37,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,5],"ft":2,"series":"37-261020223041-14","nicks":["뚱이","dfdf","",""],"replay":"replays/20261020_223448_뚱이_vs_dfdf_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:34","room":38,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[5,9],"ft":3,"series":"38-261020222709-13","nicks":["surferKIM","사직동락스타","판순이","드래곤타이거"],"replay":"replays/20261020_223445_surferKIM_vs_판순이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:34","room":40,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,5],"nicks":["징기즈칸","미네로","",""],"replay":"replays/20261020_223444_징기즈칸_vs_미네로_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:32","room":36,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,3],"ft":3,"series":"36-261020222435-12","nicks":["축구오랜만","aapp","",""],"replay":"replays/20261020_223224_축구오랜만_vs_aapp_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 01:09","room":2,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[8,5],"nicks":["불꽃슛마스터","기러기","",""],"replay":"replays/20261019_010955_불꽃슛마스터_vs_기러기_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 01:06","room":1,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[3,7],"nicks":["이태원후렌드치킨","qqppaa","",""],"replay":"replays/20261019_010609_이태원후렌드치킨_vs_qqppaa_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:59","room":137,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,7],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_005910_이태원후렌드치킨_vs_소떡_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 00:55","room":137,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,9],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_005540_이태원후렌드치킨_vs_소떡_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 00:55","room":141,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,5],"ft":2,"series":"139-261019004523-31","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"],"미네로":["미네로 FC","FCX"]},"nicks":["즐축","미네로","",""],"replay":"replays/20261019_005504_즐축_vs_미네로_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 00:55","room":137,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,9],"nicks":["이태원후렌드치킨","소떡","",""],"replay":"replays/20261019_005540_이태원후렌드치킨_vs_소떡_0-1_p1.scr","edition":"cupsocs2"}
 ]
