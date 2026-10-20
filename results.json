@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 14:09","room":56,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,10],"nicks":["호세뽕","ns11","",""],"replay":"replays/20261020_140959_호세뽕_vs_ns11_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 14:05","room":56,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["호세뽕","ns11","",""],"replay":"replays/20261020_140541_호세뽕_vs_ns11_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 14:01","room":56,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,0],"nicks":["호세뽕","ns11","",""],"replay":"replays/20261020_140159_호세뽕_vs_ns11_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 12:55","room":50,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,4],"nicks":["버섯커1","duli0212","",""],"replay":"replays/20261020_125516_버섯커1_vs_duli0212_1-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-18 21:52","room":65,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["소소","surferKIM","",""],"replay":"replays/20261018_215255_소소_vs_surferKIM_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:50","room":72,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,8],"ft":3,"series":"72-261018215032-17","nicks":["로또영","rhythmmania","",""],"replay":"replays/20261018_215032_로또영_vs_rhythmmania_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-18 21:48","room":65,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[7,5],"nicks":["소소","surferKIM","",""],"replay":"replays/20261018_214847_소소_vs_surferKIM_3-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 21:44","room":68,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,8],"nicks":["미네로","rhythmmania","",""],"replay":"replays/20261018_214430_미네로_vs_rhythmmania_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-18 21:44","room":65,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,5],"nicks":["소소","surferKIM","",""],"replay":"replays/20261018_214405_소소_vs_surferKIM_0-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-18 21:44","room":68,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,8],"nicks":["미네로","rhythmmania","",""],"replay":"replays/20261018_214430_미네로_vs_rhythmmania_3-2_p1.scr","edition":"cupsocs2"}
 ]
