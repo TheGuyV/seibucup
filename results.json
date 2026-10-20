@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-20 21:48","room":10,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_214857_이태원후렌드치킨_vs_aapp_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:46","room":14,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"14-261020214237-6","nicks":["Janet","kilimanjaro","",""],"replay":"replays/20261020_214617_Janet_vs_kilimanjaro_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:45","room":10,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,3],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_214509_이태원후렌드치킨_vs_aapp_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:44","room":12,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,3],"ft":2,"series":"12-261020214032-5","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261020_214459_드래곤타이거_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 00:13","room":111,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,7],"nicks":["소소","소떡","",""],"replay":"replays/20261019_001338_소소_vs_소떡_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:11","room":118,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[7,5],"nicks":["아얏둘","이태원후렌드치킨","",""],"replay":"replays/20261019_001127_아얏둘_vs_이태원후렌드치킨_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 00:09","room":111,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,3],"nicks":["소소","소떡","",""],"replay":"replays/20261019_000950_소소_vs_소떡_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 00:08","room":115,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,4],"ft":3,"series":"115-261018235616-26","nicks":["미네로","MrKei","",""],"replay":"replays/20261019_000848_미네로_vs_MrKei_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 00:07","room":118,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"nicks":["아얏둘","이태원후렌드치킨","",""],"replay":"replays/20261019_000721_아얏둘_vs_이태원후렌드치킨_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 00:08","room":115,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,4],"ft":3,"series":"115-261018235616-26","nicks":["미네로","MrKei","",""],"replay":"replays/20261019_000848_미네로_vs_MrKei_3-0_p1.scr","edition":"cupsocs2"}
 ]
