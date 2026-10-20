@@ -3224,6 +3224,7 @@ local function on_post_load()
   end
   if spec_base then
 
+    if qc_rebase then qc_rebase(frame - spec_base) end
     frame = spec_base
     if SCNP_SPEC_HIST then for f, a in pairs(SCNP_SPEC_HIST) do if f > spec_base and not agg[f] then agg[f] = a end end end
     for f in pairs(agg) do if f <= spec_base then agg[f] = nil end end
@@ -3238,6 +3239,7 @@ local function on_post_load()
       for s = 1, 4 do apply_input(s, (SCNP_PVE.on and s >= 2 and a1[s] == 0xff) and 0 or a1[s]) end
     else log("resumed without the input of frame %d", frame + 1) end
   else
+    if qc_rebase then qc_rebase(frame) end
     frame = 0
     prefill()
   end
@@ -3286,6 +3288,15 @@ function QC.free() return SCNP_PVE.on or is_teams or nplayers > 2 end
 
 for s = 5, 12 do QC.last[s] = -99999 end
 QC.spec = {}
+
+function qc_rebase(d)
+  for s, v in pairs(QC.last) do QC.last[s] = v - d end
+  if QC.mine then QC.mine = QC.mine - d end
+  QC.goalAt = QC.goalAt - d; QC.winTill = QC.winTill - d
+  if QC.closeAt then QC.closeAt = QC.closeAt - d end
+  for _, side in ipairs(QC.show) do for _, m in pairs(side) do m.at = m.at - d end end
+  for _, m in pairs(QC.spec) do if type(m) == "table" and m.at then m.at = m.at - d end end
+end
 
 function QC.mayi() return (not is_spec and local_slot >= 1 and local_slot <= 4) or (is_spec and not SCNP_SHADOW and local_slot >= 5 and local_slot <= 12) end
 for i = 1, 8 do QC.keys[i] = input:code_from_token("KEYCODE_F" .. i) end

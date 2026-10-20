@@ -1146,8 +1146,12 @@
   function audioReady() {
     try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === 'suspended') actx.resume(); } catch (e) {}
   }
+
+  var chimeAt = {}, CHIME_GAP = { room: 30000, chat: 15000, join: 5000 };
   function chime(kind) {
     if (nset.sound === false) return;
+    if ((kind === 'room' || kind === 'chat') && running) return;
+    var now = Date.now(); if (chimeAt[kind] && now - chimeAt[kind] < (CHIME_GAP[kind] || 1500)) return; chimeAt[kind] = now;
     audioReady(); if (!actx) return;
     try {
       var t = actx.currentTime + 0.01;
