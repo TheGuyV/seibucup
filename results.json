@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 20:16","room":106,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"ft":3,"series":"106-261021200246-12","nicks":["이재경짱","슛돌이","",""],"replay":"replays/20261021_201642_이재경짱_vs_슛돌이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:16","room":114,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_201634_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:13","room":114,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_201300_덕장배_vs_신발벗어_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:11","room":106,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[9,3],"ft":3,"series":"106-261021200246-12","nicks":["이재경짱","슛돌이","",""],"replay":"replays/20261021_201119_이재경짱_vs_슛돌이_4-5_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 22:21","room":52,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,7],"ft":2,"series":"52-261019221741-10","nicks":["드래곤타이거","콩메모","",""],"replay":"replays/20261019_222117_드래곤타이거_vs_콩메모_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:19","room":53,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,9],"ft":3,"series":"53-261019221946-11","nicks":["샤부사커","이태원후렌드치킨","",""],"replay":"replays/20261019_221946_샤부사커_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:17","room":52,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,5],"ft":2,"series":"52-261019221741-10","nicks":["드래곤타이거","콩메모","",""],"replay":"replays/20261019_221741_드래곤타이거_vs_콩메모_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:17","room":50,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,9],"nicks":["불꽃슛마스터","test","",""],"replay":"replays/20261019_221703_불꽃슛마스터_vs_test_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:14","room":46,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,3],"ft":3,"series":"46-261019220643-8","nicks":["샤부사커","이태원후렌드치킨","",""],"replay":"replays/20261019_221450_샤부사커_vs_이태원후렌드치킨_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 22:17","room":50,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[5,9],"nicks":["불꽃슛마스터","test","",""],"replay":"replays/20261019_221703_불꽃슛마스터_vs_test_3-3_p1.scr","edition":"cupsocs2"}
 ]
