@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 01:17","room":90,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_011703_dfdf_vs_aapp_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:05","room":89,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261022_010545_arcade_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 00:21","room":88,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,5],"arcade":1,"nicks":["이탈리아","대한민국","",""],"replay":"replays/20261022_002132_arcade_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 00:09","room":87,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,9],"nicks":["미네로","dfdf","",""],"replay":"replays/20261022_000944_미네로_vs_dfdf_4-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 12:03","room":41,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"nicks":["열쇠","듀티프리","",""],"replay":"replays/20261020_120325_열쇠_vs_듀티프리_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 12:00","room":41,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"nicks":["열쇠","듀티프리","",""],"replay":"replays/20261020_120056_열쇠_vs_듀티프리_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 02:09","room":27,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,5],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_020953_aapp_vs_미네로_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 02:04","room":27,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[7,9],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_020448_aapp_vs_미네로_5-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 01:58","room":27,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_015844_aapp_vs_미네로_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 02:04","room":27,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[7,9],"ft":3,"series":"27-261020015114-7","nicks":["aapp","미네로","",""],"replay":"replays/20261020_020448_aapp_vs_미네로_5-4_p1.scr","edition":"cupsocs2"}
 ]
