@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 12:14","room":42,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["cupcup","봄밤꿈꾼곰1","",""],"replay":"replays/20261021_121415_cupcup_vs_봄밤꿈꾼곰1_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 10:53","room":24,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,7],"arcade":1,"nicks":["미국","브라질","",""],"replay":"replays/20261021_105353_arcade_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:57","room":91,"type":"1v1","time":150,"players":2,"score":[0,6],"teams":[9,10],"nicks":["ㅏㅐ","드래곤타이거","",""],"replay":"replays/20261021_005715_ㅏㅐ_vs_드래곤타이거_0-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 00:30","room":88,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,5],"ft":2,"series":"88-261021003039-29","ranked":1,"tnames":{"날쌘돌이서정원":["KOREA FC","KFC"]},"nicks":["날쌘돌이서정원","드래곤타이거","",""],"replay":"replays/20261021_003039_날쌘돌이서정원_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 18:26","room":44,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,7],"ft":2,"series":"44-261019182606-5","nicks":["김정은패스","하이요오","",""],"replay":"replays/20261019_182606_김정은패스_vs_하이요오_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:21","room":39,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[5,9],"ft":2,"series":"39-261019181711-4","nicks":["적토마고정운","하이요오","",""],"replay":"replays/20261019_182105_적토마고정운_vs_하이요오_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 18:17","room":39,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,5],"ft":2,"series":"39-261019181711-4","nicks":["적토마고정운","하이요오","",""],"replay":"replays/20261019_181711_적토마고정운_vs_하이요오_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 18:13","room":38,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"nicks":["mizunoasahi","김정은패스","",""],"replay":"replays/20261019_181316_mizunoasahi_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 17:56","room":32,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["cupcup","드래곤타이거","",""],"replay":"replays/20261019_175640_cupcup_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 18:13","room":38,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"nicks":["mizunoasahi","김정은패스","",""],"replay":"replays/20261019_181316_mizunoasahi_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"}
 ]
