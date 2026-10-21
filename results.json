@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 22:53","room":70,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"ft":2,"series":"70-261021224944-10","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261021_225352_테일러장군_vs_플로레알_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:49","room":70,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,5],"ft":2,"series":"70-261021224944-10","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261021_224944_테일러장군_vs_플로레알_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:48","room":71,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,6],"ft":2,"series":"68-261021224435-9","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["판순이","상봉거지오락실","",""],"replay":"replays/20261021_224822_판순이_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:44","room":68,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,6],"ft":2,"series":"68-261021224435-9","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["판순이","상봉거지오락실","",""],"replay":"replays/20261021_224435_판순이_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 00:38","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":3,"series":"10-261020002939-1","nicks":["aapp","기러기","",""],"replay":"replays/20261020_003808_aapp_vs_기러기_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 00:33","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"ft":3,"series":"10-261020002939-1","nicks":["aapp","기러기","",""],"replay":"replays/20261020_003348_aapp_vs_기러기_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 00:29","room":10,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":3,"series":"10-261020002939-1","nicks":["aapp","기러기","",""],"replay":"replays/20261020_002939_aapp_vs_기러기_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 00:13","room":7,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["닥터","기러기","",""],"replay":"replays/20261020_001312_닥터_vs_기러기_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 00:08","room":2,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,9],"nicks":["기러기","즐축","",""],"replay":"replays/20261020_000850_기러기_vs_즐축_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 00:13","room":7,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["닥터","기러기","",""],"replay":"replays/20261020_001312_닥터_vs_기러기_2-2_p1.scr","edition":"cupsocs2"}
 ]
