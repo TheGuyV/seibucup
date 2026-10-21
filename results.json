@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 02:31","room":90,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_023112_dfdf_vs_aapp_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 02:27","room":90,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_022723_dfdf_vs_aapp_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 02:23","room":90,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_022348_dfdf_vs_aapp_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 02:19","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_021946_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 15:16","room":64,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,8],"ft":2,"series":"64-261020150646-9","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_151617_적토마고정운_vs_상봉거지오락실_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:06","room":64,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,5],"ft":2,"series":"64-261020150646-9","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_150646_적토마고정운_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:00","room":59,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,7],"ft":2,"series":"59-261020145053-8","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_150039_적토마고정운_vs_상봉거지오락실_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 14:55","room":59,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,3],"ft":2,"series":"59-261020145053-8","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_145532_적토마고정운_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 14:50","room":59,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[5,10],"ft":2,"series":"59-261020145053-8","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_145053_적토마고정운_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 14:55","room":59,"type":"1v1","time":180,"players":2,"score":[1,2],"teams":[5,3],"ft":2,"series":"59-261020145053-8","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_145532_적토마고정운_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"}
 ]
