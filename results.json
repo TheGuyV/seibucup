@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 01:49","room":90,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_014959_dfdf_vs_aapp_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:46","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_014625_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:42","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_014258_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:39","room":90,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_013917_dfdf_vs_aapp_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 14:09","room":56,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,10],"nicks":["호세뽕","ns11","",""],"replay":"replays/20261020_140959_호세뽕_vs_ns11_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 14:05","room":56,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"nicks":["호세뽕","ns11","",""],"replay":"replays/20261020_140541_호세뽕_vs_ns11_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 14:01","room":56,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,0],"nicks":["호세뽕","ns11","",""],"replay":"replays/20261020_140159_호세뽕_vs_ns11_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 12:55","room":50,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,4],"nicks":["버섯커1","duli0212","",""],"replay":"replays/20261020_125516_버섯커1_vs_duli0212_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 12:49","room":45,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[3,5],"nicks":["버섯커1","상봉거지오락실","",""],"replay":"replays/20261020_124919_버섯커1_vs_상봉거지오락실_0-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 12:55","room":50,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,4],"nicks":["버섯커1","duli0212","",""],"replay":"replays/20261020_125516_버섯커1_vs_duli0212_1-1_p1.scr","edition":"cupsocs2"}
 ]
