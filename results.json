@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 16:44","room":42,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,3],"ft":2,"series":"42-261021163951-8","nicks":["라마스10","상봉거지오락실","",""],"replay":"replays/20261021_164418_라마스10_vs_상봉거지오락실_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 16:42","room":29,"type":"1v1","time":210,"players":2,"score":[6,6],"teams":[7,9],"nicks":["골인","호세뽕","",""],"replay":"replays/20261021_164227_골인_vs_호세뽕_6-6_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 16:41","room":44,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[4,5],"nicks":["rhythmmania0203","징기즈칸","",""],"replay":"replays/20261021_164122_rhythmmania0203_vs_징기즈칸_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 16:39","room":42,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"42-261021163951-8","nicks":["라마스10","상봉거지오락실","",""],"replay":"replays/20261021_163951_라마스10_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 21:34","room":34,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,9],"nicks":["소소","도도리","",""],"replay":"replays/20261019_213421_소소_vs_도도리_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 21:32","room":35,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":2,"series":"33-261019212834-6","ranked":1,"tnames":{"상봉거지오락실":["상봉거지 FC","KSJ"],"판순이":["판순이 FC","YSY"]},"nicks":["상봉거지오락실","판순이","",""],"replay":"replays/20261019_213257_상봉거지오락실_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 21:28","room":33,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"ft":2,"series":"33-261019212834-6","ranked":1,"tnames":{"상봉거지오락실":["상봉거지 FC","KSJ"],"판순이":["판순이 FC","YSY"]},"nicks":["상봉거지오락실","판순이","",""],"replay":"replays/20261019_212834_상봉거지오락실_vs_판순이_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 20:58","room":25,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261019_205857_arcade_0-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 20:54","room":18,"type":"2v2","time":150,"players":4,"score":[1,2],"teams":[7,10],"ft":2,"series":"18-261019205435-5","nicks":["깜찍만두","즐축","김창식씨","상봉거지오락실"],"replay":"replays/20261019_205435_깜찍만두_vs_김창식씨_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 20:58","room":25,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261019_205857_arcade_0-0_p1.scr","edition":"cupsocs2"}
 ]
