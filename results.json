@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 17:54","room":73,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,3],"arcade":1,"nicks":["서독","잉글랜드","",""],"replay":"replays/20261021_175426_arcade_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 16:59","room":48,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,4],"ft":2,"series":"48-261021165610-9","nicks":["라마스10","rhythmmania0203","",""],"replay":"replays/20261021_165949_라마스10_vs_rhythmmania0203_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 16:56","room":48,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,8],"ft":2,"series":"48-261021165610-9","nicks":["라마스10","rhythmmania0203","",""],"replay":"replays/20261021_165610_라마스10_vs_rhythmmania0203_5-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 16:53","room":29,"type":"1v1","time":210,"players":2,"score":[4,4],"teams":[7,9],"nicks":["골인","호세뽕","",""],"replay":"replays/20261021_165357_골인_vs_호세뽕_4-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 21:48","room":39,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[7,4],"nicks":["소소","판순이","",""],"replay":"replays/20261019_214803_소소_vs_판순이_1-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 21:47","room":40,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,9],"nicks":["이태원후렌드치킨","도도리","",""],"replay":"replays/20261019_214704_이태원후렌드치킨_vs_도도리_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 21:43","room":39,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,3],"nicks":["소소","판순이","",""],"replay":"replays/20261019_214351_소소_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 21:43","room":40,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,9],"nicks":["이태원후렌드치킨","도도리","",""],"replay":"replays/20261019_214307_이태원후렌드치킨_vs_도도리_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 21:39","room":39,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[3,4],"nicks":["소소","판순이","",""],"replay":"replays/20261019_213939_소소_vs_판순이_2-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 21:43","room":40,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,9],"nicks":["이태원후렌드치킨","도도리","",""],"replay":"replays/20261019_214307_이태원후렌드치킨_vs_도도리_2-3_p1.scr","edition":"cupsocs2"}
 ]
