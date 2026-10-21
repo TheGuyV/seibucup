@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 01:35","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_013527_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:32","room":90,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_013201_dfdf_vs_aapp_0-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:28","room":90,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_012845_dfdf_vs_aapp_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:24","room":90,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_012447_dfdf_vs_aapp_1-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 12:49","room":45,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[3,5],"nicks":["버섯커1","상봉거지오락실","",""],"replay":"replays/20261020_124919_버섯커1_vs_상봉거지오락실_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 12:45","room":45,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,7],"nicks":["버섯커1","상봉거지오락실","",""],"replay":"replays/20261020_124534_버섯커1_vs_상봉거지오락실_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 12:27","room":42,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"nicks":["불꽃슛마스터","HIHI_LEEHI","",""],"replay":"replays/20261020_122747_불꽃슛마스터_vs_HIHI_LEEHI_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 12:24","room":42,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["불꽃슛마스터","HIHI_LEEHI","",""],"replay":"replays/20261020_122408_불꽃슛마스터_vs_HIHI_LEEHI_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 12:16","room":44,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"nicks":["버섯커1","쌍송이","",""],"replay":"replays/20261020_121620_버섯커1_vs_쌍송이_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 12:24","room":42,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["불꽃슛마스터","HIHI_LEEHI","",""],"replay":"replays/20261020_122408_불꽃슛마스터_vs_HIHI_LEEHI_2-2_p1.scr","edition":"cupsocs2"}
 ]
