@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 20:01","room":109,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"nicks":["이태원후렌드치킨","징기즈칸","",""],"replay":"replays/20261021_200150_이태원후렌드치킨_vs_징기즈칸_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 19:56","room":103,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[4,0],"ft":2,"series":"103-261021195217-11","nicks":["슛돌이","이태원후렌드치킨","",""],"replay":"replays/20261021_195624_슛돌이_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 19:52","room":97,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[9,5],"ft":3,"series":"97-261021194454-10","nicks":["이재경짱","징기즈칸","",""],"replay":"replays/20261021_195239_이재경짱_vs_징기즈칸_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 19:52","room":103,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,10],"ft":2,"series":"103-261021195217-11","nicks":["슛돌이","이태원후렌드치킨","",""],"replay":"replays/20261021_195217_슛돌이_vs_이태원후렌드치킨_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 22:03","room":39,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,3],"nicks":["소소","이태원후렌드치킨","",""],"replay":"replays/20261019_220302_소소_vs_이태원후렌드치킨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:00","room":45,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"45-261019215543-7","nicks":["뚱이","콩메모","",""],"replay":"replays/20261019_220055_뚱이_vs_콩메모_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 21:59","room":39,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"nicks":["소소","이태원후렌드치킨","",""],"replay":"replays/20261019_215929_소소_vs_이태원후렌드치킨_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 21:55","room":39,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[3,7],"nicks":["소소","이태원후렌드치킨","",""],"replay":"replays/20261019_215546_소소_vs_이태원후렌드치킨_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 21:55","room":45,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":2,"series":"45-261019215543-7","nicks":["뚱이","콩메모","",""],"replay":"replays/20261019_215543_뚱이_vs_콩메모_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 21:55","room":39,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[3,7],"nicks":["소소","이태원후렌드치킨","",""],"replay":"replays/20261019_215546_소소_vs_이태원후렌드치킨_3-0_p1.scr","edition":"cupsocs2"}
 ]
