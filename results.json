@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 02:47","room":90,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_024726_dfdf_vs_aapp_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 02:43","room":90,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_024307_dfdf_vs_aapp_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 02:38","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_023845_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 02:35","room":90,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_023510_dfdf_vs_aapp_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 15:51","room":70,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":3,"series":"70-261020154814-11","nicks":["로또영","rdsa","",""],"replay":"replays/20261020_155155_로또영_vs_rdsa_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:48","room":70,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":3,"series":"70-261020154814-11","nicks":["로또영","rdsa","",""],"replay":"replays/20261020_154814_로또영_vs_rdsa_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 15:36","room":67,"type":"1v1","time":180,"players":2,"score":[5,4],"teams":[5,7],"ft":2,"series":"67-261020153051-10","nicks":["날쌘돌이서정원","rdsa","",""],"replay":"replays/20261020_153619_날쌘돌이서정원_vs_rdsa_5-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 15:30","room":67,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"67-261020153051-10","nicks":["날쌘돌이서정원","rdsa","",""],"replay":"replays/20261020_153051_날쌘돌이서정원_vs_rdsa_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 15:16","room":64,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,8],"ft":2,"series":"64-261020150646-9","nicks":["적토마고정운","상봉거지오락실","",""],"replay":"replays/20261020_151617_적토마고정운_vs_상봉거지오락실_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 15:30","room":67,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"67-261020153051-10","nicks":["날쌘돌이서정원","rdsa","",""],"replay":"replays/20261020_153051_날쌘돌이서정원_vs_rdsa_2-1_p1.scr","edition":"cupsocs2"}
 ]
