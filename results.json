@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 21:41","room":25,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[6,6],"ft":2,"series":"20-261021213700-2","ranked":1,"tnames":{"즐축":["즐축 FC","FCX"],"드래곤타이거":["수원삼성블루윙즈","SUW"]},"nicks":["즐축","드래곤타이거","",""],"replay":"replays/20261021_214144_즐축_vs_드래곤타이거_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 21:40","room":18,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,10],"nicks":["소소","뚱이","",""],"replay":"replays/20261021_214024_소소_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 21:37","room":20,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[6,6],"ft":2,"series":"20-261021213700-2","ranked":1,"tnames":{"즐축":["즐축 FC","FCX"],"드래곤타이거":["수원삼성블루윙즈","SUW"]},"nicks":["즐축","드래곤타이거","",""],"replay":"replays/20261021_213700_즐축_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 21:36","room":18,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,8],"nicks":["소소","뚱이","",""],"replay":"replays/20261021_213602_소소_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 22:40","room":60,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,10],"ft":2,"series":"60-261019223635-14","nicks":["드래곤타이거","샤부사커","",""],"replay":"replays/20261019_224028_드래곤타이거_vs_샤부사커_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:40","room":58,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"nicks":["소소","캡틴베이","",""],"replay":"replays/20261019_224004_소소_vs_캡틴베이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:38","room":59,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,5],"nicks":["이태원후렌드치킨","아얏둘","",""],"replay":"replays/20261019_223817_이태원후렌드치킨_vs_아얏둘_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:36","room":60,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"ft":2,"series":"60-261019223635-14","nicks":["드래곤타이거","샤부사커","",""],"replay":"replays/20261019_223635_드래곤타이거_vs_샤부사커_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:34","room":58,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[9,8],"nicks":["소소","즐축","",""],"replay":"replays/20261019_223442_소소_vs_즐축_3-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 22:36","room":60,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"ft":2,"series":"60-261019223635-14","nicks":["드래곤타이거","샤부사커","",""],"replay":"replays/20261019_223635_드래곤타이거_vs_샤부사커_1-2_p1.scr","edition":"cupsocs2"}
 ]
