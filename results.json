@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 20:38","room":114,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_203846_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:34","room":114,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_203420_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:33","room":127,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"ft":2,"series":"127-261021202559-14","nicks":["상봉거지오락실","404page","",""],"replay":"replays/20261021_203306_상봉거지오락실_vs_404page_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:29","room":114,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_202947_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 22:30","room":57,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"57-261019222612-13","nicks":["드래곤타이거","아얏둘","",""],"replay":"replays/20261019_223002_드래곤타이거_vs_아얏둘_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:29","room":54,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,10],"pk":[0,3],"ft":2,"series":"54-261019222124-12","nicks":["축구오랜만","뚱이","",""],"replay":"replays/20261019_222936_축구오랜만_vs_뚱이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:28","room":53,"type":"1v1","time":150,"players":2,"score":[7,0],"teams":[7,3],"ft":3,"series":"53-261019221946-11","nicks":["샤부사커","이태원후렌드치킨","",""],"replay":"replays/20261019_222803_샤부사커_vs_이태원후렌드치킨_7-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:26","room":50,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"nicks":["불꽃슛마스터","즐축","",""],"replay":"replays/20261019_222615_불꽃슛마스터_vs_즐축_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:26","room":57,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,9],"ft":2,"series":"57-261019222612-13","nicks":["드래곤타이거","아얏둘","",""],"replay":"replays/20261019_222612_드래곤타이거_vs_아얏둘_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 22:26","room":50,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"nicks":["불꽃슛마스터","즐축","",""],"replay":"replays/20261019_222615_불꽃슛마스터_vs_즐축_0-1_p1.scr","edition":"cupsocs2"}
 ]
