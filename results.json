@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 21:31","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[3,8],"nicks":["소소","뚱이","",""],"replay":"replays/20261021_213138_소소_vs_뚱이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 21:26","room":9,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[10,8],"ft":2,"series":"9-261021212204-1","nicks":["뚱이","즐축","",""],"replay":"replays/20261021_212600_뚱이_vs_즐축_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 21:22","room":9,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,7],"ft":2,"series":"9-261021212204-1","nicks":["뚱이","즐축","",""],"replay":"replays/20261021_212204_뚱이_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:38","room":114,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_203846_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-19 22:34","room":58,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[9,8],"nicks":["소소","즐축","",""],"replay":"replays/20261019_223442_소소_vs_즐축_3-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:34","room":59,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,9],"nicks":["이태원후렌드치킨","아얏둘","",""],"replay":"replays/20261019_223430_이태원후렌드치킨_vs_아얏둘_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-19 22:30","room":58,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,7],"nicks":["소소","즐축","",""],"replay":"replays/20261019_223009_소소_vs_즐축_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:30","room":57,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"57-261019222612-13","nicks":["드래곤타이거","아얏둘","",""],"replay":"replays/20261019_223002_드래곤타이거_vs_아얏둘_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-19 22:29","room":54,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[0,10],"pk":[0,3],"ft":2,"series":"54-261019222124-12","nicks":["축구오랜만","뚱이","",""],"replay":"replays/20261019_222936_축구오랜만_vs_뚱이_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-19 22:30","room":57,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"57-261019222612-13","nicks":["드래곤타이거","아얏둘","",""],"replay":"replays/20261019_223002_드래곤타이거_vs_아얏둘_2-1_p1.scr","edition":"cupsocs2"}
 ]
