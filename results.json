@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-21 23:07","room":73,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,0],"ft":2,"series":"73-261021230329-12","nicks":["판순이","404page","",""],"replay":"replays/20261021_230743_판순이_vs_404page_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 23:03","room":73,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,7],"ft":2,"series":"73-261021230329-12","nicks":["판순이","404page","",""],"replay":"replays/20261021_230329_판순이_vs_404page_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 23:02","room":72,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[9,3],"ft":2,"series":"72-261021225836-11","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261021_230252_테일러장군_vs_플로레알_5-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:58","room":72,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,7],"ft":2,"series":"72-261021225836-11","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261021_225836_테일러장군_vs_플로레알_3-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 00:50","room":12,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,3],"ft":3,"series":"12-261020004303-2","nicks":["aapp","인으니마이","",""],"replay":"replays/20261020_005029_aapp_vs_인으니마이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 00:48","room":13,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[5,9],"ft":3,"series":"13-261020004858-3","nicks":["미네로","ffyuyt","",""],"replay":"replays/20261020_004858_미네로_vs_ffyuyt_5-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 00:46","room":12,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,5],"ft":3,"series":"12-261020004303-2","nicks":["aapp","인으니마이","",""],"replay":"replays/20261020_004658_aapp_vs_인으니마이_2-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 00:43","room":12,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,0],"ft":3,"series":"12-261020004303-2","nicks":["aapp","인으니마이","",""],"replay":"replays/20261020_004303_aapp_vs_인으니마이_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 00:38","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":3,"series":"10-261020002939-1","nicks":["aapp","기러기","",""],"replay":"replays/20261020_003808_aapp_vs_기러기_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 00:43","room":12,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,0],"ft":3,"series":"12-261020004303-2","nicks":["aapp","인으니마이","",""],"replay":"replays/20261020_004303_aapp_vs_인으니마이_0-1_p1.scr","edition":"cupsocs2"}
 ]
