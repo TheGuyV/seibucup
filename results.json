@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 22:58","room":302,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,5],"ft":2,"series":"302-261022225830-36","nicks":["소주2병마심","미네로","",""],"replay":"replays/20261022_225830_소주2병마심_vs_미네로_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 22:52","room":296,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[4,3],"ft":2,"series":"296-261022224903-35","nicks":["판순이","미네로","aapp","404page"],"replay":"replays/20261022_225259_판순이_vs_aapp_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 22:49","room":296,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[7,9],"ft":2,"series":"296-261022224903-35","nicks":["미네로","판순이","404page","aapp"],"replay":"replays/20261022_224903_미네로_vs_404page_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 22:33","room":295,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"291-261022222528-34","ranked":1,"tnames":{"미네로":["미네로 FC","FCX"],"판순이":["판순이 FC","YSY"]},"nicks":["미네로","판순이","",""],"replay":"replays/20261022_223325_미네로_vs_판순이_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 23:02","room":60,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261020_230252_arcade_3-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:01","room":57,"type":"2v2","time":150,"players":4,"score":[0,1],"teams":[5,3],"ft":3,"series":"57-261020230146-20","nicks":["레온","허접","aapp","404page"],"replay":"replays/20261020_230146_레온_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:01","room":52,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,4],"ft":3,"series":"52-261020225714-19","nicks":["미네로","뚱이","",""],"replay":"replays/20261020_230142_미네로_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:58","room":54,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261020_225832_arcade_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:58","room":50,"type":"1v1","time":180,"players":2,"score":[3,4],"teams":[5,5],"ft":2,"series":"50-261020225307-18","nicks":["날쌘돌이서정원","징기즈칸","",""],"replay":"replays/20261020_225807_날쌘돌이서정원_vs_징기즈칸_3-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 22:58","room":54,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261020_225832_arcade_0-1_p1.scr","edition":"cupsocs2"}
 ]
