@@ -2132,10 +2132,13 @@
     }
     var playing = f[3] === 'playing', full = +f[2] >= +(f[5] || 2), pw = '-';
     var pve = (f[4] || '1v1') === 'pve', watch = (playing && !pve) || full;
-    if (vsOff() && !watch && !playing) { vsOffSay(); return; }
-    if (vsOff()) watch = true;
+    var vsAsked = false;
+    if (vsOff() && !watch) {
+      if (!confirm(T('대전모드는 윈도우 런처에서만 가능합니다.\n이 방을 관전하시겠습니까?', 'Matches are only available in the Windows launcher.\nWatch this room?'))) return;
+      watch = true; vsAsked = true;
+    }
     if (pve && !full && !vsOff() && !confirm(T('게임을 하시겠습니까?\n(취소 = 참관합니다)', 'Do you want to play?\n(Cancel = watch)'))) watch = true;
-    else if (watch && !confirm(playing ? T('현재 게임 중이므로 관전만 가능합니다. 관전 하시겠습니까?', 'This match is already running, so you can only watch it. Watch?')
+    else if (watch && !vsAsked && !confirm(playing ? T('현재 게임 중이므로 관전만 가능합니다. 관전 하시겠습니까?', 'This match is already running, so you can only watch it. Watch?')
                                   : T('자리가 모두 찼으므로 관전만 가능합니다. 관전 하시겠습니까?', 'Every seat is taken, so you can only watch. Watch?'))) return;
 
     if (f[8] === '1' && !watch) {
