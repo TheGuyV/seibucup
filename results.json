@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 19:17","room":225,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"nicks":["HIHI_LEEHI","이재경짱","",""],"replay":"replays/20261022_191725_HIHI_LEEHI_vs_이재경짱_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 19:06","room":216,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"216-261022190238-20","nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20261022_190638_테일러장군_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 19:02","room":216,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,0],"ft":2,"series":"216-261022190238-20","nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20261022_190238_테일러장군_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 18:56","room":215,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,7],"nicks":["테일러장군","깜찍만두","",""],"replay":"replays/20261022_185608_테일러장군_vs_깜찍만두_3-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 21:48","room":10,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_214857_이태원후렌드치킨_vs_aapp_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:46","room":14,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"14-261020214237-6","nicks":["Janet","kilimanjaro","",""],"replay":"replays/20261020_214617_Janet_vs_kilimanjaro_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:45","room":10,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,3],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_214509_이태원후렌드치킨_vs_aapp_0-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 21:44","room":12,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,3],"ft":2,"series":"12-261020214032-5","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261020_214459_드래곤타이거_vs_판순이_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 21:44","room":15,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[7,5],"nicks":["서퍼킴","콩메모","",""],"replay":"replays/20261020_214417_서퍼킴_vs_콩메모_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 21:44","room":12,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,3],"ft":2,"series":"12-261020214032-5","nicks":["드래곤타이거","판순이","",""],"replay":"replays/20261020_214459_드래곤타이거_vs_판순이_3-4_p1.scr","edition":"cupsocs2"}
 ]
