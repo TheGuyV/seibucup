@@ -9,7 +9,7 @@
 -- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
 -- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
 -- It may not be modified or redistributed without permission.
-local VERSION = 40
+local VERSION = 41
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -953,6 +953,44 @@ function scnp_stripes_step()
 end
 scnp_stripes_install()
 
+SCNP_GODCARD = { gen = 0, seen = 0, landed = false }
+function scnp_godcard_install()
+  local G, C = SCNP_GODCARD, SCNP_COSTUME
+  if G.tap or SCNP_GAME ~= "cupsocs2" or not C.on then return end
+  local any = false
+  for k = 1, 4 do if scnp_seat_base(k) == 11 then any = true end end
+  if not any then return end
+  local GOD_TILE = { [0] = 0x5ea3, 0x5eac }
+  local function sgn(v) if v >= 0x8000 then return v - 0x10000 end return v end
+  G.tap = mem:install_write_tap(0x107000, 0x1077ef, "scnp_godcard", function(offset, data, mask)
+    local rel = offset - 0x107000
+    if rel == 0 then
+      if G.seen ~= G.gen then G.landed = false end
+      G.gen = G.gen + 1
+      return nil
+    end
+    if ((rel >> 1) & 3) ~= 3 then return nil end
+    local a = offset - 6
+    local w0 = mem:read_u16(a)
+    if (w0 & 0xfffc) ~= 0x8938 and (w0 & 0xfffc) ~= 0x8934 then return nil end
+    local part = w0 & 1
+    local tile = mem:read_u16(a + 2)
+    if tile == GOD_TILE[0] or tile == GOD_TILE[1] then return nil end
+    if clock_start ~= nil or mem:read_u8(SCNP_G.team_l) ~= 11 or mem:read_u8(SCNP_G.team_r) == 11 then return nil end
+    G.seen = G.gen
+    local y = sgn(data) - part * 0x2c
+    if part == 0 and y == 0x50 then G.landed = true end
+    local gy = G.landed and y or (0xa0 - y)
+    local col = ((w0 & 0x3f) >= 0x38) and 0x36 or 0x38
+    local slot = 0x1077f0 + part * 8
+    mem:write_u16(slot, 0x8900 | (col + part))
+    mem:write_u16(slot + 2, GOD_TILE[part])
+    mem:write_u16(slot + 4, (0x110 - mem:read_u16(a + 4)) & 0xffff)
+    mem:write_u16(slot + 6, (gy + part * 0x2c) & 0xffff)
+    return nil
+  end)
+end
+
 SCNP_COMIC = {
   W = {
     slide = { w = 60, h = 20, s = { 1,6,7, 2,5,7, 2,13,15, 2,22,25, 2,30,32, 2,38,43, 2,47,49, 2,54,56, 3,2,10, 3,13,15, 3,20,26, 3,30,32, 3,37,44, 3,47,49, 3,54,56, 4,2,10, 4,13,15, 4,20,22, 4,25,27, 4,30,32, 4,36,38, 4,43,45, 4,47,49, 4,54,56, 5,7,10, 5,13,15, 5,19,21, 5,25,27, 5,30,32, 5,36,38, 5,43,45, 5,47,49, 5,54,56, 6,6,9, 6,13,15, 6,19,21, 6,25,27, 6,30,32, 6,36,38, 6,43,45, 6,47,51, 6,54,56, 7,5,8, 7,13,17, 7,19,21, 7,25,27, 7,30,32, 7,36,38, 7,43,45, 7,47,51, 7,54,56, 8,4,9, 8,13,17, 8,19,21, 8,25,27, 8,30,32, 8,36,38, 8,43,45, 8,47,49, 8,54,56, 9,3,5, 9,8,10, 9,13,15, 9,19,21, 9,25,27, 9,30,34, 9,37,44, 9,47,49, 9,54,56, 10,2,4, 10,9,10, 10,13,15, 10,19,21, 10,25,27, 10,30,34, 10,38,43, 10,47,49, 10,54,56, 11,2,3, 11,6,7, 11,10,10, 11,13,15, 11,19,21, 11,25,27, 11,30,32, 11,47,49, 11,54,56, 12,2,2, 12,5,7, 12,13,15, 12,19,21, 12,25,27, 12,30,32, 12,47,49, 12,54,56, 13,5,7, 13,13,15, 13,19,21, 13,25,27, 13,30,32, 13,37,49, 13,54,56, 14,5,7, 14,13,15, 14,19,21, 14,25,27, 14,30,32, 14,37,49, 15,5,7, 15,13,15, 15,20,22, 15,25,27, 15,30,32, 15,47,49, 15,54,56, 16,2,15, 16,20,26, 16,30,32, 16,47,49, 16,54,56, 17,2,15, 17,22,25, 17,30,32, 17,47,49, 17,54,56, 18,47,48 } },
@@ -1109,14 +1147,18 @@ end
 
 SCNP_PAL.KIT = { save = nil, out = nil, light = nil }
 
-SCNP_COSTUME = { seat = {}, side = {}, save = {}, out = {}, on = false }
+SCNP_COSTUME = { seat = {}, pick = {}, side = {}, save = {}, out = {}, on = false }
+
+function scnp_seat_base(k) local C = SCNP_COSTUME; local c = C.seat[k]; if c then return c.base end; return C.pick[k] end
 function scnp_costume_parse(wire)
   local C = SCNP_COSTUME
-  C.seat, C.on = {}, false
+  C.seat, C.pick, C.on = {}, {}, false
   local k = 0
   for spec in ((wire or "") .. "|"):gmatch("([^|]*)|") do
     k = k + 1
     local f = {}; for x in spec:gmatch("[^,]+") do f[#f + 1] = x end
+    local pb = spec:match("^P(%d+)$")
+    if pb then C.pick[k] = tonumber(pb); C.on = true end
     if #f >= 6 then
       local function rgb(h) return { tonumber(h:sub(1, 2), 16) or 0, tonumber(h:sub(3, 4), 16) or 0, tonumber(h:sub(5, 6), 16) or 0 } end
       local function hx(v) return (v and v:match("^%x%x%x%x%x%x$")) and rgb(v) or nil end
@@ -1126,22 +1168,23 @@ function scnp_costume_parse(wire)
     end
   end
   C.wire = C.on and wire or nil
-  if C.on then log("costume: seat 1 %s, seat 2 %s", C.seat[1] and C.seat[1].abbr or "-", C.seat[2] and C.seat[2].abbr or "-") end
+  if C.on then log("costume: seat 1 %s, seat 2 %s", C.seat[1] and C.seat[1].abbr or (C.pick[1] and "country " .. C.pick[1]) or "-", C.seat[2] and C.seat[2].abbr or (C.pick[2] and "country " .. C.pick[2]) or "-") end
 end
 scnp_costume_parse(env("SCNP_COSTUME", ""))
+scnp_godcard_install()
 
 SCNP_COSTUME.BOX = { [3] = 0, [9] = 1, [4] = 2, [10] = 3, [0] = 4, [7] = 5, [8] = 6, [5] = 7 }
 
-SCNP_CHID = { HID = { [6] = true, [2] = true, [1] = true }, BOXC = { [0] = 3, 9, 4, 10, 0, 7, 8, 5 }, PROXY = { 6, 5, 0, 4, 7, 1, 2, 3 },
+SCNP_CHID = { HID = { [6] = true, [2] = true, [1] = true, [11] = true }, BOXC = { [0] = 3, 9, 4, 10, 0, 7, 8, 5 }, PROXY = { 6, 5, 0, 4, 7, 1, 2, 3 },
               pick = {}, under = {}, proxy = {}, ready = false }
 function scnp_chid_setup()
   local H, C = SCNP_CHID, SCNP_COSTUME
   if H.ready then return end
   H.ready = true
   local want = {}
-  for b = 1, 2 do local c = C.seat[scnp_seat_of(b)]; if c and C.BOX[c.base] then want[b] = C.BOX[c.base] end end
+  for b = 1, 2 do local cb = scnp_seat_base(scnp_seat_of(b)); if cb and C.BOX[cb] then want[b] = C.BOX[cb] end end
   for b = 1, 2 do
-    local c = C.seat[scnp_seat_of(b)]
+    local c = scnp_seat_base(scnp_seat_of(b)) and { base = scnp_seat_base(scnp_seat_of(b)) }
     if c and H.HID[c.base] then
       local o = 3 - b
       for _, box in ipairs(H.PROXY) do
@@ -1177,8 +1220,8 @@ function scnp_costume_lock(b, mask)
   if mem:read_u8(P.sel) ~= 2 then return mask end
   scnp_chid_setup()
   local H = SCNP_CHID
-  local c = C.seat[scnp_seat_of(b)]
-  local t = c and (C.BOX[c.base] or H.proxy[b])
+  local cb = scnp_seat_base(scnp_seat_of(b))
+  local t = cb and (C.BOX[cb] or H.proxy[b])
   if not t then
     local o = H.proxy[3 - b]
     if o and mem:read_u16(P.cur + (b - 1) * 2) == (1 << o) then mask = mask & ~0x10 end
