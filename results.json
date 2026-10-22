@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 20:41","room":250,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[6,6],"ft":2,"series":"250-261022204133-24","ranked":1,"tnames":{"드래곤타이거":["수원삼성블루윙즈","SUW"],"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261022_204133_드래곤타이거_vs_상봉거지오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:34","room":238,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,3],"ft":2,"series":"238-261022202743-23","nicks":["레온","상봉거지오락실","",""],"replay":"replays/20261022_203437_레온_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:27","room":238,"type":"1v1","time":150,"players":2,"score":[5,3],"teams":[7,8],"ft":2,"series":"238-261022202743-23","nicks":["레온","상봉거지오락실","",""],"replay":"replays/20261022_202743_레온_vs_상봉거지오락실_5-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:27","room":236,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["mizunoasahi","dfdf","",""],"replay":"replays/20261022_202709_mizunoasahi_vs_dfdf_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 22:03","room":10,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,3],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_220317_이태원후렌드치킨_vs_aapp_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:01","room":24,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":3,"series":"24-261020220152-10","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261020_220152_surferKIM_vs_서퍼킴_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:01","room":25,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[4,3],"ft":2,"series":"25-261020220109-9","nicks":["404page","test","",""],"replay":"replays/20261020_220109_404page_vs_test_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:00","room":20,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"ft":2,"series":"16-261020215032-7","ranked":1,"tnames":{"NooB":["NooB FC","NOO"]},"nicks":["NooB","드래곤타이거","",""],"replay":"replays/20261020_220056_NooB_vs_드래곤타이거_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 21:58","room":10,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[10,3],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_215854_이태원후렌드치킨_vs_aapp_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 22:00","room":20,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"ft":2,"series":"16-261020215032-7","ranked":1,"tnames":{"NooB":["NooB FC","NOO"]},"nicks":["NooB","드래곤타이거","",""],"replay":"replays/20261020_220056_NooB_vs_드래곤타이거_1-0_p1.scr","edition":"cupsocs2"}
 ]
