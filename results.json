@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 14:05","room":155,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[9,4],"nicks":["도도리","rhythmmania99","",""],"replay":"replays/20261022_140545_도도리_vs_rhythmmania99_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 14:01","room":155,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[10,4],"nicks":["도도리","rhythmmania99","",""],"replay":"replays/20261022_140110_도도리_vs_rhythmmania99_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:56","room":150,"type":"1v1","time":180,"players":2,"score":[0,1],"teams":[9,5],"nicks":["도도리","cupcup","",""],"replay":"replays/20261022_135639_도도리_vs_cupcup_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:52","room":145,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,4],"nicks":["불꽃슛마스터","rhythmmania99","",""],"replay":"replays/20261022_135256_불꽃슛마스터_vs_rhythmmania99_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 19:54","room":128,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,0],"ft":3,"series":"128-261020194108-22","nicks":["이재경짱","dfdf","",""],"replay":"replays/20261020_195432_이재경짱_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 19:52","room":129,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[9,9],"nicks":["홍빵지","mizunoasahi","",""],"replay":"replays/20261020_195205_홍빵지_vs_mizunoasahi_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 19:45","room":128,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,7],"ft":3,"series":"128-261020194108-22","nicks":["이재경짱","dfdf","",""],"replay":"replays/20261020_194548_이재경짱_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 19:41","room":128,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,0],"ft":3,"series":"128-261020194108-22","nicks":["이재경짱","dfdf","",""],"replay":"replays/20261020_194108_이재경짱_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 19:30","room":125,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"125-261020193054-21","nicks":["로또영","이재경짱","",""],"replay":"replays/20261020_193054_로또영_vs_이재경짱_3-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 19:41","room":128,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,0],"ft":3,"series":"128-261020194108-22","nicks":["이재경짱","dfdf","",""],"replay":"replays/20261020_194108_이재경짱_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"}
 ]
