@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 13:08","room":135,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_130859_rhythmmania99_vs_골인_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:04","room":135,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_130451_rhythmmania99_vs_골인_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:00","room":135,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,8],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_130057_rhythmmania99_vs_골인_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 12:56","room":135,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,8],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_125641_rhythmmania99_vs_골인_3-4_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 18:00","room":102,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,0],"nicks":["mizunoasahi","드래곤타이거","",""],"replay":"replays/20261020_180022_mizunoasahi_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:55","room":102,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["mizunoasahi","드래곤타이거","",""],"replay":"replays/20261020_175549_mizunoasahi_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 17:48","room":100,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,0],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174844_버섯커1_vs_샤부사커_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 17:44","room":100,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174414_버섯커1_vs_샤부사커_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 17:40","room":100,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[3,7],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174010_버섯커1_vs_샤부사커_0-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 17:44","room":100,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174414_버섯커1_vs_샤부사커_1-2_p1.scr","edition":"cupsocs2"}
 ]
