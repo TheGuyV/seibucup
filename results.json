@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 20:55","room":255,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[6,9],"ft":2,"series":"255-261022205507-26","ranked":1,"tnames":{"레온":["레온 FC","FCX"],"드래곤타이거":["BUSAN I PARK","POP"]},"nicks":["레온","드래곤타이거","",""],"replay":"replays/20261022_205507_레온_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:51","room":253,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"arcade":1,"nicks":["서독","대한민국","",""],"replay":"replays/20261022_205158_arcade_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:48","room":249,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,9],"ft":2,"series":"249-261022204234-25","nicks":["소주2병마심","dfdf","",""],"replay":"replays/20261022_204801_소주2병마심_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:45","room":251,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[6,7],"ft":2,"series":"250-261022204133-24","ranked":1,"tnames":{"드래곤타이거":["수원삼성블루윙즈","SUW"],"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261022_204514_드래곤타이거_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 22:10","room":25,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,10],"ft":2,"series":"25-261020220719-11","nicks":["404page","Janet","",""],"replay":"replays/20261020_221043_404page_vs_Janet_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:09","room":24,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"ft":3,"series":"24-261020220152-10","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261020_220924_surferKIM_vs_서퍼킴_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:07","room":25,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,10],"ft":2,"series":"25-261020220719-11","nicks":["404page","Janet","",""],"replay":"replays/20261020_220719_404page_vs_Janet_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:05","room":24,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":3,"series":"24-261020220152-10","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261020_220544_surferKIM_vs_서퍼킴_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:04","room":10,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[0,0],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_220442_이태원후렌드치킨_vs_aapp_0-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 22:05","room":24,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":3,"series":"24-261020220152-10","nicks":["surferKIM","서퍼킴","",""],"replay":"replays/20261020_220544_surferKIM_vs_서퍼킴_1-2_p1.scr","edition":"cupsocs2"}
 ]
