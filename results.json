@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 22:07","room":285,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,8],"ft":2,"series":"285-261022220315-31","nicks":["호세뽕","뚱이","",""],"replay":"replays/20261022_220715_호세뽕_vs_뚱이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 22:03","room":283,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"nicks":["소소","미네로","",""],"replay":"replays/20261022_220345_소소_vs_미네로_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 22:03","room":285,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,10],"ft":2,"series":"285-261022220315-31","nicks":["호세뽕","뚱이","",""],"replay":"replays/20261022_220315_호세뽕_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 22:03","room":286,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,9],"arcade":1,"nicks":["이탈리아","서독","",""],"replay":"replays/20261022_220304_arcade_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 22:40","room":44,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,7],"ft":2,"series":"41-261020223554-15","ranked":1,"tnames":{"레온":["레온 FC","LEO"],"즐축":["TheSoccer","EJY"]},"nicks":["레온","즐축","",""],"replay":"replays/20261020_224001_레온_vs_즐축_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:39","room":42,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":2,"series":"42-261020223916-16","nicks":["뚱이","미네로","",""],"replay":"replays/20261020_223916_뚱이_vs_미네로_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:38","room":38,"type":"2v2","time":150,"players":4,"score":[1,2],"teams":[5,8],"ft":3,"series":"38-261020222709-13","nicks":["surferKIM","사직동락스타","판순이","드래곤타이거"],"replay":"replays/20261020_223843_surferKIM_vs_판순이_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:38","room":36,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"pk":[6,5],"ft":3,"series":"36-261020222435-12","nicks":["축구오랜만","aapp","",""],"replay":"replays/20261020_223834_축구오랜만_vs_aapp_1-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:35","room":41,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[6,8],"ft":2,"series":"41-261020223554-15","ranked":1,"tnames":{"레온":["레온 FC","FCX"],"즐축":["아르헨티나","ARG"]},"nicks":["레온","즐축","",""],"replay":"replays/20261020_223554_레온_vs_즐축_4-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 22:38","room":36,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,3],"pk":[6,5],"ft":3,"series":"36-261020222435-12","nicks":["축구오랜만","aapp","",""],"replay":"replays/20261020_223834_축구오랜만_vs_aapp_1-1_p1.scr","edition":"cupsocs2"}
 ]
