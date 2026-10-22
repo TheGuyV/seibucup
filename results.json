@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 18:21","room":200,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"200-261022181647-18","nicks":["키보드입니다","김정은패스","",""],"replay":"replays/20261022_182104_키보드입니다_vs_김정은패스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 18:16","room":200,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[9,7],"ft":2,"series":"200-261022181647-18","nicks":["키보드입니다","김정은패스","",""],"replay":"replays/20261022_181647_키보드입니다_vs_김정은패스_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 17:58","room":197,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"arcade":1,"nicks":["일본","대한민국","",""],"replay":"replays/20261022_175816_arcade_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 17:50","room":196,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,7],"nicks":["mizunoasahi","김정은패스","",""],"replay":"replays/20261022_175019_mizunoasahi_vs_김정은패스_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 21:35","room":9,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[8,5],"ft":2,"series":"9-261020213049-4","nicks":["드래곤타이거","dfdf","",""],"replay":"replays/20261020_213514_드래곤타이거_vs_dfdf_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:33","room":10,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"nicks":["이태원후렌드치킨","aapp","",""],"replay":"replays/20261020_213354_이태원후렌드치킨_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 21:30","room":9,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[0,9],"ft":2,"series":"9-261020213049-4","nicks":["드래곤타이거","dfdf","",""],"replay":"replays/20261020_213049_드래곤타이거_vs_dfdf_5-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 21:23","room":8,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[0,9],"ft":2,"series":"8-261020211815-3","nicks":["이탈리아맨","드래곤타이거","",""],"replay":"replays/20261020_212304_이탈리아맨_vs_드래곤타이거_4-5_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 21:18","room":8,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[0,5],"ft":2,"series":"8-261020211815-3","nicks":["이탈리아맨","드래곤타이거","",""],"replay":"replays/20261020_211815_이탈리아맨_vs_드래곤타이거_2-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 21:23","room":8,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[0,9],"ft":2,"series":"8-261020211815-3","nicks":["이탈리아맨","드래곤타이거","",""],"replay":"replays/20261020_212304_이탈리아맨_vs_드래곤타이거_4-5_p1.scr","edition":"cupsocs2"}
 ]
