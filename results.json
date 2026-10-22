@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 21:22","room":268,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,10],"nicks":["왕초보","뚱이","",""],"replay":"replays/20261022_212240_왕초보_vs_뚱이_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 21:21","room":267,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,10],"ft":2,"series":"267-261022212105-29","nicks":["소주2병마심","근명여고오락실","",""],"replay":"replays/20261022_212105_소주2병마심_vs_근명여고오락실_3-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 21:11","room":259,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,9],"ft":2,"series":"257-261022210524-28","ranked":1,"tnames":{"404page":["404page","PAG"],"드래곤타이거":["BUSAN I PARK","POP"]},"nicks":["404page","드래곤타이거","",""],"replay":"replays/20261022_211100_404page_vs_드래곤타이거_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 21:05","room":257,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,6],"ft":2,"series":"257-261022210524-28","ranked":1,"tnames":{"404page":["404page","PAG"],"드래곤타이거":["수원삼성블루윙즈","SUW"]},"nicks":["404page","드래곤타이거","",""],"replay":"replays/20261022_210524_404page_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 22:28","room":36,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,3],"ft":3,"series":"36-261020222435-12","nicks":["축구오랜만","aapp","",""],"replay":"replays/20261020_222834_축구오랜만_vs_aapp_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:27","room":38,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[5,4],"ft":3,"series":"38-261020222709-13","nicks":["surferKIM","사직동락스타","판순이","드래곤타이거"],"replay":"replays/20261020_222709_surferKIM_vs_판순이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 22:24","room":36,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[10,3],"ft":3,"series":"36-261020222435-12","nicks":["축구오랜만","aapp","",""],"replay":"replays/20261020_222435_축구오랜만_vs_aapp_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:24","room":34,"type":"1v1","time":180,"players":2,"score":[2,2],"teams":[9,5],"nicks":["징기즈칸","dfdf","",""],"replay":"replays/20261020_222426_징기즈칸_vs_dfdf_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 22:19","room":29,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"nicks":["나다","판순이","",""],"replay":"replays/20261020_221953_나다_vs_판순이_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 22:24","room":34,"type":"1v1","time":180,"players":2,"score":[2,2],"teams":[9,5],"nicks":["징기즈칸","dfdf","",""],"replay":"replays/20261020_222426_징기즈칸_vs_dfdf_2-2_p1.scr","edition":"cupsocs2"}
 ]
