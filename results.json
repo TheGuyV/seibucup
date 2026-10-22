@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 11:28","room":116,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":2,"series":"116-261022112848-16","nicks":["드래곤타이거","cupcup","",""],"replay":"replays/20261022_112848_드래곤타이거_vs_cupcup_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 11:22","room":115,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[0,5],"ft":2,"series":"115-261022111825-15","nicks":["드래곤타이거","cupcup","",""],"replay":"replays/20261022_112252_드래곤타이거_vs_cupcup_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 11:18","room":115,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"115-261022111825-15","nicks":["드래곤타이거","cupcup","",""],"replay":"replays/20261022_111825_드래곤타이거_vs_cupcup_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 02:59","room":90,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_025909_dfdf_vs_aapp_0-0_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 17:07","room":88,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,3],"nicks":["버섯커1","날아","",""],"replay":"replays/20261020_170709_버섯커1_vs_날아_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 16:31","room":82,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_163101_로또영_vs_aappa_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 16:24","room":82,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_162438_로또영_vs_aappa_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 16:19","room":82,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_161903_로또영_vs_aappa_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 16:12","room":80,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":3,"series":"80-261020161217-12","nicks":["로또영","초보선수","",""],"replay":"replays/20261020_161217_로또영_vs_초보선수_2-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 16:19","room":82,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":3,"series":"82-261020161903-13","nicks":["로또영","aappa","",""],"replay":"replays/20261020_161903_로또영_vs_aappa_2-3_p1.scr","edition":"cupsocs2"}
 ]
