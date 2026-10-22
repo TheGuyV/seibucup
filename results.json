@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 13:16","room":140,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"nicks":["cupcup","mizunoasahi","",""],"replay":"replays/20261022_131602_cupcup_vs_mizunoasahi_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:12","room":135,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_131221_rhythmmania99_vs_골인_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:08","room":135,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[4,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_130859_rhythmmania99_vs_골인_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:04","room":135,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_130451_rhythmmania99_vs_골인_2-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 18:25","room":112,"type":"1v1","time":180,"players":2,"score":[5,4],"teams":[5,9],"ft":2,"series":"112-261020182556-16","nicks":["날쌘돌이서정원","HIHI_LEEHI","",""],"replay":"replays/20261020_182556_날쌘돌이서정원_vs_HIHI_LEEHI_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 18:18","room":107,"type":"1v1","time":180,"players":2,"score":[4,2],"teams":[5,9],"ft":2,"series":"107-261020181806-15","nicks":["날쌘돌이서정원","HIHI_LEEHI","",""],"replay":"replays/20261020_181806_날쌘돌이서정원_vs_HIHI_LEEHI_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 18:00","room":102,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,0],"nicks":["mizunoasahi","드래곤타이거","",""],"replay":"replays/20261020_180022_mizunoasahi_vs_드래곤타이거_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 17:55","room":102,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["mizunoasahi","드래곤타이거","",""],"replay":"replays/20261020_175549_mizunoasahi_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 17:48","room":100,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,0],"nicks":["버섯커1","샤부사커","",""],"replay":"replays/20261020_174844_버섯커1_vs_샤부사커_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 17:55","room":102,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,10],"nicks":["mizunoasahi","드래곤타이거","",""],"replay":"replays/20261020_175549_mizunoasahi_vs_드래곤타이거_3-3_p1.scr","edition":"cupsocs2"}
 ]
