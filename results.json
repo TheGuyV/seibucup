@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-22 13:44","room":135,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,8],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_134447_rhythmmania99_vs_골인_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:40","room":135,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_134025_rhythmmania99_vs_골인_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:36","room":135,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,8],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_133638_rhythmmania99_vs_골인_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:32","room":135,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_133241_rhythmmania99_vs_골인_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 19:16","room":122,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,5],"ft":3,"series":"122-261020191257-20","nicks":["축구오랜만","로또영","",""],"replay":"replays/20261020_191657_축구오랜만_vs_로또영_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 19:12","room":122,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[10,5],"ft":3,"series":"122-261020191257-20","nicks":["축구오랜만","로또영","",""],"replay":"replays/20261020_191257_축구오랜만_vs_로또영_0-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 19:08","room":120,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":3,"series":"120-261020190442-19","nicks":["로또영","벌점","",""],"replay":"replays/20261020_190855_로또영_vs_벌점_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 19:04","room":120,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"120-261020190442-19","nicks":["로또영","벌점","",""],"replay":"replays/20261020_190442_로또영_vs_벌점_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 18:41","room":117,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[5,7],"nicks":["홍빵지","고년","",""],"replay":"replays/20261020_184121_홍빵지_vs_고년_2-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 19:04","room":120,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":3,"series":"120-261020190442-19","nicks":["로또영","벌점","",""],"replay":"replays/20261020_190442_로또영_vs_벌점_2-3_p1.scr","edition":"cupsocs2"}
 ]
