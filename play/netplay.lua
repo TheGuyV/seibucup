@@ -2982,8 +2982,18 @@ SCNP_SPEC = { n = 0 }
 SCNP_WAIT = { on = false, deadline = 0, t0 = 0 }
 function scnp_vs_start_step()
   local V = SCNP_VS
-  if V.stage == "done" then return end
   local pm = SCNP_G.pm and mem:read_u8(SCNP_G.pm)
+
+  if not V.kick and clock_start and pm then
+    V.kick = true
+    if pm & 3 ~= 3 then
+      local P = SCNP_PICK
+      log("versus: kick-off with player mask %02x - a side is the CPU (stage %s, start seen %s, tries %d, swap %d, costume %d, select %d, credits %d, frame %d)",
+          pm, V.stage, V.hit and string.format("frame %d seat %d", V.hit[1], V.hit[2]) or "never", V.tries, scnp_swap and 1 or 0,
+          SCNP_COSTUME.on and 1 or 0, P and P.sel and mem:read_u8(P.sel) or -1, mem:read_u8(SCNP_G.credits), frame)
+    end
+  end
+  if V.stage == "done" then return end
   if V.stage == "watch" then
 
     if V.hit then V.stage = "press"; V.at = frame; log("versus: seat %d pressed start at frame %d - bringing the other side in", V.hit[2], V.hit[1]) end
@@ -3002,6 +3012,7 @@ function scnp_vs_start_step()
       V.stage = "done"; log("versus: both sides are on the country select")
     else
       V.tries = V.tries + 1
+      log("versus: try %d - player mask %02x, select %d (frame %d)", V.tries, pm, SCNP_PICK and SCNP_PICK.sel and mem:read_u8(SCNP_PICK.sel) or -1, frame)
       if V.tries >= 5 then V.stage = "done"; log("versus: the other side did not come in (player mask %02x)", pm)
       else V.stage = "press"; V.at = frame - 20 end
     end
@@ -3309,11 +3320,22 @@ QC = {
     { ko = "미안해요 ㅠ", en = "Sorry!" },
     { ko = "한게임 더 해요!", en = "One more game!" },
     { ko = "수고하셨습니다!", en = "Good game!" },
+
+    { ko = "안녕하세요! 구경 왔어요", en = "Hi! Just watching" },
+    { ko = "나이스 골!", en = "Great goal!" },
+    { ko = "아깝다~!", en = "So close!" },
+    { ko = "와~ 대박!", en = "Wow!" },
+    { ko = "왼쪽 팀 화이팅!", en = "Go left side!" },
+    { ko = "오른쪽 팀 화이팅!", en = "Go right side!" },
+    { ko = "명경기네요!", en = "What a match!" },
+    { ko = "잘 보고 갑니다~ 수고하셨어요!", en = "GG, great to watch!" },
   },
 
   S = {
     { ko = "인사", en = "Hi" }, { ko = "나이스 슛", en = "Nice shot" }, { ko = "아깝다", en = "Close" }, { ko = "나이스 패스", en = "Nice pass" },
     { ko = "감사", en = "Thanks" }, { ko = "미안", en = "Sorry" }, { ko = "한게임 더", en = "One more" }, { ko = "수고", en = "GG" },
+    { ko = "인사", en = "Hi" }, { ko = "나이스 골", en = "Goal" }, { ko = "아깝다", en = "Close" }, { ko = "대박", en = "Wow" },
+    { ko = "왼쪽 화이팅", en = "Go left" }, { ko = "오른쪽 화이팅", en = "Go right" }, { ko = "명경기", en = "Classic" }, { ko = "잘 봤어요", en = "GG" },
   },
 
   GOAL = { cupsoc = { [0x12064] = true, [0x12078] = true }, cupsocs2 = { [0x12d58] = true, [0x12d6c] = true } },
@@ -3347,6 +3369,8 @@ function QC.mayi() return (not is_spec and local_slot >= 1 and local_slot <= 4) 
 for i = 1, 8 do QC.keys[i] = input:code_from_token("KEYCODE_F" .. i) end
 function QC.text(id) local t = QC.T[id]; return t and (t[cfg.lang] or t.en) or "" end
 function QC.short(id) local t = QC.S[id]; return t and (t[cfg.lang] or t.en) or "" end
+
+function QC.idx(i) return is_spec and i + 8 or i end
 
 function QC.side(seat) if SCNP_PVE.on then return 1 end local gp = GAME_PLAYER[seat] or seat; return (gp == 1 or gp == 3) and 1 or 2 end
 function qc_show(seat, id)
@@ -3423,7 +3447,7 @@ function qc_step()
 
     local free = QC.free() and frame - (QC.mine or -99999) >= QC.PVEGAP
     if down and not QC.prev[i] and ((open and not QC.sent) or free) and QC.mayi() then
-      qc_send(i)
+      qc_send(QC.idx(i))
     end
     QC.prev[i] = down
   end
@@ -3559,7 +3583,7 @@ function qc_draw()
     local ka = dim and 0.4 or 1
     local kg, ig = QC.width(" "), QC.width("   ")
     if not win then kg, ig = QC.width(" ") * 0.4, QC.width(" ") * 1.6 end
-    local function lw(a, b, f) local x = 0; for i = a, b do x = x + QC.width("[F" .. i .. "]") + kg + QC.width(f(i)) + (i < b and ig or 0) end; return x end
+    local function lw(a, b, f) local x = 0; for i = a, b do x = x + QC.width("[F" .. i .. "]") + kg + QC.width(f(QC.idx(i))) + (i < b and ig or 0) end; return x end
     local f, rows = QC.text, { { 1, 8 } }
     if not win and lw(1, 8, QC.short) <= w - 8 then f = QC.short
     elseif lw(1, 8, QC.text) > w - 8 then
@@ -3573,7 +3597,7 @@ function qc_draw()
     for r, rg in ipairs(rows) do
       local x = (w - lw(rg[1], rg[2], f)) / 2
       for i = rg[1], rg[2] do
-        local k, t = "[F" .. i .. "]", f(i)
+        local k, t = "[F" .. i .. "]", f(QC.idx(i))
         screen:draw_text(x, top + (r - 1) * lh, k, QC.argb(0xffffd23f, ka), 0); x = x + QC.width(k) + kg
         screen:draw_text(x, top + (r - 1) * lh, t, QC.argb(0xfff4f4f4, ka), 0); x = x + QC.width(t) + ig
       end
