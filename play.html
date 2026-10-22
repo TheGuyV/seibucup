@@ -460,8 +460,8 @@
 
     <div class="netwrap" id="netWrap">
     <div class="net" id="net">
-      <div class="net-head"><b><span class="ko">온라인 대전</span><span class="en">Online play</span></b>
-        <span class="net-sub"><span class="ko">PC 런처와 같은 로비</span><span class="en">the same lobby as the PC launcher</span></span></div>
+      <div class="net-head"><b><span class="ko">온라인 로비</span><span class="en">Online lobby</span></b>
+        <span class="net-sub"><span class="ko">채팅 · 방 목록 · 관전 (대전은 윈도우 런처에서)</span><span class="en">chat, rooms and watching (matches in the Windows launcher)</span></span></div>
       <div class="net-top">
         <div class="net-col">
           <div class="nrow"><label for="nick"><span class="ko">닉네임</span><span class="en">Nickname</span></label>
@@ -518,7 +518,7 @@
       <div class="rmodal" id="useNotice" hidden role="dialog" aria-modal="true" aria-labelledby="unTitle">
         <div class="nbox">
           <div class="nh"><h2 id="unTitle"><span class="ko">세이부 컵 사커 온라인 이용 안내</span><span class="en">Seibu Cup Soccer Online - before you play</span></h2>
-            <p class="nsub"><span class="ko">온라인 대전을 시작하기 전에 한 번 확인해 주세요.</span><span class="en">Please read this once before playing online.</span></p></div>
+            <p class="nsub"><span class="ko">서버에 접속하기 전에 한 번 확인해 주세요.</span><span class="en">Please read this once before going online.</span></p></div>
           <ul>
             <li><b><span class="ko">팬페이지</span><span class="en">Fan page</span></b><span class="ko">이 홈페이지와 런처, 온라인 서버는 팬이 만든 비공식 팬페이지입니다. 원작 게임 개발사·판권사의 공식 서비스가 아닙니다.</span><span class="en">This website, the launcher and the online server are an unofficial fan page made by fans - not an official service of the original game's developer or rights holders.</span></li>
             <li><b><span class="ko">매너</span><span class="en">Manners</span></b><span class="ko">욕설·비매너·경기 중 고의 퇴장은 채팅 제한이나 접속 차단될 수 있습니다. 공개채팅은 접속한 모두에게 보입니다.</span><span class="en">Swearing, bad manners and quitting a match on purpose can get your chat limited or your access blocked. Everybody online sees the public chat.</span></li>
@@ -2070,7 +2070,7 @@
   function showNotice(then) { noticeThen = then || null; $('useNotice').hidden = false; $('unOk').focus(); }
   function hideNotice() { $('useNotice').hidden = true; noticeThen = null; }
   $('unOk').onclick = function () { store.set('web_notice', String(NOTICE_V)); var t = noticeThen; hideNotice(); if (t) t(); };
-  $('unClose').onclick = function () { hideNotice(); if (!noticeOk()) netSay(T('이용 안내에 동의하지 않으면 온라인 대전(서버 접속)을 할 수 없습니다. 튜토리얼과 연습 게임은 됩니다.', 'Without agreeing to the notice there is no online play (Vs CPU included). The tutorial and practice still work.')); };
+  $('unClose').onclick = function () { hideNotice(); if (!noticeOk()) netSay(T('이용 안내에 동의하지 않으면 서버에 접속(채팅·관전)할 수 없습니다. 튜토리얼과 연습 게임은 됩니다.', 'Without agreeing to the notice there is no online play (Vs CPU included). The tutorial and practice still work.')); };
   $('useNotice').addEventListener('click', function (e) { if (e.target === this) $('unClose').onclick(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('useNotice').hidden) $('unClose').onclick(); });
   $('unLink').onclick = function (e) { e.preventDefault(); showNotice(null); };
