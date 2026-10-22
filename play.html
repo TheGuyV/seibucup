@@ -398,7 +398,7 @@
 <section class="hero play-hero">
   <div class="container">
     <h1><span class="ko">바로 플레이</span><span class="en">Play now</span><span class="beta">BETA</span></h1>
-    <p class="lead"><span class="ko">설치 없이 브라우저에서 바로. 롬만 한 번 넣으면 튜토리얼, 연습 게임, 온라인 대전을 여기서 할 수 있습니다. 게임 계산은 PC 런처의 MAME와 똑같습니다.</span><span class="en">Right in your browser, nothing to install. Add your ROM once and play the tutorial, practice, or online matches here. The game runs exactly like the PC launcher's MAME.</span></p>
+    <p class="lead"><span class="ko">설치 없이 브라우저에서 바로. 롬만 한 번 넣으면 튜토리얼, 연습 게임, CPU대전을 여기서 하고 온라인 경기를 관전할 수 있습니다. 온라인 대전은 10월 23일부터 윈도우 런처에서만 할 수 있습니다. 게임 계산은 PC 런처의 MAME와 똑같습니다.</span><span class="en">Right in your browser, nothing to install. Add your ROM once and play the tutorial, practice or vs CPU here, and watch online matches. From 23 October online matches are played in the Windows launcher only. The game runs exactly like the PC launcher's MAME.</span></p>
   </div>
 </section>
 
@@ -976,6 +976,10 @@
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
   var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 40;
+
+  var VS_OFF_AT = Date.parse('2026-10-23T00:00:00+09:00');
+  function vsOff() { return Date.now() >= VS_OFF_AT; }
+  function vsOffSay() { alert(T('대전모드는 윈도우 런처에서만 가능합니다.', 'Matches are only available in the Windows launcher.')); }
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: -1, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, pveDiff: 3, aloneDiff: 3, pveVsGod: false, sound: true, tie: 'pk', teams: 'pick' };
@@ -1944,10 +1948,10 @@
   function arcSolo(god, prio, resume) {
     net.arcSoloGod = god;
     start('solo', { label: arcSoloLabel(god), god: god, arcade: romOk.sel, resume: resume });
-    if (romOk.sel) send('ARC SOLO 1' + (prio ? ' p' : ''));
+    if (romOk.sel && !vsOff()) send('ARC SOLO 1' + (prio ? ' p' : ''));
   }
   function arcBegin(god) {
-    if (!romOk.sel || net.room || net.arcRole || !(net.ws && net.ws.readyState === 1)) { start('solo', { label: arcSoloLabel(god), god: god }); return; }
+    if (!romOk.sel || net.room || net.arcRole || !(net.ws && net.ws.readyState === 1) || vsOff()) { start('solo', { label: arcSoloLabel(god), god: god }); return; }
     net.arcAsk = god ? 2 : 1; send('ARC ASK');
     setTimeout(function () { if (net.arcAsk) { var g = net.arcAsk === 2; net.arcAsk = 0; arcSolo(g); } }, 4000);
   }
@@ -2113,7 +2117,7 @@
   nickIn.addEventListener('keydown', function (e) { if (e.key === 'Enter') connect(); });
   function needRom() { if (roms.length) return false; netSay(T('먼저 왼쪽 위 "롬 넣기"로 cupsoc.zip 과 cupsocs2.zip (셀렉션, 추천) 을 넣으세요.', 'Add your ROM first (top left): cupsoc.zip and cupsocs2.zip (Selection, recommended).')); return true; }
 
-  function createRoom() { if (needRom()) return; send('CREATE ' + nset.type + ' 0 - ' + ed + ' ' + (nset.type === 'pve' ? 1 : nset.ft) + (nset.type === 'pve' ? ' ' + nset.pveCap : ''));
+  function createRoom() { if (vsOff()) { vsOffSay(); return; } if (needRom()) return; send('CREATE ' + nset.type + ' 0 - ' + ed + ' ' + (nset.type === 'pve' ? 1 : nset.ft) + (nset.type === 'pve' ? ' ' + nset.pveCap : ''));
     var title = cleanTitle(titleIn.value); titleIn.value = title; nset.title = title; nset.titles[nset.type] = title; saveSet();
     if (title) send('TITLE ' + title); }
   function joinRoom(id) {
@@ -2128,7 +2132,9 @@
     }
     var playing = f[3] === 'playing', full = +f[2] >= +(f[5] || 2), pw = '-';
     var pve = (f[4] || '1v1') === 'pve', watch = (playing && !pve) || full;
-    if (pve && !full && !confirm(T('게임을 하시겠습니까?\n(취소 = 참관합니다)', 'Do you want to play?\n(Cancel = watch)'))) watch = true;
+    if (vsOff() && !watch && !playing) { vsOffSay(); return; }
+    if (vsOff()) watch = true;
+    if (pve && !full && !vsOff() && !confirm(T('게임을 하시겠습니까?\n(취소 = 참관합니다)', 'Do you want to play?\n(Cancel = watch)'))) watch = true;
     else if (watch && !confirm(playing ? T('현재 게임 중이므로 관전만 가능합니다. 관전 하시겠습니까?', 'This match is already running, so you can only watch it. Watch?')
                                   : T('자리가 모두 찼으므로 관전만 가능합니다. 관전 하시겠습니까?', 'Every seat is taken, so you can only watch. Watch?'))) return;
 
@@ -2360,7 +2366,7 @@
     repLabels();
   })();
 
-  $('btnQuick').onclick = function () { if (needRom()) return; net.quick = true; send('QUICK ' + nset.time + ' 0 ' + ed); };
+  $('btnQuick').onclick = function () { if (vsOff()) { vsOffSay(); return; } if (needRom()) return; net.quick = true; send('QUICK ' + nset.time + ' 0 ' + ed); };
   $('btnRefresh').onclick = function () { send('LIST'); if (net.sel) send('WHO ' + net.sel); };
   $('btnJoin').onclick = function () { if (net.sel) joinRoom(net.sel); };
   $('btnReady').onclick = function () {
