@@ -987,7 +987,7 @@
 
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 41;
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 42;
 
   var VS_OFF_AT = Date.parse('2026-10-23T00:00:00+09:00');
   function vsOff() { return Date.now() >= VS_OFF_AT; }

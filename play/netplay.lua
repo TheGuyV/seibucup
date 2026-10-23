@@ -9,7 +9,7 @@
 -- 허락 없이 수정하거나 다른 곳에 재배포할 수 없습니다.
 -- This file is distributed only for use with the Seibu Cup Soccer Online launcher and web play.
 -- It may not be modified or redistributed without permission.
-local VERSION = 41
+local VERSION = 42
 
 local function env(name, default)
   local v = os.getenv(name)
@@ -1217,7 +1217,12 @@ end
 function scnp_costume_lock(b, mask)
   local C, P = SCNP_COSTUME, SCNP_PICK
   if not C.on or (b ~= 1 and b ~= 2) or not P or not P.sel or not P.cur or SCNP_PVE.on then return mask end
-  if mem:read_u8(P.sel) ~= 2 then return mask end
+  if mem:read_u8(P.sel) ~= 2 then C.selT0 = nil; return mask end
+
+  local pm = SCNP_G.pm and mem:read_u8(SCNP_G.pm)
+  if pm and (pm >> (b - 1)) & 1 == 0 then return mask end
+  C.selT0 = C.selT0 or frame
+  local both = not pm or pm & 3 == 3 or frame - C.selT0 > 1200
   scnp_chid_setup()
   local H = SCNP_CHID
   local cb = scnp_seat_base(scnp_seat_of(b))
@@ -1233,7 +1238,7 @@ function scnp_costume_lock(b, mask)
   if cur == 0 or frame % 8 >= 2 then return mask end
   local i; for n = 0, 7 do if cur == (1 << n) then i = n end end
   if not i then return mask end
-  if i == t then return mask | 0x10 end
+  if i == t then return both and (mask | 0x10) or mask end
   if (i // 4) ~= (t // 4) then return mask | 0x02 end
   local d = (t % 4 - i % 4) % 4
   return mask | (d <= 2 and 0x08 or 0x04)
@@ -1763,6 +1768,7 @@ function scnp_pick_hold(b)
   if b ~= 1 or not P.sel or not (SCNP_SEL and SCNP_SEL.on) or SCNP_PVE.on or nplayers < 2 then return false end
   if SCNP_SEL.mirror then return false end
   if mem:read_u8(P.sel) ~= 2 then P.t0 = nil; return false end
+  if SCNP_G.pm and (mem:read_u8(SCNP_G.pm) >> (b - 1)) & 1 == 0 then return false end
   P.t0 = P.t0 or frame
   if mem:read_u16(P.taken) ~= 0 then return false end
   if frame - P.t0 > 1200 then
@@ -3050,7 +3056,8 @@ function scnp_vs_start_step()
     else
       V.tries = V.tries + 1
       log("versus: try %d - player mask %02x, select %d (frame %d)", V.tries, pm, SCNP_PICK and SCNP_PICK.sel and mem:read_u8(SCNP_PICK.sel) or -1, frame)
-      if V.tries >= 5 then V.stage = "done"; log("versus: the other side did not come in (player mask %02x)", pm)
+
+      if clock_start or V.tries >= 40 then V.stage = "done"; log("versus: the other side did not come in (player mask %02x)", pm)
       else V.stage = "press"; V.at = frame - 20 end
     end
   end
