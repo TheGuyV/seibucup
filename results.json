@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-24 04:37","room":6,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[9,0],"ft":2,"series":"5-261024043230-3","ranked":1,"nicks":["dfdf","드래곤타이거","",""],"replay":"replays/20261024_043738_dfdf_vs_드래곤타이거_4-5_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 04:32","room":5,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,11],"ft":2,"series":"5-261024043230-3","ranked":1,"nicks":["dfdf","드래곤타이거","",""],"replay":"replays/20261024_043230_dfdf_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 04:28","room":4,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,0],"ft":2,"series":"3-261024042423-2","ranked":1,"tnames":{"드래곤타이거":["부산아이파크","POP"]},"nicks":["dfdf","드래곤타이거","",""],"replay":"replays/20261024_042809_dfdf_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 04:24","room":3,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,0],"ft":2,"series":"3-261024042423-2","ranked":1,"tnames":{"드래곤타이거":["부산아이파크","POP"]},"nicks":["dfdf","드래곤타이거","",""],"replay":"replays/20261024_042423_dfdf_vs_드래곤타이거_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 22:03","room":286,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,9],"arcade":1,"nicks":["이탈리아","서독","",""],"replay":"replays/20261022_220304_arcade_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 21:59","room":283,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[3,5],"nicks":["소소","미네로","",""],"replay":"replays/20261022_215938_소소_vs_미네로_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 21:56","room":283,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[3,5],"nicks":["소소","미네로","",""],"replay":"replays/20261022_215602_소소_vs_미네로_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 21:36","room":280,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[6,6],"ft":2,"series":"270-261022212716-30","ranked":1,"tnames":{"드래곤타이거":["수원삼성블루윙즈","SUW"],"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261022_213611_드래곤타이거_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 21:32","room":277,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[9,0],"nicks":["mizunoasahi","소주2병마심","",""],"replay":"replays/20261022_213250_mizunoasahi_vs_소주2병마심_4-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 21:36","room":280,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[6,6],"ft":2,"series":"270-261022212716-30","ranked":1,"tnames":{"드래곤타이거":["수원삼성블루윙즈","SUW"],"상봉거지오락실":["상봉거지 FC","KSJ"]},"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261022_213611_드래곤타이거_vs_상봉거지오락실_4-3_p1.scr","edition":"cupsocs2"}
 ]
