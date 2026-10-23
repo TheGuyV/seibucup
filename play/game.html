@@ -269,7 +269,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
 
       files.push(['/web/netplay.lua', await bytes(Q.get('postlog') && Q.get('nplua') ? Q.get('nplua') : 'netplay.lua')]);
       Object.assign(env, {
-        WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'relay', SCNP_GAME: game, SCNP_ADDR: 'relay', SCNP_PORT: '47260',
+        WEB_TARGET: '/web/netplay.lua', SCNP_MODE: 'relay', SCNP_GAME: game, SCNP_ADDR: 'relay', SCNP_PORT: '7000',
         SCNP_TOKEN: Q.get('token') || '', SCNP_SLOT: Q.get('slot') || '1', SCNP_PLAYERS: Q.get('players') || '2',
         SCNP_DELAY: Q.get('delay') || '3', SCNP_TEAMS: Q.get('type') || '1v1', SCNP_TIME: Q.get('time') || '150',
         SCNP_SPECTATORS: Q.get('nspec') || '0', SCNP_NAMES: Q.get('names') || '', SCNP_KINDS: /^[WP,]*$/.test(Q.get('kinds') || '') ? (Q.get('kinds') || '') : '', SCNP_SWAP: Q.get('swap') === '1' ? '1' : '0',
