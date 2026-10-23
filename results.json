@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 21:34","room":97,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[6,9],"ft":2,"series":"97-261023213418-44","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["상봉거지오락실","dfdf","",""],"replay":"replays/20261023_213418_상봉거지오락실_vs_dfdf_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 21:31","room":96,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[8,10],"ft":2,"series":"96-261023213115-43","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["즐축","rhythm","",""],"replay":"replays/20261023_213115_즐축_vs_rhythm_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 21:28","room":95,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[6,5],"ft":2,"series":"95-261023212825-42","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["상봉거지오락실","샤마2","",""],"replay":"replays/20261023_212825_상봉거지오락실_vs_샤마2_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 21:27","room":94,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,0],"ft":2,"series":"90-261023211838-41","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["dfdf","rhythm","",""],"replay":"replays/20261023_212751_dfdf_vs_rhythm_3-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 23:52","room":84,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,9],"nicks":["이태원후렌드치킨","dfdf","",""],"replay":"replays/20261021_235226_이태원후렌드치킨_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 23:46","room":82,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[7,0],"nicks":["dfdf","이태원후렌드치킨","",""],"replay":"replays/20261021_234643_dfdf_vs_이태원후렌드치킨_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 23:41","room":82,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,5],"nicks":["dfdf","이태원후렌드치킨","",""],"replay":"replays/20261021_234139_dfdf_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 23:35","room":79,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[7,3],"ft":2,"series":"79-261021232752-14","nicks":["슛돌이","이태원후렌드치킨","",""],"replay":"replays/20261021_233555_슛돌이_vs_이태원후렌드치킨_3-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 23:32","room":79,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,7],"ft":2,"series":"79-261021232752-14","nicks":["슛돌이","이태원후렌드치킨","",""],"replay":"replays/20261021_233210_슛돌이_vs_이태원후렌드치킨_4-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 23:35","room":79,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[7,3],"ft":2,"series":"79-261021232752-14","nicks":["슛돌이","이태원후렌드치킨","",""],"replay":"replays/20261021_233555_슛돌이_vs_이태원후렌드치킨_3-0_p1.scr","edition":"cupsocs2"}
 ]
