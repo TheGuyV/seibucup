@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 10:00","room":3,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[5,1],"ft":2,"series":"3-261023100031-3","ranked":1,"nicks":["테일러장군","나다","",""],"replay":"replays/20261023_100031_테일러장군_vs_나다_5-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 01:50","room":40,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,0],"ft":2,"series":"38-261023014332-15","ranked":1,"tnames":{"드래곤타이거":["부산아이파크","POP"]},"nicks":["rpfmqkd","드래곤타이거","",""],"replay":"replays/20261023_015019_rpfmqkd_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 01:46","room":39,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,6],"ft":2,"series":"38-261023014332-15","ranked":1,"tnames":{"드래곤타이거":["부산아이파크","POP"]},"nicks":["rpfmqkd","드래곤타이거","",""],"replay":"replays/20261023_014655_rpfmqkd_vs_드래곤타이거_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 01:43","room":38,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,6],"ft":2,"series":"38-261023014332-15","ranked":1,"tnames":{"드래곤타이거":["부산아이파크","POP"]},"nicks":["rpfmqkd","드래곤타이거","",""],"replay":"replays/20261023_014332_rpfmqkd_vs_드래곤타이거_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-20 23:55","room":81,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,10],"nicks":["우이우이운이","뚱이","",""],"replay":"replays/20261020_235545_우이우이운이_vs_뚱이_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:52","room":73,"type":"1v1","time":180,"players":2,"score":[1,0],"teams":[5,5],"nicks":["징기즈칸","미네로","",""],"replay":"replays/20261020_235205_징기즈칸_vs_미네로_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-20 23:50","room":79,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,3],"ft":2,"series":"79-261020235031-26","nicks":["드래곤타이거","우이우이운이","",""],"replay":"replays/20261020_235031_드래곤타이거_vs_우이우이운이_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 23:49","room":77,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,3],"ft":2,"series":"74-261020234358-25","ranked":1,"tnames":{"즐축":["아르헨티나","ARG"],"판순이":["판순이 FC","YSY"]},"nicks":["즐축","판순이","",""],"replay":"replays/20261020_234920_즐축_vs_판순이_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-20 23:47","room":73,"type":"1v1","time":180,"players":2,"score":[4,0],"teams":[5,0],"nicks":["징기즈칸","주니","",""],"replay":"replays/20261020_234740_징기즈칸_vs_주니_4-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-20 23:49","room":77,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[8,3],"ft":2,"series":"74-261020234358-25","ranked":1,"tnames":{"즐축":["아르헨티나","ARG"],"판순이":["판순이 FC","YSY"]},"nicks":["즐축","판순이","",""],"replay":"replays/20261020_234920_즐축_vs_판순이_0-1_p1.scr","edition":"cupsocs2"}
 ]
