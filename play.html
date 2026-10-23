@@ -991,7 +991,8 @@
 
   var VS_OFF_AT = Date.parse('2026-10-23T00:00:00+09:00');
   function vsOff() { return Date.now() >= VS_OFF_AT; }
-  function vsOffSay() { alert(T('대전모드는 윈도우 런처에서만 가능합니다.', 'Matches are only available in the Windows launcher.')); }
+
+  function vsOffSay() { alert(T('웹에서는 1:1 빠른 대결만 할 수 있어요 (웹 사용자끼리).\n방 만들기 등 다른 대전은 윈도우 런처에서 해 주세요.', 'On the web only the 1 vs 1 quick match is open (web players with web players).\nOther matches are in the Windows launcher.')); }
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
   var nset = { ping: 100, ft: 1, time: 150, stage: -1, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, pveDiff: 3, aloneDiff: 3, pveVsGod: false, sound: true, tie: 'pk', teams: 'pick' };
@@ -1494,7 +1495,7 @@
     var count = r ? r.names.filter(Boolean).length : 0, playing = !!(r && r.state === 'playing');
     var qn = quickWaiting();
     $('btnQuick').classList.toggle('qready', qn > 0 && !r);
-    $('btnQuick').innerHTML = qn > 0 && !r ? esc(T('빠른 대결 가능', 'MATCH AVAILABLE!')) : '<span class="ko">빠른 대결(단판)</span><span class="en">Quick match (single)</span>';
+    $('btnQuick').innerHTML = qn > 0 && !r ? esc(T('빠른 대결 가능', 'MATCH AVAILABLE!')) : '<span class="ko">1:1 빠른 대결 (웹끼리)</span><span class="en">1 vs 1 quick match (web)</span>';
     $('btnConn').textContent = on ? T('끊기', 'Disconnect') : T('접속', 'Connect');
     $('btnConn').className = 'nbtn' + (on ? ' cut' : ' primary');
     $('btnConn').disabled = inMatch;
@@ -2246,7 +2247,7 @@
     var pve = (f[4] || '1v1') === 'pve', watch = (playing && !pve) || full;
     var vsAsked = false;
     if (vsOff() && !watch) {
-      if (!confirm(T('대전모드는 윈도우 런처에서만 가능합니다.\n이 방을 관전하시겠습니까?', 'Matches are only available in the Windows launcher.\nWatch this room?'))) return;
+      if (!confirm(T('웹에서는 1:1 빠른 대결만 할 수 있어요.\n이 방을 관전하시겠습니까?', 'On the web only the quick match is open.\nWatch this room?'))) return;
       watch = true; vsAsked = true;
     }
     if (pve && !full && !vsOff() && !confirm(T('게임을 하시겠습니까?\n(취소 = 참관합니다)', 'Do you want to play?\n(Cancel = watch)'))) watch = true;
@@ -2481,7 +2482,7 @@
     repLabels();
   })();
 
-  $('btnQuick').onclick = function () { if (vsOff()) { vsOffSay(); return; } if (needRom()) return; net.quick = true; send('QUICK ' + nset.time + ' 0 ' + ed); };
+  $('btnQuick').onclick = function () { if (needRom()) return; net.quick = true; send('QUICK ' + nset.time + ' 0 ' + ed); };
   $('btnRefresh').onclick = function () { send('LIST'); if (net.sel) send('WHO ' + net.sel); };
   $('btnJoin').onclick = function () { if (net.sel) joinRoom(net.sel); };
   $('btnReady').onclick = function () {
