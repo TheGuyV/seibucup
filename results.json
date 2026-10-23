@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 23:39","room":184,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"ft":2,"series":"182-261023233603-88","ranked":1,"tnames":{"키보드입니다":["KOREA FC","KFC"]},"nicks":["키보드입니다","Janet","",""],"replay":"replays/20261023_233923_키보드입니다_vs_Janet_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:39","room":183,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,7],"ft":2,"series":"179-261023233000-86","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"]},"nicks":["판순이","rpfmqkd","",""],"replay":"replays/20261023_233918_판순이_vs_rpfmqkd_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:36","room":182,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,10],"ft":2,"series":"182-261023233603-88","ranked":1,"tnames":{"키보드입니다":["KOREA FC","KFC"]},"nicks":["키보드입니다","Janet","",""],"replay":"replays/20261023_233603_키보드입니다_vs_Janet_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:35","room":181,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,7],"ft":2,"series":"179-261023233000-86","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"]},"nicks":["판순이","rpfmqkd","",""],"replay":"replays/20261023_233528_판순이_vs_rpfmqkd_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 18:29","room":206,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,8],"ft":2,"series":"206-261022182545-19","nicks":["김정은패스","키보드입니다","",""],"replay":"replays/20261022_182904_김정은패스_vs_키보드입니다_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 18:28","room":208,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,9],"arcade":1,"nicks":["잉글랜드","서독","",""],"replay":"replays/20261022_182805_arcade_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 18:25","room":206,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,8],"ft":2,"series":"206-261022182545-19","nicks":["김정은패스","키보드입니다","",""],"replay":"replays/20261022_182545_김정은패스_vs_키보드입니다_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 18:24","room":204,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"arcade":1,"nicks":["일본","서독","",""],"replay":"replays/20261022_182415_arcade_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 18:21","room":200,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"200-261022181647-18","nicks":["키보드입니다","김정은패스","",""],"replay":"replays/20261022_182104_키보드입니다_vs_김정은패스_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 18:24","room":204,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"arcade":1,"nicks":["일본","서독","",""],"replay":"replays/20261022_182415_arcade_2-3_p1.scr","edition":"cupsocs2"}
 ]
