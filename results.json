@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 18:23","room":21,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,2],"ft":2,"series":"21-261023182329-11","ranked":1,"nicks":["인형의기사","도도리","",""],"replay":"replays/20261023_182329_인형의기사_vs_도도리_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 18:23","room":20,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"ft":2,"series":"18-261023181937-10","ranked":1,"tnames":{"레온":["레온 FC","LEO"]},"nicks":["rhythm","레온","",""],"replay":"replays/20261023_182306_rhythm_vs_레온_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 18:19","room":18,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,7],"ft":2,"series":"18-261023181937-10","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"],"레온":["레온 FC","LEO"]},"nicks":["rhythm","레온","",""],"replay":"replays/20261023_181937_rhythm_vs_레온_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 18:16","room":16,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"16-261023181619-9","ranked":1,"nicks":["키보드입니다","도도리","",""],"replay":"replays/20261023_181619_키보드입니다_vs_도도리_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 20:10","room":117,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"nicks":["로또영777","징기즈칸","",""],"replay":"replays/20261021_201021_로또영777_vs_징기즈칸_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:08","room":114,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_200819_덕장배_vs_신발벗어_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:06","room":106,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"ft":3,"series":"106-261021200246-12","nicks":["이재경짱","슛돌이","",""],"replay":"replays/20261021_200631_이재경짱_vs_슛돌이_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 20:06","room":113,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,8],"nicks":["로또영777","이태원후렌드치킨","",""],"replay":"replays/20261021_200614_로또영777_vs_이태원후렌드치킨_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 20:02","room":106,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,7],"ft":3,"series":"106-261021200246-12","nicks":["이재경짱","슛돌이","",""],"replay":"replays/20261021_200246_이재경짱_vs_슛돌이_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 20:06","room":113,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,8],"nicks":["로또영777","이태원후렌드치킨","",""],"replay":"replays/20261021_200614_로또영777_vs_이태원후렌드치킨_2-1_p1.scr","edition":"cupsocs2"}
 ]
