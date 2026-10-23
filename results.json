@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 13:12","room":13,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[6,7],"ft":2,"series":"11-261023130648-8","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["상봉거지오락실","김정은패스","",""],"replay":"replays/20261023_131230_상봉거지오락실_vs_김정은패스_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 13:08","room":12,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[5,1],"ft":2,"series":"12-261023130832-9","ranked":1,"nicks":["테일러장군","mizunoasahi","",""],"replay":"replays/20261023_130832_테일러장군_vs_mizunoasahi_4-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 13:06","room":11,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[6,7],"ft":2,"series":"11-261023130648-8","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["상봉거지오락실","김정은패스","",""],"replay":"replays/20261023_130648_상봉거지오락실_vs_김정은패스_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 12:53","room":9,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[6,3],"ft":2,"series":"9-261023125340-7","ranked":1,"nicks":["상봉거지오락실","율무아빠","",""],"replay":"replays/20261023_125340_상봉거지오락실_vs_율무아빠_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 14:02","room":7,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"nicks":["쌍송이","surferKIM","",""],"replay":"replays/20261021_140210_쌍송이_vs_surferKIM_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 13:59","room":5,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,6],"ft":2,"series":"3-261021135522-1","ranked":1,"tnames":{"NooB":["NooB FC","NOO"],"즐축":["즐축 FC","FCX"]},"nicks":["NooB","즐축","",""],"replay":"replays/20261021_135922_NooB_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 13:55","room":3,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,6],"ft":2,"series":"3-261021135522-1","ranked":1,"tnames":{"NooB":["NooB FC","NOO"],"즐축":["즐축 FC","FCX"]},"nicks":["NooB","즐축","",""],"replay":"replays/20261021_135522_NooB_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 13:46","room":57,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"nicks":["로또영","징기즈칸","",""],"replay":"replays/20261021_134622_로또영_vs_징기즈칸_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 13:24","room":53,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"arcade":1,"nicks":["서독","대한민국","",""],"replay":"replays/20261021_132439_arcade_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 13:46","room":57,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"nicks":["로또영","징기즈칸","",""],"replay":"replays/20261021_134622_로또영_vs_징기즈칸_3-2_p1.scr","edition":"cupsocs2"}
 ]
