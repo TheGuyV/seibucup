@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 19:29","room":39,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"ft":2,"series":"39-261023192939-18","ranked":1,"nicks":["dfdf","키보드입니다","",""],"replay":"replays/20261023_192939_dfdf_vs_키보드입니다_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 19:25","room":37,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"35-261023191556-17","ranked":1,"nicks":["rhythm","dfdf","",""],"replay":"replays/20261023_192525_rhythm_vs_dfdf_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 19:21","room":36,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,9],"ft":2,"series":"35-261023191556-17","ranked":1,"nicks":["rhythm","dfdf","",""],"replay":"replays/20261023_192136_rhythm_vs_dfdf_4-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 19:15","room":35,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":2,"series":"35-261023191556-17","ranked":1,"nicks":["rhythm","dfdf","",""],"replay":"replays/20261023_191556_rhythm_vs_dfdf_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 20:38","room":114,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_203846_덕장배_vs_신발벗어_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:34","room":114,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_203420_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:33","room":127,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,8],"ft":2,"series":"127-261021202559-14","nicks":["상봉거지오락실","404page","",""],"replay":"replays/20261021_203306_상봉거지오락실_vs_404page_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 20:29","room":114,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_202947_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 20:29","room":127,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,0],"ft":2,"series":"127-261021202559-14","nicks":["상봉거지오락실","404page","",""],"replay":"replays/20261021_202940_상봉거지오락실_vs_404page_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 20:29","room":114,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,4],"ft":5,"series":"114-261021200819-13","nicks":["덕장배","신발벗어","",""],"replay":"replays/20261021_202947_덕장배_vs_신발벗어_1-2_p1.scr","edition":"cupsocs2"}
 ]
