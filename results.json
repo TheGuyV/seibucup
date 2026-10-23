@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 23:17","room":175,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,8],"ft":2,"series":"175-261023231758-83","ranked":1,"nicks":["rpfmqkd","뚱이","",""],"replay":"replays/20261023_231758_rpfmqkd_vs_뚱이_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:17","room":171,"type":"2v2","time":150,"players":4,"score":[1,0],"teams":[5,8],"ft":2,"series":"171-261023231728-82","nicks":["미네로","레온","즐축","김정은패스"],"replay":"replays/20261023_231728_미네로_vs_즐축_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:16","room":174,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[2,3],"ft":2,"series":"174-261023231608-81","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","슛돌이","",""],"replay":"replays/20261023_231608_rhythm_vs_슛돌이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:14","room":173,"type":"1v1","time":150,"players":2,"score":[3,5],"teams":[5,10],"ft":2,"series":"168-261023231029-79","ranked":1,"tnames":{"키보드입니다":["KOREA FC","KFC"]},"nicks":["키보드입니다","Janet","",""],"replay":"replays/20261023_231440_키보드입니다_vs_Janet_3-5_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 16:21","room":189,"type":"1v1","time":150,"players":2,"score":[6,0],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261022_162154_arcade_6-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 16:04","room":185,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,10],"arcade":1,"nicks":["대한민국","일본","",""],"replay":"replays/20261022_160432_arcade_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 15:32","room":175,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[10,0],"ft":2,"series":"175-261022152822-17","nicks":["키보드입니다","rhythmmania9999","",""],"replay":"replays/20261022_153250_키보드입니다_vs_rhythmmania9999_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 15:28","room":175,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[9,4],"ft":2,"series":"175-261022152822-17","nicks":["키보드입니다","rhythmmania9999","",""],"replay":"replays/20261022_152822_키보드입니다_vs_rhythmmania9999_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 15:15","room":168,"type":"1v1","time":180,"players":2,"score":[4,5],"teams":[9,7],"nicks":["도도리","김정은패스","",""],"replay":"replays/20261022_151556_도도리_vs_김정은패스_4-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 15:28","room":175,"type":"1v1","time":180,"players":2,"score":[3,2],"teams":[9,4],"ft":2,"series":"175-261022152822-17","nicks":["키보드입니다","rhythmmania9999","",""],"replay":"replays/20261022_152822_키보드입니다_vs_rhythmmania9999_3-2_p1.scr","edition":"cupsocs2"}
 ]
