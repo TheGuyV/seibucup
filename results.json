@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 20:22","room":66,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":2,"series":"66-261023202225-31","ranked":1,"nicks":["rhythm","dfdf","",""],"replay":"replays/20261023_202225_rhythm_vs_dfdf_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:21","room":65,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"60-261023201506-30","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["슛돌이","상봉거지오락실","",""],"replay":"replays/20261023_202140_슛돌이_vs_상봉거지오락실_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:18","room":63,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,11],"ft":2,"series":"60-261023201506-30","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["슛돌이","상봉거지오락실","",""],"replay":"replays/20261023_201835_슛돌이_vs_상봉거지오락실_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:18","room":62,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[2,9],"ft":2,"series":"59-261023201455-29","ranked":1,"nicks":["404page","dfdf","",""],"replay":"replays/20261023_201828_404page_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 22:14","room":42,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,5],"nicks":["하니","dfdf","",""],"replay":"replays/20261021_221433_하니_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:13","room":18,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,3],"nicks":["소소","aapp","",""],"replay":"replays/20261021_221329_소소_vs_aapp_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:12","room":44,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"ft":2,"series":"44-261021221248-5","nicks":["드래곤타이거","Janet","",""],"replay":"replays/20261021_221248_드래곤타이거_vs_Janet_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 22:10","room":42,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,9],"nicks":["하니","dfdf","",""],"replay":"replays/20261021_221043_하니_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 22:09","room":18,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,3],"nicks":["소소","aapp","",""],"replay":"replays/20261021_220917_소소_vs_aapp_3-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 22:10","room":42,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[4,9],"nicks":["하니","dfdf","",""],"replay":"replays/20261021_221043_하니_vs_dfdf_2-1_p1.scr","edition":"cupsocs2"}
 ]
