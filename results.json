@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 20:15","room":60,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,6],"ft":2,"series":"60-261023201506-30","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["슛돌이","상봉거지오락실","",""],"replay":"replays/20261023_201506_슛돌이_vs_상봉거지오락실_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:14","room":59,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[4,9],"ft":2,"series":"59-261023201455-29","ranked":1,"nicks":["404page","dfdf","",""],"replay":"replays/20261023_201455_404page_vs_dfdf_4-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:12","room":58,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,0],"ft":2,"series":"58-261023201218-28","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["율무아빠","rhythm","",""],"replay":"replays/20261023_201218_율무아빠_vs_rhythm_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:09","room":56,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,3],"ft":2,"series":"54-261023200629-26","ranked":1,"nicks":["404page","슛돌이","",""],"replay":"replays/20261023_200936_404page_vs_슛돌이_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 22:06","room":42,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"nicks":["하니","dfdf","",""],"replay":"replays/20261021_220650_하니_vs_dfdf_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:05","room":18,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,3],"nicks":["소소","aapp","",""],"replay":"replays/20261021_220507_소소_vs_aapp_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 22:02","room":33,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[10,7],"ft":2,"series":"33-261021215427-4","nicks":["Janet","상봉거지오락실","",""],"replay":"replays/20261021_220253_Janet_vs_상봉거지오락실_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 22:01","room":34,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["에어","뚱이","",""],"replay":"replays/20261021_220138_에어_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 22:01","room":18,"type":"1v1","time":150,"players":2,"score":[4,4],"teams":[9,3],"nicks":["소소","aapp","",""],"replay":"replays/20261021_220103_소소_vs_aapp_4-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 22:01","room":34,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,10],"nicks":["에어","뚱이","",""],"replay":"replays/20261021_220138_에어_vs_뚱이_3-2_p1.scr","edition":"cupsocs2"}
 ]
