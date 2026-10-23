@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 22:59","room":157,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,3],"ft":2,"series":"157-261023225902-74","ranked":1,"tnames":{"레온":["레온 FC","LEO"]},"nicks":["레온","rpfmqkd","",""],"replay":"replays/20261023_225902_레온_vs_rpfmqkd_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 22:58","room":158,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"ft":2,"series":"158-261023225848-73","ranked":1,"nicks":["dfdf","소소","",""],"replay":"replays/20261023_225848_dfdf_vs_소소_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 22:58","room":156,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,11],"ft":2,"series":"148-261023225051-70","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","뚱이","",""],"replay":"replays/20261023_225806_김정은패스_vs_뚱이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 22:57","room":155,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[10,2],"ft":2,"series":"155-261023225733-72","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["Janet","rhythm","",""],"replay":"replays/20261023_225733_Janet_vs_rhythm_5-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 13:44","room":135,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[0,8],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_134447_rhythmmania99_vs_골인_3-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:40","room":135,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_134025_rhythmmania99_vs_골인_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 13:36","room":135,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[4,8],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_133638_rhythmmania99_vs_골인_2-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 13:32","room":135,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_133241_rhythmmania99_vs_골인_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 13:28","room":135,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,8],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_132851_rhythmmania99_vs_골인_1-2_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 13:32","room":135,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"nicks":["rhythmmania99","골인","",""],"replay":"replays/20261022_133241_rhythmmania99_vs_골인_1-2_p1.scr","edition":"cupsocs2"}
 ]
