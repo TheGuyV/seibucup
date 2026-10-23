@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 23:10","room":169,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,3],"ft":2,"series":"165-261023230644-77","ranked":1,"nicks":["rpfmqkd","소소","",""],"replay":"replays/20261023_231004_rpfmqkd_vs_소소_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:07","room":167,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,2],"ft":2,"series":"167-261023230744-78","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["슛돌이","rhythm","",""],"replay":"replays/20261023_230744_슛돌이_vs_rhythm_1-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:06","room":165,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,3],"ft":2,"series":"165-261023230644-77","ranked":1,"nicks":["rpfmqkd","소소","",""],"replay":"replays/20261023_230644_rpfmqkd_vs_소소_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 23:04","room":163,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[10,5],"ft":2,"series":"163-261023230407-76","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["뚱이","rhythm","",""],"replay":"replays/20261023_230407_뚱이_vs_rhythm_0-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 14:48","room":157,"type":"1v1","time":420,"players":2,"score":[3,1],"teams":[10,5],"nicks":["살살해주세요","cupcup","",""],"replay":"replays/20261022_144856_살살해주세요_vs_cupcup_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 14:43","room":157,"type":"1v1","time":420,"players":2,"score":[3,2],"teams":[7,9],"nicks":["살살해주세요","cupcup","",""],"replay":"replays/20261022_144326_살살해주세요_vs_cupcup_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 14:37","room":157,"type":"1v1","time":420,"players":2,"score":[3,2],"teams":[4,5],"nicks":["살살해주세요","cupcup","",""],"replay":"replays/20261022_143759_살살해주세요_vs_cupcup_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 14:05","room":155,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[9,4],"nicks":["도도리","rhythmmania99","",""],"replay":"replays/20261022_140545_도도리_vs_rhythmmania99_2-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 14:01","room":155,"type":"1v1","time":180,"players":2,"score":[1,1],"teams":[10,4],"nicks":["도도리","rhythmmania99","",""],"replay":"replays/20261022_140110_도도리_vs_rhythmmania99_1-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 14:05","room":155,"type":"1v1","time":180,"players":2,"score":[2,1],"teams":[9,4],"nicks":["도도리","rhythmmania99","",""],"replay":"replays/20261022_140545_도도리_vs_rhythmmania99_2-1_p1.scr","edition":"cupsocs2"}
 ]
