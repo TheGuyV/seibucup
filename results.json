@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 17:42","room":8,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[8,7],"ft":2,"series":"8-261023174254-5","ranked":1,"nicks":["rhythm","인형의기사","",""],"replay":"replays/20261023_174254_rhythm_vs_인형의기사_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 17:40","room":7,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"7-261023174023-4","ranked":1,"nicks":["슛돌이","모이자오락실","",""],"replay":"replays/20261023_174023_슛돌이_vs_모이자오락실_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 17:38","room":6,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,11],"ft":2,"series":"5-261023173437-3","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","김정은패스","",""],"replay":"replays/20261023_173805_rhythm_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 17:34","room":5,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[4,11],"ft":2,"series":"5-261023173437-3","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","김정은패스","",""],"replay":"replays/20261023_173437_rhythm_vs_김정은패스_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 19:44","room":97,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":3,"series":"97-261021194454-10","nicks":["이재경짱","징기즈칸","",""],"replay":"replays/20261021_194454_이재경짱_vs_징기즈칸_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 17:54","room":73,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,3],"arcade":1,"nicks":["서독","잉글랜드","",""],"replay":"replays/20261021_175426_arcade_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 16:59","room":48,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[0,4],"ft":2,"series":"48-261021165610-9","nicks":["라마스10","rhythmmania0203","",""],"replay":"replays/20261021_165949_라마스10_vs_rhythmmania0203_1-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 16:56","room":48,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,8],"ft":2,"series":"48-261021165610-9","nicks":["라마스10","rhythmmania0203","",""],"replay":"replays/20261021_165610_라마스10_vs_rhythmmania0203_5-0_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 16:53","room":29,"type":"1v1","time":210,"players":2,"score":[4,4],"teams":[7,9],"nicks":["골인","호세뽕","",""],"replay":"replays/20261021_165357_골인_vs_호세뽕_4-4_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 16:56","room":48,"type":"1v1","time":150,"players":2,"score":[5,0],"teams":[5,8],"ft":2,"series":"48-261021165610-9","nicks":["라마스10","rhythmmania0203","",""],"replay":"replays/20261021_165610_라마스10_vs_rhythmmania0203_5-0_p1.scr","edition":"cupsocs2"}
 ]
