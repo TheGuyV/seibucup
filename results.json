@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 22:41","room":141,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"137-261023223754-63","ranked":1,"nicks":["Janet","호세뽕","",""],"replay":"replays/20261023_224113_Janet_vs_호세뽕_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 22:41","room":139,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,6],"ft":2,"series":"139-261023224106-65","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","소소","",""],"replay":"replays/20261023_224106_김정은패스_vs_소소_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 22:39","room":138,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,8],"ft":2,"series":"138-261023223903-64","ranked":1,"nicks":["샤부사커","뚱이","",""],"replay":"replays/20261023_223903_샤부사커_vs_뚱이_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 22:38","room":135,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,2],"ft":2,"series":"131-261023223359-60","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["키보드입니다","rhythm","",""],"replay":"replays/20261023_223806_키보드입니다_vs_rhythm_1-2_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 12:28","room":124,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[5,9],"nicks":["rhythmmania99","cupcup","",""],"replay":"replays/20261022_122838_rhythmmania99_vs_cupcup_1-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 12:24","room":124,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[4,7],"nicks":["rhythmmania99","cupcup","",""],"replay":"replays/20261022_122415_rhythmmania99_vs_cupcup_0-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 11:50","room":117,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,9],"arcade":1,"nicks":["잉글랜드","서독","",""],"replay":"replays/20261022_115006_arcade_2-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 11:41","room":116,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,7],"ft":2,"series":"116-261022112848-16","nicks":["드래곤타이거","cupcup","",""],"replay":"replays/20261022_114144_드래곤타이거_vs_cupcup_3-4_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 11:36","room":116,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[3,7],"ft":2,"series":"116-261022112848-16","nicks":["드래곤타이거","cupcup","",""],"replay":"replays/20261022_113653_드래곤타이거_vs_cupcup_4-5_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 11:41","room":116,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[0,7],"ft":2,"series":"116-261022112848-16","nicks":["드래곤타이거","cupcup","",""],"replay":"replays/20261022_114144_드래곤타이거_vs_cupcup_3-4_p1.scr","edition":"cupsocs2"}
 ]
