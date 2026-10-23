@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 21:03","room":84,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,6],"ft":2,"series":"80-261023205553-37","ranked":1,"nicks":["dfdf","404page","",""],"replay":"replays/20261023_210331_dfdf_vs_404page_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 21:01","room":83,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,3],"ft":2,"series":"81-261023205721-38","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","율무아빠","",""],"replay":"replays/20261023_210101_rhythm_vs_율무아빠_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:59","room":82,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[9,7],"ft":2,"series":"80-261023205553-37","ranked":1,"nicks":["dfdf","404page","",""],"replay":"replays/20261023_205941_dfdf_vs_404page_3-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 20:57","room":81,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"81-261023205721-38","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","율무아빠","",""],"replay":"replays/20261023_205721_rhythm_vs_율무아빠_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 23:08","room":75,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,9],"arcade":1,"nicks":["대한민국","서독","",""],"replay":"replays/20261021_230801_arcade_1-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 23:07","room":73,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,0],"ft":2,"series":"73-261021230329-12","nicks":["판순이","404page","",""],"replay":"replays/20261021_230743_판순이_vs_404page_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 23:03","room":73,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,7],"ft":2,"series":"73-261021230329-12","nicks":["판순이","404page","",""],"replay":"replays/20261021_230329_판순이_vs_404page_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 23:02","room":72,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[9,3],"ft":2,"series":"72-261021225836-11","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261021_230252_테일러장군_vs_플로레알_5-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 22:58","room":72,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,7],"ft":2,"series":"72-261021225836-11","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261021_225836_테일러장군_vs_플로레알_3-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 23:02","room":72,"type":"1v1","time":150,"players":2,"score":[5,1],"teams":[9,3],"ft":2,"series":"72-261021225836-11","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261021_230252_테일러장군_vs_플로레알_5-1_p1.scr","edition":"cupsocs2"}
 ]
