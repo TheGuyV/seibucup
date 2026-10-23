@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 18:16","room":16,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"16-261023181619-9","ranked":1,"nicks":["키보드입니다","도도리","",""],"replay":"replays/20261023_181619_키보드입니다_vs_도도리_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 18:14","room":15,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":2,"series":"15-261023181443-8","ranked":1,"nicks":["rhythm","mizunoasahi","",""],"replay":"replays/20261023_181443_rhythm_vs_mizunoasahi_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 18:07","room":14,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"12-261023175730-7","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","rhythm","",""],"replay":"replays/20261023_180714_김정은패스_vs_rhythm_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 18:03","room":13,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,10],"ft":2,"series":"12-261023175730-7","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","rhythm","",""],"replay":"replays/20261023_180315_김정은패스_vs_rhythm_0-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-21 20:06","room":113,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,8],"nicks":["로또영777","이태원후렌드치킨","",""],"replay":"replays/20261021_200614_로또영777_vs_이태원후렌드치킨_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:02","room":106,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,7],"ft":3,"series":"106-261021200246-12","nicks":["이재경짱","슛돌이","",""],"replay":"replays/20261021_200246_이재경짱_vs_슛돌이_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-21 20:01","room":109,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"nicks":["이태원후렌드치킨","징기즈칸","",""],"replay":"replays/20261021_200150_이태원후렌드치킨_vs_징기즈칸_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 19:56","room":103,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[4,0],"ft":2,"series":"103-261021195217-11","nicks":["슛돌이","이태원후렌드치킨","",""],"replay":"replays/20261021_195624_슛돌이_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-21 19:52","room":97,"type":"1v1","time":150,"players":2,"score":[0,3],"teams":[9,5],"ft":3,"series":"97-261021194454-10","nicks":["이재경짱","징기즈칸","",""],"replay":"replays/20261021_195239_이재경짱_vs_징기즈칸_0-3_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-21 19:56","room":103,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[4,0],"ft":2,"series":"103-261021195217-11","nicks":["슛돌이","이태원후렌드치킨","",""],"replay":"replays/20261021_195624_슛돌이_vs_이태원후렌드치킨_3-2_p1.scr","edition":"cupsocs2"}
 ]
