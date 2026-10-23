@@ -1256,10 +1256,47 @@ function scnp_costume_kit()
     C.kit = { [1] = L and L.home or nil, [2] = Rt and Rt.home or nil }
     C.boots = { [1] = L and L.boots or nil, [2] = Rt and Rt.boots or nil }
     C.hair = { [1] = L and L.hair or nil, [2] = Rt and Rt.hair or nil }
-    if L and Rt then
-      local a, b2 = L.home[1], Rt.home[1]
-      if math.sqrt((a[1] - b2[1]) ^ 2 + (a[2] - b2[2]) ^ 2 + (a[3] - b2[3]) ^ 2) < 90 then C.kit[2] = Rt.away; log("costume: the right side wears its away kit") end
+    local function lab(c)
+      local function f(u) u = u / 255; return u > 0.04045 and ((u + 0.055) / 1.055) ^ 2.4 or u / 12.92 end
+      local r, g, b = f(c[1]), f(c[2]), f(c[3])
+      local x, y, z = (r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047, r * 0.2126 + g * 0.7152 + b * 0.0722, (r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883
+      local function F(t) return t > 0.008856 and t ^ (1 / 3) or 7.787 * t + 16 / 116 end
+      return 116 * F(y) - 16, 500 * (F(x) - F(y)), 200 * (F(y) - F(z))
     end
+    local function de(p, q) local l1, a1, b1 = lab(p); local l2, a2, b2 = lab(q); return math.sqrt((l1 - l2) ^ 2 + (a1 - a2) ^ 2 + (b1 - b2) ^ 2) end
+    local function shirt_of(side)
+      local la, best, bl = base + (side == 1 and 1 or 4) * 32, 0, -1
+      for i = 8, 10 do local c = mem:read_u16(la + i * 2); local l = lum(c); if l > bl then bl, best = l, c end end
+      local r, g, b = sp(best); return { r * 255 // 31, g * 255 // 31, b * 255 // 31 }
+    end
+    local opts = {}
+    for side = 1, 2 do local S; if side == 1 then S = L else S = Rt end; opts[side] = S and { S.home, S.away } or { { shirt_of(side) } } end
+    local TH, pick = 50, { 1, 1 }
+    local d0 = de(opts[1][1][1], opts[2][1][1])
+    local best = d0
+    if d0 < TH then
+      for _, ij in ipairs({ { 1, 2 }, { 2, 1 }, { 2, 2 } }) do
+        local i, j = ij[1], ij[2]
+        if opts[1][i] and opts[2][j] then
+          local dd = de(opts[1][i][1], opts[2][j][1])
+          if dd >= TH then best, pick = dd, { i, j }; break end
+          if dd > best then best, pick = dd, { i, j } end
+        end
+      end
+      if best < TH then
+        local t = Rt and 2 or (L and 1 or nil)
+        if t then
+          local own, other = (t == 2 and Rt or L).home[1], opts[3 - t][pick[3 - t]][1]
+          local white, black = { 236, 236, 236 }, { 24, 24, 28 }
+          opts[t][3] = { de(white, other) >= de(black, other) and white or black, own, own }
+          pick[t] = 3; best = de(opts[t][3][1], other)
+        end
+      end
+      local nm = { "home", "away", "third" }
+      local function hx(c) return string.format("%02x%02x%02x", c[1], c[2], c[3]) end
+      log("costume: shirts alike (%s %s, %.0f) - left %s, right %s (%.0f)", hx(opts[1][1][1]), hx(opts[2][1][1]), d0, L and nm[pick[1]] or "country", Rt and nm[pick[2]] or "country", best)
+    end
+    for side = 1, 2 do if (side == 1 and L) or (side == 2 and Rt) then C.kit[side] = opts[side][pick[side]] end end
   end
   for side = 1, 2 do
     local k = C.kit[side]

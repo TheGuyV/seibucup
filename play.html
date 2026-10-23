@@ -352,6 +352,15 @@
   #chatPub .bl { display: flex; align-items: flex-end; gap: 5px; max-width: 84%; }
   #chatPub .me .bl { flex-direction: row-reverse; }
   #chatPub .bb { background: #2c2f34; border: 1px solid #3a3e45; color: #e8e8e8; border-radius: 10px; padding: 3px 10px; overflow-wrap: anywhere; }
+  #chatPub .row.staff .bb { background: #3a2412; border-color: #ff8a3d; color: #ffe2cc; font-weight: 600; }
+  .keynote { position: fixed; inset: 0; z-index: 9999; background: rgba(5,8,13,.8); display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .keynote-box { width: min(100%, 460px); background: #161b22; border: 1px solid #ffb35c; border-radius: 14px; padding: 20px; color: #e8edf5; display: flex; flex-direction: column; gap: 10px; }
+  .keynote-box h3 { margin: 0; color: #ffb35c; }
+  .kn-code { font: 700 32px/1.2 Galmuri11, monospace; letter-spacing: .18em; text-align: center; color: #f2c230; border: 2px dashed #f2c230; border-radius: 12px; padding: 12px 6px; user-select: all; }
+  .kn-text { white-space: pre-line; margin: 0; color: #c3cddc; }
+  .kn-ok { align-self: flex-end; }
+  #chatPub .row.staff .bn { color: #ffab6e !important; font-weight: 700; }
+  #chatPub .stag { display: inline-block; font-size: .78em; font-weight: 700; color: #1b1205; background: #ff8a3d; border-radius: 4px; padding: 0 5px; margin-right: 5px; }
   #chatPub .me .bb { background: #2f62b8; border-color: #2f62b8; color: #fff; }
   #chatPub .bt { font-size: 10.5px; color: #8c929b; white-space: nowrap; font-variant-numeric: tabular-nums; }
   #chatPub .pill { width: fit-content; max-width: 92%; margin: 8px auto 0; font-size: 11.5px; color: #aab0b9; background: #2c2f34; border-radius: 10px; padding: 1px 11px; text-align: center; overflow-wrap: anywhere; white-space: normal; }
@@ -474,6 +483,8 @@
             <div class="nfield volrow"><input type="range" id="volSfx" min="0" max="100" step="5"><span id="volSfxPct">100%</span></div></div>
           <div class="nrow"><label><span class="ko">닉네임 열쇠</span><span class="en">Nickname key</span></label>
             <div class="nfield"><button class="nbtn" id="btnNickKey" type="button"><span class="ko">내 닉네임 열쇠 보기</span><span class="en">Show my nickname key</span></button></div></div>
+          <div class="nrow" id="naverRow" hidden><label><span class="ko">네이버 인증</span><span class="en">Naver</span></label>
+            <div class="nfield"><button class="nbtn" id="btnNaver" type="button"></button></div></div>
           <label class="ncheck"><input type="checkbox" id="netSound"> <span class="ko">알림 소리</span><span class="en">Notification sounds</span></label>
           <div class="nrow" style="margin-top:auto"><span></span><div class="nfield soloBtns" style="position:relative"><div class="pvemenu" id="aloneMenu" hidden style="right:auto;left:0"><button type="button" data-god="0"><span class="ko">일반 버전</span><span class="en">Regular game</span></button><button type="button" data-god="1"><span class="ko">무조건 GOD로 플레이</span><span class="en">Always play as GOD</span></button><div class="pvehead" style="border-top:1px solid #555;padding:6px 10px 2px;font-size:12px;color:#9aa"><span class="ko">난이도 (컴퓨터 팀)</span><span class="en">Difficulty (the CPU team)</span></div><button type="button" data-adiff="2"><span class="ko">쉬움</span><span class="en">Easy</span></button><button type="button" data-adiff="3"><span class="ko">보통 (기본)</span><span class="en">Normal (default)</span></button><button type="button" data-adiff="1"><span class="ko">어려움</span><span class="en">Hard</span></button><button type="button" data-adiff="0"><span class="ko">아주 어려움</span><span class="en">Very hard</span></button></div><button class="nbtn" id="netKeys" type="button"><span class="ko">키 설정</span><span class="en">Keys</span></button><button class="nbtn" id="netAlone" type="button"><span class="ko">CPU대전</span><span class="en">Vs CPU</span></button><button class="nbtn" id="netTut" type="button"><span class="ko">튜토리얼</span><span class="en">Tutorial</span></button><button class="nbtn" id="netPractice" type="button"><span class="ko">연습 게임</span><span class="en">Practice</span></button><button class="nbtn" id="netReplay" type="button"><span class="ko">리플레이</span><span class="en">Replays</span></button><button class="nbtn bold" id="btnQuick" type="button" disabled style="margin-left:auto"><span class="ko">빠른 대결(단판)</span><span class="en">Quick match (single)</span></button></div></div>
         </div>
@@ -709,6 +720,7 @@
     $('btnStop').innerHTML = on ? '<span class="ko">닫는 중…</span><span class="en">Closing…</span>' : '<span class="ko">그만하기</span><span class="en">Stop</span>';
   }
   function start(mode, extra) {
+    if (net.noPlay && net.ws && (mode === 'solo' || mode === 'practice' || mode === 'tutorial')) { netSay(T('관리자 아이디로는 게임을 할 수 없습니다. 채팅과 관전만 할 수 있습니다.', 'Admin nickname: chat and watching only, no games.')); return; }
     if (!romOk.orig && !romOk.sel) { say(T('롬이 없습니다. 먼저 맨 위 <b>내 롬</b> 줄에서 cupsoc.zip 과 cupsocs2.zip (셀렉션, 추천) 을 넣으세요.', 'No ROM. Add cupsoc.zip and cupsocs2.zip (Selection, recommended) in the <b>My ROM</b> row first.')); $('needRom').scrollIntoView({ block: 'center' }); return; }
     if (running) { stop(true).then(function () { start(mode, extra); }); return; }
     var q = new URLSearchParams({ mode: mode, game: (extra && extra.game) || ed, lang: ko() ? 'ko' : 'en' });
@@ -1275,10 +1287,12 @@
     }
     var me = who === net.nick, run = pubLast.n === who;
     if (run && pubLast.when === when && pubLast.tEl) pubLast.tEl.remove();
-    var row = el('div', 'row' + (me ? ' me' : '') + (run ? '' : ' first'));
+    var staff = !!(net.staff && net.staff[(who || '').toLowerCase()]);
+    var row = el('div', 'row' + (me ? ' me' : '') + (run ? '' : ' first') + (staff ? ' staff' : ''));
     if (!me && !run) {
       var bn = el('div', 'bn'); bn.style.color = nameCol(who);
       if (mark && SKILL_SYM[mark] && mark !== '?') { var mk = el('span', 'chm sk-' + mark, SKILL_SYM[mark]); mk.title = skillWord(mark); bn.appendChild(mk); }
+      if (staff) bn.appendChild(el('span', 'stag', T('운영자', 'Admin')));
       bn.appendChild(document.createTextNode(who)); row.appendChild(bn);
     }
     var bl = el('div', 'bl'), tm = el('span', 'bt', hm);
@@ -1561,7 +1575,7 @@
       net.fpSent = false; net.fpOk = true;
 
       var nkey = nickKeyFor(store.get('web_nick') || net.nick);
-      send('BUILD ' + WEB_BUILD + ' ' + WEB_PROTO); send('NOTES'); sendFp(); if (nkey) send('NICKKEY ' + nkey); send('DEV ' + devId); send('CONN ' + myKind());
+      send('BUILD ' + WEB_BUILD + ' ' + WEB_PROTO); send('NOTES'); sendFp(); if (nkey) send('NICKKEY ' + nkey); send('DEV ' + devId); send('CONN ' + myKind()); keyNoteAsk();
       sys('pub', T('로비에 있는 모두와 이야기해 보세요 - 상대 구함, 인사, 건의.', 'Talk with everybody in the lobby - find a match, say hello.'));
       sys('pub', T(net.nick + ' 님, 환영합니다! 이 채팅은 접속한 모두에게 보입니다 - 인사해 보세요.', 'Welcome, ' + net.nick + '! Everybody online sees this chat.'));
       netSay(T('접속됨. 방을 골라 참가하거나 새로 만드세요.', 'Connected. Pick a room to join, or create one.'));
@@ -1704,18 +1718,27 @@
 
       var taken = T('이미 다른 분(다른 기기)이 쓰는 닉네임입니다. 다른 닉네임으로 바꾸거나, 내 닉네임이면 닉네임 열쇠를 입력해 주세요.', 'This nickname belongs to another device. Pick another one, or enter your nickname key if it is yours.');
       netSay(taken);
-      setTimeout(function () {
-        var k = prompt(taken + '\n\n' + T('열쇠(영문·숫자 8자리) - 이 닉네임을 이미 쓰는 기기의 [설정 > 내 닉네임 열쇠]에서 볼 수 있습니다', 'Key (8 letters/digits) - on the device that already uses this nickname: Settings > My nickname key'), '');
-        k = (k || '').trim().toUpperCase();
-        if (!/^[A-Z0-9]{8}$/.test(k)) { if (k) netSay(T('열쇠는 영문·숫자 8자리입니다.', 'A key is 8 letters or digits.')); return; }
-        store.set('web_nickkey', (store.get('web_nick') || '') + '|' + k);
-        netSay(T('열쇠를 저장했습니다. 다시 접속합니다...', 'Key saved - connecting again...'));
-        setTimeout(function () { if (!net.ws) connect(); }, 2500);
-      }, 0);
+      if (net.naverRec && Date.now() - net.naverRec.at < 9 * 60000) {
+
+        naverShow();
+        var nv = T('네이버 인증된 닉네임입니다. 내 닉네임이면 설정의 [네이버로 되찾기]를 누르고, 인증한 네이버 계정으로 로그인하세요. 그러면 바로 다시 접속됩니다.', 'This nickname is verified with Naver. If it is yours, press [Get it back with Naver] in the settings and log in with that Naver account.');
+        netSay(nv);
+        setTimeout(function () { if (!confirm(nv + '\n\n' + T('[취소]를 누르면 닉네임 열쇠를 입력할 수 있습니다.', 'Press Cancel to enter the nickname key instead.'))) naverKeyAsk(taken); }, 0);
+      }
+      else setTimeout(function () { naverKeyAsk(taken); }, 0);
     }
     else if (cmd === 'ERROR' && arg.indexOf('nickname rule') === 0) {
       var rule = T('닉네임 규칙: 영문·숫자는 4~16자, 한글이 들어가면 한글 2자 이상, 전체 8자 이하입니다. 닉네임을 바꾼 뒤 다시 접속해 주세요.', 'Nicknames: 4-16 letters or digits; with Hangul, at least 2 Hangul and at most 8 characters. Change it and connect again.');
       netSay(rule); setTimeout(function () { alert(rule); }, 0);
+    }
+    else if (cmd === 'NAVER') naverLine(arg);
+    else if (cmd === 'STAFF') { net.staff = {}; arg.split(',').forEach(function (n) { n = n.trim().toLowerCase(); if (n) net.staff[n] = true; }); }
+    else if (cmd === 'NOPLAY') net.noPlay = arg.trim() === '1';
+    else if (cmd === 'MYKEY' && net.keyNoteAsked) {
+
+      net.keyNoteAsked = false;
+      var nk = arg.split(' '), nkk = nk[nk.length - 1], nkn = nk.slice(0, -1).join(' ');
+      if (nkk !== '-') keyNoteShow(nkn, nkk);
     }
     else if (cmd === 'MYKEY') {
       var mk = arg.split(' '), kk = mk[mk.length - 1], kn = mk.slice(0, -1).join(' ');
@@ -2109,10 +2132,91 @@
     ws.onclose = function () {
       if (net.ws !== ws) return;
       clearInterval(net.timer); net.ws = null; net.rooms = []; net.seenRooms = null; net.sel = null; net.who = null; leftRoom();
+      naverShow();
       netSay(T('로비에서 나왔습니다.', 'Left the lobby.'));
     };
     ws.onerror = function () { netSay(T('게임 서버에 접속하지 못했습니다.', 'Could not reach the game server.')); };
   }
+  function keyNoteAsk() {
+    var me = (net.nick || '').trim().toLowerCase(), had = (store.get('web_keynoted') || '');
+    if (!me || ('|' + had + '|').indexOf('|' + me + '|') >= 0) return;
+    net.keyNoteAsked = true; send('KEY');
+  }
+  function keyNoteShow(nick, key) {
+    var box = document.createElement('div');
+    box.className = 'keynote'; box.innerHTML = '<div class="keynote-box" role="dialog" aria-modal="true"><h3></h3><p class="kn-nick"></p><div class="kn-code"></div><p class="kn-text"></p><button type="button" class="nbtn kn-ok"></button></div>';
+    box.querySelector('h3').textContent = T('내 닉네임 열쇠 (패스키)', 'Your nickname key');
+    box.querySelector('.kn-nick').textContent = T('닉네임: ', 'Nickname: ') + nick;
+    box.querySelector('.kn-code').textContent = key;
+    box.querySelector('.kn-text').textContent = T('이 열쇠(패스키)를 휴대폰으로 사진을 찍어 보관해 주세요.\n다른 PC나 웹에서 이 닉네임으로 접속할 때 열쇠를 물어보면 이 열쇠를 넣으면 됩니다.\n\n열쇠를 잃어버리면 이 닉네임으로 다시 접속할 수 없습니다.\n(이 브라우저에서는 설정 칸의 [내 닉네임 열쇠 보기]에서 다시 볼 수 있어요)',
+      'Take a photo of this key with your phone and keep it.\nWhen another PC or the web page asks for the key of this nickname, enter it.\n\nWithout the key you cannot connect with this nickname again.');
+    var ok = box.querySelector('.kn-ok'); ok.textContent = T('네. 보관하였습니다', 'Yes, I have kept it');
+    ok.onclick = function () {
+      var me = nick.trim().toLowerCase(), had = store.get('web_keynoted') || '';
+      if (('|' + had + '|').indexOf('|' + me + '|') < 0) store.set('web_keynoted', had ? had + '|' + me : me);
+      box.remove();
+    };
+    document.body.appendChild(box); ok.focus();
+  }
+  function naverKeyAsk(taken) {
+    var k = prompt(taken + '\n\n' + T('열쇠(영문·숫자 8자리) - 이 닉네임을 이미 쓰는 기기의 [설정 > 내 닉네임 열쇠]에서 볼 수 있습니다', 'Key (8 letters/digits) - on the device that already uses this nickname: Settings > My nickname key') + '\n\n' + T('원래 쓰던 기기에서 설정의 [닉네임 네이버 인증]을 해 두면, 다음부터는 어느 기기에서든 네이버 로그인으로 되찾을 수 있습니다.', 'Verify the nickname with Naver on your usual device and you can get it back anywhere next time.'), '');
+    k = (k || '').trim().toUpperCase();
+    if (!/^[A-Z0-9]{8}$/.test(k)) { if (k) netSay(T('열쇠는 영문·숫자 8자리입니다.', 'A key is 8 letters or digits.')); return; }
+    store.set('web_nickkey', (store.get('web_nick') || '') + '|' + k);
+    netSay(T('열쇠를 저장했습니다. 다시 접속합니다...', 'Key saved - connecting again...'));
+    setTimeout(function () { if (!net.ws) connect(); }, 2500);
+  }
+
+  net.naver = { on: false, linked: false }; net.naverSeq = 0;
+  function naverRecOk() { return !!(net.naverRec && Date.now() - net.naverRec.at < 9 * 60000); }
+  function naverShow() {
+    var rec = naverRecOk() && !net.ws;
+    $('naverRow').hidden = !(rec || (net.ws && net.naver.on));
+    $('btnNaver').textContent = rec ? T('네이버로 되찾기', 'Get it back with Naver') : net.naver.linked ? T('네이버 인증 해제', 'Remove Naver verification') : T('닉네임 네이버 인증', 'Verify nickname with Naver');
+  }
+  function naverOpen(url) {
+    var w = net.naverWin; net.naverWin = null;
+    if (w && !w.closed) { try { w.location.href = url; return; } catch (e) {} }
+    if (!window.open(url, 'naverlogin', 'width=480,height=720')) location.href = url;
+  }
+  function naverLine(arg) {
+    var w = arg.split(' ');
+    if (w[0] === 'ST') { net.naver.on = w[1] === '1'; net.naver.linked = w[2] === '1'; naverShow(); }
+    else if (w[0] === 'URL' && /^https?:/.test(w[1] || '')) { naverOpen(w[1]); netSay(T('네이버 로그인 창에서 로그인하고 동의하면 닉네임이 인증됩니다.', 'Log in and agree in the Naver window to verify your nickname.')); }
+    else if (w[0] === 'OK') { net.naver.linked = true; naverShow(); var ok = T('닉네임이 네이버 계정에 인증됐습니다. 이제 다른 PC나 웹에서 막혀도 네이버 로그인으로 되찾을 수 있습니다.', 'Your nickname is now verified with Naver - you can get it back anywhere with a Naver login.'); netSay(ok); setTimeout(function () { alert(ok); }, 0); }
+    else if (w[0] === 'UNLINKED') { net.naver.linked = false; naverShow(); netSay(T('네이버 인증을 해제했습니다.', 'Naver verification removed.')); }
+    else if (w[0] === 'ERR') {
+      if (net.naverWin && !net.naverWin.closed) { try { net.naverWin.close(); } catch (e) {} } net.naverWin = null;
+      var why = w[1] || '', m = why === 'linked' ? T('이 닉네임은 이미 네이버 계정에 인증돼 있습니다.', 'This nickname is already verified.')
+            : why === 'owner' ? T('이 기기가 닉네임의 주인일 때만 인증할 수 있습니다.', 'Only a device that owns the nickname can verify it.')
+            : why === 'wait' ? T('잠시 뒤에 다시 해 주세요.', 'Please try again in a moment.') : T('지금은 네이버 인증을 쓸 수 없습니다.', 'Naver verification is not available now.');
+      netSay(m); setTimeout(function () { alert(m); }, 0);
+    }
+    else if (w[0] === 'RECOVER' && w[2]) net.naverRec = { url: w[1], poll: w[2], at: Date.now() };
+  }
+  function naverPoll(poll, seq) {
+    if (seq !== net.naverSeq) return;
+    fetch(poll, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+      if (seq !== net.naverSeq) return;
+      if (j.state === 'wait') { if (Date.now() - net.naverPollAt < 10 * 60000) setTimeout(function () { naverPoll(poll, seq); }, 2000); return; }
+      net.naverSeq++;
+      if (j.state === 'ok') { net.naverRec = null; naverShow(); netSay(T('닉네임을 되찾았습니다. 다시 접속합니다...', 'Nickname back - connecting again...')); if (!net.ws) connect(); }
+      else { var m = j.msg || T('되찾지 못했습니다. 다시 접속해서 시작해 주세요.', 'Could not get it back - connect again to start over.'); netSay(m); setTimeout(function () { alert(m); }, 0); }
+    }).catch(function () { if (seq === net.naverSeq) setTimeout(function () { naverPoll(poll, seq); }, 3000); });
+  }
+  $('btnNaver').onclick = function () {
+    if (naverRecOk() && !net.ws) {
+      var r = net.naverRec; net.naverRec = null;
+      if (!window.open(r.url, 'naverlogin', 'width=480,height=720')) { netSay(T('팝업이 막혔습니다. 브라우저에서 팝업을 허용한 뒤 다시 접속해 주세요.', 'The popup was blocked - allow popups and connect again.')); return; }
+      netSay(T('네이버 로그인 창에서 이 닉네임을 인증한 계정으로 로그인하세요. 끝나면 자동으로 다시 접속합니다.', 'Log in with the Naver account that verified this nickname - the page connects again by itself.'));
+      net.naverPollAt = Date.now(); var seq = ++net.naverSeq; setTimeout(function () { naverPoll(r.poll, seq); }, 2000);
+      naverShow(); return;
+    }
+    if (!net.ws || net.ws.readyState !== 1) { netSay(T('먼저 접속해 주세요.', 'Connect first.')); return; }
+    if (net.naver.linked) { if (confirm(T('이 닉네임의 네이버 인증을 해제할까요? 해제하면 다른 기기에서는 다시 열쇠가 있어야 이 닉네임을 쓸 수 있습니다.', 'Remove the Naver verification? Other devices will need the key again.'))) send('NAVER UNLINK'); return; }
+    net.naverWin = window.open('about:blank', 'naverlogin', 'width=480,height=720');
+    send('NAVER LINK');
+  };
   $('btnNickKey').onclick = function () {
     if (net.ws && net.ws.readyState === 1) send('KEY');
     else netSay(T('먼저 접속해 주세요. 열쇠는 서버에서 받아옵니다.', 'Connect first - the key comes from the server.'));
