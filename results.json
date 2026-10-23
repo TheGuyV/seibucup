@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-24 00:29","room":18,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"15-261024002603-7","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["미네로","즐축","",""],"replay":"replays/20261024_002931_미네로_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 00:27","room":17,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,3],"ft":2,"series":"14-261024002354-6","ranked":1,"nicks":["청라대장","소소","",""],"replay":"replays/20261024_002728_청라대장_vs_소소_2-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 00:26","room":16,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"12-261024001836-5","ranked":1,"tnames":{"판순이":["판순이 FC","FSI"]},"nicks":["rpfmqkd","판순이","",""],"replay":"replays/20261024_002625_rpfmqkd_vs_판순이_2-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 00:26","room":15,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,8],"ft":2,"series":"15-261024002603-7","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["미네로","즐축","",""],"replay":"replays/20261024_002603_미네로_vs_즐축_2-3_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 20:27","room":238,"type":"1v1","time":150,"players":2,"score":[5,3],"teams":[7,8],"ft":2,"series":"238-261022202743-23","nicks":["레온","상봉거지오락실","",""],"replay":"replays/20261022_202743_레온_vs_상봉거지오락실_5-3_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:27","room":236,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["mizunoasahi","dfdf","",""],"replay":"replays/20261022_202709_mizunoasahi_vs_dfdf_2-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 20:23","room":234,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,7],"ft":2,"series":"234-261022201934-22","nicks":["404page","소주2병마심","",""],"replay":"replays/20261022_202331_404page_vs_소주2병마심_3-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 20:23","room":236,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,9],"nicks":["mizunoasahi","dfdf","",""],"replay":"replays/20261022_202318_mizunoasahi_vs_dfdf_3-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 20:19","room":234,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[4,3],"ft":2,"series":"234-261022201934-22","nicks":["404page","소주2병마심","",""],"replay":"replays/20261022_201934_404page_vs_소주2병마심_1-0_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 20:23","room":236,"type":"1v1","time":150,"players":2,"score":[3,3],"teams":[9,9],"nicks":["mizunoasahi","dfdf","",""],"replay":"replays/20261022_202318_mizunoasahi_vs_dfdf_3-3_p1.scr","edition":"cupsocs2"}
 ]
