@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-23 21:59","room":111,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[2,9],"ft":2,"series":"111-261023215937-52","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","dfdf","",""],"replay":"replays/20261023_215937_rhythm_vs_dfdf_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 21:59","room":110,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[3,10],"ft":2,"series":"110-261023215920-51","ranked":1,"nicks":["rpfmqkd","전설의1군","",""],"replay":"replays/20261023_215920_rpfmqkd_vs_전설의1군_5-4_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 21:55","room":109,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[2,9],"ft":2,"series":"107-261023215149-49","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","dfdf","",""],"replay":"replays/20261023_215533_rhythm_vs_dfdf_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-23 21:52","room":108,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,0],"ft":2,"series":"108-261023215250-50","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"청탑오락실":["청탑오락실 FC","FCX"]},"nicks":["판순이","청탑오락실","",""],"replay":"replays/20261023_215250_판순이_vs_청탑오락실_2-1_p1.scr","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-22 01:49","room":90,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_014959_dfdf_vs_aapp_2-0_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:46","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_014625_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-22 01:42","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_014258_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 01:39","room":90,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_013917_dfdf_vs_aapp_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-22 01:35","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_013527_dfdf_vs_aapp_0-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-22 01:39","room":90,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"nicks":["dfdf","aapp","",""],"replay":"replays/20261022_013917_dfdf_vs_aapp_1-2_p1.scr","edition":"cupsocs2"}
 ]
