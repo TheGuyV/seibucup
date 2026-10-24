@@ -76,6 +76,11 @@ local function log(fmt, ...)
   print(s)
   if logf then logf:write(s, "\n"); logf:flush() end
 end
+
+function scnp_save(name)
+  machine:save(name)
+  SCNP_POPCLEAR = 6
+end
 local function status(fmt, ...)
   local s = string.format(fmt, ...)
   machine:popmessage(s)
@@ -3287,7 +3292,7 @@ local function begin_sync(reason)
   agg = {}; local_sums = {}
   auto = {}; aj.stage = aj.stage:gsub("_wait$", ""); aj.at = 0
   resync_pending = false
-  machine:save(STATE_NAME)
+  scnp_save(STATE_NAME)
   save_requested_at = os.time()
   set_overlay(C_INFO, "NETPLAY: saving the game state...")
   log("%s: saving state (gen %d)", reason, gen)
@@ -4196,7 +4201,7 @@ function scnp_ckpt_step()
   if frame - C.since < 20 then return end
   SCNP_SPEC_N = (SCNP_SPEC_N or 0) + 1
   local name = SPEC_STATE .. "_ck" .. SCNP_SPEC_N .. "_" .. (os.time() % 100000)
-  machine:save(name)
+  scnp_save(name)
   C.pend = { name = name, at = frame + SPEC_SAVE_LAG, t = os.time(), why = why }
 end
 
@@ -4221,7 +4226,7 @@ function scnp_shadow_step()
   if SCNP_QUIET or agg_max - frame > 15 or frame - Q.last < Q.EVERY then return end
   Q.n = Q.n + 1
   local name = "np_shadow_" .. Q.n
-  machine:save(name)
+  scnp_save(name)
   Q.pend = { name = name, at = frame + SPEC_SAVE_LAG, t = os.time() }
 end
 local function spec_join_step()
@@ -4257,7 +4262,7 @@ local function spec_join_step()
 
       SCNP_SPEC_N = (SCNP_SPEC_N or 0) + 1
       local name = SPEC_STATE .. "_" .. SCNP_SPEC_N .. "_" .. (os.time() % 100000)
-      machine:save(name)
+      scnp_save(name)
       spec_join = { p = p, at = frame + SPEC_SAVE_LAG, t = os.time(), name = name }
       return
     end
@@ -4381,7 +4386,7 @@ local function step()
     if pending_state and not is_host then
 
       if probe_header == nil and #pending_state >= STATE_HEADER then
-        if not probe_asked then machine:save(PROBE_STATE); probe_asked = true; probe_at = os.time() end
+        if not probe_asked then scnp_save(PROBE_STATE); probe_asked = true; probe_at = os.time() end
         local d = read_state_file(PROBE_STATE)
         if d and #d >= STATE_HEADER then probe_header = d:sub(1, STATE_HEADER); write_build_id(probe_header)
         elseif os.time() - probe_at > 5 then probe_header = false; log("could not check the MAME build (no probe state)")
@@ -4852,7 +4857,7 @@ if cfg.mode == "probe" then
   local pf = 0
   scnp_probe_sub = emu.register_frame_done(function()
     pf = pf + 1
-    if pf == 30 then machine:save(PROBE_STATE) end
+    if pf == 30 then scnp_save(PROBE_STATE) end
     if pf > 30 then
       local d = read_state_file(PROBE_STATE)
       if d and #d >= STATE_HEADER then write_build_id(d:sub(1, STATE_HEADER)); log("build id: %s", sig_hex(d)); machine:exit()
