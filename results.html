@@ -57,6 +57,20 @@
 .filter select { padding: 7px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,.25);
                  background: rgba(0,0,0,.35); color: inherit; font: inherit; max-width: 260px; }
 .filter .hint { opacity: .6; font-size: .85em; }
+
+.rtabs { display: flex; gap: 6px; margin: 0 0 14px; border-bottom: 1px solid rgba(255,255,255,.12); flex-wrap: wrap; }
+.rtabs button { background: none; border: 0; color: inherit; opacity: .65; font: inherit; font-weight: 700; padding: 10px 14px; border-bottom: 3px solid transparent; cursor: pointer; }
+.rtabs button[aria-selected="true"] { opacity: 1; border-bottom-color: #ffd23c; }
+.rtabs button:focus-visible { outline: 2px solid #ffd23c; outline-offset: 2px; }
+.rtabs .cnt { font-weight: 400; opacity: .7; margin-left: 6px; font-size: .85em; }
+.godwall { display: flex; gap: 12px; flex-wrap: wrap; margin: 4px 0 18px; }
+.godcard { flex: 1 1 220px; border-radius: 14px; padding: 14px 16px; background: linear-gradient(135deg, rgba(120,20,40,.55), rgba(40,10,60,.55)); border: 1px solid rgba(255,216,74,.35); }
+.godcard h3 { margin: 0 0 6px; font-size: .95em; color: #ffd84a; }
+.godcard .big { font-size: 1.6em; font-weight: 800; }
+.godcard .small { font-size: .82em; opacity: .75; }
+.badge-w { display: inline-block; background: #1f9a55; color: #fff; border-radius: 8px; padding: 1px 8px; font-size: .8em; font-weight: 700; }
+.badge-l { display: inline-block; background: rgba(255,255,255,.12); border-radius: 8px; padding: 1px 8px; font-size: .8em; }
+.results .cn { display: block; font-size: .82em; opacity: .7; }
 @media (max-width: 960px) { .results th, .results td { padding: 7px 6px; } .results td:nth-child(5) { white-space: normal; word-break: keep-all; } }
 @media (max-width: 760px) { .results th:nth-child(5), .results td:nth-child(5), .results th:nth-child(6), .results td:nth-child(6) { display: none; } }
 @media (max-width: 520px) {
@@ -127,6 +141,30 @@ body.game-open { overflow: hidden; }
 
 <section>
   <div class="container">
+    <div class="rtabs" role="tablist">
+      <button type="button" role="tab" id="tabVs" aria-selected="true"><span class="ko">대전 기록</span><span class="en">Matches</span><span class="cnt" id="cntVs"></span></button>
+      <button type="button" role="tab" id="tabGod" aria-selected="false">👑 <span class="ko">GOD 도전 기록</span><span class="en">GOD challenges</span><span class="cnt" id="cntGod"></span></button>
+    </div>
+    <div id="godView" hidden>
+      <p class="muted"><span class="ko">PvE에서 마지막 상대 <strong>GOD</strong>와 겨룬 경기만 따로 모았습니다. 이긴 팀은 GOD를 잡은 팀으로 올라가고, ▶ 보기로 그 경기를 다시 볼 수 있습니다. 대전 점수·랭킹·전적에는 들어가지 않습니다. 비밀방 경기는 올라오지 않습니다.</span><span class="en">The PvE matches against the last boss, <strong>GOD</strong>, on their own. A winning team is listed as one that beat GOD, and ▶ watch plays the match again. They never count for the match records, the ranking or head-to-head. Password rooms are not posted.</span></p>
+      <div class="godwall" id="godWall"></div>
+      <div id="godEmpty" class="note" hidden><span class="ko">아직 GOD에 도전한 기록이 없습니다. PvE 방에서 GOD 상대를 골라 첫 기록을 남겨 보세요!</span><span class="en">No GOD challenge yet. Pick GOD in a PvE room and be the first!</span></div>
+      <div style="overflow-x:auto">
+      <table class="results" id="godTbl" hidden>
+        <thead><tr>
+          <th><span class="ko">일시</span><span class="en">When</span></th>
+          <th><span class="ko">도전한 팀</span><span class="en">Team</span></th>
+          <th><span class="ko">점수 (팀 - GOD)</span><span class="en">Score (team - GOD)</span></th>
+          <th><span class="ko">결과</span><span class="en">Result</span></th>
+          <th><span class="ko">인원</span><span class="en">Players</span></th>
+          <th><span class="ko">난이도</span><span class="en">Difficulty</span></th>
+          <th><span class="ko">리플레이</span><span class="en">Replay</span></th>
+        </tr></thead>
+        <tbody id="godRows"></tbody>
+      </table>
+      </div>
+    </div>
+    <div id="vsView">
     <div id="empty" class="note" hidden><span class="ko">아직 기록된 경기가 없습니다.</span><span class="en">No matches recorded yet.</span></div>
     <div id="filter" class="filter" hidden>
       <label for="player"><span class="ko">플레이어</span><span class="en">Player</span></label>
@@ -149,6 +187,7 @@ body.game-open { overflow: hidden; }
     </div>
     <div id="more" class="muted" style="text-align:center;padding:18px 0" hidden><span class="ko">불러오는 중…</span><span class="en">Loading…</span></div>
     <div id="count" class="muted" style="text-align:center;padding:10px 0;font-size:.85em" hidden></div>
+    </div>
   </div>
 </section>
 
@@ -303,7 +342,7 @@ body.game-open { overflow: hidden; }
       var path = a.getAttribute("href"), ed = a.getAttribute("data-ed");
 
       function go(ok) {
-        if (/^replays\/[^\/]+\.scr$/i.test(path) && (ed === "cupsoc" || ed === "cupsocs2") && ok[ed]) {
+        if (/^replays\/[^\/]+\.(scr|seibu)$/i.test(path) && (ed === "cupsoc" || ed === "cupsocs2") && ok[ed]) {
           var nicks = []; try { nicks = JSON.parse(a.getAttribute("data-nicks") || "[]"); } catch (x) {}
           playReplay(path, ed, nicks, a.getAttribute("data-label") || "");
           return;
@@ -397,7 +436,7 @@ body.game-open { overflow: hidden; }
 
       r.score = [Number(r.score && r.score[0]) || 0, Number(r.score && r.score[1]) || 0]; r.time = Number(r.time) || 0;
       if (r.pk) r.pk = [Number(r.pk[0]) || 0, Number(r.pk[1]) || 0];
-      if (r.replay && !/^(replays\/[^"'<>\s]+\.scr|https:\/\/[a-z0-9.-]+\/[^"'<>\s]*)$/i.test(String(r.replay))) r.replay = null;
+      if (r.replay && !/^(replays\/[^"'<>\s]+\.(?:scr|seibu)|https:\/\/[a-z0-9.-]+\/[^"'<>\s]*)$/i.test(String(r.replay))) r.replay = null;
       var pk = !bad && r.pk && r.pk.length === 2 && r.score[0] === r.score[1] ? r.pk : null;
       var w1 = !bad && (r.score[0] > r.score[1] || (pk && pk[0] > pk[1])), w2 = !bad && (r.score[1] > r.score[0] || (pk && pk[1] > pk[0]));
       var sc = bad ? '<span class="muted" title="점수 기록 오류 (v1.5.8 이전) - 리플레이가 없어 복구할 수 없습니다 / score not recoverable">—</span>'
@@ -448,6 +487,74 @@ body.game-open { overflow: hidden; }
       });
     }
   }).catch(function () { document.getElementById("empty").hidden = false; });
+})();
+</script>
+
+<script>
+
+(function () {
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function kv(ko, en) { return '<span class="ko">' + esc(ko) + '</span><span class="en">' + esc(en) + '</span>'; }
+  var COUNTRY = { 0: ["이탈리아", "Italy"], 1: ["스페인", "Spain"], 2: ["네덜란드", "Holland"], 3: ["잉글랜드", "England"], 4: ["미국", "USA"], 5: ["한국", "Korea"],
+                  6: ["프랑스", "France"], 7: ["브라질", "Brazil"], 8: ["아르헨티나", "Argentina"], 9: ["독일", "Germany"], 10: ["일본", "Japan"], 11: ["GOD", "GOD"] };
+  var DIFF = { 3: ["보통", "Normal"], 2: ["쉬움", "Easy"], 1: ["어려움", "Hard"], 0: ["매우 어려움", "Very hard"] };
+  function ago(when) {
+    var t = Date.parse(String(when || "").replace(" ", "T") + ":00+09:00"); if (!t) return kv(when, when);
+    var m = Math.max(0, Math.round((Date.now() - t) / 60000));
+    if (m < 60) return kv(m + "분 전", m + " min ago");
+    var h = Math.round(m / 60); if (h < 24) return kv(h + "시간 전", h + " h ago");
+    var d = Math.round(h / 24); return d === 1 ? kv("어제", "yesterday") : kv(d + "일 전", d + " days ago");
+  }
+  var tabVs = document.getElementById("tabVs"), tabGod = document.getElementById("tabGod");
+  var vsView = document.getElementById("vsView"), godView = document.getElementById("godView");
+  function show(god) {
+    tabVs.setAttribute("aria-selected", String(!god)); tabGod.setAttribute("aria-selected", String(god));
+    vsView.hidden = god; godView.hidden = !god;
+    try { history.replaceState(null, "", god ? "#god" : location.pathname + location.search); } catch (e) {}
+  }
+  tabVs.addEventListener("click", function () { show(false); });
+  tabGod.addEventListener("click", function () { show(true); });
+  if (location.hash === "#god") show(true);
+  fetch("results.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : []; }).then(function (l) { document.getElementById("cntVs").textContent = (l && l.length) || ""; }, function () {});
+  fetch("god.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : []; }, function () { return []; }).then(function (list) {
+    list = Array.isArray(list) ? list : [];
+    document.getElementById("cntGod").textContent = list.length || "";
+    var rows = document.getElementById("godRows"), wall = document.getElementById("godWall");
+    if (!list.length) { document.getElementById("godEmpty").hidden = false; return; }
+    document.getElementById("godTbl").hidden = false;
+    var wins = list.filter(function (r) { return Number(r.won) === 1; });
+    var teams = {}; wins.forEach(function (r) { teams[(r.nicks || []).slice().sort().join("+")] = 1; });
+    var best = wins.slice().sort(function (a, b) { return ((b.score[0] - b.score[1]) - (a.score[0] - a.score[1])); })[0];
+    function who(r) { return (r.nicks || []).map(String).join(" · "); }
+    function cn(r) { var c = COUNTRY[Number(r.country)] || ["?", "?"]; return c; }
+    var html = '<div class="godcard"><h3>👑 ' + kv("GOD를 잡은 팀", "Teams that beat GOD") + '</h3><div class="big">' + Object.keys(teams).length + kv("팀", " teams") + '</div><div class="small">'
+      + kv("도전 " + list.length + "번 중 " + wins.length + "번 승리 · 승률 " + Math.round(wins.length * 100 / list.length) + "%", wins.length + " wins in " + list.length + " tries · " + Math.round(wins.length * 100 / list.length) + "%") + '</div></div>';
+    if (best) { var c1 = cn(best), d1 = DIFF[best.diff] || DIFF[3];
+      html += '<div class="godcard"><h3>⚡ ' + kv("가장 큰 점수 차 격파", "Biggest win") + '</h3><div class="big">' + Number(best.score[0]) + " - " + Number(best.score[1]) + '</div><div class="small">' + esc(who(best)) + ' · ' + kv(c1[0], c1[1]) + ' · ' + kv(d1[0], d1[1]) + '</div></div>'; }
+    if (wins.length) { var w = wins[0], c2 = cn(w), d2 = DIFF[w.diff] || DIFF[3];
+      html += '<div class="godcard"><h3>🔥 ' + kv("최근 격파", "Latest win") + '</h3><div class="big">' + Number(w.score[0]) + " - " + Number(w.score[1]) + '</div><div class="small">' + esc(who(w)) + ' · ' + kv(c2[0], c2[1]) + ' · ' + kv(d2[0], d2[1]) + ' · ' + ago(w.when) + '</div></div>'; }
+    wall.innerHTML = html;
+    rows.innerHTML = list.map(function (r) {
+      var s1 = Number(r.score && r.score[0]) || 0, s2 = Number(r.score && r.score[1]) || 0, won = Number(r.won) === 1;
+      var pk = r.pk && r.pk.length === 2 && s1 === s2 ? '<span class="pk">(' + (Number(r.pk[0]) || 0) + '-' + (Number(r.pk[1]) || 0) + ')</span>' : "";
+      var c = cn(r), d = DIFF[r.diff] || DIFF[3];
+      var rp = r.replay && /^replays\/[^"'<>\s\/]+\.(scr|seibu)$/i.test(String(r.replay)) ? String(r.replay) : null;
+      var ed = r.edition === "cupsocs2" ? "cupsocs2" : r.edition === "cupsocs" ? "cupsocs" : "cupsoc";
+      return '<tr><td class="muted">' + ago(r.when) + '</td><td' + (won ? ' class="win"' : '') + '>' + esc(who(r)) + '<span class="cn">' + kv(c[0], c[1]) + '</span></td>'
+        + '<td class="score">' + s1 + ' - ' + s2 + pk + '</td><td>' + (won ? '<span class="badge-w">👑 ' + kv("격파", "Beaten") + '</span>' : '<span class="badge-l">' + kv("도전", "Tried") + '</span>') + '</td>'
+        + '<td class="muted">' + kv((Number(r.players) || 1) + "명", String(Number(r.players) || 1)) + '</td><td class="muted">' + kv(d[0], d[1]) + '</td>'
+        + '<td>' + (rp ? '<a class="rpl" href="' + esc(rp) + '" data-ed="' + ed + '" data-nicks="' + esc(JSON.stringify((r.nicks || []).map(String))) + '" data-label="' + esc(who(r) + " " + s1 + " - " + s2 + " GOD") + '">▶ ' + kv("보기", "watch") + '</a>' : '<span class="muted">-</span>') + '</td></tr>';
+    }).join("");
+
+    rows.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a.rpl"); if (!a) return;
+      e.preventDefault();
+      var host = document.getElementById("rows"); if (!host) return;
+      var tr = document.createElement("tr"); tr.hidden = true; var td = document.createElement("td"); var b = a.cloneNode(true);
+      td.appendChild(b); tr.appendChild(td); host.appendChild(tr);
+      b.click(); setTimeout(function () { tr.remove(); }, 0);
+    });
+  });
 })();
 </script>
 </body>

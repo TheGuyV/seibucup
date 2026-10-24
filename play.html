@@ -548,9 +548,9 @@
           <div class="rhead"><b id="repTitle"><span class="ko">리플레이 - 녹화된 경기</span><span class="en">Replays - recorded matches</span></b><button type="button" id="repClose" aria-label="close">✕</button></div>
           <div class="rtabs"><button type="button" data-rt="mine" class="on" id="repTabMine"></button><button type="button" data-rt="online" id="repTabOnline"></button></div>
           <div class="rpane" id="repMine">
-            <div class="hint"><span class="ko">웹에서 한 온라인 경기는 끝나면 이 브라우저에 자동으로 녹화됩니다(최근 100경기, 보통 50~100 KB). 리플레이는 녹화한 것과 같은 게임 빌드에서만 똑같이 재생됩니다. PC 런처의 녹화 파일(.scr)도 <b>파일 열기</b>로 재생할 수 있습니다.</span><span class="en">Every online match you play here is recorded in this browser automatically (the last 100, usually 50-100 KB each). A replay plays exactly only on the build it was recorded with. <b>Open file</b> also plays the PC launcher's recordings (.scr).</span></div>
+            <div class="hint"><span class="ko">웹에서 한 온라인 경기는 끝나면 이 브라우저에 자동으로 녹화됩니다(최근 100경기, 보통 50~100 KB). 리플레이는 녹화한 것과 같은 게임 빌드에서만 똑같이 재생됩니다. PC 런처의 녹화 파일(.seibu)도 <b>파일 열기</b>로 재생할 수 있습니다.</span><span class="en">Every online match you play here is recorded in this browser automatically (the last 100, usually 50-100 KB each). A replay plays exactly only on the build it was recorded with. <b>Open file</b> also plays the PC launcher's recordings (.seibu).</span></div>
             <div class="rlist"><table><thead><tr><th><span class="ko">날짜</span><span class="en">Date</span></th><th><span class="ko">대진</span><span class="en">Match</span></th><th><span class="ko">점수</span><span class="en">Score</span></th><th><span class="ko">길이</span><span class="en">Length</span></th><th><span class="ko">비고</span><span class="en">Note</span></th></tr></thead><tbody id="repMineRows"></tbody></table></div>
-            <div class="rbtns"><button type="button" class="nbtn primary" id="repPlay" disabled><span class="ko">재생</span><span class="en">Play</span></button><button type="button" class="nbtn" id="repSave" disabled><span class="ko">파일로 저장</span><span class="en">Save file</span></button><button type="button" class="nbtn" id="repDel" disabled><span class="ko">삭제</span><span class="en">Delete</span></button><span class="grow"></span><button type="button" class="nbtn" id="repOpen"><span class="ko">파일 열기...</span><span class="en">Open file...</span></button><input type="file" id="repFile" accept=".scr" hidden></div>
+            <div class="rbtns"><button type="button" class="nbtn primary" id="repPlay" disabled><span class="ko">재생</span><span class="en">Play</span></button><button type="button" class="nbtn" id="repSave" disabled><span class="ko">파일로 저장</span><span class="en">Save file</span></button><button type="button" class="nbtn" id="repDel" disabled><span class="ko">삭제</span><span class="en">Delete</span></button><span class="grow"></span><button type="button" class="nbtn" id="repOpen"><span class="ko">파일 열기...</span><span class="en">Open file...</span></button><input type="file" id="repFile" accept=".seibu,.scr" hidden></div>
           </div>
           <div class="rpane" id="repOnline" hidden>
             <div class="hint"><span class="ko">사이트에 올라간 공개 경기입니다(비밀방 경기는 없습니다). 고른 경기를 받아서 바로 재생합니다.</span><span class="en">Public matches on the site (private rooms are not there). Play downloads the match and plays it.</span></div>
@@ -2392,13 +2392,13 @@
   }
   function repSaveFile(x) {
     var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([x.bytes], { type: 'application/octet-stream' }));
-    a.download = x.name; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    a.download = x.name.replace(/\.scr$/i, ".seibu"); document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
   }
 
   function repLoadOnline() {
     $('repFresh').textContent = T('목록을 불러오는 중...', 'Loading the list...');
     fetch('results.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (all) {
-      REP.online = (all || []).filter(function (x) { return x && typeof x.replay === 'string' && /\.scr$/i.test(x.replay); }).map(function (x) {
+      REP.online = (all || []).filter(function (x) { return x && typeof x.replay === 'string' && /\.(scr|seibu)$/i.test(x.replay); }).map(function (x) {
         var n = (x.nicks || []).slice(); while (n.length < 4) n.push('');
         var match = x.type === '2v2' ? [n[0], n[1]].filter(Boolean).join('·') + ' vs ' + [n[2], n[3]].filter(Boolean).join('·') : n[0] + ' vs ' + n[1];
         var ft = +x.ft || 1, res = ft > 1 ? 'FT' + ft : T('단판', 'single');
@@ -2425,10 +2425,10 @@
   }
   function drawRepOnline() {
     var list = repFiltered(), got = {}, mineKeys = {};
-    REP.mine.forEach(function (x) { mineKeys[x.name.replace(/_p\d+\.scr$/i, '')] = 1; });
+    REP.mine.forEach(function (x) { mineKeys[x.name.replace(/_p\d+\.(scr|seibu)$/i, '')] = 1; });
     REP.onlineGot = REP.onlineGot || {};
     $('repOnRows').innerHTML = list.map(function (r, i) {
-      var state = mineKeys[r.name.replace(/_p\d+\.scr$/i, '')] ? T('내 녹화에 있음', 'in my recordings') : REP.onlineGot[r.name] ? T('받음', 'downloaded') : T('받기 필요', 'to download');
+      var state = mineKeys[r.name.replace(/_p\d+\.(scr|seibu)$/i, '')] ? T('내 녹화에 있음', 'in my recordings') : REP.onlineGot[r.name] ? T('받음', 'downloaded') : T('받기 필요', 'to download');
       return '<tr data-i="' + i + '" class="' + (i === REP.selOn ? 'sel' : '') + '"><td>' + esc(r.when.slice(5)) + '</td><td>' + esc(r.match) + '</td><td>' + esc(r.score) + '</td><td>' + esc(r.res) +
              '</td><td>' + esc(r.ed === 'cupsocs2' ? T('셀렉션', 'Selection') : T('기본', 'Original')) + '</td><td>' + esc(r.len) + '</td><td>' + esc(state) + '</td></tr>';
     }).join('') || '<tr><td colspan="7" class="empty">' + esc(REP.online ? T('조건에 맞는 경기가 없습니다.', 'No match fits.') : T('목록을 불러오는 중...', 'Loading the list...')) + '</td></tr>';
@@ -2468,7 +2468,7 @@
     $('repFile').onchange = function () {
       var f = $('repFile').files[0]; if (!f) return;
       f.arrayBuffer().then(function (buf) { return keepReplay(f.name, new Uint8Array(buf), false); }).then(function (rec) {
-        if (!rec) { alert(T('리플레이 파일(.scr)이 아닙니다.', 'Not a replay file (.scr).')); return; }
+        if (!rec) { alert(T('리플레이 파일(.seibu)이 아닙니다.', 'Not a replay file (.seibu).')); return; }
         repLoadMine().then(function () { repPlayRec(rec); });
       });
     };

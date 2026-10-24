@@ -2050,7 +2050,7 @@ local function rec_save(complete)
   local s1, s2 = rec_score()
   local stamp = os.date("%Y%m%d_%H%M%S")
 
-  local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".scr"
+  local name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. ".seibu"
   local build = ""
   do local f = emu.file(state_dir, OPEN_READ); if not f:open("build.id") then build = f:read(8) or ""; f:close() end end
   local meta = string.format('{"v":2,"game":"%s","build":"%s","date":"%s","players":%d,"type":"%s","time":%d,"delay":%d,"names":"%s","score":[%d,%d],"complete":%s,"frames":%d,"slot":%d,"swap":%d,"clock":"%s","stage":%d,"pk":%d,"free":%d,"map":"%s","pace":%d,"sel":%d,"dd":"%s","god":%d,"ball":"%s","devs":"%s","diff":%d,"pvegod":%d,"comic":%d,"costume":"%s","dip":%d}',
@@ -2058,7 +2058,7 @@ local function rec_save(complete)
   local path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   if not path then
 
-    name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. "_" .. (os.time() % 10000) .. ".scr"
+    name = stamp .. "_" .. fn(a) .. "_vs_" .. fn(b) .. "_" .. s1 .. "-" .. s2 .. "_p" .. local_slot .. "_" .. (os.time() % 10000) .. ".seibu"
     path, err = replay_write(dir, name, meta, rec_segments, rec_inputs)
   end
   if path then log("REPLAY %s", name); log("replay saved: %s (%d frames, %d segment(s))", path, #rec_inputs, #rec_segments)
@@ -3316,6 +3316,7 @@ end
 
 local function on_post_load()
   clear_all_inputs()
+  if SCNP_RP.memload then scnp_rp_memloaded(); return end
   scnp_bgm_after_load()
   SCNP_POPCLEAR = 3
   if is_replay then
@@ -4269,7 +4270,149 @@ local function spec_join_step()
   end
 end
 
+SCNP_RP = { on = false, mem = nil, ctl = env("SCNP_RPCTL", ""), stat = env("SCNP_RPSTAT", ""), seq = -1, ck = {}, EVERY = 600, n = 0,
+            paused = false, speed = 1, want = nil, ff = nil, loaded = nil, goals = {}, sc = nil, tick = 0, fs0 = 0, pause_at = false,
+            sum = env("SCNP_RPSUM", "") == "1" }
+SCNP_RP.on = is_replay and SCNP_RP.ctl ~= ""
+pcall(function() SCNP_RP.fs0 = manager.machine.video.frameskip end)
+function scnp_rp_rate()
+  local R = SCNP_RP
+  local fast = R.ff ~= nil
+  pcall(function() manager.machine.video.throttled = not fast end)
+  pcall(function() manager.machine.video.throttle_rate = fast and 1.0 or R.speed end)
+  pcall(function() manager.machine.video.frameskip = fast and 10 or R.fs0 end)
+  local mute = fast or R.speed ~= 1
+  pcall(function() manager.machine.sound.system_mute = mute end)
+end
+function scnp_rp_hold(on)
+  local m = manager.machine
+  if on and not m.paused then emu.pause() elseif not on and m.paused then emu.unpause() end
+end
+function scnp_rp_read()
+  local R = SCNP_RP
+  local f = io.open(R.ctl, "r"); if not f then return end
+  local l = f:read("*l"); f:close()
+  if not l then return end
+  local seq, op, v = l:match("^(%d+)%s+(%a+)%s*(%S*)")
+  seq = tonumber(seq); if not seq or seq == R.seq then return end
+  R.seq = seq
+  if op == "pause" then R.paused = true; R.pause_at = false; scnp_rp_hold(true)
+  elseif op == "play" then R.paused = false; R.pause_at = false; scnp_rp_hold(false)
+  elseif op == "speed" then local s = tonumber(v) or 1; if s == 0.5 or s == 1 or s == 2 or s == 4 then R.speed = s end; scnp_rp_rate()
+  elseif op == "seek" then
+    R.want = math.max(0, math.min(rp and #rp.inputs or 0, math.floor(tonumber(v) or 0)))
+    if R.paused then R.pause_at = true; scnp_rp_hold(false) end
+  elseif op == "nextgoal" then
+    R.hunt = true; R.ff = rp and #rp.inputs or rp_pos; scnp_rp_rate()
+    if R.paused then R.pause_at = true; scnp_rp_hold(false) end
+  elseif op == "quit" then manager.machine:exit() end
+  log("replay player: %s %s (at %d)", op, v or "", rp_pos)
+end
+function scnp_rp_write(force)
+  local R = SCNP_RP
+  if R.stat == "" then return end
+  if not force and R.tick % 10 ~= 0 then return end
+  local t = { string.format("P %d %d %d %s %d %d %d", rp_pos, rp and #rp.inputs or 0, R.paused and 1 or 0, tostring(R.speed), R.ff and 1 or 0, phase == "ended" and 1 or 0, R.seq) }
+  for _, g in ipairs(R.goals) do t[#t + 1] = string.format("G %d %d %d %d", g.at, g.side, g.a, g.b) end
+  local f = io.open(R.stat .. ".tmp", "w"); if not f then return end
+  f:write(table.concat(t, "\n"), "\n"); f:close()
+  os.remove(R.stat); os.rename(R.stat .. ".tmp", R.stat)
+end
+
+function scnp_rp_track()
+  local R = SCNP_RP
+  local a, b = rec_score()
+  if not R.sc then R.sc = { a, b }; return end
+  if a == R.sc[1] and b == R.sc[2] then return end
+  local side = (a > R.sc[1] and b == R.sc[2]) and 1 or ((b > R.sc[2] and a == R.sc[1]) and 2 or 0)
+  R.sc = { a, b }
+  if side == 0 then return end
+  for _, g in ipairs(R.goals) do if math.abs(g.at - rp_pos) < 300 and g.a == a and g.b == b then return end end
+  R.goals[#R.goals + 1] = { at = rp_pos, side = side, a = a, b = b }
+  table.sort(R.goals, function(x, y) return x.at < y.at end)
+  if R.hunt then R.hunt = false; R.ff = nil; R.want = math.max(0, rp_pos - 600); scnp_rp_rate() end
+end
+
+function scnp_rp_top()
+  local R = SCNP_RP
+  R.tick = R.tick + 1
+  if manager.machine.paused then
+    if R.tick % 6 == 0 then scnp_rp_read() end
+    if R.tick % 10 == 0 then scnp_rp_write(true) end
+    return true
+  end
+  if R.tick % 6 == 0 then scnp_rp_read() end
+  scnp_rp_write(false)
+  if phase == "ended" then
+    if R.want then phase = "play"; return false end
+    if R.ff then R.ff = nil; R.hunt = false; scnp_rp_rate() end
+    return true
+  end
+  if R.pause_at and not R.ff and not R.want and phase == "play" and rp_phase == "play" then
+    R.pause_at = false; R.paused = true; scnp_rp_write(true); scnp_rp_hold(true); return true
+  end
+  return false
+end
+
+function scnp_rp_seek()
+  local R = SCNP_RP
+  if R.want == nil then return false end
+  local T = R.want; R.want = nil
+  if T == rp_pos then return false end
+  local best
+  for at in pairs(R.ck) do if at <= T and (not best or at > best) then best = at end end
+  if T > rp_pos and (not best or best <= rp_pos + 120) then R.ff = T; scnp_rp_rate(); return false end
+  R.sc = nil
+  if best then
+    local ck = R.ck[best]
+    machine:rb_load(ck.slot)
+    R.memload = ck; rp_pos = best
+    local a = rp.inputs[best]
+    if a then for s = 1, 4 do apply_input(s, (SCNP_PVE.on and s >= 2 and a[s] == 0xff) and 0 or a[s]) end end
+    rp_seg = 2
+    while rp.segments[rp_seg] and rp.segments[rp_seg].at <= rp_pos do rp_seg = rp_seg + 1 end
+    R.ff = (T > rp_pos) and T or nil; scnp_rp_rate()
+    log("replay player: seek to %d - from the kept state at %d", T, best)
+    return true
+  end
+  rp_pos = 0; rp_seg = 2
+  write_state_file(rp.segments[1].state); machine:load(STATE_NAME)
+  R.ff = (T > 0) and T or nil
+  frame = frame - 1; phase = "loading"; rp_phase = "loading"; reloading = true; load_started = os.time()
+  scnp_rp_rate()
+  log("replay player: seek to %d - from the start", T)
+  return true
+end
+
+function scnp_rp_after_input()
+  local R = SCNP_RP
+  if R.mem == nil then R.mem = machine.rb_save ~= nil and type(rb_lsave) == "function" and type(rb_lload) == "function"; log("replay player: kept states %s", R.mem and "in memory (rollback build)" or "off - a seek back starts over") end
+  if R.mem and rp_pos > 0 and rp_pos % R.EVERY == 0 and not R.ck[rp_pos] and R.n < 200 then
+
+    R.n = R.n + 1; local slot = 20 + R.n
+    RB.ls = RB.ls or {}
+    rb_lsave(slot); machine:rb_save(slot)
+    R.ck[rp_pos] = { slot = slot }
+  end
+  if R.ff and rp_pos >= R.ff then R.ff = nil; scnp_rp_rate() end
+  scnp_rp_track()
+end
+
+function scnp_rp_keep()
+  local R = SCNP_RP
+  if R.sum and rp_pos % 60 == 0 then log("rpsum %d %08x", rp_pos, ram_checksum()) end
+end
+
+function scnp_rp_memloaded()
+  local R = SCNP_RP
+  local ck = R.memload; R.memload = nil
+  rb_lload(ck.slot); rb_pk_rom()
+  local a = rp.inputs[rp_pos]
+  if a then for s = 1, 4 do apply_input(s, (SCNP_PVE.on and s >= 2 and a[s] == 0xff) and 0 or a[s]) end end
+end
+
 local function step()
+  if SCNP_RP.on and scnp_rp_top() then return end
   if phase == "lost" or phase == "ended" then return end
   if SCNP_QUIET and pending_state and phase == "play" then
     local path, err = write_state_file(pending_state)
@@ -4547,6 +4690,7 @@ local function step()
 
   if is_replay then
 
+    if SCNP_RP.on and scnp_rp_seek() then return end
     local sg = rp.segments[rp_seg]
     if sg and sg.at == rp_pos and rp_pos > 0 then
       rp_seg = rp_seg + 1
@@ -4555,6 +4699,7 @@ local function step()
       machine:load(STATE_NAME)
       return
     end
+    if SCNP_RP.on then scnp_rp_keep() end
     if rp_pos >= #rp.inputs then
       if phase ~= "ended" then phase = "ended"; set_overlay(C_INFO, "REPLAY: end of the recording - close this window"); status("replay finished") end
       for s2 = 1, 4 do apply_input(s2, 0) end
@@ -4562,6 +4707,7 @@ local function step()
     end
     rp_pos = rp_pos + 1
     agg[nxt] = rp.inputs[rp_pos]; scnp_devr_play()
+    if SCNP_RP.on then scnp_rp_after_input() end
   elseif is_host then
     if target > last_broadcast then inputs[1][target] = mask; if target > (SCNP_DD.hi[1] or 0) then SCNP_DD.hi[1] = target end end
   elseif not is_spec then
@@ -4878,6 +5024,15 @@ SCNP_LOADSUB = emu.register_frame_done(function() if SCNP_LOADIN then scnp_load_
 if cfg.web then
   SCNP_WAIT.sub = emu.register_periodic(function()
     if phase == "play" and not is_replay then pump(); if is_host then try_broadcast() end end
+  end)
+end
+
+if SCNP_RP.on then
+  SCNP_RP.psub = emu.register_periodic(function()
+    if not manager.machine.paused then return end
+    SCNP_RP.pc = (SCNP_RP.pc or 0) + 1
+    if SCNP_RP.pc % 6 ~= 0 then return end
+    scnp_rp_read(); scnp_rp_write(true)
   end)
 end
 postload_sub = emu.add_machine_post_load_notifier(on_post_load)
