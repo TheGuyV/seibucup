@@ -1255,9 +1255,12 @@ function scnp_costume_kit()
   local on = mem:read_u16(CLOCK_ADDR) > 0
   if not on then
     for a, v in pairs(C.save) do if mem:read_u16(a) == C.out[a] then mem:write_u16(a, v) end end
-    C.save, C.out, C.kit = {}, {}, nil
+    C.save, C.out, C.kit, C.onN = {}, {}, nil, 0
     return
   end
+
+  C.onN = (C.onN or 0) + 1
+  if not C.kit and C.onN < 8 then return end
   local function sp(c) return c & 31, (c >> 5) & 31, (c >> 10) & 31 end
   local function lum(c) local r, g, b = sp(c); return 0.3 * r + 0.59 * g + 0.11 * b end
   if not C.kit then
