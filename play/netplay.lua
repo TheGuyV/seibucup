@@ -1680,6 +1680,9 @@ local function setup_fields()
   end
   log("detached %d other live inputs for the session", n)
 
+  for _, x in ipairs(extras) do if x.field.name == "P1 Unused (Debug)" then SCNP_SP.seq = x.orig end end
+  if SCNP_SP.seq then log("short pass key: %s", input:seq_name(SCNP_SP.seq)) end
+
   local forced = 0
   for _, port in pairs(ioport.ports) do
     for _, f in pairs(port.fields) do
@@ -1744,6 +1747,30 @@ local function restore_fields()
   for _, e in ipairs(extras) do e.field:set_input_seq("standard", e.orig) end
 end
 
+SCNP_SP = { seq = nil, n = 0, down = false }
+function scnp_sp_mask()
+  local S = SCNP_SP
+  if not S.seq then return 0 end
+  if not S.checked then
+
+    S.checked = true
+    local mine = {}
+    for alt in (input:seq_to_tokens(S.seq) .. " OR "):gmatch("(.-) OR ") do if alt ~= "" then mine[alt] = true end end
+    for bit = 1, 8 do
+      local e = fields[local_slot][bit]
+      if e and e.seq then
+        for alt in (input:seq_to_tokens(e.seq) .. " OR "):gmatch("(.-) OR ") do
+          if mine[alt] then log("short pass key %s is also %s - off", alt, CONTROL_NAMES[bit]); S.seq = nil; return 0 end
+        end
+      end
+    end
+  end
+  local on = input:seq_pressed(S.seq)
+  if on and not S.down then S.n = 6 end
+  S.down = on
+  if S.n > 0 then S.n = S.n - 1; return 0x20 end
+  return 0
+end
 local function read_local_input()
   local mask = 0
   dev_tick = dev_tick + 1
@@ -1758,6 +1785,7 @@ local function read_local_input()
   if local_dev == 0 then local_dev = 1 end
 
   if SCNP_FREE then mask = mask & ~0x80 end
+  mask = mask | scnp_sp_mask()
   return mask
 end
 
@@ -1783,6 +1811,17 @@ function scnp_pick_hold(b)
     if not P.said then P.said = true; log("pick priority: the 2P side did not pick in 20 s - the 1P side may confirm") end
     return false
   end
+  return true
+end
+
+function scnp_pick_shared(b)
+  local P = SCNP_PICK
+  if b ~= 1 or not P.sel or not P.cur or not (SCNP_SEL and SCNP_SEL.on) or SCNP_SEL.mirror or SCNP_PVE.on or nplayers < 2 then return false end
+  if mem:read_u8(P.sel) ~= 2 then return false end
+  local c1, c2 = mem:read_u16(P.cur), mem:read_u16(P.cur + 2)
+  if c1 == 0 or c1 ~= c2 then return false end
+  if (mem:read_u16(P.taken) & c2) ~= 0 then return false end
+  if not P.sharedSaid then P.sharedSaid = true; log("country select: the cursors share a box - the 1P side waits for the 2P side") end
   return true
 end
 

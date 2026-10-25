@@ -195,6 +195,13 @@ async function saveAndQuit() {
   if (changed.length) { try { await putAll('cfg', changed); } catch (e) {} }
   tell('saved', { text: changed.map(c => c[0]).join(',') });
 }
+let cfgSaved = false;
+async function saveChangedCfg() {
+  if (quitting || cfgSaved || mode === 'replay' || mode === 'match') return;
+  cfgSaved = true;
+  const got = cfgNow(), changed = Object.entries(got).filter(([n, d]) => !same(d, cfgAtStart[n]));
+  if (changed.length) { await putAll('cfg', changed); tell('saved', { text: changed.map(c => c[0]).join(',') }); }
+}
 
 (function () {
   if (!navigator.getGamepads) return;
@@ -347,7 +354,8 @@ if (Q.get('postlog') && Q.get('fakepad')) {
         Object.assign(ENV, env);
       }],
       onRuntimeInitialized: () => { tell('running', { text: cfgs.length ? 'cfg ' + cfgs.map(c => c[0]).join(',') : '' }); document.getElementById('canvas').focus(); },
-      onExit: () => tell('ended'),
+
+      onExit: () => { saveChangedCfg().catch(() => {}).then(() => tell('ended')); },
       onAbort: what => tell('error', { text: String(what), rom: romTrouble }),
     };
     await padReady();
