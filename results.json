@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-25 12:35","room":10,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[9,10],"ft":2,"series":"10-261025123522-7","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["에릭","Janet","",""],"replay":"replays/20261025_123522_에릭_vs_Janet_1-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-25 12:32","room":9,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,4],"ft":2,"series":"8-261025122838-6","ranked":1,"nicks":["슛돌이","김창식씨","",""],"replay":"replays/20261025_123229_슛돌이_vs_김창식씨_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-25 12:28","room":8,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,4],"ft":2,"series":"8-261025122838-6","ranked":1,"nicks":["슛돌이","김창식씨","",""],"replay":"replays/20261025_122838_슛돌이_vs_김창식씨_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-25 12:21","room":7,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[10,3],"ft":2,"series":"6-261025121801-5","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","슛돌이","",""],"replay":"replays/20261025_122142_Janet_vs_슛돌이_4-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-24 00:34","room":21,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,7],"ft":2,"series":"19-261024003044-8","ranked":1,"nicks":["Janet","rpfmqkd","",""],"replay":"replays/20261024_003426_Janet_vs_rpfmqkd_3-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 00:31","room":20,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,3],"ft":2,"series":"14-261024002354-6","ranked":1,"nicks":["청라대장","소소","",""],"replay":"replays/20261024_003106_청라대장_vs_소소_1-2_p1.scr","edition":"cupsocs2"},
 {"when":"2026-10-24 00:30","room":19,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,7],"ft":2,"series":"19-261024003044-8","ranked":1,"nicks":["Janet","rpfmqkd","",""],"replay":"replays/20261024_003044_Janet_vs_rpfmqkd_4-3_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-24 00:29","room":18,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"15-261024002603-7","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["미네로","즐축","",""],"replay":"replays/20261024_002931_미네로_vs_즐축_1-2_p1.scr","edition":"cupsocs2"},
-{"when":"2026-10-24 00:27","room":17,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,3],"ft":2,"series":"14-261024002354-6","ranked":1,"nicks":["청라대장","소소","",""],"replay":"replays/20261024_002728_청라대장_vs_소소_2-1_p1.scr","edition":"cupsocs2"}
+{"when":"2026-10-24 00:29","room":18,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"15-261024002603-7","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["미네로","즐축","",""],"replay":"replays/20261024_002931_미네로_vs_즐축_1-2_p1.scr","edition":"cupsocs2"}
 ]
