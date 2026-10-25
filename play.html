@@ -2482,7 +2482,7 @@
     repLabels();
   })();
 
-  $('btnQuick').onclick = function () { if (needRom()) return; net.quick = true; send('QUICK ' + nset.time + ' 0 ' + ed); };
+  $('btnQuick').onclick = function () { if (needRom()) return; alert(T('웹런처에서의 대전은 매우 제한적이니, [다운로드] 화면을 통해 윈도우용 런처를 추천드립니다.', 'Matches in the web launcher are very limited - we recommend the Windows launcher from the [Download] page.')); net.quick = true; send('QUICK ' + nset.time + ' 0 ' + ed); };
   $('btnRefresh').onclick = function () { send('LIST'); if (net.sel) send('WHO ' + net.sel); };
   $('btnJoin').onclick = function () { if (net.sel) joinRoom(net.sel); };
   $('btnReady').onclick = function () {
