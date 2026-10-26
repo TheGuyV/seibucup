@@ -349,6 +349,7 @@
   #chatPub .row.me { align-items: flex-end; }
   #chatPub .bn { font-size: 11.5px; font-weight: 700; margin: 0 0 2px 3px; }
   #chatPub .bn .chm { margin-right: 3px; }
+  #chatPub .bn .cdv { margin-right: 3px; font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif; font-size: 11px; }
   #chatPub .bl { display: flex; align-items: flex-end; gap: 5px; max-width: 84%; }
   #chatPub .me .bl { flex-direction: row-reverse; }
   #chatPub .bb { background: #2c2f34; border: 1px solid #3a3e45; color: #e8e8e8; border-radius: 10px; padding: 3px 10px; overflow-wrap: anywhere; }
@@ -1272,7 +1273,7 @@
   var pubLast = { n: null, when: null, tEl: null, day: undefined };
   var NAME_COL = ['#be96f0', '#eba95a', '#a59bf5', '#dcbe6e', '#96afe6', '#6ecdd2'];
   function nameCol(n) { var h = 0; for (var i = 0; i < n.length; i++) h = (h * 31 + n.charCodeAt(i)) >>> 0; return NAME_COL[h % NAME_COL.length]; }
-  function pubAdd(box, when, who, text, sys, mark) {
+  function pubAdd(box, when, who, text, sys, mark, dev) {
     var day = /^\d\d-\d\d /.test(when) ? when.slice(0, 5) : null, hm = when.replace(/^\d\d-\d\d /, '');
     function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
     if (day !== pubLast.day) {
@@ -1294,16 +1295,17 @@
       var bn = el('div', 'bn'); bn.style.color = nameCol(who);
       if (mark && SKILL_SYM[mark] && mark !== '?') { var mk = el('span', 'chm sk-' + mark, SKILL_SYM[mark]); mk.title = skillWord(mark); bn.appendChild(mk); }
       if (staff) bn.appendChild(el('span', 'stag', T('운영자', 'Admin')));
+      if (dev === 'p' || dev === 'w') { var dvs = el('span', 'cdv', dev === 'p' ? '🖥️' : '🌐'); dvs.title = dev === 'p' ? T('PC 런처', 'PC launcher') : T('웹', 'Web'); bn.appendChild(dvs); }
       bn.appendChild(document.createTextNode(who)); row.appendChild(bn);
     }
     var bl = el('div', 'bl'), tm = el('span', 'bt', hm);
     bl.appendChild(el('div', 'bb', text)); bl.appendChild(tm); row.appendChild(bl); box.appendChild(row);
     pubLast.n = who; pubLast.when = when; pubLast.tEl = tm;
   }
-  function chat(tab, when, who, text, sys, slot, mark) {
+  function chat(tab, when, who, text, sys, slot, mark, dev) {
     var box = $(tab === 'room' ? 'chatRoom' : 'chatPub'), d = document.createElement('div');
     if (tab !== 'room') {
-      pubAdd(box, when, who, text, sys, mark);
+      pubAdd(box, when, who, text, sys, mark, dev);
       while (box.childNodes.length > 400) box.removeChild(box.firstChild);
       box.scrollTop = box.scrollHeight;
       if (tab !== net.tab) document.querySelector('.ctabs [data-tab="' + tab + '"]').classList.add('ping');
@@ -1617,13 +1619,14 @@
     else if (cmd === 'JOINED') { var a = arg.split(' '), jm = SKILL_SYM[a[3]] && a[3] !== '?' ? SKILL_SYM[a[3]] + ' ' : ''; net.online = +a[1] || net.online; drawStatus(); if (a[0] !== net.nick) sys('pub', T(jm + kindText(a[2]) + a[0] + ' 님이 들어왔습니다', jm + kindText(a[2]) + a[0] + ' joined'), 'join'); }
 
     else if (cmd === 'PARTED') { var q = arg.split(' '); net.online = +q[1] || net.online; drawStatus(); if (q[0] !== net.nick) sys('pub', T(kindText(q[2]) + q[0] + ' 님이 나갔습니다', kindText(q[2]) + q[0] + ' left')); }
-    else if (cmd === 'NOTE' || cmd === 'NOTEM') {
+    else if (cmd === 'NOTE' || cmd === 'NOTEM' || cmd === 'NOTEV') {
 
-      var nm = '';
-      if (cmd === 'NOTEM') { nm = arg.charAt(0); arg = arg.slice(2); }
+      var nm = '', nd = '';
+      if (cmd === 'NOTEV') { nd = arg.charAt(0); arg = arg.slice(2); cmd = 'NOTEM'; }
+      if (cmd === 'NOTEM') { nm = arg.charAt(0); if (nm === '-') nm = ''; arg = arg.slice(2); }
       var p = arg.split(' '), d = new Date(+p[0] || Date.now());
       var when = (d.toDateString() === new Date().toDateString()) ? hhmm(d) : ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) + ' ' + hhmm(d);
-      chat('pub', when, p[1], p.slice(2).join(' '), false, undefined, nm);
+      chat('pub', when, p[1], p.slice(2).join(' '), false, undefined, nm, nd);
     }
     else if (cmd === 'NOTICE') { net.notice = arg.split('\t'); noticeIdx = 0; drawNotice(); }
     else if (cmd === 'ATTEND') {
@@ -2122,7 +2125,7 @@
     ws.binaryType = 'arraybuffer'; net.ws = ws; net.buf = ''; net.pingSent = false; netSay(T('접속 중…', 'Connecting…')); drawNet();
     var dec = new TextDecoder();
     ws.onopen = function () {
-      send('HELLO ' + nick); send('AGREE ' + (noticeOk() ? NOTICE_V : 0));
+      send('HELLO ' + nick); send('AGREE ' + (noticeOk() ? NOTICE_V : 0)); send('CAPS dv');
       net.timer = setInterval(function () { net.pingAt = performance.now(); send('PING ' + Math.max(0, net.rtt)); }, 15000);
       setTimeout(function () { net.pingAt = performance.now(); send('PING'); }, 300);
     };
