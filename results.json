@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-28 10:53","room":109,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,8],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_105336_징기즈칸_vs_디올라_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 10:49","room":109,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,9],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_104901_징기즈칸_vs_디올라_1-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 10:45","room":109,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[9,0],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_104508_징기즈칸_vs_디올라_4-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 10:40","room":109,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_104024_징기즈칸_vs_디올라_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-26 21:57","room":99,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"93-261026214958-48","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"],"샤부사커":["샤부사커 FC","SEI"]},"nicks":["상봉거지오락실","샤부사커","",""],"replay":"replays/20261026_215733_상봉거지오락실_vs_샤부사커_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-26 21:56","room":98,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,0],"ft":2,"series":"98-261026215628-50","ranked":1,"tnames":{"김창식씨":["김창식씨 FC","KCS"],"rhythm":["rhythm FC","RHY"]},"nicks":["김창식씨","rhythm","",""],"replay":"replays/20261026_215628_김창식씨_vs_rhythm_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-26 21:54","room":97,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[5,10],"ft":2,"series":"97-261026215431-49","ranked":1,"nicks":["플로레알","뚱이","",""],"replay":"replays/20261026_215431_플로레알_vs_뚱이_3-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-26 21:54","room":96,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"93-261026214958-48","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"],"샤부사커":["샤부사커 FC","SEI"]},"nicks":["상봉거지오락실","샤부사커","",""],"replay":"replays/20261026_215409_상봉거지오락실_vs_샤부사커_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-26 21:52","room":95,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[8,0],"ft":2,"series":"90-261026214520-46","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["소새울","rhythm","",""],"replay":"replays/20261026_215251_소새울_vs_rhythm_1-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-10-26 21:54","room":96,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"93-261026214958-48","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"],"샤부사커":["샤부사커 FC","SEI"]},"nicks":["상봉거지오락실","샤부사커","",""],"replay":"replays/20261026_215409_상봉거지오락실_vs_샤부사커_3-2_p1.seibu","edition":"cupsocs2"}
 ]
