@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-29 22:58","room":169,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,4],"ft":2,"series":"167-261029225452-71","ranked":1,"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261029_225801_덕장배_vs_신발벗어_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 22:55","room":168,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,7],"ft":2,"series":"166-261029225201-70","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["dfdf","김정은패스","",""],"replay":"replays/20261029_225509_dfdf_vs_김정은패스_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 22:54","room":167,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,4],"ft":2,"series":"167-261029225452-71","ranked":1,"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261029_225452_덕장배_vs_신발벗어_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 22:52","room":166,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[9,7],"ft":2,"series":"166-261029225201-70","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["dfdf","김정은패스","",""],"replay":"replays/20261029_225201_dfdf_vs_김정은패스_2-4_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-28 18:56","room":176,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"ft":2,"series":"174-261028184835-70","ranked":1,"nicks":["rhythm","콩메모","",""],"replay":"replays/20261028_185654_rhythm_vs_콩메모_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 18:51","room":175,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"ft":2,"series":"174-261028184835-70","ranked":1,"nicks":["rhythm","콩메모","",""],"replay":"replays/20261028_185155_rhythm_vs_콩메모_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 18:48","room":174,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"ft":2,"series":"174-261028184835-70","ranked":1,"nicks":["rhythm","콩메모","",""],"replay":"replays/20261028_184835_rhythm_vs_콩메모_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 18:45","room":170,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"nicks":["징기즈칸","들쥐","",""],"replay":"replays/20261028_184557_징기즈칸_vs_들쥐_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 18:44","room":173,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"172-261028184013-69","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["테일러장군","상봉거지오락실","",""],"replay":"replays/20261028_184410_테일러장군_vs_상봉거지오락실_2-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-10-28 18:45","room":170,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"nicks":["징기즈칸","들쥐","",""],"replay":"replays/20261028_184557_징기즈칸_vs_들쥐_2-1_p1.seibu","edition":"cupsocs2"}
 ]
