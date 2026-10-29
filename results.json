@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-29 22:49","room":163,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,10],"ft":2,"series":"160-261029224640-68","ranked":1,"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261029_224941_신발벗어_vs_덕장배_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 22:47","room":162,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,5],"ft":2,"series":"162-261029224738-69","ranked":1,"nicks":["rhythm","콩메모","",""],"replay":"replays/20261029_224738_rhythm_vs_콩메모_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 22:46","room":160,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,10],"ft":2,"series":"160-261029224640-68","ranked":1,"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261029_224640_신발벗어_vs_덕장배_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 22:46","room":161,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,7],"ft":2,"series":"157-261029224137-67","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["dfdf","김정은패스","",""],"replay":"replays/20261029_224631_dfdf_vs_김정은패스_3-4_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-28 18:41","room":170,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,5],"nicks":["징기즈칸","들쥐","",""],"replay":"replays/20261028_184146_징기즈칸_vs_들쥐_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 18:40","room":172,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,10],"ft":2,"series":"172-261028184013-69","ranked":1,"tnames":{"상봉거지오락실":["상봉거지FC","KSJ"]},"nicks":["테일러장군","상봉거지오락실","",""],"replay":"replays/20261028_184013_테일러장군_vs_상봉거지오락실_3-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 18:37","room":170,"type":"1v1","time":150,"players":2,"score":[0,0],"teams":[9,5],"nicks":["징기즈칸","들쥐","",""],"replay":"replays/20261028_183726_징기즈칸_vs_들쥐_0-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 18:36","room":171,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,0],"ft":2,"series":"169-261028183247-68","ranked":1,"nicks":["rhythm","리즈유나동","",""],"replay":"replays/20261028_183617_rhythm_vs_리즈유나동_3-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 18:32","room":169,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[3,0],"ft":2,"series":"169-261028183247-68","ranked":1,"nicks":["rhythm","리즈유나동","",""],"replay":"replays/20261028_183247_rhythm_vs_리즈유나동_4-3_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-10-28 18:36","room":171,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,0],"ft":2,"series":"169-261028183247-68","ranked":1,"nicks":["rhythm","리즈유나동","",""],"replay":"replays/20261028_183617_rhythm_vs_리즈유나동_3-1_p1.seibu","edition":"cupsocs2"}
 ]
