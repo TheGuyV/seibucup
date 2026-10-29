@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-29 21:52","room":117,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"114-261029214822-48","ranked":1,"nicks":["플로레알","404page","",""],"replay":"replays/20261029_215257_플로레알_vs_404page_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 21:52","room":118,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"ft":2,"series":"118-261029215240-50","ranked":1,"tnames":{"샤부사커":["샤부사커 FC","JJJ"]},"nicks":["샤부사커","덕장배","",""],"replay":"replays/20261029_215240_샤부사커_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 21:49","room":116,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,9],"ft":2,"series":"116-261029214907-49","ranked":1,"nicks":["소소","덕장배","",""],"replay":"replays/20261029_214907_소소_vs_덕장배_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 21:48","room":115,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,9],"ft":2,"series":"108-261029214203-46","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"드래곤타이거":["부산아이파크","POP"]},"nicks":["판순이","드래곤타이거","",""],"replay":"replays/20261029_214859_판순이_vs_드래곤타이거_1-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-28 14:00","room":119,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,7],"ft":2,"series":"119-261028140029-52","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"],"슛돌이":["백원만 FC","WON"]},"nicks":["김정은패스","슛돌이","",""],"replay":"replays/20261028_140029_김정은패스_vs_슛돌이_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 13:32","room":116,"type":"1v1","time":150,"players":2,"score":[1,1],"teams":[9,8],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_133255_징기즈칸_vs_디올라_1-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 13:28","room":116,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,9],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_132843_징기즈칸_vs_디올라_1-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 13:24","room":116,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[9,10],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_132435_징기즈칸_vs_디올라_5-4_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 13:19","room":116,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,7],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_131916_징기즈칸_vs_디올라_3-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-10-28 13:24","room":116,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[9,10],"nicks":["징기즈칸","디올라","",""],"replay":"replays/20261028_132435_징기즈칸_vs_디올라_5-4_p1.seibu","edition":"cupsocs2"}
 ]
