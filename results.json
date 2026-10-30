@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-30 22:26","room":61,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"58-261030222051-31","ranked":1,"nicks":["소소","콩메모","",""],"replay":"replays/20261030_222600_소소_vs_콩메모_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-30 22:24","room":60,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,9],"ft":2,"series":"56-261030222038-30","ranked":1,"tnames":{"샤부사커":["샤부사커 FC","JJJ"]},"nicks":["샤부사커","징기즈칸","",""],"replay":"replays/20261030_222427_샤부사커_vs_징기즈칸_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-30 22:20","room":58,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[7,5],"ft":2,"series":"58-261030222051-31","ranked":1,"nicks":["소소","콩메모","",""],"replay":"replays/20261030_222051_소소_vs_콩메모_4-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-30 22:20","room":56,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,9],"ft":2,"series":"56-261030222038-30","ranked":1,"tnames":{"샤부사커":["샤부사커 FC","JJJ"]},"nicks":["샤부사커","징기즈칸","",""],"replay":"replays/20261030_222038_샤부사커_vs_징기즈칸_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-28 23:39","room":336,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[11,5],"ft":2,"series":"334-261028233602-134","ranked":1,"nicks":["싸울팽","surferKIM","",""],"replay":"replays/20261028_233901_싸울팽_vs_surferKIM_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 23:38","room":335,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,0],"ft":2,"series":"332-261028233537-133","ranked":1,"nicks":["콩메모","신발벗어","",""],"replay":"replays/20261028_233852_콩메모_vs_신발벗어_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-28 23:36","room":334,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[11,5],"ft":2,"series":"334-261028233602-134","ranked":1,"nicks":["싸울팽","surferKIM","",""],"replay":"replays/20261028_233602_싸울팽_vs_surferKIM_2-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 23:35","room":332,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,0],"ft":2,"series":"332-261028233537-133","ranked":1,"nicks":["콩메모","신발벗어","",""],"replay":"replays/20261028_233537_콩메모_vs_신발벗어_0-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-28 23:32","room":331,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,11],"ft":2,"series":"330-261028232920-131","ranked":1,"nicks":["surferKIM","싸울팽","",""],"replay":"replays/20261028_233222_surferKIM_vs_싸울팽_1-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-10-28 23:35","room":332,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[7,0],"ft":2,"series":"332-261028233537-133","ranked":1,"nicks":["콩메모","신발벗어","",""],"replay":"replays/20261028_233537_콩메모_vs_신발벗어_0-2_p1.seibu","edition":"cupsocs2"}
 ]
