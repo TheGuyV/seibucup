@@ -1766,7 +1766,7 @@ function scnp_sp_mask()
     end
   end
   local on = input:seq_pressed(S.seq)
-  if on and not S.down then S.n = 6 end
+  if on and not S.down then S.n = 4 end
   S.down = on
   if S.n > 0 then S.n = S.n - 1; return 0x20 end
   return 0
