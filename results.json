@@ -1,4 +1,5 @@
 [
+{"when":"2026-10-30 23:12","room":99,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[2,9],"ft":2,"series":"97-261030230910-48","ranked":1,"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261030_231222_덕장배_vs_신발벗어_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-30 23:10","room":98,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[10,5],"ft":2,"series":"92-261030230403-47","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","테일러장군","",""],"replay":"replays/20261030_231056_Janet_vs_테일러장군_3-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-30 23:09","room":96,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,11],"ft":2,"series":"96-261030230920-49","ranked":1,"nicks":["징기즈칸","404page","",""],"replay":"replays/20261030_230920_징기즈칸_vs_404page_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-30 23:09","room":97,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,9],"ft":2,"series":"97-261030230910-48","ranked":1,"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261030_230910_덕장배_vs_신발벗어_0-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-29 14:37","room":8,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,3],"ft":2,"series":"7-261029143130-3","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","rhythm","",""],"replay":"replays/20261029_143705_김정은패스_vs_rhythm_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 14:31","room":7,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,3],"ft":2,"series":"7-261029143130-3","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","rhythm","",""],"replay":"replays/20261029_143130_김정은패스_vs_rhythm_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-29 14:28","room":6,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[5,3],"ft":2,"series":"6-261029142807-2","ranked":1,"nicks":["통맴","rhythm","",""],"replay":"replays/20261029_142807_통맴_vs_rhythm_0-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-29 09:01","room":17,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["징기즈칸","핑크팬더","",""],"replay":"replays/20261029_090133_징기즈칸_vs_핑크팬더_2-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-29 01:32","room":10,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,7],"ft":2,"series":"9-261029012826-4","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["Janet","나도","",""],"replay":"replays/20261029_013202_Janet_vs_나도_2-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-10-29 09:01","room":17,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[9,3],"nicks":["징기즈칸","핑크팬더","",""],"replay":"replays/20261029_090133_징기즈칸_vs_핑크팬더_2-0_p1.seibu","edition":"cupsocs2"}
 ]
