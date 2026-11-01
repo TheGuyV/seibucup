@@ -173,7 +173,7 @@ RQC = { on = false, save = {}, out = {}, SPR = 0x103800, TXT = 0x102000, PAL = 0
   if manager.machine.system.name ~= "cupsocs2" or #f < 7 or not hx(f[2]) or not hx(f[3]) then return end
   RQC.on = true
   RQC.kit = { rgb(f[2]), rgb(f[3]), hx(f[9]) }
-  RQC.abbr = (f[6] or ""):upper(); RQC.boots = hx(f[8]); RQC.hair = hx(f[11])
+  RQC.abbr = (f[6] or ""):upper(); RQC.boots = hx(f[8]); RQC.hair = hx(f[11]); RQC.skin = hx(f[12])
   RQC.name = ((f[7] or ""):gsub("%%(%x%x)", function(h) return string.char(tonumber(h, 16)) end))
 
   local base = tonumber(f[1]) or -1
@@ -282,6 +282,7 @@ RQC = { on = false, save = {}, out = {}, SPR = 0x103800, TXT = 0x102000, PAL = 0
         end
       end
       if C.hair then for i = 4, 5 do local f = i == 5 and 1 or 0.55; put(la + i * 2, q(C.hair[1], f) | (q(C.hair[2], f) << 5) | (q(C.hair[3], f) << 10)) end end
+      if C.skin then for i = 0, 3 do local f = ({ [0] = 0.5, 0.66, 0.82, 1 })[i]; put(la + i * 2, q(C.skin[1], f) | (q(C.skin[2], f) << 5) | (q(C.skin[3], f) << 10)) end end
       if C.boots then put(la + 28, q(C.boots[1]) | (q(C.boots[2]) << 5) | (q(C.boots[3]) << 10)) end
     end
 

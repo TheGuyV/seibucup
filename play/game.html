@@ -328,6 +328,7 @@ if (Q.get('postlog') && Q.get('fakepad')) {
     }
     if (mode === 'match' && /^[0-3]$/.test(Q.get('diff') || '')) env.SCNP_DIFF = Q.get('diff');
     if (mode === 'match' && Q.get('pvegod') === '1') env.SCNP_PVEGOD = '1';
+    if (mode === 'match' && Q.get('gkcpu') === '1') env.SCNP_GKCPU = '1';
     if (mode === 'match' && Q.get('costume')) env.SCNP_COSTUME = Q.get('costume');
     if (mode === 'match' && Q.get('comic') === '1') env.SCNP_COMIC = '1';
     if (mode === 'match' && Q.get('dyn') === '0') env.SCNP_DYNDELAY = '0';

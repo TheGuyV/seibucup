@@ -493,7 +493,7 @@
           <div class="nrow"><span class="nlab"><span class="ko">대전타입</span><span class="en">Match type</span></span>
             <div class="seg" id="netType"><button type="button" data-type="1v1">1 vs 1</button><button type="button" data-type="2v2" id="btn2v2">2 vs 2</button><button type="button" data-type="pve" id="btnPve">PvE 4P</button></div>
             <div class="pvemenu" id="pveMenu" hidden><button type="button" data-cap="2">2 Player</button><button type="button" data-cap="3">3 Player</button><button type="button" data-cap="4">4 Player</button><button type="button" id="pveVsGod" style="border-top:1px solid #555"><span class="ko">GOD 바로가기 (단판)</span><span class="en">Straight to GOD (one match)</span></button><button type="button" id="pveGod"><span class="ko">GOD로 시작 (나라 선택 없음)</span><span class="en">Start as GOD (no country to pick)</span></button><div class="pvehead" style="border-top:1px solid #555;padding:6px 10px 2px;font-size:12px;color:#9aa"><span class="ko">난이도 (컴퓨터 팀)</span><span class="en">Difficulty (the CPU team)</span></div><button type="button" data-diff="2"><span class="ko">쉬움</span><span class="en">Easy</span></button><button type="button" data-diff="3"><span class="ko">보통 (기본)</span><span class="en">Normal (default)</span></button><button type="button" data-diff="1"><span class="ko">어려움</span><span class="en">Hard</span></button><button type="button" data-diff="0"><span class="ko">아주 어려움</span><span class="en">Very hard</span></button></div>
-            <div class="pvemenu" id="teamMenu" hidden><button type="button" data-teams="pick"><span class="ko">팀지정 (1P+3P 대 2P+4P)</span><span class="en">Teams as seated (1P+3P vs 2P+4P)</span></button><button type="button" data-teams="random"><span class="ko">랜덤지정 (시작 직전에 섞기)</span><span class="en">Random teams (drawn at the start)</span></button></div></div>
+            <div class="pvemenu" id="teamMenu" hidden><button type="button" data-teams="pick"><span class="ko">팀지정 (1P+3P 대 2P+4P)</span><span class="en">Teams as seated (1P+3P vs 2P+4P)</span></button><button type="button" data-teams="random"><span class="ko">랜덤지정 (시작 직전에 섞기)</span><span class="en">Random teams (drawn at the start)</span></button><button type="button" id="gkCpu" style="border-top:1px solid #555"><span class="ko">키퍼를 CPU에게 맡기기</span><span class="en">Leave the keepers to the CPU</span></button></div></div>
           <div class="nrow" hidden><label for="netPing"><span class="ko">핑 제한</span><span class="en">Ping limit</span></label><select id="netPing"></select></div>
           <div class="nrow"><label for="netFt"><span class="ko">승부</span><span class="en">Series</span></label><div class="nfield ftpair"><select id="netFt"></select><select id="netTie"></select></div></div>
           <div class="nrow"><label for="netTime"><span class="ko">경기 시간</span><span class="en">Match time</span></label><select id="netTime"></select></div>
@@ -735,7 +735,7 @@
 
     try { if (Array.prototype.some.call(navigator.getGamepads(), Boolean)) store.set('web_haspad', '1'); } catch (e) {}
     if (store.get('web_haspad') === '1') q.set('pads', '1');
-    if (mode === 'match') ['kinds', 'token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'race', 'dyn', 'ball', 'diff', 'pvegod', 'comic', 'costume', 'nochat', 'dip'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
+    if (mode === 'match') ['kinds', 'token', 'slot', 'players', 'delay', 'type', 'time', 'nspec', 'swap', 'stage', 'bgm', 'series', 'pk', 'race', 'dyn', 'ball', 'diff', 'pvegod', 'gkcpu', 'comic', 'costume', 'nochat', 'dip'].forEach(function (k) { if (extra[k]) q.set(k, extra[k]); });
     if (typeof TESTLOG !== 'undefined' && TESTLOG) { q.set('postlog', '1'); q.set('testroms', '1'); if (TESTQ.get('nplua')) q.set('nplua', TESTQ.get('nplua')); ['xargs', 'nobeat', 'burn'].forEach(function (k) { if (TESTQ.get(k)) q.set(k, TESTQ.get(k)); }); }
     hideInterlude();
     var f = document.createElement('iframe');
@@ -988,7 +988,7 @@
 
   function relayWsUrl() { return /(^|\.)seibucup\.online$/.test(location.hostname) ? 'wss://play.seibucup.online/ws'
                                   : (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws'; }
-  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 42;
+  var WEB_BUILD = 'f9e2fec7', WEB_PROTO = 43;
 
   var VS_OFF_AT = Date.parse('2026-10-23T00:00:00+09:00');
   function vsOff() { return Date.now() >= VS_OFF_AT; }
@@ -996,7 +996,7 @@
   function vsOffSay() { alert(T('웹에서는 1:1 빠른 대결만 할 수 있어요 (웹 사용자끼리).\n방 만들기 등 다른 대전은 윈도우 런처에서 해 주세요.', 'On the web only the 1 vs 1 quick match is open (web players with web players).\nOther matches are in the Windows launcher.')); }
   var net = { ws: null, nick: '', online: 0, rtt: -1, pingAt: 0, pingSent: false, timer: null, buf: '', rooms: [], sel: null, who: null,
               room: null, quick: false, startSent: false, tab: 'pub', notice: [], hostDone: false };
-  var nset = { ping: 100, ft: 1, time: 150, stage: -1, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, pveDiff: 3, aloneDiff: 3, pveVsGod: false, sound: true, tie: 'pk', teams: 'pick' };
+  var nset = { ping: 100, ft: 1, time: 150, stage: -1, bgm: 'random', swap: true, delay: 3, autoDelay: true, type: '1v1', pveCap: 4, pveGod: false, pveDiff: 3, aloneDiff: 3, pveVsGod: false, gkCpu: false, sound: true, tie: 'pk', teams: 'pick' };
   try { Object.assign(nset, JSON.parse(store.get('web_net') || '{}')); } catch (e) {}
   if (!(nset.bgmVol >= 0 && nset.bgmVol <= 100)) nset.bgmVol = 100;
   if (!(nset.sfxVol >= 0 && nset.sfxVol <= 100)) nset.sfxVol = 100;
@@ -1090,6 +1090,7 @@
     document.querySelectorAll('#netType button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-type') === nset.type); });
     $('btnPve').textContent = 'PvE ' + nset.pveCap + 'P' + (nset.pveVsGod ? ' vs GOD' : '') + (nset.pveGod ? ' GOD' : '') + (nset.pveDiff !== 3 ? ' · ' + diffName(nset.pveDiff) : '');
     $('pveVsGod').classList.toggle('on', !!nset.pveVsGod);
+    $('gkCpu').classList.toggle('on', !!nset.gkCpu);
     document.querySelectorAll('#pveMenu button[data-diff]').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-diff') === nset.pveDiff); });
     var tcur = (typeof net !== 'undefined' && net && net.room && net.room.type === '2v2') ? net.room.teams : nset.teams;
     $('btn2v2').textContent = '2 vs 2' + (tcur === 'random' ? ' · ' + T('랜덤', 'random') : '');
@@ -1108,6 +1109,8 @@
 
   function setVsGod(on) { nset.pveVsGod = on; var r = net.room; if (r && r.type === 'pve' && isOwner(r) && !!r.vsgod !== on) send('PVEGOD ' + (on ? 1 : 0)); }
   $('pveVsGod').onclick = function () { setVsGod(!nset.pveVsGod); saveSet(); drawType(); $('pveMenu').hidden = true; };
+
+  $('gkCpu').onclick = function () { nset.gkCpu = !nset.gkCpu; var r = net.room; if (r && r.type === '2v2' && isOwner(r) && r.state === 'waiting' && !!r.gkcpu !== nset.gkCpu) send('GKCPU ' + (nset.gkCpu ? 1 : 0)); saveSet(); drawType(); $('teamMenu').hidden = true; };
   document.querySelectorAll('#pveMenu button[data-cap]').forEach(function (b) { b.onclick = function () { nset.pveCap = +b.getAttribute('data-cap'); saveSet(); drawType(); $('pveMenu').hidden = true; }; });
 
   function diffName(v) { return [T('아주 어려움', 'Very hard'), T('어려움', 'Hard'), T('쉬움', 'Easy'), T('보통', 'Normal')][v] || ''; }
@@ -1807,7 +1810,7 @@
                  time: f[8] || '150', builds: (f[9] || ',,,').split(','), ready: (f[10] || '0,0,0,0').split(',').map(function (x) { return x === '1'; }),
                  edition: f[11] || 'cupsoc', ft: +(f[12] || 1), wa: +(f[13] || 0), wb: +(f[14] || 0), quick: f[15] === '1', over: f[16] === '1', locked: f[6] === '1', cap: +(f[17] || 2),
                  kinds: (f[18] || ',,,').split(','), tie: /^(gg|r[135])$/.test(f[19] || '') ? f[19] : 'pk', teams: f[20] === 'random' ? 'random' : 'pick', title: unescTitle(f[21]),
-                 owner: +(f[22] || 1) || 1, diff: f[23] !== undefined && f[23] !== '' ? +f[23] : 3, vsgod: f[24] === '1', ranked: f[25] === '1', arcade: f[26] === '1' };
+                 owner: +(f[22] || 1) || 1, diff: f[23] !== undefined && f[23] !== '' ? +f[23] : 3, vsgod: f[24] === '1', ranked: f[25] === '1', arcade: f[26] === '1', gkcpu: f[30] === '1' };
     var r = net.room;
     if (net.ftTraceOn && (!was || was.state !== r.state || was.ready[r.slot - 1] !== r.ready[r.slot - 1])) ftTrace('room ' + r.state + (r.ready[r.slot - 1] ? ' R' : ''));
     if (net.ftTraceOn && !net.ftWaitAt && r.state === 'waiting') net.ftWaitAt = Date.now();
@@ -1825,6 +1828,7 @@
       if (isOwner(r) && r.type === '2v2' && !r.arcade && (nset.teams === 'random' ? 'random' : 'pick') !== r.teams) send('TEAMS ' + (nset.teams === 'random' ? 'random' : 'pick'));
       if (isOwner(r) && r.type === 'pve' && nset.pveDiff !== r.diff) send('DIFF ' + nset.pveDiff);
       if (isOwner(r) && r.type === 'pve' && !!nset.pveVsGod !== r.vsgod) send('PVEGOD ' + (nset.pveVsGod ? 1 : 0));
+      if (isOwner(r) && r.type === '2v2' && r.state === 'waiting' && !!nset.gkCpu !== r.gkcpu) send('GKCPU ' + (nset.gkCpu ? 1 : 0));
       $('teamMenu').hidden = true;
       $('pveMenu').hidden = true;
     }
@@ -2080,6 +2084,7 @@
                      god: (f[4] === 'pve' && f[1] === '1' && nset.pveGod) ? '1' : '',
                      diff: (f[4] === 'pve' && f[1] === '1' && r.diff !== 3) ? String(r.diff) : '',
                      pvegod: (f[4] === 'pve' && f[1] === '1' && r.vsgod) ? '1' : '',
+                     gkcpu: (f[4] === '2v2' && f[1] === '1' && r.gkcpu) ? '1' : '',
                      costume: f[11] && f[11] !== '-' ? f[11] : '',
                      dyn: nset.autoDelay === false ? '0' : '',
                      nochat: r.arcade ? '1' : '', dip: r.arcade ? '1' : '',
