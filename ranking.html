@@ -109,6 +109,7 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
   table.rank td.pos { width: 2em; }
   .rk { padding: 1px 5px; font-size: .74rem; }
 }
+.season-off { border-color: #c9a227; background: rgba(201,162,39,.12); margin-bottom: 14px; }
 </style>
 </head>
 <body>
@@ -145,6 +146,7 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
 
 <section>
   <div class="container">
+    <div id="seasonOff" class="note season-off"><span class="ko"><strong>지금은 정규 시즌을 진행하지 않습니다.</strong> 시즌 순위표는 잠시 쉬어 갑니다. 랭크전 점수와 단계는 그대로 이어지며, 지난 시즌(알파·베타테스트) 기록은 위 탭에서 볼 수 있습니다.</span><span class="en"><strong>There is no regular season right now.</strong> The season table takes a break; ranked points and ranks carry on as they are, and the past seasons (alpha and beta tests) are in the tabs above.</span></div>
     <div id="empty" class="note empty" hidden><span class="ko">이번 시즌에는 아직 순위에 오른 선수가 없습니다. 랭크전을 해 보세요!</span><span class="en">Nobody is on the table this season yet - play a ranked match!</span></div>
     <div class="stats">
       <div class="stat"><div class="n" id="sRanked">-</div><div class="l"><span class="ko">순위에 오른 선수 (<span class="minN">-</span>경기 이상)</span><span class="en">Ranked players (<span class="minN">-</span>+ games)</span></div></div>
@@ -285,7 +287,6 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
   function tabs(d) {
     var box = $('tabs'); box.innerHTML = '';
     function tab(label, on, go) { var b = document.createElement('button'); b.type = 'button'; b.className = 'tab' + (on ? ' on' : ''); b.textContent = label; b.onclick = go; box.appendChild(b); box.appendChild(document.createTextNode(' ')); }
-    tab(d.season.name, view === cur, function () { draw(cur); tabs(cur); });
     (d.past || []).slice().reverse().forEach(function (ps) {
       tab(ps.name, view && view.season.id === ps.id && view !== cur, function () {
         fetch('ranking_' + encodeURIComponent(ps.id) + '.json?' + Date.now()).then(function (r) { return r.json(); }).then(function (j) { draw(j); tabs(cur); }).catch(function () {});
@@ -423,8 +424,12 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
   });
 
   $('find').addEventListener('input', find);
-  fetch('ranking.json?' + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { cur = d; draw(d); tabs(d); })
-    .catch(function () { $('empty').hidden = false; $('bar').innerHTML = ''; });
+
+  fetch('ranking.json?' + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
+    cur = d; tabs(d);
+    var last = (d.past || []).slice(-1)[0];
+    if (last) fetch('ranking_' + encodeURIComponent(last.id) + '.json?' + Date.now()).then(function (r) { return r.json(); }).then(function (j) { draw(j); tabs(cur); }).catch(function () {});
+  }).catch(function () { $('bar').innerHTML = ''; });
   var lb = $('langbtn'); if (lb) lb.addEventListener('click', function () { setTimeout(function () { if (view) { draw(view); if (cur) tabs(cur); } }, 0); });
 })();
 </script>
