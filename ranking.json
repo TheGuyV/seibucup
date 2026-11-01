@@ -1,1 +1,1 @@
-{"season":{"id":"s1","name":"시즌 1","start":"2026-11-01 00:00","end":"2026-12-01 00:00","min":10},"updated":"2026-11-01 12:40","games":15,"ranked":10,"dist":[7,3,0,0,0,0],"past":[{"id":"alpha","name":"알파테스트 시즌"},{"id":"beta","name":"베타테스트 시즌"}],"players":[]}
+{"season":{"id":"s1","name":"시즌 1","start":"2026-11-01 00:00","end":"2026-12-01 00:00","min":10},"updated":"2026-11-01 12:48","games":16,"ranked":11,"dist":[8,3,0,0,0,0],"past":[{"id":"alpha","name":"알파테스트 시즌"},{"id":"beta","name":"베타테스트 시즌"}],"players":[]}
