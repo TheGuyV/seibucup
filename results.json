@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-02 21:03","room":38,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"38-261102210319-20","ranked":1,"tnames":{"판순이":["CAMEROON","YSY"]},"nicks":["연합함대","판순이","",""],"replay":"replays/20261102_210319_연합함대_vs_판순이_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 21:02","room":36,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[9,5],"ft":2,"series":"36-261102210232-19","ranked":1,"nicks":["dfdf","테일러장군","",""],"replay":"replays/20261102_210232_dfdf_vs_테일러장군_1-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 21:01","room":35,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,4],"ft":2,"series":"31-261102205724-18","ranked":1,"nicks":["소새울","깜찍만두","",""],"replay":"replays/20261102_210133_소새울_vs_깜찍만두_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 20:58","room":34,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,0],"ft":2,"series":"33-261102205432-17","ranked":1,"nicks":["테일러장군","드래곤타이거","",""],"replay":"replays/20261102_205836_테일러장군_vs_드래곤타이거_4-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-10-31 22:57","room":150,"type":"2v2","time":150,"players":4,"score":[2,3],"teams":[4,5],"ft":2,"series":"150-261031225727-77","nicks":["김창식씨","소소","판순이","테일러장군"],"replay":"replays/20261031_225727_김창식씨_vs_판순이_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-31 22:55","room":149,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,9],"ft":2,"series":"148-261031225139-76","ranked":1,"nicks":["기러기","플로레알","",""],"replay":"replays/20261031_225515_기러기_vs_플로레알_3-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-10-31 22:51","room":148,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"148-261031225139-76","ranked":1,"nicks":["기러기","플로레알","",""],"replay":"replays/20261031_225139_기러기_vs_플로레알_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-31 22:51","room":147,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,7],"ft":2,"series":"144-261031224725-75","ranked":1,"nicks":["dfdf","소소","",""],"replay":"replays/20261031_225130_dfdf_vs_소소_1-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-10-31 22:48","room":145,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[3,0],"ft":2,"series":"142-261031224522-74","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"],"드래곤타이거":["부산아이파크","POP"]},"nicks":["판순이","드래곤타이거","",""],"replay":"replays/20261031_224839_판순이_vs_드래곤타이거_2-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-10-31 22:51","room":147,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[9,7],"ft":2,"series":"144-261031224725-75","ranked":1,"nicks":["dfdf","소소","",""],"replay":"replays/20261031_225130_dfdf_vs_소소_1-3_p1.seibu","edition":"cupsocs2"}
 ]
