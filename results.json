@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-02 22:03","room":90,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,4],"ft":2,"series":"90-261102220352-44","ranked":1,"tnames":{"슛돌이":["백원만 FC","WON"]},"nicks":["테일러장군","슛돌이","",""],"replay":"replays/20261102_220352_테일러장군_vs_슛돌이_3-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 22:00","room":87,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"ft":2,"series":"83-261102215700-42","ranked":1,"nicks":["눙민이","뚱이","",""],"replay":"replays/20261102_220042_눙민이_vs_뚱이_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 22:00","room":88,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,5],"ft":2,"series":"78-261102215351-40","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"]},"nicks":["판순이","나도","",""],"replay":"replays/20261102_220041_판순이_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 22:00","room":82,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,10],"ft":2,"series":"79-261102215322-39","ranked":1,"nicks":["신발벗어","덕장배","",""],"replay":"replays/20261102_220040_신발벗어_vs_덕장배_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-01 10:57","room":202,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"ft":2,"series":"201-261101105315-104","ranked":1,"nicks":["콩메모","거성","",""],"replay":"replays/20261101_105731_콩메모_vs_거성_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 10:53","room":201,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"ft":2,"series":"201-261101105315-104","ranked":1,"nicks":["콩메모","거성","",""],"replay":"replays/20261101_105315_콩메모_vs_거성_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 10:39","room":197,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"ft":2,"series":"196-261101103634-102","ranked":1,"nicks":["콩메모","리즈유나동","",""],"replay":"replays/20261101_103935_콩메모_vs_리즈유나동_1-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 10:36","room":196,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,0],"ft":2,"series":"196-261101103634-102","ranked":1,"nicks":["콩메모","리즈유나동","",""],"replay":"replays/20261101_103634_콩메모_vs_리즈유나동_3-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 00:47","room":189,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":2,"series":"188-261101004329-97","ranked":1,"nicks":["dfdf","테일러장군","",""],"replay":"replays/20261101_004711_dfdf_vs_테일러장군_2-3_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-01 10:36","room":196,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[5,0],"ft":2,"series":"196-261101103634-102","ranked":1,"nicks":["콩메모","리즈유나동","",""],"replay":"replays/20261101_103634_콩메모_vs_리즈유나동_3-1_p1.seibu","edition":"cupsocs2"}
 ]
