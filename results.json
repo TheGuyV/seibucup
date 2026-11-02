@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-02 22:34","room":116,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,9],"ft":2,"series":"116-261102223416-57","ranked":1,"nicks":["나도","이재경짱","",""],"replay":"replays/20261102_223416_나도_vs_이재경짱_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 22:31","room":114,"type":"2v2","time":180,"players":4,"score":[2,1],"teams":[5,7],"ft":2,"series":"114-261102223135-56","nicks":["즐축","플로레알","소소","레온"],"replay":"replays/20261102_223135_즐축_vs_소소_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 22:31","room":115,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,10],"ft":2,"series":"112-261102222559-55","ranked":1,"nicks":["이재경짱","뚱이","",""],"replay":"replays/20261102_223102_이재경짱_vs_뚱이_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 22:27","room":113,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[3,5],"ft":2,"series":"110-261102222323-54","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"]},"nicks":["판순이","나도","",""],"replay":"replays/20261102_222706_판순이_vs_나도_3-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-01 15:14","room":9,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,10],"ft":2,"series":"9-261101151407-7","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["연합함대","Janet","",""],"replay":"replays/20261101_151407_연합함대_vs_Janet_4-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 15:05","room":8,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"8-261101150525-6","ranked":1,"nicks":["연합함대","드래곤타이거","",""],"replay":"replays/20261101_150525_연합함대_vs_드래곤타이거_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 14:16","room":4,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"1-261101140929-1","ranked":1,"nicks":["404page","콩메모","",""],"replay":"replays/20261101_141622_404page_vs_콩메모_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 14:12","room":3,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"1-261101140929-1","ranked":1,"nicks":["404page","콩메모","",""],"replay":"replays/20261101_141232_404page_vs_콩메모_0-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 14:09","room":2,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":2,"series":"2-261101140950-2","ranked":1,"nicks":["연합함대","거성","",""],"replay":"replays/20261101_140950_연합함대_vs_거성_2-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-01 14:12","room":3,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"1-261101140929-1","ranked":1,"nicks":["404page","콩메모","",""],"replay":"replays/20261101_141232_404page_vs_콩메모_0-1_p1.seibu","edition":"cupsocs2"}
 ]
