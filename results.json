@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-02 21:49","room":74,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,10],"ft":2,"series":"74-261102214908-37","ranked":1,"nicks":["나도","덕장배","",""],"replay":"replays/20261102_214908_나도_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 21:48","room":71,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[10,5],"ft":2,"series":"68-261102214311-33","ranked":1,"tnames":{"상봉거지오락실":["만안FC","KSJ"]},"nicks":["상봉거지오락실","연합함대","",""],"replay":"replays/20261102_214803_상봉거지오락실_vs_연합함대_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 21:48","room":73,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,10],"ft":2,"series":"73-261102214802-36","ranked":1,"nicks":["눙민이","뚱이","",""],"replay":"replays/20261102_214802_눙민이_vs_뚱이_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 21:47","room":72,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"72-261102214710-35","ranked":1,"nicks":["테일러장군","소소","",""],"replay":"replays/20261102_214710_테일러장군_vs_소소_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-01 00:07","room":179,"type":"2v2","time":150,"players":4,"score":[2,3],"teams":[8,7],"ft":2,"series":"179-261101000015-92","nicks":["드래곤타이거","레온","플로레알","나도"],"replay":"replays/20261101_000706_드래곤타이거_vs_플로레알_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 00:06","room":181,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,4],"ft":2,"series":"181-261101000640-94","ranked":1,"tnames":{"김창식씨":["김창식씨 FC","KCS"]},"nicks":["dfdf","김창식씨","",""],"replay":"replays/20261101_000640_dfdf_vs_김창식씨_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 00:05","room":178,"type":"2v2","time":180,"players":4,"score":[2,3],"teams":[9,7],"ft":2,"series":"178-261101000051-93","nicks":["소소","Janet","테일러장군","김정은패스"],"replay":"replays/20261101_000547_소소_vs_테일러장군_2-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 00:00","room":178,"type":"2v2","time":180,"players":4,"score":[1,2],"teams":[5,7],"ft":2,"series":"178-261101000051-93","nicks":["Janet","소소","김정은패스","테일러장군"],"replay":"replays/20261101_000051_Janet_vs_김정은패스_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 00:00","room":179,"type":"2v2","time":150,"players":4,"score":[2,1],"teams":[7,5],"ft":2,"series":"179-261101000015-92","nicks":["드래곤타이거","레온","플로레알","나도"],"replay":"replays/20261101_000015_드래곤타이거_vs_플로레알_2-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-01 00:00","room":178,"type":"2v2","time":180,"players":4,"score":[1,2],"teams":[5,7],"ft":2,"series":"178-261101000051-93","nicks":["Janet","소소","김정은패스","테일러장군"],"replay":"replays/20261101_000051_Janet_vs_김정은패스_1-2_p1.seibu","edition":"cupsocs2"}
 ]
