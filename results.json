@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-03 20:10","room":2,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[3,7],"ft":2,"series":"2-261103201002-1","ranked":1,"nicks":["테일러장군","김정은패스","",""],"replay":"replays/20261103_201002_테일러장군_vs_김정은패스_4-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 20:06","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,7],"nicks":["테일러장군","김정은패스","",""],"replay":"replays/20261103_200619_테일러장군_vs_김정은패스_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 20:00","room":218,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":2,"series":"216-261103195638-104","ranked":1,"nicks":["김정은패스","테일러장군","",""],"replay":"replays/20261103_200045_김정은패스_vs_테일러장군_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 19:56","room":217,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,7],"ft":2,"series":"215-261103195323-103","ranked":1,"nicks":["인형의기사","상봉거지오락실","",""],"replay":"replays/20261103_195657_인형의기사_vs_상봉거지오락실_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-01 18:37","room":8,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[11,9],"ft":2,"series":"6-261101183345-3","ranked":1,"nicks":["404page","플로레알","",""],"replay":"replays/20261101_183723_404page_vs_플로레알_1-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 18:33","room":6,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[11,9],"ft":2,"series":"6-261101183345-3","ranked":1,"nicks":["404page","플로레알","",""],"replay":"replays/20261101_183345_404page_vs_플로레알_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 18:31","room":5,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[3,7],"ft":2,"series":"1-261101182341-2","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","인형의기사","",""],"replay":"replays/20261101_183117_rhythm_vs_인형의기사_2-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 18:27","room":4,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[11,5],"ft":2,"series":"2-261101182340-1","ranked":1,"nicks":["404page","테일러장군","",""],"replay":"replays/20261101_182711_404page_vs_테일러장군_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 18:27","room":3,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,7],"ft":2,"series":"1-261101182341-2","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","인형의기사","",""],"replay":"replays/20261101_182709_rhythm_vs_인형의기사_1-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-01 18:27","room":4,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[11,5],"ft":2,"series":"2-261101182340-1","ranked":1,"nicks":["404page","테일러장군","",""],"replay":"replays/20261101_182711_404page_vs_테일러장군_1-2_p1.seibu","edition":"cupsocs2"}
 ]
