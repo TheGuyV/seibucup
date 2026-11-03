@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-03 23:35","room":2,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,9],"ft":2,"series":"2-261103233551-2","ranked":1,"nicks":["나도","연합함대","",""],"replay":"replays/20261103_233551_나도_vs_연합함대_3-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 23:23","room":1,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":2,"series":"1-261103232351-1","ranked":1,"nicks":["미네로","나도","",""],"replay":"replays/20261103_232351_미네로_vs_나도_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 23:17","room":103,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":2,"series":"103-261103231733-52","ranked":1,"nicks":["나도","미네로","",""],"replay":"replays/20261103_231733_나도_vs_미네로_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 23:13","room":102,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":2,"series":"101-261103230945-51","ranked":1,"nicks":["덕장배","나도","",""],"replay":"replays/20261103_231311_덕장배_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-01 23:21","room":77,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"ft":2,"series":"76-261101231733-35","ranked":1,"nicks":["rhythm","dfdf","",""],"replay":"replays/20261101_232117_rhythm_vs_dfdf_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 23:17","room":76,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"76-261101231733-35","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","dfdf","",""],"replay":"replays/20261101_231733_rhythm_vs_dfdf_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 23:16","room":73,"type":"2v2","time":180,"players":4,"score":[1,2],"teams":[9,5],"ft":2,"series":"73-261101231610-34","nicks":["소소","슛돌이","나도","청라대장"],"replay":"replays/20261101_231610_소소_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 23:10","room":75,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,11],"ft":2,"series":"71-261101230652-32","ranked":1,"nicks":["rhythm","슛돌이","",""],"replay":"replays/20261101_231055_rhythm_vs_슛돌이_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 23:09","room":74,"type":"1v1","time":150,"players":2,"score":[1,4],"teams":[5,5],"ft":2,"series":"74-261101230958-33","ranked":1,"nicks":["소새울","surferKIM","",""],"replay":"replays/20261101_230958_소새울_vs_surferKIM_1-4_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-01 23:10","room":75,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,11],"ft":2,"series":"71-261101230652-32","ranked":1,"nicks":["rhythm","슛돌이","",""],"replay":"replays/20261101_231055_rhythm_vs_슛돌이_1-2_p1.seibu","edition":"cupsocs2"}
 ]
