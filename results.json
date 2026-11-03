@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-03 22:28","room":74,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[6,5],"ft":2,"series":"70-261103222301-37","ranked":1,"nicks":["덕장배","나도","",""],"replay":"replays/20261103_222837_덕장배_vs_나도_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 22:27","room":75,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[9,0],"ft":2,"series":"71-261103222326-38","ranked":1,"nicks":["드래곤타이거","플로레알","",""],"replay":"replays/20261103_222702_드래곤타이거_vs_플로레알_4-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 22:25","room":73,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[3,9],"ft":2,"series":"73-261103222547-39","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"]},"nicks":["판순이","dfdf","",""],"replay":"replays/20261103_222547_판순이_vs_dfdf_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-03 22:23","room":72,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":2,"series":"66-261103221550-36","ranked":1,"nicks":["슛돌이","미네로","",""],"replay":"replays/20261103_222352_슛돌이_vs_미네로_1-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-01 22:21","room":38,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,9],"ft":2,"series":"34-261101221502-16","ranked":1,"nicks":["필게임랜드","플로레알","",""],"replay":"replays/20261101_222152_필게임랜드_vs_플로레알_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 22:20","room":37,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[0,5],"ft":2,"series":"33-261101221246-15","ranked":1,"nicks":["rhythm","surferKIM","",""],"replay":"replays/20261101_222007_rhythm_vs_surferKIM_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-01 22:18","room":36,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,9],"ft":2,"series":"34-261101221502-16","ranked":1,"nicks":["필게임랜드","플로레알","",""],"replay":"replays/20261101_221846_필게임랜드_vs_플로레알_1-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 22:17","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,5],"ft":2,"series":"33-261101221246-15","ranked":1,"nicks":["rhythm","surferKIM","",""],"replay":"replays/20261101_221709_rhythm_vs_surferKIM_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-01 22:15","room":34,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,9],"ft":2,"series":"34-261101221502-16","ranked":1,"nicks":["필게임랜드","플로레알","",""],"replay":"replays/20261101_221502_필게임랜드_vs_플로레알_4-3_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-01 22:17","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,5],"ft":2,"series":"33-261101221246-15","ranked":1,"nicks":["rhythm","surferKIM","",""],"replay":"replays/20261101_221709_rhythm_vs_surferKIM_3-2_p1.seibu","edition":"cupsocs2"}
 ]
