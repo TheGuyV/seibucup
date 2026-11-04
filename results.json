@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-04 15:57","room":3,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"3-261104155734-1","ranked":1,"nicks":["인형의기사","surferKIM","",""],"replay":"replays/20261104_155734_인형의기사_vs_surferKIM_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 13:10","room":35,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[7,9],"ft":2,"series":"35-261104131019-15","ranked":1,"nicks":["인형의기사","연합함대","",""],"replay":"replays/20261104_131019_인형의기사_vs_연합함대_3-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 11:51","room":31,"type":"1v1","time":150,"players":2,"score":[4,2],"teams":[7,10],"ft":2,"series":"31-261104115135-14","ranked":1,"nicks":["인형의기사","소새울","",""],"replay":"replays/20261104_115135_인형의기사_vs_소새울_4-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 01:01","room":25,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":2,"series":"25-261104010117-13","ranked":1,"nicks":["나도","연합함대","",""],"replay":"replays/20261104_010117_나도_vs_연합함대_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-02 00:15","room":100,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,10],"ft":2,"series":"100-261102001516-48","nicks":["드래곤타이거","Janet","",""],"replay":"replays/20261102_001516_드래곤타이거_vs_Janet_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 00:14","room":101,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[5,9],"ft":2,"series":"101-261102001437-47","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261102_001437_테일러장군_vs_플로레알_2-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 00:13","room":99,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,5],"ft":2,"series":"99-261102001307-46","ranked":1,"nicks":["나도","미네로","",""],"replay":"replays/20261102_001307_나도_vs_미네로_0-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-02 00:10","room":98,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"98-261102001045-45","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261102_001045_테일러장군_vs_플로레알_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-02 00:09","room":97,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,0],"ft":2,"series":"91-261102000355-42","ranked":1,"nicks":["나도","rhythm","",""],"replay":"replays/20261102_000959_나도_vs_rhythm_1-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-02 00:10","room":98,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"98-261102001045-45","nicks":["테일러장군","플로레알","",""],"replay":"replays/20261102_001045_테일러장군_vs_플로레알_2-1_p1.seibu","edition":"cupsocs2"}
 ]
