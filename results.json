@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-04 19:41","room":70,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,9],"ft":2,"series":"66-261104193320-31","ranked":1,"nicks":["이재경짱","dfdf","",""],"replay":"replays/20261104_194148_이재경짱_vs_dfdf_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 19:40","room":69,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[11,7],"ft":2,"series":"67-261104193622-32","ranked":1,"nicks":["close","인형의기사","",""],"replay":"replays/20261104_194003_close_vs_인형의기사_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 19:37","room":68,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,9],"ft":2,"series":"66-261104193320-31","ranked":1,"nicks":["이재경짱","dfdf","",""],"replay":"replays/20261104_193757_이재경짱_vs_dfdf_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 19:33","room":66,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,9],"ft":2,"series":"66-261104193320-31","ranked":1,"nicks":["이재경짱","dfdf","",""],"replay":"replays/20261104_193320_이재경짱_vs_dfdf_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-02 21:32","room":59,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,9],"ft":2,"series":"48-261102212159-27","ranked":1,"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261102_213231_덕장배_vs_신발벗어_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 21:30","room":58,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":2,"series":"58-261102213057-29","ranked":1,"tnames":{"판순이":["판순이 FC","YSY"]},"nicks":["연합함대","판순이","",""],"replay":"replays/20261102_213057_연합함대_vs_판순이_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 21:29","room":55,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"48-261102212159-27","ranked":1,"nicks":["덕장배","신발벗어","",""],"replay":"replays/20261102_212916_덕장배_vs_신발벗어_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-02 21:27","room":57,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":2,"series":"54-261102212346-28","ranked":1,"nicks":["dfdf","테일러장군","",""],"replay":"replays/20261102_212708_dfdf_vs_테일러장군_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-02 21:25","room":56,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[4,0],"ft":2,"series":"50-261102211856-25","ranked":1,"tnames":{"슛돌이":["백원만 FC","WON"]},"nicks":["슛돌이","드래곤타이거","",""],"replay":"replays/20261102_212523_슛돌이_vs_드래곤타이거_2-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-02 21:27","room":57,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":2,"series":"54-261102212346-28","ranked":1,"nicks":["dfdf","테일러장군","",""],"replay":"replays/20261102_212708_dfdf_vs_테일러장군_1-2_p1.seibu","edition":"cupsocs2"}
 ]
