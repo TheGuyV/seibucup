@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-04 23:08","room":164,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,0],"ft":2,"series":"162-261104230433-74","ranked":1,"nicks":["테일러장군","플로레알","",""],"replay":"replays/20261104_230821_테일러장군_vs_플로레알_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 23:06","room":163,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,5],"ft":2,"series":"161-261104230335-73","ranked":1,"nicks":["나도","surferKIM","",""],"replay":"replays/20261104_230651_나도_vs_surferKIM_2-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 23:04","room":162,"type":"1v1","time":150,"players":2,"score":[4,1],"teams":[10,9],"ft":2,"series":"162-261104230433-74","ranked":1,"nicks":["테일러장군","플로레알","",""],"replay":"replays/20261104_230433_테일러장군_vs_플로레알_4-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 23:03","room":161,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"161-261104230335-73","ranked":1,"nicks":["나도","surferKIM","",""],"replay":"replays/20261104_230335_나도_vs_surferKIM_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-02 23:37","room":156,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[3,9],"ft":2,"series":"156-261102233757-77","ranked":1,"nicks":["청라대장","이재경짱","",""],"replay":"replays/20261102_233757_청라대장_vs_이재경짱_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 23:36","room":154,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":2,"series":"154-261102233639-76","ranked":1,"nicks":["연합함대","나도","",""],"replay":"replays/20261102_233639_연합함대_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-02 23:33","room":152,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,4],"ft":2,"series":"148-261102232935-74","ranked":1,"tnames":{"슛돌이":["백원만 FC","WON"]},"nicks":["테일러장군","슛돌이","",""],"replay":"replays/20261102_233334_테일러장군_vs_슛돌이_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-02 23:33","room":153,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":2,"series":"150-261102232957-75","ranked":1,"nicks":["나도","이재경짱","",""],"replay":"replays/20261102_233312_나도_vs_이재경짱_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-02 23:29","room":150,"type":"1v1","time":150,"players":2,"score":[2,6],"teams":[5,9],"ft":2,"series":"150-261102232957-75","ranked":1,"nicks":["나도","이재경짱","",""],"replay":"replays/20261102_232957_나도_vs_이재경짱_2-6_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-02 23:33","room":153,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":2,"series":"150-261102232957-75","ranked":1,"nicks":["나도","이재경짱","",""],"replay":"replays/20261102_233312_나도_vs_이재경짱_1-2_p1.seibu","edition":"cupsocs2"}
 ]
