@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-07 01:18","room":128,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":2,"series":"128-261107011822-60","ranked":1,"nicks":["나도","미네로","",""],"replay":"replays/20261107_011822_나도_vs_미네로_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-07 01:14","room":121,"type":"2v2","time":150,"players":4,"score":[1,2],"teams":[9,0],"ft":2,"series":"121-261107010549-58","nicks":["미네로","개빈우드","테일러장군","드래곤타이거"],"replay":"replays/20261107_011417_미네로_vs_테일러장군_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-07 01:10","room":121,"type":"2v2","time":150,"players":4,"score":[4,3],"teams":[7,5],"ft":2,"series":"121-261107010549-58","nicks":["미네로","개빈우드","테일러장군","드래곤타이거"],"replay":"replays/20261107_011026_미네로_vs_테일러장군_4-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-07 01:08","room":125,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,9],"ft":2,"series":"123-261107010458-57","ranked":1,"nicks":["나도","연합함대","",""],"replay":"replays/20261107_010843_나도_vs_연합함대_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-05 20:05","room":222,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,7],"ft":2,"series":"221-261105200141-95","ranked":1,"nicks":["이재경짱","인형의기사","",""],"replay":"replays/20261105_200514_이재경짱_vs_인형의기사_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-05 19:57","room":219,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"ft":2,"series":"216-261105195036-94","ranked":1,"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261105_195728_인형의기사_vs_이재경짱_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-05 19:54","room":217,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"216-261105195036-94","ranked":1,"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261105_195407_인형의기사_vs_이재경짱_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-05 19:50","room":216,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"ft":2,"series":"216-261105195036-94","ranked":1,"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261105_195036_인형의기사_vs_이재경짱_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-05 19:47","room":215,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[9,5],"ft":2,"series":"213-261105194400-93","ranked":1,"nicks":["이재경짱","테일러장군","",""],"replay":"replays/20261105_194706_이재경짱_vs_테일러장군_0-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-05 19:50","room":216,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"ft":2,"series":"216-261105195036-94","ranked":1,"nicks":["인형의기사","이재경짱","",""],"replay":"replays/20261105_195036_인형의기사_vs_이재경짱_1-2_p1.seibu","edition":"cupsocs2"}
 ]
