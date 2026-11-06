@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-06 19:49","room":96,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,3],"ft":2,"series":"96-261106194955-39","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["인형의기사","rhythm","",""],"replay":"replays/20261106_194955_인형의기사_vs_rhythm_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-06 19:44","room":95,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[6,5],"ft":2,"series":"94-261106194130-38","ranked":1,"nicks":["rhythm","연합함대","",""],"replay":"replays/20261106_194454_rhythm_vs_연합함대_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-06 19:41","room":94,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[6,9],"ft":2,"series":"94-261106194130-38","ranked":1,"nicks":["rhythm","연합함대","",""],"replay":"replays/20261106_194130_rhythm_vs_연합함대_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-06 19:32","room":92,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,6],"ft":2,"series":"90-261106192533-37","ranked":1,"nicks":["연합함대","rhythm","",""],"replay":"replays/20261106_193248_연합함대_vs_rhythm_1-0_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-04 19:16","room":57,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"ft":2,"series":"53-261104190805-26","ranked":1,"nicks":["이재경짱","인형의기사","",""],"replay":"replays/20261104_191648_이재경짱_vs_인형의기사_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 19:13","room":56,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":2,"series":"52-261104190448-25","ranked":1,"nicks":["404page","surferKIM","",""],"replay":"replays/20261104_191317_404page_vs_surferKIM_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-04 19:11","room":55,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,7],"ft":2,"series":"53-261104190805-26","ranked":1,"nicks":["이재경짱","인형의기사","",""],"replay":"replays/20261104_191148_이재경짱_vs_인형의기사_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-04 19:09","room":54,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"52-261104190448-25","ranked":1,"nicks":["404page","surferKIM","",""],"replay":"replays/20261104_190943_404page_vs_surferKIM_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-04 19:08","room":53,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"ft":2,"series":"53-261104190805-26","ranked":1,"nicks":["이재경짱","인형의기사","",""],"replay":"replays/20261104_190805_이재경짱_vs_인형의기사_1-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-04 19:09","room":54,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"52-261104190448-25","ranked":1,"nicks":["404page","surferKIM","",""],"replay":"replays/20261104_190943_404page_vs_surferKIM_2-1_p1.seibu","edition":"cupsocs2"}
 ]
