@@ -1638,7 +1638,7 @@
                  : aq[2] === 'done' ? T('출석 이벤트: 아이템 \'이펙트\'를 이미 받으셨습니다 (지금 ' + ad + '일 연속 출석).', 'Attendance event: you already have the item "Effect" (' + ad + ' days in a row so far).')
                  : T('출석 이벤트 진행 중입니다! ' + aof + '일 중 ' + ad + '일 출석 완료! 자세한 내용은 공지사항을 참고해 주세요.', 'The attendance event is on! Day ' + ad + ' of ' + aof + ' done. See the notices for details.'), 'notice');
     }
-    else if (cmd === 'MOTD') { sys('pub', arg, 'notice'); if (arg.indexOf('서버 점검') >= 0) { net.maintAt = Date.now(); sys('room', arg, 'notice'); netSay(arg); } if (arg.indexOf('서버 점검 예정') >= 0) maintAlert(arg); }
+    else if (cmd === 'MOTD') { sys('pub', arg, 'notice'); if (arg.indexOf('[윈도우 런처 안내]') === 0) { var wn = /^\[윈도우 런처 안내\] (.*?) \((.*)\)$/.exec(arg); maintAlert(wn ? T(wn[1], wn[2]) : arg); } if (arg.indexOf('서버 점검') >= 0) { net.maintAt = Date.now(); sys('room', arg, 'notice'); netSay(arg); } if (arg.indexOf('서버 점검 예정') >= 0) maintAlert(arg); }
     else if (cmd === 'PONG') {
       if (net.pingAt) { net.rtt = Math.round(performance.now() - net.pingAt); net.pingAt = 0; drawStatus(); drawTiles(); }
       if (!net.pingSent && net.rtt >= 0) { net.pingSent = true; send('PING ' + net.rtt); }
