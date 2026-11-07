@@ -1,107 +1,107 @@
 {
-  "version": "2.1.55",
+  "version": "2.1.56",
   "url": "https://seibucup.online/download.html",
   "notes": "",
   "files": [
     {
       "path": "SeibuCupNetplay.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/SeibuCupNetplay.exe",
-      "sha256": "8e77aa0d645e2c0d2a8215d07fe991c47fb642f560b8a6fc8754537efdceb87b",
-      "size": 52971898
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/SeibuCupNetplay.exe",
+      "sha256": "b626d8cf751dc0587037da33165835eccc61382399f1a4f24c4f21d6e4623e15",
+      "size": 52972867
     },
     {
       "path": "netplay/netplay.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/netplay.lua",
-      "sha256": "0ebdec89263a851e88f184d922c5444e225de46f9a879d5096f118e3a938c993",
-      "size": 256924
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/netplay.lua",
+      "sha256": "047ef3380e471dd44a17ad9fcd03104eafab4465ccb9de970a92f4a95db6e056",
+      "size": 264680
     },
     {
       "path": "netplay/tutorial/tutorial.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/tutorial.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/tutorial.lua",
       "sha256": "1e501ff2240515af18116d3209ff0a4da11a593e2d25b59cb829ba58153a65a9",
       "size": 24169
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/defend.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/defend.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/defend.sta",
       "sha256": "fc387ebda973457ee592e1a6b3094098c559f27eb4c5e5bb3985bff7622e0119",
       "size": 130809
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/header.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/header.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/header.sta",
       "sha256": "722b557eba9e1b433b788d1c1fddfb362b66f7619cfadb23ec72633227863341",
       "size": 122973
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/keeper.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/keeper.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/keeper.sta",
       "sha256": "f9c048c9ae686a53bc1eb1709844599dfd1e4034703e72426e5d010d678334c4",
       "size": 128248
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/kickoff.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/kickoff.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/kickoff.sta",
       "sha256": "0871056edff5f327fef062be4ffb5073e25ad665b188cceb66cf17a11202815f",
       "size": 122432
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/overhead.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/overhead.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/overhead.sta",
       "sha256": "209a418bae60098efbc8486f10dc994c2b3cb60daad5d2e75ec29fc1168264c7",
       "size": 122927
     },
     {
       "path": "netplay/tutorial/scenes/cupsocs2/shot.sta",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/shot.sta",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/shot.sta",
       "sha256": "e5242ce30b5bd6b3840f4e59e1b97ca045347638b8bc2dee757dac4668c385b1",
       "size": 120343
     },
     {
       "path": "netplay/practice/practice.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/practice.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/practice.lua",
       "sha256": "41a5a3c959decd5d675efcdfe79131437a64eb6415de9c9d53afa33b2a8d0037",
       "size": 27519
     },
     {
       "path": "netplay/god/god.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/god.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/god.lua",
       "sha256": "076b2512009c9c633bca184a84d1493d68832f8fcde535450af4a6e0775335e3",
       "size": 3802
     },
     {
       "path": "netplay/ranked_wait.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/ranked_wait.lua",
-      "sha256": "2092f1ef7fa67c33798da8e324a2b1da0aef77373e5f1c1a0c2e2fbe0493935e",
-      "size": 39204
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/ranked_wait.lua",
+      "sha256": "38c244c1592bdd182fa70dad9e0cb503fb814610bb265ccf1f82a763753b0f46",
+      "size": 39206
     },
     {
       "path": "netplay/filters.zip",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/filters.zip",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/filters.zip",
       "sha256": "0a02c23b8cc27147f14a6ff03c4026d8ef37e4663db8094b713306edf52cf96c",
       "size": 561960
     },
     {
       "path": "netplay/plugins/scnp_nowarn/plugin.json",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/plugin.json",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/plugin.json",
       "sha256": "8d92e3a27e8c5207b65918a74fb4388a74496d80135b7aaa0e3def55c0f48449",
       "size": 203
     },
     {
       "path": "netplay/plugins/scnp_nowarn/init.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/init.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/init.lua",
       "sha256": "5bd9206748c8f0a16e808d141c1dbefbd726568ba48dcb569f092d6dbb6ae5c3",
       "size": 3319
     },
     {
       "path": "netplay/netplay_rb.lua",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/netplay_rb.lua",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/netplay_rb.lua",
       "sha256": "7e3c0db410da5eda20de4995a03a0e340862dea435905596d60b695791e1e912",
       "size": 287418
     },
     {
       "path": "netplay/rb/mame.exe",
-      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.55/mame.exe",
+      "url": "https://github.com/TheGuyV/seibucup/releases/download/v2.1.56/mame.exe",
       "sha256": "30c29102d85802dd293a0241773ec39320945dfe6f24a444577273b036cd7a84",
       "size": 59930624
     }
