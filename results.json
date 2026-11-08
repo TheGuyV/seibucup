@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-08 18:33","room":44,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"ft":2,"series":"44-261108183358-25","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","dfdf","",""],"replay":"replays/20261108_183358_김정은패스_vs_dfdf_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 18:05","room":42,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,8],"ft":2,"series":"42-261108180513-23","ranked":1,"nicks":["로또영","석이아빠4","",""],"replay":"replays/20261108_180513_로또영_vs_석이아빠4_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 17:57","room":41,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"39-261108175253-21","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","dfdf","",""],"replay":"replays/20261108_175741_김정은패스_vs_dfdf_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 17:56","room":40,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":2,"series":"40-261108175601-22","ranked":1,"nicks":["로또영","휘발유","",""],"replay":"replays/20261108_175601_로또영_vs_휘발유_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-06 23:13","room":59,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[0,5],"ft":2,"series":"55-261106230917-25","ranked":1,"nicks":["rhythm","미네로","",""],"replay":"replays/20261106_231300_rhythm_vs_미네로_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-06 23:12","room":58,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,7],"ft":2,"series":"58-261106231230-27","ranked":1,"tnames":{"김창식씨":["김창식씨 FC","KCS"]},"nicks":["김창식씨","나도","",""],"replay":"replays/20261106_231230_김창식씨_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-06 23:11","room":57,"type":"2v2","time":180,"players":4,"score":[1,2],"teams":[3,5],"ft":2,"series":"57-261106231152-26","nicks":["소소","이탈리아","연합함대","레온"],"replay":"replays/20261106_231152_소소_vs_연합함대_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-06 23:09","room":55,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,10],"ft":2,"series":"55-261106230917-25","ranked":1,"nicks":["rhythm","미네로","",""],"replay":"replays/20261106_230917_rhythm_vs_미네로_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-06 23:08","room":56,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,7],"ft":2,"series":"53-261106230459-24","ranked":1,"nicks":["김주성","나도","",""],"replay":"replays/20261106_230805_김주성_vs_나도_0-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-06 23:09","room":55,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[0,10],"ft":2,"series":"55-261106230917-25","ranked":1,"nicks":["rhythm","미네로","",""],"replay":"replays/20261106_230917_rhythm_vs_미네로_2-1_p1.seibu","edition":"cupsocs2"}
 ]
