@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-08 21:54","room":35,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"32-261108215051-22","ranked":1,"tnames":{"소소":["cow","COW"]},"nicks":["미네로","소소","",""],"replay":"replays/20261108_215447_미네로_vs_소소_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 21:54","room":36,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,5],"ft":2,"series":"36-261108215434-23","ranked":1,"nicks":["드래곤타이거","로또영","",""],"replay":"replays/20261108_215434_드래곤타이거_vs_로또영_3-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 21:53","room":34,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,7],"ft":2,"series":"30-261108215009-20","ranked":1,"nicks":["아무나","나도","",""],"replay":"replays/20261108_215313_아무나_vs_나도_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 21:50","room":32,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":2,"series":"32-261108215051-22","ranked":1,"tnames":{"소소":["cow","COW"]},"nicks":["미네로","소소","",""],"replay":"replays/20261108_215051_미네로_vs_소소_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-07 00:24","room":97,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[9,5],"nicks":["호세뽕","로또영777","",""],"replay":"replays/20261107_002459_호세뽕_vs_로또영777_3-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-07 00:23","room":105,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,10],"ft":2,"series":"105-261107002345-49","ranked":1,"tnames":{"Janet":["Janet FC","JNT"]},"nicks":["플로레알","Janet","",""],"replay":"replays/20261107_002345_플로레알_vs_Janet_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-07 00:23","room":104,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,9],"ft":2,"series":"104-261107002344-48","ranked":1,"nicks":["테일러장군","연합함대","",""],"replay":"replays/20261107_002344_테일러장군_vs_연합함대_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-07 00:22","room":103,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[3,7],"ft":2,"series":"103-261107002249-47","ranked":1,"nicks":["mingbrod","나도","",""],"replay":"replays/20261107_002249_mingbrod_vs_나도_3-4_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-07 00:20","room":97,"type":"1v1","time":150,"players":2,"score":[2,2],"teams":[9,5],"nicks":["호세뽕","로또영777","",""],"replay":"replays/20261107_002012_호세뽕_vs_로또영777_2-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-07 00:22","room":103,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[3,7],"ft":2,"series":"103-261107002249-47","ranked":1,"nicks":["mingbrod","나도","",""],"replay":"replays/20261107_002249_mingbrod_vs_나도_3-4_p1.seibu","edition":"cupsocs2"}
 ]
