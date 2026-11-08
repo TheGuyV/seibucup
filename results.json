@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-08 22:03","room":48,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,5],"ft":2,"series":"48-261108220305-28","ranked":1,"tnames":{"슛돌이":["백원만 FC","WON"]},"nicks":["미네로","슛돌이","",""],"replay":"replays/20261108_220305_미네로_vs_슛돌이_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 22:02","room":47,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,10],"ft":2,"series":"41-261108215856-26","ranked":1,"tnames":{"상봉거지오락실":["만안FC","KSJ"]},"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261108_220254_드래곤타이거_vs_상봉거지오락실_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 22:01","room":45,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,5],"ft":2,"series":"39-261108215748-25","ranked":1,"nicks":["나도","로또영","",""],"replay":"replays/20261108_220101_나도_vs_로또영_2-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 22:00","room":44,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[11,3],"ft":2,"series":"44-261108220017-27","ranked":1,"tnames":{"석이아빠4":["SEOK FC","YOO"]},"nicks":["석이아빠4","아무나","",""],"replay":"replays/20261108_220017_석이아빠4_vs_아무나_3-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-07 00:45","room":116,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"113-261107004156-53","ranked":1,"nicks":["테일러장군","나도","",""],"replay":"replays/20261107_004529_테일러장군_vs_나도_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-07 00:44","room":115,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":2,"series":"114-261107004100-52","ranked":1,"nicks":["미네로","연합함대","",""],"replay":"replays/20261107_004426_미네로_vs_연합함대_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-07 00:41","room":113,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,7],"ft":2,"series":"113-261107004156-53","ranked":1,"nicks":["테일러장군","나도","",""],"replay":"replays/20261107_004156_테일러장군_vs_나도_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-07 00:41","room":114,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"114-261107004100-52","ranked":1,"nicks":["미네로","연합함대","",""],"replay":"replays/20261107_004100_미네로_vs_연합함대_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-07 00:37","room":112,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[9,0],"ft":2,"series":"112-261107003708-51","ranked":1,"nicks":["연합함대","드래곤타이거","",""],"replay":"replays/20261107_003708_연합함대_vs_드래곤타이거_1-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-07 00:41","room":114,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"114-261107004100-52","ranked":1,"nicks":["미네로","연합함대","",""],"replay":"replays/20261107_004100_미네로_vs_연합함대_2-1_p1.seibu","edition":"cupsocs2"}
 ]
