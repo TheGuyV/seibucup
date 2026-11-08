@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-08 12:31","room":12,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,5],"ft":2,"series":"12-261108123108-6","ranked":1,"nicks":["연합함대","surferKIM","",""],"replay":"replays/20261108_123108_연합함대_vs_surferKIM_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 12:08","room":11,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[7,5],"ft":2,"series":"10-261108120432-5","ranked":1,"nicks":["인형의기사","surferKIM","",""],"replay":"replays/20261108_120809_인형의기사_vs_surferKIM_1-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 12:04","room":10,"type":"1v1","time":150,"players":2,"score":[4,5],"teams":[7,5],"ft":2,"series":"10-261108120432-5","ranked":1,"nicks":["인형의기사","surferKIM","",""],"replay":"replays/20261108_120432_인형의기사_vs_surferKIM_4-5_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 10:18","room":8,"type":"1v1","time":150,"players":2,"score":[2,4],"teams":[5,5],"ft":2,"series":"7-261108101454-3","ranked":1,"nicks":["KSY9423","연합함대","",""],"replay":"replays/20261108_101852_KSY9423_vs_연합함대_2-4_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-06 19:41","room":94,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[6,9],"ft":2,"series":"94-261106194130-38","ranked":1,"nicks":["rhythm","연합함대","",""],"replay":"replays/20261106_194130_rhythm_vs_연합함대_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-06 19:32","room":92,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,6],"ft":2,"series":"90-261106192533-37","ranked":1,"nicks":["연합함대","rhythm","",""],"replay":"replays/20261106_193248_연합함대_vs_rhythm_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-06 19:28","room":91,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"ft":2,"series":"90-261106192533-37","ranked":1,"nicks":["연합함대","rhythm","",""],"replay":"replays/20261106_192832_연합함대_vs_rhythm_1-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-06 19:25","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"ft":2,"series":"90-261106192533-37","ranked":1,"nicks":["연합함대","rhythm","",""],"replay":"replays/20261106_192533_연합함대_vs_rhythm_0-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-06 19:20","room":89,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,7],"ft":2,"series":"87-261106191217-36","ranked":1,"nicks":["rhythm","인형의기사","",""],"replay":"replays/20261106_192045_rhythm_vs_인형의기사_3-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-06 19:25","room":90,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,5],"ft":2,"series":"90-261106192533-37","ranked":1,"nicks":["연합함대","rhythm","",""],"replay":"replays/20261106_192533_연합함대_vs_rhythm_0-1_p1.seibu","edition":"cupsocs2"}
 ]
