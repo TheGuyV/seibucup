@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-10 00:37","room":264,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[5,5],"ft":2,"series":"264-261110003720-133","ranked":1,"nicks":["로또영","미네로","",""],"replay":"replays/20261110_003720_로또영_vs_미네로_3-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 00:33","room":263,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"258-261110002539-131","ranked":1,"nicks":["연합함대","rhythm","",""],"replay":"replays/20261110_003336_연합함대_vs_rhythm_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 00:33","room":262,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[7,5],"ft":2,"series":"259-261110002551-132","ranked":1,"nicks":["나도","미네로","",""],"replay":"replays/20261110_003304_나도_vs_미네로_3-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 00:30","room":260,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,5],"ft":2,"series":"258-261110002539-131","ranked":1,"nicks":["연합함대","rhythm","",""],"replay":"replays/20261110_003011_연합함대_vs_rhythm_1-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-09 12:43","room":127,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,5],"ft":2,"series":"127-261109124310-60","ranked":1,"nicks":["로또영","연합함대","",""],"replay":"replays/20261109_124310_로또영_vs_연합함대_1-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 01:55","room":119,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,3],"ft":2,"series":"117-261109014623-57","ranked":1,"nicks":["나도","mingbrod","",""],"replay":"replays/20261109_015541_나도_vs_mingbrod_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 01:52","room":118,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,3],"ft":2,"series":"117-261109014623-57","ranked":1,"nicks":["나도","mingbrod","",""],"replay":"replays/20261109_015217_나도_vs_mingbrod_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-09 01:46","room":117,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"117-261109014623-57","ranked":1,"nicks":["나도","mingbrod","",""],"replay":"replays/20261109_014623_나도_vs_mingbrod_2-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-09 01:42","room":116,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,5],"ft":2,"series":"116-261109014215-56","ranked":1,"nicks":["mingbrod","싸커킴","",""],"replay":"replays/20261109_014215_mingbrod_vs_싸커킴_3-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-09 01:46","room":117,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,3],"ft":2,"series":"117-261109014623-57","ranked":1,"nicks":["나도","mingbrod","",""],"replay":"replays/20261109_014623_나도_vs_mingbrod_2-3_p1.seibu","edition":"cupsocs2"}
 ]
