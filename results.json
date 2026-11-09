@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-10 00:18","room":255,"type":"1v1","time":150,"players":2,"score":[1,3],"teams":[5,7],"ft":2,"series":"255-261110001801-130","ranked":1,"nicks":["rhythm","나도","",""],"replay":"replays/20261110_001801_rhythm_vs_나도_1-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 00:16","room":254,"type":"1v1","time":150,"players":2,"score":[0,2],"teams":[3,5],"ft":2,"series":"252-261110001308-129","ranked":1,"tnames":{"축구왕코서방":["김주성축구교실","KJS"]},"nicks":["청라대장","축구왕코서방","",""],"replay":"replays/20261110_001646_청라대장_vs_축구왕코서방_0-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 00:13","room":252,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,5],"ft":2,"series":"252-261110001308-129","ranked":1,"tnames":{"축구왕코서방":["김주성축구교실","KJS"]},"nicks":["청라대장","축구왕코서방","",""],"replay":"replays/20261110_001308_청라대장_vs_축구왕코서방_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 00:12","room":250,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"249-261110000733-127","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","나도","",""],"replay":"replays/20261110_001254_rhythm_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-09 01:16","room":109,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"109-261109011640-52","ranked":1,"nicks":["나도","로또영","",""],"replay":"replays/20261109_011640_나도_vs_로또영_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 01:12","room":107,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[5,7],"ft":2,"series":"106-261109010924-51","ranked":1,"nicks":["로또영","나도","",""],"replay":"replays/20261109_011228_로또영_vs_나도_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 01:09","room":106,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"106-261109010924-51","ranked":1,"nicks":["로또영","나도","",""],"replay":"replays/20261109_010924_로또영_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-09 00:11","room":105,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"ft":2,"series":"103-261109000435-50","ranked":1,"nicks":["나도","dfdf","",""],"replay":"replays/20261109_001118_나도_vs_dfdf_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-09 00:07","room":104,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"ft":2,"series":"103-261109000435-50","ranked":1,"nicks":["나도","dfdf","",""],"replay":"replays/20261109_000751_나도_vs_dfdf_1-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-09 00:11","room":105,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"ft":2,"series":"103-261109000435-50","ranked":1,"nicks":["나도","dfdf","",""],"replay":"replays/20261109_001118_나도_vs_dfdf_1-2_p1.seibu","edition":"cupsocs2"}
 ]
