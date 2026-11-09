@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-09 22:24","room":138,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,10],"ft":2,"series":"136-261109222034-65","ranked":1,"nicks":["드래곤타이거","미네로","",""],"replay":"replays/20261109_222421_드래곤타이거_vs_미네로_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 22:23","room":137,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,10],"ft":2,"series":"135-261109221950-64","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"],"석이아빠4":["대구 FC","WOW"]},"nicks":["김정은패스","석이아빠4","",""],"replay":"replays/20261109_222305_김정은패스_vs_석이아빠4_2-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 22:20","room":134,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"ft":2,"series":"127-261109221130-62","ranked":1,"nicks":["나도","rhythm","",""],"replay":"replays/20261109_222059_나도_vs_rhythm_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 22:20","room":136,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[0,5],"ft":2,"series":"136-261109222034-65","ranked":1,"nicks":["드래곤타이거","미네로","",""],"replay":"replays/20261109_222034_드래곤타이거_vs_미네로_3-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-08 21:16","room":5,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,9],"ft":2,"series":"3-261108211137-3","ranked":1,"nicks":["신석기","dfdf","",""],"replay":"replays/20261108_211626_신석기_vs_dfdf_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 21:12","room":4,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,3],"ft":2,"series":"4-261108211252-4","ranked":1,"nicks":["로또영","kilimanjaro","",""],"replay":"replays/20261108_211252_로또영_vs_kilimanjaro_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 21:11","room":3,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,9],"ft":2,"series":"3-261108211137-3","ranked":1,"nicks":["신석기","dfdf","",""],"replay":"replays/20261108_211137_신석기_vs_dfdf_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-08 21:07","room":2,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":2,"series":"2-261108210735-2","ranked":1,"nicks":["신석기","로또영","",""],"replay":"replays/20261108_210735_신석기_vs_로또영_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-08 21:01","room":1,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[8,3],"ft":2,"series":"1-261108210157-1","ranked":1,"nicks":["신석기","아무나","",""],"replay":"replays/20261108_210157_신석기_vs_아무나_2-3_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-08 21:07","room":2,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[10,5],"ft":2,"series":"2-261108210735-2","ranked":1,"nicks":["신석기","로또영","",""],"replay":"replays/20261108_210735_신석기_vs_로또영_1-2_p1.seibu","edition":"cupsocs2"}
 ]
