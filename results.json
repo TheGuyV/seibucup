@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-09 21:57","room":117,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"117-261109215742-56","ranked":1,"nicks":["나도","rhythm","",""],"replay":"replays/20261109_215742_나도_vs_rhythm_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 21:56","room":116,"type":"1v1","time":150,"players":2,"score":[3,1],"teams":[0,10],"ft":2,"series":"113-261109215233-55","ranked":1,"tnames":{"석이아빠4":["대구 FC","WOW"]},"nicks":["드래곤타이거","석이아빠4","",""],"replay":"replays/20261109_215612_드래곤타이거_vs_석이아빠4_3-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 21:54","room":115,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":2,"series":"112-261109215037-54","ranked":1,"nicks":["호세뽕","휘발유","",""],"replay":"replays/20261109_215421_호세뽕_vs_휘발유_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 21:52","room":114,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"107-261109214448-53","ranked":1,"nicks":["rhythm","인형의기사","",""],"replay":"replays/20261109_215257_rhythm_vs_인형의기사_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-08 17:56","room":40,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,5],"ft":2,"series":"40-261108175601-22","ranked":1,"nicks":["로또영","휘발유","",""],"replay":"replays/20261108_175601_로또영_vs_휘발유_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 17:52","room":39,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,9],"ft":2,"series":"39-261108175253-21","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","dfdf","",""],"replay":"replays/20261108_175253_김정은패스_vs_dfdf_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 17:50","room":38,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[6,5],"ft":2,"series":"38-261108175006-20","ranked":1,"nicks":["로또영","휘발유","",""],"replay":"replays/20261108_175005_로또영_vs_휘발유_1-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-08 17:44","room":36,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,6],"ft":2,"series":"36-261108174400-19","ranked":1,"nicks":["로또영","휘발유","",""],"replay":"replays/20261108_174400_로또영_vs_휘발유_4-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-08 17:43","room":37,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,9],"ft":2,"series":"35-261108174039-18","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","dfdf","",""],"replay":"replays/20261108_174345_김정은패스_vs_dfdf_1-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-08 17:44","room":36,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[5,6],"ft":2,"series":"36-261108174400-19","ranked":1,"nicks":["로또영","휘발유","",""],"replay":"replays/20261108_174400_로또영_vs_휘발유_4-3_p1.seibu","edition":"cupsocs2"}
 ]
