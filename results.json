@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-09 23:44","room":234,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"232-261109234016-118","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["나도","rhythm","",""],"replay":"replays/20261109_234453_나도_vs_rhythm_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 23:44","room":235,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,7],"ft":2,"series":"235-261109234429-119","ranked":1,"nicks":["미네로","연합함대","",""],"replay":"replays/20261109_234429_미네로_vs_연합함대_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 23:40","room":232,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"232-261109234016-118","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["나도","rhythm","",""],"replay":"replays/20261109_234016_나도_vs_rhythm_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-09 23:39","room":231,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[7,5],"ft":2,"series":"231-261109233958-117","ranked":1,"nicks":["연합함대","미네로","",""],"replay":"replays/20261109_233958_연합함대_vs_미네로_4-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-08 22:47","room":87,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"82-261108224250-44","ranked":1,"nicks":["미네로","인형의기사","",""],"replay":"replays/20261108_224711_미네로_vs_인형의기사_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 22:45","room":86,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[0,10],"ft":2,"series":"86-261108224508-45","ranked":1,"tnames":{"상봉거지오락실":["만안FC","KSJ"]},"nicks":["드래곤타이거","상봉거지오락실","",""],"replay":"replays/20261108_224508_드래곤타이거_vs_상봉거지오락실_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-08 22:44","room":85,"type":"1v1","time":150,"players":2,"score":[5,2],"teams":[10,9],"nicks":["Janet","플로레알","",""],"replay":"replays/20261108_224406_Janet_vs_플로레알_5-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-08 22:42","room":82,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"82-261108224250-44","ranked":1,"nicks":["미네로","인형의기사","",""],"replay":"replays/20261108_224250_미네로_vs_인형의기사_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-08 22:41","room":84,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[4,5],"ft":2,"series":"84-261108224134-43","ranked":1,"tnames":{"슛돌이":["백원만 FC","WON"]},"nicks":["슛돌이","로또영","",""],"replay":"replays/20261108_224134_슛돌이_vs_로또영_3-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-08 22:42","room":82,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"82-261108224250-44","ranked":1,"nicks":["미네로","인형의기사","",""],"replay":"replays/20261108_224250_미네로_vs_인형의기사_2-1_p1.seibu","edition":"cupsocs2"}
 ]
