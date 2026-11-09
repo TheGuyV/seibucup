@@ -557,5 +557,6 @@ body.game-open { overflow: hidden; }
   });
 })();
 </script>
+<script>document.addEventListener("click",function(e){try{var a=e.target.closest&&e.target.closest("a.rpl");if(!a||!/(^|\.)seibucup\.online$/.test(location.hostname)||navigator.doNotTrack==="1"||navigator.globalPrivacyControl)return;var n=(a.getAttribute("href")||"").split("/").pop();if(n&&navigator.sendBeacon)navigator.sendBeacon("https://play.seibucup.online/hit?p="+encodeURIComponent("/rpl/"+n)+"&r=&w=0&l=");}catch(x){}},true);</script>
 </body>
 </html>
