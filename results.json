@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-12 22:24","room":109,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"106-261112221856-55","ranked":1,"nicks":["나도","미네로","",""],"replay":"replays/20261112_222430_나도_vs_미네로_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-12 22:23","room":108,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,10],"ft":2,"series":"105-261112221851-54","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261112_222321_신발벗어_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-12 22:21","room":107,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,9],"ft":2,"series":"104-261112221730-53","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["rhythm","플로레알","",""],"replay":"replays/20261112_222149_rhythm_vs_플로레알_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-12 22:18","room":106,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,5],"ft":2,"series":"106-261112221856-55","ranked":1,"nicks":["나도","미네로","",""],"replay":"replays/20261112_221856_나도_vs_미네로_3-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-10 22:40","room":439,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,9],"ft":2,"series":"436-261110223710-216","nicks":["Janet","플로레알","",""],"replay":"replays/20261110_224029_Janet_vs_플로레알_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 22:38","room":438,"type":"1v1","time":150,"players":2,"score":[2,0],"teams":[7,5],"ft":2,"series":"434-261110223537-215","ranked":1,"tnames":{"축구왕코서방":["김주성축구교실","KJS"]},"nicks":["나도","축구왕코서방","",""],"replay":"replays/20261110_223853_나도_vs_축구왕코서방_2-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-10 22:38","room":435,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[8,7],"ft":2,"series":"435-261110223843-217","ranked":1,"tnames":{"즐축":["TheSoccer","EJY"]},"nicks":["즐축","연합함대","",""],"replay":"replays/20261110_223843_즐축_vs_연합함대_4-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-10 22:37","room":436,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"ft":2,"series":"436-261110223710-216","nicks":["Janet","플로레알","",""],"replay":"replays/20261110_223710_Janet_vs_플로레알_2-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-10 22:35","room":420,"type":"2v2","time":150,"players":4,"score":[0,1],"teams":[5,7],"ft":3,"series":"420-261110222638-212","nicks":["surferKIM","사직동락스타","소소","판순이"],"replay":"replays/20261110_223539_surferKIM_vs_소소_0-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-10 22:37","room":436,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[10,9],"ft":2,"series":"436-261110223710-216","nicks":["Janet","플로레알","",""],"replay":"replays/20261110_223710_Janet_vs_플로레알_2-3_p1.seibu","edition":"cupsocs2"}
 ]
