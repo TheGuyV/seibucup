@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-14 00:14","room":417,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,7],"ft":2,"series":"417-261114001454-196","ranked":1,"nicks":["dfdf","나도","",""],"replay":"replays/20261114_001454_dfdf_vs_나도_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-14 00:09","room":416,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[10,5],"ft":2,"series":"415-261114000557-195","ranked":1,"nicks":["미네로","dfdf","",""],"replay":"replays/20261114_000931_미네로_vs_dfdf_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-14 00:05","room":415,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[10,5],"ft":2,"series":"415-261114000557-195","ranked":1,"nicks":["미네로","dfdf","",""],"replay":"replays/20261114_000557_미네로_vs_dfdf_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-14 00:01","room":414,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,5],"ft":2,"series":"412-261113235542-194","ranked":1,"nicks":["나도","dfdf","",""],"replay":"replays/20261114_000149_나도_vs_dfdf_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-12 21:31","room":92,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":2,"series":"91-261112212739-45","ranked":1,"nicks":["rhythm","surferKIM","",""],"replay":"replays/20261112_213101_rhythm_vs_surferKIM_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-12 21:27","room":91,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,5],"ft":2,"series":"91-261112212739-45","ranked":1,"nicks":["rhythm","surferKIM","",""],"replay":"replays/20261112_212739_rhythm_vs_surferKIM_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-12 21:23","room":90,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[5,9],"ft":2,"series":"87-261112211609-44","ranked":1,"nicks":["surferKIM","rhythm","",""],"replay":"replays/20261112_212347_surferKIM_vs_rhythm_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-12 21:19","room":89,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"87-261112211609-44","ranked":1,"nicks":["surferKIM","rhythm","",""],"replay":"replays/20261112_211948_surferKIM_vs_rhythm_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-12 21:16","room":87,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,9],"ft":2,"series":"87-261112211609-44","ranked":1,"nicks":["surferKIM","rhythm","",""],"replay":"replays/20261112_211609_surferKIM_vs_rhythm_1-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-12 21:19","room":89,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"87-261112211609-44","ranked":1,"nicks":["surferKIM","rhythm","",""],"replay":"replays/20261112_211948_surferKIM_vs_rhythm_2-1_p1.seibu","edition":"cupsocs2"}
 ]
