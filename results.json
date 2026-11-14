@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-15 02:55","room":740,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,10],"ft":2,"series":"736-261115024643-353","ranked":1,"nicks":["dfdf","미네로","",""],"replay":"replays/20261115_025513_dfdf_vs_미네로_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-15 02:52","room":739,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":2,"series":"739-261115025218-354","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","surferKIM","",""],"replay":"replays/20261115_025218_김정은패스_vs_surferKIM_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-15 02:51","room":738,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,10],"ft":2,"series":"736-261115024643-353","ranked":1,"nicks":["dfdf","미네로","",""],"replay":"replays/20261115_025109_dfdf_vs_미네로_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-15 02:47","room":737,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[7,5],"ft":2,"series":"732-261115024012-351","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","surferKIM","",""],"replay":"replays/20261115_024749_김정은패스_vs_surferKIM_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-13 23:48","room":409,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,3],"ft":2,"series":"405-261113234422-192","ranked":1,"nicks":["미네로","mingbrod","",""],"replay":"replays/20261113_234817_미네로_vs_mingbrod_2-3_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-13 23:45","room":408,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,5],"ft":2,"series":"407-261113234250-191","ranked":1,"nicks":["나도","dfdf","",""],"replay":"replays/20261113_234550_나도_vs_dfdf_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-13 23:44","room":405,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,3],"ft":2,"series":"405-261113234422-192","ranked":1,"nicks":["미네로","mingbrod","",""],"replay":"replays/20261113_234422_미네로_vs_mingbrod_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-13 23:42","room":407,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"407-261113234250-191","ranked":1,"nicks":["나도","dfdf","",""],"replay":"replays/20261113_234250_나도_vs_dfdf_0-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-13 23:38","room":404,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,7],"ft":2,"series":"400-261113232712-189","ranked":1,"nicks":["dfdf","나도","",""],"replay":"replays/20261113_233858_dfdf_vs_나도_1-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-13 23:42","room":407,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"407-261113234250-191","ranked":1,"nicks":["나도","dfdf","",""],"replay":"replays/20261113_234250_나도_vs_dfdf_0-1_p1.seibu","edition":"cupsocs2"}
 ]
