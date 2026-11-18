@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-18 21:42","room":117,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,9],"ft":2,"series":"111-261118213234-51","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261118_214230_신발벗어_vs_덕장배_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-18 21:40","room":115,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,3],"ft":2,"series":"115-261118214023-53","ranked":1,"tnames":{"판순이":["FC 판순이","YSY"]},"nicks":["루다","판순이","",""],"replay":"replays/20261118_214023_루다_vs_판순이_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-18 21:39","room":116,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[10,7],"ft":2,"series":"113-261118213605-52","ranked":1,"nicks":["미네로","인형의기사","",""],"replay":"replays/20261118_213912_미네로_vs_인형의기사_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-18 21:38","room":114,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,9],"ft":2,"series":"111-261118213234-51","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261118_213839_신발벗어_vs_덕장배_2-3_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-16 21:49","room":7,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[6,10],"ft":2,"series":"7-261116214957-4","ranked":1,"nicks":["소새울","미네로","",""],"replay":"replays/20261116_214957_소새울_vs_미네로_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-16 21:47","room":6,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,3],"ft":2,"series":"1-261116214313-3","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["dfdf","rhythm","",""],"replay":"replays/20261116_214715_dfdf_vs_rhythm_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-16 21:46","room":5,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[7,11],"ft":2,"series":"3-261116214308-2","ranked":1,"tnames":{"축구왕코서방":["김주성축구교실","KJS"]},"nicks":["나도","축구왕코서방","",""],"replay":"replays/20261116_214623_나도_vs_축구왕코서방_1-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-16 21:45","room":4,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,7],"ft":2,"series":"2-261116214149-1","ranked":1,"nicks":["미네로","인형의기사","",""],"replay":"replays/20261116_214556_미네로_vs_인형의기사_4-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-16 21:43","room":1,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,9],"ft":2,"series":"1-261116214313-3","ranked":1,"tnames":{"rhythm":["rhythm FC","RHY"]},"nicks":["dfdf","rhythm","",""],"replay":"replays/20261116_214313_dfdf_vs_rhythm_3-2_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-16 21:45","room":4,"type":"1v1","time":150,"players":2,"score":[4,3],"teams":[10,7],"ft":2,"series":"2-261116214149-1","ranked":1,"nicks":["미네로","인형의기사","",""],"replay":"replays/20261116_214556_미네로_vs_인형의기사_4-3_p1.seibu","edition":"cupsocs2"}
 ]
