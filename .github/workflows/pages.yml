@@ -22,8 +22,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: .
-      # the deploy step now and then cannot see the artifact uploaded a moment ago ("No artifacts named github-pages"):
-      # wait and try once more before the run counts as failed
       - id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true
