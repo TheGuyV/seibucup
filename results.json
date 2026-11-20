@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-20 22:48","room":101,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[7,11],"ft":2,"series":"101-261120224855-48","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","루다","",""],"replay":"replays/20261120_224855_김정은패스_vs_루다_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-20 22:43","room":100,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,9],"ft":2,"series":"99-261120223911-47","ranked":1,"nicks":["연합함대","이재경짱","",""],"replay":"replays/20261120_224320_연합함대_vs_이재경짱_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-20 22:39","room":99,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,9],"ft":2,"series":"99-261120223911-47","ranked":1,"nicks":["연합함대","이재경짱","",""],"replay":"replays/20261120_223911_연합함대_vs_이재경짱_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-20 22:34","room":98,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[9,11],"ft":2,"series":"96-261120223057-46","ranked":1,"nicks":["이재경짱","루다","",""],"replay":"replays/20261120_223437_이재경짱_vs_루다_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-18 19:39","room":52,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[7,5],"ft":2,"series":"52-261118193951-24","ranked":1,"nicks":["인형의기사","배재타이거즈","",""],"replay":"replays/20261118_193951_인형의기사_vs_배재타이거즈_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-18 19:03","room":48,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[5,5],"ft":2,"series":"48-261118190308-22","ranked":1,"nicks":["연합함대","배재타이거즈","",""],"replay":"replays/20261118_190308_연합함대_vs_배재타이거즈_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-18 18:58","room":47,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[7,9],"ft":2,"series":"46-261118185259-21","ranked":1,"nicks":["연합함대","배재타이거즈","",""],"replay":"replays/20261118_185800_연합함대_vs_배재타이거즈_1-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-18 18:52","room":46,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,5],"ft":2,"series":"46-261118185259-21","ranked":1,"nicks":["연합함대","배재타이거즈","",""],"replay":"replays/20261118_185259_연합함대_vs_배재타이거즈_2-3_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-18 18:41","room":43,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[9,5],"ft":2,"series":"43-261118184100-20","ranked":1,"nicks":["배재타이거즈","연합함대","",""],"replay":"replays/20261118_184100_배재타이거즈_vs_연합함대_2-3_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-18 18:52","room":46,"type":"1v1","time":150,"players":2,"score":[2,3],"teams":[5,5],"ft":2,"series":"46-261118185259-21","ranked":1,"nicks":["연합함대","배재타이거즈","",""],"replay":"replays/20261118_185259_연합함대_vs_배재타이거즈_2-3_p1.seibu","edition":"cupsocs2"}
 ]
