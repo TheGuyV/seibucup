@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-24 01:06","room":70,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,9],"ft":2,"series":"70-261124010629-47","ranked":1,"tnames":{"로또영":["로또영 FC","LDY"]},"nicks":["연합함대","로또영","",""],"replay":"replays/20261124_010629_연합함대_vs_로또영_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-24 01:02","room":69,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[9,9],"ft":2,"series":"69-261124010226-46","ranked":1,"tnames":{"로또영":["로또영 FC","LDY"]},"nicks":["로또영","연합함대","",""],"replay":"replays/20261124_010226_로또영_vs_연합함대_1-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-24 00:59","room":67,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[3,5],"ft":2,"series":"64-261124005119-43","ranked":1,"nicks":["mingbrod","배재타이거즈","",""],"replay":"replays/20261124_005902_mingbrod_vs_배재타이거즈_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-24 00:58","room":68,"type":"1v1","time":150,"players":2,"score":[1,2],"teams":[5,5],"ft":2,"series":"68-261124005839-45","ranked":1,"tnames":{"로또영":["로또영 FC","LDY"]},"nicks":["로또영","연합함대","",""],"replay":"replays/20261124_005839_로또영_vs_연합함대_1-2_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-22 01:28","room":90,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,3],"ft":2,"series":"89-261122012449-56","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261122_012847_신발벗어_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-22 01:24","room":89,"type":"1v1","time":150,"players":2,"score":[3,4],"teams":[3,3],"ft":2,"series":"89-261122012449-56","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261122_012449_신발벗어_vs_덕장배_3-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-22 01:22","room":87,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[5,7],"ft":2,"series":"87-261122012250-54","ranked":1,"tnames":{"로또영":["로또영 FC","LDY"]},"nicks":["로또영","상봉거지오락실","",""],"replay":"replays/20261122_012250_로또영_vs_상봉거지오락실_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-22 01:20","room":86,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,3],"ft":2,"series":"84-261122011652-52","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261122_012035_신발벗어_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-22 01:16","room":84,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,3],"ft":2,"series":"84-261122011652-52","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261122_011652_신발벗어_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-22 01:20","room":86,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[3,3],"ft":2,"series":"84-261122011652-52","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261122_012035_신발벗어_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"}
 ]
