@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-25 19:10","room":165,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[1,9],"ft":2,"series":"164-261125190722-74","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261125_191025_신발벗어_vs_덕장배_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-25 19:07","room":164,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,9],"ft":2,"series":"164-261125190722-74","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261125_190722_신발벗어_vs_덕장배_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-25 19:07","room":163,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,7],"ft":2,"series":"161-261125190335-73","ranked":1,"nicks":["연합함대","인형의기사","",""],"replay":"replays/20261125_190722_연합함대_vs_인형의기사_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-25 19:04","room":162,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[1,10],"ft":2,"series":"160-261125190038-72","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261125_190413_신발벗어_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-22 22:47","room":266,"type":"1v1","time":150,"players":2,"score":[5,4],"teams":[5,9],"ft":2,"series":"266-261122224741-140","ranked":1,"nicks":["surferKIM","연합함대","",""],"replay":"replays/20261122_224741_surferKIM_vs_연합함대_5-4_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-22 22:46","room":267,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,7],"ft":2,"series":"267-261122224605-139","ranked":1,"tnames":{"김정은패스":["CPU FC","CPU"]},"nicks":["김정은패스","인형의기사","",""],"replay":"replays/20261122_224605_김정은패스_vs_인형의기사_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-22 22:42","room":265,"type":"1v1","time":150,"players":2,"score":[3,0],"teams":[9,7],"ft":2,"series":"265-261122224221-138","ranked":1,"nicks":["연합함대","test","",""],"replay":"replays/20261122_224221_연합함대_vs_test_3-0_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-22 22:39","room":264,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[7,5],"ft":2,"series":"262-261122223545-136","ranked":1,"nicks":["인형의기사","surferKIM","",""],"replay":"replays/20261122_223935_인형의기사_vs_surferKIM_1-5_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-22 22:38","room":263,"type":"1v1","time":150,"players":2,"score":[4,0],"teams":[9,5],"ft":2,"series":"263-261122223846-137","ranked":1,"nicks":["연합함대","배재타이거즈","",""],"replay":"replays/20261122_223846_연합함대_vs_배재타이거즈_4-0_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-22 22:39","room":264,"type":"1v1","time":150,"players":2,"score":[1,5],"teams":[7,5],"ft":2,"series":"262-261122223545-136","ranked":1,"nicks":["인형의기사","surferKIM","",""],"replay":"replays/20261122_223935_인형의기사_vs_surferKIM_1-5_p1.seibu","edition":"cupsocs2"}
 ]
