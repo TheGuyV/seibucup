@@ -1,4 +1,5 @@
 [
+{"when":"2026-11-27 01:18","room":494,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,10],"ft":2,"series":"493-261127011457-236","ranked":1,"nicks":["dfdf","미네로","",""],"replay":"replays/20261127_011838_dfdf_vs_미네로_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-27 01:14","room":493,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[9,10],"ft":2,"series":"493-261127011457-236","ranked":1,"nicks":["dfdf","미네로","",""],"replay":"replays/20261127_011457_dfdf_vs_미네로_0-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-27 01:03","room":492,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"491-261127005950-235","ranked":1,"nicks":["루다","dfdf","",""],"replay":"replays/20261127_010330_루다_vs_dfdf_2-1_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-27 00:59","room":491,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[7,9],"ft":2,"series":"491-261127005950-235","ranked":1,"nicks":["루다","dfdf","",""],"replay":"replays/20261127_005950_루다_vs_dfdf_2-1_p1.seibu","edition":"cupsocs2"},
@@ -297,6 +298,5 @@
 {"when":"2026-11-25 19:14","room":166,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[1,9],"ft":2,"series":"164-261125190722-74","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261125_191420_신발벗어_vs_덕장배_3-2_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-25 19:10","room":165,"type":"1v1","time":150,"players":2,"score":[1,0],"teams":[1,9],"ft":2,"series":"164-261125190722-74","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261125_191025_신발벗어_vs_덕장배_1-0_p1.seibu","edition":"cupsocs2"},
 {"when":"2026-11-25 19:07","room":164,"type":"1v1","time":150,"players":2,"score":[0,1],"teams":[3,9],"ft":2,"series":"164-261125190722-74","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261125_190722_신발벗어_vs_덕장배_0-1_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-25 19:07","room":163,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,7],"ft":2,"series":"161-261125190335-73","ranked":1,"nicks":["연합함대","인형의기사","",""],"replay":"replays/20261125_190722_연합함대_vs_인형의기사_3-2_p1.seibu","edition":"cupsocs2"},
-{"when":"2026-11-25 19:04","room":162,"type":"1v1","time":150,"players":2,"score":[2,1],"teams":[1,10],"ft":2,"series":"160-261125190038-72","nicks":["신발벗어","덕장배","",""],"replay":"replays/20261125_190413_신발벗어_vs_덕장배_2-1_p1.seibu","edition":"cupsocs2"}
+{"when":"2026-11-25 19:07","room":163,"type":"1v1","time":150,"players":2,"score":[3,2],"teams":[9,7],"ft":2,"series":"161-261125190335-73","ranked":1,"nicks":["연합함대","인형의기사","",""],"replay":"replays/20261125_190722_연합함대_vs_인형의기사_3-2_p1.seibu","edition":"cupsocs2"}
 ]
