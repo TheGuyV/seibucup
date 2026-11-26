@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>랭킹 - 세이부 컵 사커 온라인 (Seibu Cup Soccer Online)</title>
 
-<meta name="description" content="세이부 컵 사커 온라인 랭크전 순위표. PC 런처의 랭크전으로 쌓은 점수와 단계(급·단), 시즌별 순위를 보여 줍니다.">
+<meta name="description" content="세이부 컵 사커 온라인 리그 순위표. PC 런처의 클럽 매치로 쌓은 승점으로 겨루는 1부 리그 · 2부 리그의 시즌 순위를 보여 줍니다.">
 <meta name="keywords" content="세이부 컵 사커, 세이부컵사커, 세이부 축구, 세이부컵, Seibu Cup Soccer, 온라인 대전, 넷플레이, 멀티플레이, MAME 넷플레이, 아케이드 축구 게임, 오락실 축구, 고전게임 온라인, 추억의 오락실, netplay, online multiplayer, arcade soccer, MAME netplay, retro arcade, 1992">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Seibu Cup Soccer Online">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="세이부 컵 사커 온라인 (Seibu Cup Soccer Online)">
 <meta property="og:title" content="랭킹 - 세이부 컵 사커 온라인 (Seibu Cup Soccer Online)">
-<meta property="og:description" content="세이부 컵 사커 온라인 랭크전 순위표 - 시즌별 점수와 단계(급·단).">
+<meta property="og:description" content="세이부 컵 사커 온라인 리그 순위표 - 1부 리그 · 2부 리그의 시즌 순위.">
 <meta property="og:url" content="https://seibucup.online/ranking.html">
 <meta property="og:image" content="https://seibucup.online/thumb_1v1.png">
 <meta property="og:image:width" content="1280">
@@ -23,7 +23,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="랭킹 - 세이부 컵 사커 온라인 (Seibu Cup Soccer Online)">
-<meta name="twitter:description" content="세이부 컵 사커 온라인 랭크전 순위표 - 시즌별 점수와 단계(급·단).">
+<meta name="twitter:description" content="세이부 컵 사커 온라인 리그 순위표 - 1부 리그 · 2부 리그의 시즌 순위.">
 <meta name="twitter:image" content="https://seibucup.online/thumb_1v1.png">
 <meta name="theme-color" content="#186830">
 
@@ -99,6 +99,7 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
 .clubbar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .clubbar .x { margin-left: auto; }
 @media (max-width: 760px) {
+  .season .grow { display: none; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .podium { grid-template-columns: 1fr; } .pod.p1 { order: -1; }
   table.rank th.hide-s, table.rank td.hide-s { display: none; }
@@ -110,6 +111,15 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
   .rk { padding: 1px 5px; font-size: .74rem; }
 }
 .season-off { border-color: #c9a227; background: rgba(201,162,39,.12); margin-bottom: 14px; }
+
+.season .tab[aria-pressed="true"] { background: var(--hud-yellow); color: #000; }
+.season .tab.past { border-color: var(--panel-line); color: inherit; font-weight: 400; }
+.season .tab.past[aria-pressed="true"] { background: #fff; color: #000; border-color: #fff; }
+.season .tab:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.season .grow { flex: 1 1 0; }
+td.clubn { white-space: normal; word-break: keep-all; }
+.abbr { display: inline-block; margin-right: 6px; padding: 0 5px; background: #000; color: var(--hud-yellow); font-family: "Galmuri11", monospace; font-size: .8rem; border: 1px solid var(--panel-line); }
+.pod .clubn { font-size: .9rem; opacity: .9; margin-bottom: 6px; }
 </style>
 </head>
 <body>
@@ -134,33 +144,27 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
 
 <section class="hero">
   <div class="container">
-    <h1><span class="ko">랭크전 순위표</span><span class="en">Ranked leaderboard</span></h1>
-    <p class="lead"><span class="ko">PC 런처의 <strong>랭크전</strong>으로 쌓은 점수 순위입니다. 랭크전이 끝날 때마다 몇 분 안에 갱신됩니다. 랭크전은 Windows 런처에서만 할 수 있습니다(<a href="guide.html#ranked">랭크전 안내</a>). 밑줄 친 닉네임을 누르면 그 선수의 <strong>클럽 카드</strong>가 열립니다.</span><span class="en">Points earned in the PC launcher's <strong>Ranked</strong> matches, updated within minutes of each one. Ranked is Windows launcher only (<a href="guide.html#ranked">how it works</a>). Click an underlined name to see that player's <strong>club card</strong>.</span></p>
+    <h1><span class="ko">리그 순위표</span><span class="en">League table</span></h1>
+    <p class="lead"><span class="ko">PC 런처의 <strong>클럽 매치</strong>로 겨루는 <strong>1부 리그</strong> 순위입니다. 클럽 매치가 끝날 때마다 몇 분 안에 갱신됩니다. 클럽 매치는 Windows 런처에서만 할 수 있습니다(<a href="guide.html#league">리그제 안내</a>). 밑줄 친 닉네임을 누르면 그 선수의 <strong>클럽 카드</strong>가 열립니다.</span><span class="en">The <strong>first division</strong> of the PC launcher's <strong>club matches</strong>, updated within minutes of each one. Club matches are Windows launcher only (<a href="guide.html#league">how the league works</a>). Click an underlined name to see that player's <strong>club card</strong>.</span></p>
     <div class="season">
-      <span id="tabs"></span>
-      <span class="left" id="leftbox" hidden><span class="ko">시즌 종료까지 <b id="left"></b></span><span class="en">Season ends in <b id="left2"></b></span></span>
+      <span class="left" id="leftbox" hidden><span id="seaName"></span> · <span class="ko">종료까지 <b id="left"></b></span><span class="en">ends in <b id="left2"></b></span></span>
+      <span class="grow"></span>
       <input id="find" type="search" placeholder="닉네임 찾기" aria-label="닉네임 찾기">
     </div>
+    <div class="season" id="pastrow" hidden><span id="tabs"></span></div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div id="seasonOff" class="note season-off"><span class="ko"><strong>지금은 정규 시즌을 진행하지 않습니다.</strong> 시즌 순위표는 잠시 쉬어 갑니다. 랭크전 점수와 단계는 그대로 이어지며, 지난 시즌(알파·베타테스트) 기록은 위 탭에서 볼 수 있습니다.</span><span class="en"><strong>There is no regular season right now.</strong> The season table takes a break; ranked points and ranks carry on as they are, and the past seasons (alpha and beta tests) are in the tabs above.</span></div>
-    <div id="empty" class="note empty" hidden><span class="ko">이번 시즌에는 아직 순위에 오른 선수가 없습니다. 랭크전을 해 보세요!</span><span class="en">Nobody is on the table this season yet - play a ranked match!</span></div>
     <div class="stats">
-      <div class="stat"><div class="n" id="sRanked">-</div><div class="l"><span class="ko">순위에 오른 선수 (<span class="minN">-</span>경기 이상)</span><span class="en">Ranked players (<span class="minN">-</span>+ games)</span></div></div>
-      <div class="stat"><div class="n" id="sGames">-</div><div class="l"><span class="ko">이번 시즌 랭크전</span><span class="en">Ranked matches this season</span></div></div>
-      <div class="stat"><div class="n" id="sTop">-</div><div class="l"><span class="ko">현재 최고 단계</span><span class="en">Highest rank now</span></div></div>
+      <div class="stat"><div class="n" id="sD1">-</div><div class="l"><span class="ko">1부 리그</span><span class="en">First division</span></div></div>
+      <div class="stat"><div class="n" id="sPrize">-</div><div class="l"><span class="ko">시즌 1위 보상</span><span class="en">Season prize, 1st place</span></div></div>
+      <div class="stat"><div class="n" id="sGames">-</div><div class="l"><span class="ko">시즌 클럽 매치</span><span class="en">Club matches this season</span></div></div>
       <div class="stat"><div class="n" id="sMe">-</div><div class="l"><span class="ko">내 순위 (<span id="meNick">닉네임 찾기로</span>)</span><span class="en">My place (search your nickname)</span></div></div>
     </div>
 
-    <div class="dist">
-      <h3><span class="ko">단계 분포 (이번 시즌에 랭크전을 한 선수)</span><span class="en">Ranks (everybody who played this season)</span></h3>
-      <div class="bar" id="bar"></div>
-      <div class="legend" id="legend"></div>
-    </div>
-
+    <div id="empty" class="note empty" hidden></div>
     <div class="podium" id="podium"></div>
 
     <div style="overflow-x:auto">
@@ -168,12 +172,11 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
         <thead><tr>
           <th><span class="ko">순위</span><span class="en">#</span></th>
           <th><span class="ko">닉네임</span><span class="en">Player</span></th>
-          <th><span class="ko">단계</span><span class="en">Rank</span></th>
-          <th><span class="ko">점수</span><span class="en">Points</span></th>
+          <th><span class="ko">클럽</span><span class="en">Club</span></th>
+          <th><span class="ko">승점</span><span class="en">Points</span></th>
           <th class="hide-s"><span class="ko">전적</span><span class="en">W-L</span></th>
           <th><span class="ko">승률</span><span class="en">Win %</span></th>
           <th class="hide-s"><span class="ko">최근 5경기</span><span class="en">Last 5</span></th>
-          <th class="hide-s"><span class="ko">어제 대비</span><span class="en">Since yesterday</span></th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -181,12 +184,14 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
     <p class="hint" id="updated" style="opacity:.6;font-size:.85rem;margin-top:8px"></p>
 
     <div class="rules">
-      <h3><span class="ko">시즌</span><span class="en">Seasons</span></h3>
+      <h3><span class="ko">리그 규칙</span><span class="en">How the league works</span></h3>
       <ul>
-        <li><span class="ko"><strong>알파테스트 시즌</strong>: 10월 13일 ~ 15일 (3경기 이상이면 순위에 오름)</span><span class="en"><strong>Alpha test season</strong>: Oct 13-15 (listed from 3 games)</span></li>
-        <li><span class="ko"><strong>베타테스트 시즌</strong>: 10월 16일 ~ 31일 (5경기 이상, 점수는 0에서 다시 시작)</span><span class="en"><strong>Beta test season</strong>: Oct 16-31 (5 games, points start again from 0)</span></li>
-        <li><span class="ko">11월부터는 한 달 단위 정식 시즌입니다. 정식 시즌은 10경기 이상이면 순위에 오르고, 새 시즌은 지난 시즌 점수의 절반에서 시작합니다.</span><span class="en">From November, month-long seasons: listed from 10 games, each starting from half of the last season's points.</span></li>
-        <li><span class="ko">단계: 초보 → 9급 … 1급 → 초단 … 9단 → 세이부 마스터. 이기면 점수가 오르고 지면 내려갑니다(초보와 급에서는 단계가 내려가지 않음).</span><span class="en">Ranks: Rookie → 9 Kyu … 1 Kyu → 1 Dan … 9 Dan → Seibu Master; wins raise the points, losses lower them (Rookie and Kyu never drop a rank).</span></li>
+        <li><span class="ko">모든 닉네임은 <strong>2부 리그</strong>에서 시작합니다. 클럽 매치에서 이기면 승점 <strong>+<span class="vWin">3</span></strong>, 지면 <strong><span class="vLoss">−1</span></strong>입니다(0 아래로는 내려가지 않음).</span><span class="en">Every nickname starts in the <strong>second division</strong>. A club match won is <strong>+<span class="vWin">3</span></strong>, a lost one <strong><span class="vLoss">−1</span></strong> (never below 0).</span></li>
+        <li><span class="ko">승점 <strong><span class="vTarget">30</span></strong>을 채우면 바로 <strong>1부 리그</strong>로 올라가 <strong><span class="vBonus">1,000</span>P</strong>를 받고, 1부 리그에서는 승점이 0부터 다시 쌓입니다.</span><span class="en"><strong><span class="vTarget">30</span></strong> points promote you at once to the <strong>first division</strong> with <strong><span class="vBonus">1,000</span>P</strong>; there the points start again from 0.</span></li>
+        <li><span class="ko">시즌이 끝나면 1부 리그 순위에 따라 클럽포인트를 드립니다: <strong>1위 <span class="vP1">3,000</span>P</strong>, 2위 <span class="vP2">2,000</span>P, 3위 <span class="vP3">1,000</span>P, 4~10위 <span class="vP4">500</span>P. 시즌 중에는 2부 리그로 내려가지 않습니다.</span><span class="en">A season's end pays the first division's places in club points: <strong>1st <span class="vP1">3,000</span>P</strong>, 2nd <span class="vP2">2,000</span>P, 3rd <span class="vP3">1,000</span>P, 4th-10th <span class="vP4">500</span>P. Nobody is relegated during a season.</span></li>
+        <li><span class="ko">이 페이지에는 1부 리그만 나옵니다(2부 리그 순위는 런처의 리그 순위표에서 볼 수 있습니다). 순위는 승점, 승수, 적은 패 순서로 정하고, 1부 리그에서 클럽 매치를 한 판 이상 한 닉네임이 오릅니다. 같은 상대와는 24시간에 2판까지만 승점이 바뀝니다.</span><span class="en">This page shows the first division only (the second division's table is in the launcher). Places go by points, then wins, then fewer losses; a nickname is listed from its first club match in the first division. Against the same opponent only 2 matches in 24 hours move the points.</span></li>
+        <li><span class="ko">시즌이 끝나면 모두 2부 리그 승점 0에서 다시 시작하고, 지난 시즌 순위는 위의 시즌 버튼으로 볼 수 있습니다.</span><span class="en">When a season ends everybody starts again in the second division with 0 points; past seasons stay behind the season buttons above.</span></li>
+        <li><span class="ko">예전 랭크전(급 · 단) 시즌 기록은 <a href="ranking_old.html">지난 랭크전 시즌</a>에 남아 있습니다.</span><span class="en">The old ranked (kyu / dan) seasons are kept in <a href="ranking_old.html">Past ranked seasons</a>.</span></li>
       </ul>
     </div>
   </div>
@@ -212,60 +217,54 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
 <script src="club_card.js"></script>
 <script>
 (function () {
-  var KO ='초보|9급|8급|7급|6급|5급|4급|3급|2급|1급|초단|2단|3단|4단|5단|6단|7단|8단|9단|세이부 마스터'.split('|');
-  var EN = 'Rookie|9 Kyu|8 Kyu|7 Kyu|6 Kyu|5 Kyu|4 Kyu|3 Kyu|2 Kyu|1 Kyu|1 Dan|2 Dan|3 Dan|4 Dan|5 Dan|6 Dan|7 Dan|8 Dan|9 Dan|Seibu Master'.split('|');
-  var FLOOR = [0, 50, 120, 200, 290, 390, 500, 620, 750, 890, 1040, 1200, 1370, 1540, 1710, 1880, 2050, 2220, 2390, 2560];
-  var GROUPS = [['초보', 'Rookie', '#b8c0c8'], ['9~5급', '9-5 Kyu', '#6fdc8c'], ['4~1급', '4-1 Kyu', '#3fc6c6'], ['초단~4단', '1-4 Dan', '#ffa53f'], ['5~9단', '5-9 Dan', '#ff5a4a'], ['마스터', 'Master', '#ffd23f']];
   function en() { return document.documentElement.getAttribute('lang') === 'en'; }
-  function rname(i) { return (en() ? EN : KO)[i] || '-'; }
-  function cls(i) { return i === 0 ? 'r0' : i <= 5 ? 'kyu' : i <= 9 ? 'kyuh' : i <= 13 ? 'dan' : i <= 18 ? 'danh' : 'master'; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function $(id) { return document.getElementById(id); }
-  var cur = null, view = null, tick = null;
+
+  var cur = null, view = null, div = 1, rows = [], tick = null;
   function kst(s) { return new Date(s.replace(' ', 'T') + ':00+09:00'); }
+  function divName(d) { return en() ? (d === 1 ? 'First division' : 'Second division') : (d === 1 ? '1부 리그' : '2부 리그'); }
+  function wl(p) { return en() ? p.w + 'W ' + p.l + 'L' : p.w + '승 ' + p.l + '패'; }
+  function pct(p) { var g = p.w + p.l; return g ? Math.round(100 * p.w / g) : 0; }
+  function rname() { return divName(div); }
+  function clubCell(p) { var c = p.c ? club(p.c) : null; return c ? '<span class="abbr">' + esc(c.abbr) + '</span>' + esc(c.name) : '<span class="same">-</span>'; }
   function draw(d) {
-    view = d;
-    var players = d.players || [], tb = document.querySelector('#tbl tbody');
-    tb.innerHTML = '';
-    $('empty').hidden = players.length > 0;
-    [].forEach.call(document.querySelectorAll('.minN'), function (e) { e.textContent = d.season.min; });
-    $('sRanked').textContent = players.length; $('sGames').textContent = d.games || 0;
-    $('sTop').textContent = players.length ? rname(players[0].r) : '-';
-    players.forEach(function (p, i) {
-      var next = FLOOR[p.r + 1], prog = next ? Math.round(100 * (p.p - FLOOR[p.r]) / (next - FLOOR[p.r])) : 100;
+    view = d; rows = d.d1 || [];
+    var tb = document.querySelector('#tbl tbody'); tb.innerHTML = '';
+    var past = view !== cur, em = $('empty');
+    em.hidden = rows.length > 0;
+    em.innerHTML = '<span class="ko">' + (past ? '이 시즌에는 1부 리그에 오른 닉네임이 없었습니다.' : '아직 1부 리그에 오른 닉네임이 없습니다. 2부 리그에서 승점 ' + (d.target || 30) + '을 채우면 승격합니다.') + '</span><span class="en">' + (past ? 'Nobody reached the first division that season.' : 'Nobody is in the first division yet - ' + (d.target || 30) + ' points in the second division promote you.') + '</span>';
+    var pz = d.prizes || [];
+    $('sD1').textContent = (d.d1 || []).length; $('sGames').textContent = d.games || 0; $('sPrize').textContent = pz[0] ? pz[0].toLocaleString() + 'P' : '-';
+    pz.forEach(function (v, i) { [].forEach.call(document.querySelectorAll('.vP' + (i + 1)), function (e) { e.textContent = v.toLocaleString(); }); });
+    [['vTarget', d.target], ['vWin', d.win], ['vBonus', d.bonus && d.bonus.toLocaleString()], ['vLoss', d.loss != null ? String(d.loss).replace('-', '−') : null]].forEach(function (v) {
+      if (v[1] != null && v[1] !== 0) [].forEach.call(document.querySelectorAll('.' + v[0]), function (e) { e.textContent = v[1]; });
+    });
+    rows.forEach(function (p, i) {
       var tr = document.createElement('tr'); tr.dataset.n = p.n.toLowerCase();
-      var mv = p.d > 0 ? '<span class="up">▲' + p.d + '</span>' : p.d < 0 ? '<span class="down">▼' + (-p.d) + '</span>' : '<span class="same">-</span>';
-      var g = p.w + p.l;
-      tr.innerHTML = '<td class="pos">' + (i + 1) + '</td><td class="nick">' + nick(p, i) + '</td><td><span class="rk ' + cls(p.r) + '">' + rname(p.r) + '</span></td>' +
-        '<td><div class="pts"><b>' + p.p + '</b><span class="b"' + (next ? ' title="' + (en() ? (next - p.p) + ' to the next rank' : '다음 단계까지 ' + (next - p.p) + '점') + '"' : '') + '><span style="width:' + prog + '%"></span></span></div></td>' +
-        '<td class="hide-s">' + (en() ? p.w + 'W ' + p.l + 'L' : p.w + '승 ' + p.l + '패') + '</td><td>' + (g ? Math.round(100 * p.w / g) : 0) + '%</td>' +
-        '<td class="hide-s"><span class="form">' + (p.f || '').split('').map(function (c) { return '<i class="' + (c === 'W' ? 'w">' + (en() ? 'W' : '승') : 'l">' + (en() ? 'L' : '패')) + '</i>'; }).join('') + '</span></td>' +
-        '<td class="hide-s">' + mv + '</td>';
+      tr.innerHTML = '<td class="pos">' + (i + 1) + '</td><td class="nick">' + nick(p, i) + '</td><td class="clubn">' + clubCell(p) + '</td>' +
+        '<td><div class="pts"><b>' + p.p + '</b></div></td>' +
+        '<td class="hide-s">' + wl(p) + '</td><td>' + pct(p) + '%</td>' +
+        '<td class="hide-s"><span class="form">' + (p.f || '').split('').map(function (c) { return '<i class="' + (c === 'W' ? 'w">' + (en() ? 'W' : '승') : 'l">' + (en() ? 'L' : '패')) + '</i>'; }).join('') + '</span></td>';
       tb.appendChild(tr);
     });
     var pod = $('podium'); pod.innerHTML = '';
     [1, 0, 2].forEach(function (k) {
-      var p = players[k]; if (!p) return;
-      var g = p.w + p.l, el = document.createElement('div'); el.className = 'pod p' + (k + 1);
-      el.innerHTML = '<div class="place">' + (k + 1) + (en() ? '' : '위') + '</div><div class="nick">' + nick(p, k) + '</div><span class="rk ' + cls(p.r) + '">' + rname(p.r) + '</span>' +
-        '<div class="meta" style="margin-top:8px">' + p.p + (en() ? ' pts · ' + p.w + 'W ' + p.l + 'L · ' : '점 · ' + p.w + '승 ' + p.l + '패 · 승률 ') + (g ? Math.round(100 * p.w / g) : 0) + '%</div>';
+      var p = rows[k]; if (!p) return;
+      var el = document.createElement('div'); el.className = 'pod p' + (k + 1);
+      el.innerHTML = '<div class="place">' + (k + 1) + (en() ? '' : '위') + '</div><div class="nick">' + nick(p, k) + '</div>' + (p.c && club(p.c) ? '<div class="clubn">' + clubCell(p) + '</div>' : '') +
+        '<div class="meta">' + p.p + (en() ? ' pts · ' + wl(p) + ' · ' : '점 · ' + wl(p) + ' · 승률 ') + pct(p) + '%</div>';
       pod.appendChild(el);
     });
-    var dist = d.dist || [0, 0, 0, 0, 0, 0], tot = dist.reduce(function (a, b) { return a + b; }, 0), bar = $('bar'), lg = $('legend');
-    bar.innerHTML = ''; lg.innerHTML = '';
-    GROUPS.forEach(function (gr, i) {
-      if (dist[i] > 0) { var s = document.createElement('span'); s.style.width = (100 * dist[i] / tot) + '%'; s.style.background = gr[2]; s.textContent = dist[i]; bar.appendChild(s); }
-      var l = document.createElement('span'); l.innerHTML = '<i style="background:' + gr[2] + '"></i>' + (en() ? gr[1] + ' ' + dist[i] : gr[0] + ' ' + dist[i] + '명'); lg.appendChild(l);
-    });
-    if (!tot) bar.innerHTML = '<span style="width:100%;background:#2a3a2e;color:#cfd8cf">' + (en() ? 'no games yet' : '아직 경기 없음') + '</span>';
     $('updated').textContent = d.updated ? (en() ? 'Updated ' : '마지막 갱신 ') + d.updated + (en() ? ' (KST)' : '') : '';
-    find(); left();
+    tabs(); find(); left();
   }
   function left() {
     clearInterval(tick);
     var box = $('leftbox');
-    if (!view || view !== cur) { box.hidden = true; return; }
+    if (!view || view !== cur || !view.season || !view.season.end) { box.hidden = true; return; }
     var end = kst(view.season.end);
+    $('seaName').textContent = view.season.name;
     function upd() {
       var ms = end - Date.now();
       if (ms <= 0) { $('left').textContent = $('left2').textContent = en() ? 'ended' : '종료'; return; }
@@ -274,23 +273,30 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
     }
     box.hidden = false; upd(); tick = setInterval(upd, 30000);
   }
+
   function find() {
-    var q = $('find').value.trim().toLowerCase(), me = -1;
-    [].forEach.call(document.querySelectorAll('#tbl tbody tr'), function (tr, i) {
+    var q = $('find').value.trim().toLowerCase(), me = '';
+    [].forEach.call(document.querySelectorAll('#tbl tbody tr'), function (tr) {
       var hit = !q || tr.dataset.n.indexOf(q) >= 0;
       tr.hidden = !hit; tr.className = q && tr.dataset.n === q ? 'me' : '';
-      if (q && tr.dataset.n === q) me = i + 1;
     });
-    $('sMe').textContent = me > 0 ? me + (en() ? '' : '위') : '-';
+    if (q) rows.forEach(function (p, i) { if (p.n.toLowerCase() === q) me = en() ? '#' + (i + 1) : (i + 1) + '위'; });
+    $('sMe').textContent = me || '-';
     $('meNick').textContent = q ? $('find').value.trim() : (en() ? '' : '닉네임 찾기로');
   }
-  function tabs(d) {
-    var box = $('tabs'); box.innerHTML = '';
-    function tab(label, on, go) { var b = document.createElement('button'); b.type = 'button'; b.className = 'tab' + (on ? ' on' : ''); b.textContent = label; b.onclick = go; box.appendChild(b); box.appendChild(document.createTextNode(' ')); }
-    (d.past || []).slice().reverse().forEach(function (ps) {
-      tab(ps.name, view && view.season.id === ps.id && view !== cur, function () {
-        fetch('ranking_' + encodeURIComponent(ps.id) + '.json?' + Date.now()).then(function (r) { return r.json(); }).then(function (j) { draw(j); tabs(cur); }).catch(function () {});
-      });
+  function button(box, label, on, go, past) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'tab' + (past ? ' past' : ''); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.textContent = label; b.onclick = go; box.appendChild(b); box.appendChild(document.createTextNode(' '));
+  }
+  function tabs() {
+    var pb = $('tabs'), past = (cur && cur.past) || []; pb.innerHTML = '';
+    $('pastrow').hidden = past.length === 0;
+    if (!past.length) return;
+    button(pb, cur.season && cur.season.name ? cur.season.name : (en() ? 'This season' : '이번 시즌'), view === cur, function () { draw(cur); }, true);
+    past.slice().reverse().forEach(function (ps) {
+      button(pb, ps.name, view !== cur && view.season && view.season.id === ps.id, function () {
+        fetch('league_' + encodeURIComponent(ps.id) + '.json?' + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(draw).catch(function () {});
+      }, true);
     });
   }
 
@@ -306,10 +312,10 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
     try { name = decodeURIComponent(f[6]); } catch (e) { return null; }
     var c = { box: BASES.indexOf(+f[0]), hs: f[1], hp: f[2], as: f[3], ap: f[4], abbr: f[5], name: name, sh: '202028', hk: f[1], ak: f[3], hair: '-' };
     if (f.length >= 8 && HEX.test(f[7])) c.sh = f[7];
-    if (f.length === 11) { if (HEX.test(f[8])) c.hk = f[8]; if (HEX.test(f[9])) c.ak = f[9]; if (HEX.test(f[10]) || f[10] === '-') c.hair = f[10]; }
+    if (f.length >= 11) { if (HEX.test(f[8])) c.hk = f[8]; if (HEX.test(f[9])) c.ak = f[9]; if (HEX.test(f[10]) || f[10] === '-') c.hair = f[10]; }
     return c;
   }
-  function nick(p, i) { return p.c && club(p.c) && window.CLUB_CARD ? '<button type="button" class="club" data-i="' + i + '">' + esc(p.n) + '</button>' : esc(p.n); }
+  function nick(p, i) { return div === 1 && p.c && club(p.c) && window.CLUB_CARD ? '<button type="button" class="club" data-i="' + i + '">' + esc(p.n) + '</button>' : esc(p.n); }
   function rgb(h) { return [parseInt(h.substr(0, 2), 16), parseInt(h.substr(2, 2), 16), parseInt(h.substr(4, 2), 16)]; }
   var q5 = function (v) { return Math.round(v / 255 * 31) * 255 / 31 | 0; };
 
@@ -376,7 +382,7 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
 
     g.textAlign = 'left'; g.textBaseline = 'top';
     round(g, 60, 790, W - 120, H - 64 - 790, 18); g.fillStyle = 'rgb(16,18,24)'; g.fill();
-    var gm = p.w + p.l, season = rname(p.r) + ' · ' + p.p + (E ? ' pts · ' + p.w + 'W ' + p.l + 'L' : '점 · ' + p.w + '승 ' + p.l + '패');
+    var season = rname() + ' · ' + p.p + (E ? ' pts · ' + p.w + 'W ' + p.l + 'L' : '점 · ' + p.w + '승 ' + p.l + '패');
     var rows = [[E ? 'Base' : '기반 국가', (E ? BASE_EN : BASE_KO)[c.box]], [E ? 'Formation' : '포메이션', (E ? FORM_EN : FORM_KO)[c.box]], [E ? 'Coach' : '감독', p.n],
       [view && view.season ? view.season.name : (E ? 'Season' : '시즌'), season]];
     rows.forEach(function (r, i) {
@@ -407,7 +413,7 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
   function closeCard() { $('clubwin').hidden = true; cardP = null; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('button.club'); if (!b || !view) return;
-    var p = (view.players || [])[+b.dataset.i]; if (p) openCard(p);
+    var p = rows[+b.dataset.i]; if (p) openCard(p);
   });
   $('clubX').addEventListener('click', closeCard);
   $('clubwin').addEventListener('click', function (e) { if (e.target === this) closeCard(); });
@@ -424,13 +430,10 @@ button.club:focus-visible { outline: 2px solid var(--hud-yellow); outline-offset
   });
 
   $('find').addEventListener('input', find);
-
-  fetch('ranking.json?' + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
-    cur = d; tabs(d);
-    var last = (d.past || []).slice(-1)[0];
-    if (last) fetch('ranking_' + encodeURIComponent(last.id) + '.json?' + Date.now()).then(function (r) { return r.json(); }).then(function (j) { draw(j); tabs(cur); }).catch(function () {});
-  }).catch(function () { $('bar').innerHTML = ''; });
-  var lb = $('langbtn'); if (lb) lb.addEventListener('click', function () { setTimeout(function () { if (view) { draw(view); if (cur) tabs(cur); } }, 0); });
+  fetch('league.json?' + Date.now()).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
+    cur = d; draw(d);
+  }).catch(function () { cur = { season: {}, d1: [], games: 0 }; draw(cur); });
+  var lb = $('langbtn'); if (lb) lb.addEventListener('click', function () { setTimeout(function () { if (view) draw(view); }, 0); });
 })();
 </script>
 </body>
