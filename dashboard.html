@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>내 기록 - 세이부 컵 사커 온라인 (Seibu Cup Soccer Online)</title>
+<meta name="description" content="네이버에 연결한 닉네임으로 로그인해 내 리그, 클럽, 클럽포인트, 퀘스트, 경기 기록을 봅니다.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://seibucup.online/dashboard.html">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/galmuri.css">
+<link rel="stylesheet" href="c.css">
+</head>
+<body>
+<main class="wrap" id="page"></main>
+<script src="c.js"></script>
+<script>
+
+var API = location.hostname === "localhost" ? "http://localhost:47407/auth/naver/web" : "https://play.seibucup.online/auth/naver/web";
+var ME = null, state = "loading", keepPref = true;
+try { keepPref = localStorage.getItem("siteC.keep") !== "0"; } catch (e) {}
+
+function load() {
+  state = "loading"; draw();
+  fetch(API + "/me", { credentials: "include", cache: "no-store" }).then(function (r) {
+    if (r.status === 401) { state = "out"; draw(); return; }
+    if (!r.ok) throw new Error(r.status);
+    return r.json().then(function (d) { ME = d; state = "in"; draw(); });
+  }).catch(function () { state = "error"; draw(); });
+}
+function login() {
+  var keep = $("keepChk") && $("keepChk").checked;
+  try { localStorage.setItem("siteC.keep", keep ? "1" : "0"); } catch (e) {}
+  location.href = API + "/start?keep=" + (keep ? 1 : 0) + "&back=" + encodeURIComponent(location.href.split("#")[0]);
+}
+function logout() {
+  fetch(API + "/logout", { method: "POST", credentials: "include" }).catch(function () {}).then(function () { ME = null; state = "out"; draw(); });
+}
+
+function gate() {
+  return '<section class="gate"><h1 style="font-size:36px">' + L("내 기록", "My page") + "</h1>" +
+    "<p>" + L("네이버에 연결한 닉네임으로 로그인하면 내 리그, 클럽, 포인트, 퀘스트, 경기 기록을 한눈에 볼 수 있어요.",
+      "Log in with the nickname you linked to Naver to see your league, club, points, quests and matches in one place.") + "</p>" +
+    '<p><button type="button" class="naver" id="loginBtn"><b>N</b>' + L("네이버로 로그인", "Log in with Naver") + "</button></p>" +
+    '<p><label><input type="checkbox" id="keepChk"' + (keepPref ? " checked" : "") + "> " + L("자동 로그인 (30일)", "Stay logged in (30 days)") + "</label></p>" +
+    '<p class="sub">' + L("공용 PC에서는 자동 로그인을 끄세요.", "Turn it off on a shared PC.") + "</p>" +
+    '<p class="sub">' + L("아직 연결 전이라면: PC 런처 설정 → 계정 → [네이버 로그인]에서 닉네임을 먼저 연결해 주세요.",
+      "Not linked yet? In the PC launcher: Settings → Account → [Naver login].") + "</p>" +
+    '<p class="sub">' + L("받는 정보는 네이버 회원 식별값 하나뿐이에요. 이름, 이메일은 받지 않아요.", "Only Naver's member id is used - no name, no e-mail.") + "</p></section>";
+}
+function money(n) { return (n > 0 ? "+" : "") + Number(n).toLocaleString() + "P"; }
+function clubOf(spec) {
+  var f = String(spec || "").split(","); if (f.length < 7) return null;
+  var c = function (x) { return /^[0-9a-f]{6}$/i.test(x || "") ? "#" + x : "#cccccc"; };
+  var name = ""; try { name = decodeURIComponent(f[6]); } catch (e) { name = f[6]; }
+  return { base: Number(f[0]), abbr: f[5], name: name, home: [c(f[1]), c(f[3])], away: [c(f[7]), c(f[9])] };
+}
+function hm(ms) { var d = new Date(Number(ms)); function p(x) { return (x < 10 ? "0" : "") + x; } return p(d.getMonth() + 1) + "-" + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes()); }
+
+function dash() {
+  var g = ME.league || { div: 2, p: 0, target: 30, w: 0, l: 0, place: 0, of: 0 }, s = g.season || {};
+  var c = clubOf(ME.club), pct = Math.min(100, Math.round(g.p * 100 / Math.max(1, g.target)));
+  var h = '<div class="who"><div><h1>' + esc(ME.nick) + '</h1><span class="badge"><span class="nv">N</span>' + L("네이버 연결됨", "Linked to Naver") +
+    (ME.keep ? " · " + L("자동 로그인", "staying logged in") : "") + '</span></div><button type="button" class="btn" id="logoutBtn">' + L("로그아웃", "Log out") + "</button></div>";
+
+  h += '<section class="sec"><h2>' + L("리그", "League") + "<small>" + esc(s.name ? L(s.name, s.name.replace("시즌", "Season")) : "") + (s.end ? " · ~ " + esc(s.end.slice(5, 10)) : "") + "</small></h2>" +
+    '<div class="big">' + L(g.div + "부", g.div === 1 ? "1st div." : "2nd div.") + " <small>" + (g.div === 2 ? L("승점 ", "points ") + g.p + " / " + g.target : L("승점 ", "points ") + g.p) + "</small></div>" +
+    (g.div === 2 ? '<div class="bar" role="progressbar" aria-valuenow="' + g.p + '" aria-valuemax="' + g.target + '"><i style="width:' + pct + '%"></i></div><p class="sub">' +
+      L("승격까지 승점 " + Math.max(0, g.target - g.p) + " · 이기면 +3, 지면 −1", Math.max(0, g.target - g.p) + " points to promotion · win +3, loss −1") + "</p>"
+      : '<p class="sub">' + (g.place ? L("1부 리그 " + g.place + "위 / " + g.of + "명", "1st division, #" + g.place + " of " + g.of) : "") + "</p>") +
+    '<div class="kv"><div><b>' + g.w + "</b><span>" + L("승", "wins") + "</span></div><div><b>" + g.l + "</b><span>" + L("패", "losses") + "</span></div>" +
+    "<div><b>" + (g.w + g.l ? Math.round(g.w * 100 / (g.w + g.l)) : 0) + "%</b><span>" + L("승률", "win rate") + "</span></div><div><b>" + (g.w + g.l) + "</b><span>" + L("클럽 매치", "club matches") + "</span></div></div></section>";
+
+  var pts = ME.points || { p: 0, hist: [] }, hist = (pts.hist || []).slice().sort(function (a, b) { return b.t - a.t; }).slice(0, 6);
+  h += '<section class="sec two"><div><h2>' + L("내 클럽", "My club") + "</h2>" + (c ?
+    '<div class="club"><span class="kit" style="background:linear-gradient(90deg,' + c.home[0] + " 0 70%," + c.home[1] + ' 70%);outline:1px solid var(--ln)"></span><span class="kit" style="background:linear-gradient(90deg,' + c.away[0] + " 0 70%," + c.away[1] + ' 70%);outline:1px solid var(--ln)"></span>' +
+    '<div><b><span class="chip">' + esc(c.abbr) + "</span>" + esc(c.name) + '</b><br><span class="sub">' + esc(teamName(c.base)) + " · " + L("홈 / 어웨이", "home / away") + "</span></div></div>" +
+    ((ME.clubs || []).length > 1 ? '<p class="sub">' + L("클럽 " + ME.clubs.length + "개 중 최근에 뛴 클럽", "The last played of your " + ME.clubs.length + " clubs") + "</p>" : "")
+    : '<p class="sub">' + L("아직 클럽이 없어요. PC 런처에서 클럽 매치를 누르면 첫 클럽을 만들 수 있어요.", "No club yet. Club match in the PC launcher makes your first one.") + "</p>") +
+    "</div><div><h2>" + L("클럽포인트", "Club points") + '</h2><div class="big">' + Number(pts.p || 0).toLocaleString() + "<small>P</small></div>" +
+    '<div class="hist" style="margin-top:12px">' + (hist.map(function (x) { return '<div><span><span class="t">' + hm(x.t) + "</span>" + esc(x.w) + '</span><span class="' + (x.d >= 0 ? "p" : "m") + '">' + money(x.d) + "</span></div>"; }).join("") ||
+      '<div><span class="sub">' + L("내역이 없어요.", "No history.") + "</span></div>") + "</div></div></section>";
+
+  var q = ME.quests || { list: [] }, day = (q.list || []).filter(function (x) { return x.k === "d"; });
+  var nextMain = (q.list || []).filter(function (x) { return x.k !== "d" && x.st === 1; })[0];
+  h += '<section class="sec two"><div><h2>' + L("오늘의 퀘스트", "Today's quests") + "<small>" + (q.ddone || 0) + " / " + (q.dof || 0) + " · " + (q.dgot || 0) + " / " + (q.dtotal || 0) + "P</small></h2>" +
+    day.map(function (x) { return '<div class="q' + (x.st === 2 ? " done" : "") + '"><i></i><span>' + esc(x.t) + (x.max > 1 ? " (" + x.cur + "/" + x.max + ")" : "") + "</span><b>+" + x.r + "P</b></div>"; }).join("") +
+    '<p class="sub">' + L("매일 0시에 새로 시작해요.", "A new set every day at midnight (KST).") + "</p></div>" +
+    "<div><h2>" + L("시즌 퀘스트", "Season quests") + "<small>" + (q.done || 0) + " / " + (q.of || 0) + '</small></h2><div class="bar"><i style="width:' + Math.round((q.done || 0) * 100 / Math.max(1, q.of || 1)) + '%"></i></div>' +
+    (nextMain ? '<p class="sub">' + L("지금 할 수 있는 퀘스트: ", "Open now: ") + "<b>" + esc(nextMain.t) + "</b> (" + nextMain.cur + "/" + nextMain.max + ")</p>" : "") +
+    '<p class="sub">' + L("받은 보상 ", "Rewards so far ") + Number(q.got || 0).toLocaleString() + " / " + Number(q.total || 0).toLocaleString() + "P</p></div></section>";
+
+  var rec = ME.recent || [], hh = ME.h2h || [], m = ME.manner || {}, mu = ME.meetup || {};
+  h += '<section class="sec two"><div><h2>' + L("최근 경기", "Recent matches") + '</h2><div style="border-top:1px solid var(--ln)">' +
+    (rec.slice(0, 6).map(function (x) {
+      var kindTxt = x.ranked ? ((x.when || "") >= "2026-11-27 08" ? L("클럽 매치", "Club match") : L("랭크전", "Ranked")) : x.type === "2v2" ? "2:2" : "1:1";
+      return '<div class="rm"><span class="res ' + x.res + '">' + L({ W: "승", L: "패", D: "무" }[x.res], x.res) + "</span><span>" + esc((x.vs || []).join(" · ") || "CPU") +
+        (x.oclub ? ' <span class="sub">· ' + esc(x.oclub) + "</span>" : "") + '<br><span class="sub">' + esc(kindTxt) + " · " + esc((x.when || "").slice(5)) + '</span></span><span class="s">' + x.me + ":" + x.opp +
+        '</span><a href="results.html?q=' + encodeURIComponent(ME.nick) + '">' + L("기록", "Log") + "</a></div>";
+    }).join("") || '<p class="empty">' + L("아직 기록된 경기가 없어요.", "No recorded matches yet.") + "</p>") +
+    '</div><a class="more" href="results.html">' + L("전체 경기 기록 →", "All results →") + "</a></div>" +
+    "<div><h2>" + L("자주 만난 상대", "Head to head") + '</h2><div style="border-top:1px solid var(--ln)">' +
+    (hh.map(function (x) { return '<div class="rm" style="grid-template-columns:1fr auto"><span>' + esc(x.nick) + '</span><span class="s">' + x.w + L("승 ", "W ") + x.l + L("패", "L") + (x.d ? " " + x.d + L("무", "D") : "") + "</span></div>"; }).join("") ||
+      '<p class="empty">' + L("아직 없어요.", "None yet.") + "</p>") + "</div>" +
+    '<h2 style="margin-top:30px">' + L("매너", "Manners") + '</h2><div class="hist">' +
+    "<div><span>" + L("옐로카드 (최근 30일)", "Yellow cards (30 days)") + '</span><span class="' + (m.yellow ? "warn" : "good") + '">' + Number(m.yellow || 0) + L("장", "") + "</span></div>" +
+    "<div><span>" + L("나감 기록 (지금 세는 것)", "Leaves counted now") + '</span><span class="' + (m.quits ? "warn" : "good") + '">' + Number(m.quits || 0) + L("번", "") + "</span></div>" +
+    "<div><span>" + L("매치 제한", "Match lock-out") + '</span><span class="' + (m.lockSec ? "warn" : "good") + '">' + (m.lockSec ? L(Math.ceil(m.lockSec / 60) + "분 남음", Math.ceil(m.lockSec / 60) + " min left") : L("없음", "none")) + "</span></div>" +
+    "<div><span>" + L("정모 참여", "Meetup") + "</span><span>" + (mu.today ? L("오늘 참여 ✓", "today ✓") : L("오늘 아직", "not yet today")) + " · " + L("최근 7일 " + (mu.week || 0) + "번", (mu.week || 0) + " in 7 days") + "</span></div></div></div></section>";
+  h += '<p class="sub" style="margin-top:34px">' + L("이 화면은 나만 볼 수 있어요. 매칭에 쓰는 실력 점수, 닉네임 열쇠, IP 는 보여 주지 않아요.",
+    "Only you see this page. The matching skill number, the nickname key and IP addresses are never shown.") + "</p>";
+  return h;
+}
+function draw() {
+  var p = $("page");
+  if (state === "loading") p.innerHTML = '<p class="empty" style="text-align:center;padding:60px 0">' + L("불러오는 중…", "Loading…") + "</p>";
+  else if (state === "error") p.innerHTML = '<section class="gate"><h1 style="font-size:30px">' + L("내 기록", "My page") + "</h1><p>" + L("서버에 연결하지 못했어요. 잠시 뒤에 다시 해 주세요.", "Could not reach the server. Please try again later.") +
+    '</p><p><button type="button" class="btn" id="retryBtn">' + L("다시 시도", "Retry") + "</button></p></section>";
+  else p.innerHTML = state === "in" ? dash() : gate();
+  if ($("loginBtn")) $("loginBtn").onclick = login;
+  if ($("logoutBtn")) $("logoutBtn").onclick = logout;
+  if ($("retryBtn")) $("retryBtn").onclick = load;
+}
+langHooks.push(draw); load();
+</script>
+</body></html>
